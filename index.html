@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>İNADİNA TV - Spor Paneli</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@400;600;700;900&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root { --neon-pink: #ff2d7a; --neon-purple: #9b4dff; --neon-cyan: #00eaff; --neon-gold: #ffcc33; --bg-dark: #05050b; --bg-card: rgba(12, 10, 24, 0.72); --text-main: #f4efff; --text-muted: #8d84aa; --radius-xl: 28px; --radius-lg: 22px; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Barlow', sans-serif; color: var(--text-main); min-height: 100vh; background: var(--bg-dark); overflow-x: hidden; }
+        .wrapper { width: min(1380px, calc(100% - 32px)); margin: 0 auto; padding: 22px 0; position: relative; z-index: 1; }
+        .site-header { display: flex; align-items: center; justify-content: space-between; padding: 16px 22px; margin-bottom: 22px; background: rgba(12,10,24,0.9); border: 1px solid rgba(255,45,122,0.3); border-radius: var(--radius-xl); backdrop-filter: blur(10px); }
+        .logo-main { font-family: 'Bebas Neue', sans-serif; font-size: 2.5rem; letter-spacing: 4px; background: linear-gradient(135deg, #ff2d7a, #9b4dff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .main-layout { display: grid; grid-template-columns: 1fr 340px; gap: 18px; margin-bottom: 18px; }
+        .player-wrap { position: relative; aspect-ratio: 16 / 9; background: #000; border-radius: 30px; overflow: hidden; border: 1px solid rgba(255,45,122,0.3); }
+        iframe { width: 100%; height: 100%; border: 0; }
+        .side-panel { display: flex; flex-direction: column; gap: 16px; }
+        .now-playing-card { background: rgba(255,45,122,0.1); border: 1px solid rgba(255,45,122,0.4); border-radius: var(--radius-lg); padding: 20px; text-align: center; }
+        .now-channel { font-family: 'Bebas Neue', sans-serif; font-size: 2rem; color: var(--neon-pink); margin: 10px 0; }
+        .channels-section { background: rgba(12,10,24,0.9); border: 1px solid rgba(255,45,122,0.2); border-radius: 28px; padding: 20px; }
+        .channel-row { display: flex; gap: 12px; overflow-x: auto; padding-bottom: 10px; }
+        .ch-btn { flex: 0 0 auto; min-width: 100px; padding: 15px; border-radius: 15px; border: 1px solid rgba(255,45,122,0.2); background: #120e23; color: white; cursor: pointer; transition: 0.3s; }
+        .ch-btn.active { border-color: var(--neon-pink); background: rgba(255,45,122,0.2); transform: scale(1.05); }
+        .ch-number { font-family: 'Bebas Neue', sans-serif; font-size: 1.2rem; }
+        .ch-label { font-size: 0.7rem; font-weight: bold; text-transform: uppercase; margin-top: 5px; }
+        @media (max-width: 1024px) { .main-layout { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+<div class="wrapper">
+    <header class="site-header">
+        <div class="logo-main">İNADİNA TV</div>
+        <div style="color: var(--neon-cyan); font-weight: bold; letter-spacing: 2px;">CANLI YAYIN</div>
+    </header>
+
+    <div class="main-layout">
+        <div class="player-wrap"><iframe id="liveIframe" src="" allowfullscreen></iframe></div>
+        <div class="side-panel">
+            <div class="now-playing-card">
+                <div style="font-size: 0.7rem; letter-spacing: 3px;">ŞU AN İZLENİYOR</div>
+                <div class="now-channel" id="nowChannel">-</div>
+                <div id="nowQuality" style="background: gold; color: black; display: inline-block; padding: 2px 8px; border-radius: 5px; font-weight: 900; font-size: 0.8rem;">HD</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="channels-section">
+        <div class="channel-row" id="channelRow"></div>
+    </div>
+</div>
+
+<script>
+    /*BOT_START*/
+    const streamLinks = ["https://l24.im/zIts"];
+    const channelNames = ["KANAL 1"];
+    const qualityLabels = ["HD"];
+    /*BOT_END*/
+
+    const iframe = document.getElementById("liveIframe");
+    const nowChannel = document.getElementById("nowChannel");
+    const nowQuality = document.getElementById("nowQuality");
+    const channelRow = document.getElementById("channelRow");
+
+    function buildButtons() {
+        channelRow.innerHTML = "";
+        streamLinks.forEach((url, i) => {
+            const btn = document.createElement("button");
+            btn.className = "ch-btn" + (i === 0 ? " active" : "");
+            btn.innerHTML = `<div class="ch-number">${String(i + 1).padStart(2, '0')}</div><div class="ch-label">${channelNames[i]}</div>`;
+            btn.onclick = () => switchChannel(i);
+            channelRow.appendChild(btn);
+        });
+        if(streamLinks.length > 0) switchChannel(0);
+    }
+
+    function switchChannel(index) {
+        iframe.src = streamLinks[index];
+        nowChannel.textContent = channelNames[index];
+        nowQuality.textContent = qualityLabels[index];
+        document.querySelectorAll(".ch-btn").forEach((b, i) => b.classList.toggle("active", i === index));
+    }
+
+    window.onload = buildButtons;
+</script>
+</body>
+</html>
