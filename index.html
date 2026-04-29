@@ -29,10 +29,10 @@
             background: var(--bg-dark);
             overflow-x: hidden;
             background-image:
-                radial-gradient(ellipse at 20% 20%, rgba(255, 45, 122, 0.06) 0%, transparent 55%),
-                radial-gradient(ellipse at 80% 60%, rgba(155, 77, 255, 0.07) 0%, transparent 55%),
-                radial-gradient(ellipse at 50% 90%, rgba(0, 234, 255, 0.05) 0%, transparent 55%),
-                radial-gradient(ellipse at 10% 80%, rgba(255, 204, 51, 0.04) 0%, transparent 50%);
+                radial-gradient(ellipse at 20% 20%, rgba(255,45,122,0.06) 0%, transparent 55%),
+                radial-gradient(ellipse at 80% 60%, rgba(155,77,255,0.07) 0%, transparent 55%),
+                radial-gradient(ellipse at 50% 90%, rgba(0,234,255,0.05) 0%, transparent 55%),
+                radial-gradient(ellipse at 10% 80%, rgba(255,204,51,0.04) 0%, transparent 50%);
             background-attachment: fixed;
         }
 
@@ -49,13 +49,13 @@
 
         .site-header {
             display: flex; align-items: center; justify-content: space-between; padding: 18px 28px; margin-bottom: 22px;
-            background: rgba(12, 10, 24, 0.9); border: 1px solid rgba(255, 45, 122, 0.35);
+            background: rgba(12,10,24,0.9); border: 1px solid rgba(255,45,122,0.35);
             border-radius: var(--radius-xl); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
             box-shadow: var(--glow-pink); position: relative; overflow: hidden;
         }
         .site-header::before {
             content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%;
-            background: conic-gradient(from 0deg, transparent, rgba(255, 45, 122, 0.08), transparent, rgba(155, 77, 255, 0.08), transparent);
+            background: conic-gradient(from 0deg, transparent, rgba(255,45,122,0.08), transparent, rgba(155,77,255,0.08), transparent);
             animation: headerRotate 8s linear infinite; pointer-events: none;
         }
         @keyframes headerRotate { to { transform: rotate(360deg); } }
@@ -64,12 +64,12 @@
             font-family: 'Bebas Neue', sans-serif; font-size: 2.8rem; letter-spacing: 5px;
             background: linear-gradient(135deg, #ff2d7a 0%, #ff6bac 30%, #9b4dff 60%, #c471ff 100%);
             -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
-            filter: drop-shadow(0 0 18px rgba(255, 45, 122, 0.5)); position: relative; z-index: 1;
+            filter: drop-shadow(0 0 18px rgba(255,45,122,0.5)); position: relative; z-index: 1;
             animation: logoPulse 3s ease-in-out infinite;
         }
         @keyframes logoPulse {
-            0%, 100% { filter: drop-shadow(0 0 18px rgba(255, 45, 122, 0.5)); }
-            50% { filter: drop-shadow(0 0 30px rgba(255, 45, 122, 0.8)) drop-shadow(0 0 50px rgba(155, 77, 255, 0.5)); }
+            0%, 100% { filter: drop-shadow(0 0 18px rgba(255,45,122,0.5)); }
+            50% { filter: drop-shadow(0 0 30px rgba(255,45,122,0.8)) drop-shadow(0 0 50px rgba(155,77,255,0.5)); }
         }
 
         .live-badge {
@@ -91,51 +91,63 @@
 
         .player-wrap {
             position: relative; aspect-ratio: 16 / 9; background: #000; border-radius: 30px; overflow: hidden;
-            border: 2px solid rgba(255, 45, 122, 0.4); box-shadow: var(--glow-pink), 0 0 80px rgba(255, 45, 122, 0.15);
+            border: 2px solid rgba(255,45,122,0.4); box-shadow: var(--glow-pink), 0 0 80px rgba(255,45,122,0.15);
             transition: all 0.4s ease;
         }
-        .player-wrap:hover { border-color: rgba(255, 45, 122, 0.7); box-shadow: 0 0 40px rgba(255, 45, 122, 0.6), 0 0 90px rgba(255, 45, 122, 0.25), 0 0 120px rgba(155, 77, 255, 0.15); }
+        .player-wrap:hover { border-color: rgba(255,45,122,0.7); box-shadow: 0 0 40px rgba(255,45,122,0.6), 0 0 90px rgba(255,45,122,0.25), 0 0 120px rgba(155,77,255,0.15); }
         .player-wrap iframe { width: 100%; height: 100%; border: 0; display: block; }
 
         .side-panel { display: flex; flex-direction: column; gap: 16px; }
 
         .now-playing-card {
-            background: rgba(255, 45, 122, 0.08); border: 1px solid rgba(255, 45, 122, 0.4);
-            border-radius: var(--radius-lg); padding: 24px 20px 18px; text-align: center;
+            background: rgba(255,45,122,0.08); border: 1px solid rgba(255,45,122,0.4);
+            border-radius: var(--radius-lg); padding: 20px 16px 16px; text-align: center;
             backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
             box-shadow: var(--glow-pink); position: relative; overflow: hidden;
             display: flex; flex-direction: column; align-items: center;
         }
         .now-playing-card::after {
             content: ''; position: absolute; top: -40%; left: -40%; width: 180%; height: 180%;
-            background: conic-gradient(from 0deg, transparent, rgba(255, 45, 122, 0.06), transparent, rgba(255, 204, 51, 0.06), transparent);
+            background: conic-gradient(from 0deg, transparent, rgba(255,45,122,0.06), transparent, rgba(255,204,51,0.06), transparent);
             animation: cardShimmer 6s linear infinite; pointer-events: none;
         }
         @keyframes cardShimmer { to { transform: rotate(360deg); } }
 
         .now-label { font-size: 0.7rem; letter-spacing: 4px; color: var(--text-muted); font-weight: 600; text-transform: uppercase; position: relative; z-index: 1; }
-        .now-channel { font-family: 'Bebas Neue', sans-serif; font-size: 2.2rem; color: var(--neon-pink); margin: 10px 0; position: relative; z-index: 1; text-shadow: 0 0 20px rgba(255, 45, 122, 0.5); letter-spacing: 2px; transition: all 0.3s ease; }
-        .now-quality-badge { display: inline-block; background: linear-gradient(135deg, #ffcc33, #ffa800); color: #000; padding: 4px 14px; border-radius: 12px; font-weight: 900; font-size: 0.8rem; letter-spacing: 2px; position: relative; z-index: 1; box-shadow: 0 0 20px rgba(255, 204, 51, 0.5); }
 
-        /* ---- Kanal geçiş butonları (yan panel) ---- */
-        .nav-controls {
-            display: flex; align-items: center; justify-content: center; gap: 16px;
-            margin-top: 16px; z-index: 2; position: relative;
+        /* ---- Kanal adı ve geçiş butonları yan yana ---- */
+        .channel-selector-row {
+            display: flex; align-items: center; justify-content: center; gap: 12px;
+            margin: 10px 0 8px; z-index: 2; position: relative; width: 100%;
         }
+
         .nav-btn {
-            width: 44px; height: 44px; border-radius: 50%;
-            background: rgba(255, 45, 122, 0.15); border: 2px solid rgba(255, 45, 122, 0.5);
-            color: #fff; font-size: 1.4rem; cursor: pointer;
+            width: 42px; height: 42px; border-radius: 50%;
+            background: rgba(255,45,122,0.18); border: 2px solid rgba(255,45,122,0.6);
+            color: #fff; font-size: 1.3rem; cursor: pointer;
             display: flex; align-items: center; justify-content: center;
-            transition: all 0.3s ease; backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);
+            transition: all 0.25s ease; backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);
             outline: none; -webkit-tap-highlight-color: transparent;
-            box-shadow: 0 0 15px rgba(255, 45, 122, 0.3);
+            box-shadow: 0 0 12px rgba(255,45,122,0.4);
+            flex-shrink: 0;
         }
-        .nav-btn:hover { background: rgba(255, 45, 122, 0.35); border-color: var(--neon-pink); box-shadow: 0 0 25px rgba(255, 45, 122, 0.7); transform: scale(1.08); }
+        .nav-btn:hover { background: rgba(255,45,122,0.4); border-color: var(--neon-pink); box-shadow: 0 0 25px rgba(255,45,122,0.8); transform: scale(1.08); }
         .nav-btn:active { transform: scale(0.9); transition: transform 0.1s ease; }
 
+        .now-channel {
+            font-family: 'Bebas Neue', sans-serif; font-size: 2rem; color: var(--neon-pink);
+            text-shadow: 0 0 20px rgba(255,45,122,0.5); letter-spacing: 2px;
+            transition: all 0.3s ease; min-width: 130px; text-align: center; position: relative; z-index: 1;
+        }
+
+        .now-quality-badge {
+            display: inline-block; background: linear-gradient(135deg, #ffcc33, #ffa800); color: #000;
+            padding: 4px 14px; border-radius: 12px; font-weight: 900; font-size: 0.8rem; letter-spacing: 2px;
+            position: relative; z-index: 1; box-shadow: 0 0 20px rgba(255,204,51,0.5);
+        }
+
         .quick-info {
-            background: rgba(12, 10, 24, 0.85); border: 1px solid rgba(155, 77, 255, 0.3);
+            background: rgba(12,10,24,0.85); border: 1px solid rgba(155,77,255,0.3);
             border-radius: var(--radius-lg); padding: 16px 20px;
             backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
             box-shadow: var(--glow-purple); text-align: center; position: relative; z-index: 1;
@@ -143,21 +155,21 @@
         }
         .info-row { display: flex; flex-direction: column; align-items: center; gap: 4px; }
         .info-title { font-size: 0.65rem; letter-spacing: 3px; color: var(--text-muted); text-transform: uppercase; }
-        .info-val { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 1.6rem; color: var(--neon-purple); text-shadow: 0 0 15px rgba(155, 77, 255, 0.5); }
+        .info-val { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 1.6rem; color: var(--neon-purple); text-shadow: 0 0 15px rgba(155,77,255,0.5); }
         .gamepad-indicator { font-size: 0.8rem; color: #b794f4; display: flex; align-items: center; justify-content: center; gap: 6px; margin-top: 4px; }
         .gamepad-dot { width: 8px; height: 8px; background: #9b4dff; border-radius: 50%; box-shadow: 0 0 10px #9b4dff; }
         .gamepad-dot.inactive { background: #555; box-shadow: none; }
 
         .channels-section {
-            background: rgba(12, 10, 24, 0.9); border: 1px solid rgba(255, 45, 122, 0.25);
+            background: rgba(12,10,24,0.9); border: 1px solid rgba(255,45,122,0.25);
             border-radius: 28px; padding: 24px 20px; backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
-            box-shadow: 0 0 40px rgba(0,0,0,0.5), 0 0 60px rgba(255, 45, 122, 0.08); position: relative; z-index: 1;
+            box-shadow: 0 0 40px rgba(0,0,0,0.5), 0 0 60px rgba(255,45,122,0.08); position: relative; z-index: 1;
         }
         .section-title { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 1rem; letter-spacing: 3px; color: var(--text-muted); margin-bottom: 16px; text-transform: uppercase; text-align: center; }
-        .channel-row { display: flex; gap: 14px; overflow-x: auto; padding: 6px 4px 14px; scroll-behavior: smooth; -webkit-overflow-scrolling: touch; scrollbar-width: thin; scrollbar-color: rgba(255, 45, 122, 0.4) transparent; }
+        .channel-row { display: flex; gap: 14px; overflow-x: auto; padding: 6px 4px 14px; scroll-behavior: smooth; -webkit-overflow-scrolling: touch; scrollbar-width: thin; scrollbar-color: rgba(255,45,122,0.4) transparent; }
         .channel-row::-webkit-scrollbar { height: 5px; }
         .channel-row::-webkit-scrollbar-track { background: transparent; border-radius: 10px; }
-        .channel-row::-webkit-scrollbar-thumb { background: rgba(255, 45, 122, 0.4); border-radius: 10px; }
+        .channel-row::-webkit-scrollbar-thumb { background: rgba(255,45,122,0.4); border-radius: 10px; }
 
         .ch-btn {
             flex: 0 0 auto; min-width: 120px; padding: 20px 18px; border-radius: 20px;
@@ -183,10 +195,10 @@
         @media (max-width: 1024px) {
             .main-layout { grid-template-columns: 1fr; }
             .side-panel { flex-direction: row; flex-wrap: wrap; gap: 12px; }
-            .now-playing-card { flex: 1 1 200px; min-width: 180px; padding: 18px 14px; }
+            .now-playing-card { flex: 1 1 200px; min-width: 180px; padding: 16px 12px 12px; }
             .quick-info { flex: 1 1 150px; min-width: 140px; padding: 14px; }
-            .now-channel { font-size: 1.6rem; }
-            .nav-btn { width: 38px; height: 38px; font-size: 1.2rem; }
+            .now-channel { font-size: 1.6rem; min-width: 100px; }
+            .nav-btn { width: 36px; height: 36px; font-size: 1.1rem; }
             .ch-btn { min-width: 100px; padding: 16px 14px; border-radius: 16px; }
             .ch-number { font-size: 1.4rem; }
             .ch-btn.active .ch-number { font-size: 1.5rem; }
@@ -199,8 +211,8 @@
             .live-badge { font-size: 0.75rem; letter-spacing: 1px; }
             .live-dot { width: 8px; height: 8px; }
             .player-wrap { border-radius: 18px; border-width: 1px; }
-            .now-channel { font-size: 1.3rem; }
-            .nav-btn { width: 34px; height: 34px; font-size: 1rem; }
+            .now-channel { font-size: 1.4rem; min-width: 80px; }
+            .nav-btn { width: 32px; height: 32px; font-size: 1rem; }
             .ch-btn { min-width: 85px; padding: 14px 10px; border-radius: 14px; }
             .ch-number { font-size: 1.2rem; }
             .ch-btn.active .ch-number { font-size: 1.3rem; }
@@ -226,14 +238,13 @@
             <div class="side-panel">
                 <div class="now-playing-card">
                     <div class="now-label">📡 ŞU AN İZLENİYOR</div>
-                    <div class="now-channel" id="nowChannel">-</div>
-                    <span class="now-quality-badge" id="nowQuality">HD</span>
-
-                    <!-- Kanal geçiş butonları burada -->
-                    <div class="nav-controls">
+                    <!-- Kanal adı + geçiş butonları yan yana -->
+                    <div class="channel-selector-row">
                         <button class="nav-btn" id="navPrev" title="Önceki Kanal" aria-label="Önceki kanal">◀</button>
+                        <div class="now-channel" id="nowChannel">-</div>
                         <button class="nav-btn" id="navNext" title="Sonraki Kanal" aria-label="Sonraki kanal">▶</button>
                     </div>
+                    <span class="now-quality-badge" id="nowQuality">HD</span>
                 </div>
 
                 <div class="quick-info">
@@ -257,9 +268,9 @@
 
     <script>
         /*BOT_START*/
-        const streamLinks = ["https://l24.im/zIts", "https://diestv3.com/channel?id=zirve", "https://etotv30.com//channel?id=patron", "https://cdn.theoplayer.com/demos/iframe/theoplayer.html?autoplay=false&muted=false&preload=none&src=https://api.hitnova.net/s/zirve/mono.m3u8"];
-        const channelNames = ["KANAL 1", "zirve", "KANAL ³", "kanal3"];
-        const qualityLabels = ["HD", "Hd", "TURBO", "hd"];
+        const streamLinks = ["https://l24.im/zIts", "https://diestv3.com/channel?id=zirve"];
+        const channelNames = ["KANAL 1", "zirve"];
+        const qualityLabels = ["HD", "Hd"];
         /*BOT_END*/
 
         const iframe = document.getElementById("liveIframe");
@@ -366,10 +377,8 @@
             if (activeGamepad) {
                 if (!gamepadConnected) updateGamepadStatus(true);
 
-                // D-pad butonları (standart mapping: buttons[14] sol, buttons[15] sağ)
                 const dpadLeft = activeGamepad.buttons[14]?.pressed || false;
                 const dpadRight = activeGamepad.buttons[15]?.pressed || false;
-                // Sol analog stick X ekseni (axis 0)
                 const axisX = activeGamepad.axes[0] || 0;
 
                 if (!prevButtons.length) {
@@ -379,14 +388,12 @@
                     return;
                 }
 
-                // D-pad edge detection
                 if (dpadLeft && !prevButtons[14]) {
                     prevChannel();
                 } else if (dpadRight && !prevButtons[15]) {
                     nextChannel();
                 }
 
-                // Analog stick ile geçiş (eşik 0.6, bir önceki frame'de eşik altındaysa tetikle)
                 const threshold = 0.6;
                 if (axisX < -threshold && prevAxes[0] >= -threshold) {
                     prevChannel();
@@ -402,7 +409,6 @@
             requestAnimationFrame(pollGamepad);
         }
 
-        // Başlangıçta gamepad kontrolü
         if (navigator.getGamepads) {
             const initialGamepads = navigator.getGamepads();
             let found = false;
