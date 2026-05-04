@@ -5,8 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>İNADİNA TV - Spor Paneli</title>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@400;600;700;900&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <!-- Video.js CSS -->
-    <link href="https://vjs.zencdn.net/7.20.3/video-js.min.css" rel="stylesheet">
     <style>
         :root {
             --neon-pink: #ff2d7a;
@@ -97,17 +95,7 @@
             transition: all 0.4s ease;
         }
         .player-wrap:hover { border-color: rgba(255,45,122,0.7); box-shadow: 0 0 40px rgba(255,45,122,0.6), 0 0 90px rgba(255,45,122,0.25), 0 0 120px rgba(155,77,255,0.15); }
-
-        .player-wrap iframe,
-        .player-wrap video { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; display: block; }
-        .player-wrap iframe.hidden,
-        .player-wrap .video-js.hidden { display: none; }
-
-        /* Video.js için tam kaplama */
-        .video-js { width: 100%; height: 100%; }
-        .video-js .vjs-big-play-button { border-radius: 50%; border: 2px solid #fff; background-color: rgba(255,45,122,0.8); line-height: 60px; height: 65px; width: 65px; left: 50%; top: 50%; margin-left: -32px; margin-top: -32px; }
-        .video-js .vjs-control-bar { background: linear-gradient(0deg, rgba(0,0,0,0.8) 0%, transparent 100%); }
-        .video-js .vjs-play-progress, .video-js .vjs-volume-level { background-color: var(--neon-pink); }
+        .player-wrap iframe { width: 100%; height: 100%; border: 0; display: block; }
 
         .side-panel { display: flex; flex-direction: column; gap: 16px; }
 
@@ -127,6 +115,7 @@
 
         .now-label { font-size: 0.7rem; letter-spacing: 4px; color: var(--text-muted); font-weight: 600; text-transform: uppercase; position: relative; z-index: 1; }
 
+        /* ---- Kanal adı ve geçiş butonları yan yana ---- */
         .channel-selector-row {
             display: flex; align-items: center; justify-content: center; gap: 12px;
             margin: 10px 0 8px; z-index: 2; position: relative; width: 100%;
@@ -233,294 +222,224 @@
     </style>
 </head>
 <body>
-<div class="bg-particles" id="bgParticles"></div>
+    <div class="bg-particles" id="bgParticles"></div>
 
-<div class="wrapper">
-    <header class="site-header">
-        <div class="logo-main">İNADİNA TV</div>
-        <div class="live-badge"><span class="live-dot"></span> CANLI YAYIN</div>
-    </header>
+    <div class="wrapper">
+        <header class="site-header">
+            <div class="logo-main">İNADİNA TV</div>
+            <div class="live-badge"><span class="live-dot"></span> CANLI YAYIN</div>
+        </header>
 
-    <div class="main-layout">
-        <div class="player-wrap" id="playerWrap">
-            <iframe id="liveIframe" src="" allowfullscreen allow="autoplay; encrypted-media" loading="lazy" class="hidden"></iframe>
-            <video id="hlsPlayer" class="video-js vjs-default-skin vjs-big-play-centered hidden" controls preload="auto"></video>
+        <div class="main-layout">
+            <div class="player-wrap">
+                <iframe id="liveIframe" src="" allowfullscreen allow="autoplay; encrypted-media" loading="lazy"></iframe>
+            </div>
+
+            <div class="side-panel">
+                <div class="now-playing-card">
+                    <div class="now-label">📡 ŞU AN İZLENİYOR</div>
+                    <!-- Kanal adı + geçiş butonları yan yana -->
+                    <div class="channel-selector-row">
+                        <button class="nav-btn" id="navPrev" title="Önceki Kanal" aria-label="Önceki kanal">◀</button>
+                        <div class="now-channel" id="nowChannel">-</div>
+                        <button class="nav-btn" id="navNext" title="Sonraki Kanal" aria-label="Sonraki kanal">▶</button>
+                    </div>
+                    <span class="now-quality-badge" id="nowQuality">HD</span>
+                </div>
+
+                <div class="quick-info">
+                    <div class="info-row">
+                        <div class="info-title">📺 TOPLAM KANAL</div>
+                        <div class="info-val" id="totalChannels">2</div>
+                    </div>
+                    <div class="gamepad-indicator" id="gamepadStatus">
+                        <span class="gamepad-dot inactive" id="gamepadDot"></span>
+                        <span id="gamepadText">Kumanda bekleniyor</span>
+                    </div>
+                </div>
+            </div>
         </div>
 
-        <div class="side-panel">
-            <div class="now-playing-card">
-                <div class="now-label">📡 ŞU AN İZLENİYOR</div>
-                <div class="channel-selector-row">
-                    <button class="nav-btn" id="navPrev" title="Önceki Kanal" aria-label="Önceki kanal">◀</button>
-                    <div class="now-channel" id="nowChannel">-</div>
-                    <button class="nav-btn" id="navNext" title="Sonraki Kanal" aria-label="Sonraki kanal">▶</button>
-                </div>
-                <span class="now-quality-badge" id="nowQuality">HD</span>
-            </div>
-
-            <div class="quick-info">
-                <div class="info-row">
-                    <div class="info-title">📺 TOPLAM KANAL</div>
-                    <div class="info-val" id="totalChannels">2</div>
-                </div>
-                <div class="gamepad-indicator" id="gamepadStatus">
-                    <span class="gamepad-dot inactive" id="gamepadDot"></span>
-                    <span id="gamepadText">Kumanda bekleniyor</span>
-                </div>
-            </div>
+        <div class="channels-section">
+            <div class="section-title">🎯 KANAL SEÇİNİZ</div>
+            <div class="channel-row" id="channelRow"></div>
         </div>
     </div>
 
-    <div class="channels-section">
-        <div class="section-title">🎯 KANAL SEÇİNİZ</div>
-        <div class="channel-row" id="channelRow"></div>
-    </div>
-</div>
+    <script>
+        /*BOT_START*/
+        const streamLinks = ["https://l24.im/zIts", "https://diestv3.com/channel?id=zirve"];
+        const channelNames = ["KANAL 1", "zirve"];
+        const qualityLabels = ["HD", "Hd"];
+        /*BOT_END*/
 
-<!-- Video.js ve HTTP Akış (HLS) Desteği -->
-<script src="https://vjs.zencdn.net/7.20.3/video.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@videojs/http-streaming@2.14.0/dist/videojs-http-streaming.min.js"></script>
-<script>
-    /*BOT_START*/
-    const streamLinks = [
-        "https://l24.im/zIts",
-        "https://diestv3.com/channel?id=zirve",
-        "http://sewv654wfcsdwfi87fwvgbngh.siauliairsavlt.pw/iptv/MVTMCC4UTAZVDT/6821/index.m3u8"
-    ];
-    const channelNames = ["KANAL 1", "zirve", "HLS KANAL"];
-    const qualityLabels = ["HD", "Hd", "HD"];
-    /*BOT_END*/
+        const iframe = document.getElementById("liveIframe");
+        const nowChannel = document.getElementById("nowChannel");
+        const nowQuality = document.getElementById("nowQuality");
+        const channelRow = document.getElementById("channelRow");
+        const navPrev = document.getElementById("navPrev");
+        const navNext = document.getElementById("navNext");
+        const totalChannels = document.getElementById("totalChannels");
+        const gamepadDot = document.getElementById("gamepadDot");
+        const gamepadText = document.getElementById("gamepadText");
 
-    const playerWrap = document.getElementById("playerWrap");
-    const iframe = document.getElementById("liveIframe");
-    const videoEl = document.getElementById("hlsPlayer");
-    const nowChannel = document.getElementById("nowChannel");
-    const nowQuality = document.getElementById("nowQuality");
-    const channelRow = document.getElementById("channelRow");
-    const navPrev = document.getElementById("navPrev");
-    const navNext = document.getElementById("navNext");
-    const totalChannels = document.getElementById("totalChannels");
-    const gamepadDot = document.getElementById("gamepadDot");
-    const gamepadText = document.getElementById("gamepadText");
+        let currentIndex = 0;
+        const channelIcons = ["📺", "🥇", "⚽", "🏀", "🎯", "🔥", "💎", "🌟", "🎬", "📡"];
 
-    let currentIndex = 0;
-    let vjsPlayer = null;
-    const channelIcons = ["📺", "🥇", "⚽", "🏀", "🎯", "🔥", "💎", "🌟", "🎬", "📡"];
-
-    // Video.js oynatıcıyı başlat
-    function initVideoJS() {
-        if (vjsPlayer) return;
-        vjsPlayer = videojs(videoEl, {
-            language: 'tr',
-            controls: true,
-            autoplay: true,
-            preload: 'auto',
-            fill: true,
-            liveui: true
-        });
-        // Hata durumunda sadece konsola yazdır (isteğe bağlı)
-        vjsPlayer.on('error', function() {
-            console.warn('Video.js oynatma hatası');
-        });
-    }
-
-    function isHLS(url) {
-        return url && (url.includes('.m3u8') || url.includes('m3u8') || url.includes('/hls/'));
-    }
-
-    function stopPlayers() {
-        // İframe durdur
-        iframe.src = '';
-        iframe.classList.add('hidden');
-        // Video.js durdur
-        if (vjsPlayer) {
-            vjsPlayer.pause();
-            vjsPlayer.src('');
-            vjsPlayer.removeClass('hidden');
-        }
-        videoEl.classList.add('hidden');
-    }
-
-    function playStream(url) {
-        stopPlayers();
-        if (!url) return;
-
-        if (isHLS(url)) {
-            // HLS bağlantısını Video.js ile oynat
-            if (!vjsPlayer) initVideoJS();
-            iframe.classList.add('hidden');
-            videoEl.classList.remove('hidden');
-            vjsPlayer.src({ type: 'application/x-mpegurl', src: url });
-            vjsPlayer.play().catch(e => console.log('Oynatma başlatılamadı:', e));
-        } else {
-            // Normal bağlantıyı iframe ile oynat
-            if (vjsPlayer) {
-                vjsPlayer.pause();
-                vjsPlayer.src('');
-                vjsPlayer.addClass('hidden');
+        function buildButtons() {
+            channelRow.innerHTML = "";
+            totalChannels.textContent = streamLinks.length;
+            streamLinks.forEach((url, i) => {
+                const btn = document.createElement("button");
+                btn.className = "ch-btn" + (i === 0 ? " active" : "");
+                const icon = channelIcons[i] || "📡";
+                btn.innerHTML = `<span class="ch-icon">${icon}</span><div class="ch-number">${String(i + 1).padStart(2, '0')}</div><div class="ch-label">${channelNames[i]}</div>`;
+                btn.onclick = () => switchChannel(i);
+                btn.setAttribute("data-index", i);
+                channelRow.appendChild(btn);
+            });
+            if (streamLinks.length > 0) {
+                currentIndex = 0;
+                switchChannel(0);
             }
-            videoEl.classList.add('hidden');
-            iframe.classList.remove('hidden');
-            iframe.src = url;
         }
-    }
 
-    function buildButtons() {
-        channelRow.innerHTML = "";
-        totalChannels.textContent = streamLinks.length;
-        streamLinks.forEach((url, i) => {
-            const btn = document.createElement("button");
-            btn.className = "ch-btn" + (i === 0 ? " active" : "");
-            const icon = channelIcons[i] || "📡";
-            btn.innerHTML = `<span class="ch-icon">${icon}</span><div class="ch-number">${String(i + 1).padStart(2, '0')}</div><div class="ch-label">${channelNames[i]}</div>`;
-            btn.onclick = () => switchChannel(i);
-            btn.setAttribute("data-index", i);
-            channelRow.appendChild(btn);
+        function switchChannel(index) {
+            if (index < 0 || index >= streamLinks.length) return;
+            currentIndex = index;
+            iframe.src = streamLinks[index];
+            nowChannel.textContent = channelNames[index];
+            nowQuality.textContent = qualityLabels[index];
+
+            document.querySelectorAll(".ch-btn").forEach((b, i) => b.classList.toggle("active", i === index));
+
+            const activeBtn = document.querySelector(".ch-btn.active");
+            if (activeBtn) activeBtn.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "center" });
+
+            updateNavButtons();
+        }
+
+        function nextChannel() { switchChannel((currentIndex + 1) % streamLinks.length); }
+        function prevChannel() { switchChannel((currentIndex - 1 + streamLinks.length) % streamLinks.length); }
+
+        function updateNavButtons() {
+            if (streamLinks.length <= 1) {
+                navPrev.style.opacity = "0.4"; navPrev.style.pointerEvents = "none";
+                navNext.style.opacity = "0.4"; navNext.style.pointerEvents = "none";
+            } else {
+                navPrev.style.opacity = "1"; navPrev.style.pointerEvents = "auto";
+                navNext.style.opacity = "1"; navNext.style.pointerEvents = "auto";
+            }
+        }
+
+        navPrev.addEventListener("click", prevChannel);
+        navNext.addEventListener("click", nextChannel);
+
+        document.addEventListener("keydown", function(e) {
+            const tag = document.activeElement.tagName.toLowerCase();
+            if (tag === "input" || tag === "textarea" || tag === "select") return;
+            if (e.key === "ArrowRight") { e.preventDefault(); nextChannel(); }
+            else if (e.key === "ArrowLeft") { e.preventDefault(); prevChannel(); }
         });
-        if (streamLinks.length > 0) {
-            currentIndex = 0;
-            initVideoJS(); // Video.js'i hemen başlat (sessizce)
-            switchChannel(0);
-        }
-    }
 
-    function switchChannel(index) {
-        if (index < 0 || index >= streamLinks.length) return;
-        currentIndex = index;
-        const url = streamLinks[index];
-        playStream(url);
-        nowChannel.textContent = channelNames[index];
-        nowQuality.textContent = qualityLabels[index];
+        // ========== GAMEPAD (KUMANDA) DESTEĞİ ==========
+        let gamepadConnected = false;
+        let prevAxes = [0,0,0,0];
+        let prevButtons = [];
 
-        document.querySelectorAll(".ch-btn").forEach((b, i) => b.classList.toggle("active", i === index));
-
-        const activeBtn = document.querySelector(".ch-btn.active");
-        if (activeBtn) activeBtn.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "center" });
-
-        updateNavButtons();
-    }
-
-    function nextChannel() { switchChannel((currentIndex + 1) % streamLinks.length); }
-    function prevChannel() { switchChannel((currentIndex - 1 + streamLinks.length) % streamLinks.length); }
-
-    function updateNavButtons() {
-        if (streamLinks.length <= 1) {
-            navPrev.style.opacity = "0.4"; navPrev.style.pointerEvents = "none";
-            navNext.style.opacity = "0.4"; navNext.style.pointerEvents = "none";
-        } else {
-            navPrev.style.opacity = "1"; navPrev.style.pointerEvents = "auto";
-            navNext.style.opacity = "1"; navNext.style.pointerEvents = "auto";
-        }
-    }
-
-    navPrev.addEventListener("click", prevChannel);
-    navNext.addEventListener("click", nextChannel);
-
-    document.addEventListener("keydown", function(e) {
-        const tag = document.activeElement.tagName.toLowerCase();
-        if (tag === "input" || tag === "textarea" || tag === "select") return;
-        if (e.key === "ArrowRight") { e.preventDefault(); nextChannel(); }
-        else if (e.key === "ArrowLeft") { e.preventDefault(); prevChannel(); }
-    });
-
-    // ========== GAMEPAD (KUMANDA) DESTEĞİ ==========
-    let gamepadConnected = false;
-    let prevAxes = [0,0,0,0];
-    let prevButtons = [];
-
-    function updateGamepadStatus(connected) {
-        gamepadConnected = connected;
-        if (connected) {
-            gamepadDot.classList.remove("inactive");
-            gamepadText.textContent = "🎮 Kumanda bağlı";
-        } else {
-            gamepadDot.classList.add("inactive");
-            gamepadText.textContent = "Kumanda bekleniyor";
-        }
-    }
-
-    window.addEventListener("gamepadconnected", (e) => {
-        console.log("Gamepad connected:", e.gamepad.id);
-        updateGamepadStatus(true);
-    });
-    window.addEventListener("gamepaddisconnected", (e) => {
-        console.log("Gamepad disconnected:", e.gamepad.id);
-        updateGamepadStatus(false);
-    });
-
-    function pollGamepad() {
-        const gamepads = navigator.getGamepads ? navigator.getGamepads() : [];
-        let activeGamepad = null;
-        for (let gp of gamepads) {
-            if (gp && gp.connected) { activeGamepad = gp; break; }
+        function updateGamepadStatus(connected) {
+            gamepadConnected = connected;
+            if (connected) {
+                gamepadDot.classList.remove("inactive");
+                gamepadText.textContent = "🎮 Kumanda bağlı";
+            } else {
+                gamepadDot.classList.add("inactive");
+                gamepadText.textContent = "Kumanda bekleniyor";
+            }
         }
 
-        if (activeGamepad) {
-            if (!gamepadConnected) updateGamepadStatus(true);
+        window.addEventListener("gamepadconnected", (e) => {
+            console.log("Gamepad connected:", e.gamepad.id);
+            updateGamepadStatus(true);
+        });
+        window.addEventListener("gamepaddisconnected", (e) => {
+            console.log("Gamepad disconnected:", e.gamepad.id);
+            updateGamepadStatus(false);
+        });
 
-            const dpadLeft = activeGamepad.buttons[14]?.pressed || false;
-            const dpadRight = activeGamepad.buttons[15]?.pressed || false;
-            const axisX = activeGamepad.axes[0] || 0;
+        function pollGamepad() {
+            const gamepads = navigator.getGamepads ? navigator.getGamepads() : [];
+            let activeGamepad = null;
+            for (let gp of gamepads) {
+                if (gp && gp.connected) { activeGamepad = gp; break; }
+            }
 
-            if (!prevButtons.length) {
+            if (activeGamepad) {
+                if (!gamepadConnected) updateGamepadStatus(true);
+
+                const dpadLeft = activeGamepad.buttons[14]?.pressed || false;
+                const dpadRight = activeGamepad.buttons[15]?.pressed || false;
+                const axisX = activeGamepad.axes[0] || 0;
+
+                if (!prevButtons.length) {
+                    prevButtons = activeGamepad.buttons.map(b => b.pressed);
+                    prevAxes = [...activeGamepad.axes];
+                    requestAnimationFrame(pollGamepad);
+                    return;
+                }
+
+                if (dpadLeft && !prevButtons[14]) {
+                    prevChannel();
+                } else if (dpadRight && !prevButtons[15]) {
+                    nextChannel();
+                }
+
+                const threshold = 0.6;
+                if (axisX < -threshold && prevAxes[0] >= -threshold) {
+                    prevChannel();
+                } else if (axisX > threshold && prevAxes[0] <= threshold) {
+                    nextChannel();
+                }
+
                 prevButtons = activeGamepad.buttons.map(b => b.pressed);
                 prevAxes = [...activeGamepad.axes];
-                requestAnimationFrame(pollGamepad);
-                return;
+            } else {
+                if (gamepadConnected) updateGamepadStatus(false);
             }
-
-            if (dpadLeft && !prevButtons[14]) {
-                prevChannel();
-            } else if (dpadRight && !prevButtons[15]) {
-                nextChannel();
-            }
-
-            const threshold = 0.6;
-            if (axisX < -threshold && prevAxes[0] >= -threshold) {
-                prevChannel();
-            } else if (axisX > threshold && prevAxes[0] <= threshold) {
-                nextChannel();
-            }
-
-            prevButtons = activeGamepad.buttons.map(b => b.pressed);
-            prevAxes = [...activeGamepad.axes];
-        } else {
-            if (gamepadConnected) updateGamepadStatus(false);
+            requestAnimationFrame(pollGamepad);
         }
-        requestAnimationFrame(pollGamepad);
-    }
 
-    if (navigator.getGamepads) {
-        const initialGamepads = navigator.getGamepads();
-        let found = false;
-        for (let gp of initialGamepads) { if (gp && gp.connected) { found = true; break; } }
-        if (found) updateGamepadStatus(true);
-        requestAnimationFrame(pollGamepad);
-    }
-
-    // Arka plan parçacıkları
-    function createParticles() {
-        const container = document.getElementById("bgParticles");
-        const colors = ["rgba(255,45,122,0.7)","rgba(155,77,255,0.6)","rgba(0,234,255,0.5)","rgba(255,204,51,0.6)","rgba(255,255,255,0.4)"];
-        for (let i=0; i<30; i++) {
-            const p = document.createElement("div");
-            p.classList.add("particle");
-            const size = Math.random()*4+1.5;
-            p.style.width = size+"px"; p.style.height = size+"px";
-            p.style.left = Math.random()*100+"%";
-            p.style.backgroundColor = colors[Math.floor(Math.random()*colors.length)];
-            p.style.animationDuration = Math.random()*12+8+"s";
-            p.style.animationDelay = Math.random()*10+"s";
-            p.style.boxShadow = `0 0 ${size*3}px ${p.style.backgroundColor}`;
-            container.appendChild(p);
+        if (navigator.getGamepads) {
+            const initialGamepads = navigator.getGamepads();
+            let found = false;
+            for (let gp of initialGamepads) { if (gp && gp.connected) { found = true; break; } }
+            if (found) updateGamepadStatus(true);
+            requestAnimationFrame(pollGamepad);
         }
-    }
 
-    window.onload = function() {
-        buildButtons();
-        createParticles();
-        updateNavButtons();
-    };
-</script>
+        // Arka plan parçacıkları
+        function createParticles() {
+            const container = document.getElementById("bgParticles");
+            const colors = ["rgba(255,45,122,0.7)","rgba(155,77,255,0.6)","rgba(0,234,255,0.5)","rgba(255,204,51,0.6)","rgba(255,255,255,0.4)"];
+            for (let i=0; i<30; i++) {
+                const p = document.createElement("div");
+                p.classList.add("particle");
+                const size = Math.random()*4+1.5;
+                p.style.width = size+"px"; p.style.height = size+"px";
+                p.style.left = Math.random()*100+"%";
+                p.style.backgroundColor = colors[Math.floor(Math.random()*colors.length)];
+                p.style.animationDuration = Math.random()*12+8+"s";
+                p.style.animationDelay = Math.random()*10+"s";
+                p.style.boxShadow = `0 0 ${size*3}px ${p.style.backgroundColor}`;
+                container.appendChild(p);
+            }
+        }
+
+        window.onload = function() {
+            buildButtons();
+            createParticles();
+            updateNavButtons();
+        };
+    </script>
 </body>
 </html>
