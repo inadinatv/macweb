@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>İNADİNA TV - Spor Paneli</title>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@400;600;700;900&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+    <!-- Video.js CSS -->
+    <link href="https://vjs.zencdn.net/7.20.3/video-js.min.css" rel="stylesheet">
     <style>
         :root {
             --neon-pink: #ff2d7a;
@@ -100,7 +101,13 @@
         .player-wrap iframe,
         .player-wrap video { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; display: block; }
         .player-wrap iframe.hidden,
-        .player-wrap video.hidden { display: none; }
+        .player-wrap .video-js.hidden { display: none; }
+
+        /* Video.js için tam kaplama */
+        .video-js { width: 100%; height: 100%; }
+        .video-js .vjs-big-play-button { border-radius: 50%; border: 2px solid #fff; background-color: rgba(255,45,122,0.8); line-height: 60px; height: 65px; width: 65px; left: 50%; top: 50%; margin-left: -32px; margin-top: -32px; }
+        .video-js .vjs-control-bar { background: linear-gradient(0deg, rgba(0,0,0,0.8) 0%, transparent 100%); }
+        .video-js .vjs-play-progress, .video-js .vjs-volume-level { background-color: var(--neon-pink); }
 
         .side-panel { display: flex; flex-direction: column; gap: 16px; }
 
@@ -236,8 +243,8 @@
 
     <div class="main-layout">
         <div class="player-wrap" id="playerWrap">
-            <iframe id="liveIframe" src="" allowfullscreen allow="autoplay; encrypted-media" loading="lazy"></iframe>
-            <video id="hlsPlayer" class="hidden" controls playsinline></video>
+            <iframe id="liveIframe" src="" allowfullscreen allow="autoplay; encrypted-media" loading="lazy" class="hidden"></iframe>
+            <video id="hlsPlayer" class="video-js vjs-default-skin vjs-big-play-centered hidden" controls preload="auto"></video>
         </div>
 
         <div class="side-panel">
@@ -270,6 +277,9 @@
     </div>
 </div>
 
+<!-- Video.js ve HTTP Akış (HLS) Desteği -->
+<script src="https://vjs.zencdn.net/7.20.3/video.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@videojs/http-streaming@2.14.0/dist/videojs-http-streaming.min.js"></script>
 <script>
     /*BOT_START*/
     const streamLinks = [
@@ -283,7 +293,7 @@
 
     const playerWrap = document.getElementById("playerWrap");
     const iframe = document.getElementById("liveIframe");
-    const video = document.getElementById("hlsPlayer");
+    const videoEl = document.getElementById("hlsPlayer");
     const nowChannel = document.getElementById("nowChannel");
     const nowQuality = document.getElementById("nowQuality");
     const channelRow = document.getElementById("channelRow");
@@ -294,26 +304,41 @@
     const gamepadText = document.getElementById("gamepadText");
 
     let currentIndex = 0;
-    let hls = null;
+    let vjsPlayer = null;
     const channelIcons = ["📺", "🥇", "⚽", "🏀", "🎯", "🔥", "💎", "🌟", "🎬", "📡"];
+
+    // Video.js oynatıcıyı başlat
+    function initVideoJS() {
+        if (vjsPlayer) return;
+        vjsPlayer = videojs(videoEl, {
+            language: 'tr',
+            controls: true,
+            autoplay: true,
+            preload: 'auto',
+            fill: true,
+            liveui: true
+        });
+        // Hata durumunda sadece konsola yazdır (isteğe bağlı)
+        vjsPlayer.on('error', function() {
+            console.warn('Video.js oynatma hatası');
+        });
+    }
 
     function isHLS(url) {
         return url && (url.includes('.m3u8') || url.includes('m3u8') || url.includes('/hls/'));
     }
 
     function stopPlayers() {
-        // Durdur iframe
+        // İframe durdur
         iframe.src = '';
-        iframe.classList.remove('hidden');
-        // Durdur HLS
-        if (hls) {
-            hls.destroy();
-            hls = null;
+        iframe.classList.add('hidden');
+        // Video.js durdur
+        if (vjsPlayer) {
+            vjsPlayer.pause();
+            vjsPlayer.src('');
+            vjsPlayer.removeClass('hidden');
         }
-        video.pause();
-        video.removeAttribute('src');
-        video.load();
-        video.classList.add('hidden');
+        videoEl.classList.add('hidden');
     }
 
     function playStream(url) {
@@ -321,54 +346,21 @@
         if (!url) return;
 
         if (isHLS(url)) {
-            // HLS oynat
+            // HLS bağlantısını Video.js ile oynat
+            if (!vjsPlayer) initVideoJS();
             iframe.classList.add('hidden');
-            video.classList.remove('hidden');
-            if (Hls.isSupported()) {
-                hls = new Hls({
-                    enableWorker: true,
-                    lowLatencyMode: false,
-                });
-                hls.loadSource(url);
-                hls.attachMedia(video);
-                hls.on(Hls.Events.MANIFEST_PARSED, function() {
-                    video.play().catch(e => console.log('Oynatma başlatılamadı:', e));
-                });
-                hls.on(Hls.Events.ERROR, function(event, data) {
-                    if (data.fatal) {
-                        switch(data.type) {
-                            case Hls.ErrorTypes.NETWORK_ERROR:
-                                console.error('HLS ağ hatası, yeniden deneniyor...');
-                                hls.startLoad();
-                                break;
-                            case Hls.ErrorTypes.MEDIA_ERROR:
-                                console.error('HLS medya hatası, kurtarılmaya çalışılıyor...');
-                                hls.recoverMediaError();
-                                break;
-                            default:
-                                console.error('HLS fatal hata, oynatıcı durduruluyor');
-                                stopPlayers();
-                                break;
-                        }
-                    }
-                });
-            } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
-                // Safari native HLS desteği
-                video.src = url;
-                video.addEventListener('loadedmetadata', function() {
-                    video.play().catch(e => console.log('Oynatma başlatılamadı:', e));
-                });
-            } else {
-                console.warn('HLS desteklenmiyor, iframe deneniyor');
-                // Yedek olarak iframe dene
-                iframe.classList.remove('hidden');
-                video.classList.add('hidden');
-                iframe.src = url;
-            }
+            videoEl.classList.remove('hidden');
+            vjsPlayer.src({ type: 'application/x-mpegurl', src: url });
+            vjsPlayer.play().catch(e => console.log('Oynatma başlatılamadı:', e));
         } else {
-            // Normal embed linki iframe ile göster
+            // Normal bağlantıyı iframe ile oynat
+            if (vjsPlayer) {
+                vjsPlayer.pause();
+                vjsPlayer.src('');
+                vjsPlayer.addClass('hidden');
+            }
+            videoEl.classList.add('hidden');
             iframe.classList.remove('hidden');
-            video.classList.add('hidden');
             iframe.src = url;
         }
     }
@@ -387,6 +379,7 @@
         });
         if (streamLinks.length > 0) {
             currentIndex = 0;
+            initVideoJS(); // Video.js'i hemen başlat (sessizce)
             switchChannel(0);
         }
     }
