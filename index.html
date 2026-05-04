@@ -4,6 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>İNADİNA TV - Spor Paneli</title>
+    <!-- Hls.js Kütüphanesi (m3u8 desteği için) -->
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@400;600;700;900&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -19,30 +21,13 @@
             --radius-lg: 22px;
             --radius-md: 16px;
             --glow-pink: 0 0 30px rgba(255, 45, 122, 0.5), 0 0 60px rgba(255, 45, 122, 0.2);
-            --glow-purple: 0 0 30px rgba(155, 77, 255, 0.5), 0 0 60px rgba(155, 77, 255, 0.2);
         }
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
-            font-family: 'Barlow', sans-serif;
-            color: var(--text-main);
-            min-height: 100vh;
-            background: var(--bg-dark);
-            overflow-x: hidden;
-            background-image:
-                radial-gradient(ellipse at 20% 20%, rgba(255,45,122,0.06) 0%, transparent 55%),
-                radial-gradient(ellipse at 80% 60%, rgba(155,77,255,0.07) 0%, transparent 55%),
-                radial-gradient(ellipse at 50% 90%, rgba(0,234,255,0.05) 0%, transparent 55%),
-                radial-gradient(ellipse at 10% 80%, rgba(255,204,51,0.04) 0%, transparent 50%);
+            font-family: 'Barlow', sans-serif; color: var(--text-main);
+            min-height: 100vh; background: var(--bg-dark); overflow-x: hidden;
+            background-image: radial-gradient(ellipse at 20% 20%, rgba(255,45,122,0.06) 0%, transparent 55%), radial-gradient(ellipse at 80% 60%, rgba(155,77,255,0.07) 0%, transparent 55%);
             background-attachment: fixed;
-        }
-
-        .bg-particles { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; overflow: hidden; }
-        .particle { position: absolute; border-radius: 50%; animation: floatUp linear infinite; opacity: 0; }
-        @keyframes floatUp {
-            0% { transform: translateY(100vh) scale(0); opacity: 0; }
-            10% { opacity: 0.8; }
-            90% { opacity: 0.2; }
-            100% { transform: translateY(-10vh) scale(1.5); opacity: 0; }
         }
 
         .wrapper { width: min(1380px, calc(100% - 32px)); margin: 0 auto; padding: 22px 0; position: relative; z-index: 1; }
@@ -50,396 +35,167 @@
         .site-header {
             display: flex; align-items: center; justify-content: space-between; padding: 18px 28px; margin-bottom: 22px;
             background: rgba(12,10,24,0.9); border: 1px solid rgba(255,45,122,0.35);
-            border-radius: var(--radius-xl); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
-            box-shadow: var(--glow-pink); position: relative; overflow: hidden;
+            border-radius: var(--radius-xl); backdrop-filter: blur(16px); box-shadow: var(--glow-pink);
         }
-        .site-header::before {
-            content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%;
-            background: conic-gradient(from 0deg, transparent, rgba(255,45,122,0.08), transparent, rgba(155,77,255,0.08), transparent);
-            animation: headerRotate 8s linear infinite; pointer-events: none;
-        }
-        @keyframes headerRotate { to { transform: rotate(360deg); } }
 
         .logo-main {
             font-family: 'Bebas Neue', sans-serif; font-size: 2.8rem; letter-spacing: 5px;
-            background: linear-gradient(135deg, #ff2d7a 0%, #ff6bac 30%, #9b4dff 60%, #c471ff 100%);
-            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
-            filter: drop-shadow(0 0 18px rgba(255,45,122,0.5)); position: relative; z-index: 1;
-            animation: logoPulse 3s ease-in-out infinite;
+            background: linear-gradient(135deg, #ff2d7a 0%, #9b4dff 100%);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
         }
-        @keyframes logoPulse {
-            0%, 100% { filter: drop-shadow(0 0 18px rgba(255,45,122,0.5)); }
-            50% { filter: drop-shadow(0 0 30px rgba(255,45,122,0.8)) drop-shadow(0 0 50px rgba(155,77,255,0.5)); }
-        }
-
-        .live-badge {
-            color: var(--neon-cyan); font-weight: 900; letter-spacing: 3px; font-size: 1rem;
-            position: relative; z-index: 1; display: flex; align-items: center; gap: 8px;
-            animation: liveBlink 2s ease-in-out infinite;
-        }
-        .live-dot {
-            width: 12px; height: 12px; background: #ff2d2d; border-radius: 50%; display: inline-block;
-            box-shadow: 0 0 15px #ff2d2d, 0 0 30px #ff2d2d; animation: dotPulse 1.2s ease-in-out infinite;
-        }
-        @keyframes dotPulse {
-            0%, 100% { box-shadow: 0 0 15px #ff2d2d, 0 0 30px #ff2d2d; }
-            50% { box-shadow: 0 0 25px #ff2d2d, 0 0 50px #ff2d2d, 0 0 70px #ff2d2d; }
-        }
-        @keyframes liveBlink { 0%, 100% { opacity: 1; } 50% { opacity: 0.75; } }
 
         .main-layout { display: grid; grid-template-columns: 1fr 340px; gap: 20px; margin-bottom: 20px; }
 
         .player-wrap {
             position: relative; aspect-ratio: 16 / 9; background: #000; border-radius: 30px; overflow: hidden;
-            border: 2px solid rgba(255,45,122,0.4); box-shadow: var(--glow-pink), 0 0 80px rgba(255,45,122,0.15);
-            transition: all 0.4s ease;
+            border: 2px solid rgba(255,45,122,0.4); box-shadow: var(--glow-pink);
         }
-        .player-wrap:hover { border-color: rgba(255,45,122,0.7); box-shadow: 0 0 40px rgba(255,45,122,0.6), 0 0 90px rgba(255,45,122,0.25), 0 0 120px rgba(155,77,255,0.15); }
-        .player-wrap iframe { width: 100%; height: 100%; border: 0; display: block; }
+        /* Hem iframe hem video için ortak stil */
+        #liveIframe, #liveVideo {
+            width: 100%; height: 100%; border: 0; display: none; background: #000;
+        }
 
         .side-panel { display: flex; flex-direction: column; gap: 16px; }
 
         .now-playing-card {
             background: rgba(255,45,122,0.08); border: 1px solid rgba(255,45,122,0.4);
-            border-radius: var(--radius-lg); padding: 20px 16px 16px; text-align: center;
-            backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
-            box-shadow: var(--glow-pink); position: relative; overflow: hidden;
-            display: flex; flex-direction: column; align-items: center;
-        }
-        .now-playing-card::after {
-            content: ''; position: absolute; top: -40%; left: -40%; width: 180%; height: 180%;
-            background: conic-gradient(from 0deg, transparent, rgba(255,45,122,0.06), transparent, rgba(255,204,51,0.06), transparent);
-            animation: cardShimmer 6s linear infinite; pointer-events: none;
-        }
-        @keyframes cardShimmer { to { transform: rotate(360deg); } }
-
-        .now-label { font-size: 0.7rem; letter-spacing: 4px; color: var(--text-muted); font-weight: 600; text-transform: uppercase; position: relative; z-index: 1; }
-
-        /* ---- Kanal adı ve geçiş butonları yan yana ---- */
-        .channel-selector-row {
-            display: flex; align-items: center; justify-content: center; gap: 12px;
-            margin: 10px 0 8px; z-index: 2; position: relative; width: 100%;
+            border-radius: var(--radius-lg); padding: 20px 16px; text-align: center; backdrop-filter: blur(10px);
         }
 
+        .channel-selector-row { display: flex; align-items: center; justify-content: center; gap: 12px; margin: 10px 0; }
         .nav-btn {
-            width: 42px; height: 42px; border-radius: 50%;
-            background: rgba(255,45,122,0.18); border: 2px solid rgba(255,45,122,0.6);
-            color: #fff; font-size: 1.3rem; cursor: pointer;
-            display: flex; align-items: center; justify-content: center;
-            transition: all 0.25s ease; backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);
-            outline: none; -webkit-tap-highlight-color: transparent;
-            box-shadow: 0 0 12px rgba(255,45,122,0.4);
-            flex-shrink: 0;
-        }
-        .nav-btn:hover { background: rgba(255,45,122,0.4); border-color: var(--neon-pink); box-shadow: 0 0 25px rgba(255,45,122,0.8); transform: scale(1.08); }
-        .nav-btn:active { transform: scale(0.9); transition: transform 0.1s ease; }
-
-        .now-channel {
-            font-family: 'Bebas Neue', sans-serif; font-size: 2rem; color: var(--neon-pink);
-            text-shadow: 0 0 20px rgba(255,45,122,0.5); letter-spacing: 2px;
-            transition: all 0.3s ease; min-width: 130px; text-align: center; position: relative; z-index: 1;
+            width: 42px; height: 42px; border-radius: 50%; background: rgba(255,45,122,0.18);
+            border: 2px solid rgba(255,45,122,0.6); color: #fff; cursor: pointer;
         }
 
-        .now-quality-badge {
-            display: inline-block; background: linear-gradient(135deg, #ffcc33, #ffa800); color: #000;
-            padding: 4px 14px; border-radius: 12px; font-weight: 900; font-size: 0.8rem; letter-spacing: 2px;
-            position: relative; z-index: 1; box-shadow: 0 0 20px rgba(255,204,51,0.5);
-        }
-
-        .quick-info {
-            background: rgba(12,10,24,0.85); border: 1px solid rgba(155,77,255,0.3);
-            border-radius: var(--radius-lg); padding: 16px 20px;
-            backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
-            box-shadow: var(--glow-purple); text-align: center; position: relative; z-index: 1;
-            display: flex; flex-direction: column; gap: 10px;
-        }
-        .info-row { display: flex; flex-direction: column; align-items: center; gap: 4px; }
-        .info-title { font-size: 0.65rem; letter-spacing: 3px; color: var(--text-muted); text-transform: uppercase; }
-        .info-val { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 1.6rem; color: var(--neon-purple); text-shadow: 0 0 15px rgba(155,77,255,0.5); }
-        .gamepad-indicator { font-size: 0.8rem; color: #b794f4; display: flex; align-items: center; justify-content: center; gap: 6px; margin-top: 4px; }
-        .gamepad-dot { width: 8px; height: 8px; background: #9b4dff; border-radius: 50%; box-shadow: 0 0 10px #9b4dff; }
-        .gamepad-dot.inactive { background: #555; box-shadow: none; }
+        .now-channel { font-family: 'Bebas Neue', sans-serif; font-size: 2rem; color: var(--neon-pink); min-width: 130px; }
 
         .channels-section {
             background: rgba(12,10,24,0.9); border: 1px solid rgba(255,45,122,0.25);
-            border-radius: 28px; padding: 24px 20px; backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
-            box-shadow: 0 0 40px rgba(0,0,0,0.5), 0 0 60px rgba(255,45,122,0.08); position: relative; z-index: 1;
+            border-radius: 28px; padding: 24px;
         }
-        .section-title { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 1rem; letter-spacing: 3px; color: var(--text-muted); margin-bottom: 16px; text-transform: uppercase; text-align: center; }
-        .channel-row { display: flex; gap: 14px; overflow-x: auto; padding: 6px 4px 14px; scroll-behavior: smooth; -webkit-overflow-scrolling: touch; scrollbar-width: thin; scrollbar-color: rgba(255,45,122,0.4) transparent; }
-        .channel-row::-webkit-scrollbar { height: 5px; }
-        .channel-row::-webkit-scrollbar-track { background: transparent; border-radius: 10px; }
-        .channel-row::-webkit-scrollbar-thumb { background: rgba(255,45,122,0.4); border-radius: 10px; }
-
+        .channel-row { display: flex; gap: 14px; overflow-x: auto; padding-bottom: 10px; }
         .ch-btn {
-            flex: 0 0 auto; min-width: 120px; padding: 20px 18px; border-radius: 20px;
-            border: 2px solid rgba(255,255,255,0.1);
-            background: linear-gradient(180deg, rgba(30,20,50,0.9) 0%, rgba(15,10,30,0.95) 100%);
-            color: white; cursor: pointer; transition: all 0.35s cubic-bezier(0.4,0,0.2,1);
-            text-align: center; position: relative; overflow: hidden;
-            -webkit-tap-highlight-color: transparent; user-select: none; outline: none;
+            flex: 0 0 auto; min-width: 120px; padding: 15px; border-radius: 20px;
+            border: 2px solid rgba(255,255,255,0.1); background: #1a152e; color: white; cursor: pointer;
         }
-        .ch-btn::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(180deg, rgba(255,45,122,0.08) 0%, transparent 60%); opacity: 0; transition: opacity 0.35s ease; pointer-events: none; }
-        .ch-btn:hover { border-color: rgba(255,45,122,0.6); transform: translateY(-4px); box-shadow: 0 12px 30px rgba(0,0,0,0.5), 0 0 30px rgba(255,45,122,0.3); background: linear-gradient(180deg, rgba(40,25,60,0.95) 0%, rgba(20,12,38,0.98) 100%); }
-        .ch-btn:hover::before { opacity: 1; }
-        .ch-btn:active { transform: scale(0.95); transition: transform 0.1s ease; border-color: var(--neon-pink); }
-        .ch-btn.active { border-color: var(--neon-pink)!important; background: linear-gradient(180deg, rgba(255,45,122,0.25) 0%, rgba(155,77,255,0.2) 100%)!important; box-shadow: 0 0 35px rgba(255,45,122,0.5), 0 0 65px rgba(255,45,122,0.2), 0 8px 25px rgba(0,0,0,0.5)!important; transform: translateY(-2px); animation: activeGlow 2s ease-in-out infinite; }
-        @keyframes activeGlow { 0%,100% { box-shadow: 0 0 35px rgba(255,45,122,0.5), 0 0 65px rgba(255,45,122,0.2), 0 8px 25px rgba(0,0,0,0.5); } 50% { box-shadow: 0 0 50px rgba(255,45,122,0.7), 0 0 85px rgba(255,45,122,0.35), 0 8px 25px rgba(0,0,0,0.5); } }
-        .ch-number { font-family: 'Bebas Neue', sans-serif; font-size: 1.8rem; letter-spacing: 2px; color: var(--neon-gold); text-shadow: 0 0 12px rgba(255,204,51,0.4); transition: all 0.3s ease; line-height: 1; }
-        .ch-btn.active .ch-number { color: #fff; text-shadow: 0 0 20px rgba(255,255,255,0.7), 0 0 40px rgba(255,204,51,0.6); font-size: 2rem; }
-        .ch-label { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; margin-top: 6px; letter-spacing: 2px; color: #ccc; transition: all 0.3s ease; line-height: 1.2; }
-        .ch-btn.active .ch-label { color: #fff; letter-spacing: 3px; }
-        .ch-icon { font-size: 1.4rem; margin-bottom: 4px; display: block; transition: all 0.3s ease; opacity: 0.6; }
-        .ch-btn.active .ch-icon { opacity: 1; filter: drop-shadow(0 0 8px rgba(255,255,255,0.6)); }
+        .ch-btn.active { border-color: var(--neon-pink); background: rgba(255,45,122,0.2); }
+        .ch-number { font-family: 'Bebas Neue', sans-serif; font-size: 1.5rem; color: var(--neon-gold); }
 
-        @media (max-width: 1024px) {
-            .main-layout { grid-template-columns: 1fr; }
-            .side-panel { flex-direction: row; flex-wrap: wrap; gap: 12px; }
-            .now-playing-card { flex: 1 1 200px; min-width: 180px; padding: 16px 12px 12px; }
-            .quick-info { flex: 1 1 150px; min-width: 140px; padding: 14px; }
-            .now-channel { font-size: 1.6rem; min-width: 100px; }
-            .nav-btn { width: 36px; height: 36px; font-size: 1.1rem; }
-            .ch-btn { min-width: 100px; padding: 16px 14px; border-radius: 16px; }
-            .ch-number { font-size: 1.4rem; }
-            .ch-btn.active .ch-number { font-size: 1.5rem; }
-            .ch-label { font-size: 0.7rem; }
-        }
-        @media (max-width: 600px) {
-            .wrapper { padding: 12px 0; width: calc(100% - 16px); }
-            .site-header { padding: 12px 16px; border-radius: 20px; margin-bottom: 14px; }
-            .logo-main { font-size: 1.8rem; letter-spacing: 2px; }
-            .live-badge { font-size: 0.75rem; letter-spacing: 1px; }
-            .live-dot { width: 8px; height: 8px; }
-            .player-wrap { border-radius: 18px; border-width: 1px; }
-            .now-channel { font-size: 1.4rem; min-width: 80px; }
-            .nav-btn { width: 32px; height: 32px; font-size: 1rem; }
-            .ch-btn { min-width: 85px; padding: 14px 10px; border-radius: 14px; }
-            .ch-number { font-size: 1.2rem; }
-            .ch-btn.active .ch-number { font-size: 1.3rem; }
-            .ch-label { font-size: 0.65rem; letter-spacing: 1px; }
-            .ch-icon { font-size: 1.1rem; }
-        }
+        @media (max-width: 1024px) { .main-layout { grid-template-columns: 1fr; } }
     </style>
 </head>
 <body>
-    <div class="bg-particles" id="bgParticles"></div>
-
     <div class="wrapper">
         <header class="site-header">
             <div class="logo-main">İNADİNA TV</div>
-            <div class="live-badge"><span class="live-dot"></span> CANLI YAYIN</div>
+            <div style="color: var(--neon-cyan); font-weight: bold;">CANLI YAYIN</div>
         </header>
 
         <div class="main-layout">
-            <div class="player-wrap">
-                <iframe id="liveIframe" src="" allowfullscreen allow="autoplay; encrypted-media" loading="lazy"></iframe>
+            <div class="player-wrap" id="playerContainer">
+                <!-- m3u8 linkleri için video etiketi -->
+                <video id="liveVideo" controls playsinline autoplay></video>
+                <!-- Web sayfaları için iframe -->
+                <iframe id="liveIframe" allowfullscreen allow="autoplay; encrypted-media"></iframe>
             </div>
 
             <div class="side-panel">
                 <div class="now-playing-card">
-                    <div class="now-label">📡 ŞU AN İZLENİYOR</div>
-                    <!-- Kanal adı + geçiş butonları yan yana -->
+                    <div style="font-size: 0.7rem; color: var(--text-muted);">ŞU AN İZLENİYOR</div>
                     <div class="channel-selector-row">
-                        <button class="nav-btn" id="navPrev" title="Önceki Kanal" aria-label="Önceki kanal">◀</button>
+                        <button class="nav-btn" onclick="prevChannel()">◀</button>
                         <div class="now-channel" id="nowChannel">-</div>
-                        <button class="nav-btn" id="navNext" title="Sonraki Kanal" aria-label="Sonraki kanal">▶</button>
+                        <button class="nav-btn" onclick="nextChannel()">▶</button>
                     </div>
-                    <span class="now-quality-badge" id="nowQuality">HD</span>
-                </div>
-
-                <div class="quick-info">
-                    <div class="info-row">
-                        <div class="info-title">📺 TOPLAM KANAL</div>
-                        <div class="info-val" id="totalChannels">2</div>
-                    </div>
-                    <div class="gamepad-indicator" id="gamepadStatus">
-                        <span class="gamepad-dot inactive" id="gamepadDot"></span>
-                        <span id="gamepadText">Kumanda bekleniyor</span>
-                    </div>
+                    <span id="nowQuality" style="background: var(--neon-gold); color: #000; padding: 2px 8px; border-radius: 5px; font-weight: bold;">HD</span>
                 </div>
             </div>
         </div>
 
         <div class="channels-section">
-            <div class="section-title">🎯 KANAL SEÇİNİZ</div>
+            <div style="margin-bottom: 15px; color: var(--text-muted);">KANAL LİSTESİ</div>
             <div class="channel-row" id="channelRow"></div>
         </div>
     </div>
 
     <script>
-        /*BOT_START*/
-        const streamLinks = ["https://l24.im/2Kd8", "https://l24.im/zIts", "https://diestv3.com/channel?id=zirve", "https://8602741.xyz/event.html?id=androstreamlivebs1", "https://diestv3.com/channel?id=zirve", "https://cdn.theoplayer.com/demos/iframe/theoplayer.html?autoplay=false&muted=false&preload=none&src=https://raw.githubusercontent.com/icebu12/turb", "https://etotv30.com//channel?id=patron", "http://sewv654wfcsdwfi87fwvgbngh.siauliairsavlt.pw/iptv/MVTMCC4UTAZVDT/6817/index.m3u8", "http://sewv654wfcsdwfi87fwvgbngh.siauliairsavlt.pw/iptv/MVTMCC4UTAZVDT/6818/index.m3u8", "http://sewv654wfcsdwfi87fwvgbngh.siauliairsavlt.pw/iptv/MVTMCC4UTAZVDT/6821/index.m3u8", "http://sewv654wfcsdwfi87fwvgbngh.siauliairsavlt.pw/iptv/MVTMCC4UTAZVDT/6821/index.m3u8"];
-        const channelNames = ["bein1", "KANAL 1", "zirve", "andro 1", "Ydk 1", "Ydk 2", "Ydk 3", "Beinsports 1", "Beinsports 2", "Beinsports 3", "Beinsports 4"];
-        const qualityLabels = ["Hd", "HD", "Hd", "HD", "Hd", "Ultra", "Hiper", "ULTRA", "hd", "hd", "hd"];
-        /*BOT_END*/
-
-        const iframe = document.getElementById("liveIframe");
-        const nowChannel = document.getElementById("nowChannel");
-        const nowQuality = document.getElementById("nowQuality");
-        const channelRow = document.getElementById("channelRow");
-        const navPrev = document.getElementById("navPrev");
-        const navNext = document.getElementById("navNext");
-        const totalChannels = document.getElementById("totalChannels");
-        const gamepadDot = document.getElementById("gamepadDot");
-        const gamepadText = document.getElementById("gamepadText");
+        /* Kanal Verileri */
+        const streamLinks = [
+            "http://sewv654wfcsdwfi87fwvgbngh.siauliairsavlt.pw/iptv/MVTMCC4UTAZVDT/6817/index.m3u8",
+            "http://sewv654wfcsdwfi87fwvgbngh.siauliairsavlt.pw/iptv/MVTMCC4UTAZVDT/6818/index.m3u8",
+            "http://sewv654wfcsdwfi87fwvgbngh.siauliairsavlt.pw/iptv/MVTMCC4UTAZVDT/6821/index.m3u8",
+            "https://l24.im/2Kd8", 
+            "https://diestv3.com/channel?id=zirve"
+        ];
+        const channelNames = ["Beinsports 1", "Beinsports 2", "Beinsports 3", "Kanal 1", "Zirve TV"];
+        const qualityLabels = ["ULTRA", "ULTRA", "ULTRA", "HD", "HD"];
 
         let currentIndex = 0;
-        const channelIcons = ["📺", "🥇", "⚽", "🏀", "🎯", "🔥", "💎", "🌟", "🎬", "📡"];
+        let hls = null;
+
+        const video = document.getElementById("liveVideo");
+        const iframe = document.getElementById("liveIframe");
 
         function buildButtons() {
-            channelRow.innerHTML = "";
-            totalChannels.textContent = streamLinks.length;
+            const container = document.getElementById("channelRow");
             streamLinks.forEach((url, i) => {
                 const btn = document.createElement("button");
                 btn.className = "ch-btn" + (i === 0 ? " active" : "");
-                const icon = channelIcons[i] || "📡";
-                btn.innerHTML = `<span class="ch-icon">${icon}</span><div class="ch-number">${String(i + 1).padStart(2, '0')}</div><div class="ch-label">${channelNames[i]}</div>`;
+                btn.innerHTML = `<div class="ch-number">${i + 1}</div><div style="font-size:0.7rem">${channelNames[i]}</div>`;
                 btn.onclick = () => switchChannel(i);
-                btn.setAttribute("data-index", i);
-                channelRow.appendChild(btn);
+                container.appendChild(btn);
             });
-            if (streamLinks.length > 0) {
-                currentIndex = 0;
-                switchChannel(0);
-            }
+            switchChannel(0);
         }
 
         function switchChannel(index) {
-            if (index < 0 || index >= streamLinks.length) return;
             currentIndex = index;
-            iframe.src = streamLinks[index];
-            nowChannel.textContent = channelNames[index];
-            nowQuality.textContent = qualityLabels[index];
-
+            const url = streamLinks[index];
+            
+            // UI Güncelleme
+            document.getElementById("nowChannel").textContent = channelNames[index];
+            document.getElementById("nowQuality").textContent = qualityLabels[index];
             document.querySelectorAll(".ch-btn").forEach((b, i) => b.classList.toggle("active", i === index));
 
-            const activeBtn = document.querySelector(".ch-btn.active");
-            if (activeBtn) activeBtn.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "center" });
+            // Önceki HLS akışını durdur
+            if (hls) {
+                hls.destroy();
+                hls = null;
+            }
 
-            updateNavButtons();
+            // Link Türünü Kontrol Et (.m3u8 mi yoksa normal sayfa mı?)
+            if (url.includes(".m3u8") || url.includes(".ts")) {
+                iframe.style.display = "none";
+                iframe.src = "";
+                video.style.display = "block";
+
+                if (Hls.isSupported()) {
+                    hls = new Hls();
+                    hls.loadSource(url);
+                    hls.attachMedia(video);
+                    hls.on(Hls.Events.MANIFEST_PARSED, function() {
+                        video.play();
+                    });
+                } 
+                else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+                    // Safari desteği için
+                    video.src = url;
+                    video.play();
+                }
+            } else {
+                // Normal Web Sayfası ise (iframe)
+                video.pause();
+                video.style.display = "none";
+                iframe.style.display = "block";
+                iframe.src = url;
+            }
         }
 
         function nextChannel() { switchChannel((currentIndex + 1) % streamLinks.length); }
         function prevChannel() { switchChannel((currentIndex - 1 + streamLinks.length) % streamLinks.length); }
 
-        function updateNavButtons() {
-            if (streamLinks.length <= 1) {
-                navPrev.style.opacity = "0.4"; navPrev.style.pointerEvents = "none";
-                navNext.style.opacity = "0.4"; navNext.style.pointerEvents = "none";
-            } else {
-                navPrev.style.opacity = "1"; navPrev.style.pointerEvents = "auto";
-                navNext.style.opacity = "1"; navNext.style.pointerEvents = "auto";
-            }
-        }
-
-        navPrev.addEventListener("click", prevChannel);
-        navNext.addEventListener("click", nextChannel);
-
-        document.addEventListener("keydown", function(e) {
-            const tag = document.activeElement.tagName.toLowerCase();
-            if (tag === "input" || tag === "textarea" || tag === "select") return;
-            if (e.key === "ArrowRight") { e.preventDefault(); nextChannel(); }
-            else if (e.key === "ArrowLeft") { e.preventDefault(); prevChannel(); }
-        });
-
-        // ========== GAMEPAD (KUMANDA) DESTEĞİ ==========
-        let gamepadConnected = false;
-        let prevAxes = [0,0,0,0];
-        let prevButtons = [];
-
-        function updateGamepadStatus(connected) {
-            gamepadConnected = connected;
-            if (connected) {
-                gamepadDot.classList.remove("inactive");
-                gamepadText.textContent = "🎮 Kumanda bağlı";
-            } else {
-                gamepadDot.classList.add("inactive");
-                gamepadText.textContent = "Kumanda bekleniyor";
-            }
-        }
-
-        window.addEventListener("gamepadconnected", (e) => {
-            console.log("Gamepad connected:", e.gamepad.id);
-            updateGamepadStatus(true);
-        });
-        window.addEventListener("gamepaddisconnected", (e) => {
-            console.log("Gamepad disconnected:", e.gamepad.id);
-            updateGamepadStatus(false);
-        });
-
-        function pollGamepad() {
-            const gamepads = navigator.getGamepads ? navigator.getGamepads() : [];
-            let activeGamepad = null;
-            for (let gp of gamepads) {
-                if (gp && gp.connected) { activeGamepad = gp; break; }
-            }
-
-            if (activeGamepad) {
-                if (!gamepadConnected) updateGamepadStatus(true);
-
-                const dpadLeft = activeGamepad.buttons[14]?.pressed || false;
-                const dpadRight = activeGamepad.buttons[15]?.pressed || false;
-                const axisX = activeGamepad.axes[0] || 0;
-
-                if (!prevButtons.length) {
-                    prevButtons = activeGamepad.buttons.map(b => b.pressed);
-                    prevAxes = [...activeGamepad.axes];
-                    requestAnimationFrame(pollGamepad);
-                    return;
-                }
-
-                if (dpadLeft && !prevButtons[14]) {
-                    prevChannel();
-                } else if (dpadRight && !prevButtons[15]) {
-                    nextChannel();
-                }
-
-                const threshold = 0.6;
-                if (axisX < -threshold && prevAxes[0] >= -threshold) {
-                    prevChannel();
-                } else if (axisX > threshold && prevAxes[0] <= threshold) {
-                    nextChannel();
-                }
-
-                prevButtons = activeGamepad.buttons.map(b => b.pressed);
-                prevAxes = [...activeGamepad.axes];
-            } else {
-                if (gamepadConnected) updateGamepadStatus(false);
-            }
-            requestAnimationFrame(pollGamepad);
-        }
-
-        if (navigator.getGamepads) {
-            const initialGamepads = navigator.getGamepads();
-            let found = false;
-            for (let gp of initialGamepads) { if (gp && gp.connected) { found = true; break; } }
-            if (found) updateGamepadStatus(true);
-            requestAnimationFrame(pollGamepad);
-        }
-
-        // Arka plan parçacıkları
-        function createParticles() {
-            const container = document.getElementById("bgParticles");
-            const colors = ["rgba(255,45,122,0.7)","rgba(155,77,255,0.6)","rgba(0,234,255,0.5)","rgba(255,204,51,0.6)","rgba(255,255,255,0.4)"];
-            for (let i=0; i<30; i++) {
-                const p = document.createElement("div");
-                p.classList.add("particle");
-                const size = Math.random()*4+1.5;
-                p.style.width = size+"px"; p.style.height = size+"px";
-                p.style.left = Math.random()*100+"%";
-                p.style.backgroundColor = colors[Math.floor(Math.random()*colors.length)];
-                p.style.animationDuration = Math.random()*12+8+"s";
-                p.style.animationDelay = Math.random()*10+"s";
-                p.style.boxShadow = `0 0 ${size*3}px ${p.style.backgroundColor}`;
-                container.appendChild(p);
-            }
-        }
-
-        window.onload = function() {
-            buildButtons();
-            createParticles();
-            updateNavButtons();
-        };
+        window.onload = buildButtons;
     </script>
 </body>
 </html>
