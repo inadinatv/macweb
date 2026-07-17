@@ -310,8 +310,10 @@
             "TABI SPOR 6"
         ];
 
-        // Tüm kanallar için HD etiketi varsayılan olarak eklendi
-        const qualityLabels = Array(streamLinks.length).fill("HD");
+        const qualityLabels = [];
+        for (let i = 0; i < streamLinks.length; i++) {
+            qualityLabels.push("HD");
+        }
         /*BOT_END*/
 
         const iframe = document.getElementById("liveIframe");
@@ -326,25 +328,200 @@
 
         let currentIndex = 0;
         
-        // Ossebet TV'deki ikona atama mantığı da güncellenerek buraya eklendi
-        const channelIcons = channelNames.map(name => {
-            if (name.includes('BEIN')) return '⚽';
-            if (name.includes('S SPOR')) return '🏀';
-            if (name.includes('EURO')) return '🚴';
-            if (name.includes('TRT')) return '🇹🇷';
-            if (name.includes('TABI')) return '📡';
-            if (name.includes('TİVİBU')) return '📡';
-            if (name.includes('SMART') || name.includes('AKILLI')) return '🧠';
-            if (name.includes('BİR SPOR')) return '⚽';
-            if (name.includes('ATV')) return '📺';
-            if (name.includes('TV 8')) return '📺';
+        const channelIcons = channelNames.map(function(name) {
+            if (name.indexOf('BEIN') !== -1) return '⚽';
+            if (name.indexOf('S SPOR') !== -1) return '🏀';
+            if (name.indexOf('EURO') !== -1) return '🚴';
+            if (name.indexOf('TRT') !== -1) return '🇹🇷';
+            if (name.indexOf('TABI') !== -1) return '📡';
+            if (name.indexOf('TİVİBU') !== -1) return '📡';
+            if (name.indexOf('SMART') !== -1 || name.indexOf('AKILLI') !== -1) return '🧠';
+            if (name.indexOf('BİR SPOR') !== -1) return '⚽';
+            if (name.indexOf('ATV') !== -1) return '📺';
+            if (name.indexOf('TV 8') !== -1) return '📺';
             return '📺';
         });
 
         function buildButtons() {
             channelRow.innerHTML = "";
             totalChannels.textContent = streamLinks.length;
-            streamLinks.forEach((url, i) => {
+            
+            streamLinks.forEach(function(url, i) {
                 const btn = document.createElement("button");
                 btn.className = "ch-btn" + (i === 0 ? " active" : "");
-                cons
+                const icon = channelIcons[i] || "📡";
+                
+                let num = (i + 1).toString();
+                if (num.length < 2) num = "0" + num;
+                
+                btn.innerHTML = '<span class="ch-icon">' + icon + '</span>' +
+                                '<div class="ch-number">' + num + '</div>' +
+                                '<div class="ch-label">' + channelNames[i] + '</div>';
+                
+                btn.onclick = function() { switchChannel(i); };
+                btn.setAttribute("data-index", i);
+                channelRow.appendChild(btn);
+            });
+            
+            if (streamLinks.length > 0) {
+                currentIndex = 0;
+                switchChannel(0);
+            }
+        }
+
+        function switchChannel(index) {
+            if (index < 0 || index >= streamLinks.length) return;
+            currentIndex = index;
+            iframe.src = streamLinks[index];
+            nowChannel.textContent = channelNames[index];
+            nowQuality.textContent = qualityLabels[index];
+
+            const buttons = document.querySelectorAll(".ch-btn");
+            for (let i = 0; i < buttons.length; i++) {
+                if (i === index) {
+                    buttons[i].classList.add("active");
+                } else {
+                    buttons[i].classList.remove("active");
+                }
+            }
+
+            const activeBtn = document.querySelector(".ch-btn.active");
+            if (activeBtn && activeBtn.scrollIntoView) {
+                activeBtn.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "center" });
+            }
+
+            updateNavButtons();
+        }
+
+        function nextChannel() { switchChannel((currentIndex + 1) % streamLinks.length); }
+        function prevChannel() { switchChannel((currentIndex - 1 + streamLinks.length) % streamLinks.length); }
+
+        function updateNavButtons() {
+            if (streamLinks.length <= 1) {
+                navPrev.style.opacity = "0.4"; navPrev.style.pointerEvents = "none";
+                navNext.style.opacity = "0.4"; navNext.style.pointerEvents = "none";
+            } else {
+                navPrev.style.opacity = "1"; navPrev.style.pointerEvents = "auto";
+                navNext.style.opacity = "1"; navNext.style.pointerEvents = "auto";
+            }
+        }
+
+        navPrev.addEventListener("click", prevChannel);
+        navNext.addEventListener("click", nextChannel);
+
+        document.addEventListener("keydown", function(e) {
+            const tag = document.activeElement ? document.activeElement.tagName.toLowerCase() : "";
+            if (tag === "input" || tag === "textarea" || tag === "select") return;
+            if (e.key === "ArrowRight") { e.preventDefault(); nextChannel(); }
+            else if (e.key === "ArrowLeft") { e.preventDefault(); prevChannel(); }
+        });
+
+        // ========== GAMEPAD (KUMANDA) DESTEĞİ ==========
+        let gamepadConnected = false;
+        let prevAxes = [0,0,0,0];
+        let prevButtons = [];
+
+        function updateGamepadStatus(connected) {
+            gamepadConnected = connected;
+            if (connected) {
+                gamepadDot.classList.remove("inactive");
+                gamepadText.textContent = "🎮 Kumanda bağlı";
+            } else {
+                gamepadDot.classList.add("inactive");
+                gamepadText.textContent = "Kumanda bekleniyor";
+            }
+        }
+
+        window.addEventListener("gamepadconnected", function(e) {
+            updateGamepadStatus(true);
+        });
+        window.addEventListener("gamepaddisconnected", function(e) {
+            updateGamepadStatus(false);
+        });
+
+        function pollGamepad() {
+            const gamepads = navigator.getGamepads ? navigator.getGamepads() : [];
+            let activeGamepad = null;
+            for (let i = 0; i < gamepads.length; i++) {
+                if (gamepads[i] && gamepads[i].connected) { 
+                    activeGamepad = gamepads[i]; 
+                    break; 
+                }
+            }
+
+            if (activeGamepad) {
+                if (!gamepadConnected) updateGamepadStatus(true);
+
+                const dpadLeft = (activeGamepad.buttons[14] && activeGamepad.buttons[14].pressed) ? true : false;
+                const dpadRight = (activeGamepad.buttons[15] && activeGamepad.buttons[15].pressed) ? true : false;
+                const axisX = activeGamepad.axes[0] || 0;
+
+                if (!prevButtons.length) {
+                    prevButtons = activeGamepad.buttons.map(function(b) { return b.pressed; });
+                    prevAxes = activeGamepad.axes.slice();
+                    requestAnimationFrame(pollGamepad);
+                    return;
+                }
+
+                if (dpadLeft && !prevButtons[14]) {
+                    prevChannel();
+                } else if (dpadRight && !prevButtons[15]) {
+                    nextChannel();
+                }
+
+                const threshold = 0.6;
+                if (axisX < -threshold && prevAxes[0] >= -threshold) {
+                    prevChannel();
+                } else if (axisX > threshold && prevAxes[0] <= threshold) {
+                    nextChannel();
+                }
+
+                prevButtons = activeGamepad.buttons.map(function(b) { return b.pressed; });
+                prevAxes = activeGamepad.axes.slice();
+            } else {
+                if (gamepadConnected) updateGamepadStatus(false);
+            }
+            requestAnimationFrame(pollGamepad);
+        }
+
+        if (navigator.getGamepads) {
+            const initialGamepads = navigator.getGamepads();
+            let found = false;
+            for (let i = 0; i < initialGamepads.length; i++) { 
+                if (initialGamepads[i] && initialGamepads[i].connected) { found = true; break; } 
+            }
+            if (found) updateGamepadStatus(true);
+            requestAnimationFrame(pollGamepad);
+        }
+
+        function createParticles() {
+            const container = document.getElementById("bgParticles");
+            const colors = ["rgba(255,45,122,0.7)","rgba(155,77,255,0.6)","rgba(0,234,255,0.5)","rgba(255,204,51,0.6)","rgba(255,255,255,0.4)"];
+            for (let i=0; i<30; i++) {
+                const p = document.createElement("div");
+                p.classList.add("particle");
+                const size = Math.random()*4+1.5;
+                p.style.width = size+"px"; p.style.height = size+"px";
+                p.style.left = Math.random()*100+"%";
+                p.style.backgroundColor = colors[Math.floor(Math.random()*colors.length)];
+                p.style.animationDuration = Math.random()*12+8+"s";
+                p.style.animationDelay = Math.random()*10+"s";
+                p.style.boxShadow = "0 0 " + (size*3) + "px " + p.style.backgroundColor;
+                container.appendChild(p);
+            }
+        }
+
+        function initApp() {
+            buildButtons();
+            createParticles();
+            updateNavButtons();
+        }
+
+        if (document.readyState === "loading") {
+            document.addEventListener("DOMContentLoaded", initApp);
+        } else {
+            initApp();
+        }
+    </script>
+</body>
+</html>
