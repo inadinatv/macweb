@@ -115,7 +115,6 @@
 
         .now-label { font-size: 0.7rem; letter-spacing: 4px; color: var(--text-muted); font-weight: 600; text-transform: uppercase; position: relative; z-index: 1; }
 
-        /* ---- Kanal adı ve geçiş butonları yan yana ---- */
         .channel-selector-row {
             display: flex; align-items: center; justify-content: center; gap: 12px;
             margin: 10px 0 8px; z-index: 2; position: relative; width: 100%;
@@ -238,7 +237,6 @@
             <div class="side-panel">
                 <div class="now-playing-card">
                     <div class="now-label">📡 ŞU AN İZLENİYOR</div>
-                    <!-- Kanal adı + geçiş butonları yan yana -->
                     <div class="channel-selector-row">
                         <button class="nav-btn" id="navPrev" title="Önceki Kanal" aria-label="Önceki kanal">◀</button>
                         <div class="now-channel" id="nowChannel">-</div>
@@ -250,7 +248,7 @@
                 <div class="quick-info">
                     <div class="info-row">
                         <div class="info-title">📺 TOPLAM KANAL</div>
-                        <div class="info-val" id="totalChannels">2</div>
+                        <div class="info-val" id="totalChannels">0</div>
                     </div>
                     <div class="gamepad-indicator" id="gamepadStatus">
                         <span class="gamepad-dot inactive" id="gamepadDot"></span>
@@ -268,9 +266,52 @@
 
     <script>
         /*BOT_START*/
-        const streamLinks = ["https://8602741.xyz/event.html?id=androstreamlivebs1", "https://bahisotv32.com/channel?id=zirve", "https://hdrupitv76.com/channel?id=patron"];
-        const channelNames = ["kanal4", "yeniKanal", "Patron"];
-        const qualityLabels = ["hd", "hd", "ultra"];
+        const streamLinks = [
+            "https://ossebettv14.com/channel?id=zirve",
+            "https://ossebettv14.com/channel?id=b2",
+            "https://ossebettv14.com/channel?id=b3",
+            "https://ossebettv14.com/channel?id=b4",
+            "https://ossebettv14.com/channel?id=b5",
+            "https://ossebettv14.com/channel?id=bm1",
+            "https://ossebettv14.com/channel?id=bm2",
+            "https://ossebettv14.com/channel?id=ss",
+            "https://ossebettv14.com/channel?id=ss2",
+            "https://ossebettv14.com/channel?id=smarts",
+            "https://ossebettv14.com/channel?id=sms2",
+            "https://ossebettv14.com/channel?id=t1",
+            "https://ossebettv14.com/channel?id=t2",
+            "https://ossebettv14.com/channel?id=t3",
+            "https://ossebettv14.com/channel?id=t4",
+            "https://ossebettv14.com/channel?id=trtspor",
+            "https://ossebettv14.com/channel?id=trtspor2",
+            "https://ossebettv14.com/channel?id=trt1",
+            "https://ossebettv14.com/channel?id=as",
+            "https://ossebettv14.com/channel?id=atv",
+            "https://ossebettv14.com/channel?id=tv8",
+            "https://ossebettv14.com/channel?id=tv85",
+            "https://ossebettv14.com/channel?id=eu1",
+            "https://ossebettv14.com/channel?id=eu2",
+            "https://ossebettv14.com/channel?id=ex7",
+            "https://ossebettv14.com/channel?id=ex1",
+            "https://ossebettv14.com/channel?id=ex2",
+            "https://ossebettv14.com/channel?id=ex3",
+            "https://ossebettv14.com/channel?id=ex4",
+            "https://ossebettv14.com/channel?id=ex5",
+            "https://ossebettv14.com/channel?id=ex6"
+        ];
+        
+        const channelNames = [
+            "BEIN SPORTS 1", "BEIN SPORTS 2", "BEIN SPORTS 3", "BEIN SPORTS 4", "BEIN SPORTS 5",
+            "BEIN SPORTS MAX 1", "BEIN SPORTS MAX 2", "S SPOR", "S SPORT 2", "AKILLI SPOR",
+            "SMART SPOR 2", "TİVİBU SPOR 1", "TİVİBU SPOR 2", "TİVİBU SPOR 3", "TİVİBU SPOR 4",
+            "TRT SPOR", "TRT SPOR YILDIZ", "TRT 1", "BİR SPOR", "ATV",
+            "TV 8", "TV 8,5", "EURO SPORT 1", "EURO SPORT 2", "TABI SPOR",
+            "TABI SPOR 1", "TABI SPOR 2", "TABI SPOR 3", "TABI SPOR 4", "TABI SPOR 5",
+            "TABI SPOR 6"
+        ];
+
+        // Tüm kanallar için HD etiketi varsayılan olarak eklendi
+        const qualityLabels = Array(streamLinks.length).fill("HD");
         /*BOT_END*/
 
         const iframe = document.getElementById("liveIframe");
@@ -284,7 +325,21 @@
         const gamepadText = document.getElementById("gamepadText");
 
         let currentIndex = 0;
-        const channelIcons = ["📺", "🥇", "⚽", "🏀", "🎯", "🔥", "💎", "🌟", "🎬", "📡"];
+        
+        // Ossebet TV'deki ikona atama mantığı da güncellenerek buraya eklendi
+        const channelIcons = channelNames.map(name => {
+            if (name.includes('BEIN')) return '⚽';
+            if (name.includes('S SPOR')) return '🏀';
+            if (name.includes('EURO')) return '🚴';
+            if (name.includes('TRT')) return '🇹🇷';
+            if (name.includes('TABI')) return '📡';
+            if (name.includes('TİVİBU')) return '📡';
+            if (name.includes('SMART') || name.includes('AKILLI')) return '🧠';
+            if (name.includes('BİR SPOR')) return '⚽';
+            if (name.includes('ATV')) return '📺';
+            if (name.includes('TV 8')) return '📺';
+            return '📺';
+        });
 
         function buildButtons() {
             channelRow.innerHTML = "";
@@ -292,154 +347,4 @@
             streamLinks.forEach((url, i) => {
                 const btn = document.createElement("button");
                 btn.className = "ch-btn" + (i === 0 ? " active" : "");
-                const icon = channelIcons[i] || "📡";
-                btn.innerHTML = `<span class="ch-icon">${icon}</span><div class="ch-number">${String(i + 1).padStart(2, '0')}</div><div class="ch-label">${channelNames[i]}</div>`;
-                btn.onclick = () => switchChannel(i);
-                btn.setAttribute("data-index", i);
-                channelRow.appendChild(btn);
-            });
-            if (streamLinks.length > 0) {
-                currentIndex = 0;
-                switchChannel(0);
-            }
-        }
-
-        function switchChannel(index) {
-            if (index < 0 || index >= streamLinks.length) return;
-            currentIndex = index;
-            iframe.src = streamLinks[index];
-            nowChannel.textContent = channelNames[index];
-            nowQuality.textContent = qualityLabels[index];
-
-            document.querySelectorAll(".ch-btn").forEach((b, i) => b.classList.toggle("active", i === index));
-
-            const activeBtn = document.querySelector(".ch-btn.active");
-            if (activeBtn) activeBtn.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "center" });
-
-            updateNavButtons();
-        }
-
-        function nextChannel() { switchChannel((currentIndex + 1) % streamLinks.length); }
-        function prevChannel() { switchChannel((currentIndex - 1 + streamLinks.length) % streamLinks.length); }
-
-        function updateNavButtons() {
-            if (streamLinks.length <= 1) {
-                navPrev.style.opacity = "0.4"; navPrev.style.pointerEvents = "none";
-                navNext.style.opacity = "0.4"; navNext.style.pointerEvents = "none";
-            } else {
-                navPrev.style.opacity = "1"; navPrev.style.pointerEvents = "auto";
-                navNext.style.opacity = "1"; navNext.style.pointerEvents = "auto";
-            }
-        }
-
-        navPrev.addEventListener("click", prevChannel);
-        navNext.addEventListener("click", nextChannel);
-
-        document.addEventListener("keydown", function(e) {
-            const tag = document.activeElement.tagName.toLowerCase();
-            if (tag === "input" || tag === "textarea" || tag === "select") return;
-            if (e.key === "ArrowRight") { e.preventDefault(); nextChannel(); }
-            else if (e.key === "ArrowLeft") { e.preventDefault(); prevChannel(); }
-        });
-
-        // ========== GAMEPAD (KUMANDA) DESTEĞİ ==========
-        let gamepadConnected = false;
-        let prevAxes = [0,0,0,0];
-        let prevButtons = [];
-
-        function updateGamepadStatus(connected) {
-            gamepadConnected = connected;
-            if (connected) {
-                gamepadDot.classList.remove("inactive");
-                gamepadText.textContent = "🎮 Kumanda bağlı";
-            } else {
-                gamepadDot.classList.add("inactive");
-                gamepadText.textContent = "Kumanda bekleniyor";
-            }
-        }
-
-        window.addEventListener("gamepadconnected", (e) => {
-            console.log("Gamepad connected:", e.gamepad.id);
-            updateGamepadStatus(true);
-        });
-        window.addEventListener("gamepaddisconnected", (e) => {
-            console.log("Gamepad disconnected:", e.gamepad.id);
-            updateGamepadStatus(false);
-        });
-
-        function pollGamepad() {
-            const gamepads = navigator.getGamepads ? navigator.getGamepads() : [];
-            let activeGamepad = null;
-            for (let gp of gamepads) {
-                if (gp && gp.connected) { activeGamepad = gp; break; }
-            }
-
-            if (activeGamepad) {
-                if (!gamepadConnected) updateGamepadStatus(true);
-
-                const dpadLeft = activeGamepad.buttons[14]?.pressed || false;
-                const dpadRight = activeGamepad.buttons[15]?.pressed || false;
-                const axisX = activeGamepad.axes[0] || 0;
-
-                if (!prevButtons.length) {
-                    prevButtons = activeGamepad.buttons.map(b => b.pressed);
-                    prevAxes = [...activeGamepad.axes];
-                    requestAnimationFrame(pollGamepad);
-                    return;
-                }
-
-                if (dpadLeft && !prevButtons[14]) {
-                    prevChannel();
-                } else if (dpadRight && !prevButtons[15]) {
-                    nextChannel();
-                }
-
-                const threshold = 0.6;
-                if (axisX < -threshold && prevAxes[0] >= -threshold) {
-                    prevChannel();
-                } else if (axisX > threshold && prevAxes[0] <= threshold) {
-                    nextChannel();
-                }
-
-                prevButtons = activeGamepad.buttons.map(b => b.pressed);
-                prevAxes = [...activeGamepad.axes];
-            } else {
-                if (gamepadConnected) updateGamepadStatus(false);
-            }
-            requestAnimationFrame(pollGamepad);
-        }
-
-        if (navigator.getGamepads) {
-            const initialGamepads = navigator.getGamepads();
-            let found = false;
-            for (let gp of initialGamepads) { if (gp && gp.connected) { found = true; break; } }
-            if (found) updateGamepadStatus(true);
-            requestAnimationFrame(pollGamepad);
-        }
-
-        // Arka plan parçacıkları
-        function createParticles() {
-            const container = document.getElementById("bgParticles");
-            const colors = ["rgba(255,45,122,0.7)","rgba(155,77,255,0.6)","rgba(0,234,255,0.5)","rgba(255,204,51,0.6)","rgba(255,255,255,0.4)"];
-            for (let i=0; i<30; i++) {
-                const p = document.createElement("div");
-                p.classList.add("particle");
-                const size = Math.random()*4+1.5;
-                p.style.width = size+"px"; p.style.height = size+"px";
-                p.style.left = Math.random()*100+"%";
-                p.style.backgroundColor = colors[Math.floor(Math.random()*colors.length)];
-                p.style.animationDuration = Math.random()*12+8+"s";
-                p.style.animationDelay = Math.random()*10+"s";
-                p.style.boxShadow = `0 0 ${size*3}px ${p.style.backgroundColor}`;
-                container.appendChild(p);
-            }
-        }
-
-        window.onload = function() {
-            buildButtons();
-            createParticles();
-            updateNavButtons();
-        };
-    </script>
-</body>
-</html>
+                cons
