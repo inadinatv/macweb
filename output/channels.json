@@ -1,0 +1,475 @@
+{
+  "site": {
+    "base_domain": "fixbettv84.com",
+    "current_address": "https://fixbettv84.com/",
+    "healthy": true,
+    "mirror_now": "fixbettv84.com",
+    "state": "OK",
+    "active_mirrors": [
+      "fixbettv84.com",
+      "fixbettv19.com"
+    ],
+    "last_checked": "2026-09-04T21:25:49+00:00",
+    "note": "OK",
+    "probed": 200
+  },
+  "channels": {
+    "total": 31,
+    "by_brand": {
+      "Bein Sports": [
+        {
+          "channel_id": "zirve",
+          "name": "BEIN SPORTS 1",
+          "status": "7/24",
+          "brand": "Bein Sports",
+          "url": "https://fixbettv84.com/channel.html?id=zirve"
+        },
+        {
+          "channel_id": "b2",
+          "name": "BEIN SPORTS 2",
+          "status": "7/24",
+          "brand": "Bein Sports",
+          "url": "https://fixbettv84.com/channel.html?id=b2"
+        },
+        {
+          "channel_id": "b3",
+          "name": "BEIN SPORTS 3",
+          "status": "7/24",
+          "brand": "Bein Sports",
+          "url": "https://fixbettv84.com/channel.html?id=b3"
+        },
+        {
+          "channel_id": "b4",
+          "name": "BEIN SPORTS 4",
+          "status": "7/24",
+          "brand": "Bein Sports",
+          "url": "https://fixbettv84.com/channel.html?id=b4"
+        },
+        {
+          "channel_id": "b5",
+          "name": "BEIN SPORTS 5",
+          "status": "7/24",
+          "brand": "Bein Sports",
+          "url": "https://fixbettv84.com/channel.html?id=b5"
+        },
+        {
+          "channel_id": "bm1",
+          "name": "BEIN SPORTS MAX 1",
+          "status": "7/24",
+          "brand": "Bein Sports",
+          "url": "https://fixbettv84.com/channel.html?id=bm1"
+        },
+        {
+          "channel_id": "bm2",
+          "name": "BEIN SPORTS MAX 2",
+          "status": "7/24",
+          "brand": "Bein Sports",
+          "url": "https://fixbettv84.com/channel.html?id=bm2"
+        }
+      ],
+      "S Sport": [
+        {
+          "channel_id": "ss",
+          "name": "S SPORT",
+          "status": "7/24",
+          "brand": "S Sport",
+          "url": "https://fixbettv84.com/channel.html?id=ss"
+        },
+        {
+          "channel_id": "ss2",
+          "name": "S SPORT 2",
+          "status": "7/24",
+          "brand": "S Sport",
+          "url": "https://fixbettv84.com/channel.html?id=ss2"
+        }
+      ],
+      "SmartSpor": [
+        {
+          "channel_id": "smarts",
+          "name": "SMARTSPOR",
+          "status": "7/24",
+          "brand": "SmartSpor",
+          "url": "https://fixbettv84.com/channel.html?id=smarts"
+        },
+        {
+          "channel_id": "sms2",
+          "name": "SMARTSPOR 2",
+          "status": "7/24",
+          "brand": "SmartSpor",
+          "url": "https://fixbettv84.com/channel.html?id=sms2"
+        }
+      ],
+      "Tivibu Spor": [
+        {
+          "channel_id": "t1",
+          "name": "TIVIBU SPOR 1",
+          "status": "7/24",
+          "brand": "Tivibu Spor",
+          "url": "https://fixbettv84.com/channel.html?id=t1"
+        },
+        {
+          "channel_id": "t2",
+          "name": "TIVIBU SPOR 2",
+          "status": "7/24",
+          "brand": "Tivibu Spor",
+          "url": "https://fixbettv84.com/channel.html?id=t2"
+        },
+        {
+          "channel_id": "t3",
+          "name": "TIVIBU SPOR 3",
+          "status": "7/24",
+          "brand": "Tivibu Spor",
+          "url": "https://fixbettv84.com/channel.html?id=t3"
+        },
+        {
+          "channel_id": "t4",
+          "name": "TIVIBU SPOR 4",
+          "status": "7/24",
+          "brand": "Tivibu Spor",
+          "url": "https://fixbettv84.com/channel.html?id=t4"
+        }
+      ],
+      "TRT": [
+        {
+          "channel_id": "trt1",
+          "name": "TRT 1",
+          "status": "7/24",
+          "brand": "TRT",
+          "url": "https://fixbettv84.com/channel.html?id=trt1"
+        },
+        {
+          "channel_id": "trtspor",
+          "name": "TRT SPOR",
+          "status": "7/24",
+          "brand": "TRT",
+          "url": "https://fixbettv84.com/channel.html?id=trtspor"
+        },
+        {
+          "channel_id": "trtspor2",
+          "name": "TRT SPOR YILDIZ",
+          "status": "7/24",
+          "brand": "TRT",
+          "url": "https://fixbettv84.com/channel.html?id=trtspor2"
+        }
+      ],
+      "A Spor": [
+        {
+          "channel_id": "as",
+          "name": "A SPOR",
+          "status": "7/24",
+          "brand": "A Spor",
+          "url": "https://fixbettv84.com/channel.html?id=as"
+        }
+      ],
+      "Eurosport": [
+        {
+          "channel_id": "eu1",
+          "name": "EURO SPORT 1",
+          "status": "7/24",
+          "brand": "Eurosport",
+          "url": "https://fixbettv84.com/channel.html?id=eu1"
+        },
+        {
+          "channel_id": "eu2",
+          "name": "EURO SPORT 2",
+          "status": "7/24",
+          "brand": "Eurosport",
+          "url": "https://fixbettv84.com/channel.html?id=eu2"
+        }
+      ],
+      "Tabii Spor": [
+        {
+          "channel_id": "ex7",
+          "name": "TABII SPOR",
+          "status": "7/24",
+          "brand": "Tabii Spor",
+          "url": "https://fixbettv84.com/channel.html?id=ex7"
+        },
+        {
+          "channel_id": "ex1",
+          "name": "TABII SPOR 1",
+          "status": "7/24",
+          "brand": "Tabii Spor",
+          "url": "https://fixbettv84.com/channel.html?id=ex1"
+        },
+        {
+          "channel_id": "ex2",
+          "name": "TABII SPOR 2",
+          "status": "7/24",
+          "brand": "Tabii Spor",
+          "url": "https://fixbettv84.com/channel.html?id=ex2"
+        },
+        {
+          "channel_id": "ex3",
+          "name": "TABII SPOR 3",
+          "status": "7/24",
+          "brand": "Tabii Spor",
+          "url": "https://fixbettv84.com/channel.html?id=ex3"
+        },
+        {
+          "channel_id": "ex4",
+          "name": "TABII SPOR 4",
+          "status": "7/24",
+          "brand": "Tabii Spor",
+          "url": "https://fixbettv84.com/channel.html?id=ex4"
+        },
+        {
+          "channel_id": "ex5",
+          "name": "TABII SPOR 5",
+          "status": "7/24",
+          "brand": "Tabii Spor",
+          "url": "https://fixbettv84.com/channel.html?id=ex5"
+        },
+        {
+          "channel_id": "ex6",
+          "name": "TABII SPOR 6",
+          "status": "7/24",
+          "brand": "Tabii Spor",
+          "url": "https://fixbettv84.com/channel.html?id=ex6"
+        }
+      ],
+      "Genel (Ulusal)": [
+        {
+          "channel_id": "atv",
+          "name": "ATV",
+          "status": "7/24",
+          "brand": "Genel (Ulusal)",
+          "url": "https://fixbettv84.com/channel.html?id=atv"
+        },
+        {
+          "channel_id": "tv8",
+          "name": "TV 8",
+          "status": "7/24",
+          "brand": "Genel (Ulusal)",
+          "url": "https://fixbettv84.com/channel.html?id=tv8"
+        },
+        {
+          "channel_id": "tv85",
+          "name": "TV 8,5",
+          "status": "7/24",
+          "brand": "Genel (Ulusal)",
+          "url": "https://fixbettv84.com/channel.html?id=tv85"
+        }
+      ]
+    },
+    "channels": [
+      {
+        "channel_id": "as",
+        "name": "A SPOR",
+        "status": "7/24",
+        "brand": "A Spor",
+        "url": "https://fixbettv84.com/channel.html?id=as"
+      },
+      {
+        "channel_id": "atv",
+        "name": "ATV",
+        "status": "7/24",
+        "brand": "Genel (Ulusal)",
+        "url": "https://fixbettv84.com/channel.html?id=atv"
+      },
+      {
+        "channel_id": "zirve",
+        "name": "BEIN SPORTS 1",
+        "status": "7/24",
+        "brand": "Bein Sports",
+        "url": "https://fixbettv84.com/channel.html?id=zirve"
+      },
+      {
+        "channel_id": "b2",
+        "name": "BEIN SPORTS 2",
+        "status": "7/24",
+        "brand": "Bein Sports",
+        "url": "https://fixbettv84.com/channel.html?id=b2"
+      },
+      {
+        "channel_id": "b3",
+        "name": "BEIN SPORTS 3",
+        "status": "7/24",
+        "brand": "Bein Sports",
+        "url": "https://fixbettv84.com/channel.html?id=b3"
+      },
+      {
+        "channel_id": "b4",
+        "name": "BEIN SPORTS 4",
+        "status": "7/24",
+        "brand": "Bein Sports",
+        "url": "https://fixbettv84.com/channel.html?id=b4"
+      },
+      {
+        "channel_id": "b5",
+        "name": "BEIN SPORTS 5",
+        "status": "7/24",
+        "brand": "Bein Sports",
+        "url": "https://fixbettv84.com/channel.html?id=b5"
+      },
+      {
+        "channel_id": "bm1",
+        "name": "BEIN SPORTS MAX 1",
+        "status": "7/24",
+        "brand": "Bein Sports",
+        "url": "https://fixbettv84.com/channel.html?id=bm1"
+      },
+      {
+        "channel_id": "bm2",
+        "name": "BEIN SPORTS MAX 2",
+        "status": "7/24",
+        "brand": "Bein Sports",
+        "url": "https://fixbettv84.com/channel.html?id=bm2"
+      },
+      {
+        "channel_id": "eu1",
+        "name": "EURO SPORT 1",
+        "status": "7/24",
+        "brand": "Eurosport",
+        "url": "https://fixbettv84.com/channel.html?id=eu1"
+      },
+      {
+        "channel_id": "eu2",
+        "name": "EURO SPORT 2",
+        "status": "7/24",
+        "brand": "Eurosport",
+        "url": "https://fixbettv84.com/channel.html?id=eu2"
+      },
+      {
+        "channel_id": "ss",
+        "name": "S SPORT",
+        "status": "7/24",
+        "brand": "S Sport",
+        "url": "https://fixbettv84.com/channel.html?id=ss"
+      },
+      {
+        "channel_id": "ss2",
+        "name": "S SPORT 2",
+        "status": "7/24",
+        "brand": "S Sport",
+        "url": "https://fixbettv84.com/channel.html?id=ss2"
+      },
+      {
+        "channel_id": "smarts",
+        "name": "SMARTSPOR",
+        "status": "7/24",
+        "brand": "SmartSpor",
+        "url": "https://fixbettv84.com/channel.html?id=smarts"
+      },
+      {
+        "channel_id": "sms2",
+        "name": "SMARTSPOR 2",
+        "status": "7/24",
+        "brand": "SmartSpor",
+        "url": "https://fixbettv84.com/channel.html?id=sms2"
+      },
+      {
+        "channel_id": "ex7",
+        "name": "TABII SPOR",
+        "status": "7/24",
+        "brand": "Tabii Spor",
+        "url": "https://fixbettv84.com/channel.html?id=ex7"
+      },
+      {
+        "channel_id": "ex1",
+        "name": "TABII SPOR 1",
+        "status": "7/24",
+        "brand": "Tabii Spor",
+        "url": "https://fixbettv84.com/channel.html?id=ex1"
+      },
+      {
+        "channel_id": "ex2",
+        "name": "TABII SPOR 2",
+        "status": "7/24",
+        "brand": "Tabii Spor",
+        "url": "https://fixbettv84.com/channel.html?id=ex2"
+      },
+      {
+        "channel_id": "ex3",
+        "name": "TABII SPOR 3",
+        "status": "7/24",
+        "brand": "Tabii Spor",
+        "url": "https://fixbettv84.com/channel.html?id=ex3"
+      },
+      {
+        "channel_id": "ex4",
+        "name": "TABII SPOR 4",
+        "status": "7/24",
+        "brand": "Tabii Spor",
+        "url": "https://fixbettv84.com/channel.html?id=ex4"
+      },
+      {
+        "channel_id": "ex5",
+        "name": "TABII SPOR 5",
+        "status": "7/24",
+        "brand": "Tabii Spor",
+        "url": "https://fixbettv84.com/channel.html?id=ex5"
+      },
+      {
+        "channel_id": "ex6",
+        "name": "TABII SPOR 6",
+        "status": "7/24",
+        "brand": "Tabii Spor",
+        "url": "https://fixbettv84.com/channel.html?id=ex6"
+      },
+      {
+        "channel_id": "t1",
+        "name": "TIVIBU SPOR 1",
+        "status": "7/24",
+        "brand": "Tivibu Spor",
+        "url": "https://fixbettv84.com/channel.html?id=t1"
+      },
+      {
+        "channel_id": "t2",
+        "name": "TIVIBU SPOR 2",
+        "status": "7/24",
+        "brand": "Tivibu Spor",
+        "url": "https://fixbettv84.com/channel.html?id=t2"
+      },
+      {
+        "channel_id": "t3",
+        "name": "TIVIBU SPOR 3",
+        "status": "7/24",
+        "brand": "Tivibu Spor",
+        "url": "https://fixbettv84.com/channel.html?id=t3"
+      },
+      {
+        "channel_id": "t4",
+        "name": "TIVIBU SPOR 4",
+        "status": "7/24",
+        "brand": "Tivibu Spor",
+        "url": "https://fixbettv84.com/channel.html?id=t4"
+      },
+      {
+        "channel_id": "trt1",
+        "name": "TRT 1",
+        "status": "7/24",
+        "brand": "TRT",
+        "url": "https://fixbettv84.com/channel.html?id=trt1"
+      },
+      {
+        "channel_id": "trtspor",
+        "name": "TRT SPOR",
+        "status": "7/24",
+        "brand": "TRT",
+        "url": "https://fixbettv84.com/channel.html?id=trtspor"
+      },
+      {
+        "channel_id": "trtspor2",
+        "name": "TRT SPOR YILDIZ",
+        "status": "7/24",
+        "brand": "TRT",
+        "url": "https://fixbettv84.com/channel.html?id=trtspor2"
+      },
+      {
+        "channel_id": "tv8",
+        "name": "TV 8",
+        "status": "7/24",
+        "brand": "Genel (Ulusal)",
+        "url": "https://fixbettv84.com/channel.html?id=tv8"
+      },
+      {
+        "channel_id": "tv85",
+        "name": "TV 8,5",
+        "status": "7/24",
+        "brand": "Genel (Ulusal)",
+        "url": "https://fixbettv84.com/channel.html?id=tv85"
+      }
+    ]
+  }
+}

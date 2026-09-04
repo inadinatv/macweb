@@ -24,10 +24,15 @@ raporlar üreten gelişmiş otomasyon botu.
    - `[Günün Maçı]` etiketiyle **⭐ Günün Maçı** kategorisi oluşturulur.
    - **Spor** ve **Lig** bazlı alt gruplar üretilir.
 
-4. **Raporlar** (`src/fixbet/reports.py` → `output/`)
-   - `report.html` → tarayıcıda açılan, kendi kendine yeten canlı panel.
-   - `matches.md` → okunabilir günlük maç listesi.
-   - `matches.json`, `live_matches.json`, `today_matches.json` → makine okunur veri.
+4. **7/24 Kanallar** (`src/fixbet/channels.py`)
+   - Güncel adresin ana sayfasındaki kanal listesi çekilir (id + ad + durum).
+   - **Marka bazında** kategorize edilir (Bein Sports, Tabii, TRT, SmartSpor, …).
+   - `output/channels.json` dosyasına yazılır ve raporlara eklenir.
+
+5. **Raporlar** (`src/fixbet/reports.py` → `output/`)
+   - `report.html` → tarayıcıda açılan, kendi kendine yeten canlı panel (maçlar + 7/24 kanallar).
+   - `matches.md` → okunabilir günlük maç listesi + kanal listesi.
+   - `matches.json`, `live_matches.json`, `today_matches.json`, `channels.json` → makine okunur veri.
 
 ---
 

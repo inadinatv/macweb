@@ -49,10 +49,14 @@ def pipeline() -> dict:
     matches = categorizer.classify(matches, now)
     categorized = categorizer.categorize(matches, now)
 
+    # 2b) 7/24 kanal listesi (güncel adresin ana sayfasından)
+    from . import channels
+    channels_data = channels.categorize(channels.fetch_channels())
+
     # 3) Raporlar
-    reports.write_json_data(matches, categorized, site)
-    reports.write_markdown(categorized, site)
-    reports.write_html(categorized, site)
+    reports.write_json_data(matches, categorized, site, channels_data)
+    reports.write_markdown(categorized, site, channels_data)
+    reports.write_html(categorized, site, channels_data)
 
     # 4) Otomatik yayınlama (settings.yml -> git.autorelease)
     from . import publisher
@@ -120,7 +124,9 @@ def main(argv: list[str] | None = None) -> int:
         matches = categorizer.enrich(matches)
         matches = categorizer.classify(matches, now)
         categorized = categorizer.categorize(matches, now)
-        reports.write_json_data(matches, categorized, config.load_current_site())
+        from . import channels
+        channels_data = channels.categorize(channels.fetch_channels())
+        reports.write_json_data(matches, categorized, config.load_current_site(), channels_data)
         _print_summary({"categorized": categorized, "site": config.load_current_site()})
         return 0
     if args.cmd == "cat":

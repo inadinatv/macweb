@@ -13,7 +13,8 @@ from .models import Match
 OUTPUT = config.OUTPUT_DIR
 
 
-def write_json_data(matches: list[Match], categorized: dict[str, Any], site: dict[str, Any]) -> str:
+def write_json_data(matches: list[Match], categorized: dict[str, Any], site: dict[str, Any],
+                    channels_data: dict[str, Any] | None = None) -> str:
     """Tüm maçları ve kategorize edilmiş yapıyı JSON olarak yazar."""
     os.makedirs(OUTPUT, exist_ok=True)
     payload = {
@@ -21,6 +22,7 @@ def write_json_data(matches: list[Match], categorized: dict[str, Any], site: dic
         "categories": categorized,
         # bireysel maç listesi (izleyici bağlantıları dahil)
         "matches": [m.to_dict() for m in matches],
+        "channels": channels_data or {},
     }
     path = OUTPUT / "matches.json"
     with open(path, "w", encoding="utf-8") as fh:
@@ -32,10 +34,14 @@ def write_json_data(matches: list[Match], categorized: dict[str, Any], site: dic
     with open(OUTPUT / "today_matches.json", "w", encoding="utf-8") as fh:
         json.dump({"site": site, "date": categorized["meta"]["date"], "matches": payload["matches"]},
                   fh, ensure_ascii=False, indent=2)
+    # 7/24 kanallar ayrı dosya
+    with open(OUTPUT / "channels.json", "w", encoding="utf-8") as fh:
+        json.dump({"site": site, "channels": channels_data or {}}, fh, ensure_ascii=False, indent=2)
     return str(path)
 
 
-def write_markdown(categorized: dict[str, Any], site: dict[str, Any]) -> str:
+def write_markdown(categorized: dict[str, Any], site: dict[str, Any],
+                   channels_data: dict[str, Any] | None = None) -> str:
     now = datetime.now().strftime("%Y-%m-%d %H:%M")
     addr = site.get("current_address") or "—"
     lines = [
@@ -76,13 +82,27 @@ def write_markdown(categorized: dict[str, Any], site: dict[str, Any]) -> str:
             lines.append(f"- {emoji} {m['home']} vs {m['away']} — {m['time']}")
         lines.append("")
 
+    # 7/24 kanallar
+    if channels_data and channels_data.get("channels"):
+        lines.append("---")
+        lines.append(f"## 📺 7/24 KANALLAR ({channels_data.get('total', len(channels_data['channels']))})")
+        lines.append("")
+        for brand, group in channels_data["by_brand"].items():
+            lines.append(f"### {brand}")
+            for ch in group:
+                url = ch.get("url") or ""
+                link = f" <{url}>" if url else ""
+                lines.append(f"- **{ch['name']}** — `{ch['status']}`{link}")
+            lines.append("")
+
     path = OUTPUT / "matches.md"
     with open(path, "w", encoding="utf-8") as fh:
         fh.write("\n".join(lines))
     return str(path)
 
 
-def write_html(categorized: dict[str, Any], site: dict[str, Any]) -> str:
+def write_html(categorized: dict[str, Any], site: dict[str, Any],
+               channels_data: dict[str, Any] | None = None) -> str:
     """Kendi kendine yeterli (inline CSS/JS) HTML paneli üretir."""
     now = datetime.now()
     addr = site.get("current_address") or "—"
@@ -124,6 +144,27 @@ def write_html(categorized: dict[str, Any], site: dict[str, Any]) -> str:
         for league, group in categorized["by_league"].items()
     )
 
+    # 7/24 kanallar bölümü
+    channels_html = ""
+    if channels_data and channels_data.get("channels"):
+        total = channels_data.get("total", len(channels_data["channels"]))
+        brand_blocks = ""
+        for brand, group in channels_data["by_brand"].items():
+            rows = "".join(
+                f'<div class="row ch"><span class="badge">{escape(ch["status"])}</span>'
+                f'<span class="teams">{escape(ch["name"])}</span>'
+                + (f'<a class="watch" href="{escape(ch["url"])}" target="_blank">▶ izle</a>' if ch.get("url") else "")
+                + "</div>"
+                for ch in group
+            )
+            brand_blocks += (
+                f'<details open><summary>{escape(brand)} ({len(group)})</summary>{rows}</details>'
+            )
+        channels_html = (
+            f'<h3 style="color:#16a085">📺 7/24 KANALLAR <span>({total})</span></h3>'
+            + brand_blocks
+        )
+
     html = f"""<!DOCTYPE html>
 <html lang="tr"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -148,6 +189,7 @@ h3{{margin:22px 0 10px;font-size:15px}} h3 span{{color:#9aa7bd;font-weight:400}}
 .watch:hover{{background:#2ecc71;color:#0f1420}}
 .row.live{{border-color:#e74c3c;box-shadow:0 0 0 1px #e74c3c40}}
 .row.done{{opacity:.55}}
+.row.ch .badge{{background:#16a085;color:#fff;font-size:10px;padding:2px 8px;border-radius:20px;font-weight:700}}
 details{{background:#161f2e;border:1px solid #26324a;border-radius:9px;padding:8px 12px;margin-bottom:7px}}
 details summary{{cursor:pointer;font-weight:600;color:#cfe}} details .row{{margin-bottom:5px}}
 .gec{{color:#9aa7bd;font-size:12px}}
@@ -173,6 +215,7 @@ details summary{{cursor:pointer;font-weight:600;color:#cfe}} details .row{{margi
 {section('✅ BİTTİ', categorized['finished'], '#27ae60')}
 <h3 style="color:#8e44ad">🏆 Spor Kategorileri</h3>{sport_sections}
 <h3>🏆 Lig Bazlı</h3>{league_html}
+{channels_html}
 <p class="gec" style="margin-top:18px">fixbet-bot · otomatik güncelleme · {now.strftime('%H:%M')}</p>
 </body></html>"""
 
