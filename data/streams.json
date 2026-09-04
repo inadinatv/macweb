@@ -1,0 +1,489 @@
+{
+  "activeDomain": "fixbettv84.com",
+  "lastUpdated": "2026-09-04 16:25:01",
+  "channels": [
+    {
+      "id": "zirve",
+      "name": "BEIN SPORTS 1",
+      "icon": "⚽",
+      "category": "futbol",
+      "quality": "4K HD"
+    },
+    {
+      "id": "b2",
+      "name": "BEIN SPORTS 2",
+      "icon": "⚽",
+      "category": "futbol",
+      "quality": "1080p HD"
+    },
+    {
+      "id": "b3",
+      "name": "BEIN SPORTS 3",
+      "icon": "⚽",
+      "category": "futbol",
+      "quality": "1080p HD"
+    },
+    {
+      "id": "b4",
+      "name": "BEIN SPORTS 4",
+      "icon": "⚽",
+      "category": "futbol",
+      "quality": "1080p HD"
+    },
+    {
+      "id": "b5",
+      "name": "BEIN SPORTS 5",
+      "icon": "⚽",
+      "category": "futbol",
+      "quality": "1080p HD"
+    },
+    {
+      "id": "bm1",
+      "name": "BEIN SPORTS MAX 1",
+      "icon": "⚽",
+      "category": "futbol",
+      "quality": "1080p HD"
+    },
+    {
+      "id": "bm2",
+      "name": "BEIN SPORTS MAX 2",
+      "icon": "⚽",
+      "category": "futbol",
+      "quality": "1080p HD"
+    },
+    {
+      "id": "ss",
+      "name": "S SPORT 1",
+      "icon": "🏀",
+      "category": "basketbol",
+      "quality": "1080p HD"
+    },
+    {
+      "id": "ss2",
+      "name": "S SPORT 2",
+      "icon": "🏀",
+      "category": "basketbol",
+      "quality": "1080p HD"
+    },
+    {
+      "id": "smarts",
+      "name": "SMART SPOR 1",
+      "icon": "🧠",
+      "category": "spor",
+      "quality": "1080p HD"
+    },
+    {
+      "id": "sms2",
+      "name": "SMART SPOR 2",
+      "icon": "🧠",
+      "category": "spor",
+      "quality": "1080p HD"
+    },
+    {
+      "id": "t1",
+      "name": "TİVİBU SPOR 1",
+      "icon": "📡",
+      "category": "futbol",
+      "quality": "1080p HD"
+    },
+    {
+      "id": "t2",
+      "name": "TİVİBU SPOR 2",
+      "icon": "📡",
+      "category": "futbol",
+      "quality": "1080p HD"
+    },
+    {
+      "id": "t3",
+      "name": "TİVİBU SPOR 3",
+      "icon": "📡",
+      "category": "futbol",
+      "quality": "1080p HD"
+    },
+    {
+      "id": "t4",
+      "name": "TİVİBU SPOR 4",
+      "icon": "📡",
+      "category": "futbol",
+      "quality": "1080p HD"
+    },
+    {
+      "id": "trtspor",
+      "name": "TRT SPOR",
+      "icon": "🇹🇷",
+      "category": "spor",
+      "quality": "1080p HD"
+    },
+    {
+      "id": "trtspor2",
+      "name": "TRT SPOR YILDIZ",
+      "icon": "🇹🇷",
+      "category": "spor",
+      "quality": "1080p HD"
+    },
+    {
+      "id": "trt1",
+      "name": "TRT 1",
+      "icon": "🇹🇷",
+      "category": "genel",
+      "quality": "1080p HD"
+    },
+    {
+      "id": "as",
+      "name": "A SPOR",
+      "icon": "⚽",
+      "category": "futbol",
+      "quality": "1080p HD"
+    },
+    {
+      "id": "atv",
+      "name": "ATV",
+      "icon": "📺",
+      "category": "genel",
+      "quality": "1080p HD"
+    },
+    {
+      "id": "tv8",
+      "name": "TV 8",
+      "icon": "📺",
+      "category": "genel",
+      "quality": "1080p HD"
+    },
+    {
+      "id": "tv85",
+      "name": "TV 8,5",
+      "icon": "📺",
+      "category": "spor",
+      "quality": "1080p HD"
+    },
+    {
+      "id": "eu1",
+      "name": "EUROSPORT 1",
+      "icon": "🚴",
+      "category": "diger",
+      "quality": "1080p HD"
+    },
+    {
+      "id": "eu2",
+      "name": "EUROSPORT 2",
+      "icon": "🚴",
+      "category": "diger",
+      "quality": "1080p HD"
+    },
+    {
+      "id": "ex1",
+      "name": "TABİİ SPOR 1",
+      "icon": "📡",
+      "category": "futbol",
+      "quality": "1080p HD"
+    },
+    {
+      "id": "ex2",
+      "name": "TABİİ SPOR 2",
+      "icon": "📡",
+      "category": "futbol",
+      "quality": "1080p HD"
+    },
+    {
+      "id": "ex3",
+      "name": "TABİİ SPOR 3",
+      "icon": "📡",
+      "category": "futbol",
+      "quality": "1080p HD"
+    },
+    {
+      "id": "ex4",
+      "name": "TABİİ SPOR 4",
+      "icon": "📡",
+      "category": "futbol",
+      "quality": "1080p HD"
+    },
+    {
+      "id": "ex5",
+      "name": "TABİİ SPOR 5",
+      "icon": "📡",
+      "category": "futbol",
+      "quality": "1080p HD"
+    },
+    {
+      "id": "ex6",
+      "name": "TABİİ SPOR 6",
+      "icon": "📡",
+      "category": "futbol",
+      "quality": "1080p HD"
+    },
+    {
+      "id": "ex7",
+      "name": "TABİİ SPOR 7",
+      "icon": "📡",
+      "category": "futbol",
+      "quality": "1080p HD"
+    }
+  ],
+  "streamLinks": [
+    "https://fixbettv84.com/channel?id=zirve",
+    "https://fixbettv84.com/channel?id=b2",
+    "https://fixbettv84.com/channel?id=b3",
+    "https://fixbettv84.com/channel?id=b4",
+    "https://fixbettv84.com/channel?id=b5",
+    "https://fixbettv84.com/channel?id=bm1",
+    "https://fixbettv84.com/channel?id=bm2",
+    "https://fixbettv84.com/channel?id=ss",
+    "https://fixbettv84.com/channel?id=ss2",
+    "https://fixbettv84.com/channel?id=smarts",
+    "https://fixbettv84.com/channel?id=sms2",
+    "https://fixbettv84.com/channel?id=t1",
+    "https://fixbettv84.com/channel?id=t2",
+    "https://fixbettv84.com/channel?id=t3",
+    "https://fixbettv84.com/channel?id=t4",
+    "https://fixbettv84.com/channel?id=trtspor",
+    "https://fixbettv84.com/channel?id=trtspor2",
+    "https://fixbettv84.com/channel?id=trt1",
+    "https://fixbettv84.com/channel?id=as",
+    "https://fixbettv84.com/channel?id=atv",
+    "https://fixbettv84.com/channel?id=tv8",
+    "https://fixbettv84.com/channel?id=tv85",
+    "https://fixbettv84.com/channel?id=eu1",
+    "https://fixbettv84.com/channel?id=eu2",
+    "https://fixbettv84.com/channel?id=ex1",
+    "https://fixbettv84.com/channel?id=ex2",
+    "https://fixbettv84.com/channel?id=ex3",
+    "https://fixbettv84.com/channel?id=ex4",
+    "https://fixbettv84.com/channel?id=ex5",
+    "https://fixbettv84.com/channel?id=ex6",
+    "https://fixbettv84.com/channel?id=ex7"
+  ],
+  "channelNames": [
+    "BEIN SPORTS 1",
+    "BEIN SPORTS 2",
+    "BEIN SPORTS 3",
+    "BEIN SPORTS 4",
+    "BEIN SPORTS 5",
+    "BEIN SPORTS MAX 1",
+    "BEIN SPORTS MAX 2",
+    "S SPORT 1",
+    "S SPORT 2",
+    "SMART SPOR 1",
+    "SMART SPOR 2",
+    "TİVİBU SPOR 1",
+    "TİVİBU SPOR 2",
+    "TİVİBU SPOR 3",
+    "TİVİBU SPOR 4",
+    "TRT SPOR",
+    "TRT SPOR YILDIZ",
+    "TRT 1",
+    "A SPOR",
+    "ATV",
+    "TV 8",
+    "TV 8,5",
+    "EUROSPORT 1",
+    "EUROSPORT 2",
+    "TABİİ SPOR 1",
+    "TABİİ SPOR 2",
+    "TABİİ SPOR 3",
+    "TABİİ SPOR 4",
+    "TABİİ SPOR 5",
+    "TABİİ SPOR 6",
+    "TABİİ SPOR 7"
+  ],
+  "qualityLabels": [
+    "4K HD",
+    "1080p HD",
+    "1080p HD",
+    "1080p HD",
+    "1080p HD",
+    "1080p HD",
+    "1080p HD",
+    "1080p HD",
+    "1080p HD",
+    "1080p HD",
+    "1080p HD",
+    "1080p HD",
+    "1080p HD",
+    "1080p HD",
+    "1080p HD",
+    "1080p HD",
+    "1080p HD",
+    "1080p HD",
+    "1080p HD",
+    "1080p HD",
+    "1080p HD",
+    "1080p HD",
+    "1080p HD",
+    "1080p HD",
+    "1080p HD",
+    "1080p HD",
+    "1080p HD",
+    "1080p HD",
+    "1080p HD",
+    "1080p HD",
+    "1080p HD"
+  ],
+  "liveMatches": [
+    {
+      "id": "live_1",
+      "title": "Galatasaray - Fenerbahçe",
+      "sport": "futbol",
+      "league": "Trendyol Süper Lig",
+      "time": "74'",
+      "isLive": true,
+      "channelId": "zirve",
+      "channelName": "BEIN SPORTS 1",
+      "streamUrl": "https://fixbettv84.com/channel?id=zirve",
+      "score": "2 - 1",
+      "icon": "⚽"
+    },
+    {
+      "id": "live_2",
+      "title": "Real Madrid - Barcelona",
+      "sport": "futbol",
+      "league": "La Liga",
+      "time": "58'",
+      "isLive": true,
+      "channelId": "b2",
+      "channelName": "BEIN SPORTS 2",
+      "streamUrl": "https://fixbettv84.com/channel?id=b2",
+      "score": "1 - 1",
+      "icon": "⚽"
+    },
+    {
+      "id": "live_3",
+      "title": "Manchester City - Liverpool",
+      "sport": "futbol",
+      "league": "Premier League",
+      "time": "32'",
+      "isLive": true,
+      "channelId": "b3",
+      "channelName": "BEIN SPORTS 3",
+      "streamUrl": "https://fixbettv84.com/channel?id=b3",
+      "score": "0 - 0",
+      "icon": "⚽"
+    },
+    {
+      "id": "live_4",
+      "title": "Anadolu Efes - Fenerbahçe Beko",
+      "sport": "basketbol",
+      "league": "EuroLeague",
+      "time": "3. Periyot",
+      "isLive": true,
+      "channelId": "ss",
+      "channelName": "S SPORT 1",
+      "streamUrl": "https://fixbettv84.com/channel?id=ss",
+      "score": "68 - 64",
+      "icon": "🏀"
+    },
+    {
+      "id": "live_5",
+      "title": "Los Angeles Lakers - Golden State Warriors",
+      "sport": "basketbol",
+      "league": "NBA",
+      "time": "4. Periyot",
+      "isLive": true,
+      "channelId": "ss2",
+      "channelName": "S SPORT 2",
+      "streamUrl": "https://fixbettv84.com/channel?id=ss2",
+      "score": "102 - 98",
+      "icon": "🏀"
+    },
+    {
+      "id": "live_6",
+      "title": "Carlos Alcaraz - Jannik Sinner",
+      "sport": "tenis",
+      "league": "US Open Erkekler Finali",
+      "time": "2. Set",
+      "isLive": true,
+      "channelId": "eu1",
+      "channelName": "EUROSPORT 1",
+      "streamUrl": "https://fixbettv84.com/channel?id=eu1",
+      "score": "6-4, 3-2",
+      "icon": "🎾"
+    },
+    {
+      "id": "live_7",
+      "title": "VakıfBank - Eczacıbaşı Dynavit",
+      "sport": "voleybol",
+      "league": "Sultanlar Ligi",
+      "time": "3. Set",
+      "isLive": true,
+      "channelId": "trtspor",
+      "channelName": "TRT SPOR",
+      "streamUrl": "https://fixbettv84.com/channel?id=trtspor",
+      "score": "25-22, 19-25, 14-11",
+      "icon": "🏐"
+    }
+  ],
+  "dailyMatches": [
+    {
+      "id": "daily_1",
+      "title": "Beşiktaş - Trabzonspor",
+      "sport": "futbol",
+      "league": "Trendyol Süper Lig",
+      "time": "20:00",
+      "status": "Bu Akşam",
+      "channelId": "zirve",
+      "channelName": "BEIN SPORTS 1",
+      "streamUrl": "https://fixbettv84.com/channel?id=zirve",
+      "icon": "⚽"
+    },
+    {
+      "id": "daily_2",
+      "title": "Bayern Münih - Borussia Dortmund",
+      "sport": "futbol",
+      "league": "Bundesliga",
+      "time": "19:30",
+      "status": "Bu Akşam",
+      "channelId": "b4",
+      "channelName": "BEIN SPORTS 4",
+      "streamUrl": "https://fixbettv84.com/channel?id=b4",
+      "icon": "⚽"
+    },
+    {
+      "id": "daily_3",
+      "title": "Inter - AC Milan",
+      "sport": "futbol",
+      "league": "Serie A",
+      "time": "21:45",
+      "status": "Bu Akşam",
+      "channelId": "ss",
+      "channelName": "S SPORT 1",
+      "streamUrl": "https://fixbettv84.com/channel?id=ss",
+      "icon": "⚽"
+    },
+    {
+      "id": "daily_4",
+      "title": "Paris Saint-Germain - Marseille",
+      "sport": "futbol",
+      "league": "Ligue 1",
+      "time": "22:00",
+      "status": "Bu Akşam",
+      "channelId": "b5",
+      "channelName": "BEIN SPORTS 5",
+      "streamUrl": "https://fixbettv84.com/channel?id=b5",
+      "icon": "⚽"
+    },
+    {
+      "id": "daily_5",
+      "title": "Panathinaikos - Olympiacos",
+      "sport": "basketbol",
+      "league": "EuroLeague",
+      "time": "21:15",
+      "status": "Bu Akşam",
+      "channelId": "ss2",
+      "channelName": "S SPORT 2",
+      "streamUrl": "https://fixbettv84.com/channel?id=ss2",
+      "icon": "🏀"
+    },
+    {
+      "id": "daily_6",
+      "title": "İtalya GP - Sıralama Turları",
+      "sport": "motor",
+      "league": "Formula 1",
+      "time": "17:00",
+      "status": "Tamamlandı",
+      "channelId": "ss",
+      "channelName": "S SPORT 1",
+      "streamUrl": "https://fixbettv84.com/channel?id=ss",
+      "icon": "🏎️"
+    }
+  ]
+}
