@@ -29,7 +29,13 @@ raporlar üreten gelişmiş otomasyon botu.
    - **Marka bazında** kategorize edilir (Bein Sports, Tabii, TRT, SmartSpor, …).
    - `output/channels.json` dosyasına yazılır ve raporlara eklenir.
 
-5. **Raporlar** (`src/fixbet/reports.py` → `output/`)
+5. **GitHub Pages sayfası** (`src/fixbet/site.py`)
+   - Repo kökündeki **`index.html`** her çalıştırma da yeniden üretilir.
+   - Şablondaki sabit/ölü alan adı yerine **güncel site adresi** yazılır,
+     7/24 kanal listesi ve **günün maçları** (canlı / yaklaşan / günün maçı / lig bazlı)
+     otomatik gömülür. GitHub Actions push ettiği için GitHub Pages her zaman güncel kalır.
+
+6. **Raporlar** (`src/fixbet/reports.py` → `output/`)
    - `report.html` → tarayıcıda açılan, kendi kendine yeten canlı panel (maçlar + 7/24 kanallar).
    - `matches.md` → okunabilir günlük maç listesi + kanal listesi.
    - `matches.json`, `live_matches.json`, `today_matches.json`, `channels.json` → makine okunur veri.

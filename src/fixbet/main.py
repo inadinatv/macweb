@@ -15,7 +15,7 @@ import time
 from datetime import datetime
 from zoneinfo import ZoneInfo
 
-from . import categorizer, config, domain_checker, parser, reports, scraper
+from . import categorizer, channels, config, domain_checker, parser, reports, scraper, site
 
 TZ = ZoneInfo("Europe/Istanbul")
 
@@ -34,8 +34,8 @@ def pipeline() -> dict:
     now = _now()
 
     # 1) Güncel site adresini güncelle
-    site = domain_checker.check_current_site()
-    domain_checker.log(site)
+    site_info = domain_checker.check_current_site()
+    domain_checker.log(site_info)
 
     # 2) Maç listesini çek
     try:
@@ -50,13 +50,15 @@ def pipeline() -> dict:
     categorized = categorizer.categorize(matches, now)
 
     # 2b) 7/24 kanal listesi (güncel adresin ana sayfasından)
-    from . import channels
     channels_data = channels.categorize(channels.fetch_channels())
 
+    # 2c) GitHub Pages için repo köküne index.html üret (güncel adres + maçlar)
+    site.build_index_html(matches, channels_data)
+
     # 3) Raporlar
-    reports.write_json_data(matches, categorized, site, channels_data)
-    reports.write_markdown(categorized, site, channels_data)
-    reports.write_html(categorized, site, channels_data)
+    reports.write_json_data(matches, categorized, site_info, channels_data)
+    reports.write_markdown(categorized, site_info, channels_data)
+    reports.write_html(categorized, site_info, channels_data)
 
     # 4) Otomatik yayınlama (settings.yml -> git.autorelease)
     from . import publisher
@@ -65,7 +67,7 @@ def pipeline() -> dict:
     except Exception as exc:
         print(f"[!] yayınlama adımı hatası: {exc}")
 
-    return {"site": site, "categorized": categorized, "matches": matches, "now": now}
+    return {"site": site_info, "categorized": categorized, "matches": matches, "now": now}
 
 
 def _print_summary(result: dict) -> None:
