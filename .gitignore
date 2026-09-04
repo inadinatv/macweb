@@ -1,0 +1,9 @@
+__pycache__/
+*.pyc
+.venv/
+venv/
+.env
+.DS_Store
+# üretilen raporlar repoya commit edilecekse aşağıyı açmayın
+# output/
+# config/current_site.yml

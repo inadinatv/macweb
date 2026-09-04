@@ -1,0 +1,16 @@
+# ============================================================
+#  GÜNCEL SİTE ADRESİ  (bot tarafından otomatik güncellenir)
+#  Bu dosya fixbet-bot tarafından yazılır; elle düzenlemeyin.
+#  Kaynak: config/mirrors.yml  +  sağlık kontrolü
+# ============================================================
+base_domain: fixbettv84.com
+current_address: https://fixbettv84.com/
+healthy: true
+mirror_now: fixbettv84.com
+state: OK
+active_mirrors:
+- fixbettv84.com
+- fixbettv19.com
+last_checked: '2026-09-04T16:38:55+00:00'
+note: OK
+probed: 200

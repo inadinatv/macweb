@@ -1,0 +1,52 @@
+# ============================================================================
+#  fixbet-bot  —  Ayarlar
+#  Site kaynağından (fixbettv) çekilen veriler ve etki alanı (domain) takibi
+#  ile ilgili merkezi ayar dosyası.
+# ============================================================================
+
+bot:
+  name: "fixbet-bot"
+  timezone: "Europe/Istanbul"
+  # Konsol çıktısını renklendir
+  color: true
+
+# --- Veri kaynağı (sitenin maç listesini çektiği stabil API) -----------------
+# NOT: Bu uç nokta sabittir; fixbettv alan adı değişse de maç listesi buradan gelir.
+data_source:
+  primary: "https://data-reality.com/matches.php"     # zengin format (takım, logo, spor)
+  fallback: "https://data-reality.com/matches2.php"   # basit format (channel-name / status)
+  headers:
+    User-Agent: "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
+    Accept: "text/html,application/xhtml+xml"
+  timeout_seconds: 15
+  retries: 3
+
+# --- Günlük & izleme (sürekli çalışan mod) ------------------------------------
+watch:
+  sync_interval_seconds: 300      # maç listesi yenileme aralığı (5 dk)
+  domain_check_interval_seconds: 3600  # alan adı sağlık kontrolü (saatte 1)
+  max_history_matches: 2000
+
+# --- Git / otomatik yayınlama ---------------------------------------------------
+git:
+  # true ise bot, çalıştığında output/ ve config/current_site.yml değişikliklerini
+  # otomatik commit + push eder (GitHub Actions içinde kendi kendine günceller).
+  autorelease: false
+  # Otomatik işlem sırasında aşağıdaki dallara/uzak kaynağa gönder
+  target_branch: "main"
+  message_prefix: "[bot] güncelleme"
+
+# --- Kategori (kategorize etme) seçenekleri ------------------------------------
+categorize:
+  match_of_day_token: "[Günün Maçı]"   # statüde geçen "günün maçı" işareti
+  terms:
+    - "Canlı"
+    - "Şimdi"
+  # Gün içinde saat geçmişse maçı "canlı/başladı" kategorisine al
+  live_grace_minutes: 0               # yayın başlangıcına ne kadar tolerans
+  default_sport: "Spor"
+  sport_aliases:                       # ana sporda görülen adlar
+    Futbol: "Futbol"
+    Basketbol: "Basketbol"
+    Voleybol: "Voleybol"
+    Tenis: "Tenis"

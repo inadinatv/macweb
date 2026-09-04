@@ -1,0 +1,40 @@
+# ============================================================================
+#  fixbet-bot  —  Ayna (mirror) alan adı adaylarının listesi
+#
+#  fixbettv  e-tablosu (fixbettv78.com, fixbettv79.com, ...) her defasında
+#  numarayı artırarak yeni bir "güncel adres" yayınlar. Bu dosyadaki adaylar
+#  üzerinde sağlık kontrolü yapılır ve çalışan adresler
+#  config/current_site.yml  dosyasına yazılır.
+#
+#  Kendi sitenize göre `patterns` ayarını değiştirebilirsiniz.
+# ============================================================================
+
+# Ana alan adı kalıpları (pattern). {n} numaranın yerine geçer.
+patterns:
+  - "fixbettv{n}.com"
+
+# <patterns> içindeki her kalıp için taranacak farklı numara aralığı.
+range_numbers:
+  start: 1
+  end: 200
+
+# Öncelikli / bilinen son numara. Bot buradan başlar ve çevresini tarar.
+preferred_number: 84
+
+# Taranacak pencere genişliği (preferred_number çevresi). Örn. 84 için 79..89.
+scan_window: 12
+
+# Sağlık kontrolünde kullanılacak kontrol işaretleri.
+health_checks:
+  expect_status: 200
+  # Sayfada aranacak anahtar metinlerden EN AZ BİRİ bulunmalı (maç izleme sitesi olduğunu doğrular)
+  must_contain_any:
+    - "Canlı Maç izle"
+    - "Beinsports izle"
+    - "Fixbet TV"
+  follow_redirects: true
+  timeout_seconds: 8
+
+# Alan adı hiç bulunamazsa aranacak sabit/güvenilir kaynaklar (boş olabilir).
+# Bu listedeki adresler "güncel adres" için ikinci bir kaynak olarak denetlenir.
+fallback_sources: []
