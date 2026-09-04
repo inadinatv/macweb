@@ -95,7 +95,10 @@
             transition: all 0.4s ease;
         }
         .player-wrap:hover { border-color: rgba(255,45,122,0.7); box-shadow: 0 0 40px rgba(255,45,122,0.6), 0 0 90px rgba(255,45,122,0.25), 0 0 120px rgba(155,77,255,0.15); }
-        .player-wrap iframe { width: 100%; height: 100%; border: 0; display: block; }
+        .player-wrap iframe { width: 100%; height: 100%; border: 0; display: block; position: relative; z-index: 2; }
+        .player-wrap.player-flash { border-color: var(--neon-gold); box-shadow: 0 0 50px rgba(255,204,51,0.7), 0 0 100px rgba(255,204,51,0.3); }
+        .player-tip{ position:absolute; inset:0; display:flex; align-items:center; justify-content:center;
+            color:var(--text-muted); font-size:1rem; letter-spacing:1px; z-index:1; text-align:center; padding:20px; }
 
         .side-panel { display: flex; flex-direction: column; gap: 16px; }
 
@@ -225,8 +228,9 @@
             border-radius: 14px; padding: 10px 18px; margin-bottom: 18px;
             color: var(--text-muted); font-size: 0.85rem; letter-spacing: 1px; text-align:center;
             backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
-            position: relative; z-index: 1;
+            position: relative; z-index: 1; display:flex; align-items:center; justify-content:center; gap:14px; flex-wrap:wrap;
         }
+        .address-strip .live-clock{ color:var(--neon-gold); font-weight:800; font-family:'Bebas Neue',sans-serif; letter-spacing:2px; font-size:1.1rem; }
         .address-strip b{ color: var(--neon-cyan); }
         .matches-section{
             background: rgba(12,10,24,0.9); border:1px solid rgba(155,77,255,0.3);
@@ -235,30 +239,51 @@
             box-shadow: 0 0 40px rgba(0,0,0,0.5), 0 0 60px rgba(155,77,255,0.08);
             position: relative; z-index: 1;
         }
-        .match-group{ margin-bottom: 16px; }
+        .match-filters{ display:flex; gap:8px; flex-wrap:wrap; justify-content:center; margin-bottom:18px; }
+        .mf-btn{ background:rgba(20,16,38,0.8); border:1px solid rgba(155,77,255,0.3); color:var(--text-muted);
+            font-weight:700; font-size:0.72rem; letter-spacing:1px; padding:7px 16px; border-radius:24px; cursor:pointer; transition:all .2s; text-transform:uppercase; }
+        .mf-btn:hover{ border-color:var(--neon-purple); color:#fff; }
+        .mf-btn.active{ background:linear-gradient(135deg,var(--neon-pink),var(--neon-purple)); color:#fff; border-color:transparent; box-shadow:0 0 20px rgba(255,45,122,0.4); }
+        .match-group{ margin-bottom: 18px; scroll-margin-top: 20px; }
+        .match-group.is-hidden{ display:none; }
         .match-group-title{
             font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:0.9rem;
             letter-spacing:3px; text-transform:uppercase; color:var(--neon-cyan); margin-bottom:10px;
             display:flex; align-items:center; gap:8px;
         }
+        .match-group-title .mcount{ color:var(--text-muted); font-weight:400; }
         .match-list{ display:flex; flex-direction:column; gap:8px; }
         .match-card{
             display:flex; align-items:center; gap:12px;
             background: rgba(20,16,38,0.7); border:1px solid rgba(155,77,255,0.25);
-            border-radius: 14px; padding: 10px 14px; font-size:0.95rem; flex-wrap:wrap;
+            border-radius: 14px; padding: 10px 14px; font-size:0.95rem; flex-wrap:wrap; transition:all .25s;
         }
+        .match-card:hover{ border-color:rgba(255,45,122,0.5); transform:translateY(-2px); box-shadow:0 8px 22px rgba(0,0,0,0.4); }
         .match-card.live{ border-color: rgba(255,45,122,0.7); box-shadow:0 0 18px rgba(255,45,122,0.25); }
-        .match-time{ font-family:'Barlow Condensed',sans-serif; font-weight:900; font-size:1.1rem; color:var(--neon-gold); min-width:48px; }
-        .match-teams{ flex:1; min-width:180px; }
-        .match-league{ color:var(--text-muted); font-size:0.78rem; display:block; }
+        .match-card.live .match-time{ animation: liveBlink 1.4s ease-in-out infinite; }
+        .match-time{ font-family:'Barlow Condensed',sans-serif; font-weight:900; font-size:1.2rem; color:var(--neon-gold); min-width:52px; text-align:center; }
+        .match-teams{ flex:1; min-width:180px; display:flex; align-items:center; gap:8px; flex-wrap:wrap; }
+        .match-teams .mt-name{ display:inline-flex; align-items:center; gap:8px; font-weight:700; flex-wrap:wrap; }
+        .match-teams .mt-vs{ color:var(--text-muted); font-weight:400; font-size:0.8rem; text-transform:uppercase; letter-spacing:1px; }
+        .team-logo img{ width:26px; height:26px; object-fit:contain; display:block; filter:drop-shadow(0 0 6px rgba(255,45,122,0.4)); }
+        .match-league{ color:var(--text-muted); font-size:0.75rem; display:block; width:100%; }
         .match-badge{ font-size:0.68rem; font-weight:900; letter-spacing:1px; padding:3px 10px; border-radius:20px; }
         .match-badge.live{ background:linear-gradient(135deg,#ff2d2d,#ff2d7a); color:#fff; box-shadow:0 0 15px rgba(255,45,122,0.5); animation: liveBlink 1.6s ease-in-out infinite; }
         .match-badge.up{ background:rgba(0,234,255,0.15); color:var(--neon-cyan); border:1px solid rgba(0,234,255,0.4); }
         .match-badge.done{ background:rgba(141,132,170,0.2); color:var(--text-muted); }
         .match-badge.mod{ background:linear-gradient(135deg,#ffcc33,#ffa800); color:#000; }
-        .match-watch{ color:var(--neon-pink); text-decoration:none; font-weight:800; font-size:0.8rem; border:1px solid rgba(255,45,122,0.6); border-radius:20px; padding:4px 12px; transition:all .2s; }
-        .match-watch:hover{ background:var(--neon-pink); color:#000; box-shadow:0 0 18px rgba(255,45,122,0.6); }
+        .match-watch{ color:var(--neon-pink); font-family:inherit; background:transparent; cursor:pointer; font-weight:800; font-size:0.8rem; border:1px solid rgba(255,45,122,0.6); border-radius:20px; padding:5px 14px; transition:all .2s; letter-spacing:1px; }
+        .match-watch:hover{ background:var(--neon-pink); color:#000; box-shadow:0 0 18px rgba(255,45,122,0.6); transform:scale(1.04); }
         .empty-msg{ color:var(--text-muted); font-size:0.9rem; text-align:center; padding:12px; }
+
+        /* Kanal arama */
+        .channel-search{ display:flex; justify-content:center; margin-bottom:16px; }
+        .channel-search input{ width:100%; max-width:360px; background:rgba(20,16,38,0.8); border:1px solid rgba(155,77,255,0.3);
+            color:var(--text-main); padding:10px 18px; font-size:0.9rem; border-radius:24px; outline:none; transition:all .2s; font-family:inherit; }
+        .channel-search input:focus{ border-color:var(--neon-cyan); box-shadow:0 0 20px rgba(0,234,255,0.25); }
+        .channel-search::placeholder{ color:var(--text-muted); }
+        .channel-search input::placeholder{ color:var(--text-muted); }
+        .no-result{ color:var(--text-muted); text-align:center; font-size:0.85rem; padding:20px; display:none; }
     </style>
 </head>
 <body>
@@ -271,11 +296,14 @@
         </header>
 
         <div class="address-strip">
-            📡 <b>Kaynak:</b> <span id="siteAddress">https://fixbettv84.com</span> &nbsp;·&nbsp; Güncellenme: <span id="updatedAt">2026-09-04 21:46</span>
+            <span>📡 <b>Kaynak:</b> <span id="siteAddress">https://fixbettv84.com</span></span>
+            <span>🕑 <span id="liveClock" class="live-clock">--:--:--</span> <span style="font-size:0.75rem">(yerel)</span></span>
+            <span>🔄 Güncellenme: <span id="updatedAt">2026-09-04 21:55</span></span>
         </div>
 
         <div class="main-layout">
-            <div class="player-wrap">
+            <div class="player-wrap" id="playerWrap">
+                <div class="player-tip" id="playerTip">🎬 Kanal seçin, yayın burada oynasın</div>
                 <iframe id="liveIframe" src="" allowfullscreen allow="autoplay; encrypted-media" loading="lazy"></iframe>
             </div>
 
@@ -305,14 +333,19 @@
 
         <div class="matches-section" id="matchesSection">
             <div class="section-title">⚽ GÜNÜN MAÇLARI</div>
-            <div class="match-group"><div class="match-group-title" style="color:#ffcc33">⭐ GÜNÜN MAÇI <span>(1)</span></div><div class="match-list"><div class="match-card up"><span class="match-time">20:00</span><span class="match-teams">İstanbul Başakşehir <b>vs</b> Galatasaray<span class="match-league">Trendyol Süper Lig</span></span><span class="match-badge up">YAKLAŞAN</span><span class="match-badge mod">★ GÜNÜN MAÇI</span><a class="match-watch" href="https://fixbettv84.com/channel.html?id=zirve" target="_blank">▶ İZLE</a></div></div></div>
-<div class="match-group"><div class="match-group-title" style="color:#00eaff">⏰ YAKLAŞAN <span>(8)</span></div><div class="match-list"><div class="match-card up"><span class="match-time">18:30</span><span class="match-teams">Olimpia Milano <b>vs</b> Kızılyıldız<span class="match-league">Girit Basketbol Turnuvası</span></span><span class="match-badge up">YAKLAŞAN</span><a class="match-watch" href="https://fixbettv84.com/channel.html?id=ss2" target="_blank">▶ İZLE</a></div><div class="match-card up"><span class="match-time">20:00</span><span class="match-teams">İstanbul Başakşehir <b>vs</b> Galatasaray<span class="match-league">Trendyol Süper Lig</span></span><span class="match-badge up">YAKLAŞAN</span><span class="match-badge mod">★ GÜNÜN MAÇI</span><a class="match-watch" href="https://fixbettv84.com/channel.html?id=zirve" target="_blank">▶ İZLE</a></div><div class="match-card up"><span class="match-time">20:00</span><span class="match-teams">Lyon <b>vs</b> Auxerre<span class="match-league">Fransa Ligue 1</span></span><span class="match-badge up">YAKLAŞAN</span><a class="match-watch" href="https://fixbettv84.com/channel.html?id=b2" target="_blank">▶ İZLE</a></div><div class="match-card up"><span class="match-time">21:00</span><span class="match-teams">Olimpiakos <b>vs</b> Fenerbahçe Tarfin<span class="match-league">Girit Basketbol Turnuvası</span></span><span class="match-badge up">YAKLAŞAN</span><a class="match-watch" href="https://fixbettv84.com/channel.html?id=ss2" target="_blank">▶ İZLE</a></div><div class="match-card up"><span class="match-time">22:00</span><span class="match-teams">Ipswich Town <b>vs</b> Liverpool<span class="match-league">İngiltere Premier Lig</span></span><span class="match-badge up">YAKLAŞAN</span><a class="match-watch" href="https://fixbettv84.com/channel.html?id=b3" target="_blank">▶ İZLE</a></div><div class="match-card up"><span class="match-time">22:00</span><span class="match-teams">Real Betis <b>vs</b> Real Madrid<span class="match-league">İspanya La Liga</span></span><span class="match-badge up">YAKLAŞAN</span><a class="match-watch" href="https://fixbettv84.com/channel.html?id=ss" target="_blank">▶ İZLE</a></div><div class="match-card up"><span class="match-time">22:05</span><span class="match-teams">PSG <b>vs</b> Monaco<span class="match-league">Fransa Ligue 1</span></span><span class="match-badge up">YAKLAŞAN</span><a class="match-watch" href="https://fixbettv84.com/channel.html?id=b2" target="_blank">▶ İZLE</a></div><div class="match-card up"><span class="match-time">22:15</span><span class="match-teams">Porto <b>vs</b> Moreirense<span class="match-league">Portekiz Liga NOS</span></span><span class="match-badge up">YAKLAŞAN</span><a class="match-watch" href="https://fixbettv84.com/channel.html?id=b4" target="_blank">▶ İZLE</a></div></div></div>
-<div class="match-group"><div class="match-group-title" style="color:#ffcc33">🏆 Trendyol Süper Lig <span>(1)</span></div><div class="match-list"><div class="match-card up"><span class="match-time">20:00</span><span class="match-teams">İstanbul Başakşehir <b>vs</b> Galatasaray<span class="match-league">Trendyol Süper Lig</span></span><span class="match-badge up">YAKLAŞAN</span><span class="match-badge mod">★ GÜNÜN MAÇI</span><a class="match-watch" href="https://fixbettv84.com/channel.html?id=zirve" target="_blank">▶ İZLE</a></div></div></div><div class="match-group"><div class="match-group-title" style="color:#ffcc33">🏆 Girit Basketbol Turnuvası <span>(2)</span></div><div class="match-list"><div class="match-card up"><span class="match-time">18:30</span><span class="match-teams">Olimpia Milano <b>vs</b> Kızılyıldız<span class="match-league">Girit Basketbol Turnuvası</span></span><span class="match-badge up">YAKLAŞAN</span><a class="match-watch" href="https://fixbettv84.com/channel.html?id=ss2" target="_blank">▶ İZLE</a></div><div class="match-card up"><span class="match-time">21:00</span><span class="match-teams">Olimpiakos <b>vs</b> Fenerbahçe Tarfin<span class="match-league">Girit Basketbol Turnuvası</span></span><span class="match-badge up">YAKLAŞAN</span><a class="match-watch" href="https://fixbettv84.com/channel.html?id=ss2" target="_blank">▶ İZLE</a></div></div></div><div class="match-group"><div class="match-group-title" style="color:#ffcc33">🏆 Fransa Ligue 1 <span>(2)</span></div><div class="match-list"><div class="match-card up"><span class="match-time">20:00</span><span class="match-teams">Lyon <b>vs</b> Auxerre<span class="match-league">Fransa Ligue 1</span></span><span class="match-badge up">YAKLAŞAN</span><a class="match-watch" href="https://fixbettv84.com/channel.html?id=b2" target="_blank">▶ İZLE</a></div><div class="match-card up"><span class="match-time">22:05</span><span class="match-teams">PSG <b>vs</b> Monaco<span class="match-league">Fransa Ligue 1</span></span><span class="match-badge up">YAKLAŞAN</span><a class="match-watch" href="https://fixbettv84.com/channel.html?id=b2" target="_blank">▶ İZLE</a></div></div></div><div class="match-group"><div class="match-group-title" style="color:#ffcc33">🏆 İngiltere Premier Lig <span>(1)</span></div><div class="match-list"><div class="match-card up"><span class="match-time">22:00</span><span class="match-teams">Ipswich Town <b>vs</b> Liverpool<span class="match-league">İngiltere Premier Lig</span></span><span class="match-badge up">YAKLAŞAN</span><a class="match-watch" href="https://fixbettv84.com/channel.html?id=b3" target="_blank">▶ İZLE</a></div></div></div><div class="match-group"><div class="match-group-title" style="color:#ffcc33">🏆 İspanya La Liga <span>(1)</span></div><div class="match-list"><div class="match-card up"><span class="match-time">22:00</span><span class="match-teams">Real Betis <b>vs</b> Real Madrid<span class="match-league">İspanya La Liga</span></span><span class="match-badge up">YAKLAŞAN</span><a class="match-watch" href="https://fixbettv84.com/channel.html?id=ss" target="_blank">▶ İZLE</a></div></div></div><div class="match-group"><div class="match-group-title" style="color:#ffcc33">🏆 Portekiz Liga NOS <span>(1)</span></div><div class="match-list"><div class="match-card up"><span class="match-time">22:15</span><span class="match-teams">Porto <b>vs</b> Moreirense<span class="match-league">Portekiz Liga NOS</span></span><span class="match-badge up">YAKLAŞAN</span><a class="match-watch" href="https://fixbettv84.com/channel.html?id=b4" target="_blank">▶ İZLE</a></div></div></div>
+            <div class="match-filters" id="matchFilters"><button class="mf-btn active" data-mf="all">Tümü</button><button class="mf-btn" data-mf="live">🔴 Canlı</button><button class="mf-btn" data-mf="mod">⭐ Günün Maçı</button><button class="mf-btn" data-mf="upcoming">⏰ Yaklaşan</button><button class="mf-btn" data-mf="done">✅ Bitti</button></div>
+<div class="match-group" data-group="mod"><div class="match-group-title" style="color:#ffcc33"><span>⭐ GÜNÜN MAÇI <span class="mcount">(1)</span></span></div><div class="match-list"><div class="match-card up" data-time="20:00" data-status="upcoming" data-league="Trendyol Süper Lig"><span class="match-time">20:00</span><span class="match-teams"><span class="team-logo"><img loading="lazy" src="https://img.sporekrani.com/teams/leegznr7sPrTlAhxaFZxPIyEYcV4Ai9xCFtx674y.png" alt="" onerror="this.style.display='none'"></span><span class="mt-name"><b>İstanbul Başakşehir</b><span class="mt-vs">vs</span><b>Galatasaray</b></span><span class="team-logo"><img loading="lazy" src="https://img.sporekrani.com/teams/GG15p6Gkt4vy5CbGDmFNuSLHMC5ojiP0GatfJCdh.png" alt="" onerror="this.style.display='none'"></span><span class="match-league">Trendyol Süper Lig</span></span><span class="match-badge up" data-badge>YAKLAŞAN</span><span class="match-badge mod" data-is-mod="1">★ GÜNÜN MAÇI</span><button class="match-watch" data-stream="https://fixbettv84.com/channel.html?id=zirve" title="İstanbul Başakşehir vs Galatasaray">▶ İZLE</button></div></div></div>
+<div class="match-group" data-group="upcoming"><div class="match-group-title" style="color:#00eaff"><span>⏰ YAKLAŞAN <span class="mcount">(8)</span></span></div><div class="match-list"><div class="match-card up" data-time="18:30" data-status="upcoming" data-league="Girit Basketbol Turnuvası"><span class="match-time">18:30</span><span class="match-teams"><span class="team-logo"><img loading="lazy" src="https://img.sporekrani.com/teams/JpCgEKkWMRwVzuFSvfEcxYeWSSdoS3i0z3gEMc5B.png" alt="" onerror="this.style.display='none'"></span><span class="mt-name"><b>Olimpia Milano</b><span class="mt-vs">vs</span><b>Kızılyıldız</b></span><span class="team-logo"><img loading="lazy" src="https://img.sporekrani.com/teams/4c60CQ7vTN4HnUwf6j0bTgah2pGJdc1GjR0E6NAs.png" alt="" onerror="this.style.display='none'"></span><span class="match-league">Girit Basketbol Turnuvası</span></span><span class="match-badge up" data-badge>YAKLAŞAN</span><button class="match-watch" data-stream="https://fixbettv84.com/channel.html?id=ss2" title="Olimpia Milano vs Kızılyıldız">▶ İZLE</button></div><div class="match-card up" data-time="20:00" data-status="upcoming" data-league="Trendyol Süper Lig"><span class="match-time">20:00</span><span class="match-teams"><span class="team-logo"><img loading="lazy" src="https://img.sporekrani.com/teams/leegznr7sPrTlAhxaFZxPIyEYcV4Ai9xCFtx674y.png" alt="" onerror="this.style.display='none'"></span><span class="mt-name"><b>İstanbul Başakşehir</b><span class="mt-vs">vs</span><b>Galatasaray</b></span><span class="team-logo"><img loading="lazy" src="https://img.sporekrani.com/teams/GG15p6Gkt4vy5CbGDmFNuSLHMC5ojiP0GatfJCdh.png" alt="" onerror="this.style.display='none'"></span><span class="match-league">Trendyol Süper Lig</span></span><span class="match-badge up" data-badge>YAKLAŞAN</span><span class="match-badge mod" data-is-mod="1">★ GÜNÜN MAÇI</span><button class="match-watch" data-stream="https://fixbettv84.com/channel.html?id=zirve" title="İstanbul Başakşehir vs Galatasaray">▶ İZLE</button></div><div class="match-card up" data-time="20:00" data-status="upcoming" data-league="Fransa Ligue 1"><span class="match-time">20:00</span><span class="match-teams"><span class="team-logo"><img loading="lazy" src="https://img.sporekrani.com/teams/8YONWo71YMouSpLksS1LKe6aVoq2Prrq5yDjgylr.png" alt="" onerror="this.style.display='none'"></span><span class="mt-name"><b>Lyon</b><span class="mt-vs">vs</span><b>Auxerre</b></span><span class="team-logo"><img loading="lazy" src="https://img.sporekrani.com/teams/Y9F5HA9sjZocZP8IVIdG0pp3aE1yV7ELYMLYOmA7.png" alt="" onerror="this.style.display='none'"></span><span class="match-league">Fransa Ligue 1</span></span><span class="match-badge up" data-badge>YAKLAŞAN</span><button class="match-watch" data-stream="https://fixbettv84.com/channel.html?id=b2" title="Lyon vs Auxerre">▶ İZLE</button></div><div class="match-card up" data-time="21:00" data-status="upcoming" data-league="Girit Basketbol Turnuvası"><span class="match-time">21:00</span><span class="match-teams"><span class="team-logo"><img loading="lazy" src="https://img.sporekrani.com/teams/dad0d8ee-6e6e-40f4-8ef8-7628599cd235.png" alt="" onerror="this.style.display='none'"></span><span class="mt-name"><b>Olimpiakos</b><span class="mt-vs">vs</span><b>Fenerbahçe Tarfin</b></span><span class="team-logo"><img loading="lazy" src="https://img.sporekrani.com/teams/6fad4a16-b5bd-4727-8443-ddac90b0d13c.png" alt="" onerror="this.style.display='none'"></span><span class="match-league">Girit Basketbol Turnuvası</span></span><span class="match-badge up" data-badge>YAKLAŞAN</span><button class="match-watch" data-stream="https://fixbettv84.com/channel.html?id=ss2" title="Olimpiakos vs Fenerbahçe Tarfin">▶ İZLE</button></div><div class="match-card up" data-time="22:00" data-status="upcoming" data-league="İngiltere Premier Lig"><span class="match-time">22:00</span><span class="match-teams"><span class="team-logo"><img loading="lazy" src="https://img.sporekrani.com/teams/mkhLcTjhuMwftTBiSuDqFEROeEAYK8ERWkc8K54T.png" alt="" onerror="this.style.display='none'"></span><span class="mt-name"><b>Ipswich Town</b><span class="mt-vs">vs</span><b>Liverpool</b></span><span class="team-logo"><img loading="lazy" src="https://img.sporekrani.com/teams/X76hf7UqTjpEwibxSUfBvyeMdUHQDmX8kfAU6hfR.png" alt="" onerror="this.style.display='none'"></span><span class="match-league">İngiltere Premier Lig</span></span><span class="match-badge up" data-badge>YAKLAŞAN</span><button class="match-watch" data-stream="https://fixbettv84.com/channel.html?id=b3" title="Ipswich Town vs Liverpool">▶ İZLE</button></div><div class="match-card up" data-time="22:00" data-status="upcoming" data-league="İspanya La Liga"><span class="match-time">22:00</span><span class="match-teams"><span class="team-logo"><img loading="lazy" src="https://img.sporekrani.com/teams/AaogJhN63KSgYMLUAY4RLcEi4oSGQSLLQS6Qc0wm.png" alt="" onerror="this.style.display='none'"></span><span class="mt-name"><b>Real Betis</b><span class="mt-vs">vs</span><b>Real Madrid</b></span><span class="team-logo"><img loading="lazy" src="https://img.sporekrani.com/teams/Clc4LOfTBSjPOeXnGfF4ot90t40BMgo2YiuAluuI.png" alt="" onerror="this.style.display='none'"></span><span class="match-league">İspanya La Liga</span></span><span class="match-badge up" data-badge>YAKLAŞAN</span><button class="match-watch" data-stream="https://fixbettv84.com/channel.html?id=ss" title="Real Betis vs Real Madrid">▶ İZLE</button></div><div class="match-card up" data-time="22:05" data-status="upcoming" data-league="Fransa Ligue 1"><span class="match-time">22:05</span><span class="match-teams"><span class="team-logo"><img loading="lazy" src="https://img.sporekrani.com/teams/V4H7yH7E3GBuSO94SIr4WuLrfqCZsFEC5hMm5mWH.png" alt="" onerror="this.style.display='none'"></span><span class="mt-name"><b>PSG</b><span class="mt-vs">vs</span><b>Monaco</b></span><span class="team-logo"><img loading="lazy" src="https://img.sporekrani.com/teams/oaTfs1JxyvmzeaKbHLMkt8BVqcivaznVdfC7QNBx.png" alt="" onerror="this.style.display='none'"></span><span class="match-league">Fransa Ligue 1</span></span><span class="match-badge up" data-badge>YAKLAŞAN</span><button class="match-watch" data-stream="https://fixbettv84.com/channel.html?id=b2" title="PSG vs Monaco">▶ İZLE</button></div><div class="match-card up" data-time="22:15" data-status="upcoming" data-league="Portekiz Liga NOS"><span class="match-time">22:15</span><span class="match-teams"><span class="team-logo"><img loading="lazy" src="https://img.sporekrani.com/teams/FuhOHSTAIC2W19jf0gv1FOphCoHuAUMIvADFJy26.png" alt="" onerror="this.style.display='none'"></span><span class="mt-name"><b>Porto</b><span class="mt-vs">vs</span><b>Moreirense</b></span><span class="team-logo"><img loading="lazy" src="https://img.sporekrani.com/teams/HiANVdXp9SQPgIWcXHgTATePsBeRChcrYb8nFHUB.png" alt="" onerror="this.style.display='none'"></span><span class="match-league">Portekiz Liga NOS</span></span><span class="match-badge up" data-badge>YAKLAŞAN</span><button class="match-watch" data-stream="https://fixbettv84.com/channel.html?id=b4" title="Porto vs Moreirense">▶ İZLE</button></div></div></div>
+<div class="match-group"><div class="match-group-title" style="color:#ffcc33"><span>🏆 LİG BAZLI <span class="mcount">(8)</span></span></div><div class="match-list"><div class="match-card up" data-time="18:30" data-status="upcoming" data-league="Girit Basketbol Turnuvası"><span class="match-time">18:30</span><span class="match-teams"><span class="team-logo"><img loading="lazy" src="https://img.sporekrani.com/teams/JpCgEKkWMRwVzuFSvfEcxYeWSSdoS3i0z3gEMc5B.png" alt="" onerror="this.style.display='none'"></span><span class="mt-name"><b>Olimpia Milano</b><span class="mt-vs">vs</span><b>Kızılyıldız</b></span><span class="team-logo"><img loading="lazy" src="https://img.sporekrani.com/teams/4c60CQ7vTN4HnUwf6j0bTgah2pGJdc1GjR0E6NAs.png" alt="" onerror="this.style.display='none'"></span><span class="match-league">Girit Basketbol Turnuvası</span></span><span class="match-badge up" data-badge>YAKLAŞAN</span><button class="match-watch" data-stream="https://fixbettv84.com/channel.html?id=ss2" title="Olimpia Milano vs Kızılyıldız">▶ İZLE</button></div><div class="match-card up" data-time="20:00" data-status="upcoming" data-league="Trendyol Süper Lig"><span class="match-time">20:00</span><span class="match-teams"><span class="team-logo"><img loading="lazy" src="https://img.sporekrani.com/teams/leegznr7sPrTlAhxaFZxPIyEYcV4Ai9xCFtx674y.png" alt="" onerror="this.style.display='none'"></span><span class="mt-name"><b>İstanbul Başakşehir</b><span class="mt-vs">vs</span><b>Galatasaray</b></span><span class="team-logo"><img loading="lazy" src="https://img.sporekrani.com/teams/GG15p6Gkt4vy5CbGDmFNuSLHMC5ojiP0GatfJCdh.png" alt="" onerror="this.style.display='none'"></span><span class="match-league">Trendyol Süper Lig</span></span><span class="match-badge up" data-badge>YAKLAŞAN</span><span class="match-badge mod" data-is-mod="1">★ GÜNÜN MAÇI</span><button class="match-watch" data-stream="https://fixbettv84.com/channel.html?id=zirve" title="İstanbul Başakşehir vs Galatasaray">▶ İZLE</button></div><div class="match-card up" data-time="20:00" data-status="upcoming" data-league="Fransa Ligue 1"><span class="match-time">20:00</span><span class="match-teams"><span class="team-logo"><img loading="lazy" src="https://img.sporekrani.com/teams/8YONWo71YMouSpLksS1LKe6aVoq2Prrq5yDjgylr.png" alt="" onerror="this.style.display='none'"></span><span class="mt-name"><b>Lyon</b><span class="mt-vs">vs</span><b>Auxerre</b></span><span class="team-logo"><img loading="lazy" src="https://img.sporekrani.com/teams/Y9F5HA9sjZocZP8IVIdG0pp3aE1yV7ELYMLYOmA7.png" alt="" onerror="this.style.display='none'"></span><span class="match-league">Fransa Ligue 1</span></span><span class="match-badge up" data-badge>YAKLAŞAN</span><button class="match-watch" data-stream="https://fixbettv84.com/channel.html?id=b2" title="Lyon vs Auxerre">▶ İZLE</button></div><div class="match-card up" data-time="21:00" data-status="upcoming" data-league="Girit Basketbol Turnuvası"><span class="match-time">21:00</span><span class="match-teams"><span class="team-logo"><img loading="lazy" src="https://img.sporekrani.com/teams/dad0d8ee-6e6e-40f4-8ef8-7628599cd235.png" alt="" onerror="this.style.display='none'"></span><span class="mt-name"><b>Olimpiakos</b><span class="mt-vs">vs</span><b>Fenerbahçe Tarfin</b></span><span class="team-logo"><img loading="lazy" src="https://img.sporekrani.com/teams/6fad4a16-b5bd-4727-8443-ddac90b0d13c.png" alt="" onerror="this.style.display='none'"></span><span class="match-league">Girit Basketbol Turnuvası</span></span><span class="match-badge up" data-badge>YAKLAŞAN</span><button class="match-watch" data-stream="https://fixbettv84.com/channel.html?id=ss2" title="Olimpiakos vs Fenerbahçe Tarfin">▶ İZLE</button></div><div class="match-card up" data-time="22:00" data-status="upcoming" data-league="İngiltere Premier Lig"><span class="match-time">22:00</span><span class="match-teams"><span class="team-logo"><img loading="lazy" src="https://img.sporekrani.com/teams/mkhLcTjhuMwftTBiSuDqFEROeEAYK8ERWkc8K54T.png" alt="" onerror="this.style.display='none'"></span><span class="mt-name"><b>Ipswich Town</b><span class="mt-vs">vs</span><b>Liverpool</b></span><span class="team-logo"><img loading="lazy" src="https://img.sporekrani.com/teams/X76hf7UqTjpEwibxSUfBvyeMdUHQDmX8kfAU6hfR.png" alt="" onerror="this.style.display='none'"></span><span class="match-league">İngiltere Premier Lig</span></span><span class="match-badge up" data-badge>YAKLAŞAN</span><button class="match-watch" data-stream="https://fixbettv84.com/channel.html?id=b3" title="Ipswich Town vs Liverpool">▶ İZLE</button></div><div class="match-card up" data-time="22:00" data-status="upcoming" data-league="İspanya La Liga"><span class="match-time">22:00</span><span class="match-teams"><span class="team-logo"><img loading="lazy" src="https://img.sporekrani.com/teams/AaogJhN63KSgYMLUAY4RLcEi4oSGQSLLQS6Qc0wm.png" alt="" onerror="this.style.display='none'"></span><span class="mt-name"><b>Real Betis</b><span class="mt-vs">vs</span><b>Real Madrid</b></span><span class="team-logo"><img loading="lazy" src="https://img.sporekrani.com/teams/Clc4LOfTBSjPOeXnGfF4ot90t40BMgo2YiuAluuI.png" alt="" onerror="this.style.display='none'"></span><span class="match-league">İspanya La Liga</span></span><span class="match-badge up" data-badge>YAKLAŞAN</span><button class="match-watch" data-stream="https://fixbettv84.com/channel.html?id=ss" title="Real Betis vs Real Madrid">▶ İZLE</button></div><div class="match-card up" data-time="22:05" data-status="upcoming" data-league="Fransa Ligue 1"><span class="match-time">22:05</span><span class="match-teams"><span class="team-logo"><img loading="lazy" src="https://img.sporekrani.com/teams/V4H7yH7E3GBuSO94SIr4WuLrfqCZsFEC5hMm5mWH.png" alt="" onerror="this.style.display='none'"></span><span class="mt-name"><b>PSG</b><span class="mt-vs">vs</span><b>Monaco</b></span><span class="team-logo"><img loading="lazy" src="https://img.sporekrani.com/teams/oaTfs1JxyvmzeaKbHLMkt8BVqcivaznVdfC7QNBx.png" alt="" onerror="this.style.display='none'"></span><span class="match-league">Fransa Ligue 1</span></span><span class="match-badge up" data-badge>YAKLAŞAN</span><button class="match-watch" data-stream="https://fixbettv84.com/channel.html?id=b2" title="PSG vs Monaco">▶ İZLE</button></div><div class="match-card up" data-time="22:15" data-status="upcoming" data-league="Portekiz Liga NOS"><span class="match-time">22:15</span><span class="match-teams"><span class="team-logo"><img loading="lazy" src="https://img.sporekrani.com/teams/FuhOHSTAIC2W19jf0gv1FOphCoHuAUMIvADFJy26.png" alt="" onerror="this.style.display='none'"></span><span class="mt-name"><b>Porto</b><span class="mt-vs">vs</span><b>Moreirense</b></span><span class="team-logo"><img loading="lazy" src="https://img.sporekrani.com/teams/HiANVdXp9SQPgIWcXHgTATePsBeRChcrYb8nFHUB.png" alt="" onerror="this.style.display='none'"></span><span class="match-league">Portekiz Liga NOS</span></span><span class="match-badge up" data-badge>YAKLAŞAN</span><button class="match-watch" data-stream="https://fixbettv84.com/channel.html?id=b4" title="Porto vs Moreirense">▶ İZLE</button></div></div></div>
         </div>
 
         <div class="channels-section">
             <div class="section-title">🎯 KANAL SEÇİNİZ</div>
+            <div class="channel-search">
+                <input type="text" id="channelSearch" placeholder="🔎 Kanal ara... (örn. Bein, TRT, Tabii)" autocomplete="off">
+            </div>
             <div class="channel-row" id="channelRow"></div>
+            <div class="no-result" id="noResult">Eşleşen kanal bulunamadı.</div>
         </div>
     </div>
 
@@ -332,6 +365,8 @@
         const totalChannels = document.getElementById("totalChannels");
         const gamepadDot = document.getElementById("gamepadDot");
         const gamepadText = document.getElementById("gamepadText");
+        const playerWrap = document.getElementById("playerWrap");
+        const playerTip = document.getElementById("playerTip");
 
         let currentIndex = 0;
         
@@ -365,23 +400,26 @@
                                 '<div class="ch-number">' + num + '</div>' +
                                 '<div class="ch-label">' + channelNames[i] + '</div>';
                 
-                btn.onclick = function() { switchChannel(i); };
+                btn.onclick = function() { switchChannel(i, true); };
                 btn.setAttribute("data-index", i);
                 channelRow.appendChild(btn);
             });
             
             if (streamLinks.length > 0) {
                 currentIndex = 0;
-                switchChannel(0);
+                switchChannel(0, false);
             }
         }
 
-        function switchChannel(index) {
+        // scrollTo=true olduğunda kullanıcı seçiminde player'e yumuşakça kaydır
+        function switchChannel(index, scrollTo) {
             if (index < 0 || index >= streamLinks.length) return;
+            if (scrollTo === undefined) scrollTo = false;
             currentIndex = index;
             iframe.src = streamLinks[index];
             nowChannel.textContent = channelNames[index];
             nowQuality.textContent = qualityLabels[index];
+            if (playerTip) playerTip.style.display = "none";
 
             const buttons = document.querySelectorAll(".ch-btn");
             for (let i = 0; i < buttons.length; i++) {
@@ -397,11 +435,18 @@
                 activeBtn.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "center" });
             }
 
+            // ⬇ Kullanıcı kanala tıkladığında player'e kaydır
+            if (scrollTo && playerWrap && playerWrap.scrollIntoView) {
+                playerWrap.scrollIntoView({ behavior: "smooth", block: "start" });
+                playerWrap.classList.add("player-flash");
+                setTimeout(function(){ playerWrap.classList.remove("player-flash"); }, 1200);
+            }
+
             updateNavButtons();
         }
 
-        function nextChannel() { switchChannel((currentIndex + 1) % streamLinks.length); }
-        function prevChannel() { switchChannel((currentIndex - 1 + streamLinks.length) % streamLinks.length); }
+        function nextChannel() { switchChannel((currentIndex + 1) % streamLinks.length, true); }
+        function prevChannel() { switchChannel((currentIndex - 1 + streamLinks.length) % streamLinks.length, true); }
 
         function updateNavButtons() {
             if (streamLinks.length <= 1) {
@@ -518,10 +563,116 @@
             }
         }
 
+        // ========== MAÇ OYNATICIYA BAĞLAMA (kartlardaki ▶ İZLE) ==========
+        function bindMatchStreams() {
+            const watchBtns = document.querySelectorAll(".match-watch[data-stream]");
+            watchBtns.forEach(function(btn) {
+                btn.addEventListener("click", function(ev) {
+                    ev.preventDefault();
+                    const url = btn.getAttribute("data-stream");
+                    if (!url) return;
+                    iframe.src = url;
+                    nowChannel.textContent = btn.getAttribute("title") || "Maç";
+                    nowQuality.textContent = "CANLI";
+                    if (playerTip) playerTip.style.display = "none";
+                    if (playerWrap && playerWrap.scrollIntoView) {
+                        playerWrap.scrollIntoView({ behavior: "smooth", block: "start" });
+                        playerWrap.classList.add("player-flash");
+                        setTimeout(function(){ playerWrap.classList.remove("player-flash"); }, 1200);
+                    }
+                });
+            });
+        }
+
+        // ========== MAÇ FİLTRELERİ (Tümü / Canlı / Günün / Yaklaşan / Bitti) ==========
+        function bindMatchFilters() {
+            const btns = document.querySelectorAll(".mf-btn");
+            btns.forEach(function(b) {
+                b.addEventListener("click", function() {
+                    btns.forEach(function(x){ x.classList.remove("active"); });
+                    b.classList.add("active");
+                    const f = b.getAttribute("data-mf");
+                    const groups = document.querySelectorAll(".match-group");
+                    groups.forEach(function(g) {
+                        const gkey = g.getAttribute("data-group");
+                        let show = true;
+                        if (f === "all") show = true;
+                        else if (f === "live") show = (gkey === "live");
+                        else if (f === "mod") show = (gkey === "mod");
+                        else if (f === "upcoming") show = (gkey === "upcoming");
+                        else if (f === "done") show = (gkey === "done");
+                        g.classList.toggle("is-hidden", !show);
+                    });
+                });
+            });
+        }
+
+        // ========== KANAL ARAMA ==========
+        function bindChannelSearch() {
+            const input = document.getElementById("channelSearch");
+            const noResult = document.getElementById("noResult");
+            if (!input) return;
+            input.addEventListener("input", function() {
+                const q = input.value.toLowerCase().trim();
+                let count = 0;
+                const btns = document.querySelectorAll(".ch-btn");
+                for (let i = 0; i < btns.length; i++) {
+                    const label = (channelNames[i] || "").toLowerCase();
+                    const show = q === "" || label.indexOf(q) !== -1;
+                    btns[i].style.display = show ? "" : "none";
+                    if (show) count++;
+                }
+                if (noResult) noResult.style.display = (count === 0 && q !== "") ? "block" : "none";
+            });
+        }
+
+        // ========== CANLI SAAT ==========
+        function startClock() {
+            const clock = document.getElementById("liveClock");
+            if (!clock) return;
+            function tick() {
+                const d = new Date();
+                const h = String(d.getHours()).padStart(2, "0");
+                const m = String(d.getMinutes()).padStart(2, "0");
+                const s = String(d.getSeconds()).padStart(2, "0");
+                clock.textContent = h + ":" + m + ":" + s;
+            }
+            tick();
+            setInterval(tick, 1000);
+        }
+
+        // ========== İSTEMCİ TARAFI CANLI DURUM GÜNCELLEME ==========
+        // Maç kartlarındaki gerçek saate göre CANLI / YAKLAŞAN / BİTTİ etiketini
+        // tarayıcı saatiyle yeniden hesaplar (site verisi + gerçek saat).
+        function refreshLiveStatus() {
+            const now = new Date();
+            const nowMin = now.getHours() * 60 + now.getMinutes();
+            const cards = document.querySelectorAll(".match-card[data-time]");
+            cards.forEach(function(card) {
+                const t = (card.getAttribute("data-time") || "").split(":");
+                if (t.length !== 2) return;
+                const mins = parseInt(t[0], 10) * 60 + parseInt(t[1], 10);
+                if (isNaN(mins)) return;
+                const badgeEl = card.querySelector("[data-badge]");
+                let status, cls;
+                if (mins <= nowMin - 105) { status = "BİTTİ"; cls = "done"; }
+                else if (mins <= nowMin) { status = "CANLI"; cls = "live"; }
+                else { status = "YAKLAŞAN"; cls = "up"; }
+                card.className = "match-card " + cls;
+                if (badgeEl) { badgeEl.textContent = status; badgeEl.className = "match-badge " + cls; }
+            });
+        }
+
         function initApp() {
             buildButtons();
             createParticles();
             updateNavButtons();
+            bindMatchStreams();
+            bindMatchFilters();
+            bindChannelSearch();
+            startClock();
+            refreshLiveStatus();
+            setInterval(refreshLiveStatus, 30000);
         }
 
         if (document.readyState === "loading") {

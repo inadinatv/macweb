@@ -55,8 +55,42 @@ def test_render_fills_markers():
     print("OK: render_fills_markers")
 
 
+def test_match_cards_features():
+    """Maç kartları: logo, data-time/status, filtre ve oynatıcıya bağlanan izle butonu."""
+    matches = _get_matches()
+    out = site._match_groups_html(matches)
+    # filtre sekmeleri
+    assert 'data-mf="all"' in out and 'data-mf="live"' in out
+    # izle butonları data-stream taşır, yeni sekme (target=_blank) açmaz
+    assert 'data-stream=' in out
+    assert 'match-watch' in out
+    assert 'target="_blank"' not in out
+    # takım logoları
+    assert 'team-logo' in out
+    # data-time / data-status öznitelikleri (istemci canlı güncellemesi için)
+    assert 'data-time=' in out and 'data-status=' in out
+    # günün maçı rozeti
+    assert 'data-is-mod="1"' in out
+    print("OK: match_cards_features")
+
+
+def test_template_player_scroll():
+    """Kanal/mac secimini player'e kaydiran referanslar sahbolda olmali."""
+    html = site.TEMPLATE.read_text(encoding="utf-8")
+    for tok in ("id=\"playerWrap\"", "id=\"playerTip\"", "id=\"liveClock\"",
+                "id=\"channelSearch\"", "player-flash",
+                "bindMatchStreams", "bindChannelSearch", "refreshLiveStatus", "scrollIntoView"):
+        assert tok in html, f"eksik: {tok}"
+    # maç filtreleri, maç kartı kısmından (site çıktısı) gelir
+    out = site._match_groups_html(_get_matches())
+    assert 'id="matchFilters"' in out
+    print("OK: template_player_scroll")
+
+
 if __name__ == "__main__":
     test_match_groups_html()
     test_template_markers()
     test_render_fills_markers()
+    test_match_cards_features()
+    test_template_player_scroll()
     print("\nSİTE TESTLERİ GEÇTİ ✅")

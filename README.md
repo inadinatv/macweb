@@ -32,8 +32,15 @@ raporlar üreten gelişmiş otomasyon botu.
 5. **GitHub Pages sayfası** (`src/fixbet/site.py`)
    - Repo kökündeki **`index.html`** her çalıştırma da yeniden üretilir.
    - Şablondaki sabit/ölü alan adı yerine **güncel site adresi** yazılır,
-     7/24 kanal listesi ve **günün maçları** (canlı / yaklaşan / günün maçı / lig bazlı)
-     otomatik gömülür. GitHub Actions push ettiği için GitHub Pages her zaman güncel kalır.
+     7/24 kanal listesi ve **günün maçları** otomatik gömülür. GitHub Actions push
+     ettiği için GitHub Pages her zaman güncel kalır.
+   - **Gerçek veri & saat:** Maçlar sitenin gerçek maç listesinden (saat, takımlar,
+     lig, logo) çekilir; istemci tarafı tarayıcı saatiyle CANLI/YAKLAŞAN/BİTTİ etiketini
+     yeniden hesaplar (30 sn'de bir).
+   - **Player'e kaydırma:** Alttaki kanala (veya maç kartındaki ▶ İZLE'e) tıklayınca
+     sayfa yumuşakça oynatıcıya kayar ve yayın orada açılır; kısa "flash" animasyonu olur.
+   - Ekstra: kanal **arama** kutusu, maç **filtre sekmesi** (Tümü/Canlı/Günün/Yaklaşan/Bitti),
+     canlı **saat**, takım **logoları**, kumanda & klavye desteği.
 
 6. **Raporlar** (`src/fixbet/reports.py` → `output/`)
    - `report.html` → tarayıcıda açılan, kendi kendine yeten canlı panel (maçlar + 7/24 kanallar).
