@@ -9,11 +9,11 @@
       "fixbettv84.com",
       "fixbettv19.com"
     ],
-    "last_checked": "2026-09-04T16:38:55+00:00",
+    "last_checked": "2026-09-04T21:16:38+00:00",
     "note": "OK",
     "probed": 200
   },
-  "date": "2026-09-04",
+  "date": "2026-09-05",
   "matches": [
     {
       "match_id": "zirve",
@@ -43,8 +43,8 @@
       "channel_id": "ss2",
       "logo_home": "https://img.sporekrani.com/teams/JpCgEKkWMRwVzuFSvfEcxYeWSSdoS3i0z3gEMc5B.png",
       "logo_away": "https://img.sporekrani.com/teams/4c60CQ7vTN4HnUwf6j0bTgah2pGJdc1GjR0E6NAs.png",
-      "status": "finished",
-      "started": true,
+      "status": "upcoming",
+      "started": false,
       "raw_event": "18:30 | Girit Basketbol Turnuvası",
       "url": "https://fixbettv84.com/channel.html?id=ss2",
       "fetched_at": ""

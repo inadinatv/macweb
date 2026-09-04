@@ -9,25 +9,42 @@
       "fixbettv84.com",
       "fixbettv19.com"
     ],
-    "last_checked": "2026-09-04T16:38:55+00:00",
+    "last_checked": "2026-09-04T21:16:38+00:00",
     "note": "OK",
     "probed": 200
   },
   "categories": {
     "meta": {
-      "generated_at": "2026-09-04T19:38:38+03:00",
-      "date": "2026-09-04",
+      "generated_at": "2026-09-05T00:16:02+03:00",
+      "date": "2026-09-05",
       "total_matches": 8
     },
     "counts": {
       "total": 8,
       "live": 0,
-      "upcoming": 7,
-      "finished": 1,
+      "upcoming": 8,
+      "finished": 0,
       "match_of_day": 1
     },
     "live": [],
     "upcoming": [
+      {
+        "match_id": "ss2",
+        "home": "Olimpia Milano",
+        "away": "Kızılyıldız",
+        "league": "Girit Basketbol Turnuvası",
+        "time": "18:30",
+        "sport": "Basketbol",
+        "is_match_of_day": false,
+        "channel_id": "ss2",
+        "logo_home": "https://img.sporekrani.com/teams/JpCgEKkWMRwVzuFSvfEcxYeWSSdoS3i0z3gEMc5B.png",
+        "logo_away": "https://img.sporekrani.com/teams/4c60CQ7vTN4HnUwf6j0bTgah2pGJdc1GjR0E6NAs.png",
+        "status": "upcoming",
+        "started": false,
+        "raw_event": "18:30 | Girit Basketbol Turnuvası",
+        "url": "https://fixbettv84.com/channel.html?id=ss2",
+        "fetched_at": ""
+      },
       {
         "match_id": "zirve",
         "home": "İstanbul Başakşehir",
@@ -148,25 +165,7 @@
         "fetched_at": ""
       }
     ],
-    "finished": [
-      {
-        "match_id": "ss2",
-        "home": "Olimpia Milano",
-        "away": "Kızılyıldız",
-        "league": "Girit Basketbol Turnuvası",
-        "time": "18:30",
-        "sport": "Basketbol",
-        "is_match_of_day": false,
-        "channel_id": "ss2",
-        "logo_home": "https://img.sporekrani.com/teams/JpCgEKkWMRwVzuFSvfEcxYeWSSdoS3i0z3gEMc5B.png",
-        "logo_away": "https://img.sporekrani.com/teams/4c60CQ7vTN4HnUwf6j0bTgah2pGJdc1GjR0E6NAs.png",
-        "status": "finished",
-        "started": true,
-        "raw_event": "18:30 | Girit Basketbol Turnuvası",
-        "url": "https://fixbettv84.com/channel.html?id=ss2",
-        "fetched_at": ""
-      }
-    ],
+    "finished": [],
     "match_of_the_day": [
       {
         "match_id": "zirve",
@@ -235,8 +234,8 @@
           "channel_id": "ss2",
           "logo_home": "https://img.sporekrani.com/teams/JpCgEKkWMRwVzuFSvfEcxYeWSSdoS3i0z3gEMc5B.png",
           "logo_away": "https://img.sporekrani.com/teams/4c60CQ7vTN4HnUwf6j0bTgah2pGJdc1GjR0E6NAs.png",
-          "status": "finished",
-          "started": true,
+          "status": "upcoming",
+          "started": false,
           "raw_event": "18:30 | Girit Basketbol Turnuvası",
           "url": "https://fixbettv84.com/channel.html?id=ss2",
           "fetched_at": ""
@@ -349,8 +348,8 @@
           "channel_id": "ss2",
           "logo_home": "https://img.sporekrani.com/teams/JpCgEKkWMRwVzuFSvfEcxYeWSSdoS3i0z3gEMc5B.png",
           "logo_away": "https://img.sporekrani.com/teams/4c60CQ7vTN4HnUwf6j0bTgah2pGJdc1GjR0E6NAs.png",
-          "status": "finished",
-          "started": true,
+          "status": "upcoming",
+          "started": false,
           "raw_event": "18:30 | Girit Basketbol Turnuvası",
           "url": "https://fixbettv84.com/channel.html?id=ss2",
           "fetched_at": ""
@@ -508,8 +507,8 @@
       "channel_id": "ss2",
       "logo_home": "https://img.sporekrani.com/teams/JpCgEKkWMRwVzuFSvfEcxYeWSSdoS3i0z3gEMc5B.png",
       "logo_away": "https://img.sporekrani.com/teams/4c60CQ7vTN4HnUwf6j0bTgah2pGJdc1GjR0E6NAs.png",
-      "status": "finished",
-      "started": true,
+      "status": "upcoming",
+      "started": false,
       "raw_event": "18:30 | Girit Basketbol Turnuvası",
       "url": "https://fixbettv84.com/channel.html?id=ss2",
       "fetched_at": ""
