@@ -1,8 +1,8 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-09-05 19:03  
-> **Toplam maç:** 15  |  **Canlı:** 6  |  **Yaklaşan:** 1
+> **Güncellenme:** 2026-09-05 19:40  
+> **Toplam maç:** 7  |  **Canlı:** 7  |  **Yaklaşan:** 0
 
 ## 🔴 CANLI
 
@@ -12,34 +12,13 @@
 - 🔴 **Roma vs Atalanta** — `21:45` | İtalya Serie A <https://fixbettv84.com/channel.html?id=ss2>
 - 🔴 **Villarreal vs Deportivo** — `22:00` | İspanya La Liga <https://fixbettv84.com/channel.html?id=ss>
 - 🔴 **Bragantino vs Bahia** — `22:00` | Brezilya Serie A <https://fixbettv84.com/channel.html?id=sms2>
-
-## ⏰ YAKLAŞAN
-
-- ⏰ **Sporting Lisbon vs Nacional** — `22:30` | Portekiz Liga NOS <https://fixbettv84.com/channel.html?id=b2>
-
-## ✅ BİTTİ
-
-- ✅ **Inter vs Napoli** — `19:00` | İtalya Serie A <https://fixbettv84.com/channel.html?id=ss2>
-- ✅ **Polonya vs İtalya** — `19:00` | CEV Kadınlar Avrupa Şampiyonası <https://fixbettv84.com/channel.html?id=trtspor2>
-- ✅ **Hull City vs Aston Villa** — `19:30` | İngiltere Premier Lig <https://fixbettv84.com/channel.html?id=b3>
-- ✅ **Rayo Vallecano vs Racing Santander** — `19:30` | İspanya La Liga <https://fixbettv84.com/channel.html?id=ss>
-- ✅ **Fenerbahçe vs Beşiktaş** — `20:00` | Trendyol Süper Lig ★ **Günün Maçı** <https://fixbettv84.com/channel.html?id=zirve>
-- ✅ **Maritimo vs Benfica** — `20:00` | Portekiz Liga NOS <https://fixbettv84.com/channel.html?id=b5>
-- ✅ **Keçiörengücü vs Sarıyer** — `20:00` | Trendyol 1. Lig <https://fixbettv84.com/channel.html?id=trtspor>
-- ✅ **Pendikspor vs Ümraniyespor** — `20:00` | Trendyol 1. Lig <https://fixbettv84.com/channel.html?id=bm1>
-
-## ⭐ GÜNÜN MAÇI
-
-- ✅ **Fenerbahçe vs Beşiktaş** — `20:00` | Trendyol Süper Lig ★ **Günün Maçı** <https://fixbettv84.com/channel.html?id=zirve>
+- 🔴 **Sporting Lisbon vs Nacional** — `22:30` | Portekiz Liga NOS <https://fixbettv84.com/channel.html?id=b2>
 
 ---
 ## 🏆 Lig Bazlı
 
 ### Brezilya Serie A
 - 🔴 Bragantino vs Bahia — 22:00
-
-### CEV Kadınlar Avrupa Şampiyonası
-- ⏰ Polonya vs İtalya — 19:00
 
 ### Fransa Ligue 1
 - 🔴 Le Havre vs Brest — 21:45
@@ -49,25 +28,12 @@
 - 🔴 St. Etienne vs Montpellier — 21:00
 
 ### Portekiz Liga NOS
-- ⏰ Maritimo vs Benfica — 20:00
-- ⏰ Sporting Lisbon vs Nacional — 22:30
-
-### Trendyol 1. Lig
-- ⏰ Keçiörengücü vs Sarıyer — 20:00
-- ⏰ Pendikspor vs Ümraniyespor — 20:00
-
-### Trendyol Süper Lig
-- ⏰ Fenerbahçe vs Beşiktaş — 20:00
-
-### İngiltere Premier Lig
-- ⏰ Hull City vs Aston Villa — 19:30
+- 🔴 Sporting Lisbon vs Nacional — 22:30
 
 ### İspanya La Liga
-- ⏰ Rayo Vallecano vs Racing Santander — 19:30
 - 🔴 Villarreal vs Deportivo — 22:00
 
 ### İtalya Serie A
-- ⏰ Inter vs Napoli — 19:00
 - 🔴 Roma vs Atalanta — 21:45
 
 ---

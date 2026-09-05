@@ -9,7 +9,7 @@
       "fixbettv84.com",
       "fixbettv19.com"
     ],
-    "last_checked": "2026-09-05T19:03:44+00:00",
+    "last_checked": "2026-09-05T19:40:40+00:00",
     "note": "OK",
     "probed": 200
   },
@@ -114,6 +114,23 @@
       "started": true,
       "raw_event": "22:00 | Brezilya Serie A",
       "url": "https://fixbettv84.com/channel.html?id=sms2",
+      "fetched_at": ""
+    },
+    {
+      "match_id": "b2",
+      "home": "Sporting Lisbon",
+      "away": "Nacional",
+      "league": "Portekiz Liga NOS",
+      "time": "22:30",
+      "sport": "Futbol",
+      "is_match_of_day": false,
+      "channel_id": "b2",
+      "logo_home": "https://img.sporekrani.com/teams/wmkMpVv7deEV46KqRI9Evc7cCPEqzIIZoGNt6t1j.png",
+      "logo_away": "https://img.sporekrani.com/teams/9TQPH1qy4FX6kLdVqcl4n9Vc9whC6j5p1BcHTHhn.png",
+      "status": "live",
+      "started": true,
+      "raw_event": "22:30 | Portekiz Liga NOS",
+      "url": "https://fixbettv84.com/channel.html?id=b2",
       "fetched_at": ""
     }
   ]
