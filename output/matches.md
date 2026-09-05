@@ -1,24 +1,21 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-09-05 12:12  
-> **Toplam maç:** 25  |  **Canlı:** 1  |  **Yaklaşan:** 24
+> **Güncellenme:** 2026-09-05 15:06  
+> **Toplam maç:** 25  |  **Canlı:** 7  |  **Yaklaşan:** 15
 
 ## 🔴 CANLI
 
-- 🔴 **Newcastle vs Bournemouth** — `14:30` | İngiltere Premier Lig <https://fixbettv84.com/channel.html?id=b3>
+- 🔴 **Türkiye vs Sırbistan** — `16:00` | CEV Kadınlar Avrupa Şampiyonası <https://fixbettv84.com/channel.html?id=trt1>
+- 🔴 **Brighton vs Leeds United** — `17:00` | İngiltere Premier Lig <https://fixbettv84.com/channel.html?id=bm1>
+- 🔴 **Fulham vs Crystal Palace** — `17:00` | İngiltere Premier Lig <https://fixbettv84.com/channel.html?id=bm2>
+- 🔴 **Manchester City vs Coventry** — `17:00` | İngiltere Premier Lig <https://fixbettv84.com/channel.html?id=b3>
+- 🔴 **Nottingham Forest vs Tottenham** — `17:00` | İngiltere Premier Lig <https://fixbettv84.com/channel.html?id=b5>
+- 🔴 **Erzurumspor vs Konyaspor** — `17:00` | Trendyol Süper Lig <https://fixbettv84.com/channel.html?id=b2>
+- 🔴 **Athletic Bilbao vs Atletico Madrid** — `17:15` | İspanya La Liga <https://fixbettv84.com/channel.html?id=ss>
 
 ## ⏰ YAKLAŞAN
 
-- ⏰ **Fiorentina vs Torino** — `16:00` | İtalya Serie A <https://fixbettv84.com/channel.html?id=ss2>
-- ⏰ **Bandırmaspor vs Boluspor** — `16:00` | Trendyol 1. Lig <https://fixbettv84.com/channel.html?id=trtspor>
-- ⏰ **Türkiye vs Sırbistan** — `16:00` | CEV Kadınlar Avrupa Şampiyonası <https://fixbettv84.com/channel.html?id=trt1>
-- ⏰ **Brighton vs Leeds United** — `17:00` | İngiltere Premier Lig <https://fixbettv84.com/channel.html?id=bm1>
-- ⏰ **Fulham vs Crystal Palace** — `17:00` | İngiltere Premier Lig <https://fixbettv84.com/channel.html?id=bm2>
-- ⏰ **Manchester City vs Coventry** — `17:00` | İngiltere Premier Lig <https://fixbettv84.com/channel.html?id=b3>
-- ⏰ **Nottingham Forest vs Tottenham** — `17:00` | İngiltere Premier Lig <https://fixbettv84.com/channel.html?id=b5>
-- ⏰ **Erzurumspor vs Konyaspor** — `17:00` | Trendyol Süper Lig <https://fixbettv84.com/channel.html?id=b2>
-- ⏰ **Athletic Bilbao vs Atletico Madrid** — `17:15` | İspanya La Liga <https://fixbettv84.com/channel.html?id=ss>
 - ⏰ **Inter vs Napoli** — `19:00` | İtalya Serie A <https://fixbettv84.com/channel.html?id=ss2>
 - ⏰ **Polonya vs İtalya** — `19:00` | CEV Kadınlar Avrupa Şampiyonası <https://fixbettv84.com/channel.html?id=trtspor2>
 - ⏰ **Hull City vs Aston Villa** — `19:30` | İngiltere Premier Lig <https://fixbettv84.com/channel.html?id=b3>
@@ -35,6 +32,12 @@
 - ⏰ **Bragantino vs Bahia** — `22:00` | Brezilya Serie A <https://fixbettv84.com/channel.html?id=sms2>
 - ⏰ **Sporting Lisbon vs Nacional** — `22:30` | Portekiz Liga NOS <https://fixbettv84.com/channel.html?id=b2>
 
+## ✅ BİTTİ
+
+- ✅ **Newcastle vs Bournemouth** — `14:30` | İngiltere Premier Lig <https://fixbettv84.com/channel.html?id=b3>
+- ✅ **Fiorentina vs Torino** — `16:00` | İtalya Serie A <https://fixbettv84.com/channel.html?id=ss2>
+- ✅ **Bandırmaspor vs Boluspor** — `16:00` | Trendyol 1. Lig <https://fixbettv84.com/channel.html?id=trtspor>
+
 ## ⭐ GÜNÜN MAÇI
 
 - ⏰ **Fenerbahçe vs Beşiktaş** — `20:00` | Trendyol Süper Lig ★ **Günün Maçı** <https://fixbettv84.com/channel.html?id=zirve>
@@ -46,7 +49,7 @@
 - ⏰ Bragantino vs Bahia — 22:00
 
 ### CEV Kadınlar Avrupa Şampiyonası
-- ⏰ Türkiye vs Sırbistan — 16:00
+- 🔴 Türkiye vs Sırbistan — 16:00
 - ⏰ Polonya vs İtalya — 19:00
 
 ### Fransa Ligue 1
@@ -66,19 +69,19 @@
 - ⏰ Pendikspor vs Ümraniyespor — 20:00
 
 ### Trendyol Süper Lig
-- ⏰ Erzurumspor vs Konyaspor — 17:00
+- 🔴 Erzurumspor vs Konyaspor — 17:00
 - ⏰ Fenerbahçe vs Beşiktaş — 20:00
 
 ### İngiltere Premier Lig
-- 🔴 Newcastle vs Bournemouth — 14:30
-- ⏰ Brighton vs Leeds United — 17:00
-- ⏰ Fulham vs Crystal Palace — 17:00
-- ⏰ Manchester City vs Coventry — 17:00
-- ⏰ Nottingham Forest vs Tottenham — 17:00
+- ⏰ Newcastle vs Bournemouth — 14:30
+- 🔴 Brighton vs Leeds United — 17:00
+- 🔴 Fulham vs Crystal Palace — 17:00
+- 🔴 Manchester City vs Coventry — 17:00
+- 🔴 Nottingham Forest vs Tottenham — 17:00
 - ⏰ Hull City vs Aston Villa — 19:30
 
 ### İspanya La Liga
-- ⏰ Athletic Bilbao vs Atletico Madrid — 17:15
+- 🔴 Athletic Bilbao vs Atletico Madrid — 17:15
 - ⏰ Rayo Vallecano vs Racing Santander — 19:30
 - ⏰ Villarreal vs Deportivo — 22:00
 
