@@ -1,0 +1,13 @@
+{
+  "name": "macweb-frontend-tests",
+  "version": "1.0.0",
+  "private": true,
+  "description": "İNADİNA TV sayfası (index.html) için jsdom tabanlı arayüz testleri",
+  "type": "module",
+  "scripts": {
+    "test": "node --test tests/frontend.test.mjs"
+  },
+  "devDependencies": {
+    "jsdom": "^25.0.1"
+  }
+}

@@ -29,18 +29,29 @@ raporlar üreten gelişmiş otomasyon botu.
    - **Marka bazında** kategorize edilir (Bein Sports, Tabii, TRT, SmartSpor, …).
    - `output/channels.json` dosyasına yazılır ve raporlara eklenir.
 
-5. **GitHub Pages sayfası** (`src/fixbet/site.py`)
-   - Repo kökündeki **`index.html`** her çalıştırma da yeniden üretilir.
-   - Şablondaki sabit/ölü alan adı yerine **güncel site adresi** yazılır,
-     7/24 kanal listesi ve **günün maçları** otomatik gömülür. GitHub Actions push
-     ettiği için GitHub Pages her zaman güncel kalır.
-   - **Gerçek veri & saat:** Maçlar sitenin gerçek maç listesinden (saat, takımlar,
-     lig, logo) çekilir; istemci tarafı tarayıcı saatiyle CANLI/YAKLAŞAN/BİTTİ etiketini
-     yeniden hesaplar (30 sn'de bir).
-   - **Player'e kaydırma:** Alttaki kanala (veya maç kartındaki ▶ İZLE'e) tıklayınca
-     sayfa yumuşakça oynatıcıya kayar ve yayın orada açılır; kısa "flash" animasyonu olur.
-   - Ekstra: kanal **arama** kutusu, maç **filtre sekmesi** (Tümü/Canlı/Günün/Yaklaşan/Bitti),
-     canlı **saat**, takım **logoları**, kumanda & klavye desteği.
+5. **GitHub Pages sayfası** (`src/fixbet/site.py` + `src/fixbet/templates/index.html`)
+   - Repo kökündeki **`index.html`** her çalıştırmada şablondan yeniden üretilir
+     (tek kaynak: şablon). Sayfada **uydurma/sabit maç yoktur**; gömülen her maç
+     kaynaktan çekilen gerçek programdır.
+   - **İki sekme:** 📺 TV KANALLARI ve 📅 GÜNÜN MAÇLARI. Eski "canlı maçlar"
+     sekmesi sabit örnek veriyle dolduğu için kaldırıldı — canlılık bilgisi artık
+     günün maçları içinde **gerçek başlangıç saatine göre** hesaplanıyor.
+   - **Durum hesabı:** Başlangıç saati + spora göre yayın penceresi
+     (`settings.yml → categorize.live_window_by_sport`) → 🔴 Canlı / ⏰ Yaklaşan /
+     ✅ Bitti. Aynı tablo sayfaya da gömülür, yani bot ile site aynı şeyi söyler.
+     Sayaçlar ("1 sa 20 dk kaldı", "≈ 63'") cihazın saatine göre 30 sn'de bir tazelenir.
+   - **Kanala tıkla → yayın player'de:** Alttaki kanal kartına (veya maç
+     kartındaki ▶ İZLE'ye) tıklayınca yayın doğrudan oynatıcıda açılır ve sayfa
+     yumuşakça player'e kayar (kısa altın "flash" animasyonu ile).
+   - **Kompakt kartlar + görünüm seçimi:** Kanal kartları küçültüldü ve
+     **▦ Izgara / ☰ Liste** (yatay) seçenekleri eklendi; tercih `localStorage`'da saklanır.
+   - Ekstra: marka filtreleri (Bein Sports, S Sport, TRT, Tabii Spor, …), kanal & maç
+     **arama**, durum/spor filtreleri, canlı saat, takım logoları, ⭐ Günün Maçı rozeti,
+     klavye kısayolları (`←`/`→` kanal, `G`/`L` görünüm, `1`/`2` sekme), `#kanal=...` derin bağlantısı,
+     JS kapalıysa çalışan `<noscript>` maç listesi.
+   - **Canlı tazeleme:** Sayfa açılışta ve 5 dakikada bir `output/today_matches.json`
+     dosyasını okumayı dener (bot bu dosyayı 5 dakikada bir günceller); erişilemezse
+     gömülü gerçek veriyle sorunsuz çalışmaya devam eder.
 
 6. **Raporlar** (`src/fixbet/reports.py` → `output/`)
    - `report.html` → tarayıcıda açılan, kendi kendine yeten canlı panel (maçlar + 7/24 kanallar).
@@ -65,9 +76,32 @@ python fixbet.py matches
 
 # Sürekli izleme (5 dakikada bir)
 python fixbet.py serve 5
+
+# Sayfayı ağ olmadan, output/ içindeki son gerçek veriden yeniden üret
+python fixbet.py build-index
 ```
 
 Çıktılar `output/` klasörüne ve güncel adres `config/current_site.yml` dosyasına yazılır.
+
+---
+
+## ✅ Testler
+
+```bash
+python tests/test_pipeline.py     # maç ayrıştırma + canlı/yaklaşan/bitti sınıflandırması
+python tests/test_channels.py     # 7/24 kanal listesi + marka grupları
+python tests/test_site.py         # index.html üretimi (şablon + gerçek veri)
+
+npm install && npm test           # sayfanın kendi JS'i jsdom içinde çalıştırılır
+python tests/test_frontend.py     # aynı arayüz testlerinin pytest/sade-python sarmalayıcısı
+```
+
+Arayüz testleri üretilen `index.html`'in JavaScript'ini gerçekten çalıştırır: kanal
+kartlarının çizilmesi, ızgara/liste geçişi, karta tıklayınca yayının açılıp player'e
+kaydırılması, günün maçlarının gerçek veriden gelmesi, arama/filtre ve canlı tazeleme.
+`workflow-tests-example.yml` dosyasını `.github/workflows/tests.yml` olarak kopyalarsanız
+bu testler her push/PR'da otomatik koşar (bu depodaki GitHub App token'ının `workflows`
+yetkisi olmadığı için dosya kökte örnek olarak duruyor).
 
 ---
 
@@ -86,6 +120,8 @@ python fixbet.py serve 5
 ```
 fixbet-bot/
 ├── fixbet.py                 # CLI giriş noktası
+├── updater.py                # eski giriş noktası -> artık boru hattını çalıştırır
+├── index.html                # ⭐ GitHub Pages sayfası (şablondan otomatik üretilir)
 ├── requirements.txt
 ├── README.md
 ├── config/
@@ -100,8 +136,12 @@ fixbet-bot/
 │   ├── parser.py             # HTML -> Match modeli
 │   ├── categorizer.py        # canlı/lig/spor/aygünü kategorize etme
 │   ├── reports.py            # HTML/MD/JSON çıktılar
+│   ├── site.py               # şablondan index.html üretimi
+│   ├── channels.py           # 7/24 kanal listesi
 │   ├── models.py             # Match veri modeli
+│   ├── templates/index.html  # sayfa şablonu (tek kaynak)
 │   └── config.py             # YAML yükleme/kaydetme
+├── tests/                    # bot + arayüz (jsdom) testleri
 └── output/                   # Üretilen raporlar
 ```
 

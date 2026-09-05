@@ -1,0 +1,41 @@
+name: Testler
+
+on:
+  push:
+    branches: ["**"]
+  pull_request:
+  workflow_dispatch: {}
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Python kur
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Bağımlılıkları kur
+        run: pip install -r requirements.txt
+
+      - name: Bot testleri (offline, örnek veri)
+        run: |
+          python tests/test_pipeline.py
+          python tests/test_channels.py
+          python tests/test_site.py
+
+      - name: Node kur
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Arayüz bağımlılıkları
+        run: npm install
+
+      - name: index.html üretiliyor (şablon + gerçek veri)
+        run: python fixbet.py build-index
+
+      - name: Arayüz testleri (jsdom ile sayfanın kendi JS'i)
+        run: npm test

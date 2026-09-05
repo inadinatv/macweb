@@ -4,6 +4,7 @@ Kullanım:
     python -m fixbet.main run           # tam boru hattı: site -> maçlar -> kategori -> raporlar
     python -m fixbet.main update-site   # sadece güncel adresi güncelle (current_site.yml)
     python -m fixbet.main matches       # sadece maçları çek ve kategorize et
+    python -m fixbet.main build-index   # output/ verisinden index.html üret (çevrimdışı)
     python -m fixbet.main serve [dk]    # sürekli çalışan izleme modu (aralık=dk dakika, vars. 5)
     python -m fixbet.main cat           # kategorize edilmiş özeti konsola yaz
 """
@@ -16,6 +17,7 @@ from datetime import datetime
 from zoneinfo import ZoneInfo
 
 from . import categorizer, channels, config, domain_checker, parser, reports, scraper, site
+from .models import Match
 
 TZ = ZoneInfo("Europe/Istanbul")
 
@@ -45,6 +47,12 @@ def pipeline() -> dict:
         raw = ""
 
     matches = parser.parse(raw)
+    if not matches:
+        # Kaynak geçici olarak boş/erişilemez döndüyse sayfayı boşaltma:
+        # aynı günün son gerçek maç listesini kullan.
+        matches = load_matches_from_output(now)
+        if matches:
+            print(f"[!] Kaynak boş döndü — son gerçek liste kullanılıyor ({len(matches)} maç).")
     matches = categorizer.enrich(matches)
     matches = categorizer.classify(matches, now)
     categorized = categorizer.categorize(matches, now)
@@ -68,6 +76,56 @@ def pipeline() -> dict:
         print(f"[!] yayınlama adımı hatası: {exc}")
 
     return {"site": site_info, "categorized": categorized, "matches": matches, "now": now}
+
+
+def load_matches_from_output(now: datetime | None = None) -> list[Match]:
+    """output/today_matches.json içindeki son gerçek maç listesini Match olarak yükler.
+
+    Yalnızca aynı günün verisi döner (bayat liste sayfaya basılmasın).
+    """
+    import json
+
+    now = now or _now()
+    path = config.OUTPUT_DIR / "today_matches.json"
+    if not path.exists():
+        return []
+    try:
+        data = json.loads(path.read_text(encoding="utf-8"))
+    except (ValueError, OSError):
+        return []
+    if data.get("date") != now.strftime("%Y-%m-%d"):
+        return []
+    fields = set(Match.__dataclass_fields__)
+    return [Match(**{k: v for k, v in row.items() if k in fields})
+            for row in data.get("matches", [])]
+
+
+def build_index_from_output() -> str | None:
+    """output/ altındaki son gerçek veriden index.html'i yeniden üretir (çevrimdışı).
+
+    Şablon değiştiğinde veya ağ yokken sayfayı tazelemek için kullanılır:
+        python fixbet.py build-index
+    """
+    import json
+
+    now = _now()
+    matches = load_matches_from_output(now)
+    if not matches:
+        print(f"[!] {config.OUTPUT_DIR / 'today_matches.json'} yok ya da bayat — "
+              "önce 'python fixbet.py run' çalıştırın.")
+        return None
+
+    channels_data: dict = {}
+    ch_path = config.OUTPUT_DIR / "channels.json"
+    if ch_path.exists():
+        channels_data = json.loads(ch_path.read_text(encoding="utf-8")).get("channels", {})
+
+    matches = categorizer.classify(matches, now)
+    out = site.build_index_html(matches, channels_data, now)
+    live = sum(1 for m in matches if m.status == "live")
+    print(f"index.html üretildi: {out}")
+    print(f"  {len(matches)} maç ({live} canlı) · {channels_data.get('total', 0)} kanal")
+    return out
 
 
 def _print_summary(result: dict) -> None:
@@ -103,6 +161,7 @@ def main(argv: list[str] | None = None) -> int:
     p.add_argument("--quiet", action="store_true")
 
     sub.add_parser("update-site", help="Sadece güncel adresi güncelle")
+    sub.add_parser("build-index", help="output/ verisinden index.html'i yeniden üret (çevrimdışı)")
     sub.add_parser("matches", help="Maçları çek ve kategorize et")
     sub.add_parser("cat", help="Özeti konsola bas")
 
@@ -115,6 +174,8 @@ def main(argv: list[str] | None = None) -> int:
         result = pipeline()
         _print_summary(result)
         return 0
+    if args.cmd == "build-index":
+        return 0 if build_index_from_output() else 1
     if args.cmd == "update-site":
         site = domain_checker.check_current_site()
         domain_checker.log(site)
