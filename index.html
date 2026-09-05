@@ -3,25 +3,33 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>İNADİNA TV - Spor Paneli</title>
+    <title>İNADİNA TV - Canlı Spor & Maç İzleme Paneli</title>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@400;600;700;900&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
             --neon-pink: #ff2d7a;
+            --neon-pink-glow: rgba(255, 45, 122, 0.4);
             --neon-purple: #9b4dff;
+            --neon-purple-glow: rgba(155, 77, 255, 0.4);
             --neon-cyan: #00eaff;
+            --neon-cyan-glow: rgba(0, 234, 255, 0.4);
             --neon-gold: #ffcc33;
-            --bg-dark: #05050b;
-            --bg-card: rgba(12, 10, 24, 0.85);
+            --neon-green: #00ff88;
+            --bg-dark: #06050e;
+            --bg-card: rgba(15, 12, 30, 0.85);
+            --bg-card-hover: rgba(25, 20, 48, 0.9);
             --text-main: #f4efff;
-            --text-muted: #8d84aa;
-            --radius-xl: 28px;
-            --radius-lg: 22px;
-            --radius-md: 16px;
-            --glow-pink: 0 0 30px rgba(255, 45, 122, 0.5), 0 0 60px rgba(255, 45, 122, 0.2);
-            --glow-purple: 0 0 30px rgba(155, 77, 255, 0.5), 0 0 60px rgba(155, 77, 255, 0.2);
+            --text-muted: #9e93bc;
+            --radius-xl: 24px;
+            --radius-lg: 18px;
+            --radius-md: 12px;
+            --glow-pink: 0 0 30px rgba(255, 45, 122, 0.4), 0 0 60px rgba(255, 45, 122, 0.15);
+            --glow-purple: 0 0 30px rgba(155, 77, 255, 0.4), 0 0 60px rgba(155, 77, 255, 0.15);
+            --glow-cyan: 0 0 25px rgba(0, 234, 255, 0.35);
         }
+
         * { margin: 0; padding: 0; box-sizing: border-box; }
+        
         body {
             font-family: 'Barlow', sans-serif;
             color: var(--text-main);
@@ -29,9 +37,9 @@
             background: var(--bg-dark);
             overflow-x: hidden;
             background-image:
-                radial-gradient(ellipse at 20% 20%, rgba(255,45,122,0.06) 0%, transparent 55%),
-                radial-gradient(ellipse at 80% 60%, rgba(155,77,255,0.07) 0%, transparent 55%),
-                radial-gradient(ellipse at 50% 90%, rgba(0,234,255,0.05) 0%, transparent 55%),
+                radial-gradient(ellipse at 20% 15%, rgba(255,45,122,0.07) 0%, transparent 55%),
+                radial-gradient(ellipse at 80% 50%, rgba(155,77,255,0.08) 0%, transparent 55%),
+                radial-gradient(ellipse at 50% 85%, rgba(0,234,255,0.06) 0%, transparent 55%),
                 radial-gradient(ellipse at 10% 80%, rgba(255,204,51,0.04) 0%, transparent 50%);
             background-attachment: fixed;
         }
@@ -45,641 +53,1227 @@
             100% { transform: translateY(-10vh) scale(1.5); opacity: 0; }
         }
 
-        .wrapper { width: min(1380px, calc(100% - 32px)); margin: 0 auto; padding: 22px 0; position: relative; z-index: 1; }
+        .wrapper { width: min(1440px, calc(100% - 32px)); margin: 0 auto; padding: 20px 0; position: relative; z-index: 1; }
 
+        /* Site Header */
         .site-header {
-            display: flex; align-items: center; justify-content: space-between; padding: 18px 28px; margin-bottom: 22px;
-            background: rgba(12,10,24,0.9); border: 1px solid rgba(255,45,122,0.35);
+            display: flex; align-items: center; justify-content: space-between; padding: 16px 28px; margin-bottom: 20px;
+            background: rgba(12,10,26,0.92); border: 1px solid rgba(255,45,122,0.35);
             border-radius: var(--radius-xl); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
-            box-shadow: var(--glow-pink); position: relative; overflow: hidden;
+            box-shadow: var(--glow-pink); position: relative; overflow: hidden; flex-wrap: wrap; gap: 14px;
         }
         .site-header::before {
             content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%;
-            background: conic-gradient(from 0deg, transparent, rgba(255,45,122,0.08), transparent, rgba(155,77,255,0.08), transparent);
-            animation: headerRotate 8s linear infinite; pointer-events: none;
+            background: conic-gradient(from 0deg, transparent, rgba(255,45,122,0.06), transparent, rgba(155,77,255,0.06), transparent);
+            animation: headerRotate 10s linear infinite; pointer-events: none;
         }
         @keyframes headerRotate { to { transform: rotate(360deg); } }
 
+        .brand-area { display: flex; align-items: center; gap: 16px; position: relative; z-index: 1; }
         .logo-main {
-            font-family: 'Bebas Neue', sans-serif; font-size: 2.8rem; letter-spacing: 5px;
-            background: linear-gradient(135deg, #ff2d7a 0%, #ff6bac 30%, #9b4dff 60%, #c471ff 100%);
+            font-family: 'Bebas Neue', sans-serif; font-size: 2.8rem; letter-spacing: 4px;
+            background: linear-gradient(135deg, #ff2d7a 0%, #ff6bac 30%, #9b4dff 60%, #00eaff 100%);
             -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
-            filter: drop-shadow(0 0 18px rgba(255,45,122,0.5)); position: relative; z-index: 1;
-            animation: logoPulse 3s ease-in-out infinite;
+            filter: drop-shadow(0 0 18px rgba(255,45,122,0.5));
+            animation: logoPulse 3s ease-in-out infinite; line-height: 1;
         }
         @keyframes logoPulse {
             0%, 100% { filter: drop-shadow(0 0 18px rgba(255,45,122,0.5)); }
-            50% { filter: drop-shadow(0 0 30px rgba(255,45,122,0.8)) drop-shadow(0 0 50px rgba(155,77,255,0.5)); }
+            50% { filter: drop-shadow(0 0 30px rgba(255,45,122,0.8)) drop-shadow(0 0 45px rgba(155,77,255,0.6)); }
         }
 
+        .header-meta { display: flex; align-items: center; gap: 12px; position: relative; z-index: 1; flex-wrap: wrap; }
+        .domain-tag {
+            background: rgba(0,234,255,0.1); border: 1px solid rgba(0,234,255,0.4);
+            color: var(--neon-cyan); padding: 6px 14px; border-radius: 20px; font-size: 0.85rem; font-weight: 700;
+            display: flex; align-items: center; gap: 8px; box-shadow: 0 0 15px rgba(0,234,255,0.2);
+        }
+        .domain-tag .dot { width: 8px; height: 8px; background: var(--neon-cyan); border-radius: 50%; box-shadow: 0 0 10px var(--neon-cyan); }
+        
         .live-badge {
-            color: var(--neon-cyan); font-weight: 900; letter-spacing: 3px; font-size: 1rem;
-            position: relative; z-index: 1; display: flex; align-items: center; gap: 8px;
-            animation: liveBlink 2s ease-in-out infinite;
+            color: #ff3366; font-weight: 900; letter-spacing: 2px; font-size: 0.9rem;
+            display: flex; align-items: center; gap: 8px; background: rgba(255,45,122,0.12);
+            padding: 6px 14px; border-radius: 20px; border: 1px solid rgba(255,45,122,0.4);
         }
         .live-dot {
-            width: 12px; height: 12px; background: #ff2d2d; border-radius: 50%; display: inline-block;
-            box-shadow: 0 0 15px #ff2d2d, 0 0 30px #ff2d2d; animation: dotPulse 1.2s ease-in-out infinite;
+            width: 10px; height: 10px; background: #ff2d2d; border-radius: 50%; display: inline-block;
+            box-shadow: 0 0 12px #ff2d2d, 0 0 25px #ff2d2d; animation: dotPulse 1.2s ease-in-out infinite;
         }
         @keyframes dotPulse {
-            0%, 100% { box-shadow: 0 0 15px #ff2d2d, 0 0 30px #ff2d2d; }
-            50% { box-shadow: 0 0 25px #ff2d2d, 0 0 50px #ff2d2d, 0 0 70px #ff2d2d; }
+            0%, 100% { box-shadow: 0 0 12px #ff2d2d, 0 0 25px #ff2d2d; transform: scale(1); }
+            50% { box-shadow: 0 0 22px #ff2d2d, 0 0 40px #ff2d2d; transform: scale(1.15); }
         }
-        @keyframes liveBlink { 0%, 100% { opacity: 1; } 50% { opacity: 0.75; } }
 
-        .main-layout { display: grid; grid-template-columns: 1fr 340px; gap: 20px; margin-bottom: 20px; }
+        .search-box {
+            position: relative; min-width: 240px; z-index: 1;
+        }
+        .search-input {
+            width: 100%; background: rgba(20, 16, 40, 0.8); border: 1px solid rgba(155,77,255,0.3);
+            border-radius: 20px; padding: 8px 16px 8px 38px; color: #fff; font-size: 0.85rem;
+            outline: none; transition: all 0.3s ease;
+        }
+        .search-input:focus { border-color: var(--neon-cyan); box-shadow: 0 0 15px rgba(0,234,255,0.3); }
+        .search-icon { position: absolute; left: 14px; top: 50%; transform: translateY(-50%); font-size: 0.9rem; opacity: 0.6; }
+
+        /* Main Player Section */
+        .main-layout { display: grid; grid-template-columns: 1fr 340px; gap: 20px; margin-bottom: 24px; }
+
+        .player-container {
+            background: rgba(10,8,22,0.95); border-radius: 24px; overflow: hidden;
+            border: 2px solid rgba(255,45,122,0.35); box-shadow: var(--glow-pink);
+            display: flex; flex-direction: column; position: relative;
+        }
+        .player-top-bar {
+            display: flex; align-items: center; justify-content: space-between; padding: 12px 20px;
+            background: rgba(18,14,36,0.9); border-bottom: 1px solid rgba(255,255,255,0.08);
+        }
+        .player-title-info { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 1rem; color: #fff; }
+        .player-actions { display: flex; align-items: center; gap: 8px; }
+        .ctrl-btn {
+            background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15);
+            color: #fff; padding: 5px 12px; border-radius: 12px; font-size: 0.8rem; font-weight: 600;
+            cursor: pointer; transition: all 0.25s ease; outline: none;
+        }
+        .ctrl-btn:hover { background: rgba(255,45,122,0.3); border-color: var(--neon-pink); box-shadow: 0 0 12px rgba(255,45,122,0.4); }
 
         .player-wrap {
-            position: relative; aspect-ratio: 16 / 9; background: #000; border-radius: 30px; overflow: hidden;
-            border: 2px solid rgba(255,45,122,0.4); box-shadow: var(--glow-pink), 0 0 80px rgba(255,45,122,0.15);
-            transition: all 0.4s ease;
+            position: relative; aspect-ratio: 16 / 9; background: #000; overflow: hidden; width: 100%;
         }
-        .player-wrap:hover { border-color: rgba(255,45,122,0.7); box-shadow: 0 0 40px rgba(255,45,122,0.6), 0 0 90px rgba(255,45,122,0.25), 0 0 120px rgba(155,77,255,0.15); }
-        .player-wrap iframe { width: 100%; height: 100%; border: 0; display: block; position: relative; z-index: 2; }
-        .player-wrap.player-flash { border-color: var(--neon-gold); box-shadow: 0 0 50px rgba(255,204,51,0.7), 0 0 100px rgba(255,204,51,0.3); }
-        .player-tip{ position:absolute; inset:0; display:flex; align-items:center; justify-content:center;
-            color:var(--text-muted); font-size:1rem; letter-spacing:1px; z-index:1; text-align:center; padding:20px; }
+        .player-wrap iframe { width: 100%; height: 100%; border: 0; display: block; }
+        .player-loading {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(5,4,12,0.9);
+            display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px;
+            z-index: 5; transition: opacity 0.3s ease; opacity: 0; pointer-events: none;
+        }
+        .player-loading.active { opacity: 1; pointer-events: auto; }
+        .spinner { width: 44px; height: 44px; border: 4px solid rgba(255,45,122,0.2); border-top-color: var(--neon-pink); border-radius: 50%; animation: spin 0.8s linear infinite; }
+        @keyframes spin { to { transform: rotate(360deg); } }
 
+        /* Side Panel */
         .side-panel { display: flex; flex-direction: column; gap: 16px; }
 
         .now-playing-card {
-            background: rgba(255,45,122,0.08); border: 1px solid rgba(255,45,122,0.4);
+            background: rgba(255,45,122,0.08); border: 1px solid rgba(255,45,122,0.35);
             border-radius: var(--radius-lg); padding: 20px 16px 16px; text-align: center;
-            backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
-            box-shadow: var(--glow-pink); position: relative; overflow: hidden;
+            backdrop-filter: blur(10px); box-shadow: var(--glow-pink); position: relative; overflow: hidden;
             display: flex; flex-direction: column; align-items: center;
         }
-        .now-playing-card::after {
-            content: ''; position: absolute; top: -40%; left: -40%; width: 180%; height: 180%;
-            background: conic-gradient(from 0deg, transparent, rgba(255,45,122,0.06), transparent, rgba(255,204,51,0.06), transparent);
-            animation: cardShimmer 6s linear infinite; pointer-events: none;
-        }
-        @keyframes cardShimmer { to { transform: rotate(360deg); } }
-
-        .now-label { font-size: 0.7rem; letter-spacing: 4px; color: var(--text-muted); font-weight: 600; text-transform: uppercase; position: relative; z-index: 1; }
+        .now-label { font-size: 0.7rem; letter-spacing: 4px; color: var(--text-muted); font-weight: 600; text-transform: uppercase; z-index: 1; }
 
         .channel-selector-row {
             display: flex; align-items: center; justify-content: center; gap: 12px;
-            margin: 10px 0 8px; z-index: 2; position: relative; width: 100%;
+            margin: 12px 0 10px; z-index: 2; position: relative; width: 100%;
         }
 
         .nav-btn {
-            width: 42px; height: 42px; border-radius: 50%;
+            width: 44px; height: 44px; border-radius: 50%;
             background: rgba(255,45,122,0.18); border: 2px solid rgba(255,45,122,0.6);
             color: #fff; font-size: 1.3rem; cursor: pointer;
             display: flex; align-items: center; justify-content: center;
-            transition: all 0.25s ease; backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);
-            outline: none; -webkit-tap-highlight-color: transparent;
-            box-shadow: 0 0 12px rgba(255,45,122,0.4);
-            flex-shrink: 0;
+            transition: all 0.25s ease; outline: none; box-shadow: 0 0 12px rgba(255,45,122,0.3); flex-shrink: 0;
         }
-        .nav-btn:hover { background: rgba(255,45,122,0.4); border-color: var(--neon-pink); box-shadow: 0 0 25px rgba(255,45,122,0.8); transform: scale(1.08); }
-        .nav-btn:active { transform: scale(0.9); transition: transform 0.1s ease; }
+        .nav-btn:hover { background: rgba(255,45,122,0.4); border-color: var(--neon-pink); box-shadow: 0 0 25px rgba(255,45,122,0.7); transform: scale(1.08); }
 
         .now-channel {
-            font-family: 'Bebas Neue', sans-serif; font-size: 2rem; color: var(--neon-pink);
+            font-family: 'Bebas Neue', sans-serif; font-size: 2.1rem; color: var(--neon-pink);
             text-shadow: 0 0 20px rgba(255,45,122,0.5); letter-spacing: 2px;
-            transition: all 0.3s ease; min-width: 130px; text-align: center; position: relative; z-index: 1;
+            min-width: 140px; text-align: center; line-height: 1.1;
         }
 
         .now-quality-badge {
             display: inline-block; background: linear-gradient(135deg, #ffcc33, #ffa800); color: #000;
             padding: 4px 14px; border-radius: 12px; font-weight: 900; font-size: 0.8rem; letter-spacing: 2px;
-            position: relative; z-index: 1; box-shadow: 0 0 20px rgba(255,204,51,0.5);
+            box-shadow: 0 0 15px rgba(255,204,51,0.4);
         }
 
-        .quick-info {
-            background: rgba(12,10,24,0.85); border: 1px solid rgba(155,77,255,0.3);
-            border-radius: var(--radius-lg); padding: 16px 20px;
-            backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
-            box-shadow: var(--glow-purple); text-align: center; position: relative; z-index: 1;
-            display: flex; flex-direction: column; gap: 10px;
+        .quick-stats-card {
+            background: rgba(12,10,26,0.85); border: 1px solid rgba(155,77,255,0.3);
+            border-radius: var(--radius-lg); padding: 18px 20px; backdrop-filter: blur(10px);
+            box-shadow: var(--glow-purple); display: flex; flex-direction: column; gap: 14px;
         }
-        .info-row { display: flex; flex-direction: column; align-items: center; gap: 4px; }
-        .info-title { font-size: 0.65rem; letter-spacing: 3px; color: var(--text-muted); text-transform: uppercase; }
-        .info-val { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 1.6rem; color: var(--neon-purple); text-shadow: 0 0 15px rgba(155,77,255,0.5); }
-        .gamepad-indicator { font-size: 0.8rem; color: #b794f4; display: flex; align-items: center; justify-content: center; gap: 6px; margin-top: 4px; }
-        .gamepad-dot { width: 8px; height: 8px; background: #9b4dff; border-radius: 50%; box-shadow: 0 0 10px #9b4dff; }
-        .gamepad-dot.inactive { background: #555; box-shadow: none; }
+        .stat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; text-align: center; }
+        .stat-box { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06); padding: 10px; border-radius: 14px; }
+        .stat-title { font-size: 0.65rem; letter-spacing: 2px; color: var(--text-muted); text-transform: uppercase; margin-bottom: 4px; }
+        .stat-val { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 1.6rem; color: var(--neon-purple); text-shadow: 0 0 12px rgba(155,77,255,0.5); }
 
-        .channels-section {
-            background: rgba(12,10,24,0.9); border: 1px solid rgba(255,45,122,0.25);
-            border-radius: 28px; padding: 24px 20px; backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+        /* Categorized System / Tabs Section */
+        .system-section {
+            background: rgba(12,10,26,0.92); border: 1px solid rgba(255,45,122,0.25);
+            border-radius: 26px; padding: 24px 22px; backdrop-filter: blur(14px);
             box-shadow: 0 0 40px rgba(0,0,0,0.5), 0 0 60px rgba(255,45,122,0.08); position: relative; z-index: 1;
         }
-        .section-title { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 1rem; letter-spacing: 3px; color: var(--text-muted); margin-bottom: 16px; text-transform: uppercase; text-align: center; }
-        .channel-row { display: flex; gap: 14px; overflow-x: auto; padding: 6px 4px 14px; scroll-behavior: smooth; -webkit-overflow-scrolling: touch; scrollbar-width: thin; scrollbar-color: rgba(255,45,122,0.4) transparent; }
-        .channel-row::-webkit-scrollbar { height: 5px; }
-        .channel-row::-webkit-scrollbar-track { background: transparent; border-radius: 10px; }
-        .channel-row::-webkit-scrollbar-thumb { background: rgba(255,45,122,0.4); border-radius: 10px; }
 
-        .ch-btn {
-            flex: 0 0 auto; min-width: 120px; padding: 20px 18px; border-radius: 20px;
-            border: 2px solid rgba(255,255,255,0.1);
-            background: linear-gradient(180deg, rgba(30,20,50,0.9) 0%, rgba(15,10,30,0.95) 100%);
-            color: white; cursor: pointer; transition: all 0.35s cubic-bezier(0.4,0,0.2,1);
-            text-align: center; position: relative; overflow: hidden;
-            -webkit-tap-highlight-color: transparent; user-select: none; outline: none;
+        /* Navigation Tabs */
+        .tabs-header {
+            display: flex; align-items: center; justify-content: space-between; gap: 16px;
+            margin-bottom: 20px; border-bottom: 1px solid rgba(255,255,255,0.08); padding-bottom: 14px; flex-wrap: wrap;
         }
-        .ch-btn::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(180deg, rgba(255,45,122,0.08) 0%, transparent 60%); opacity: 0; transition: opacity 0.35s ease; pointer-events: none; }
-        .ch-btn:hover { border-color: rgba(255,45,122,0.6); transform: translateY(-4px); box-shadow: 0 12px 30px rgba(0,0,0,0.5), 0 0 30px rgba(255,45,122,0.3); background: linear-gradient(180deg, rgba(40,25,60,0.95) 0%, rgba(20,12,38,0.98) 100%); }
-        .ch-btn:hover::before { opacity: 1; }
-        .ch-btn:active { transform: scale(0.95); transition: transform 0.1s ease; border-color: var(--neon-pink); }
-        .ch-btn.active { border-color: var(--neon-pink)!important; background: linear-gradient(180deg, rgba(255,45,122,0.25) 0%, rgba(155,77,255,0.2) 100%)!important; box-shadow: 0 0 35px rgba(255,45,122,0.5), 0 0 65px rgba(255,45,122,0.2), 0 8px 25px rgba(0,0,0,0.5)!important; transform: translateY(-2px); animation: activeGlow 2s ease-in-out infinite; }
-        @keyframes activeGlow { 0%,100% { box-shadow: 0 0 35px rgba(255,45,122,0.5), 0 0 65px rgba(255,45,122,0.2), 0 8px 25px rgba(0,0,0,0.5); } 50% { box-shadow: 0 0 50px rgba(255,45,122,0.7), 0 0 85px rgba(255,45,122,0.35), 0 8px 25px rgba(0,0,0,0.5); } }
-        .ch-number { font-family: 'Bebas Neue', sans-serif; font-size: 1.8rem; letter-spacing: 2px; color: var(--neon-gold); text-shadow: 0 0 12px rgba(255,204,51,0.4); transition: all 0.3s ease; line-height: 1; }
-        .ch-btn.active .ch-number { color: #fff; text-shadow: 0 0 20px rgba(255,255,255,0.7), 0 0 40px rgba(255,204,51,0.6); font-size: 2rem; }
-        .ch-label { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; margin-top: 6px; letter-spacing: 2px; color: #ccc; transition: all 0.3s ease; line-height: 1.2; }
-        .ch-btn.active .ch-label { color: #fff; letter-spacing: 3px; }
-        .ch-icon { font-size: 1.4rem; margin-bottom: 4px; display: block; transition: all 0.3s ease; opacity: 0.6; }
-        .ch-btn.active .ch-icon { opacity: 1; filter: drop-shadow(0 0 8px rgba(255,255,255,0.6)); }
+        .tabs-list { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+        .tab-btn {
+            background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);
+            color: var(--text-muted); font-family: 'Barlow Condensed', sans-serif; font-weight: 700;
+            font-size: 1.1rem; letter-spacing: 1.5px; padding: 10px 22px; border-radius: 16px;
+            cursor: pointer; transition: all 0.3s ease; outline: none; display: flex; align-items: center; gap: 8px;
+        }
+        .tab-btn:hover { background: rgba(255,45,122,0.15); color: #fff; border-color: rgba(255,45,122,0.4); }
+        .tab-btn.active {
+            background: linear-gradient(135deg, rgba(255,45,122,0.3) 0%, rgba(155,77,255,0.3) 100%);
+            border-color: var(--neon-pink); color: #fff; box-shadow: var(--glow-pink);
+        }
+        .tab-badge { background: rgba(0,0,0,0.4); padding: 2px 8px; border-radius: 10px; font-size: 0.8rem; font-weight: 800; color: var(--neon-gold); }
+        .tab-btn.active .tab-badge { background: var(--neon-pink); color: #fff; }
 
+        /* Channel Category Row - NEW: kategori butonları */
+        .channel-cat-row {
+            display: flex; align-items: center; gap: 10px; overflow-x: auto; padding: 4px 2px 16px; margin-bottom: 6px;
+            scrollbar-width: none; -ms-overflow-style: none;
+        }
+        .channel-cat-row::-webkit-scrollbar { display: none; }
+        .channel-cat-btn {
+            flex: 0 0 auto; display: flex; align-items: center; gap: 8px;
+            padding: 10px 18px; border-radius: 16px;
+            background: rgba(255,255,255,0.04); border: 1.5px solid rgba(255,255,255,0.08);
+            color: var(--text-muted); font-family: 'Barlow Condensed', sans-serif;
+            font-weight: 800; font-size: 0.95rem; letter-spacing: 1px;
+            cursor: pointer; transition: all 0.28s ease; white-space: nowrap; outline: none;
+            position: relative; overflow: hidden;
+        }
+        .channel-cat-btn::before {
+            content: ''; position: absolute; inset: 0; border-radius: 16px;
+            background: linear-gradient(135deg, rgba(255,45,122,0.12), rgba(155,77,255,0.12));
+            opacity: 0; transition: opacity 0.28s ease;
+        }
+        .channel-cat-btn:hover {
+            background: rgba(255,45,122,0.10); color: #fff; border-color: rgba(255,45,122,0.35);
+            transform: translateY(-2px); box-shadow: 0 6px 18px rgba(0,0,0,0.35), 0 0 15px rgba(255,45,122,0.15);
+        }
+        .channel-cat-btn:hover::before { opacity: 1; }
+        .channel-cat-btn.active {
+            background: linear-gradient(135deg, var(--neon-pink) 0%, var(--neon-purple) 100%);
+            color: #fff; border-color: transparent;
+            box-shadow: 0 0 20px rgba(255,45,122,0.5), 0 8px 22px rgba(0,0,0,0.45);
+            transform: translateY(-1px);
+        }
+        .channel-cat-btn .cat-count {
+            background: rgba(0,0,0,0.28); padding: 2px 8px; border-radius: 20px;
+            font-size: 0.78rem; font-weight: 800; min-width: 26px; text-align: center; position: relative; z-index: 1;
+        }
+        .channel-cat-btn.active .cat-count { background: rgba(255,255,255,0.22); color: #fff; }
+        .cat-icon { font-size: 1.15rem; position: relative; z-index: 1; }
+        .cat-label { position: relative; z-index: 1; }
+
+        /* Filter Pills */
+        .filter-row { display: flex; align-items: center; gap: 8px; overflow-x: auto; padding-bottom: 14px; margin-bottom: 16px; scrollbar-width: none; }
+        .filter-row::-webkit-scrollbar { display: none; }
+        .filter-pill {
+            background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);
+            color: #aaa; padding: 6px 14px; border-radius: 20px; font-size: 0.82rem; font-weight: 600;
+            cursor: pointer; transition: all 0.25s ease; white-space: nowrap; outline: none;
+        }
+        .filter-pill:hover { background: rgba(0,234,255,0.1); color: #fff; border-color: rgba(0,234,255,0.3); }
+        .filter-pill.active { background: rgba(0,234,255,0.2); color: var(--neon-cyan); border-color: var(--neon-cyan); box-shadow: 0 0 12px rgba(0,234,255,0.3); }
+
+        /* Grid Layouts */
+        .tab-content { display: none; }
+        .tab-content.active { display: block; animation: fadeIn 0.4s ease; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+
+        /* Channel Grid - NEW ızgara kart tasarımı */
+        .channel-grid {
+            display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: 16px;
+        }
+
+        .ch-card {
+            position: relative;
+            background: linear-gradient(145deg, rgba(28,20,52,0.96) 0%, rgba(14,11,30,0.98) 100%);
+            border: 1.5px solid rgba(255,255,255,0.07);
+            border-radius: 22px; padding: 16px 14px 16px;
+            cursor: pointer; transition: all 0.35s cubic-bezier(0.4,0,0.2,1);
+            overflow: hidden; text-align: center;
+            display: flex; flex-direction: column; align-items: center; gap: 8px;
+            isolation: isolate; min-height: 158px;
+            animation: cardIn 0.45s ease both;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.04);
+        }
+        @keyframes cardIn { from { opacity:0; transform: translateY(14px) scale(0.96);} to { opacity:1; transform: translateY(0) scale(1);} }
+        .ch-card::before {
+            content: ''; position: absolute; inset: 0; border-radius: 22px; padding: 1.5px;
+            background: linear-gradient(135deg, rgba(255,45,122,0), rgba(155,77,255,0));
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor; mask-composite: exclude;
+            opacity: 0; transition: opacity 0.35s; pointer-events: none;
+        }
+        .ch-card::after {
+            content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%;
+            background: radial-gradient(circle at center, rgba(255,45,122,0.06) 0%, transparent 60%);
+            opacity: 0; transition: opacity 0.35s; pointer-events: none;
+        }
+        .ch-card:hover {
+            transform: translateY(-6px) scale(1.02);
+            border-color: rgba(255,45,122,0.45);
+            box-shadow: 0 14px 35px rgba(0,0,0,0.55), 0 0 28px rgba(255,45,122,0.22), 0 0 12px rgba(155,77,255,0.18);
+            background: linear-gradient(145deg, rgba(38,26,68,0.98) 0%, rgba(18,14,38,0.98) 100%);
+        }
+        .ch-card:hover::before { opacity: 1; background: linear-gradient(135deg, rgba(255,45,122,0.8), rgba(155,77,255,0.7), rgba(0,234,255,0.5)); }
+        .ch-card:hover::after { opacity: 1; }
+        .ch-card.active {
+            border-color: var(--neon-pink) !important;
+            background: linear-gradient(145deg, rgba(255,45,122,0.18) 0%, rgba(155,77,255,0.20) 100%) !important;
+            box-shadow: 0 0 32px rgba(255,45,122,0.45), 0 10px 30px rgba(0,0,0,0.5) !important;
+            transform: translateY(-3px) scale(1.02);
+        }
+        .ch-card.active::before { opacity: 1; background: linear-gradient(135deg, var(--neon-pink), var(--neon-purple)); }
+
+        .ch-card-top { display: flex; align-items: center; justify-content: space-between; width: 100%; margin-bottom: 2px; position: relative; z-index: 1; }
+        .ch-quality {
+            font-size: 0.62rem; font-weight: 900; letter-spacing: 0.8px; padding: 3px 8px; border-radius: 20px;
+            background: rgba(255,204,51,0.13); color: var(--neon-gold); border: 1px solid rgba(255,204,51,0.30); line-height: 1;
+        }
+        .ch-card.active .ch-quality { background: linear-gradient(135deg, #ffcc33, #ffb700); color: #000; border-color: transparent; box-shadow: 0 0 10px rgba(255,204,51,0.5); }
+        .ch-live-dot { width: 8px; height: 8px; background: #00ff88; border-radius: 50%; box-shadow: 0 0 10px #00ff88; animation: livePulse 1.6s infinite; flex-shrink: 0; }
+        .ch-card.active .ch-live-dot { background: var(--neon-pink); box-shadow: 0 0 10px var(--neon-pink); }
+        @keyframes livePulse { 0%,100% { opacity:1; transform:scale(1);} 50% { opacity:0.45; transform:scale(0.82);} }
+
+        .ch-icon-wrap {
+            width: 64px; height: 64px; border-radius: 18px;
+            background: radial-gradient(circle at 30% 30%, rgba(255,45,122,0.18), rgba(155,77,255,0.14) 50%, rgba(0,234,255,0.08));
+            border: 1px solid rgba(255,255,255,0.07);
+            display: flex; align-items: center; justify-content: center;
+            font-size: 2rem; box-shadow: inset 0 1px 1px rgba(255,255,255,0.08), 0 6px 18px rgba(0,0,0,0.35);
+            transition: transform 0.35s ease, box-shadow 0.35s ease; position: relative; z-index: 1;
+        }
+        .ch-card:hover .ch-icon-wrap { transform: scale(1.08) rotate(1.5deg); box-shadow: 0 8px 22px rgba(0,0,0,0.45), 0 0 18px rgba(255,45,122,0.18); }
+        .ch-card.active .ch-icon-wrap { background: radial-gradient(circle at 30% 30%, rgba(255,45,122,0.30), rgba(155,77,255,0.28)); border-color: rgba(255,45,122,0.35); box-shadow: 0 0 18px rgba(255,45,122,0.3); }
+
+        .ch-name {
+            font-family: 'Barlow Condensed', sans-serif; font-weight: 800; font-size: 0.92rem;
+            letter-spacing: 0.6px; line-height: 1.15; color: #f0e8ff; text-transform: uppercase;
+            position: relative; z-index: 1; min-height: 2.2em; display: flex; align-items: center; justify-content: center;
+        }
+        .ch-category {
+            font-size: 0.66rem; font-weight: 700; letter-spacing: 1.2px; color: var(--text-muted);
+            text-transform: uppercase; background: rgba(255,255,255,0.05); padding: 3px 9px; border-radius: 20px;
+            border: 1px solid rgba(255,255,255,0.06); position: relative; z-index: 1; line-height: 1;
+        }
+        .ch-card.active .ch-category { background: rgba(255,45,122,0.18); color: #ffb3d1; border-color: rgba(255,45,122,0.3); }
+        .ch-number {
+            position: absolute; top: 10px; right: 12px; font-family: 'Bebas Neue', sans-serif;
+            font-size: 0.82rem; color: rgba(255,255,255,0.13); letter-spacing: 1px; z-index: 1;
+        }
+        .ch-play-hint {
+            margin-top: 2px; font-size: 0.70rem; font-weight: 800; letter-spacing: 1.2px; color: var(--neon-cyan);
+            opacity: 0; transform: translateY(4px); transition: all 0.28s ease; position: relative; z-index: 1;
+            display: flex; align-items: center; gap: 4px;
+        }
+        .ch-card:hover .ch-play-hint { opacity: 1; transform: translateY(0); }
+        .ch-card.active .ch-play-hint { opacity: 1; transform: translateY(0); color: var(--neon-pink); }
+
+        /* Match Cards Grid */
+        .match-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 16px; }
+
+        .match-card {
+            background: linear-gradient(135deg, rgba(20,16,42,0.9) 0%, rgba(12,9,26,0.95) 100%);
+            border: 1px solid rgba(255,255,255,0.08); border-radius: var(--radius-lg); padding: 16px;
+            display: flex; flex-direction: column; gap: 12px; position: relative; overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        .match-card:hover {
+            border-color: rgba(0,234,255,0.5); transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.6), 0 0 25px rgba(0,234,255,0.15);
+        }
+        .match-card.is-live { border-color: rgba(255,45,122,0.4); }
+        .match-card.is-live:hover { border-color: var(--neon-pink); box-shadow: 0 10px 30px rgba(0,0,0,0.6), var(--glow-pink); }
+
+        .match-header { display: flex; align-items: center; justify-content: space-between; font-size: 0.78rem; font-weight: 700; color: var(--text-muted); }
+        .match-league { display: flex; align-items: center; gap: 6px; color: var(--neon-cyan); }
+        .match-status-tag {
+            background: rgba(255,45,122,0.15); color: var(--neon-pink); border: 1px solid rgba(255,45,122,0.4);
+            padding: 3px 10px; border-radius: 12px; font-size: 0.75rem; font-weight: 800; display: flex; align-items: center; gap: 6px;
+        }
+        .match-status-tag.daily { background: rgba(255,204,51,0.12); color: var(--neon-gold); border-color: rgba(255,204,51,0.3); }
+
+        .match-teams {
+            font-family: 'Barlow Condensed', sans-serif; font-size: 1.35rem; font-weight: 700;
+            color: #fff; text-align: center; margin: 4px 0; display: flex; align-items: center; justify-content: center; gap: 10px;
+        }
+        .match-score { background: rgba(255,45,122,0.2); color: #fff; padding: 2px 10px; border-radius: 8px; font-size: 1.2rem; font-weight: 900; }
+
+        .match-footer { display: flex; align-items: center; justify-content: space-between; border-top: 1px solid rgba(255,255,255,0.06); padding-top: 10px; margin-top: 4px; }
+        .match-channel-name { font-size: 0.8rem; font-weight: 600; color: #aaa; display: flex; align-items: center; gap: 6px; }
+
+        .play-match-btn {
+            background: linear-gradient(135deg, var(--neon-pink) 0%, var(--neon-purple) 100%);
+            color: #fff; border: none; padding: 8px 16px; border-radius: 12px; font-weight: 800;
+            font-size: 0.82rem; cursor: pointer; transition: all 0.25s ease; outline: none;
+            box-shadow: 0 0 15px rgba(255,45,122,0.3); display: flex; align-items: center; gap: 6px;
+        }
+        .play-match-btn:hover { transform: scale(1.05); box-shadow: 0 0 25px rgba(255,45,122,0.6); }
+
+        .empty-msg { text-align: center; padding: 40px 20px; color: var(--text-muted); font-size: 1rem; grid-column: 1/-1; background: rgba(255,255,255,0.02); border:1px dashed rgba(255,255,255,0.08); border-radius:16px; }
+
+        /* Responsive Breakpoints */
         @media (max-width: 1024px) {
             .main-layout { grid-template-columns: 1fr; }
-            .side-panel { flex-direction: row; flex-wrap: wrap; gap: 12px; }
-            .now-playing-card { flex: 1 1 200px; min-width: 180px; padding: 16px 12px 12px; }
-            .quick-info { flex: 1 1 150px; min-width: 140px; padding: 14px; }
-            .now-channel { font-size: 1.6rem; min-width: 100px; }
-            .nav-btn { width: 36px; height: 36px; font-size: 1.1rem; }
-            .ch-btn { min-width: 100px; padding: 16px 14px; border-radius: 16px; }
-            .ch-number { font-size: 1.4rem; }
-            .ch-btn.active .ch-number { font-size: 1.5rem; }
-            .ch-label { font-size: 0.7rem; }
+            .side-panel { flex-direction: row; flex-wrap: wrap; }
+            .now-playing-card { flex: 1 1 220px; }
+            .quick-stats-card { flex: 1 1 200px; }
         }
+
         @media (max-width: 600px) {
-            .wrapper { padding: 12px 0; width: calc(100% - 16px); }
-            .site-header { padding: 12px 16px; border-radius: 20px; margin-bottom: 14px; }
-            .logo-main { font-size: 1.8rem; letter-spacing: 2px; }
-            .live-badge { font-size: 0.75rem; letter-spacing: 1px; }
-            .live-dot { width: 8px; height: 8px; }
-            .player-wrap { border-radius: 18px; border-width: 1px; }
-            .now-channel { font-size: 1.4rem; min-width: 80px; }
-            .nav-btn { width: 32px; height: 32px; font-size: 1rem; }
-            .ch-btn { min-width: 85px; padding: 14px 10px; border-radius: 14px; }
-            .ch-number { font-size: 1.2rem; }
-            .ch-btn.active .ch-number { font-size: 1.3rem; }
-            .ch-label { font-size: 0.65rem; letter-spacing: 1px; }
-            .ch-icon { font-size: 1.1rem; }
+            .wrapper { width: calc(100% - 16px); padding: 10px 0; }
+            .site-header { padding: 12px 16px; border-radius: 18px; flex-direction: column; align-items: flex-start; }
+            .logo-main { font-size: 2.2rem; }
+            .search-box { width: 100%; }
+            .match-grid { grid-template-columns: 1fr; }
+            .tab-btn { font-size: 0.95rem; padding: 8px 14px; }
+            .channel-grid { grid-template-columns: repeat(auto-fill, minmax(145px, 1fr)); gap: 12px; }
+            .channel-cat-btn { padding: 8px 14px; font-size: 0.88rem; }
         }
-
-        /* ---- Bot ekleri: maç bölümü & adres şeridi ---- */
-        .address-strip{
-            background: rgba(12,10,24,0.7); border:1px solid rgba(0,234,255,0.25);
-            border-radius: 14px; padding: 10px 18px; margin-bottom: 18px;
-            color: var(--text-muted); font-size: 0.85rem; letter-spacing: 1px; text-align:center;
-            backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
-            position: relative; z-index: 1; display:flex; align-items:center; justify-content:center; gap:14px; flex-wrap:wrap;
-        }
-        .address-strip .live-clock{ color:var(--neon-gold); font-weight:800; font-family:'Bebas Neue',sans-serif; letter-spacing:2px; font-size:1.1rem; }
-        .address-strip b{ color: var(--neon-cyan); }
-        .matches-section{
-            background: rgba(12,10,24,0.9); border:1px solid rgba(155,77,255,0.3);
-            border-radius: 28px; padding: 24px 20px; margin-bottom: 20px;
-            backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
-            box-shadow: 0 0 40px rgba(0,0,0,0.5), 0 0 60px rgba(155,77,255,0.08);
-            position: relative; z-index: 1;
-        }
-        .match-filters{ display:flex; gap:8px; flex-wrap:wrap; justify-content:center; margin-bottom:18px; }
-        .mf-btn{ background:rgba(20,16,38,0.8); border:1px solid rgba(155,77,255,0.3); color:var(--text-muted);
-            font-weight:700; font-size:0.72rem; letter-spacing:1px; padding:7px 16px; border-radius:24px; cursor:pointer; transition:all .2s; text-transform:uppercase; }
-        .mf-btn:hover{ border-color:var(--neon-purple); color:#fff; }
-        .mf-btn.active{ background:linear-gradient(135deg,var(--neon-pink),var(--neon-purple)); color:#fff; border-color:transparent; box-shadow:0 0 20px rgba(255,45,122,0.4); }
-        .match-group{ margin-bottom: 18px; scroll-margin-top: 20px; }
-        .match-group.is-hidden{ display:none; }
-        .match-group-title{
-            font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:0.9rem;
-            letter-spacing:3px; text-transform:uppercase; color:var(--neon-cyan); margin-bottom:10px;
-            display:flex; align-items:center; gap:8px;
-        }
-        .match-group-title .mcount{ color:var(--text-muted); font-weight:400; }
-        .match-list{ display:flex; flex-direction:column; gap:8px; }
-        .match-card{
-            display:flex; align-items:center; gap:12px;
-            background: rgba(20,16,38,0.7); border:1px solid rgba(155,77,255,0.25);
-            border-radius: 14px; padding: 10px 14px; font-size:0.95rem; flex-wrap:wrap; transition:all .25s;
-        }
-        .match-card:hover{ border-color:rgba(255,45,122,0.5); transform:translateY(-2px); box-shadow:0 8px 22px rgba(0,0,0,0.4); }
-        .match-card.live{ border-color: rgba(255,45,122,0.7); box-shadow:0 0 18px rgba(255,45,122,0.25); }
-        .match-card.live .match-time{ animation: liveBlink 1.4s ease-in-out infinite; }
-        .match-time{ font-family:'Barlow Condensed',sans-serif; font-weight:900; font-size:1.2rem; color:var(--neon-gold); min-width:52px; text-align:center; }
-        .match-teams{ flex:1; min-width:180px; display:flex; align-items:center; gap:8px; flex-wrap:wrap; }
-        .match-teams .mt-name{ display:inline-flex; align-items:center; gap:8px; font-weight:700; flex-wrap:wrap; }
-        .match-teams .mt-vs{ color:var(--text-muted); font-weight:400; font-size:0.8rem; text-transform:uppercase; letter-spacing:1px; }
-        .team-logo img{ width:26px; height:26px; object-fit:contain; display:block; filter:drop-shadow(0 0 6px rgba(255,45,122,0.4)); }
-        .match-league{ color:var(--text-muted); font-size:0.75rem; display:block; width:100%; }
-        .match-badge{ font-size:0.68rem; font-weight:900; letter-spacing:1px; padding:3px 10px; border-radius:20px; }
-        .match-badge.live{ background:linear-gradient(135deg,#ff2d2d,#ff2d7a); color:#fff; box-shadow:0 0 15px rgba(255,45,122,0.5); animation: liveBlink 1.6s ease-in-out infinite; }
-        .match-badge.up{ background:rgba(0,234,255,0.15); color:var(--neon-cyan); border:1px solid rgba(0,234,255,0.4); }
-        .match-badge.done{ background:rgba(141,132,170,0.2); color:var(--text-muted); }
-        .match-badge.mod{ background:linear-gradient(135deg,#ffcc33,#ffa800); color:#000; }
-        .match-watch{ color:var(--neon-pink); font-family:inherit; background:transparent; cursor:pointer; font-weight:800; font-size:0.8rem; border:1px solid rgba(255,45,122,0.6); border-radius:20px; padding:5px 14px; transition:all .2s; letter-spacing:1px; }
-        .match-watch:hover{ background:var(--neon-pink); color:#000; box-shadow:0 0 18px rgba(255,45,122,0.6); transform:scale(1.04); }
-        .empty-msg{ color:var(--text-muted); font-size:0.9rem; text-align:center; padding:12px; }
-
-        /* Kanal arama */
-        .channel-search{ display:flex; justify-content:center; margin-bottom:16px; }
-        .channel-search input{ width:100%; max-width:360px; background:rgba(20,16,38,0.8); border:1px solid rgba(155,77,255,0.3);
-            color:var(--text-main); padding:10px 18px; font-size:0.9rem; border-radius:24px; outline:none; transition:all .2s; font-family:inherit; }
-        .channel-search input:focus{ border-color:var(--neon-cyan); box-shadow:0 0 20px rgba(0,234,255,0.25); }
-        .channel-search::placeholder{ color:var(--text-muted); }
-        .channel-search input::placeholder{ color:var(--text-muted); }
-        .no-result{ color:var(--text-muted); text-align:center; font-size:0.85rem; padding:20px; display:none; }
     </style>
 </head>
 <body>
     <div class="bg-particles" id="bgParticles"></div>
 
     <div class="wrapper">
+        <!-- Site Header -->
         <header class="site-header">
-            <div class="logo-main">İNADİNA TV</div>
-            <div class="live-badge"><span class="live-dot"></span> CANLI YAYIN</div>
+            <div class="brand-area">
+                <div class="logo-main">İNADİNA TV</div>
+                <div class="live-badge"><span class="live-dot"></span> CANLI YAYIN</div>
+            </div>
+
+            <div class="header-meta">
+                <div class="domain-tag" id="domainTag">
+                    <span class="dot"></span>
+                    <span id="domainText">Sunucu: fixbettv84.com</span>
+                </div>
+                <div class="search-box">
+                    <span class="search-icon">🔍</span>
+                    <input type="text" id="searchInput" class="search-input" placeholder="Kanal veya Maç Ara..." />
+                </div>
+            </div>
         </header>
 
-        <div class="address-strip">
-            <span>📡 <b>Kaynak:</b> <span id="siteAddress">https://fixbettv84.com</span></span>
-            <span>🕑 <span id="liveClock" class="live-clock">--:--:--</span> <span style="font-size:0.75rem">(yerel)</span></span>
-            <span>🔄 Güncellenme: <span id="updatedAt">2026-09-05 08:47</span></span>
-        </div>
-
+        <!-- Main Video & Side Control Panel -->
         <div class="main-layout">
-            <div class="player-wrap" id="playerWrap">
-                <div class="player-tip" id="playerTip">🎬 Kanal seçin, yayın burada oynasın</div>
-                <iframe id="liveIframe" src="" allowfullscreen allow="autoplay; encrypted-media" loading="lazy"></iframe>
+            <div class="player-container">
+                <div class="player-top-bar">
+                    <div class="player-title-info">
+                        <span id="playerIcon">⚽</span>
+                        <span id="playerTitle">BEIN SPORTS 1 HD</span>
+                    </div>
+                    <div class="player-actions">
+                        <button class="ctrl-btn" id="reloadPlayerBtn" title="Yayn Yenile">🔄 Yenile</button>
+                        <button class="ctrl-btn" id="fullscreenBtn" title="Tam Ekran">⛶ Tam Ekran</button>
+                    </div>
+                </div>
+
+                <div class="player-wrap" id="playerWrap">
+                    <div class="player-loading" id="playerLoading">
+                        <div class="spinner"></div>
+                        <div style="font-weight:700; color:var(--neon-pink);">Yayın Yükleniyor...</div>
+                    </div>
+                    <iframe id="liveIframe" src="" allowfullscreen allow="autoplay; encrypted-media" loading="lazy"></iframe>
+                </div>
             </div>
 
             <div class="side-panel">
                 <div class="now-playing-card">
-                    <div class="now-label">📡 ŞU AN İZLENİYOR</div>
+                    <div class="now-label">📡 İZLENEN KANAL</div>
                     <div class="channel-selector-row">
                         <button class="nav-btn" id="navPrev" title="Önceki Kanal" aria-label="Önceki kanal">◀</button>
                         <div class="now-channel" id="nowChannel">-</div>
                         <button class="nav-btn" id="navNext" title="Sonraki Kanal" aria-label="Sonraki kanal">▶</button>
                     </div>
-                    <span class="now-quality-badge" id="nowQuality">HD</span>
+                    <span class="now-quality-badge" id="nowQuality">4K HD</span>
                 </div>
 
-                <div class="quick-info">
-                    <div class="info-row">
-                        <div class="info-title">📺 TOPLAM KANAL</div>
-                        <div class="info-val" id="totalChannels">0</div>
-                    </div>
-                    <div class="gamepad-indicator" id="gamepadStatus">
-                        <span class="gamepad-dot inactive" id="gamepadDot"></span>
-                        <span id="gamepadText">Kumanda bekleniyor</span>
+                <div class="quick-stats-card">
+                    <div class="stat-grid">
+                        <div class="stat-box">
+                            <div class="stat-title">📺 KANALLAR</div>
+                            <div class="stat-val" id="totalChannelsCount">0</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-title">🔴 CANLI MAÇLAR</div>
+                            <div class="stat-val" id="totalLiveCount" style="color:var(--neon-pink);">0</div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="matches-section" id="matchesSection">
-            <div class="section-title">⚽ GÜNÜN MAÇLARI</div>
-            <div class="match-filters" id="matchFilters"><button class="mf-btn active" data-mf="all">Tümü</button><button class="mf-btn" data-mf="live">🔴 Canlı</button><button class="mf-btn" data-mf="mod">⭐ Günün Maçı</button><button class="mf-btn" data-mf="upcoming">⏰ Yaklaşan</button><button class="mf-btn" data-mf="done">✅ Bitti</button></div>
-<div class="match-group" data-group="mod"><div class="match-group-title" style="color:#ffcc33"><span>⭐ GÜNÜN MAÇI <span class="mcount">(1)</span></span></div><div class="match-list"><div class="match-card up" data-time="20:00" data-status="upcoming" data-league="Trendyol Süper Lig"><span class="match-time">20:00</span><span class="match-teams"><span class="team-logo"><img loading="lazy" src="https://img.sporekrani.com/teams/v5HDBvsjiEUsYChq03Jk2EbrNXDHiHvLOdMI6fHR.png" alt="" onerror="this.style.display='none'"></span><span class="mt-name"><b>Fenerbahçe</b><span class="mt-vs">vs</span><b>Beşiktaş</b></span><span class="team-logo"><img loading="lazy" src="https://img.sporekrani.com/teams/CFvwmLuUD6H974wec5ga09WZXmTeWdI3RneaRBkc.png" alt="" onerror="this.style.display='none'"></span><span class="match-league">Trendyol Süper Lig</span></span><span class="match-badge up" data-badge>YAKLAŞAN</span><span class="match-badge mod" data-is-mod="1">★ GÜNÜN MAÇI</span><button class="match-watch" data-stream="https://fixbettv84.com/channel.html?id=zirve" title="Fenerbahçe vs Beşiktaş">▶ İZLE</button></div></div></div>
-<div class="match-group" data-group="upcoming"><div class="match-group-title" style="color:#00eaff"><span>⏰ YAKLAŞAN <span class="mcount">(25)</span></span></div><div class="match-list"><div class="match-card up" data-time="14:30" data-status="upcoming" data-league="İngiltere Premier Lig"><span class="match-time">14:30</span><span class="match-teams"><span class="team-logo"><img loading="lazy" src="https://img.sporekrani.com/teams/nKnZT5e3Ht6AuKHtcOPfrzo865qNLr7r5gRZ6kCs.png" alt="" onerror="this.style.display='none'"></span><span class="mt-name"><b>Newcastle</b><span class="mt-vs">vs</span><b>Bournemouth</b></span><span class="team-logo"><img loading="lazy" src="https://img.sporekrani.com/teams/d9yjGvnYyT8UdVOb95YTlFYiOSHraxBhEwil3eox.png" alt="" onerror="this.style.display='none'"></span><span class="match-league">İngiltere Premier Lig</span></span><span class="match-badge up" data-badge>YAKLAŞAN</span><button class="match-watch" data-stream="https://fixbettv84.com/channel.html?id=b3" title="Newcastle vs Bournemouth">▶ İZLE</button></div><div class="match-card up" data-time="16:00" data-status="upcoming" data-league="İtalya Serie A"><span class="match-time">16:00</span><span class="match-teams"><span class="team-logo"><img loading="lazy" src="https://img.sporekrani.com/teams/4YnawjObsS3ds0V0O46Xr8a5A5h1nXLelqyKgqOe.png" alt="" onerror="this.style.display='none'"></span><span class="mt-name"><b>Fiorentina</b><span class="mt-vs">vs</span><b>Torino</b></span><span class="team-logo"><img loading="lazy" src="https://img.sporekrani.com/teams/WdK7UxzEd8bWfDStVcTk7PTgrQ8xT5qhmyAmSo1t.png" alt="" onerror="this.style.display='none'"></span><span class="match-league">İtalya Serie A</span></span><span class="match-badge up" data-badge>YAKLAŞAN</span><button class="match-watch" data-stream="https://fixbettv84.com/channel.html?id=ss2" title="Fiorentina vs Torino">▶ İZLE</button></div><div class="match-card up" data-time="16:00" data-status="upcoming" data-league="Trendyol 1. Lig"><span class="match-time">16:00</span><span class="match-teams"><span class="team-logo"><img loading="lazy" src="https://img.sporekrani.com/teams/eCMSnOYhdkN1g2KIVMtcLZYKjyzxUghS4LzkHirS.png" alt="" onerror="this.style.display='none'"></span><span class="mt-name"><b>Bandırmaspor</b><span class="mt-vs">vs</span><b>Boluspor</b></span><span class="team-logo"><img loading="lazy" src="https://img.sporekrani.com/teams/gUJSQTZh6I6iaLOcbmbEYogudh7C1muJaY8psxOh.png" alt="" onerror="this.style.display='none'"></span><span class="match-league">Trendyol 1. Lig</span></span><span class="match-badge up" data-badge>YAKLAŞAN</span><button class="match-watch" data-stream="https://fixbettv84.com/channel.html?id=trtspor" title="Bandırmaspor vs Boluspor">▶ İZLE</button></div><div class="match-card up" data-time="16:00" data-status="upcoming" data-league="CEV Kadınlar Avrupa Şampiyonası"><span class="match-time">16:00</span><span class="match-teams"><span class="team-logo"><img loading="lazy" src="https://img.sporekrani.com/teams/qMoYbPRcGX7GBkht1uSrafddF2ZV1rodvYJ4xVLl.png" alt="" onerror="this.style.display='none'"></span><span class="mt-name"><b>Türkiye</b><span class="mt-vs">vs</span><b>Sırbistan</b></span><span class="team-logo"><img loading="lazy" src="https://img.sporekrani.com/teams/cuVQR2ewz7tnd1sGYxcTqvknt82Mbd5U2riP4pLJ.png" alt="" onerror="this.style.display='none'"></span><span class="match-league">CEV Kadınlar Avrupa Şampiyonası</span></span><span class="match-badge up" data-badge>YAKLAŞAN</span><button class="match-watch" data-stream="https://fixbettv84.com/channel.html?id=trt1" title="Türkiye vs Sırbistan">▶ İZLE</button></div><div class="match-card up" data-time="17:00" data-status="upcoming" data-league="İngiltere Premier Lig"><span class="match-time">17:00</span><span class="match-teams"><span class="team-logo"><img loading="lazy" src="https://img.sporekrani.com/teams/vm8CKrsnZLmW7mQHyYjhm5zwthTo94LH7paKamuv.png" alt="" onerror="this.style.display='none'"></span><span class="mt-name"><b>Brighton</b><span class="mt-vs">vs</span><b>Leeds United</b></span><span class="team-logo"><img loading="lazy" src="https://img.sporekrani.com/teams/rNuI9YXtAltzauAEWG5ed9YNRn0gG9TGvwgmJTCq.png" alt="" onerror="this.style.display='none'"></span><span class="match-league">İngiltere Premier Lig</span></span><span class="match-badge up" data-badge>YAKLAŞAN</span><button class="match-watch" data-stream="https://fixbettv84.com/channel.html?id=bm1" title="Brighton vs Leeds United">▶ İZLE</button></div><div class="match-card up" data-time="17:00" data-status="upcoming" data-league="İngiltere Premier Lig"><span class="match-time">17:00</span><span class="match-teams"><span class="team-logo"><img loading="lazy" src="https://img.sporekrani.com/teams/TvcF6CoHKkiSZ91pmfM5Xb1HgncvrBHEVWku3WFw.png" alt="" onerror="this.style.display='none'"></span><span class="mt-name"><b>Fulham</b><span class="mt-vs">vs</span><b>Crystal Palace</b></span><span class="team-logo"><img loading="lazy" src="https://img.sporekrani.com/teams/hs3JxodxlrAGFufonoXjSbvjbtr3GcLibZxxcax7.png" alt="" onerror="this.style.display='none'"></span><span class="match-league">İngiltere Premier Lig</span></span><span class="match-badge up" data-badge>YAKLAŞAN</span><button class="match-watch" data-stream="https://fixbettv84.com/channel.html?id=bm2" title="Fulham vs Crystal Palace">▶ İZLE</button></div><div class="match-card up" data-time="17:00" data-status="upcoming" data-league="İngiltere Premier Lig"><span class="match-time">17:00</span><span class="match-teams"><span class="team-logo"><img loading="lazy" src="https://img.sporekrani.com/teams/n3uuqjXHIoLIVKbPeILQ1vH7Q4Gv1altDVjBN12B.png" alt="" onerror="this.style.display='none'"></span><span class="mt-name"><b>Manchester City</b><span class="mt-vs">vs</span><b>Coventry</b></span><span class="team-logo"><img loading="lazy" src="https://img.sporekrani.com/teams/tQahH8BebFMN502T4KMohVFS7Wirx0OBSdFeWARj.png" alt="" onerror="this.style.display='none'"></span><span class="match-league">İngiltere Premier Lig</span></span><span class="match-badge up" data-badge>YAKLAŞAN</span><button class="match-watch" data-stream="https://fixbettv84.com/channel.html?id=b3" title="Manchester City vs Coventry">▶ İZLE</button></div><div class="match-card up" data-time="17:00" data-status="upcoming" data-league="İngiltere Premier Lig"><span class="match-time">17:00</span><span class="match-teams"><span class="team-logo"><img loading="lazy" src="https://img.sporekrani.com/teams/ybjzxeaJNfHzdAhYym9SXren3z9Q1Uh3UKy1ZOLw.png" alt="" onerror="this.style.display='none'"></span><span class="mt-name"><b>Nottingham Forest</b><span class="mt-vs">vs</span><b>Tottenham</b></span><span class="team-logo"><img loading="lazy" src="https://img.sporekrani.com/teams/CQdFOpa49q9PtGf6Zj0o2qeEN4TNDYawkiyOlaz0.png" alt="" onerror="this.style.display='none'"></span><span class="match-league">İngiltere Premier Lig</span></span><span class="match-badge up" data-badge>YAKLAŞAN</span><button class="match-watch" data-stream="https://fixbettv84.com/channel.html?id=b5" title="Nottingham Forest vs Tottenham">▶ İZLE</button></div><div class="match-card up" data-time="17:00" data-status="upcoming" data-league="Trendyol Süper Lig"><span class="match-time">17:00</span><span class="match-teams"><span class="team-logo"><img loading="lazy" src="https://img.sporekrani.com/teams/nl7AiwO2FssDa5jVO0394Bo1w4GIbsuHiArFtWoc.png" alt="" onerror="this.style.display='none'"></span><span class="mt-name"><b>Erzurumspor</b><span class="mt-vs">vs</span><b>Konyaspor</b></span><span class="team-logo"><img loading="lazy" src="https://img.sporekrani.com/teams/rrtsbcfkWv3ZkcOrUqjBySbDKkOgnZ4ntn0PfJeh.png" alt="" onerror="this.style.display='none'"></span><span class="match-league">Trendyol Süper Lig</span></span><span class="match-badge up" data-badge>YAKLAŞAN</span><button class="match-watch" data-stream="https://fixbettv84.com/channel.html?id=b2" title="Erzurumspor vs Konyaspor">▶ İZLE</button></div><div class="match-card up" data-time="17:15" data-status="upcoming" data-league="İspanya La Liga"><span class="match-time">17:15</span><span class="match-teams"><span class="team-logo"><img loading="lazy" src="https://img.sporekrani.com/teams/4xjJNerOIlO9MSm7QHODeQGtTynHK2RJgF181HFV.png" alt="" onerror="this.style.display='none'"></span><span class="mt-name"><b>Athletic Bilbao</b><span class="mt-vs">vs</span><b>Atletico Madrid</b></span><span class="team-logo"><img loading="lazy" src="https://img.sporekrani.com/teams/H10jNhPECZT9nUGgVPEIrTvidVb9HyX9xEepUWuf.png" alt="" onerror="this.style.display='none'"></span><span class="match-league">İspanya La Liga</span></span><span class="match-badge up" data-badge>YAKLAŞAN</span><button class="match-watch" data-stream="https://fixbettv84.com/channel.html?id=ss" title="Athletic Bilbao vs Atletico Madrid">▶ İZLE</button></div><div class="match-card up" data-time="19:00" data-status="upcoming" data-league="İtalya Serie A"><span class="match-time">19:00</span><span class="match-teams"><span class="team-logo"><img loading="lazy" src="https://img.sporekrani.com/teams/Jk9UQlFMIc8hH5fIxu2O8Y1O90kymjO6iIPHWnsY.png" alt="" onerror="this.style.display='none'"></span><span class="mt-name"><b>Inter</b><span class="mt-vs">vs</span><b>Napoli</b></span><span class="team-logo"><img loading="lazy" src="https://img.sporekrani.com/teams/HabaH51e4AEYIabuLgRB8Jmh6BMr3XqLhJmQxwYV.png" alt="" onerror="this.style.display='none'"></span><span class="match-league">İtalya Serie A</span></span><span class="match-badge up" data-badge>YAKLAŞAN</span><button class="match-watch" data-stream="https://fixbettv84.com/channel.html?id=ss2" title="Inter vs Napoli">▶ İZLE</button></div><div class="match-card up" data-time="19:00" data-status="upcoming" data-league="CEV Kadınlar Avrupa Şampiyonası"><span class="match-time">19:00</span><span class="match-teams"><span class="team-logo"><img loading="lazy" src="https://img.sporekrani.com/teams/HGsxqov96RcSKu1397HjLmv2lYiiui8nejPNou30.png" alt="" onerror="this.style.display='none'"></span><span class="mt-name"><b>Polonya</b><span class="mt-vs">vs</span><b>İtalya</b></span><span class="team-logo"><img loading="lazy" src="https://img.sporekrani.com/teams/h8r0nEcEkVoTN9HdzUexrl4pd71xVS2X2XYrvZyR.png" alt="" onerror="this.style.display='none'"></span><span class="match-league">CEV Kadınlar Avrupa Şampiyonası</span></span><span class="match-badge up" data-badge>YAKLAŞAN</span><button class="match-watch" data-stream="https://fixbettv84.com/channel.html?id=trtspor2" title="Polonya vs İtalya">▶ İZLE</button></div><div class="match-card up" data-time="19:30" data-status="upcoming" data-league="İngiltere Premier Lig"><span class="match-time">19:30</span><span class="match-teams"><span class="team-logo"><img loading="lazy" src="https://img.sporekrani.com/teams/JFbZog0ycMR8QmTHtk5vkBUPHr4KKtCfUY2YytKY.png" alt="" onerror="this.style.display='none'"></span><span class="mt-name"><b>Hull City</b><span class="mt-vs">vs</span><b>Aston Villa</b></span><span class="team-logo"><img loading="lazy" src="https://img.sporekrani.com/teams/g6sqS6ui4cRXpQeHFw58VBbrDWWHHKmMv0kSD5aY.png" alt="" onerror="this.style.display='none'"></span><span class="match-league">İngiltere Premier Lig</span></span><span class="match-badge up" data-badge>YAKLAŞAN</span><button class="match-watch" data-stream="https://fixbettv84.com/channel.html?id=b3" title="Hull City vs Aston Villa">▶ İZLE</button></div><div class="match-card up" data-time="19:30" data-status="upcoming" data-league="İspanya La Liga"><span class="match-time">19:30</span><span class="match-teams"><span class="team-logo"><img loading="lazy" src="https://img.sporekrani.com/teams/g8Lz07qcq3NX7HYmZ94igiZCYon351d73L3f0NhB.png" alt="" onerror="this.style.display='none'"></span><span class="mt-name"><b>Rayo Vallecano</b><span class="mt-vs">vs</span><b>Racing Santander</b></span><span class="team-logo"><img loading="lazy" src="https://img.sporekrani.com/teams/zNpKuaZC8yofM3jNlfJ1utYUpA7xWIlZaCasreXJ.png" alt="" onerror="this.style.display='none'"></span><span class="match-league">İspanya La Liga</span></span><span class="match-badge up" data-badge>YAKLAŞAN</span><button class="match-watch" data-stream="https://fixbettv84.com/channel.html?id=ss" title="Rayo Vallecano vs Racing Santander">▶ İZLE</button></div><div class="match-card up" data-time="20:00" data-status="upcoming" data-league="Trendyol Süper Lig"><span class="match-time">20:00</span><span class="match-teams"><span class="team-logo"><img loading="lazy" src="https://img.sporekrani.com/teams/v5HDBvsjiEUsYChq03Jk2EbrNXDHiHvLOdMI6fHR.png" alt="" onerror="this.style.display='none'"></span><span class="mt-name"><b>Fenerbahçe</b><span class="mt-vs">vs</span><b>Beşiktaş</b></span><span class="team-logo"><img loading="lazy" src="https://img.sporekrani.com/teams/CFvwmLuUD6H974wec5ga09WZXmTeWdI3RneaRBkc.png" alt="" onerror="this.style.display='none'"></span><span class="match-league">Trendyol Süper Lig</span></span><span class="match-badge up" data-badge>YAKLAŞAN</span><span class="match-badge mod" data-is-mod="1">★ GÜNÜN MAÇI</span><button class="match-watch" data-stream="https://fixbettv84.com/channel.html?id=zirve" title="Fenerbahçe vs Beşiktaş">▶ İZLE</button></div><div class="match-card up" data-time="20:00" data-status="upcoming" data-league="Portekiz Liga NOS"><span class="match-time">20:00</span><span class="match-teams"><span class="team-logo"><img loading="lazy" src="https://img.sporekrani.com/teams/ivOyDsE04cQsy7P59zKDzCJcoNf2eOOpkB86UVzc.png" alt="" onerror="this.style.display='none'"></span><span class="mt-name"><b>Maritimo</b><span class="mt-vs">vs</span><b>Benfica</b></span><span class="team-logo"><img loading="lazy" src="https://img.sporekrani.com/teams/vbMUfXpHkIEJvLPbUz4UG5qwvnetsinIuUhbtiex.png" alt="" onerror="this.style.display='none'"></span><span class="match-league">Portekiz Liga NOS</span></span><span class="match-badge up" data-badge>YAKLAŞAN</span><button class="match-watch" data-stream="https://fixbettv84.com/channel.html?id=b5" title="Maritimo vs Benfica">▶ İZLE</button></div><div class="match-card up" data-time="20:00" data-status="upcoming" data-league="Trendyol 1. Lig"><span class="match-time">20:00</span><span class="match-teams"><span class="team-logo"><img loading="lazy" src="https://img.sporekrani.com/teams/PTiUdmdArMpiiPZbFZcICciKqz0bJkJFnnfK5TuR.png" alt="" onerror="this.style.display='none'"></span><span class="mt-name"><b>Keçiörengücü</b><span class="mt-vs">vs</span><b>Sarıyer</b></span><span class="team-logo"><img loading="lazy" src="https://img.sporekrani.com/teams/DMMkzvfUGppo6KDRrBSADy1AiDxBAjc9TehQY0zE.png" alt="" onerror="this.style.display='none'"></span><span class="match-league">Trendyol 1. Lig</span></span><span class="match-badge up" data-badge>YAKLAŞAN</span><button class="match-watch" data-stream="https://fixbettv84.com/channel.html?id=trtspor" title="Keçiörengücü vs Sarıyer">▶ İZLE</button></div><div class="match-card up" data-time="20:00" data-status="upcoming" data-league="Trendyol 1. Lig"><span class="match-time">20:00</span><span class="match-teams"><span class="team-logo"><img loading="lazy" src="https://img.sporekrani.com/teams/OX5uFgYNhnDuSJNajSSIymW0ydzYfITpueo5BAwa.png" alt="" onerror="this.style.display='none'"></span><span class="mt-name"><b>Pendikspor</b><span class="mt-vs">vs</span><b>Ümraniyespor</b></span><span class="team-logo"><img loading="lazy" src="https://img.sporekrani.com/teams/JfAl81ZTfdntqyJ9AhKJOynyQKpfbu5iK2fw962V.png" alt="" onerror="this.style.display='none'"></span><span class="match-league">Trendyol 1. Lig</span></span><span class="match-badge up" data-badge>YAKLAŞAN</span><button class="match-watch" data-stream="https://fixbettv84.com/channel.html?id=bm1" title="Pendikspor vs Ümraniyespor">▶ İZLE</button></div><div class="match-card up" data-time="21:00" data-status="upcoming" data-league="Fransa Ligue 2"><span class="match-time">21:00</span><span class="match-teams"><span class="team-logo"><img loading="lazy" src="https://img.sporekrani.com/teams/55haEc9MQm6iqvqaHr4DIJE8fIm51P9MInHBEArA.png" alt="" onerror="this.style.display='none'"></span><span class="mt-name"><b>St. Etienne</b><span class="mt-vs">vs</span><b>Montpellier</b></span><span class="team-logo"><img loading="lazy" src="https://img.sporekrani.com/teams/XXU9xEVLMfyQfBkStMx2N9pGaxSux4BaXAl5XDmu.png" alt="" onerror="this.style.display='none'"></span><span class="match-league">Fransa Ligue 2</span></span><span class="match-badge up" data-badge>YAKLAŞAN</span><button class="match-watch" data-stream="https://fixbettv84.com/channel.html?id=b4" title="St. Etienne vs Montpellier">▶ İZLE</button></div><div class="match-card up" data-time="21:45" data-status="upcoming" data-league="Fransa Ligue 1"><span class="match-time">21:45</span><span class="match-teams"><span class="team-logo"><img loading="lazy" src="https://img.sporekrani.com/teams/03JR2t8FU2skPXhIWySx2txGYH2ZNA4xkT4OMvQg.png" alt="" onerror="this.style.display='none'"></span><span class="mt-name"><b>Le Havre</b><span class="mt-vs">vs</span><b>Brest</b></span><span class="team-logo"><img loading="lazy" src="https://img.sporekrani.com/teams/WiWuSzKy1u7OZiWFfUMpnFaEAOltqQW166xHjZwz.png" alt="" onerror="this.style.display='none'"></span><span class="match-league">Fransa Ligue 1</span></span><span class="match-badge up" data-badge>YAKLAŞAN</span><button class="match-watch" data-stream="https://fixbettv84.com/channel.html?id=bm2" title="Le Havre vs Brest">▶ İZLE</button></div><div class="match-card up" data-time="21:45" data-status="upcoming" data-league="Fransa Ligue 1"><span class="match-time">21:45</span><span class="match-teams"><span class="team-logo"><img loading="lazy" src="https://img.sporekrani.com/teams/FF8yUCndjK9qN5nIf4Dg9x66o15ncOAHUhDfqAtQ.png" alt="" onerror="this.style.display='none'"></span><span class="mt-name"><b>Nice</b><span class="mt-vs">vs</span><b>Le Mans</b></span><span class="team-logo"><img loading="lazy" src="https://upload.wikimedia.org/wikipedia/tr/a/a4/Lemansfc.png" alt="" onerror="this.style.display='none'"></span><span class="match-league">Fransa Ligue 1</span></span><span class="match-badge up" data-badge>YAKLAŞAN</span><button class="match-watch" data-stream="https://fixbettv84.com/channel.html?id=b3" title="Nice vs Le Mans">▶ İZLE</button></div><div class="match-card up" data-time="21:45" data-status="upcoming" data-league="İtalya Serie A"><span class="match-time">21:45</span><span class="match-teams"><span class="team-logo"><img loading="lazy" src="https://img.sporekrani.com/teams/GdWSbgxIljtKBzK9WTNngAOgU6vEOW055esTgsvs.png" alt="" onerror="this.style.display='none'"></span><span class="mt-name"><b>Roma</b><span class="mt-vs">vs</span><b>Atalanta</b></span><span class="team-logo"><img loading="lazy" src="https://img.sporekrani.com/teams/eHXZq3LH2F6BZqFnQLKd1zChBR5J7XTGSU8p74zm.png" alt="" onerror="this.style.display='none'"></span><span class="match-league">İtalya Serie A</span></span><span class="match-badge up" data-badge>YAKLAŞAN</span><button class="match-watch" data-stream="https://fixbettv84.com/channel.html?id=ss2" title="Roma vs Atalanta">▶ İZLE</button></div><div class="match-card up" data-time="22:00" data-status="upcoming" data-league="İspanya La Liga"><span class="match-time">22:00</span><span class="match-teams"><span class="team-logo"><img loading="lazy" src="https://img.sporekrani.com/teams/72c8e6b4-1dd6-4dcf-9bc0-b88c01d3a624.png" alt="" onerror="this.style.display='none'"></span><span class="mt-name"><b>Villarreal</b><span class="mt-vs">vs</span><b>Deportivo</b></span><span class="team-logo"><img loading="lazy" src="https://thumb.wikimedia.org/wikipedia/tr/thumb/0/03/Deportivo_La_Coru%C3%B1a_logo.svg/330px-Deportivo_La_Coru%C3%B1a_logo.svg.png" alt="" onerror="this.style.display='none'"></span><span class="match-league">İspanya La Liga</span></span><span class="match-badge up" data-badge>YAKLAŞAN</span><button class="match-watch" data-stream="https://fixbettv84.com/channel.html?id=ss" title="Villarreal vs Deportivo">▶ İZLE</button></div><div class="match-card up" data-time="22:00" data-status="upcoming" data-league="Brezilya Serie A"><span class="match-time">22:00</span><span class="match-teams"><span class="team-logo"><img loading="lazy" src="https://img.sporekrani.com/teams/h9dN0XoVfzfsmPHXdOM8qJjtgPnzsxgdnRSnlvUC.png" alt="" onerror="this.style.display='none'"></span><span class="mt-name"><b>Bragantino</b><span class="mt-vs">vs</span><b>Bahia</b></span><span class="team-logo"><img loading="lazy" src="https://img.sporekrani.com/teams/nKBU9PaqyPXvjUs3FoGQf7FH9mFEcjc9Ue40j0Y8.png" alt="" onerror="this.style.display='none'"></span><span class="match-league">Brezilya Serie A</span></span><span class="match-badge up" data-badge>YAKLAŞAN</span><button class="match-watch" data-stream="https://fixbettv84.com/channel.html?id=sms2" title="Bragantino vs Bahia">▶ İZLE</button></div><div class="match-card up" data-time="22:30" data-status="upcoming" data-league="Portekiz Liga NOS"><span class="match-time">22:30</span><span class="match-teams"><span class="team-logo"><img loading="lazy" src="https://img.sporekrani.com/teams/wmkMpVv7deEV46KqRI9Evc7cCPEqzIIZoGNt6t1j.png" alt="" onerror="this.style.display='none'"></span><span class="mt-name"><b>Sporting Lisbon</b><span class="mt-vs">vs</span><b>Nacional</b></span><span class="team-logo"><img loading="lazy" src="https://img.sporekrani.com/teams/9TQPH1qy4FX6kLdVqcl4n9Vc9whC6j5p1BcHTHhn.png" alt="" onerror="this.style.display='none'"></span><span class="match-league">Portekiz Liga NOS</span></span><span class="match-badge up" data-badge>YAKLAŞAN</span><button class="match-watch" data-stream="https://fixbettv84.com/channel.html?id=b2" title="Sporting Lisbon vs Nacional">▶ İZLE</button></div></div></div>
-<div class="match-group"><div class="match-group-title" style="color:#ffcc33"><span>🏆 LİG BAZLI <span class="mcount">(25)</span></span></div><div class="match-list"><div class="match-card up" data-time="14:30" data-status="upcoming" data-league="İngiltere Premier Lig"><span class="match-time">14:30</span><span class="match-teams"><span class="team-logo"><img loading="lazy" src="https://img.sporekrani.com/teams/nKnZT5e3Ht6AuKHtcOPfrzo865qNLr7r5gRZ6kCs.png" alt="" onerror="this.style.display='none'"></span><span class="mt-name"><b>Newcastle</b><span class="mt-vs">vs</span><b>Bournemouth</b></span><span class="team-logo"><img loading="lazy" src="https://img.sporekrani.com/teams/d9yjGvnYyT8UdVOb95YTlFYiOSHraxBhEwil3eox.png" alt="" onerror="this.style.display='none'"></span><span class="match-league">İngiltere Premier Lig</span></span><span class="match-badge up" data-badge>YAKLAŞAN</span><button class="match-watch" data-stream="https://fixbettv84.com/channel.html?id=b3" title="Newcastle vs Bournemouth">▶ İZLE</button></div><div class="match-card up" data-time="16:00" data-status="upcoming" data-league="İtalya Serie A"><span class="match-time">16:00</span><span class="match-teams"><span class="team-logo"><img loading="lazy" src="https://img.sporekrani.com/teams/4YnawjObsS3ds0V0O46Xr8a5A5h1nXLelqyKgqOe.png" alt="" onerror="this.style.display='none'"></span><span class="mt-name"><b>Fiorentina</b><span class="mt-vs">vs</span><b>Torino</b></span><span class="team-logo"><img loading="lazy" src="https://img.sporekrani.com/teams/WdK7UxzEd8bWfDStVcTk7PTgrQ8xT5qhmyAmSo1t.png" alt="" onerror="this.style.display='none'"></span><span class="match-league">İtalya Serie A</span></span><span class="match-badge up" data-badge>YAKLAŞAN</span><button class="match-watch" data-stream="https://fixbettv84.com/channel.html?id=ss2" title="Fiorentina vs Torino">▶ İZLE</button></div><div class="match-card up" data-time="16:00" data-status="upcoming" data-league="Trendyol 1. Lig"><span class="match-time">16:00</span><span class="match-teams"><span class="team-logo"><img loading="lazy" src="https://img.sporekrani.com/teams/eCMSnOYhdkN1g2KIVMtcLZYKjyzxUghS4LzkHirS.png" alt="" onerror="this.style.display='none'"></span><span class="mt-name"><b>Bandırmaspor</b><span class="mt-vs">vs</span><b>Boluspor</b></span><span class="team-logo"><img loading="lazy" src="https://img.sporekrani.com/teams/gUJSQTZh6I6iaLOcbmbEYogudh7C1muJaY8psxOh.png" alt="" onerror="this.style.display='none'"></span><span class="match-league">Trendyol 1. Lig</span></span><span class="match-badge up" data-badge>YAKLAŞAN</span><button class="match-watch" data-stream="https://fixbettv84.com/channel.html?id=trtspor" title="Bandırmaspor vs Boluspor">▶ İZLE</button></div><div class="match-card up" data-time="16:00" data-status="upcoming" data-league="CEV Kadınlar Avrupa Şampiyonası"><span class="match-time">16:00</span><span class="match-teams"><span class="team-logo"><img loading="lazy" src="https://img.sporekrani.com/teams/qMoYbPRcGX7GBkht1uSrafddF2ZV1rodvYJ4xVLl.png" alt="" onerror="this.style.display='none'"></span><span class="mt-name"><b>Türkiye</b><span class="mt-vs">vs</span><b>Sırbistan</b></span><span class="team-logo"><img loading="lazy" src="https://img.sporekrani.com/teams/cuVQR2ewz7tnd1sGYxcTqvknt82Mbd5U2riP4pLJ.png" alt="" onerror="this.style.display='none'"></span><span class="match-league">CEV Kadınlar Avrupa Şampiyonası</span></span><span class="match-badge up" data-badge>YAKLAŞAN</span><button class="match-watch" data-stream="https://fixbettv84.com/channel.html?id=trt1" title="Türkiye vs Sırbistan">▶ İZLE</button></div><div class="match-card up" data-time="17:00" data-status="upcoming" data-league="İngiltere Premier Lig"><span class="match-time">17:00</span><span class="match-teams"><span class="team-logo"><img loading="lazy" src="https://img.sporekrani.com/teams/vm8CKrsnZLmW7mQHyYjhm5zwthTo94LH7paKamuv.png" alt="" onerror="this.style.display='none'"></span><span class="mt-name"><b>Brighton</b><span class="mt-vs">vs</span><b>Leeds United</b></span><span class="team-logo"><img loading="lazy" src="https://img.sporekrani.com/teams/rNuI9YXtAltzauAEWG5ed9YNRn0gG9TGvwgmJTCq.png" alt="" onerror="this.style.display='none'"></span><span class="match-league">İngiltere Premier Lig</span></span><span class="match-badge up" data-badge>YAKLAŞAN</span><button class="match-watch" data-stream="https://fixbettv84.com/channel.html?id=bm1" title="Brighton vs Leeds United">▶ İZLE</button></div><div class="match-card up" data-time="17:00" data-status="upcoming" data-league="İngiltere Premier Lig"><span class="match-time">17:00</span><span class="match-teams"><span class="team-logo"><img loading="lazy" src="https://img.sporekrani.com/teams/TvcF6CoHKkiSZ91pmfM5Xb1HgncvrBHEVWku3WFw.png" alt="" onerror="this.style.display='none'"></span><span class="mt-name"><b>Fulham</b><span class="mt-vs">vs</span><b>Crystal Palace</b></span><span class="team-logo"><img loading="lazy" src="https://img.sporekrani.com/teams/hs3JxodxlrAGFufonoXjSbvjbtr3GcLibZxxcax7.png" alt="" onerror="this.style.display='none'"></span><span class="match-league">İngiltere Premier Lig</span></span><span class="match-badge up" data-badge>YAKLAŞAN</span><button class="match-watch" data-stream="https://fixbettv84.com/channel.html?id=bm2" title="Fulham vs Crystal Palace">▶ İZLE</button></div><div class="match-card up" data-time="17:00" data-status="upcoming" data-league="İngiltere Premier Lig"><span class="match-time">17:00</span><span class="match-teams"><span class="team-logo"><img loading="lazy" src="https://img.sporekrani.com/teams/n3uuqjXHIoLIVKbPeILQ1vH7Q4Gv1altDVjBN12B.png" alt="" onerror="this.style.display='none'"></span><span class="mt-name"><b>Manchester City</b><span class="mt-vs">vs</span><b>Coventry</b></span><span class="team-logo"><img loading="lazy" src="https://img.sporekrani.com/teams/tQahH8BebFMN502T4KMohVFS7Wirx0OBSdFeWARj.png" alt="" onerror="this.style.display='none'"></span><span class="match-league">İngiltere Premier Lig</span></span><span class="match-badge up" data-badge>YAKLAŞAN</span><button class="match-watch" data-stream="https://fixbettv84.com/channel.html?id=b3" title="Manchester City vs Coventry">▶ İZLE</button></div><div class="match-card up" data-time="17:00" data-status="upcoming" data-league="İngiltere Premier Lig"><span class="match-time">17:00</span><span class="match-teams"><span class="team-logo"><img loading="lazy" src="https://img.sporekrani.com/teams/ybjzxeaJNfHzdAhYym9SXren3z9Q1Uh3UKy1ZOLw.png" alt="" onerror="this.style.display='none'"></span><span class="mt-name"><b>Nottingham Forest</b><span class="mt-vs">vs</span><b>Tottenham</b></span><span class="team-logo"><img loading="lazy" src="https://img.sporekrani.com/teams/CQdFOpa49q9PtGf6Zj0o2qeEN4TNDYawkiyOlaz0.png" alt="" onerror="this.style.display='none'"></span><span class="match-league">İngiltere Premier Lig</span></span><span class="match-badge up" data-badge>YAKLAŞAN</span><button class="match-watch" data-stream="https://fixbettv84.com/channel.html?id=b5" title="Nottingham Forest vs Tottenham">▶ İZLE</button></div><div class="match-card up" data-time="17:00" data-status="upcoming" data-league="Trendyol Süper Lig"><span class="match-time">17:00</span><span class="match-teams"><span class="team-logo"><img loading="lazy" src="https://img.sporekrani.com/teams/nl7AiwO2FssDa5jVO0394Bo1w4GIbsuHiArFtWoc.png" alt="" onerror="this.style.display='none'"></span><span class="mt-name"><b>Erzurumspor</b><span class="mt-vs">vs</span><b>Konyaspor</b></span><span class="team-logo"><img loading="lazy" src="https://img.sporekrani.com/teams/rrtsbcfkWv3ZkcOrUqjBySbDKkOgnZ4ntn0PfJeh.png" alt="" onerror="this.style.display='none'"></span><span class="match-league">Trendyol Süper Lig</span></span><span class="match-badge up" data-badge>YAKLAŞAN</span><button class="match-watch" data-stream="https://fixbettv84.com/channel.html?id=b2" title="Erzurumspor vs Konyaspor">▶ İZLE</button></div><div class="match-card up" data-time="17:15" data-status="upcoming" data-league="İspanya La Liga"><span class="match-time">17:15</span><span class="match-teams"><span class="team-logo"><img loading="lazy" src="https://img.sporekrani.com/teams/4xjJNerOIlO9MSm7QHODeQGtTynHK2RJgF181HFV.png" alt="" onerror="this.style.display='none'"></span><span class="mt-name"><b>Athletic Bilbao</b><span class="mt-vs">vs</span><b>Atletico Madrid</b></span><span class="team-logo"><img loading="lazy" src="https://img.sporekrani.com/teams/H10jNhPECZT9nUGgVPEIrTvidVb9HyX9xEepUWuf.png" alt="" onerror="this.style.display='none'"></span><span class="match-league">İspanya La Liga</span></span><span class="match-badge up" data-badge>YAKLAŞAN</span><button class="match-watch" data-stream="https://fixbettv84.com/channel.html?id=ss" title="Athletic Bilbao vs Atletico Madrid">▶ İZLE</button></div><div class="match-card up" data-time="19:00" data-status="upcoming" data-league="İtalya Serie A"><span class="match-time">19:00</span><span class="match-teams"><span class="team-logo"><img loading="lazy" src="https://img.sporekrani.com/teams/Jk9UQlFMIc8hH5fIxu2O8Y1O90kymjO6iIPHWnsY.png" alt="" onerror="this.style.display='none'"></span><span class="mt-name"><b>Inter</b><span class="mt-vs">vs</span><b>Napoli</b></span><span class="team-logo"><img loading="lazy" src="https://img.sporekrani.com/teams/HabaH51e4AEYIabuLgRB8Jmh6BMr3XqLhJmQxwYV.png" alt="" onerror="this.style.display='none'"></span><span class="match-league">İtalya Serie A</span></span><span class="match-badge up" data-badge>YAKLAŞAN</span><button class="match-watch" data-stream="https://fixbettv84.com/channel.html?id=ss2" title="Inter vs Napoli">▶ İZLE</button></div><div class="match-card up" data-time="19:00" data-status="upcoming" data-league="CEV Kadınlar Avrupa Şampiyonası"><span class="match-time">19:00</span><span class="match-teams"><span class="team-logo"><img loading="lazy" src="https://img.sporekrani.com/teams/HGsxqov96RcSKu1397HjLmv2lYiiui8nejPNou30.png" alt="" onerror="this.style.display='none'"></span><span class="mt-name"><b>Polonya</b><span class="mt-vs">vs</span><b>İtalya</b></span><span class="team-logo"><img loading="lazy" src="https://img.sporekrani.com/teams/h8r0nEcEkVoTN9HdzUexrl4pd71xVS2X2XYrvZyR.png" alt="" onerror="this.style.display='none'"></span><span class="match-league">CEV Kadınlar Avrupa Şampiyonası</span></span><span class="match-badge up" data-badge>YAKLAŞAN</span><button class="match-watch" data-stream="https://fixbettv84.com/channel.html?id=trtspor2" title="Polonya vs İtalya">▶ İZLE</button></div><div class="match-card up" data-time="19:30" data-status="upcoming" data-league="İngiltere Premier Lig"><span class="match-time">19:30</span><span class="match-teams"><span class="team-logo"><img loading="lazy" src="https://img.sporekrani.com/teams/JFbZog0ycMR8QmTHtk5vkBUPHr4KKtCfUY2YytKY.png" alt="" onerror="this.style.display='none'"></span><span class="mt-name"><b>Hull City</b><span class="mt-vs">vs</span><b>Aston Villa</b></span><span class="team-logo"><img loading="lazy" src="https://img.sporekrani.com/teams/g6sqS6ui4cRXpQeHFw58VBbrDWWHHKmMv0kSD5aY.png" alt="" onerror="this.style.display='none'"></span><span class="match-league">İngiltere Premier Lig</span></span><span class="match-badge up" data-badge>YAKLAŞAN</span><button class="match-watch" data-stream="https://fixbettv84.com/channel.html?id=b3" title="Hull City vs Aston Villa">▶ İZLE</button></div><div class="match-card up" data-time="19:30" data-status="upcoming" data-league="İspanya La Liga"><span class="match-time">19:30</span><span class="match-teams"><span class="team-logo"><img loading="lazy" src="https://img.sporekrani.com/teams/g8Lz07qcq3NX7HYmZ94igiZCYon351d73L3f0NhB.png" alt="" onerror="this.style.display='none'"></span><span class="mt-name"><b>Rayo Vallecano</b><span class="mt-vs">vs</span><b>Racing Santander</b></span><span class="team-logo"><img loading="lazy" src="https://img.sporekrani.com/teams/zNpKuaZC8yofM3jNlfJ1utYUpA7xWIlZaCasreXJ.png" alt="" onerror="this.style.display='none'"></span><span class="match-league">İspanya La Liga</span></span><span class="match-badge up" data-badge>YAKLAŞAN</span><button class="match-watch" data-stream="https://fixbettv84.com/channel.html?id=ss" title="Rayo Vallecano vs Racing Santander">▶ İZLE</button></div><div class="match-card up" data-time="20:00" data-status="upcoming" data-league="Trendyol Süper Lig"><span class="match-time">20:00</span><span class="match-teams"><span class="team-logo"><img loading="lazy" src="https://img.sporekrani.com/teams/v5HDBvsjiEUsYChq03Jk2EbrNXDHiHvLOdMI6fHR.png" alt="" onerror="this.style.display='none'"></span><span class="mt-name"><b>Fenerbahçe</b><span class="mt-vs">vs</span><b>Beşiktaş</b></span><span class="team-logo"><img loading="lazy" src="https://img.sporekrani.com/teams/CFvwmLuUD6H974wec5ga09WZXmTeWdI3RneaRBkc.png" alt="" onerror="this.style.display='none'"></span><span class="match-league">Trendyol Süper Lig</span></span><span class="match-badge up" data-badge>YAKLAŞAN</span><span class="match-badge mod" data-is-mod="1">★ GÜNÜN MAÇI</span><button class="match-watch" data-stream="https://fixbettv84.com/channel.html?id=zirve" title="Fenerbahçe vs Beşiktaş">▶ İZLE</button></div><div class="match-card up" data-time="20:00" data-status="upcoming" data-league="Portekiz Liga NOS"><span class="match-time">20:00</span><span class="match-teams"><span class="team-logo"><img loading="lazy" src="https://img.sporekrani.com/teams/ivOyDsE04cQsy7P59zKDzCJcoNf2eOOpkB86UVzc.png" alt="" onerror="this.style.display='none'"></span><span class="mt-name"><b>Maritimo</b><span class="mt-vs">vs</span><b>Benfica</b></span><span class="team-logo"><img loading="lazy" src="https://img.sporekrani.com/teams/vbMUfXpHkIEJvLPbUz4UG5qwvnetsinIuUhbtiex.png" alt="" onerror="this.style.display='none'"></span><span class="match-league">Portekiz Liga NOS</span></span><span class="match-badge up" data-badge>YAKLAŞAN</span><button class="match-watch" data-stream="https://fixbettv84.com/channel.html?id=b5" title="Maritimo vs Benfica">▶ İZLE</button></div><div class="match-card up" data-time="20:00" data-status="upcoming" data-league="Trendyol 1. Lig"><span class="match-time">20:00</span><span class="match-teams"><span class="team-logo"><img loading="lazy" src="https://img.sporekrani.com/teams/PTiUdmdArMpiiPZbFZcICciKqz0bJkJFnnfK5TuR.png" alt="" onerror="this.style.display='none'"></span><span class="mt-name"><b>Keçiörengücü</b><span class="mt-vs">vs</span><b>Sarıyer</b></span><span class="team-logo"><img loading="lazy" src="https://img.sporekrani.com/teams/DMMkzvfUGppo6KDRrBSADy1AiDxBAjc9TehQY0zE.png" alt="" onerror="this.style.display='none'"></span><span class="match-league">Trendyol 1. Lig</span></span><span class="match-badge up" data-badge>YAKLAŞAN</span><button class="match-watch" data-stream="https://fixbettv84.com/channel.html?id=trtspor" title="Keçiörengücü vs Sarıyer">▶ İZLE</button></div><div class="match-card up" data-time="20:00" data-status="upcoming" data-league="Trendyol 1. Lig"><span class="match-time">20:00</span><span class="match-teams"><span class="team-logo"><img loading="lazy" src="https://img.sporekrani.com/teams/OX5uFgYNhnDuSJNajSSIymW0ydzYfITpueo5BAwa.png" alt="" onerror="this.style.display='none'"></span><span class="mt-name"><b>Pendikspor</b><span class="mt-vs">vs</span><b>Ümraniyespor</b></span><span class="team-logo"><img loading="lazy" src="https://img.sporekrani.com/teams/JfAl81ZTfdntqyJ9AhKJOynyQKpfbu5iK2fw962V.png" alt="" onerror="this.style.display='none'"></span><span class="match-league">Trendyol 1. Lig</span></span><span class="match-badge up" data-badge>YAKLAŞAN</span><button class="match-watch" data-stream="https://fixbettv84.com/channel.html?id=bm1" title="Pendikspor vs Ümraniyespor">▶ İZLE</button></div><div class="match-card up" data-time="21:00" data-status="upcoming" data-league="Fransa Ligue 2"><span class="match-time">21:00</span><span class="match-teams"><span class="team-logo"><img loading="lazy" src="https://img.sporekrani.com/teams/55haEc9MQm6iqvqaHr4DIJE8fIm51P9MInHBEArA.png" alt="" onerror="this.style.display='none'"></span><span class="mt-name"><b>St. Etienne</b><span class="mt-vs">vs</span><b>Montpellier</b></span><span class="team-logo"><img loading="lazy" src="https://img.sporekrani.com/teams/XXU9xEVLMfyQfBkStMx2N9pGaxSux4BaXAl5XDmu.png" alt="" onerror="this.style.display='none'"></span><span class="match-league">Fransa Ligue 2</span></span><span class="match-badge up" data-badge>YAKLAŞAN</span><button class="match-watch" data-stream="https://fixbettv84.com/channel.html?id=b4" title="St. Etienne vs Montpellier">▶ İZLE</button></div><div class="match-card up" data-time="21:45" data-status="upcoming" data-league="Fransa Ligue 1"><span class="match-time">21:45</span><span class="match-teams"><span class="team-logo"><img loading="lazy" src="https://img.sporekrani.com/teams/03JR2t8FU2skPXhIWySx2txGYH2ZNA4xkT4OMvQg.png" alt="" onerror="this.style.display='none'"></span><span class="mt-name"><b>Le Havre</b><span class="mt-vs">vs</span><b>Brest</b></span><span class="team-logo"><img loading="lazy" src="https://img.sporekrani.com/teams/WiWuSzKy1u7OZiWFfUMpnFaEAOltqQW166xHjZwz.png" alt="" onerror="this.style.display='none'"></span><span class="match-league">Fransa Ligue 1</span></span><span class="match-badge up" data-badge>YAKLAŞAN</span><button class="match-watch" data-stream="https://fixbettv84.com/channel.html?id=bm2" title="Le Havre vs Brest">▶ İZLE</button></div><div class="match-card up" data-time="21:45" data-status="upcoming" data-league="Fransa Ligue 1"><span class="match-time">21:45</span><span class="match-teams"><span class="team-logo"><img loading="lazy" src="https://img.sporekrani.com/teams/FF8yUCndjK9qN5nIf4Dg9x66o15ncOAHUhDfqAtQ.png" alt="" onerror="this.style.display='none'"></span><span class="mt-name"><b>Nice</b><span class="mt-vs">vs</span><b>Le Mans</b></span><span class="team-logo"><img loading="lazy" src="https://upload.wikimedia.org/wikipedia/tr/a/a4/Lemansfc.png" alt="" onerror="this.style.display='none'"></span><span class="match-league">Fransa Ligue 1</span></span><span class="match-badge up" data-badge>YAKLAŞAN</span><button class="match-watch" data-stream="https://fixbettv84.com/channel.html?id=b3" title="Nice vs Le Mans">▶ İZLE</button></div><div class="match-card up" data-time="21:45" data-status="upcoming" data-league="İtalya Serie A"><span class="match-time">21:45</span><span class="match-teams"><span class="team-logo"><img loading="lazy" src="https://img.sporekrani.com/teams/GdWSbgxIljtKBzK9WTNngAOgU6vEOW055esTgsvs.png" alt="" onerror="this.style.display='none'"></span><span class="mt-name"><b>Roma</b><span class="mt-vs">vs</span><b>Atalanta</b></span><span class="team-logo"><img loading="lazy" src="https://img.sporekrani.com/teams/eHXZq3LH2F6BZqFnQLKd1zChBR5J7XTGSU8p74zm.png" alt="" onerror="this.style.display='none'"></span><span class="match-league">İtalya Serie A</span></span><span class="match-badge up" data-badge>YAKLAŞAN</span><button class="match-watch" data-stream="https://fixbettv84.com/channel.html?id=ss2" title="Roma vs Atalanta">▶ İZLE</button></div><div class="match-card up" data-time="22:00" data-status="upcoming" data-league="İspanya La Liga"><span class="match-time">22:00</span><span class="match-teams"><span class="team-logo"><img loading="lazy" src="https://img.sporekrani.com/teams/72c8e6b4-1dd6-4dcf-9bc0-b88c01d3a624.png" alt="" onerror="this.style.display='none'"></span><span class="mt-name"><b>Villarreal</b><span class="mt-vs">vs</span><b>Deportivo</b></span><span class="team-logo"><img loading="lazy" src="https://thumb.wikimedia.org/wikipedia/tr/thumb/0/03/Deportivo_La_Coru%C3%B1a_logo.svg/330px-Deportivo_La_Coru%C3%B1a_logo.svg.png" alt="" onerror="this.style.display='none'"></span><span class="match-league">İspanya La Liga</span></span><span class="match-badge up" data-badge>YAKLAŞAN</span><button class="match-watch" data-stream="https://fixbettv84.com/channel.html?id=ss" title="Villarreal vs Deportivo">▶ İZLE</button></div><div class="match-card up" data-time="22:00" data-status="upcoming" data-league="Brezilya Serie A"><span class="match-time">22:00</span><span class="match-teams"><span class="team-logo"><img loading="lazy" src="https://img.sporekrani.com/teams/h9dN0XoVfzfsmPHXdOM8qJjtgPnzsxgdnRSnlvUC.png" alt="" onerror="this.style.display='none'"></span><span class="mt-name"><b>Bragantino</b><span class="mt-vs">vs</span><b>Bahia</b></span><span class="team-logo"><img loading="lazy" src="https://img.sporekrani.com/teams/nKBU9PaqyPXvjUs3FoGQf7FH9mFEcjc9Ue40j0Y8.png" alt="" onerror="this.style.display='none'"></span><span class="match-league">Brezilya Serie A</span></span><span class="match-badge up" data-badge>YAKLAŞAN</span><button class="match-watch" data-stream="https://fixbettv84.com/channel.html?id=sms2" title="Bragantino vs Bahia">▶ İZLE</button></div><div class="match-card up" data-time="22:30" data-status="upcoming" data-league="Portekiz Liga NOS"><span class="match-time">22:30</span><span class="match-teams"><span class="team-logo"><img loading="lazy" src="https://img.sporekrani.com/teams/wmkMpVv7deEV46KqRI9Evc7cCPEqzIIZoGNt6t1j.png" alt="" onerror="this.style.display='none'"></span><span class="mt-name"><b>Sporting Lisbon</b><span class="mt-vs">vs</span><b>Nacional</b></span><span class="team-logo"><img loading="lazy" src="https://img.sporekrani.com/teams/9TQPH1qy4FX6kLdVqcl4n9Vc9whC6j5p1BcHTHhn.png" alt="" onerror="this.style.display='none'"></span><span class="match-league">Portekiz Liga NOS</span></span><span class="match-badge up" data-badge>YAKLAŞAN</span><button class="match-watch" data-stream="https://fixbettv84.com/channel.html?id=b2" title="Sporting Lisbon vs Nacional">▶ İZLE</button></div></div></div>
-        </div>
-
-        <div class="channels-section">
-            <div class="section-title">🎯 KANAL SEÇİNİZ</div>
-            <div class="channel-search">
-                <input type="text" id="channelSearch" placeholder="🔎 Kanal ara... (örn. Bein, TRT, Tabii)" autocomplete="off">
+        <!-- Categorized System Section -->
+        <div class="system-section">
+            <div class="tabs-header">
+                <div class="tabs-list">
+                    <button class="tab-btn active" data-tab="channelsTab">
+                        📺 TV KANALLARI <span class="tab-badge" id="badgeChannels">0</span>
+                    </button>
+                    <button class="tab-btn" data-tab="liveMatchesTab">
+                        🔴 CANLI MAÇLAR <span class="tab-badge" id="badgeLive">0</span>
+                    </button>
+                    <button class="tab-btn" data-tab="dailyMatchesTab">
+                        📅 GÜNÜN MAÇLARI <span class="tab-badge" id="badgeDaily">0</span>
+                    </button>
+                </div>
             </div>
-            <div class="channel-row" id="channelRow"></div>
-            <div class="no-result" id="noResult">Eşleşen kanal bulunamadı.</div>
+
+            <!-- Kanal Kategori Butonları - ızgara filtre -->
+            <div class="channel-cat-row" id="channelCategoryRow"></div>
+
+            <!-- Maç Kategori Filtresi - sadece maç sekmelerinde görünür -->
+            <div class="filter-row" id="filterRow">
+                <button class="filter-pill active" data-filter="all">Tümü</button>
+                <button class="filter-pill" data-filter="futbol">⚽ Futbol</button>
+                <button class="filter-pill" data-filter="basketbol">🏀 Basketbol</button>
+                <button class="filter-pill" data-filter="tenis">🎾 Tenis</button>
+                <button class="filter-pill" data-filter="voleybol">🏐 Voleybol</button>
+                <button class="filter-pill" data-filter="motor">🏎️ Motor Sporları</button>
+                <button class="filter-pill" data-filter="spor">🧠 Diğer Sporlar</button>
+            </div>
+
+            <!-- Tab 1: TV Channels -->
+            <div class="tab-content active" id="channelsTab">
+                <div class="channel-grid" id="channelGrid"></div>
+            </div>
+
+            <!-- Tab 2: Live Matches -->
+            <div class="tab-content" id="liveMatchesTab">
+                <div class="match-grid" id="liveMatchesGrid"></div>
+            </div>
+
+            <!-- Tab 3: Daily Schedule -->
+            <div class="tab-content" id="dailyMatchesTab">
+                <div class="match-grid" id="dailyMatchesGrid"></div>
+            </div>
         </div>
     </div>
 
     <script>
         /*BOT_START*/
-        const streamLinks = ["https://fixbettv84.com/channel.html?id=as", "https://fixbettv84.com/channel.html?id=atv", "https://fixbettv84.com/channel.html?id=zirve", "https://fixbettv84.com/channel.html?id=b2", "https://fixbettv84.com/channel.html?id=b3", "https://fixbettv84.com/channel.html?id=b4", "https://fixbettv84.com/channel.html?id=b5", "https://fixbettv84.com/channel.html?id=bm1", "https://fixbettv84.com/channel.html?id=bm2", "https://fixbettv84.com/channel.html?id=eu1", "https://fixbettv84.com/channel.html?id=eu2", "https://fixbettv84.com/channel.html?id=ss", "https://fixbettv84.com/channel.html?id=ss2", "https://fixbettv84.com/channel.html?id=smarts", "https://fixbettv84.com/channel.html?id=sms2", "https://fixbettv84.com/channel.html?id=ex7", "https://fixbettv84.com/channel.html?id=ex1", "https://fixbettv84.com/channel.html?id=ex2", "https://fixbettv84.com/channel.html?id=ex3", "https://fixbettv84.com/channel.html?id=ex4", "https://fixbettv84.com/channel.html?id=ex5", "https://fixbettv84.com/channel.html?id=ex6", "https://fixbettv84.com/channel.html?id=t1", "https://fixbettv84.com/channel.html?id=t2", "https://fixbettv84.com/channel.html?id=t3", "https://fixbettv84.com/channel.html?id=t4", "https://fixbettv84.com/channel.html?id=trt1", "https://fixbettv84.com/channel.html?id=trtspor", "https://fixbettv84.com/channel.html?id=trtspor2", "https://fixbettv84.com/channel.html?id=tv8", "https://fixbettv84.com/channel.html?id=tv85"];
-        const channelNames = ["A SPOR", "ATV", "BEIN SPORTS 1", "BEIN SPORTS 2", "BEIN SPORTS 3", "BEIN SPORTS 4", "BEIN SPORTS 5", "BEIN SPORTS MAX 1", "BEIN SPORTS MAX 2", "EURO SPORT 1", "EURO SPORT 2", "S SPORT", "S SPORT 2", "SMARTSPOR", "SMARTSPOR 2", "TABII SPOR", "TABII SPOR 1", "TABII SPOR 2", "TABII SPOR 3", "TABII SPOR 4", "TABII SPOR 5", "TABII SPOR 6", "TIVIBU SPOR 1", "TIVIBU SPOR 2", "TIVIBU SPOR 3", "TIVIBU SPOR 4", "TRT 1", "TRT SPOR", "TRT SPOR YILDIZ", "TV 8", "TV 8,5"];
-        const qualityLabels = streamLinks.map(function(){ return "HD"; });
+        const activeDomain = "fixbettv84.com";
+        const lastUpdatedStr = "2026-09-04 16:25:01";
+        const streamLinks = [
+            "https://fixbettv84.com/channel?id=zirve",
+            "https://fixbettv84.com/channel?id=b2",
+            "https://fixbettv84.com/channel?id=b3",
+            "https://fixbettv84.com/channel?id=b4",
+            "https://fixbettv84.com/channel?id=b5",
+            "https://fixbettv84.com/channel?id=bm1",
+            "https://fixbettv84.com/channel?id=bm2",
+            "https://fixbettv84.com/channel?id=ss",
+            "https://fixbettv84.com/channel?id=ss2",
+            "https://fixbettv84.com/channel?id=smarts",
+            "https://fixbettv84.com/channel?id=sms2",
+            "https://fixbettv84.com/channel?id=t1",
+            "https://fixbettv84.com/channel?id=t2",
+            "https://fixbettv84.com/channel?id=t3",
+            "https://fixbettv84.com/channel?id=t4",
+            "https://fixbettv84.com/channel?id=trtspor",
+            "https://fixbettv84.com/channel?id=trtspor2",
+            "https://fixbettv84.com/channel?id=trt1",
+            "https://fixbettv84.com/channel?id=as",
+            "https://fixbettv84.com/channel?id=atv",
+            "https://fixbettv84.com/channel?id=tv8",
+            "https://fixbettv84.com/channel?id=tv85",
+            "https://fixbettv84.com/channel?id=eu1",
+            "https://fixbettv84.com/channel?id=eu2",
+            "https://fixbettv84.com/channel?id=ex1",
+            "https://fixbettv84.com/channel?id=ex2",
+            "https://fixbettv84.com/channel?id=ex3",
+            "https://fixbettv84.com/channel?id=ex4",
+            "https://fixbettv84.com/channel?id=ex5",
+            "https://fixbettv84.com/channel?id=ex6",
+            "https://fixbettv84.com/channel?id=ex7"
+];
+        const channelNames = [
+            "BEIN SPORTS 1",
+            "BEIN SPORTS 2",
+            "BEIN SPORTS 3",
+            "BEIN SPORTS 4",
+            "BEIN SPORTS 5",
+            "BEIN SPORTS MAX 1",
+            "BEIN SPORTS MAX 2",
+            "S SPORT 1",
+            "S SPORT 2",
+            "SMART SPOR 1",
+            "SMART SPOR 2",
+            "TİVİBU SPOR 1",
+            "TİVİBU SPOR 2",
+            "TİVİBU SPOR 3",
+            "TİVİBU SPOR 4",
+            "TRT SPOR",
+            "TRT SPOR YILDIZ",
+            "TRT 1",
+            "A SPOR",
+            "ATV",
+            "TV 8",
+            "TV 8,5",
+            "EUROSPORT 1",
+            "EUROSPORT 2",
+            "TABİİ SPOR 1",
+            "TABİİ SPOR 2",
+            "TABİİ SPOR 3",
+            "TABİİ SPOR 4",
+            "TABİİ SPOR 5",
+            "TABİİ SPOR 6",
+            "TABİİ SPOR 7"
+];
+        const qualityLabels = [
+            "4K HD",
+            "1080p HD",
+            "1080p HD",
+            "1080p HD",
+            "1080p HD",
+            "1080p HD",
+            "1080p HD",
+            "1080p HD",
+            "1080p HD",
+            "1080p HD",
+            "1080p HD",
+            "1080p HD",
+            "1080p HD",
+            "1080p HD",
+            "1080p HD",
+            "1080p HD",
+            "1080p HD",
+            "1080p HD",
+            "1080p HD",
+            "1080p HD",
+            "1080p HD",
+            "1080p HD",
+            "1080p HD",
+            "1080p HD",
+            "1080p HD",
+            "1080p HD",
+            "1080p HD",
+            "1080p HD",
+            "1080p HD",
+            "1080p HD",
+            "1080p HD"
+];
+        const channelCategories = [
+            "futbol",
+            "futbol",
+            "futbol",
+            "futbol",
+            "futbol",
+            "futbol",
+            "futbol",
+            "basketbol",
+            "basketbol",
+            "spor",
+            "spor",
+            "futbol",
+            "futbol",
+            "futbol",
+            "futbol",
+            "spor",
+            "spor",
+            "genel",
+            "futbol",
+            "genel",
+            "genel",
+            "spor",
+            "diger",
+            "diger",
+            "futbol",
+            "futbol",
+            "futbol",
+            "futbol",
+            "futbol",
+            "futbol",
+            "futbol"
+];
+        const channelIcons = [
+            "⚽",
+            "⚽",
+            "⚽",
+            "⚽",
+            "⚽",
+            "⚽",
+            "⚽",
+            "🏀",
+            "🏀",
+            "🧠",
+            "🧠",
+            "📡",
+            "📡",
+            "📡",
+            "📡",
+            "🇹🇷",
+            "🇹🇷",
+            "🇹🇷",
+            "⚽",
+            "📺",
+            "📺",
+            "📺",
+            "🚴",
+            "🚴",
+            "📡",
+            "📡",
+            "📡",
+            "📡",
+            "📡",
+            "📡",
+            "📡"
+];
+        const liveMatchesData = [
+            {
+                        "id": "live_1",
+                        "title": "Galatasaray - Fenerbahçe",
+                        "sport": "futbol",
+                        "league": "Trendyol Süper Lig",
+                        "time": "74'",
+                        "isLive": true,
+                        "channelId": "zirve",
+                        "channelName": "BEIN SPORTS 1",
+                        "streamUrl": "https://fixbettv84.com/channel?id=zirve",
+                        "score": "2 - 1",
+                        "icon": "⚽"
+            },
+            {
+                        "id": "live_2",
+                        "title": "Real Madrid - Barcelona",
+                        "sport": "futbol",
+                        "league": "La Liga",
+                        "time": "58'",
+                        "isLive": true,
+                        "channelId": "b2",
+                        "channelName": "BEIN SPORTS 2",
+                        "streamUrl": "https://fixbettv84.com/channel?id=b2",
+                        "score": "1 - 1",
+                        "icon": "⚽"
+            },
+            {
+                        "id": "live_3",
+                        "title": "Manchester City - Liverpool",
+                        "sport": "futbol",
+                        "league": "Premier League",
+                        "time": "32'",
+                        "isLive": true,
+                        "channelId": "b3",
+                        "channelName": "BEIN SPORTS 3",
+                        "streamUrl": "https://fixbettv84.com/channel?id=b3",
+                        "score": "0 - 0",
+                        "icon": "⚽"
+            },
+            {
+                        "id": "live_4",
+                        "title": "Anadolu Efes - Fenerbahçe Beko",
+                        "sport": "basketbol",
+                        "league": "EuroLeague",
+                        "time": "3. Periyot",
+                        "isLive": true,
+                        "channelId": "ss",
+                        "channelName": "S SPORT 1",
+                        "streamUrl": "https://fixbettv84.com/channel?id=ss",
+                        "score": "68 - 64",
+                        "icon": "🏀"
+            },
+            {
+                        "id": "live_5",
+                        "title": "Los Angeles Lakers - Golden State Warriors",
+                        "sport": "basketbol",
+                        "league": "NBA",
+                        "time": "4. Periyot",
+                        "isLive": true,
+                        "channelId": "ss2",
+                        "channelName": "S SPORT 2",
+                        "streamUrl": "https://fixbettv84.com/channel?id=ss2",
+                        "score": "102 - 98",
+                        "icon": "🏀"
+            },
+            {
+                        "id": "live_6",
+                        "title": "Carlos Alcaraz - Jannik Sinner",
+                        "sport": "tenis",
+                        "league": "US Open Erkekler Finali",
+                        "time": "2. Set",
+                        "isLive": true,
+                        "channelId": "eu1",
+                        "channelName": "EUROSPORT 1",
+                        "streamUrl": "https://fixbettv84.com/channel?id=eu1",
+                        "score": "6-4, 3-2",
+                        "icon": "🎾"
+            },
+            {
+                        "id": "live_7",
+                        "title": "VakıfBank - Eczacıbaşı Dynavit",
+                        "sport": "voleybol",
+                        "league": "Sultanlar Ligi",
+                        "time": "3. Set",
+                        "isLive": true,
+                        "channelId": "trtspor",
+                        "channelName": "TRT SPOR",
+                        "streamUrl": "https://fixbettv84.com/channel?id=trtspor",
+                        "score": "25-22, 19-25, 14-11",
+                        "icon": "🏐"
+            }
+];
+        const dailyMatchesData = [
+            {
+                        "id": "daily_1",
+                        "title": "Beşiktaş - Trabzonspor",
+                        "sport": "futbol",
+                        "league": "Trendyol Süper Lig",
+                        "time": "20:00",
+                        "status": "Bu Akşam",
+                        "channelId": "zirve",
+                        "channelName": "BEIN SPORTS 1",
+                        "streamUrl": "https://fixbettv84.com/channel?id=zirve",
+                        "icon": "⚽"
+            },
+            {
+                        "id": "daily_2",
+                        "title": "Bayern Münih - Borussia Dortmund",
+                        "sport": "futbol",
+                        "league": "Bundesliga",
+                        "time": "19:30",
+                        "status": "Bu Akşam",
+                        "channelId": "b4",
+                        "channelName": "BEIN SPORTS 4",
+                        "streamUrl": "https://fixbettv84.com/channel?id=b4",
+                        "icon": "⚽"
+            },
+            {
+                        "id": "daily_3",
+                        "title": "Inter - AC Milan",
+                        "sport": "futbol",
+                        "league": "Serie A",
+                        "time": "21:45",
+                        "status": "Bu Akşam",
+                        "channelId": "ss",
+                        "channelName": "S SPORT 1",
+                        "streamUrl": "https://fixbettv84.com/channel?id=ss",
+                        "icon": "⚽"
+            },
+            {
+                        "id": "daily_4",
+                        "title": "Paris Saint-Germain - Marseille",
+                        "sport": "futbol",
+                        "league": "Ligue 1",
+                        "time": "22:00",
+                        "status": "Bu Akşam",
+                        "channelId": "b5",
+                        "channelName": "BEIN SPORTS 5",
+                        "streamUrl": "https://fixbettv84.com/channel?id=b5",
+                        "icon": "⚽"
+            },
+            {
+                        "id": "daily_5",
+                        "title": "Panathinaikos - Olympiacos",
+                        "sport": "basketbol",
+                        "league": "EuroLeague",
+                        "time": "21:15",
+                        "status": "Bu Akşam",
+                        "channelId": "ss2",
+                        "channelName": "S SPORT 2",
+                        "streamUrl": "https://fixbettv84.com/channel?id=ss2",
+                        "icon": "🏀"
+            },
+            {
+                        "id": "daily_6",
+                        "title": "İtalya GP - Sıralama Turları",
+                        "sport": "motor",
+                        "league": "Formula 1",
+                        "time": "17:00",
+                        "status": "Tamamlandı",
+                        "channelId": "ss",
+                        "channelName": "S SPORT 1",
+                        "streamUrl": "https://fixbettv84.com/channel?id=ss",
+                        "icon": "🏎️"
+            }
+];
         /*BOT_END*/
 
+        // Fallback safety if BOT variables missing after manual edit
+        if (typeof channelCategories === 'undefined' || !Array.isArray(channelCategories) || channelCategories.length !== streamLinks.length) {
+            // derive from data if available, otherwise generic
+            var _fallbackCats = [];
+            for (var i=0;i<streamLinks.length;i++) _fallbackCats.push('genel');
+            // try to use channelIcons mapping: if icon is football-like treat as futbol etc is not reliable
+            // so just leave as genel, will show all under Tümü
+            window.channelCategories = _fallbackCats;
+        }
+        if (typeof channelIcons === 'undefined' || !Array.isArray(channelIcons) || channelIcons.length !== streamLinks.length) {
+            window.channelIcons = channelNames.map(function(name){
+                if (name.includes('BEIN')) return '⚽';
+                if (name.includes('S SPORT')) return '🏀';
+                if (name.includes('EURO')) return '🚴';
+                if (name.includes('TRT')) return '🇹🇷';
+                if (name.includes('TABİİ')) return '📡';
+                if (name.includes('TİVİBU')) return '📡';
+                if (name.includes('SMART')) return '🧠';
+                if (name.includes('A SPOR')) return '⚽';
+                if (name.includes('ATV') || name.includes('TV 8')) return '📺';
+                return '📺';
+            });
+        }
+
+        // Elements
         const iframe = document.getElementById("liveIframe");
+        const playerTitle = document.getElementById("playerTitle");
+        const playerIcon = document.getElementById("playerIcon");
+        const playerLoading = document.getElementById("playerLoading");
+        const reloadPlayerBtn = document.getElementById("reloadPlayerBtn");
+        const fullscreenBtn = document.getElementById("fullscreenBtn");
+
         const nowChannel = document.getElementById("nowChannel");
         const nowQuality = document.getElementById("nowQuality");
-        const channelRow = document.getElementById("channelRow");
         const navPrev = document.getElementById("navPrev");
         const navNext = document.getElementById("navNext");
-        const totalChannels = document.getElementById("totalChannels");
-        const gamepadDot = document.getElementById("gamepadDot");
-        const gamepadText = document.getElementById("gamepadText");
-        const playerWrap = document.getElementById("playerWrap");
-        const playerTip = document.getElementById("playerTip");
+
+        const domainText = document.getElementById("domainText");
+        const totalChannelsCount = document.getElementById("totalChannelsCount");
+        const totalLiveCount = document.getElementById("totalLiveCount");
+        const badgeChannels = document.getElementById("badgeChannels");
+        const badgeLive = document.getElementById("badgeLive");
+        const badgeDaily = document.getElementById("badgeDaily");
+
+        const searchInput = document.getElementById("searchInput");
+        const channelGrid = document.getElementById("channelGrid");
+        const liveMatchesGrid = document.getElementById("liveMatchesGrid");
+        const dailyMatchesGrid = document.getElementById("dailyMatchesGrid");
+        const channelCategoryRow = document.getElementById("channelCategoryRow");
+        const filterRow = document.getElementById("filterRow");
 
         let currentIndex = 0;
-        
-        const channelIcons = channelNames.map(function(name) {
-            if (name.indexOf('BEIN') !== -1) return '⚽';
-            if (name.indexOf('S SPOR') !== -1) return '🏀';
-            if (name.indexOf('EURO') !== -1) return '🚴';
-            if (name.indexOf('TRT') !== -1) return '🇹🇷';
-            if (name.indexOf('TABI') !== -1) return '📡';
-            if (name.indexOf('TİVİBU') !== -1) return '📡';
-            if (name.indexOf('SMART') !== -1 || name.indexOf('AKILLI') !== -1) return '🧠';
-            if (name.indexOf('BİR SPOR') !== -1) return '⚽';
-            if (name.indexOf('ATV') !== -1) return '📺';
-            if (name.indexOf('TV 8') !== -1) return '📺';
-            return '📺';
-        });
+        let activeFilter = "all";
+        let activeTab = "channelsTab";
+        let activeChannelCategory = "all";
 
-        function buildButtons() {
-            channelRow.innerHTML = "";
-            totalChannels.textContent = streamLinks.length;
-            
-            streamLinks.forEach(function(url, i) {
-                const btn = document.createElement("button");
-                btn.className = "ch-btn" + (i === 0 ? " active" : "");
-                const icon = channelIcons[i] || "📡";
-                
-                let num = (i + 1).toString();
-                if (num.length < 2) num = "0" + num;
-                
-                btn.innerHTML = '<span class="ch-icon">' + icon + '</span>' +
-                                '<div class="ch-number">' + num + '</div>' +
-                                '<div class="ch-label">' + channelNames[i] + '</div>';
-                
-                btn.onclick = function() { switchChannel(i, true); };
-                btn.setAttribute("data-index", i);
-                channelRow.appendChild(btn);
+        // Kanal kategori tanımları - streams.json kategorilerine göre
+        const CHANNEL_CAT_DEFS = [
+            { id: 'all', label: 'TÜMÜ', icon: '✨' },
+            { id: 'futbol', label: 'FUTBOL', icon: '⚽' },
+            { id: 'basketbol', label: 'BASKETBOL', icon: '🏀' },
+            { id: 'spor', label: 'SPOR', icon: '🏟️' },
+            { id: 'genel', label: 'ULUSAL', icon: '📺' },
+            { id: 'diger', label: 'DİĞER', icon: '🌍' },
+        ];
+
+        const CATEGORY_LABELS_TR = {
+            futbol: 'Futbol',
+            basketbol: 'Basketbol',
+            spor: 'Spor',
+            genel: 'Ulusal',
+            diger: 'Diğer'
+        };
+
+        function getChannelCountsByCategory(){
+            const counts = { all: streamLinks.length, futbol:0, basketbol:0, spor:0, genel:0, diger:0 };
+            channelCategories.forEach(cat => {
+                if (counts.hasOwnProperty(cat)) counts[cat]++;
+                else counts[cat] = (counts[cat]||0)+1;
             });
-            
-            if (streamLinks.length > 0) {
-                currentIndex = 0;
-                switchChannel(0, false);
+            return counts;
+        }
+
+        function renderChannelCategoryButtons(){
+            const counts = getChannelCountsByCategory();
+            channelCategoryRow.innerHTML = "";
+            CHANNEL_CAT_DEFS.forEach(def => {
+                const count = counts[def.id] || 0;
+                // Sadece veri olan kategorileri + Tümü göster, boş kategoriyi gizle (ama Tümü her zaman)
+                if (def.id !== 'all' && count === 0) return;
+                const btn = document.createElement("button");
+                btn.className = "channel-cat-btn" + (activeChannelCategory === def.id ? " active" : "");
+                btn.setAttribute("data-cat", def.id);
+                btn.innerHTML = `<span class="cat-icon">${def.icon}</span><span class="cat-label">${def.label}</span><span class="cat-count">${count}</span>`;
+                btn.onclick = () => {
+                    activeChannelCategory = def.id;
+                    document.querySelectorAll(".channel-cat-btn").forEach(b=>b.classList.remove("active"));
+                    btn.classList.add("active");
+                    renderChannels();
+                };
+                channelCategoryRow.appendChild(btn);
+            });
+        }
+
+        function updateCategoryRowVisibility(){
+            if (activeTab === "channelsTab") {
+                channelCategoryRow.style.display = "flex";
+                filterRow.style.display = "none";
+            } else {
+                channelCategoryRow.style.display = "none";
+                filterRow.style.display = "flex";
             }
         }
 
-        // scrollTo=true olduğunda kullanıcı seçiminde player'e yumuşakça kaydır
-        function switchChannel(index, scrollTo) {
+        function initData() {
+            if (typeof activeDomain !== 'undefined' && activeDomain) {
+                domainText.textContent = "Sunucu: " + activeDomain;
+            }
+
+            totalChannelsCount.textContent = streamLinks.length;
+            totalLiveCount.textContent = liveMatchesData.length;
+
+            badgeChannels.textContent = streamLinks.length;
+            badgeLive.textContent = liveMatchesData.length;
+            badgeDaily.textContent = dailyMatchesData.length;
+
+            renderChannelCategoryButtons();
+            updateCategoryRowVisibility();
+            renderChannels();
+            renderLiveMatches();
+            renderDailyMatches();
+
+            if (streamLinks.length > 0) {
+                switchChannel(0);
+            }
+        }
+
+        function switchChannel(index) {
             if (index < 0 || index >= streamLinks.length) return;
-            if (scrollTo === undefined) scrollTo = false;
             currentIndex = index;
+
+            playerLoading.classList.add("active");
             iframe.src = streamLinks[index];
-            nowChannel.textContent = channelNames[index];
-            nowQuality.textContent = qualityLabels[index];
-            if (playerTip) playerTip.style.display = "none";
 
-            const buttons = document.querySelectorAll(".ch-btn");
-            for (let i = 0; i < buttons.length; i++) {
-                if (i === index) {
-                    buttons[i].classList.add("active");
-                } else {
-                    buttons[i].classList.remove("active");
-                }
-            }
+            setTimeout(() => { playerLoading.classList.remove("active"); }, 600);
 
-            const activeBtn = document.querySelector(".ch-btn.active");
-            if (activeBtn && activeBtn.scrollIntoView) {
-                activeBtn.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "center" });
-            }
+            const chName = channelNames[index];
+            const chIcon = (typeof channelIcons !== 'undefined' && channelIcons[index]) ? channelIcons[index] : '📡';
+            const quality = qualityLabels[index] || 'HD';
 
-            // ⬇ Kullanıcı kanala tıkladığında player'e kaydır
-            if (scrollTo && playerWrap && playerWrap.scrollIntoView) {
-                playerWrap.scrollIntoView({ behavior: "smooth", block: "start" });
-                playerWrap.classList.add("player-flash");
-                setTimeout(function(){ playerWrap.classList.remove("player-flash"); }, 1200);
-            }
+            nowChannel.textContent = chName;
+            playerTitle.textContent = chName + " (" + quality + ")";
+            playerIcon.textContent = chIcon;
+            nowQuality.textContent = quality;
+
+            // Aktif kartı güncelle - tüm kartlarda active sınıfını yeniden değerlendir
+            document.querySelectorAll(".ch-card").forEach(card => {
+                const idx = parseInt(card.getAttribute("data-idx"), 10);
+                if (idx === index) card.classList.add("active");
+                else card.classList.remove("active");
+            });
 
             updateNavButtons();
         }
 
-        function nextChannel() { switchChannel((currentIndex + 1) % streamLinks.length, true); }
-        function prevChannel() { switchChannel((currentIndex - 1 + streamLinks.length) % streamLinks.length, true); }
+        function loadStreamDirectUrl(url, name, icon, quality) {
+            playerLoading.classList.add("active");
+            iframe.src = url;
+            setTimeout(() => { playerLoading.classList.remove("active"); }, 600);
+
+            nowChannel.textContent = name;
+            playerTitle.textContent = name + " (" + (quality || "HD") + ")";
+            playerIcon.textContent = icon || "📡";
+
+            document.getElementById("playerWrap").scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+
+        function renderChannels() {
+            channelGrid.innerHTML = "";
+            const searchVal = searchInput.value.toLowerCase().trim();
+
+            let visibleCount = 0;
+            streamLinks.forEach((url, i) => {
+                const name = channelNames[i];
+                const cat = channelCategories[i] || 'genel';
+                const quality = qualityLabels[i] || 'HD';
+                const icon = channelIcons[i] || '📡';
+
+                // Kategori filtresi
+                if (activeChannelCategory !== 'all' && cat !== activeChannelCategory) return;
+                // Arama filtresi
+                if (searchVal && !name.toLowerCase().includes(searchVal) && !cat.toLowerCase().includes(searchVal)) return;
+
+                const card = document.createElement("div");
+                card.className = "ch-card" + (i === currentIndex ? " active" : "");
+                card.setAttribute("data-idx", i);
+                card.style.animationDelay = (visibleCount * 32) + "ms";
+                const catLabel = CATEGORY_LABELS_TR[cat] || cat.toUpperCase();
+                const num = (i + 1).toString().padStart(2, '0');
+
+                card.innerHTML = `
+                    <div class="ch-number">#${num}</div>
+                    <div class="ch-card-top">
+                        <span class="ch-quality">${quality}</span>
+                        <span class="ch-live-dot" title="Canlı"></span>
+                    </div>
+                    <div class="ch-icon-wrap">${icon}</div>
+                    <div class="ch-name">${name}</div>
+                    <div class="ch-category">${catLabel}</div>
+                    <div class="ch-play-hint">▶ İZLE</div>
+                `;
+                card.onclick = () => switchChannel(i);
+                channelGrid.appendChild(card);
+                visibleCount++;
+            });
+
+            if (visibleCount === 0) {
+                const catName = activeChannelCategory === 'all' ? '' : ` <b>${CATEGORY_LABELS_TR[activeChannelCategory] || activeChannelCategory}</b> kategorisinde`;
+                channelGrid.innerHTML = `<div class="empty-msg">🔍${catName} aramanıza uygun kanal bulunamadı.<br><small style="opacity:0.7">Farklı bir kategori veya arama terimi deneyin.</small></div>`;
+            }
+        }
+
+        function renderLiveMatches() {
+            liveMatchesGrid.innerHTML = "";
+            const searchVal = searchInput.value.toLowerCase().trim();
+
+            const filtered = liveMatchesData.filter(m => {
+                const matchesSearch = !searchVal || m.title.toLowerCase().includes(searchVal) || m.league.toLowerCase().includes(searchVal);
+                const matchesFilter = activeFilter === "all" || m.sport === activeFilter;
+                return matchesSearch && matchesFilter;
+            });
+
+            filtered.forEach(m => {
+                const card = document.createElement("div");
+                card.className = "match-card is-live";
+                card.innerHTML = `
+                    <div class="match-header">
+                        <span class="match-league">${m.icon} ${m.league}</span>
+                        <span class="match-status-tag"><span class="live-dot"></span> CANLI ${m.time}</span>
+                    </div>
+                    <div class="match-teams">
+                        <span>${m.title}</span>
+                    </div>
+                    <div style="text-align:center;"><span class="match-score">${m.score}</span></div>
+                    <div class="match-footer">
+                        <span class="match-channel-name">📡 ${m.channelName}</span>
+                        <button class="play-match-btn" onclick="loadStreamDirectUrl('${m.streamUrl}', '${m.title.replace(/'/g, "\\'")}', '${m.icon}', 'CANLI HD')">
+                            ▶ MAÇI İZLE
+                        </button>
+                    </div>
+                `;
+                liveMatchesGrid.appendChild(card);
+            });
+
+            if (filtered.length === 0) {
+                liveMatchesGrid.innerHTML = `<div class="empty-msg">Seçilen kategoride şu an canlı maç bulunmuyor.</div>`;
+            }
+        }
+
+        function renderDailyMatches() {
+            dailyMatchesGrid.innerHTML = "";
+            const searchVal = searchInput.value.toLowerCase().trim();
+
+            const filtered = dailyMatchesData.filter(m => {
+                const matchesSearch = !searchVal || m.title.toLowerCase().includes(searchVal) || m.league.toLowerCase().includes(searchVal);
+                const matchesFilter = activeFilter === "all" || m.sport === activeFilter;
+                return matchesSearch && matchesFilter;
+            });
+
+            filtered.forEach(m => {
+                const card = document.createElement("div");
+                card.className = "match-card";
+                card.innerHTML = `
+                    <div class="match-header">
+                        <span class="match-league">${m.icon} ${m.league}</span>
+                        <span class="match-status-tag daily">⏰ ${m.time} | ${m.status}</span>
+                    </div>
+                    <div class="match-teams">
+                        <span>${m.title}</span>
+                    </div>
+                    <div class="match-footer">
+                        <span class="match-channel-name">📡 ${m.channelName}</span>
+                        <button class="play-match-btn" onclick="loadStreamDirectUrl('${m.streamUrl}', '${m.title.replace(/'/g, "\\'")}', '${m.icon}', 'HD')">
+                            ▶ YAYINA GİT
+                        </button>
+                    </div>
+                `;
+                dailyMatchesGrid.appendChild(card);
+            });
+
+            if (filtered.length === 0) {
+                dailyMatchesGrid.innerHTML = `<div class="empty-msg">Günün maç listesinde eşleşen karşılaşma bulunamadı.</div>`;
+            }
+        }
 
         function updateNavButtons() {
             if (streamLinks.length <= 1) {
-                navPrev.style.opacity = "0.4"; navPrev.style.pointerEvents = "none";
-                navNext.style.opacity = "0.4"; navNext.style.pointerEvents = "none";
+                navPrev.style.opacity = "0.4"; navNext.style.opacity = "0.4";
             } else {
-                navPrev.style.opacity = "1"; navPrev.style.pointerEvents = "auto";
-                navNext.style.opacity = "1"; navNext.style.pointerEvents = "auto";
+                navPrev.style.opacity = "1"; navNext.style.opacity = "1";
             }
         }
 
-        navPrev.addEventListener("click", prevChannel);
-        navNext.addEventListener("click", nextChannel);
+        // Tab Switching
+        document.querySelectorAll(".tab-btn").forEach(btn => {
+            btn.onclick = () => {
+                document.querySelectorAll(".tab-btn").forEach(b => b.classList.remove("active"));
+                document.querySelectorAll(".tab-content").forEach(c => c.classList.remove("active"));
 
-        document.addEventListener("keydown", function(e) {
+                btn.classList.add("active");
+                activeTab = btn.getAttribute("data-tab");
+                document.getElementById(activeTab).classList.add("active");
+                updateCategoryRowVisibility();
+            };
+        });
+
+        // Filter Pills - sadece maçları filtreler
+        document.querySelectorAll(".filter-pill").forEach(pill => {
+            pill.onclick = () => {
+                document.querySelectorAll(".filter-pill").forEach(p => p.classList.remove("active"));
+                pill.classList.add("active");
+                activeFilter = pill.getAttribute("data-filter");
+                renderLiveMatches();
+                renderDailyMatches();
+            };
+        });
+
+        // Search Input - kanallar kategoriye göre + maçlar filtreye göre
+        searchInput.oninput = () => {
+            renderChannels();
+            renderLiveMatches();
+            renderDailyMatches();
+        };
+
+        // Navigation Prev / Next - kategoriye değil global sıraya göre ama filtreli grid'de kalır
+        navPrev.onclick = () => switchChannel((currentIndex - 1 + streamLinks.length) % streamLinks.length);
+        navNext.onclick = () => switchChannel((currentIndex + 1) % streamLinks.length);
+
+        reloadPlayerBtn.onclick = () => {
+            const currentSrc = iframe.src;
+            iframe.src = "";
+            playerLoading.classList.add("active");
+            setTimeout(() => {
+                iframe.src = currentSrc;
+                playerLoading.classList.remove("active");
+            }, 300);
+        };
+
+        fullscreenBtn.onclick = () => {
+            const playerWrap = document.getElementById("playerWrap");
+            if (playerWrap.requestFullscreen) playerWrap.requestFullscreen();
+            else if (playerWrap.webkitRequestFullscreen) playerWrap.webkitRequestFullscreen();
+            else if (playerWrap.msRequestFullscreen) playerWrap.msRequestFullscreen();
+        };
+
+        // Keyboard Control (kumanda desteği kaldırıldı, sadece klavye okları)
+        document.addEventListener("keydown", (e) => {
             const tag = document.activeElement ? document.activeElement.tagName.toLowerCase() : "";
-            if (tag === "input" || tag === "textarea" || tag === "select") return;
-            if (e.key === "ArrowRight") { e.preventDefault(); nextChannel(); }
-            else if (e.key === "ArrowLeft") { e.preventDefault(); prevChannel(); }
+            if (tag === "input" || tag === "textarea") return;
+
+            if (e.key === "ArrowRight") { e.preventDefault(); navNext.click(); }
+            else if (e.key === "ArrowLeft") { e.preventDefault(); navPrev.click(); }
         });
 
-        // ========== GAMEPAD (KUMANDA) DESTEĞİ ==========
-        let gamepadConnected = false;
-        let prevAxes = [0,0,0,0];
-        let prevButtons = [];
-
-        function updateGamepadStatus(connected) {
-            gamepadConnected = connected;
-            if (connected) {
-                gamepadDot.classList.remove("inactive");
-                gamepadText.textContent = "🎮 Kumanda bağlı";
-            } else {
-                gamepadDot.classList.add("inactive");
-                gamepadText.textContent = "Kumanda bekleniyor";
-            }
-        }
-
-        window.addEventListener("gamepadconnected", function(e) {
-            updateGamepadStatus(true);
-        });
-        window.addEventListener("gamepaddisconnected", function(e) {
-            updateGamepadStatus(false);
-        });
-
-        function pollGamepad() {
-            const gamepads = navigator.getGamepads ? navigator.getGamepads() : [];
-            let activeGamepad = null;
-            for (let i = 0; i < gamepads.length; i++) {
-                if (gamepads[i] && gamepads[i].connected) { 
-                    activeGamepad = gamepads[i]; 
-                    break; 
-                }
-            }
-
-            if (activeGamepad) {
-                if (!gamepadConnected) updateGamepadStatus(true);
-
-                const dpadLeft = (activeGamepad.buttons[14] && activeGamepad.buttons[14].pressed) ? true : false;
-                const dpadRight = (activeGamepad.buttons[15] && activeGamepad.buttons[15].pressed) ? true : false;
-                const axisX = activeGamepad.axes[0] || 0;
-
-                if (!prevButtons.length) {
-                    prevButtons = activeGamepad.buttons.map(function(b) { return b.pressed; });
-                    prevAxes = activeGamepad.axes.slice();
-                    requestAnimationFrame(pollGamepad);
-                    return;
-                }
-
-                if (dpadLeft && !prevButtons[14]) {
-                    prevChannel();
-                } else if (dpadRight && !prevButtons[15]) {
-                    nextChannel();
-                }
-
-                const threshold = 0.6;
-                if (axisX < -threshold && prevAxes[0] >= -threshold) {
-                    prevChannel();
-                } else if (axisX > threshold && prevAxes[0] <= threshold) {
-                    nextChannel();
-                }
-
-                prevButtons = activeGamepad.buttons.map(function(b) { return b.pressed; });
-                prevAxes = activeGamepad.axes.slice();
-            } else {
-                if (gamepadConnected) updateGamepadStatus(false);
-            }
-            requestAnimationFrame(pollGamepad);
-        }
-
-        if (navigator.getGamepads) {
-            const initialGamepads = navigator.getGamepads();
-            let found = false;
-            for (let i = 0; i < initialGamepads.length; i++) { 
-                if (initialGamepads[i] && initialGamepads[i].connected) { found = true; break; } 
-            }
-            if (found) updateGamepadStatus(true);
-            requestAnimationFrame(pollGamepad);
-        }
-
+        // Background Particles
         function createParticles() {
             const container = document.getElementById("bgParticles");
-            const colors = ["rgba(255,45,122,0.7)","rgba(155,77,255,0.6)","rgba(0,234,255,0.5)","rgba(255,204,51,0.6)","rgba(255,255,255,0.4)"];
-            for (let i=0; i<30; i++) {
+            const colors = ["rgba(255,45,122,0.6)","rgba(155,77,255,0.5)","rgba(0,234,255,0.5)","rgba(255,204,51,0.5)"];
+            for (let i = 0; i < 28; i++) {
                 const p = document.createElement("div");
-                p.classList.add("particle");
-                const size = Math.random()*4+1.5;
-                p.style.width = size+"px"; p.style.height = size+"px";
-                p.style.left = Math.random()*100+"%";
-                p.style.backgroundColor = colors[Math.floor(Math.random()*colors.length)];
-                p.style.animationDuration = Math.random()*12+8+"s";
-                p.style.animationDelay = Math.random()*10+"s";
-                p.style.boxShadow = "0 0 " + (size*3) + "px " + p.style.backgroundColor;
+                p.className = "particle";
+                const sz = Math.random() * 4 + 2;
+                p.style.width = sz + "px"; p.style.height = sz + "px";
+                p.style.left = Math.random() * 100 + "%";
+                p.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                p.style.animationDuration = (Math.random() * 10 + 8) + "s";
+                p.style.animationDelay = (Math.random() * 8) + "s";
                 container.appendChild(p);
             }
         }
 
-        // ========== MAÇ OYNATICIYA BAĞLAMA (kartlardaki ▶ İZLE) ==========
-        function bindMatchStreams() {
-            const watchBtns = document.querySelectorAll(".match-watch[data-stream]");
-            watchBtns.forEach(function(btn) {
-                btn.addEventListener("click", function(ev) {
-                    ev.preventDefault();
-                    const url = btn.getAttribute("data-stream");
-                    if (!url) return;
-                    iframe.src = url;
-                    nowChannel.textContent = btn.getAttribute("title") || "Maç";
-                    nowQuality.textContent = "CANLI";
-                    if (playerTip) playerTip.style.display = "none";
-                    if (playerWrap && playerWrap.scrollIntoView) {
-                        playerWrap.scrollIntoView({ behavior: "smooth", block: "start" });
-                        playerWrap.classList.add("player-flash");
-                        setTimeout(function(){ playerWrap.classList.remove("player-flash"); }, 1200);
-                    }
-                });
-            });
-        }
-
-        // ========== MAÇ FİLTRELERİ (Tümü / Canlı / Günün / Yaklaşan / Bitti) ==========
-        function bindMatchFilters() {
-            const btns = document.querySelectorAll(".mf-btn");
-            btns.forEach(function(b) {
-                b.addEventListener("click", function() {
-                    btns.forEach(function(x){ x.classList.remove("active"); });
-                    b.classList.add("active");
-                    const f = b.getAttribute("data-mf");
-                    const groups = document.querySelectorAll(".match-group");
-                    groups.forEach(function(g) {
-                        const gkey = g.getAttribute("data-group");
-                        let show = true;
-                        if (f === "all") show = true;
-                        else if (f === "live") show = (gkey === "live");
-                        else if (f === "mod") show = (gkey === "mod");
-                        else if (f === "upcoming") show = (gkey === "upcoming");
-                        else if (f === "done") show = (gkey === "done");
-                        g.classList.toggle("is-hidden", !show);
-                    });
-                });
-            });
-        }
-
-        // ========== KANAL ARAMA ==========
-        function bindChannelSearch() {
-            const input = document.getElementById("channelSearch");
-            const noResult = document.getElementById("noResult");
-            if (!input) return;
-            input.addEventListener("input", function() {
-                const q = input.value.toLowerCase().trim();
-                let count = 0;
-                const btns = document.querySelectorAll(".ch-btn");
-                for (let i = 0; i < btns.length; i++) {
-                    const label = (channelNames[i] || "").toLowerCase();
-                    const show = q === "" || label.indexOf(q) !== -1;
-                    btns[i].style.display = show ? "" : "none";
-                    if (show) count++;
-                }
-                if (noResult) noResult.style.display = (count === 0 && q !== "") ? "block" : "none";
-            });
-        }
-
-        // ========== CANLI SAAT ==========
-        function startClock() {
-            const clock = document.getElementById("liveClock");
-            if (!clock) return;
-            function tick() {
-                const d = new Date();
-                const h = String(d.getHours()).padStart(2, "0");
-                const m = String(d.getMinutes()).padStart(2, "0");
-                const s = String(d.getSeconds()).padStart(2, "0");
-                clock.textContent = h + ":" + m + ":" + s;
-            }
-            tick();
-            setInterval(tick, 1000);
-        }
-
-        // ========== İSTEMCİ TARAFI CANLI DURUM GÜNCELLEME ==========
-        // Maç kartlarındaki gerçek saate göre CANLI / YAKLAŞAN / BİTTİ etiketini
-        // tarayıcı saatiyle yeniden hesaplar (site verisi + gerçek saat).
-        function refreshLiveStatus() {
-            const now = new Date();
-            const nowMin = now.getHours() * 60 + now.getMinutes();
-            const cards = document.querySelectorAll(".match-card[data-time]");
-            cards.forEach(function(card) {
-                const t = (card.getAttribute("data-time") || "").split(":");
-                if (t.length !== 2) return;
-                const mins = parseInt(t[0], 10) * 60 + parseInt(t[1], 10);
-                if (isNaN(mins)) return;
-                const badgeEl = card.querySelector("[data-badge]");
-                let status, cls;
-                if (mins <= nowMin - 105) { status = "BİTTİ"; cls = "done"; }
-                else if (mins <= nowMin) { status = "CANLI"; cls = "live"; }
-                else { status = "YAKLAŞAN"; cls = "up"; }
-                card.className = "match-card " + cls;
-                if (badgeEl) { badgeEl.textContent = status; badgeEl.className = "match-badge " + cls; }
-            });
-        }
-
-        function initApp() {
-            buildButtons();
+        // Initialize App
+        document.addEventListener("DOMContentLoaded", () => {
+            initData();
             createParticles();
-            updateNavButtons();
-            bindMatchStreams();
-            bindMatchFilters();
-            bindChannelSearch();
-            startClock();
-            refreshLiveStatus();
-            setInterval(refreshLiveStatus, 30000);
-        }
-
-        if (document.readyState === "loading") {
-            document.addEventListener("DOMContentLoaded", initApp);
-        } else {
-            initApp();
-        }
+        });
     </script>
 </body>
 </html>
