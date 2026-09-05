@@ -9,42 +9,24 @@
       "fixbettv84.com",
       "fixbettv19.com"
     ],
-    "last_checked": "2026-09-05T21:06:56+00:00",
+    "last_checked": "2026-09-05T22:50:09+00:00",
     "note": "OK",
     "probed": 200
   },
   "categories": {
     "meta": {
-      "generated_at": "2026-09-06T00:06:20+03:00",
+      "generated_at": "2026-09-06T01:49:33+03:00",
       "date": "2026-09-06",
       "total_matches": 7
     },
     "counts": {
       "total": 7,
-      "live": 1,
+      "live": 0,
       "upcoming": 0,
-      "finished": 6,
+      "finished": 7,
       "match_of_day": 0
     },
-    "live": [
-      {
-        "match_id": "b2",
-        "home": "Sporting Lisbon",
-        "away": "Nacional",
-        "league": "Portekiz Liga NOS",
-        "time": "22:30",
-        "sport": "Futbol",
-        "is_match_of_day": false,
-        "channel_id": "b2",
-        "logo_home": "https://img.sporekrani.com/teams/wmkMpVv7deEV46KqRI9Evc7cCPEqzIIZoGNt6t1j.png",
-        "logo_away": "https://img.sporekrani.com/teams/9TQPH1qy4FX6kLdVqcl4n9Vc9whC6j5p1BcHTHhn.png",
-        "status": "live",
-        "started": true,
-        "raw_event": "22:30 | Portekiz Liga NOS",
-        "url": "https://fixbettv84.com/channel.html?id=b2",
-        "fetched_at": ""
-      }
-    ],
+    "live": [],
     "upcoming": [],
     "finished": [
       {
@@ -148,6 +130,23 @@
         "raw_event": "22:00 | Brezilya Serie A",
         "url": "https://fixbettv84.com/channel.html?id=sms2",
         "fetched_at": ""
+      },
+      {
+        "match_id": "b2",
+        "home": "Sporting Lisbon",
+        "away": "Nacional",
+        "league": "Portekiz Liga NOS",
+        "time": "22:30",
+        "sport": "Futbol",
+        "is_match_of_day": false,
+        "channel_id": "b2",
+        "logo_home": "https://img.sporekrani.com/teams/wmkMpVv7deEV46KqRI9Evc7cCPEqzIIZoGNt6t1j.png",
+        "logo_away": "https://img.sporekrani.com/teams/9TQPH1qy4FX6kLdVqcl4n9Vc9whC6j5p1BcHTHhn.png",
+        "status": "finished",
+        "started": true,
+        "raw_event": "22:30 | Portekiz Liga NOS",
+        "url": "https://fixbettv84.com/channel.html?id=b2",
+        "fetched_at": ""
       }
     ],
     "match_of_the_day": [],
@@ -238,7 +237,7 @@
           "channel_id": "b2",
           "logo_home": "https://img.sporekrani.com/teams/wmkMpVv7deEV46KqRI9Evc7cCPEqzIIZoGNt6t1j.png",
           "logo_away": "https://img.sporekrani.com/teams/9TQPH1qy4FX6kLdVqcl4n9Vc9whC6j5p1BcHTHhn.png",
-          "status": "live",
+          "status": "finished",
           "started": true,
           "raw_event": "22:30 | Portekiz Liga NOS",
           "url": "https://fixbettv84.com/channel.html?id=b2",
@@ -399,7 +398,7 @@
           "channel_id": "b2",
           "logo_home": "https://img.sporekrani.com/teams/wmkMpVv7deEV46KqRI9Evc7cCPEqzIIZoGNt6t1j.png",
           "logo_away": "https://img.sporekrani.com/teams/9TQPH1qy4FX6kLdVqcl4n9Vc9whC6j5p1BcHTHhn.png",
-          "status": "live",
+          "status": "finished",
           "started": true,
           "raw_event": "22:30 | Portekiz Liga NOS",
           "url": "https://fixbettv84.com/channel.html?id=b2",
@@ -522,7 +521,7 @@
       "channel_id": "b2",
       "logo_home": "https://img.sporekrani.com/teams/wmkMpVv7deEV46KqRI9Evc7cCPEqzIIZoGNt6t1j.png",
       "logo_away": "https://img.sporekrani.com/teams/9TQPH1qy4FX6kLdVqcl4n9Vc9whC6j5p1BcHTHhn.png",
-      "status": "live",
+      "status": "finished",
       "started": true,
       "raw_event": "22:30 | Portekiz Liga NOS",
       "url": "https://fixbettv84.com/channel.html?id=b2",

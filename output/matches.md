@@ -1,12 +1,8 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-09-05 21:07  
-> **Toplam maç:** 7  |  **Canlı:** 1  |  **Yaklaşan:** 0
-
-## 🔴 CANLI
-
-- 🔴 **Sporting Lisbon vs Nacional** — `22:30` | Portekiz Liga NOS <https://fixbettv84.com/channel.html?id=b2>
+> **Güncellenme:** 2026-09-05 22:50  
+> **Toplam maç:** 7  |  **Canlı:** 0  |  **Yaklaşan:** 0
 
 ## ✅ BİTTİ
 
@@ -16,6 +12,7 @@
 - ✅ **Roma vs Atalanta** — `21:45` | İtalya Serie A <https://fixbettv84.com/channel.html?id=ss2>
 - ✅ **Villarreal vs Deportivo** — `22:00` | İspanya La Liga <https://fixbettv84.com/channel.html?id=ss>
 - ✅ **Bragantino vs Bahia** — `22:00` | Brezilya Serie A <https://fixbettv84.com/channel.html?id=sms2>
+- ✅ **Sporting Lisbon vs Nacional** — `22:30` | Portekiz Liga NOS <https://fixbettv84.com/channel.html?id=b2>
 
 ---
 ## 🏆 Lig Bazlı
@@ -31,7 +28,7 @@
 - ⏰ St. Etienne vs Montpellier — 21:00
 
 ### Portekiz Liga NOS
-- 🔴 Sporting Lisbon vs Nacional — 22:30
+- ⏰ Sporting Lisbon vs Nacional — 22:30
 
 ### İspanya La Liga
 - ⏰ Villarreal vs Deportivo — 22:00

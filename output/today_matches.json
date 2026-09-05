@@ -9,7 +9,7 @@
       "fixbettv84.com",
       "fixbettv19.com"
     ],
-    "last_checked": "2026-09-05T21:06:56+00:00",
+    "last_checked": "2026-09-05T22:50:09+00:00",
     "note": "OK",
     "probed": 200
   },
@@ -128,7 +128,7 @@
       "channel_id": "b2",
       "logo_home": "https://img.sporekrani.com/teams/wmkMpVv7deEV46KqRI9Evc7cCPEqzIIZoGNt6t1j.png",
       "logo_away": "https://img.sporekrani.com/teams/9TQPH1qy4FX6kLdVqcl4n9Vc9whC6j5p1BcHTHhn.png",
-      "status": "live",
+      "status": "finished",
       "started": true,
       "raw_event": "22:30 | Portekiz Liga NOS",
       "url": "https://fixbettv84.com/channel.html?id=b2",
