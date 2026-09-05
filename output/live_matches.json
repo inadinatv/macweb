@@ -9,9 +9,27 @@
       "fixbettv84.com",
       "fixbettv19.com"
     ],
-    "last_checked": "2026-09-05T08:47:57+00:00",
+    "last_checked": "2026-09-05T12:07:44+00:00",
     "note": "OK",
     "probed": 200
   },
-  "live": []
+  "live": [
+    {
+      "match_id": "b3",
+      "home": "Newcastle",
+      "away": "Bournemouth",
+      "league": "İngiltere Premier Lig",
+      "time": "14:30",
+      "sport": "Futbol",
+      "is_match_of_day": false,
+      "channel_id": "b3",
+      "logo_home": "https://img.sporekrani.com/teams/nKnZT5e3Ht6AuKHtcOPfrzo865qNLr7r5gRZ6kCs.png",
+      "logo_away": "https://img.sporekrani.com/teams/d9yjGvnYyT8UdVOb95YTlFYiOSHraxBhEwil3eox.png",
+      "status": "live",
+      "started": true,
+      "raw_event": "14:30 | İngiltere Premier Lig",
+      "url": "https://fixbettv84.com/channel.html?id=b3",
+      "fetched_at": ""
+    }
+  ]
 }

@@ -1,12 +1,15 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-09-05 08:47  
-> **Toplam maç:** 25  |  **Canlı:** 0  |  **Yaklaşan:** 25
+> **Güncellenme:** 2026-09-05 12:07  
+> **Toplam maç:** 25  |  **Canlı:** 1  |  **Yaklaşan:** 24
+
+## 🔴 CANLI
+
+- 🔴 **Newcastle vs Bournemouth** — `14:30` | İngiltere Premier Lig <https://fixbettv84.com/channel.html?id=b3>
 
 ## ⏰ YAKLAŞAN
 
-- ⏰ **Newcastle vs Bournemouth** — `14:30` | İngiltere Premier Lig <https://fixbettv84.com/channel.html?id=b3>
 - ⏰ **Fiorentina vs Torino** — `16:00` | İtalya Serie A <https://fixbettv84.com/channel.html?id=ss2>
 - ⏰ **Bandırmaspor vs Boluspor** — `16:00` | Trendyol 1. Lig <https://fixbettv84.com/channel.html?id=trtspor>
 - ⏰ **Türkiye vs Sırbistan** — `16:00` | CEV Kadınlar Avrupa Şampiyonası <https://fixbettv84.com/channel.html?id=trt1>
@@ -67,7 +70,7 @@
 - ⏰ Fenerbahçe vs Beşiktaş — 20:00
 
 ### İngiltere Premier Lig
-- ⏰ Newcastle vs Bournemouth — 14:30
+- 🔴 Newcastle vs Bournemouth — 14:30
 - ⏰ Brighton vs Leeds United — 17:00
 - ⏰ Fulham vs Crystal Palace — 17:00
 - ⏰ Manchester City vs Coventry — 17:00
