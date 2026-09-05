@@ -184,6 +184,134 @@ def test_static_url_channel_and_disabled_panel():
     print("OK: static_url_channel_and_disabled_panel")
 
 
+SEL_BASE = "https://www.sporcafe-aaaa.xyz"
+PLAYER = "https://main.uxsyplayer1234abcd.click"
+
+
+def _selcuk_panel(**over):
+    panel = {
+        "id": "selcuk", "name": "SELÇUK SPOR", "icon": "🎥",
+        "base_url": SEL_BASE,
+        "entry_urls": ["https://www.sporcafe-old.xyz/"],
+        "mirror": {"pattern": "sporcafe{n}.xyz", "preferred_number": 8, "scan_window": 2,
+                   "must_contain_any": ["uxsyplayer"]},
+        "health_path": "/",
+        "player": {
+            "domain_pattern": r"https?://(main\.uxsyplayer[0-9a-zA-Z\-]+\.click)",
+            "default_base": "https://main.uxsyplayerDEFAULT.click",
+            "stream_base_patterns": [r"this\.adsBaseUrl\s*=\s*['\"]([^'\"]+)"],
+            "stream_template": "{stream_base}{slug}/playlist.m3u8",
+        },
+        "page_template": "{player_base}/index.php?id={slug}",
+        "embed_template": "{player_base}/index.php?id={slug}",
+        "referrer": "{base_url}/",
+        "channels": [
+            {"slug": "selcukbeinsports1", "name": "BEIN SPORTS 1"},
+            {"slug": "selcukssport", "name": "S SPORT"},
+        ],
+    }
+    panel.update(over)
+    return panel
+
+
+class RedirectNet(FakeNet):
+    """url -> ("redirect", hedef) girdileri yönlendirme gibi davranır."""
+
+    def __call__(self, url: str, headers: dict, timeout: float):
+        self.calls.append((url, dict(headers)))
+        entry = self.pages.get(url)
+        if entry and entry[0] == "redirect":
+            target = entry[1]
+            status, body = self.pages.get(target, (404, ""))
+            return extras.FetchResult(status, target, body)
+        if entry:
+            return extras.FetchResult(entry[0], url, entry[1])
+        return None
+
+
+def test_stream_from_rules_builds_playlist_url():
+    rules = _selcuk_panel()["player"]
+    fmt = {"slug": "selcukssport"}
+    assert extras.stream_from_rules("x; this.adsBaseUrl = 'https://cdn.sel/live/'; y", rules, fmt) \
+        == "https://cdn.sel/live/selcukssport/playlist.m3u8"
+    assert extras.stream_from_rules("<html>reklam</html>", rules, fmt) is None
+    # kural yoksa / şablon boşsa None
+    assert extras.stream_from_rules("this.adsBaseUrl = 'https://x/'", None, fmt) is None
+    print("OK: stream_from_rules_builds_playlist_url")
+
+
+def test_selcuk_two_stage_resolution():
+    """Ana sayfa → oynatıcı sunucusu → adsBaseUrl → {stream_base}{slug}/playlist.m3u8"""
+    now = datetime(2026, 9, 5, 12, 0, tzinfo=timezone.utc)
+    net = FakeNet({
+        SEL_BASE + "/": (200, f'<iframe src="{PLAYER}/index.php?id=selcukbeinsports1"></iframe> uxsyplayer'),
+        PLAYER + "/index.php?id=selcukbeinsports1": (200, "this.adsBaseUrl = 'https://cdn.sel/hls/';"),
+        PLAYER + "/index.php?id=selcukssport": (200, "<html>sadece reklam</html>"),
+    })
+    out = extras.resolve_panel(_selcuk_panel(), None, net, extras.DEFAULT_HEADERS, 5, now, 6)
+    assert out["healthy"] is True and out["base_url"] == SEL_BASE
+    assert out["player_base"] == PLAYER
+    # sağlık kontrolü health_path ("/") üzerinden yapıldı, ana sayfa ikinci kez çekilmedi
+    assert net.calls[0][0] == SEL_BASE + "/"
+    assert sum(1 for u, _ in net.calls if u == SEL_BASE + "/") == 1
+    by = {c["slug"]: c for c in out["channels"]}
+    bs1 = by["selcukbeinsports1"]
+    assert bs1["fresh"] is True
+    assert [s["url"] for s in bs1["sources"]] == [
+        "https://cdn.sel/hls/selcukbeinsports1/playlist.m3u8",
+        PLAYER + "/index.php?id=selcukbeinsports1",
+    ]
+    assert bs1["referrer"] == SEL_BASE + "/"
+    # oynatıcı isteğinde Referer = site
+    hdr = next(h for u, h in net.calls if u == PLAYER + "/index.php?id=selcukbeinsports1")
+    assert hdr["Referer"] == SEL_BASE + "/"
+    ss = by["selcukssport"]
+    assert ss["resolved"] is False
+    assert [s["type"] for s in ss["sources"]] == ["embed"]  # yalnızca oynatıcı sayfası yedeği
+    print("OK: selcuk_two_stage_resolution")
+
+
+def test_selcuk_entry_url_redirect_and_player_fallback():
+    """Site adı değişti: eski giriş adresi yeni adrese yönlendiriyor; oynatıcı adı
+    sayfada bulunamazsa son bilinen / varsayılan oynatıcı kullanılır."""
+    now = datetime(2026, 9, 5, 12, 0, tzinfo=timezone.utc)
+    new_base = "https://www.sporcafe-bbbb.xyz"
+    net = RedirectNet({
+        # SEL_BASE kapalı (None); eski giriş adresi yeni siteye yönlendiriyor
+        "https://www.sporcafe-old.xyz/": ("redirect", new_base + "/"),
+        new_base + "/": (200, "<html>uxsyplayer yükleniyor (alan adı script içinde)</html>"),
+        "https://main.uxsyplayerPREV.click/index.php?id=selcukbeinsports1": (200, "this.adsBaseUrl='https://cdn2/';"),
+    })
+    previous = {"base_url": SEL_BASE, "player_base": "https://main.uxsyplayerPREV.click", "channels": []}
+    out = extras.resolve_panel(_selcuk_panel(), previous, net, extras.DEFAULT_HEADERS, 5, now, 6)
+    assert out["base_url"] == new_base and out["healthy"] is True
+    assert out["player_base"] == "https://main.uxsyplayerPREV.click"  # son bilinen oynatıcı korunur
+    bs1 = out["channels"][0]
+    assert bs1["sources"][0]["url"] == "https://cdn2/selcukbeinsports1/playlist.m3u8"
+
+    # hiç önceki yoksa yapılandırmadaki varsayılan oynatıcı
+    net2 = RedirectNet({new_base + "/": (200, "uxsyplayer")})
+    out2 = extras.resolve_panel(_selcuk_panel(base_url=new_base), None, net2, extras.DEFAULT_HEADERS, 5, now, 6)
+    assert out2["player_base"] == "https://main.uxsyplayerDEFAULT.click"
+    assert out2["channels"][0]["sources"][-1]["url"].startswith("https://main.uxsyplayerDEFAULT.click/index.php?id=")
+    print("OK: selcuk_entry_url_redirect_and_player_fallback")
+
+
+def test_selcuk_mirror_scan_numbered():
+    now = datetime(2026, 9, 5, 12, 0, tzinfo=timezone.utc)
+    net = FakeNet({
+        "https://sporcafe9.xyz/": (200, f'src="{PLAYER}/x.js" uxsyplayer'),
+    })
+    panel = _selcuk_panel(entry_urls=[])
+    out = extras.resolve_panel(panel, None, net, extras.DEFAULT_HEADERS, 5, now, 6)
+    assert out["base_url"] == "https://sporcafe9.xyz" and out["healthy"] is True
+    assert out["player_base"] == PLAYER
+    # www.sporcafe-<hex> adreslerinden numara türetilmez, tarama preferred_number çevresinde
+    assert extras._num_in("https://www.sporcafe-0c2608ad69.xyz") == 0
+    assert extras.mirror_candidates(panel["mirror"], SEL_BASE)[0] == "sporcafe10.xyz"
+    print("OK: selcuk_mirror_scan_numbered")
+
+
 def test_refresh_writes_output_and_site_embeds_extra():
     """Gerçek yapılandırma dosyasıyla uçtan uca: output json + index.html."""
     now = datetime(2026, 9, 5, 12, 0, tzinfo=timezone.utc)
@@ -191,8 +319,15 @@ def test_refresh_writes_output_and_site_embeds_extra():
     assert cfg["panels"][0]["id"] == "atom"
     assert len(cfg["panels"][0]["channels"]) == 14
 
+    sel_cfg = next(p for p in cfg["panels"] if p["id"] == "selcuk")
+    assert len(sel_cfg["channels"]) == 14
+    sel_base = sel_cfg["base_url"]
+    player = "https://main.uxsyplayerNEW.click"
     net = FakeNet({
         BASE + "/kanal/bein-sports-1": (200, 'src:"https://edge.x/bs1/index.m3u8"'),
+        # Selçuk: ana sayfa oynatıcı alan adını verir, oynatıcı sayfası adsBaseUrl taşır
+        sel_base + "/": (200, f'<script src="{player}/embed.js"></script> uxsyplayer'),
+        player + "/index.php?id=selcukbeinsports1": (200, "this.adsBaseUrl = 'https://cdn.sel/hls/';"),
     })
     with tempfile.TemporaryDirectory() as tmp:
         orig_out, orig_idx = extras.EXTRA_OUTPUT, site.INDEX_OUT
@@ -202,8 +337,15 @@ def test_refresh_writes_output_and_site_embeds_extra():
             data = extras.refresh(now, fetch=net)
             assert extras.EXTRA_OUTPUT.exists()
             saved = json.loads(extras.EXTRA_OUTPUT.read_text(encoding="utf-8"))
-            assert saved["total"] == 14 and saved["panels"][0]["resolved"] == 1
+            assert saved["total"] == 28 and saved["panels"][0]["resolved"] == 1
             assert saved["source"] == "output/extra_channels.json"
+            sel = saved["panels"][1]
+            assert sel["id"] == "selcuk" and sel["player_base"] == player and sel["resolved"] == 1
+            sbs1 = sel["channels"][0]
+            assert sbs1["sources"][0]["url"] == "https://cdn.sel/hls/selcukbeinsports1/playlist.m3u8"
+            assert sbs1["sources"][-1] == {"type": "embed", "label": "Site",
+                                           "url": player + "/index.php?id=selcukbeinsports1"}
+            assert sbs1["referrer"] == sel_base + "/"
 
             out = site.build_index_html([], {"total": 0, "by_brand": {}, "channels": []},
                                         datetime(2026, 9, 5, 15, 0), extra_data=data)
@@ -216,10 +358,12 @@ def test_refresh_writes_output_and_site_embeds_extra():
     assert '"atom:bein-sports-1"' in html
     assert "https://edge.x/bs1/index.m3u8" in html
     assert "https://tv.atomspor.workers.dev/?ID=s-sport" in html
+    assert '"selcuk:selcukbeinsports1"' in html and "SELÇUK SPOR" in html
+    assert "https://cdn.sel/hls/selcukbeinsports1/playlist.m3u8" in html
     assert 'const extraSource = "output/extra_channels.json"' in html
     assert 'id="hlsVideo"' in html and "hls.min.js" in html
     # noscript listesi
-    assert "⚡ ATOM SPOR" in html
+    assert "⚡ ATOM SPOR" in html and "⚡ SELÇUK SPOR" in html
     payload = site.extra_payload(data)
     assert payload["panels"][0]["channels"][0]["sources"][0]["type"] == "hls"
     assert "page_url" not in payload["panels"][0]["channels"][0]  # sayfaya gereksiz alan gömülmez
@@ -233,5 +377,9 @@ if __name__ == "__main__":
     test_mirror_scan_when_address_changes()
     test_previous_resolution_is_kept_when_fresh()
     test_static_url_channel_and_disabled_panel()
+    test_stream_from_rules_builds_playlist_url()
+    test_selcuk_two_stage_resolution()
+    test_selcuk_entry_url_redirect_and_player_fallback()
+    test_selcuk_mirror_scan_numbered()
     test_refresh_writes_output_and_site_embeds_extra()
     print("\nEKSTRA PANEL TESTLERİ GEÇTİ ✅")

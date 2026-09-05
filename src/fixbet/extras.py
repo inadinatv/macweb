@@ -1,11 +1,15 @@
-"""Ekstra paneller: doğrudan m3u8/HLS kaynaklı kanal grupları (ör. Atom Spor).
+"""Ekstra paneller: doğrudan m3u8/HLS kaynaklı kanal grupları (Atom Spor, Selçuk Spor …).
 
 config/extra_channels.yml içindeki panelleri okur ve her kanal için:
-  * kanal sayfasından m3u8 yayın adresini çıkarır (düz link, göreli link,
-    URL-encoded, base64/atob, iç içe iframe'ler),
+  * kanal/oynatıcı sayfasından m3u8 yayın adresini çıkarır (düz link, göreli link,
+    URL-encoded, base64/atob, iç içe iframe'ler) ya da sayfadaki yayın kökünden
+    (``this.adsBaseUrl = '…'`` gibi) şablonla kurar,
   * çıkaramazsa son başarılı çözümü (belirli bir süre) korur,
-  * yedek m3u8 şablonunu ve (istenirse) kanal sayfasını iframe yedeği olarak ekler,
-  * panelin adresi değiştiyse numaralı ayna taraması yapar (atomsportv501 → 502 …).
+  * yedek m3u8 şablonunu ve (istenirse) sayfayı iframe yedeği olarak ekler,
+  * panelin adresi değiştiyse bilinen giriş adreslerini (yönlendirme) ve numaralı
+    ayna taramasını dener (atomsportv501 → 502 …, sporcafe8 → …),
+  * iki aşamalı sitelerde (Selçuk) ana sayfadan oynatıcı sunucusunu bulur
+    (``player.domain_pattern`` → ``{player_base}``).
 
 Sonuç output/extra_channels.json dosyasına yazılır; sayfa (index.html) bu
 kanalları kendi HLS oynatıcısında açar ve kaynakları sırayla dener.
@@ -41,7 +45,7 @@ DEFAULT_HEADERS = {
 @dataclass
 class FetchResult:
     status: int
-    url: str
+    url: str      # yönlendirmeler sonrası nihai adres
     text: str
 
 
@@ -66,6 +70,7 @@ _M3U8_ENC = re.compile(r'(https?%3A%2F%2F[^\s\'"<>]+(?:%2E|\.)m3u8[^\s\'"<>]*)',
 _ATOB = re.compile(r'atob\(\s*[\'"]([A-Za-z0-9+/=]+)[\'"]\s*\)')
 _B64_LONG = re.compile(r'[\'"]([A-Za-z0-9+/=]{40,})[\'"]')
 _IFRAME = re.compile(r'<iframe[^>]+src=["\'](https?://[^"\']+)["\']', re.I)
+_PLACEHOLDER = re.compile(r"\{[a-z_]+\}")
 
 
 def _b64_text(blob: str) -> str | None:
@@ -112,23 +117,62 @@ def find_m3u8(text: str, base_url: str) -> str | None:
     return None
 
 
+class _SafeMap(dict):
+    def __missing__(self, key: str) -> str:
+        return "{" + key + "}"
+
+
+def _fmt(template: str | None, mapping: dict[str, str]) -> str:
+    """Şablonu doldurur; bilinmeyen/boş bir yer tutucu kalırsa "" döner."""
+    if not template:
+        return ""
+    out = str(template).format_map(_SafeMap({k: v for k, v in mapping.items() if v}))
+    return "" if _PLACEHOLDER.search(out) else out
+
+
+def stream_from_rules(text: str, rules: dict[str, Any] | None, fmt: dict[str, str]) -> str | None:
+    """Sayfadaki yayın kökünden (``this.adsBaseUrl = '…'``) şablonla m3u8 kurar.
+
+    rules: {"stream_base_patterns": [regex, …], "stream_template": "{stream_base}{slug}/playlist.m3u8"}
+    """
+    if not rules or not text:
+        return None
+    patterns = rules.get("stream_base_patterns") or []
+    template = rules.get("stream_template") or ""
+    if not patterns or not template:
+        return None
+    for pat in patterns:
+        m = re.search(pat, text)
+        if not m:
+            continue
+        base = m.group(1) if m.groups() else m.group(0)
+        url = _fmt(template, dict(fmt, stream_base=base))
+        if url:
+            return url
+    return None
+
+
 def extract_m3u8_from_page(url: str, referrer: str | None, fetch: Fetcher,
                            headers: dict[str, str] | None = None, timeout: float = 8,
-                           depth: int = 2) -> str | None:
-    """Kanal sayfasını (ve iç içe iframe'lerini) tarayıp m3u8 adresini bulur."""
+                           depth: int = 2, rules: dict[str, Any] | None = None,
+                           fmt: dict[str, str] | None = None) -> str | None:
+    """Sayfayı (ve iç içe iframe'lerini) tarayıp m3u8 adresini bulur/kurar."""
     hdrs = dict(headers or DEFAULT_HEADERS)
     if referrer:
         hdrs["Referer"] = referrer
     res = fetch(url, hdrs, timeout)
     if res is None or res.status != 200:
         return None
+    built = stream_from_rules(res.text, rules, fmt or {})
+    if built:
+        return built
     found = find_m3u8(res.text, res.url or url)
     if found:
         return found
     if depth <= 0:
         return None
     for src in _IFRAME.findall(res.text)[:6]:
-        found = extract_m3u8_from_page(src, url, fetch, headers, timeout, depth - 1)
+        found = extract_m3u8_from_page(src, url, fetch, headers, timeout, depth - 1, rules, fmt)
         if found:
             return found
     return None
@@ -142,7 +186,7 @@ def load_config() -> dict[str, Any]:
 
 
 def load_output() -> dict[str, Any]:
-    """Önceki çalışmanın çıktısı (son bilinen adres + çözümlenmiş m3u8'ler)."""
+    """Önceki çalışmanın çıktısı (son bilinen adresler + çözümlenmiş m3u8'ler)."""
     if not EXTRA_OUTPUT.exists():
         return {}
     try:
@@ -155,17 +199,6 @@ def write_output(data: dict[str, Any]) -> str:
     os.makedirs(EXTRA_OUTPUT.parent, exist_ok=True)
     EXTRA_OUTPUT.write_text(json.dumps(data, ensure_ascii=False, indent=2), encoding="utf-8")
     return str(EXTRA_OUTPUT)
-
-
-class _SafeMap(dict):
-    def __missing__(self, key: str) -> str:
-        return "{" + key + "}"
-
-
-def _fmt(template: str | None, mapping: dict[str, str]) -> str:
-    if not template:
-        return ""
-    return str(template).format_map(_SafeMap(mapping))
 
 
 def _utc(now: datetime | None) -> datetime:
@@ -198,14 +231,31 @@ def _origin(url: str) -> str:
 
 
 def _num_in(domain: str | None) -> int:
-    body = (domain or "").split("//")[-1].split("/")[0].split(".")[0]
+    body = (domain or "").split("//")[-1].split("/")[0]
+    body = body[4:] if body.startswith("www.") else body
+    body = body.split(".")[0]
     digits = "".join(c for c in body if c.isdigit())
-    return int(digits) if digits else 0
+    return int(digits) if digits and "-" not in body else 0
+
+
+def _first_slug(panel: dict[str, Any]) -> str:
+    for ch in panel.get("channels") or []:
+        slug = str(ch.get("slug") or ch.get("id") or "").strip()
+        if slug:
+            return slug
+    return ""
 
 
 # ---------------------------------------------------------------------------
 # Adres (ayna) seçimi
 # ---------------------------------------------------------------------------
+@dataclass
+class Probe:
+    origin: str   # sağlıklı bulunan adresin kökü (yönlendirme sonrası)
+    url: str
+    text: str     # sağlık sayfasının içeriği (oynatıcı sunucusu buradan da bulunabilir)
+
+
 def mirror_candidates(mirror: dict[str, Any], known: str | None) -> list[str]:
     """Bilinen adres + tercih edilen numara çevresindeki adayları üretir.
 
@@ -225,68 +275,109 @@ def mirror_candidates(mirror: dict[str, Any], known: str | None) -> list[str]:
     return [pattern.format(n=n) for n in sorted(numbers, reverse=True)]
 
 
-def _first_slug(panel: dict[str, Any]) -> str:
-    for ch in panel.get("channels") or []:
-        slug = str(ch.get("slug") or ch.get("id") or "").strip()
-        if slug:
-            return slug
-    return ""
+def _health_target(base: str, panel: dict[str, Any]) -> tuple[str, list[str]]:
+    """Sağlık kontrolü için (url, aranacak işaretler) döndürür.
+
+    * ``health_path`` verilmişse o yol (ör. "/" + ``must_contain_any`` işaretleri),
+    * yoksa ilk kanalın sayfası (park sayfaları slug/m3u8 izi taşımadığı için elenir),
+    * o da kurulamıyorsa ana sayfa.
+    """
+    tokens = [str(t) for t in ((panel.get("mirror") or {}).get("must_contain_any") or [])]
+    health_path = panel.get("health_path")
+    if health_path:
+        return base.rstrip("/") + "/" + str(health_path).lstrip("/"), tokens
+    slug = _first_slug(panel)
+    page = _fmt(panel.get("page_template"), {"base_url": base, "slug": slug}) if slug else ""
+    if page:
+        return page, tokens or ([slug] + ["m3u8"])
+    return base.rstrip("/") + "/", tokens
 
 
 def _probe_base(candidate: str, panel: dict[str, Any], fetch: Fetcher,
-                headers: dict[str, str], timeout: float) -> str | None:
-    """Aday adres sağlıklıysa nihai kökünü (yönlendirme sonrası) döndürür.
-
-    Ana sayfa yerine ilk kanalın sayfası denenir: park edilmiş/yanlış alan adları
-    bu yolda 200 dönmez ya da içerikte kanal slug'ı / m3u8 izi bulunmaz.
-    ``mirror.must_contain_any`` verilirse bu işaretler kullanılır.
-    """
+                headers: dict[str, str], timeout: float) -> Probe | None:
+    """Aday adres sağlıklıysa nihai kökünü (yönlendirme sonrası) döndürür."""
     if not candidate:
         return None
     base = _origin(candidate if "://" in candidate else "https://" + candidate)
-    slug = _first_slug(panel)
-    url = _fmt(panel.get("page_template"), {"base_url": base, "slug": slug}) if (panel.get("page_template") and slug) \
-        else base + "/"
+    url, tokens = _health_target(base, panel)
     res = fetch(url, dict(headers), timeout)
     if res is None or res.status != 200:
         return None
-    tokens = list((panel.get("mirror") or {}).get("must_contain_any") or [])
-    if not tokens:
-        tokens = ([slug] if slug else []) + ["m3u8"]
     text = res.text or ""
     if tokens and not any(tok in text for tok in tokens):
         return None
-    return _origin(res.url or url)
+    final = res.url or url
+    return Probe(_origin(final), final, text)
 
 
 def choose_base_url(panel: dict[str, Any], previous: dict[str, Any] | None, fetch: Fetcher | None,
-                    headers: dict[str, str], timeout: float) -> tuple[str, bool | None]:
-    """(base_url, healthy) döndürür. fetch None ise ağ kullanılmaz (healthy=None).
+                    headers: dict[str, str], timeout: float) -> tuple[str, bool | None, str]:
+    """(base_url, healthy, sağlık sayfası HTML) döndürür. fetch None ise ağ kullanılmaz.
 
-    Sıra: son bilinen adres → yapılandırmadaki adres → numaralı ayna taraması.
+    Sıra: son bilinen adres → yapılandırmadaki adres → bilinen giriş adresleri
+    (``entry_urls``, yönlendirmeleri izlenir) → numaralı ayna taraması.
     Hiçbiri sağlıklı değilse son bilinen adres korunur (healthy=False).
     """
     prev_base = str((previous or {}).get("base_url") or "").strip()
     cfg_base = str(panel.get("base_url") or "").strip()
     known = prev_base or cfg_base
     if fetch is None:
-        return _origin(known) if known else "", None
+        return (_origin(known) if known else ""), None, ""
 
-    for cand in [c for c in (prev_base, cfg_base) if c]:
-        ok = _probe_base(cand, panel, fetch, headers, timeout)
-        if ok:
-            return ok, True
+    ordered: list[str] = []
+    for cand in [prev_base, cfg_base, *(str(u) for u in (panel.get("entry_urls") or []))]:
+        cand = cand.strip()
+        if cand and cand not in ordered:
+            ordered.append(cand)
+    for cand in ordered:
+        probe = _probe_base(cand, panel, fetch, headers, timeout)
+        if probe:
+            return probe.origin, True, probe.text
 
     candidates = mirror_candidates(panel.get("mirror") or {}, known)
     if candidates:
         workers = min(16, max(4, len(candidates)))
         with cf.ThreadPoolExecutor(max_workers=workers) as pool:
             results = list(pool.map(lambda d: _probe_base(d, panel, fetch, headers, timeout), candidates))
-        for ok in results:  # yüksek numara (yeni ayna) önce
-            if ok:
-                return ok, True
+        for probe in results:  # yüksek numara (yeni ayna) önce
+            if probe:
+                return probe.origin, True, probe.text
 
-    return (_origin(known) if known else ""), False
+    return (_origin(known) if known else ""), False, ""
+
+
+def _match_domain(pattern: str, text: str) -> str:
+    if not pattern or not text:
+        return ""
+    m = re.search(pattern, text)
+    if not m:
+        return ""
+    dom = m.group(1) if m.groups() else m.group(0)
+    if "://" not in dom:
+        dom = "https://" + dom
+    return _origin(dom)
+
+
+def find_player_base(panel: dict[str, Any], base_url: str, healthy: bool | None, html: str,
+                     previous: dict[str, Any] | None, fetch: Fetcher | None,
+                     headers: dict[str, str], timeout: float) -> str:
+    """İki aşamalı sitelerde oynatıcı sunucusunu bulur (``player.domain_pattern``).
+
+    Sağlık sayfasında yoksa ana sayfa çekilir; o da olmazsa son bilinen ya da
+    yapılandırmadaki varsayılan (``player.default_base``) kullanılır.
+    """
+    player = panel.get("player") or {}
+    pattern = str(player.get("domain_pattern") or "")
+    if not pattern:
+        return ""
+    found = _match_domain(pattern, html)
+    if not found and fetch is not None and healthy and base_url:
+        res = fetch(base_url.rstrip("/") + "/", dict(headers), timeout)
+        if res is not None and res.status == 200:
+            found = _match_domain(pattern, res.text or "")
+    if found:
+        return found
+    return str((previous or {}).get("player_base") or player.get("default_base") or "").rstrip("/")
 
 
 # ---------------------------------------------------------------------------
@@ -298,23 +389,35 @@ def _channel_icon(name: str) -> str:
     return channel_icon(name)
 
 
-def resolve_channel(panel: dict[str, Any], base_url: str, healthy: bool | None, ch: dict[str, Any],
+def resolve_channel(panel: dict[str, Any], ctx: dict[str, Any], ch: dict[str, Any],
                     previous: dict[str, Any] | None, fetch: Fetcher | None, headers: dict[str, str],
                     timeout: float, now: datetime, keep_hours: float | None) -> dict[str, Any]:
+    """Tek kanal için kaynak listesini üretir.
+
+    ctx: {"base_url", "healthy", "player_base"} — panel düzeyinde bulunan adresler.
+    """
     slug = str(ch.get("slug") or ch.get("id") or "").strip()
     name = str(ch.get("name") or slug).strip()
     panel_id = str(panel.get("id") or "extra")
-    fmt = {"base_url": base_url.rstrip("/"), "slug": slug}
+    base_url = str(ctx.get("base_url") or "").rstrip("/")
+    healthy = ctx.get("healthy")
+    fmt = {"base_url": base_url, "slug": slug, "player_base": str(ctx.get("player_base") or "").rstrip("/")}
 
-    page_url = _fmt(panel.get("page_template"), fmt) if (base_url and slug) else ""
+    page_url = _fmt(panel.get("page_template"), fmt) if slug else ""
+    if panel.get("embed_template"):
+        embed_url = _fmt(panel.get("embed_template"), fmt) if slug else ""
+    else:
+        embed_url = page_url if panel.get("embed_fallback") else ""
     fallback = _fmt(panel.get("fallback_template"), fmt) if slug else ""
     static = str(ch.get("url") or "").strip()
-    referrer = _fmt(panel.get("referrer"), fmt) or base_url
+    referrer = _fmt(panel.get("referrer"), fmt) or (base_url + "/" if base_url else "")
+    rules = panel.get("player") or None
 
-    # Adres kapalıysa (healthy=False) 14 kanal için boşuna istek atılmaz; son çözüm/yedek kullanılır
+    # Adres kapalıysa (healthy=False) kanal başına boşuna istek atılmaz; son çözüm/yedek kullanılır
     resolved, resolved_at, stale = "", None, False
     if page_url and fetch is not None and healthy is not False:
-        resolved = extract_m3u8_from_page(page_url, referrer, fetch, headers, timeout) or ""
+        resolved = extract_m3u8_from_page(page_url, referrer, fetch, headers, timeout,
+                                          rules=rules, fmt=fmt) or ""
         if resolved:
             resolved_at = now.isoformat(timespec="seconds")
     if not resolved and previous:
@@ -331,8 +434,7 @@ def resolve_channel(panel: dict[str, Any], base_url: str, healthy: bool | None, 
     add(static, "hls")
     add(resolved, "hls")
     add(fallback, "hls")
-    if panel.get("embed_fallback") and page_url:
-        add(page_url, "embed")
+    add(embed_url, "embed")
     n = 0
     for s in sources:
         if s["type"] == "hls":
@@ -364,13 +466,16 @@ def resolve_channel(panel: dict[str, Any], base_url: str, healthy: bool | None, 
 def resolve_panel(panel: dict[str, Any], previous: dict[str, Any] | None, fetch: Fetcher | None,
                   headers: dict[str, str], timeout: float, now: datetime, keep_hours: float | None,
                   max_workers: int = 10) -> dict[str, Any]:
-    base_url, healthy = choose_base_url(panel, previous, fetch, headers, timeout)
+    base_url, healthy, html = choose_base_url(panel, previous, fetch, headers, timeout)
+    player_base = find_player_base(panel, base_url, healthy, html, previous, fetch, headers, timeout)
+    ctx = {"base_url": base_url, "healthy": healthy, "player_base": player_base}
+
     prev_channels = {c.get("slug"): c for c in (previous or {}).get("channels", [])}
     chans = [c for c in (panel.get("channels") or []) if (c.get("slug") or c.get("id"))]
 
     def work(ch: dict[str, Any]) -> dict[str, Any]:
         prev = prev_channels.get(str(ch.get("slug") or ch.get("id")))
-        return resolve_channel(panel, base_url, healthy, ch, prev, fetch, headers, timeout, now, keep_hours)
+        return resolve_channel(panel, ctx, ch, prev, fetch, headers, timeout, now, keep_hours)
 
     if fetch is not None and len(chans) > 1:
         with cf.ThreadPoolExecutor(max_workers=max(1, min(max_workers, len(chans)))) as pool:
@@ -383,6 +488,7 @@ def resolve_panel(panel: dict[str, Any], previous: dict[str, Any] | None, fetch:
         "name": str(panel.get("name") or "EXTRA"),
         "icon": str(panel.get("icon") or "⚡"),
         "base_url": base_url,
+        "player_base": player_base,
         "healthy": healthy,
         "resolved": sum(1 for c in channels if c["resolved"]),
         "fresh": sum(1 for c in channels if c["fresh"]),
@@ -446,6 +552,7 @@ def summary(data: dict[str, Any]) -> str:
     parts = []
     for p in data.get("panels", []):
         state = {True: "OK", False: "DOWN", None: "offline"}.get(p.get("healthy"), "?")
+        player = f" · player {p['player_base']}" if p.get("player_base") else ""
         parts.append(f"{p['name']}: {p.get('resolved', 0)}/{p.get('total', 0)} m3u8 "
-                     f"({p.get('fresh', 0)} taze) · {p.get('base_url') or '—'} [{state}]")
+                     f"({p.get('fresh', 0)} taze) · {p.get('base_url') or '—'}{player} [{state}]")
     return " | ".join(parts) if parts else "ekstra panel yok"

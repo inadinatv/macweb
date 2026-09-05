@@ -1096,7 +1096,8 @@
                 state.currentSources = ch.sources.slice();
                 state.currentSourceIndex = 0;
                 setPlayerMode("hls");
-                setPlayerHeader(ch.name, ch.icon || "⚡", (ch.panel_name || "EXTRA") + " · M3U8");
+                const hasHls = ch.sources.some((s) => s.type === "hls");
+                setPlayerHeader(ch.name, ch.icon || "⚡", (ch.panel_name || "EXTRA") + (hasHls ? " · M3U8" : " · PLAYER"));
                 markActiveCard();
                 markActiveExtraCard();
                 if (history && history.replaceState) {
@@ -1148,8 +1149,9 @@
                         card.setAttribute("title", ch.name + " — m3u8 yayını oynatıcıda aç" +
                             (ch.resolved ? "" : " (yedek kaynak)"));
                         card.style.animationDelay = Math.min(visible * 18, 320) + "ms";
+                        const hasHls = (ch.sources || []).some((s) => s.type === "hls");
                         card.innerHTML =
-                            '<span class="ch-status">M3U8</span>' +
+                            '<span class="ch-status">' + (hasHls ? "M3U8" : "PLAYER") + "</span>" +
                             '<span class="ch-number">' + pad(n) + "</span>" +
                             '<span class="ch-live-dot" title="' + (ch.resolved ? "yayın adresi güncel" : "yedek kaynak") + '"></span>' +
                             '<span class="ch-icon-wrap">' + (ch.icon || "⚡") + "</span>" +

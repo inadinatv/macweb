@@ -1,14 +1,15 @@
 {
   "updated_at": "2026-09-05T13:42:59+00:00",
   "source": "output/extra_channels.json",
-  "total": 14,
+  "total": 28,
   "panels": [
     {
       "id": "atom",
       "name": "ATOM SPOR",
       "icon": "⚛️",
       "base_url": "https://atomsportv501.top",
-      "healthy": false,
+      "player_base": "",
+      "healthy": null,
       "resolved": 0,
       "fresh": 0,
       "total": 14,
@@ -396,6 +397,341 @@
             {
               "type": "embed",
               "url": "https://atomsportv501.top/kanal/bein-sports-haber",
+              "label": "Site"
+            }
+          ],
+          "resolved": false,
+          "fresh": false,
+          "resolved_url": null,
+          "resolved_at": null,
+          "stale": false
+        }
+      ]
+    },
+    {
+      "id": "selcuk",
+      "name": "SELÇUK SPOR",
+      "icon": "🎥",
+      "base_url": "https://www.sporcafe-0c2608ad69.xyz",
+      "player_base": "https://main.uxsyplayer6859599e6c.click",
+      "healthy": null,
+      "resolved": 0,
+      "fresh": 0,
+      "total": 14,
+      "channels": [
+        {
+          "id": "selcuk:selcukbeinsports1",
+          "slug": "selcukbeinsports1",
+          "name": "BEIN SPORTS 1",
+          "panel": "selcuk",
+          "panel_name": "SELÇUK SPOR",
+          "icon": "⚽",
+          "logo": "",
+          "page_url": "https://main.uxsyplayer6859599e6c.click/index.php?id=selcukbeinsports1",
+          "referrer": "https://www.sporcafe-0c2608ad69.xyz/",
+          "sources": [
+            {
+              "type": "embed",
+              "url": "https://main.uxsyplayer6859599e6c.click/index.php?id=selcukbeinsports1",
+              "label": "Site"
+            }
+          ],
+          "resolved": false,
+          "fresh": false,
+          "resolved_url": null,
+          "resolved_at": null,
+          "stale": false
+        },
+        {
+          "id": "selcuk:selcukbeinsports2",
+          "slug": "selcukbeinsports2",
+          "name": "BEIN SPORTS 2",
+          "panel": "selcuk",
+          "panel_name": "SELÇUK SPOR",
+          "icon": "⚽",
+          "logo": "",
+          "page_url": "https://main.uxsyplayer6859599e6c.click/index.php?id=selcukbeinsports2",
+          "referrer": "https://www.sporcafe-0c2608ad69.xyz/",
+          "sources": [
+            {
+              "type": "embed",
+              "url": "https://main.uxsyplayer6859599e6c.click/index.php?id=selcukbeinsports2",
+              "label": "Site"
+            }
+          ],
+          "resolved": false,
+          "fresh": false,
+          "resolved_url": null,
+          "resolved_at": null,
+          "stale": false
+        },
+        {
+          "id": "selcuk:selcukbeinsports3",
+          "slug": "selcukbeinsports3",
+          "name": "BEIN SPORTS 3",
+          "panel": "selcuk",
+          "panel_name": "SELÇUK SPOR",
+          "icon": "⚽",
+          "logo": "",
+          "page_url": "https://main.uxsyplayer6859599e6c.click/index.php?id=selcukbeinsports3",
+          "referrer": "https://www.sporcafe-0c2608ad69.xyz/",
+          "sources": [
+            {
+              "type": "embed",
+              "url": "https://main.uxsyplayer6859599e6c.click/index.php?id=selcukbeinsports3",
+              "label": "Site"
+            }
+          ],
+          "resolved": false,
+          "fresh": false,
+          "resolved_url": null,
+          "resolved_at": null,
+          "stale": false
+        },
+        {
+          "id": "selcuk:selcukbeinsports4",
+          "slug": "selcukbeinsports4",
+          "name": "BEIN SPORTS 4",
+          "panel": "selcuk",
+          "panel_name": "SELÇUK SPOR",
+          "icon": "⚽",
+          "logo": "",
+          "page_url": "https://main.uxsyplayer6859599e6c.click/index.php?id=selcukbeinsports4",
+          "referrer": "https://www.sporcafe-0c2608ad69.xyz/",
+          "sources": [
+            {
+              "type": "embed",
+              "url": "https://main.uxsyplayer6859599e6c.click/index.php?id=selcukbeinsports4",
+              "label": "Site"
+            }
+          ],
+          "resolved": false,
+          "fresh": false,
+          "resolved_url": null,
+          "resolved_at": null,
+          "stale": false
+        },
+        {
+          "id": "selcuk:selcukbeinsports5",
+          "slug": "selcukbeinsports5",
+          "name": "BEIN SPORTS 5",
+          "panel": "selcuk",
+          "panel_name": "SELÇUK SPOR",
+          "icon": "⚽",
+          "logo": "",
+          "page_url": "https://main.uxsyplayer6859599e6c.click/index.php?id=selcukbeinsports5",
+          "referrer": "https://www.sporcafe-0c2608ad69.xyz/",
+          "sources": [
+            {
+              "type": "embed",
+              "url": "https://main.uxsyplayer6859599e6c.click/index.php?id=selcukbeinsports5",
+              "label": "Site"
+            }
+          ],
+          "resolved": false,
+          "fresh": false,
+          "resolved_url": null,
+          "resolved_at": null,
+          "stale": false
+        },
+        {
+          "id": "selcuk:selcukbeinsportsmax1",
+          "slug": "selcukbeinsportsmax1",
+          "name": "BEIN SPORTS MAX 1",
+          "panel": "selcuk",
+          "panel_name": "SELÇUK SPOR",
+          "icon": "⚽",
+          "logo": "",
+          "page_url": "https://main.uxsyplayer6859599e6c.click/index.php?id=selcukbeinsportsmax1",
+          "referrer": "https://www.sporcafe-0c2608ad69.xyz/",
+          "sources": [
+            {
+              "type": "embed",
+              "url": "https://main.uxsyplayer6859599e6c.click/index.php?id=selcukbeinsportsmax1",
+              "label": "Site"
+            }
+          ],
+          "resolved": false,
+          "fresh": false,
+          "resolved_url": null,
+          "resolved_at": null,
+          "stale": false
+        },
+        {
+          "id": "selcuk:selcukbeinsportsmax2",
+          "slug": "selcukbeinsportsmax2",
+          "name": "BEIN SPORTS MAX 2",
+          "panel": "selcuk",
+          "panel_name": "SELÇUK SPOR",
+          "icon": "⚽",
+          "logo": "",
+          "page_url": "https://main.uxsyplayer6859599e6c.click/index.php?id=selcukbeinsportsmax2",
+          "referrer": "https://www.sporcafe-0c2608ad69.xyz/",
+          "sources": [
+            {
+              "type": "embed",
+              "url": "https://main.uxsyplayer6859599e6c.click/index.php?id=selcukbeinsportsmax2",
+              "label": "Site"
+            }
+          ],
+          "resolved": false,
+          "fresh": false,
+          "resolved_url": null,
+          "resolved_at": null,
+          "stale": false
+        },
+        {
+          "id": "selcuk:selcukssport",
+          "slug": "selcukssport",
+          "name": "S SPORT",
+          "panel": "selcuk",
+          "panel_name": "SELÇUK SPOR",
+          "icon": "🏀",
+          "logo": "",
+          "page_url": "https://main.uxsyplayer6859599e6c.click/index.php?id=selcukssport",
+          "referrer": "https://www.sporcafe-0c2608ad69.xyz/",
+          "sources": [
+            {
+              "type": "embed",
+              "url": "https://main.uxsyplayer6859599e6c.click/index.php?id=selcukssport",
+              "label": "Site"
+            }
+          ],
+          "resolved": false,
+          "fresh": false,
+          "resolved_url": null,
+          "resolved_at": null,
+          "stale": false
+        },
+        {
+          "id": "selcuk:selcukssport2",
+          "slug": "selcukssport2",
+          "name": "S SPORT 2",
+          "panel": "selcuk",
+          "panel_name": "SELÇUK SPOR",
+          "icon": "🏀",
+          "logo": "",
+          "page_url": "https://main.uxsyplayer6859599e6c.click/index.php?id=selcukssport2",
+          "referrer": "https://www.sporcafe-0c2608ad69.xyz/",
+          "sources": [
+            {
+              "type": "embed",
+              "url": "https://main.uxsyplayer6859599e6c.click/index.php?id=selcukssport2",
+              "label": "Site"
+            }
+          ],
+          "resolved": false,
+          "fresh": false,
+          "resolved_url": null,
+          "resolved_at": null,
+          "stale": false
+        },
+        {
+          "id": "selcuk:selcuktivibuspor1",
+          "slug": "selcuktivibuspor1",
+          "name": "TIVIBU SPOR 1",
+          "panel": "selcuk",
+          "panel_name": "SELÇUK SPOR",
+          "icon": "📺",
+          "logo": "",
+          "page_url": "https://main.uxsyplayer6859599e6c.click/index.php?id=selcuktivibuspor1",
+          "referrer": "https://www.sporcafe-0c2608ad69.xyz/",
+          "sources": [
+            {
+              "type": "embed",
+              "url": "https://main.uxsyplayer6859599e6c.click/index.php?id=selcuktivibuspor1",
+              "label": "Site"
+            }
+          ],
+          "resolved": false,
+          "fresh": false,
+          "resolved_url": null,
+          "resolved_at": null,
+          "stale": false
+        },
+        {
+          "id": "selcuk:selcuktivibuspor2",
+          "slug": "selcuktivibuspor2",
+          "name": "TIVIBU SPOR 2",
+          "panel": "selcuk",
+          "panel_name": "SELÇUK SPOR",
+          "icon": "📺",
+          "logo": "",
+          "page_url": "https://main.uxsyplayer6859599e6c.click/index.php?id=selcuktivibuspor2",
+          "referrer": "https://www.sporcafe-0c2608ad69.xyz/",
+          "sources": [
+            {
+              "type": "embed",
+              "url": "https://main.uxsyplayer6859599e6c.click/index.php?id=selcuktivibuspor2",
+              "label": "Site"
+            }
+          ],
+          "resolved": false,
+          "fresh": false,
+          "resolved_url": null,
+          "resolved_at": null,
+          "stale": false
+        },
+        {
+          "id": "selcuk:selcuksmartspor",
+          "slug": "selcuksmartspor",
+          "name": "SMARTSPOR",
+          "panel": "selcuk",
+          "panel_name": "SELÇUK SPOR",
+          "icon": "🏟️",
+          "logo": "",
+          "page_url": "https://main.uxsyplayer6859599e6c.click/index.php?id=selcuksmartspor",
+          "referrer": "https://www.sporcafe-0c2608ad69.xyz/",
+          "sources": [
+            {
+              "type": "embed",
+              "url": "https://main.uxsyplayer6859599e6c.click/index.php?id=selcuksmartspor",
+              "label": "Site"
+            }
+          ],
+          "resolved": false,
+          "fresh": false,
+          "resolved_url": null,
+          "resolved_at": null,
+          "stale": false
+        },
+        {
+          "id": "selcuk:selcukaspor",
+          "slug": "selcukaspor",
+          "name": "A SPOR",
+          "panel": "selcuk",
+          "panel_name": "SELÇUK SPOR",
+          "icon": "⚽",
+          "logo": "",
+          "page_url": "https://main.uxsyplayer6859599e6c.click/index.php?id=selcukaspor",
+          "referrer": "https://www.sporcafe-0c2608ad69.xyz/",
+          "sources": [
+            {
+              "type": "embed",
+              "url": "https://main.uxsyplayer6859599e6c.click/index.php?id=selcukaspor",
+              "label": "Site"
+            }
+          ],
+          "resolved": false,
+          "fresh": false,
+          "resolved_url": null,
+          "resolved_at": null,
+          "stale": false
+        },
+        {
+          "id": "selcuk:selcukeurosport1",
+          "slug": "selcukeurosport1",
+          "name": "EUROSPORT 1",
+          "panel": "selcuk",
+          "panel_name": "SELÇUK SPOR",
+          "icon": "🚴",
+          "logo": "",
+          "page_url": "https://main.uxsyplayer6859599e6c.click/index.php?id=selcukeurosport1",
+          "referrer": "https://www.sporcafe-0c2608ad69.xyz/",
+          "sources": [
+            {
+              "type": "embed",
+              "url": "https://main.uxsyplayer6859599e6c.click/index.php?id=selcukeurosport1",
               "label": "Site"
             }
           ],

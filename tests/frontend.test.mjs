@@ -254,7 +254,8 @@ test("EXTRA sekmesi Atom kanallarını m3u8 kartları olarak listeliyor", async 
   assert.equal(extraCards(window).length, EXTRA_COUNT);
   const first = extraCards(window)[0];
   assert.ok(first.classList.contains("extra"));
-  assert.equal(first.querySelector(".ch-status").textContent, "M3U8");
+  assert.ok(["M3U8", "PLAYER"].includes(first.querySelector(".ch-status").textContent));
+  assert.equal(first.querySelector(".ch-status").textContent, "M3U8", "Atom kanalında m3u8 kaynağı olmalı");
   assert.ok(first.querySelector(".ch-brand").textContent.includes("ATOM"), "panel adı kartta yok");
   const chips = [...window.document.querySelectorAll("#panelRow .chip")].map((c) => c.textContent);
   assert.ok(chips.some((t) => t.includes("ATOM SPOR")), "ATOM SPOR çipi yok: " + chips.join(","));
@@ -283,7 +284,7 @@ test("EXTRA karta tıklayınca m3u8 yayını hls.js ile <video> içinde açılı
   assert.ok((window.videoPlays || 0) >= 1, "video.play() çağrılmadı");
   assert.ok(!window.document.getElementById("playerError").classList.contains("active"), "hata katmanı açık");
   assert.equal(window.document.getElementById("playerTitle").textContent, ch.name);
-  assert.ok(window.document.getElementById("nowStatus").textContent.includes("M3U8"));
+  assert.ok(/M3U8|PLAYER/.test(window.document.getElementById("nowStatus").textContent));
   assert.deepEqual(window.scrolledTo, ["playerContainer"], "player'e kaydırma yapılmadı");
   assert.ok(card.classList.contains("active"), "seçili extra kart işaretlenmedi");
   assert.equal(window.location.hash, "#extra=" + encodeURIComponent(id), "derin bağlantı yazılmadı");
@@ -424,6 +425,7 @@ test("#extra= derin bağlantısı EXTRA sekmesini açıp yayını başlatıyor",
 
 test("output/extra_channels.json ile EXTRA listesi canlı tazeleniyor", async () => {
   const fresh = JSON.parse(JSON.stringify(EXTRA));
+  fresh.panels = fresh.panels.slice(0, 1);                       // yalnızca ilk panel kaldı
   fresh.panels[0].channels = fresh.panels[0].channels.slice(0, 3);
   fresh.panels[0].channels[0].sources.unshift({ type: "hls", url: "https://edge.test/new/bs1.m3u8", label: "Kaynak 0" });
   const fetchImpl = async (url) => ({
@@ -439,6 +441,33 @@ test("output/extra_channels.json ile EXTRA listesi canlı tazeleniyor", async ()
   window.inadina.playExtra(fresh.panels[0].channels[0].id, false);
   await tick();
   assert.equal(window.hlsLog[0], "load:https://edge.test/new/bs1.m3u8", "yeni m3u8 adresi kullanılmadı");
+  dom.window.close();
+});
+
+test("panel çipleri EXTRA kartlarını panele göre süzüyor (ATOM / SELÇUK)", async () => {
+  const { window, dom } = await loadPage();
+  window.inadina.setTab("extraTab");
+  assert.ok(EXTRA.panels.length >= 2, "en az iki extra panel bekleniyor (atom + selcuk)");
+  const chips = [...window.document.querySelectorAll("#panelRow .chip")];
+  assert.equal(chips.length, EXTRA.panels.length + 1, "TÜMÜ + her panel için bir çip olmalı");
+  const selcuk = chips.find((c) => c.textContent.includes("SELÇUK"));
+  assert.ok(selcuk, "SELÇUK SPOR çipi yok: " + chips.map((c) => c.textContent).join(","));
+  selcuk.click();
+  const selPanel = EXTRA.panels.find((p) => p.id === "selcuk");
+  assert.equal(extraCards(window).length, selPanel.channels.length, "Selçuk filtresi yanlış sayıda kart verdi");
+  assert.ok([...extraCards(window)].every((c) => c.querySelector(".ch-brand").textContent.includes("SELÇUK")));
+  // Selçuk kanalı da HLS oynatıcıda açılır (kaynaklar: m3u8 ve/veya oynatıcı sayfası)
+  extraCards(window)[0].click();
+  await tick();
+  assert.equal(window.inadina.state.currentExtraId, selPanel.channels[0].id);
+  const first = selPanel.channels[0].sources[0];
+  if (first.type === "hls") {
+    assert.equal(window.hlsLog[0], "load:" + first.url);
+  } else {
+    assert.equal(window.document.getElementById("liveIframe").src, first.url, "oynatıcı sayfası iframe'de açılmadı");
+  }
+  chips[0].click(); // TÜMÜ
+  assert.equal(extraCards(window).length, EXTRA_COUNT);
   dom.window.close();
 });
 
