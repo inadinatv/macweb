@@ -1,23 +1,21 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-09-05 13:43  
-> **Toplam maç:** 25  |  **Canlı:** 3  |  **Yaklaşan:** 21
+> **Güncellenme:** 2026-09-05 15:15  
+> **Toplam maç:** 25  |  **Canlı:** 7  |  **Yaklaşan:** 15
 
 ## 🔴 CANLI
 
-- 🔴 **Fiorentina vs Torino** — `16:00` | İtalya Serie A <https://fixbettv84.com/channel.html?id=ss2>
-- 🔴 **Bandırmaspor vs Boluspor** — `16:00` | Trendyol 1. Lig <https://fixbettv84.com/channel.html?id=trtspor>
 - 🔴 **Türkiye vs Sırbistan** — `16:00` | CEV Kadınlar Avrupa Şampiyonası <https://fixbettv84.com/channel.html?id=trt1>
+- 🔴 **Brighton vs Leeds United** — `17:00` | İngiltere Premier Lig <https://fixbettv84.com/channel.html?id=bm1>
+- 🔴 **Fulham vs Crystal Palace** — `17:00` | İngiltere Premier Lig <https://fixbettv84.com/channel.html?id=bm2>
+- 🔴 **Manchester City vs Coventry** — `17:00` | İngiltere Premier Lig <https://fixbettv84.com/channel.html?id=b3>
+- 🔴 **Nottingham Forest vs Tottenham** — `17:00` | İngiltere Premier Lig <https://fixbettv84.com/channel.html?id=b5>
+- 🔴 **Erzurumspor vs Konyaspor** — `17:00` | Trendyol Süper Lig <https://fixbettv84.com/channel.html?id=b2>
+- 🔴 **Athletic Bilbao vs Atletico Madrid** — `17:15` | İspanya La Liga <https://fixbettv84.com/channel.html?id=ss>
 
 ## ⏰ YAKLAŞAN
 
-- ⏰ **Brighton vs Leeds United** — `17:00` | İngiltere Premier Lig <https://fixbettv84.com/channel.html?id=bm1>
-- ⏰ **Fulham vs Crystal Palace** — `17:00` | İngiltere Premier Lig <https://fixbettv84.com/channel.html?id=bm2>
-- ⏰ **Manchester City vs Coventry** — `17:00` | İngiltere Premier Lig <https://fixbettv84.com/channel.html?id=b3>
-- ⏰ **Nottingham Forest vs Tottenham** — `17:00` | İngiltere Premier Lig <https://fixbettv84.com/channel.html?id=b5>
-- ⏰ **Erzurumspor vs Konyaspor** — `17:00` | Trendyol Süper Lig <https://fixbettv84.com/channel.html?id=b2>
-- ⏰ **Athletic Bilbao vs Atletico Madrid** — `17:15` | İspanya La Liga <https://fixbettv84.com/channel.html?id=ss>
 - ⏰ **Inter vs Napoli** — `19:00` | İtalya Serie A <https://fixbettv84.com/channel.html?id=ss2>
 - ⏰ **Polonya vs İtalya** — `19:00` | CEV Kadınlar Avrupa Şampiyonası <https://fixbettv84.com/channel.html?id=trtspor2>
 - ⏰ **Hull City vs Aston Villa** — `19:30` | İngiltere Premier Lig <https://fixbettv84.com/channel.html?id=b3>
@@ -37,6 +35,8 @@
 ## ✅ BİTTİ
 
 - ✅ **Newcastle vs Bournemouth** — `14:30` | İngiltere Premier Lig <https://fixbettv84.com/channel.html?id=b3>
+- ✅ **Fiorentina vs Torino** — `16:00` | İtalya Serie A <https://fixbettv84.com/channel.html?id=ss2>
+- ✅ **Bandırmaspor vs Boluspor** — `16:00` | Trendyol 1. Lig <https://fixbettv84.com/channel.html?id=trtspor>
 
 ## ⭐ GÜNÜN MAÇI
 
@@ -64,29 +64,29 @@
 - ⏰ Sporting Lisbon vs Nacional — 22:30
 
 ### Trendyol 1. Lig
-- 🔴 Bandırmaspor vs Boluspor — 16:00
+- ⏰ Bandırmaspor vs Boluspor — 16:00
 - ⏰ Keçiörengücü vs Sarıyer — 20:00
 - ⏰ Pendikspor vs Ümraniyespor — 20:00
 
 ### Trendyol Süper Lig
-- ⏰ Erzurumspor vs Konyaspor — 17:00
+- 🔴 Erzurumspor vs Konyaspor — 17:00
 - ⏰ Fenerbahçe vs Beşiktaş — 20:00
 
 ### İngiltere Premier Lig
 - ⏰ Newcastle vs Bournemouth — 14:30
-- ⏰ Brighton vs Leeds United — 17:00
-- ⏰ Fulham vs Crystal Palace — 17:00
-- ⏰ Manchester City vs Coventry — 17:00
-- ⏰ Nottingham Forest vs Tottenham — 17:00
+- 🔴 Brighton vs Leeds United — 17:00
+- 🔴 Fulham vs Crystal Palace — 17:00
+- 🔴 Manchester City vs Coventry — 17:00
+- 🔴 Nottingham Forest vs Tottenham — 17:00
 - ⏰ Hull City vs Aston Villa — 19:30
 
 ### İspanya La Liga
-- ⏰ Athletic Bilbao vs Atletico Madrid — 17:15
+- 🔴 Athletic Bilbao vs Atletico Madrid — 17:15
 - ⏰ Rayo Vallecano vs Racing Santander — 19:30
 - ⏰ Villarreal vs Deportivo — 22:00
 
 ### İtalya Serie A
-- 🔴 Fiorentina vs Torino — 16:00
+- ⏰ Fiorentina vs Torino — 16:00
 - ⏰ Inter vs Napoli — 19:00
 - ⏰ Roma vs Atalanta — 21:45
 
@@ -125,8 +125,8 @@
 - **A SPOR** — `7/24` <https://fixbettv84.com/channel.html?id=as>
 
 ### Eurosport
-- **EUROSPORT 1** — `7/24` <https://fixbettv84.com/channel.html?id=eu1>
-- **EUROSPORT 2** — `7/24` <https://fixbettv84.com/channel.html?id=eu2>
+- **EURO SPORT 1** — `7/24` <https://fixbettv84.com/channel.html?id=eu1>
+- **EURO SPORT 2** — `7/24` <https://fixbettv84.com/channel.html?id=eu2>
 
 ### Tabii Spor
 - **TABII SPOR** — `7/24` <https://fixbettv84.com/channel.html?id=ex7>
@@ -143,9 +143,9 @@
 - **TV 8,5** — `7/24` <https://fixbettv84.com/channel.html?id=tv85>
 
 ---
-## ⚡ EKSTRA PANELLER — m3u8 (14)
+## ⚡ EKSTRA PANELLER — m3u8 (28)
 
-### ⚛️ ATOM SPOR ⛔ `https://atomsportv501.top`
+### ⚛️ ATOM SPOR ⏸ `https://atomsportv501.top`
 - ⚪ **BEIN SPORTS 1** <https://tv.atomspor.workers.dev/?ID=bein-sports-1>
 - ⚪ **BEIN SPORTS 2** <https://tv.atomspor.workers.dev/?ID=bein-sports-2>
 - ⚪ **BEIN SPORTS 3** <https://tv.atomspor.workers.dev/?ID=bein-sports-3>
@@ -160,3 +160,19 @@
 - ⚪ **SMARTSPOR** <https://tv.atomspor.workers.dev/?ID=smart-spor>
 - ⚪ **TV 8,5** <https://tv.atomspor.workers.dev/?ID=tv-8-5>
 - ⚪ **BEIN SPORTS HABER** <https://tv.atomspor.workers.dev/?ID=bein-sports-haber>
+
+### 🎥 SELÇUK SPOR ⏸ `https://www.sporcafe-0c2608ad69.xyz`
+- ⚪ **BEIN SPORTS 1**
+- ⚪ **BEIN SPORTS 2**
+- ⚪ **BEIN SPORTS 3**
+- ⚪ **BEIN SPORTS 4**
+- ⚪ **BEIN SPORTS 5**
+- ⚪ **BEIN SPORTS MAX 1**
+- ⚪ **BEIN SPORTS MAX 2**
+- ⚪ **S SPORT**
+- ⚪ **S SPORT 2**
+- ⚪ **TIVIBU SPOR 1**
+- ⚪ **TIVIBU SPOR 2**
+- ⚪ **SMARTSPOR**
+- ⚪ **A SPOR**
+- ⚪ **EUROSPORT 1**
