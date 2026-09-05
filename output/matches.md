@@ -1,7 +1,7 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-09-05 15:06  
+> **Güncellenme:** 2026-09-05 15:15  
 > **Toplam maç:** 25  |  **Canlı:** 7  |  **Yaklaşan:** 15
 
 ## 🔴 CANLI
@@ -141,3 +141,38 @@
 - **ATV** — `7/24` <https://fixbettv84.com/channel.html?id=atv>
 - **TV 8** — `7/24` <https://fixbettv84.com/channel.html?id=tv8>
 - **TV 8,5** — `7/24` <https://fixbettv84.com/channel.html?id=tv85>
+
+---
+## ⚡ EKSTRA PANELLER — m3u8 (28)
+
+### ⚛️ ATOM SPOR ⏸ `https://atomsportv501.top`
+- ⚪ **BEIN SPORTS 1** <https://tv.atomspor.workers.dev/?ID=bein-sports-1>
+- ⚪ **BEIN SPORTS 2** <https://tv.atomspor.workers.dev/?ID=bein-sports-2>
+- ⚪ **BEIN SPORTS 3** <https://tv.atomspor.workers.dev/?ID=bein-sports-3>
+- ⚪ **BEIN SPORTS 4** <https://tv.atomspor.workers.dev/?ID=bein-sports-4>
+- ⚪ **BEIN SPORTS 5** <https://tv.atomspor.workers.dev/?ID=bein-sports-5>
+- ⚪ **S SPORT** <https://tv.atomspor.workers.dev/?ID=s-sport>
+- ⚪ **S SPORT 2** <https://tv.atomspor.workers.dev/?ID=s-sport-2>
+- ⚪ **S SPORT PLUS** <https://tv.atomspor.workers.dev/?ID=ssport-plus>
+- ⚪ **TIVIBU SPOR 1** <https://tv.atomspor.workers.dev/?ID=tivibu-spor-1>
+- ⚪ **TIVIBU SPOR 2** <https://tv.atomspor.workers.dev/?ID=tivibu-spor-2>
+- ⚪ **TIVIBU SPOR 3** <https://tv.atomspor.workers.dev/?ID=tivibu-spor-3>
+- ⚪ **SMARTSPOR** <https://tv.atomspor.workers.dev/?ID=smart-spor>
+- ⚪ **TV 8,5** <https://tv.atomspor.workers.dev/?ID=tv-8-5>
+- ⚪ **BEIN SPORTS HABER** <https://tv.atomspor.workers.dev/?ID=bein-sports-haber>
+
+### 🎥 SELÇUK SPOR ⏸ `https://www.sporcafe-0c2608ad69.xyz`
+- ⚪ **BEIN SPORTS 1**
+- ⚪ **BEIN SPORTS 2**
+- ⚪ **BEIN SPORTS 3**
+- ⚪ **BEIN SPORTS 4**
+- ⚪ **BEIN SPORTS 5**
+- ⚪ **BEIN SPORTS MAX 1**
+- ⚪ **BEIN SPORTS MAX 2**
+- ⚪ **S SPORT**
+- ⚪ **S SPORT 2**
+- ⚪ **TIVIBU SPOR 1**
+- ⚪ **TIVIBU SPOR 2**
+- ⚪ **SMARTSPOR**
+- ⚪ **A SPOR**
+- ⚪ **EUROSPORT 1**

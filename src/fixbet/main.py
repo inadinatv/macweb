@@ -5,6 +5,7 @@ Kullanım:
     python -m fixbet.main update-site   # sadece güncel adresi güncelle (current_site.yml)
     python -m fixbet.main matches       # sadece maçları çek ve kategorize et
     python -m fixbet.main build-index   # output/ verisinden index.html üret (çevrimdışı)
+    python -m fixbet.main extras        # sadece ekstra panelleri (m3u8) çözümle
     python -m fixbet.main serve [dk]    # sürekli çalışan izleme modu (aralık=dk dakika, vars. 5)
     python -m fixbet.main cat           # kategorize edilmiş özeti konsola yaz
 """
@@ -16,7 +17,7 @@ import time
 from datetime import datetime
 from zoneinfo import ZoneInfo
 
-from . import categorizer, channels, config, domain_checker, parser, reports, scraper, site
+from . import categorizer, channels, config, domain_checker, extras, parser, reports, scraper, site
 from .models import Match
 
 TZ = ZoneInfo("Europe/Istanbul")
@@ -60,8 +61,11 @@ def pipeline() -> dict:
     # 2b) 7/24 kanal listesi (güncel adresin ana sayfasından)
     channels_data = channels.categorize(channels.fetch_channels())
 
-    # 2c) GitHub Pages için repo köküne index.html üret (güncel adres + maçlar)
-    site.build_index_html(matches, channels_data)
+    # 2c) Ekstra paneller (Atom Spor vb. doğrudan m3u8 kaynakları) -> output/extra_channels.json
+    extra_data = refresh_extras(now)
+
+    # 2d) GitHub Pages için repo köküne index.html üret (güncel adres + maçlar + extra)
+    site.build_index_html(matches, channels_data, extra_data=extra_data)
 
     # 3) Raporlar
     reports.write_json_data(matches, categorized, site_info, channels_data)
@@ -76,6 +80,17 @@ def pipeline() -> dict:
         print(f"[!] yayınlama adımı hatası: {exc}")
 
     return {"site": site_info, "categorized": categorized, "matches": matches, "now": now}
+
+
+def refresh_extras(now: datetime | None = None) -> dict:
+    """Ekstra panellerin m3u8 adreslerini yeniler; hata olursa son çıktıyla devam eder."""
+    try:
+        data = extras.refresh(now)
+        print(f"[extras] {extras.summary(data)}")
+        return data
+    except Exception as exc:  # noqa: BLE001 - ekstra panel ana akışı durdurmasın
+        print(f"[!] Ekstra paneller çözümlenemedi: {exc} — son bilinen liste kullanılıyor.")
+        return extras.load_or_build(now)
 
 
 def load_matches_from_output(now: datetime | None = None) -> list[Match]:
@@ -121,10 +136,12 @@ def build_index_from_output() -> str | None:
         channels_data = json.loads(ch_path.read_text(encoding="utf-8")).get("channels", {})
 
     matches = categorizer.classify(matches, now)
-    out = site.build_index_html(matches, channels_data, now)
+    extra_data = extras.load_or_build(now)
+    out = site.build_index_html(matches, channels_data, now, extra_data=extra_data)
     live = sum(1 for m in matches if m.status == "live")
     print(f"index.html üretildi: {out}")
-    print(f"  {len(matches)} maç ({live} canlı) · {channels_data.get('total', 0)} kanal")
+    print(f"  {len(matches)} maç ({live} canlı) · {channels_data.get('total', 0)} kanal · "
+          f"{extra_data.get('total', 0)} extra (m3u8)")
     return out
 
 
@@ -162,6 +179,7 @@ def main(argv: list[str] | None = None) -> int:
 
     sub.add_parser("update-site", help="Sadece güncel adresi güncelle")
     sub.add_parser("build-index", help="output/ verisinden index.html'i yeniden üret (çevrimdışı)")
+    sub.add_parser("extras", help="Sadece ekstra panelleri (m3u8 kanallar) çözümle ve sayfayı güncelle")
     sub.add_parser("matches", help="Maçları çek ve kategorize et")
     sub.add_parser("cat", help="Özeti konsola bas")
 
@@ -176,6 +194,18 @@ def main(argv: list[str] | None = None) -> int:
         return 0
     if args.cmd == "build-index":
         return 0 if build_index_from_output() else 1
+    if args.cmd == "extras":
+        now = _now()
+        data = refresh_extras(now)
+        print(f"Ekstra: {extras.summary(data)}")
+        # Sayfayı da tazele (eldeki son maç/kanal verisiyle)
+        matches = categorizer.classify(load_matches_from_output(now), now)
+        import json as _json
+        ch_path = config.OUTPUT_DIR / "channels.json"
+        channels_data = (_json.loads(ch_path.read_text(encoding="utf-8")).get("channels", {})
+                         if ch_path.exists() else {})
+        site.build_index_html(matches, channels_data, now, extra_data=data)
+        return 0
     if args.cmd == "update-site":
         site = domain_checker.check_current_site()
         domain_checker.log(site)

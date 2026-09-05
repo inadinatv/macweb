@@ -1,0 +1,122 @@
+# ============================================================================
+#  fixbet-bot  —  Ekstra paneller (doğrudan m3u8 / HLS yayın kaynakları)
+#
+#  Ana sitedeki (fixbettv) 7/24 kanallardan bağımsız ek kaynaklar. Her panel
+#  sayfada "⚡ EXTRA" sekmesinde ayrı bir grup (chip) olarak listelenir ve
+#  kanallar sayfanın kendi HLS oynatıcısında (hls.js / Safari yerel) açılır.
+#
+#  Yeni bir panel eklemek için `panels` altına yeni bir blok ekleyin:
+#    - id / name / icon        : sekmedeki grup adı ve simgesi
+#    - base_url                : kanal sayfalarının bulunduğu site (son bilinen)
+#    - entry_urls              : bilinen giriş adresleri; yönlendirme izlenerek
+#                                güncel adres bulunur (site adı sık değişiyorsa)
+#    - mirror                  : numaralı ayna taraması (atomsportv501 → 502 → …)
+#                                Sıra: son bilinen adres → base_url → entry_urls →
+#                                ayna taraması; hiçbiri açılmazsa son bilinen korunur
+#    - health_path             : sağlık kontrolü için yol (varsayılan: ilk kanal sayfası)
+#    - page_template           : m3u8'in çıkarılacağı sayfa ({base_url} {slug} {player_base})
+#    - player                  : iki aşamalı siteler için oynatıcı sunucusu:
+#          domain_pattern      : ana sayfada oynatıcı alan adını bulan regex → {player_base}
+#          default_base        : bulunamazsa kullanılacak son bilinen oynatıcı adresi
+#          stream_base_patterns: oynatıcı sayfasında yayın kökünü bulan regex'ler → {stream_base}
+#          stream_template     : yayın kökünden m3u8 kurma şablonu
+#    - fallback_template       : sayfadan m3u8 çıkmazsa kullanılacak yedek yayın
+#    - embed_fallback / embed_template : m3u8 hiç açılmazsa iframe'de denenecek sayfa
+#    - channels[].slug / name  : kanal listesi ({slug} şablonlarda kullanılır)
+#    - channels[].url          : (isteğe bağlı) sabit m3u8 adresi — varsa ilk kaynak
+#
+#  Bot her çalışmada m3u8 adreslerini yeniler ve output/extra_channels.json'a
+#  yazar; sayfa da bu dosyayı 5 dakikada bir yeniden okur. Oynatıcı, kanal için
+#  üretilen kaynakları sırayla dener: [çıkarılan m3u8, yedek m3u8, sayfa].
+# ============================================================================
+
+settings:
+  request_timeout_seconds: 8     # tek istek zaman aşımı
+  max_workers: 10                # paralel kanal tarama sayısı
+  keep_resolved_hours: 6         # m3u8 çıkarılamazsa son çözümü bu kadar saat koru
+
+panels:
+  # --------------------------------------------------------------------------
+  #  ATOM SPOR — kanal sayfasından m3u8 çıkarılır (tek aşama)
+  # --------------------------------------------------------------------------
+  - id: atom
+    name: "ATOM SPOR"
+    icon: "⚛️"
+    enabled: true
+    base_url: "https://atomsportv501.top"
+    mirror:
+      pattern: "atomsportv{n}.top"
+      preferred_number: 501
+      scan_window: 15
+      # Sağlık kontrolü ilk kanalın sayfasında yapılır; boş bırakılırsa
+      # "kanal slug'ı ya da m3u8 izi" aranır (park sayfaları elenir).
+      must_contain_any: []
+    page_template: "{base_url}/kanal/{slug}"
+    fallback_template: "https://tv.atomspor.workers.dev/?ID={slug}"
+    embed_fallback: true
+    referrer: "{base_url}"
+    logo: "https://hizliresim.com/gm50rk9b"
+    channels:
+      - { slug: "bein-sports-1",     name: "BEIN SPORTS 1" }
+      - { slug: "bein-sports-2",     name: "BEIN SPORTS 2" }
+      - { slug: "bein-sports-3",     name: "BEIN SPORTS 3" }
+      - { slug: "bein-sports-4",     name: "BEIN SPORTS 4" }
+      - { slug: "bein-sports-5",     name: "BEIN SPORTS 5" }
+      - { slug: "s-sport",           name: "S SPORT" }
+      - { slug: "s-sport-2",         name: "S SPORT 2" }
+      - { slug: "ssport-plus",       name: "S SPORT PLUS" }
+      - { slug: "tivibu-spor-1",     name: "TIVIBU SPOR 1" }
+      - { slug: "tivibu-spor-2",     name: "TIVIBU SPOR 2" }
+      - { slug: "tivibu-spor-3",     name: "TIVIBU SPOR 3" }
+      - { slug: "smart-spor",        name: "SMARTSPOR" }
+      - { slug: "tv-8-5",            name: "TV 8,5" }
+      - { slug: "bein-sports-haber", name: "BEIN SPORTS HABER" }
+
+  # --------------------------------------------------------------------------
+  #  SELÇUK SPOR (Sporcafe) — iki aşama:
+  #    1) ana sayfada oynatıcı sunucusu bulunur  (main.uxsyplayer<hex>.click)
+  #    2) oynatıcı sayfasında  this.adsBaseUrl = '…'  → {stream_base}{slug}/playlist.m3u8
+  #  Site adı sık değişir (sporcafe<N>.xyz ya da www.sporcafe-<hex>.xyz); bilinen
+  #  giriş adresleri yönlendirmeyle güncel adrese götürür, ayrıca numaralı tarama yapılır.
+  # --------------------------------------------------------------------------
+  - id: selcuk
+    name: "SELÇUK SPOR"
+    icon: "🎥"
+    enabled: true
+    base_url: "https://www.sporcafe-0c2608ad69.xyz"
+    entry_urls:
+      - "https://www.sporcafe-3674574bcf.xyz/"
+      - "https://www.sporcafe-fdf6459b0e.xyz/"
+      - "https://sporcafe8.xyz/"
+    mirror:
+      pattern: "sporcafe{n}.xyz"
+      preferred_number: 8
+      scan_window: 12
+      must_contain_any: ["uxsyplayer"]
+    health_path: "/"
+    player:
+      domain_pattern: "https?://(main\\.uxsyplayer[0-9a-zA-Z\\-]+\\.click)"
+      default_base: "https://main.uxsyplayer6859599e6c.click"
+      stream_base_patterns:
+        - "this\\.adsBaseUrl\\s*=\\s*['\"]([^'\"]+)"
+        - "adsBaseUrl\\s*[:=]\\s*['\"]([^'\"]+)"
+        - "baseStreamUrl\\s*[:=]\\s*['\"]([^'\"]+)"
+      stream_template: "{stream_base}{slug}/playlist.m3u8"
+    page_template: "{player_base}/index.php?id={slug}"
+    embed_template: "{player_base}/index.php?id={slug}"
+    referrer: "{base_url}/"
+    channels:
+      - { slug: "selcukbeinsports1",    name: "BEIN SPORTS 1" }
+      - { slug: "selcukbeinsports2",    name: "BEIN SPORTS 2" }
+      - { slug: "selcukbeinsports3",    name: "BEIN SPORTS 3" }
+      - { slug: "selcukbeinsports4",    name: "BEIN SPORTS 4" }
+      - { slug: "selcukbeinsports5",    name: "BEIN SPORTS 5" }
+      - { slug: "selcukbeinsportsmax1", name: "BEIN SPORTS MAX 1" }
+      - { slug: "selcukbeinsportsmax2", name: "BEIN SPORTS MAX 2" }
+      - { slug: "selcukssport",         name: "S SPORT" }
+      - { slug: "selcukssport2",        name: "S SPORT 2" }
+      - { slug: "selcuktivibuspor1",    name: "TIVIBU SPOR 1" }
+      - { slug: "selcuktivibuspor2",    name: "TIVIBU SPOR 2" }
+      - { slug: "selcuksmartspor",      name: "SMARTSPOR" }
+      - { slug: "selcukaspor",          name: "A SPOR" }
+      - { slug: "selcukeurosport1",     name: "EUROSPORT 1" }
