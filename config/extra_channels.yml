@@ -1,0 +1,63 @@
+# ============================================================================
+#  fixbet-bot  —  Ekstra paneller (doğrudan m3u8 / HLS yayın kaynakları)
+#
+#  Ana sitedeki (fixbettv) 7/24 kanallardan bağımsız ek kaynaklar. Her panel
+#  sayfada "⚡ EXTRA" sekmesinde ayrı bir grup (chip) olarak listelenir ve
+#  kanallar sayfanın kendi HLS oynatıcısında (hls.js / Safari yerel) açılır.
+#
+#  Yeni bir panel eklemek için `panels` altına yeni bir blok ekleyin:
+#    - id / name / icon        : sekmedeki grup adı ve simgesi
+#    - base_url (+ mirror)     : kanal sayfalarının bulunduğu site; `mirror`
+#                                verilirse numaralı ayna taraması yapılır
+#                                (atomsportv501 → 502 → ... gibi adres değişimleri).
+#                                Sıra: son bilinen adres → base_url → ayna taraması;
+#                                hiçbiri açılmazsa son bilinen adres korunur.
+#    - page_template           : m3u8'in çıkarılacağı kanal sayfası
+#    - fallback_template       : sayfadan m3u8 çıkmazsa kullanılacak yedek yayın
+#    - embed_fallback          : m3u8 hiç açılmazsa kanal sayfasını iframe'de dene
+#    - channels[].slug / name  : kanal listesi ({slug} şablonlarda kullanılır)
+#    - channels[].url          : (isteğe bağlı) sabit m3u8 adresi — varsa ilk kaynak
+#
+#  Bot her çalışmada m3u8 adreslerini yeniler ve output/extra_channels.json'a
+#  yazar; sayfa da bu dosyayı 5 dakikada bir yeniden okur. Oynatıcı, kanal için
+#  üretilen kaynakları sırayla dener: [çıkarılan m3u8, yedek m3u8, kanal sayfası].
+# ============================================================================
+
+settings:
+  request_timeout_seconds: 8     # tek istek zaman aşımı
+  max_workers: 10                # paralel kanal tarama sayısı
+  keep_resolved_hours: 6         # m3u8 çıkarılamazsa son çözümü bu kadar saat koru
+
+panels:
+  - id: atom
+    name: "ATOM SPOR"
+    icon: "⚛️"
+    enabled: true
+    base_url: "https://atomsportv501.top"
+    mirror:
+      pattern: "atomsportv{n}.top"
+      preferred_number: 501
+      scan_window: 15
+      # Sağlık kontrolü ilk kanalın sayfasında yapılır; boş bırakılırsa
+      # "kanal slug'ı ya da m3u8 izi" aranır (park sayfaları elenir).
+      must_contain_any: []
+    page_template: "{base_url}/kanal/{slug}"
+    fallback_template: "https://tv.atomspor.workers.dev/?ID={slug}"
+    embed_fallback: true
+    referrer: "{base_url}"
+    logo: "https://hizliresim.com/gm50rk9b"
+    channels:
+      - { slug: "bein-sports-1",     name: "BEIN SPORTS 1" }
+      - { slug: "bein-sports-2",     name: "BEIN SPORTS 2" }
+      - { slug: "bein-sports-3",     name: "BEIN SPORTS 3" }
+      - { slug: "bein-sports-4",     name: "BEIN SPORTS 4" }
+      - { slug: "bein-sports-5",     name: "BEIN SPORTS 5" }
+      - { slug: "s-sport",           name: "S SPORT" }
+      - { slug: "s-sport-2",         name: "S SPORT 2" }
+      - { slug: "ssport-plus",       name: "S SPORT PLUS" }
+      - { slug: "tivibu-spor-1",     name: "TIVIBU SPOR 1" }
+      - { slug: "tivibu-spor-2",     name: "TIVIBU SPOR 2" }
+      - { slug: "tivibu-spor-3",     name: "TIVIBU SPOR 3" }
+      - { slug: "smart-spor",        name: "SMARTSPOR" }
+      - { slug: "tv-8-5",            name: "TV 8,5" }
+      - { slug: "bein-sports-haber", name: "BEIN SPORTS HABER" }

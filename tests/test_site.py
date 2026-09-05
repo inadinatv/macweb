@@ -36,7 +36,8 @@ def test_template_markers():
     for tok in ("{{STREAM_LINKS}}", "{{CHANNEL_NAMES}}", "{{CHANNEL_BRANDS}}",
                 "{{CHANNEL_ICONS}}", "{{CHANNEL_STATUSES}}", "{{MATCHES_JSON}}",
                 "{{MATCHES_SOURCE}}", "{{LIVE_WINDOW_JSON}}", "{{MATCHES_HTML}}",
-                "{{SITE_ADDR}}", "{{UPDATED_AT}}"):
+                "{{SITE_ADDR}}", "{{UPDATED_AT}}",
+                "{{EXTRA_SOURCE}}", "{{EXTRA_JSON}}", "{{EXTRA_HTML}}"):
         assert tok in tpl, f"eksik yer tutucu: {tok}"
     assert "/*BOT_START*/" in tpl and "/*BOT_END*/" in tpl
     print("OK: template_markers")
@@ -51,7 +52,22 @@ def test_no_server_text_and_no_fake_matches():
     # tek gerçek maç sekmesi: günün maçları
     assert 'data-tab="matchesTab"' in tpl
     assert 'data-tab="channelsTab"' in tpl
+    # ekstra (m3u8) paneli
+    assert 'data-tab="extraTab"' in tpl
     print("OK: no_server_text_and_no_fake_matches")
+
+
+def test_extra_panel_and_hls_player():
+    """⚡ EXTRA sekmesi + m3u8 (HLS) oynatıcı şablonda mevcut."""
+    tpl = site.TEMPLATE.read_text(encoding="utf-8")
+    for tok in ('id="extraGrid"', 'id="panelRow"', 'id="hlsVideo"', 'id="playerError"',
+                'id="sourceRow"', 'id="nextSourceBtn"', 'id="retryStreamBtn"',
+                "hls.min.js", "function playExtra", "function playSource",
+                "function refreshExtra", "canPlayType", "Hls.isSupported", "#extra="):
+        assert tok in tpl, f"eksik: {tok}"
+    # extra kart tıklaması yayını HLS oynatıcıda açar ve player'e kaydırır
+    assert "card.onclick = () => playExtra(ch.id, true);" in tpl
+    print("OK: extra_panel_and_hls_player")
 
 
 def test_view_toggle_and_compact_cards():
@@ -163,12 +179,17 @@ def test_build_index_html_fills_everything():
     assert "channel.html?id=zirve" in html
     assert "İstanbul Başakşehir" in html
     assert "output/today_matches.json" in html
+    # ekstra panel (config/extra_channels.yml) gömülür
+    assert "output/extra_channels.json" in html
+    assert '"atom:bein-sports-1"' in html
+    assert "tv.atomspor.workers.dev/?ID=bein-sports-1" in html
     print("OK: build_index_html_fills_everything")
 
 
 if __name__ == "__main__":
     test_template_markers()
     test_no_server_text_and_no_fake_matches()
+    test_extra_panel_and_hls_player()
     test_view_toggle_and_compact_cards()
     test_channel_click_scrolls_to_player()
     test_channel_payload()

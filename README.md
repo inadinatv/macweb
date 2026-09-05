@@ -53,10 +53,30 @@ raporlar üreten gelişmiş otomasyon botu.
      dosyasını okumayı dener (bot bu dosyayı 5 dakikada bir günceller); erişilemezse
      gömülü gerçek veriyle sorunsuz çalışmaya devam eder.
 
-6. **Raporlar** (`src/fixbet/reports.py` → `output/`)
+6. **⚡ EXTRA paneller — doğrudan m3u8 kanallar** (`src/fixbet/extras.py` + `config/extra_channels.yml`)
+   - Ana siteden bağımsız ek kaynaklar. Şimdilik **ATOM SPOR** (14 kanal: Bein Sports 1-5,
+     S Sport / 2 / Plus, Tivibu Spor 1-3, SmartSpor, TV 8,5, Bein Sports Haber).
+   - Bot her çalışmada kanal sayfasından (`/kanal/<slug>`) **m3u8 adresini çıkarır**
+     (düz link, göreli link, URL-encoded, base64/`atob`, iç içe iframe'ler). Çıkaramazsa
+     son çözümü `keep_resolved_hours` kadar korur; yedek olarak `tv.atomspor.workers.dev/?ID=<slug>`
+     ve (iframe için) kanal sayfası eklenir.
+   - Panelin adresi değişirse (**atomsportv501 → 502 → …**) numaralı ayna taraması ile yeni
+     adres bulunur ve `output/extra_channels.json` içinde saklanır; sonraki çalışma buradan başlar.
+   - Sayfada **⚡ EXTRA** sekmesi: aynı kompakt kartlar, panel çipleri, arama, ızgara/liste.
+     Karta tıklayınca yayın **sayfanın kendi HLS oynatıcısında** açılır — Safari/iOS'ta yerel HLS,
+     diğer tarayıcılarda `hls.js` (CDN'den yalnızca ilk EXTRA yayında yüklenir).
+   - Oynatıcı ekleri: **kaynak çipleri** (Kaynak 1 / Kaynak 2 / 🌐 Site), açılmayan kaynakta
+     **otomatik sıradaki kaynağa geçiş**, hata katmanı (🔄 Tekrar dene · ⏭ Diğer kaynak ·
+     ↗ Yeni sekmede aç), PiP, tam ekran, `←`/`→` ile EXTRA kanallar arasında gezinme, `S` kaynak
+     değiştir, `3` sekme, `#extra=atom:bein-sports-1` derin bağlantısı.
+   - Yeni bir extra panel eklemek için `config/extra_channels.yml` → `panels` altına yeni blok
+     eklemek yeterlidir; sayfa/bot tarafında kod değişikliği gerekmez.
+
+7. **Raporlar** (`src/fixbet/reports.py` → `output/`)
    - `report.html` → tarayıcıda açılan, kendi kendine yeten canlı panel (maçlar + 7/24 kanallar).
    - `matches.md` → okunabilir günlük maç listesi + kanal listesi.
    - `matches.json`, `live_matches.json`, `today_matches.json`, `channels.json` → makine okunur veri.
+   - `extra_channels.json` → EXTRA panellerin güncel m3u8 adresleri (sayfa 5 dakikada bir okur).
 
 ---
 
@@ -79,6 +99,9 @@ python fixbet.py serve 5
 
 # Sayfayı ağ olmadan, output/ içindeki son gerçek veriden yeniden üret
 python fixbet.py build-index
+
+# Sadece EXTRA panelleri (Atom m3u8 adresleri) yenile ve sayfayı güncelle
+python fixbet.py extras
 ```
 
 Çıktılar `output/` klasörüne ve güncel adres `config/current_site.yml` dosyasına yazılır.
@@ -91,6 +114,7 @@ python fixbet.py build-index
 python tests/test_pipeline.py     # maç ayrıştırma + canlı/yaklaşan/bitti sınıflandırması
 python tests/test_channels.py     # 7/24 kanal listesi + marka grupları
 python tests/test_site.py         # index.html üretimi (şablon + gerçek veri)
+python tests/test_extras.py       # EXTRA paneller: m3u8 çıkarma, ayna taraması, yedek kaynaklar (ağsız)
 
 npm install && npm test           # sayfanın kendi JS'i jsdom içinde çalıştırılır
 python tests/test_frontend.py     # aynı arayüz testlerinin pytest/sade-python sarmalayıcısı
@@ -98,7 +122,8 @@ python tests/test_frontend.py     # aynı arayüz testlerinin pytest/sade-python
 
 Arayüz testleri üretilen `index.html`'in JavaScript'ini gerçekten çalıştırır: kanal
 kartlarının çizilmesi, ızgara/liste geçişi, karta tıklayınca yayının açılıp player'e
-kaydırılması, günün maçlarının gerçek veriden gelmesi, arama/filtre ve canlı tazeleme.
+kaydırılması, günün maçlarının gerçek veriden gelmesi, arama/filtre ve canlı tazeleme,
+EXTRA sekmesi ve HLS oynatıcı (hls.js / yerel HLS, kaynak değiştirme, hata katmanı, derin bağlantı).
 `workflow-tests-example.yml` dosyasını `.github/workflows/tests.yml` olarak kopyalarsanız
 bu testler her push/PR'da otomatik koşar (bu depodaki GitHub App token'ının `workflows`
 yetkisi olmadığı için dosya kökte örnek olarak duruyor).
@@ -128,6 +153,7 @@ fixbet-bot/
 │   ├── settings.yml          # bot/kaynak/izleme/kategori ayarları
 │   ├── mirrors.yml           # güncel adres arayan kalıplar
 │   ├── channels.yml          # bilinen kanal kimlikleri
+│   ├── extra_channels.yml    # ⚡ EXTRA paneller (Atom Spor m3u8 kanalları, yeni paneller buraya)
 │   └── current_site.yml      # ⭐ BOT TARAFINDAN OTOMATİK GÜNCELLENEN GÜNCEL ADRES
 ├── src/fixbet/
 │   ├── main.py               # orkestratör
@@ -138,6 +164,7 @@ fixbet-bot/
 │   ├── reports.py            # HTML/MD/JSON çıktılar
 │   ├── site.py               # şablondan index.html üretimi
 │   ├── channels.py           # 7/24 kanal listesi
+│   ├── extras.py             # EXTRA paneller: m3u8 çıkarma + ayna takibi
 │   ├── models.py             # Match veri modeli
 │   ├── templates/index.html  # sayfa şablonu (tek kaynak)
 │   └── config.py             # YAML yükleme/kaydetme

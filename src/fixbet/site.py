@@ -16,7 +16,7 @@ from datetime import datetime
 from html import escape
 from typing import Any
 
-from . import channels, config, scraper
+from . import channels, config, extras, scraper
 from .models import Match
 
 REPO_ROOT = config.ROOT
@@ -171,8 +171,49 @@ def _js(value: Any) -> str:
     return json.dumps(value, ensure_ascii=False).replace("</", "<\\/")
 
 
+def extra_payload(extra_data: dict[str, Any] | None) -> dict[str, Any]:
+    """Ekstra panelleri (m3u8 kanallar) sayfanın beklediği sade JSON'a indirger."""
+    panels: list[dict[str, Any]] = []
+    for p in (extra_data or {}).get("panels", []):
+        chans = []
+        for c in p.get("channels", []):
+            sources = [{"type": s.get("type") or "hls", "url": s.get("url") or "", "label": s.get("label") or ""}
+                       for s in c.get("sources", []) if s.get("url")]
+            if not sources:
+                continue
+            chans.append({
+                "id": c.get("id") or f"{p.get('id')}:{c.get('slug')}",
+                "slug": c.get("slug") or "",
+                "name": c.get("name") or "",
+                "icon": c.get("icon") or channel_icon(c.get("name") or ""),
+                "panel_name": p.get("name") or p.get("id") or "EXTRA",
+                "resolved": bool(c.get("resolved")),
+                "sources": sources,
+            })
+        panels.append({"id": p.get("id") or "extra", "name": p.get("name") or "EXTRA",
+                       "icon": p.get("icon") or "⚡", "channels": chans})
+    return {"updated_at": (extra_data or {}).get("updated_at") or "", "panels": panels}
+
+
+def _extra_groups_html(extra_data: dict[str, Any] | None) -> str:
+    """Ekstra (m3u8) kanalları JS'siz ortam için düz bağlantı listesine çevirir."""
+    blocks: list[str] = []
+    for p in (extra_data or {}).get("panels", []):
+        items = []
+        for c in p.get("channels", []):
+            first = next((s.get("url") for s in c.get("sources", []) if s.get("url")), "")
+            if not first:
+                continue
+            items.append(f'<li><a href="{escape(first)}" target="_blank" rel="noopener">{escape(c.get("name") or "")}</a> '
+                         f'<small>(m3u8)</small></li>')
+        if items:
+            blocks.append(f'<h3 style="margin:14px 0 6px;">⚡ {escape(p.get("name") or "EXTRA")}</h3>'
+                          f'<ul class="match-list">{"".join(items)}</ul>')
+    return "".join(blocks)
+
+
 def build_index_html(matches: list[Match], channels_data: dict[str, Any] | None = None,
-                     now: datetime | None = None) -> str | None:
+                     now: datetime | None = None, extra_data: dict[str, Any] | None = None) -> str | None:
     """index.html üretir ve repo köküne yazar. Şablon yoksa None döner."""
     if not TEMPLATE.exists():
         return None
@@ -184,6 +225,8 @@ def build_index_html(matches: list[Match], channels_data: dict[str, Any] | None 
         channels_data = channels.categorize(channels.fetch_channels())
     channel_list = ordered_channels(channels_data)
     payload = channel_payload(channel_list)
+    if extra_data is None:
+        extra_data = extras.load_or_build(now)
 
     html = TEMPLATE.read_text(encoding="utf-8")
     replacements = {
@@ -198,6 +241,9 @@ def build_index_html(matches: list[Match], channels_data: dict[str, Any] | None 
         "{{LIVE_WINDOW_JSON}}": _js(live_window()),
         "{{MATCHES_JSON}}": _js(matches_payload(matches, channel_list, now.strftime("%Y-%m-%d"))),
         "{{MATCHES_HTML}}": _match_groups_html(matches),
+        "{{EXTRA_SOURCE}}": extras.EXTRA_SOURCE,
+        "{{EXTRA_JSON}}": _js(extra_payload(extra_data)),
+        "{{EXTRA_HTML}}": _extra_groups_html(extra_data),
     }
     for token, value in replacements.items():
         html = html.replace(token, value)

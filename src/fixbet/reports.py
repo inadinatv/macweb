@@ -7,7 +7,7 @@ from datetime import datetime
 from html import escape
 from typing import Any
 
-from . import config
+from . import config, extras
 from .models import Match
 
 OUTPUT = config.OUTPUT_DIR
@@ -95,6 +95,21 @@ def write_markdown(categorized: dict[str, Any], site: dict[str, Any],
                 lines.append(f"- **{ch['name']}** — `{ch['status']}`{link}")
             lines.append("")
 
+    # Ekstra paneller (m3u8)
+    extra = extras.load_output()
+    if extra.get("panels"):
+        lines.append("---")
+        lines.append(f"## ⚡ EKSTRA PANELLER — m3u8 ({extra.get('total', 0)})")
+        lines.append("")
+        for panel in extra["panels"]:
+            state = {True: "✅", False: "⛔", None: "⏸"}.get(panel.get("healthy"), "")
+            lines.append(f"### {panel.get('icon', '⚡')} {panel['name']} {state} `{panel.get('base_url') or '—'}`")
+            for ch in panel.get("channels", []):
+                first = next((s["url"] for s in ch.get("sources", []) if s.get("type") == "hls"), "")
+                flag = "🟢" if ch.get("fresh") else ("🟡" if ch.get("resolved") else "⚪")
+                lines.append(f"- {flag} **{ch['name']}** <{first}>" if first else f"- {flag} **{ch['name']}**")
+            lines.append("")
+
     path = OUTPUT / "matches.md"
     with open(path, "w", encoding="utf-8") as fh:
         fh.write("\n".join(lines))
@@ -165,6 +180,28 @@ def write_html(categorized: dict[str, Any], site: dict[str, Any],
             + brand_blocks
         )
 
+    # Ekstra paneller (m3u8) bölümü
+    extra_html = ""
+    extra = extras.load_output()
+    if extra.get("panels"):
+        blocks = ""
+        for panel in extra["panels"]:
+            rows = ""
+            for ch in panel.get("channels", []):
+                first = next((s["url"] for s in ch.get("sources", []) if s.get("type") == "hls"), "")
+                badge = "GÜNCEL" if ch.get("fresh") else ("SON" if ch.get("resolved") else "YEDEK")
+                rows += (
+                    f'<div class="row ch"><span class="badge">{badge}</span>'
+                    f'<span class="teams">{escape(ch["name"])}</span>'
+                    + (f'<a class="watch" href="{escape(first)}" target="_blank">▶ m3u8</a>' if first else "")
+                    + "</div>"
+                )
+            blocks += (
+                f'<details open><summary>{escape(panel.get("icon", "⚡"))} {escape(panel["name"])} '
+                f'({len(panel.get("channels", []))}) <span class="gec">{escape(panel.get("base_url") or "")}</span></summary>{rows}</details>'
+            )
+        extra_html = f'<h3 style="color:#00b3c4">⚡ EKSTRA PANELLER — m3u8 <span>({extra.get("total", 0)})</span></h3>' + blocks
+
     html = f"""<!DOCTYPE html>
 <html lang="tr"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -216,6 +253,7 @@ details summary{{cursor:pointer;font-weight:600;color:#cfe}} details .row{{margi
 <h3 style="color:#8e44ad">🏆 Spor Kategorileri</h3>{sport_sections}
 <h3>🏆 Lig Bazlı</h3>{league_html}
 {channels_html}
+{extra_html}
 <p class="gec" style="margin-top:18px">fixbet-bot · otomatik güncelleme · {now.strftime('%H:%M')}</p>
 </body></html>"""
 

@@ -136,6 +136,34 @@
         .spinner { width: 44px; height: 44px; border: 4px solid rgba(255,45,122,0.2); border-top-color: var(--neon-pink); border-radius: 50%; animation: spin 0.8s linear infinite; }
         @keyframes spin { to { transform: rotate(360deg); } }
 
+        /* HLS (m3u8) oynatıcı: EXTRA kanallar iframe yerine <video> içinde açılır */
+        .player-wrap video { display: none; width: 100%; height: 100%; background: #000; object-fit: contain; }
+        .player-wrap.mode-hls video { display: block; }
+        .player-wrap.mode-hls iframe { display: none; }
+        .player-error {
+            position: absolute; inset: 0; background: rgba(5,4,12,0.9); z-index: 6;
+            display: none; flex-direction: column; align-items: center; justify-content: center;
+            gap: 10px; text-align: center; padding: 20px;
+        }
+        .player-error.active { display: flex; }
+        .player-error .err-title { font-family: 'Barlow Condensed', sans-serif; font-weight: 800; font-size: 1.2rem; letter-spacing: 1px; color: #fff; }
+        .player-error .err-msg { color: var(--text-muted); font-size: 0.85rem; line-height: 1.5; max-width: 480px; }
+        .player-error .err-actions { display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; margin-top: 4px; }
+        .ctrl-btn.primary { background: linear-gradient(135deg, var(--neon-pink), var(--neon-purple)); border-color: transparent; box-shadow: 0 0 16px rgba(255,45,122,0.4); }
+        .ctrl-btn.primary:hover { transform: scale(1.04); }
+        .source-row { display: none; align-items: center; gap: 6px; flex-wrap: wrap; flex: 1 1 auto; justify-content: center; }
+        .source-row.active { display: flex; }
+        .src-label { font-size: 0.6rem; letter-spacing: 1.6px; text-transform: uppercase; color: var(--text-muted); font-weight: 700; }
+        .src-chip {
+            background: rgba(0,234,255,0.08); border: 1px solid rgba(0,234,255,0.25); color: var(--neon-cyan);
+            padding: 3px 10px; border-radius: 10px; font-size: 0.72rem; font-weight: 800; letter-spacing: .5px;
+            cursor: pointer; font-family: 'Barlow Condensed', sans-serif; transition: all .2s ease; outline: none;
+        }
+        .src-chip:hover { background: rgba(0,234,255,0.18); }
+        .src-chip.active { background: linear-gradient(135deg, var(--neon-cyan), var(--neon-purple)); color: #fff; border-color: transparent; box-shadow: 0 0 12px rgba(0,234,255,0.4); }
+        .src-chip.embed { border-style: dashed; }
+        .player-actions .ctrl-btn[hidden] { display: none; }
+
         /* ---------- Side panel ---------- */
         .side-panel { display: flex; flex-direction: column; gap: 14px; }
         .now-playing-card {
@@ -323,6 +351,31 @@
         }
         .channel-grid.view-list .ch-card.active .ch-play-hint { background: rgba(255,45,122,0.35); color: #fff; }
 
+        /* ---------- EXTRA (m3u8) kanal kartları ---------- */
+        .ch-card.extra .ch-status { background: rgba(0,234,255,0.12); color: var(--neon-cyan); border-color: rgba(0,234,255,0.3); }
+        .ch-card.extra.active .ch-status { background: linear-gradient(135deg, var(--neon-cyan), #00b3c4); color: #000; border-color: transparent; }
+        .ch-card.extra .ch-live-dot { background: var(--neon-cyan); box-shadow: 0 0 8px var(--neon-cyan); }
+        .ch-card.extra .ch-icon-wrap { background: radial-gradient(circle at 30% 30%, rgba(0,234,255,0.2), rgba(155,77,255,0.14) 55%, rgba(255,45,122,0.08)); }
+        .ch-card.extra:hover { border-color: rgba(0,234,255,0.45); box-shadow: 0 12px 26px rgba(0,0,0,0.55), 0 0 22px rgba(0,234,255,0.18); }
+        .ch-card.extra.active {
+            border-color: var(--neon-cyan) !important;
+            background: linear-gradient(145deg, rgba(0,234,255,0.14) 0%, rgba(155,77,255,0.20) 100%) !important;
+            box-shadow: 0 0 26px rgba(0,234,255,0.35), 0 8px 22px rgba(0,0,0,0.45) !important;
+        }
+        .ch-card.extra .ch-play-hint { background: linear-gradient(180deg, rgba(0,234,255,0.12), rgba(0,180,200,0.9)); }
+        .ch-card.extra.active .ch-play-hint { background: linear-gradient(180deg, rgba(0,234,255,0.2), rgba(155,77,255,0.85)); }
+        .ch-card.extra.unresolved { opacity: .78; }
+        .ch-card.extra.unresolved .ch-live-dot { background: var(--neon-gold); box-shadow: 0 0 8px var(--neon-gold); }
+        .tab-btn.extra-tab.active { background: linear-gradient(135deg, rgba(0,234,255,0.25) 0%, rgba(155,77,255,0.3) 100%); border-color: var(--neon-cyan); box-shadow: 0 0 30px rgba(0,234,255,0.3); }
+        .tab-btn.extra-tab.active .tab-badge { background: var(--neon-cyan); color: #000; }
+        .chip.panel-chip.active { background: linear-gradient(135deg, var(--neon-cyan), var(--neon-purple)); box-shadow: 0 0 18px rgba(0,234,255,0.4); }
+        .extra-note {
+            display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-bottom: 12px; padding: 8px 12px; border-radius: 12px;
+            background: rgba(0,234,255,0.05); border: 1px dashed rgba(0,234,255,0.25); color: var(--text-muted); font-size: 0.76rem; line-height: 1.5;
+        }
+        .extra-note b { color: var(--neon-cyan); }
+        .extra-note .extra-meta { margin-left: auto; font-size: 0.7rem; opacity: .85; }
+
         /* ---------- Maç kartları ---------- */
         .match-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(310px, 1fr)); gap: 12px; }
         .match-card {
@@ -441,7 +494,9 @@
                         <span id="playerIcon">📺</span>
                         <span id="playerTitle">Kanal seçin</span>
                     </div>
+                    <div class="source-row" id="sourceRow" aria-label="Yayın kaynağı seçimi"></div>
                     <div class="player-actions">
+                        <button class="ctrl-btn" id="pipBtn" title="Resim içinde resim (yalnızca m3u8 yayınlarda)" hidden>⧉ PiP</button>
                         <button class="ctrl-btn" id="reloadPlayerBtn" title="Yayını yenile">🔄 Yenile</button>
                         <button class="ctrl-btn" id="fullscreenBtn" title="Tam ekran">⛶ Tam Ekran</button>
                     </div>
@@ -452,7 +507,17 @@
                         <div class="spinner"></div>
                         <div style="font-weight:700; color:var(--neon-pink);">Yayın yükleniyor...</div>
                     </div>
-                    <iframe id="liveIframe" src="" title="Canlı yayın oynatıcı" allowfullscreen allow="autoplay; encrypted-media" loading="lazy"></iframe>
+                    <div class="player-error" id="playerError" role="alert">
+                        <div class="err-title">⚠️ Yayın açılamadı</div>
+                        <div class="err-msg" id="playerErrorMsg">Kaynak yanıt vermedi.</div>
+                        <div class="err-actions">
+                            <button class="ctrl-btn primary" id="retryStreamBtn" type="button">🔄 Tekrar dene</button>
+                            <button class="ctrl-btn" id="nextSourceBtn" type="button">⏭ Diğer kaynak</button>
+                            <a class="ctrl-btn" id="openExternalBtn" href="#" target="_blank" rel="noopener" style="text-decoration:none">↗ Yeni sekmede aç</a>
+                        </div>
+                    </div>
+                    <video id="hlsVideo" controls playsinline autoplay preload="none" title="m3u8 yayın oynatıcı"></video>
+                    <iframe id="liveIframe" src="" title="Canlı yayın oynatıcı" allowfullscreen allow="autoplay; encrypted-media; picture-in-picture" loading="lazy"></iframe>
                 </div>
             </div>
 
@@ -483,7 +548,7 @@
                         </div>
                     </div>
                     <div class="hint-box">
-                        <kbd>←</kbd> <kbd>→</kbd> kanal değiştir · <kbd>G</kbd> ızgara · <kbd>L</kbd> liste · <kbd>1</kbd>/<kbd>2</kbd> sekme
+                        <kbd>←</kbd> <kbd>→</kbd> kanal değiştir · <kbd>G</kbd> ızgara · <kbd>L</kbd> liste · <kbd>1</kbd>/<kbd>2</kbd>/<kbd>3</kbd> sekme · <kbd>S</kbd> kaynak değiştir
                     </div>
                 </div>
             </div>
@@ -494,6 +559,7 @@
                 <div class="tabs-list">
                     <button class="tab-btn active" data-tab="channelsTab">📺 TV KANALLARI <span class="tab-badge" id="badgeChannels">0</span></button>
                     <button class="tab-btn" data-tab="matchesTab">📅 GÜNÜN MAÇLARI <span class="tab-badge" id="badgeMatches">0</span></button>
+                    <button class="tab-btn extra-tab" data-tab="extraTab">⚡ EXTRA <span class="tab-badge" id="badgeExtra">0</span></button>
                 </div>
                 <div class="view-toggle" id="viewToggle" role="group" aria-label="Görünüm seçimi">
                     <button class="view-btn active" data-view="grid" title="Izgara görünüm (G)">▦ Izgara</button>
@@ -503,6 +569,7 @@
 
             <div class="chip-row" id="brandRow" aria-label="Kanal markaları"></div>
             <div class="chip-row" id="matchFilterRow" style="display:none" aria-label="Maç filtreleri"></div>
+            <div class="chip-row" id="panelRow" style="display:none" aria-label="Ekstra paneller"></div>
 
             <div class="tab-content active" id="channelsTab">
                 <div class="channel-grid" id="channelGrid"></div>
@@ -510,6 +577,14 @@
 
             <div class="tab-content" id="matchesTab">
                 <div class="match-grid" id="matchesGrid"></div>
+            </div>
+
+            <div class="tab-content" id="extraTab">
+                <div class="extra-note">
+                    <span>⚡ <b>EXTRA</b> kanallar doğrudan <b>m3u8</b> yayınlardır; sayfanın kendi oynatıcısında açılır. Yayın açılmazsa <b>⏭ Diğer kaynak</b>'ı deneyin.</span>
+                    <span class="extra-meta" id="extraMeta"></span>
+                </div>
+                <div class="channel-grid" id="extraGrid"></div>
             </div>
         </div>
 
@@ -525,6 +600,7 @@
             <div class="ns-wrap">
                 <h2 style="margin-bottom:10px;">Günün Maçları</h2>
                 {{MATCHES_HTML}}
+                {{EXTRA_HTML}}
             </div>
         </noscript>
     </div>
@@ -540,6 +616,8 @@
         const channelStatuses = {{CHANNEL_STATUSES}};
         const liveWindowMinutes = {{LIVE_WINDOW_JSON}};
         let matchesData = {{MATCHES_JSON}};
+        const extraSource = "{{EXTRA_SOURCE}}";
+        let extraData = {{EXTRA_JSON}};
         /*BOT_END*/
 
         (function () {
@@ -569,26 +647,43 @@
                 activeBrand: "all",
                 activeStatus: "all",
                 activeSport: "all",
+                activePanel: "all",
                 view: "grid",
-                search: ""
+                search: "",
+                // Oynatıcı modu: "iframe" (site yayını) | "hls" (m3u8 — EXTRA)
+                playerMode: "iframe",
+                currentExtraId: null,
+                currentSourceIndex: 0,
+                currentSources: []
             };
 
             const els = {
                 iframe: $("liveIframe"),
+                video: $("hlsVideo"),
+                playerWrap: $("playerWrap"),
                 playerContainer: $("playerContainer"),
                 playerTip: $("playerTip"),
                 playerLoading: $("playerLoading"),
+                playerError: $("playerError"),
+                playerErrorMsg: $("playerErrorMsg"),
                 playerTitle: $("playerTitle"),
                 playerIcon: $("playerIcon"),
+                sourceRow: $("sourceRow"),
+                pipBtn: $("pipBtn"),
+                openExternal: $("openExternalBtn"),
                 nowChannel: $("nowChannel"),
                 nowStatus: $("nowStatus"),
                 channelGrid: $("channelGrid"),
+                extraGrid: $("extraGrid"),
+                extraMeta: $("extraMeta"),
                 matchesGrid: $("matchesGrid"),
                 brandRow: $("brandRow"),
                 matchFilterRow: $("matchFilterRow"),
+                panelRow: $("panelRow"),
                 searchInput: $("searchInput"),
                 badgeChannels: $("badgeChannels"),
                 badgeMatches: $("badgeMatches"),
+                badgeExtra: $("badgeExtra"),
                 totalChannels: $("totalChannelsCount"),
                 totalMatches: $("totalMatchesCount"),
                 totalLive: $("totalLiveCount"),
@@ -782,17 +877,35 @@
                 }
             }
 
-            function loadStream(url, title, icon, statusText, scroll) {
-                if (!url) return;
-                els.playerLoading.classList.add("active");
-                if (els.playerTip) els.playerTip.style.display = "none";
-                els.iframe.src = url;
-                setTimeout(() => els.playerLoading.classList.remove("active"), 700);
-
+            function setPlayerHeader(title, icon, statusText) {
                 els.playerTitle.textContent = title;
                 els.playerIcon.textContent = icon || "📺";
                 els.nowChannel.textContent = title;
                 els.nowStatus.textContent = statusText || "7/24 YAYIN";
+                if (els.playerTip) els.playerTip.style.display = "none";
+            }
+
+            function setPlayerMode(mode) {
+                state.playerMode = mode === "hls" ? "hls" : "iframe";
+                els.playerWrap.classList.toggle("mode-hls", state.playerMode === "hls");
+                if (els.pipBtn) els.pipBtn.hidden = state.playerMode !== "hls" || !("pictureInPictureEnabled" in document);
+                if (state.playerMode !== "hls") {
+                    hideError();
+                    els.sourceRow.classList.remove("active");
+                    els.sourceRow.innerHTML = "";
+                    state.currentExtraId = null;
+                    state.currentSources = [];
+                    stopHls();
+                }
+            }
+
+            function loadStream(url, title, icon, statusText, scroll) {
+                if (!url) return;
+                setPlayerMode("iframe");
+                els.playerLoading.classList.add("active");
+                els.iframe.src = url;
+                setTimeout(() => els.playerLoading.classList.remove("active"), 700);
+                setPlayerHeader(title, icon, statusText);
                 if (scroll) scrollToPlayer();
             }
 
@@ -803,9 +916,305 @@
                 loadStream(streamLinks[index], channelNames[index], channelIcons[index],
                     (channelStatuses[index] || "7/24") + " YAYIN", scroll !== false);
                 markActiveCard();
+                markActiveExtraCard();
                 if (history && history.replaceState) {
                     history.replaceState(null, "", "#kanal=" + encodeURIComponent(channelNames[index]));
                 }
+            }
+
+            /* ---------------- EXTRA: HLS (m3u8) oynatıcı ---------------- */
+            const HLS_CDN = "https://cdn.jsdelivr.net/npm/hls.js@1/dist/hls.min.js";
+            let hlsInstance = null;
+            let hlsLibPromise = null;
+            let hlsFailTimer = null;
+            let playToken = 0;
+
+            function extraChannels() {
+                const out = [];
+                ((extraData && extraData.panels) || []).forEach((p) => {
+                    (p.channels || []).forEach((c) => out.push(c));
+                });
+                return out;
+            }
+
+            function extraById(id) {
+                return extraChannels().find((c) => c.id === id) || null;
+            }
+
+            function nativeHlsSupported() {
+                const v = els.video;
+                if (!v || typeof v.canPlayType !== "function") return false;
+                return !!(v.canPlayType("application/vnd.apple.mpegurl") || v.canPlayType("application/x-mpegURL"));
+            }
+
+            function loadHlsLib() {
+                if (window.Hls) return Promise.resolve(window.Hls);
+                if (hlsLibPromise) return hlsLibPromise;
+                hlsLibPromise = new Promise((resolve, reject) => {
+                    const s = document.createElement("script");
+                    s.src = HLS_CDN;
+                    s.async = true;
+                    s.onload = () => (window.Hls ? resolve(window.Hls) : reject(new Error("hls.js yüklenemedi")));
+                    s.onerror = () => { hlsLibPromise = null; reject(new Error("hls.js yüklenemedi")); };
+                    document.head.appendChild(s);
+                });
+                return hlsLibPromise;
+            }
+
+            function stopHls() {
+                if (hlsFailTimer) { clearTimeout(hlsFailTimer); hlsFailTimer = null; }
+                if (hlsInstance) {
+                    try { hlsInstance.destroy(); } catch (e) { /* yoksay */ }
+                    hlsInstance = null;
+                }
+                const v = els.video;
+                if (v) {
+                    try { v.pause(); } catch (e) { /* yoksay */ }
+                    v.removeAttribute("src");
+                    try { v.load(); } catch (e) { /* jsdom */ }
+                }
+            }
+
+            function showError(msg) {
+                els.playerLoading.classList.remove("active");
+                els.playerErrorMsg.textContent = msg || "Kaynak yanıt vermedi.";
+                els.playerError.classList.add("active");
+                const cur = state.currentSources[state.currentSourceIndex];
+                if (els.openExternal) els.openExternal.href = (cur && cur.url) || "#";
+                $("nextSourceBtn").style.display = state.currentSources.length > 1 ? "" : "none";
+            }
+
+            function hideError() {
+                els.playerError.classList.remove("active");
+            }
+
+            function renderSourceChips() {
+                els.sourceRow.innerHTML = "";
+                const list = state.currentSources || [];
+                if (state.playerMode !== "hls" || list.length < 2) { els.sourceRow.classList.remove("active"); return; }
+                const lbl = document.createElement("span");
+                lbl.className = "src-label";
+                lbl.textContent = "Kaynak";
+                els.sourceRow.appendChild(lbl);
+                list.forEach((s, i) => {
+                    const b = document.createElement("button");
+                    b.type = "button";
+                    b.className = "src-chip" + (i === state.currentSourceIndex ? " active" : "") + (s.type === "embed" ? " embed" : "");
+                    b.textContent = s.type === "embed" ? "🌐 Site" : ("▶ " + (s.label || ("Kaynak " + (i + 1))));
+                    b.title = s.url;
+                    b.onclick = () => playSource(i, true);
+                    els.sourceRow.appendChild(b);
+                });
+                els.sourceRow.classList.add("active");
+            }
+
+            /** Belirli bir kaynağı (m3u8 ya da site sayfası) oynatır */
+            function playSource(sourceIndex, manual) {
+                const list = state.currentSources || [];
+                if (!list.length) return;
+                if (sourceIndex < 0 || sourceIndex >= list.length) sourceIndex = 0;
+                state.currentSourceIndex = sourceIndex;
+                const src = list[sourceIndex];
+                const token = ++playToken;
+                hideError();
+                renderSourceChips();
+
+                if (src.type === "embed") {
+                    // Site sayfası: iframe'e düş, ama EXTRA seçimi ve kaynak çipleri korunsun
+                    stopHls();
+                    els.playerWrap.classList.remove("mode-hls");
+                    els.playerLoading.classList.add("active");
+                    els.iframe.src = src.url;
+                    setTimeout(() => { if (token === playToken) els.playerLoading.classList.remove("active"); }, 700);
+                    return;
+                }
+
+                els.playerWrap.classList.add("mode-hls");
+                els.iframe.src = "about:blank";
+                els.playerLoading.classList.add("active");
+                stopHls();
+                const video = els.video;
+
+                const failNext = (reason) => {
+                    if (token !== playToken) return;
+                    if (hlsFailTimer) { clearTimeout(hlsFailTimer); hlsFailTimer = null; }
+                    const nextIdx = sourceIndex + 1;
+                    if (!manual && nextIdx < list.length && list[nextIdx].type !== "embed") {
+                        playSource(nextIdx, false);      // sıradaki m3u8 kaynağını otomatik dene
+                        return;
+                    }
+                    stopHls();
+                    showError((reason || "Yayın açılamadı") + ". " +
+                        (nextIdx < list.length ? "Diğer kaynağı deneyebilir" : "Daha sonra tekrar deneyebilir") +
+                        " ya da yayını yeni sekmede açabilirsiniz.");
+                };
+                const ready = () => {
+                    if (token !== playToken) return;
+                    if (hlsFailTimer) { clearTimeout(hlsFailTimer); hlsFailTimer = null; }
+                    els.playerLoading.classList.remove("active");
+                    const p = video.play && video.play();
+                    if (p && p.catch) p.catch(() => { /* autoplay engeli: kullanıcı ▶'e basar */ });
+                };
+                // Kaynak 20 sn içinde açılmazsa hata say
+                hlsFailTimer = setTimeout(() => failNext("Yayın zaman aşımına uğradı"), 20000);
+                video.onloadedmetadata = ready;
+                video.onerror = () => failNext("Tarayıcı bu yayını açamadı");
+
+                if (nativeHlsSupported()) {
+                    // Safari / iOS: yerel HLS
+                    video.src = src.url;
+                    try { video.load(); } catch (e) { /* jsdom */ }
+                    return;
+                }
+                loadHlsLib().then((Hls) => {
+                    if (token !== playToken) return;
+                    if (!Hls.isSupported()) { failNext("Tarayıcı HLS (m3u8) desteklemiyor"); return; }
+                    const hls = new Hls({ enableWorker: true, lowLatencyMode: true, backBufferLength: 60 });
+                    hlsInstance = hls;
+                    hls.on(Hls.Events.MANIFEST_PARSED, ready);
+                    hls.on(Hls.Events.ERROR, (evt, data) => {
+                        if (!data || !data.fatal) return;
+                        if (data.type === Hls.ErrorTypes.NETWORK_ERROR && data.details !== Hls.ErrorDetails.MANIFEST_LOAD_ERROR
+                            && data.details !== Hls.ErrorDetails.MANIFEST_LOAD_TIMEOUT && data.details !== Hls.ErrorDetails.MANIFEST_PARSING_ERROR) {
+                            try { hls.startLoad(); return; } catch (e) { /* düş */ }
+                        } else if (data.type === Hls.ErrorTypes.MEDIA_ERROR) {
+                            try { hls.recoverMediaError(); return; } catch (e) { /* düş */ }
+                        }
+                        failNext("Kaynak yanıt vermedi (" + (data.details || data.type) + ")");
+                    });
+                    hls.loadSource(src.url);
+                    hls.attachMedia(video);
+                }).catch(() => failNext("Oynatıcı kütüphanesi (hls.js) yüklenemedi"));
+            }
+
+            /** EXTRA kanal kartı -> m3u8 yayını sayfanın HLS oynatıcısında aç */
+            function playExtra(id, scroll) {
+                const ch = extraById(id);
+                if (!ch || !(ch.sources || []).length) return;
+                state.currentIndex = -1;
+                state.currentExtraId = id;
+                state.currentSources = ch.sources.slice();
+                state.currentSourceIndex = 0;
+                setPlayerMode("hls");
+                setPlayerHeader(ch.name, ch.icon || "⚡", (ch.panel_name || "EXTRA") + " · M3U8");
+                markActiveCard();
+                markActiveExtraCard();
+                if (history && history.replaceState) {
+                    history.replaceState(null, "", "#extra=" + encodeURIComponent(id));
+                }
+                playSource(0, false);
+                if (scroll !== false) scrollToPlayer();
+            }
+
+            function extraMatchesSearch(ch) {
+                if (!state.search) return true;
+                return norm(ch.name + " " + (ch.panel_name || "") + " " + (ch.slug || "")).includes(state.search);
+            }
+
+            function renderPanelChips() {
+                const panels = (extraData && extraData.panels) || [];
+                els.panelRow.innerHTML = "";
+                if (!panels.length) return;
+                const mk = (id, label, count, icon) => {
+                    const b = document.createElement("button");
+                    b.type = "button";
+                    b.className = "chip panel-chip" + (state.activePanel === id ? " active" : "");
+                    b.setAttribute("data-panel", id);
+                    b.innerHTML = '<span>' + (icon ? icon + " " : "") + esc(label) + '</span><span class="chip-count">' + count + "</span>";
+                    b.onclick = () => { state.activePanel = id; renderPanelChips(); renderExtra(); };
+                    els.panelRow.appendChild(b);
+                };
+                mk("all", "TÜMÜ", extraChannels().length, "⚡");
+                panels.forEach((p) => mk(p.id, String(p.name || p.id).toUpperCase(), (p.channels || []).length, p.icon));
+            }
+
+            function renderExtra() {
+                if (!els.extraGrid) return;
+                els.extraGrid.innerHTML = "";
+                const panels = (extraData && extraData.panels) || [];
+                let visible = 0;
+                let n = 0;
+                panels.forEach((p) => {
+                    if (state.activePanel !== "all" && p.id !== state.activePanel) return;
+                    (p.channels || []).forEach((ch) => {
+                        n++;
+                        if (!extraMatchesSearch(ch)) return;
+                        const card = document.createElement("div");
+                        card.className = "ch-card extra" + (ch.id === state.currentExtraId ? " active" : "") +
+                            (ch.resolved ? "" : " unresolved");
+                        card.setAttribute("data-extra-id", ch.id);
+                        card.setAttribute("role", "button");
+                        card.setAttribute("tabindex", "0");
+                        card.setAttribute("title", ch.name + " — m3u8 yayını oynatıcıda aç" +
+                            (ch.resolved ? "" : " (yedek kaynak)"));
+                        card.style.animationDelay = Math.min(visible * 18, 320) + "ms";
+                        card.innerHTML =
+                            '<span class="ch-status">M3U8</span>' +
+                            '<span class="ch-number">' + pad(n) + "</span>" +
+                            '<span class="ch-live-dot" title="' + (ch.resolved ? "yayın adresi güncel" : "yedek kaynak") + '"></span>' +
+                            '<span class="ch-icon-wrap">' + (ch.icon || "⚡") + "</span>" +
+                            '<span class="ch-name">' + esc(ch.name) + "</span>" +
+                            '<span class="ch-brand">' + esc(p.name || p.id) + "</span>" +
+                            '<span class="ch-play-hint">▶ İZLE</span>';
+                        card.onclick = () => playExtra(ch.id, true);
+                        card.onkeydown = (e) => {
+                            if (e.key === "Enter" || e.key === " ") { e.preventDefault(); playExtra(ch.id, true); }
+                        };
+                        els.extraGrid.appendChild(card);
+                        visible++;
+                    });
+                });
+                if (!extraChannels().length) {
+                    els.extraGrid.innerHTML = '<div class="empty-msg">⚡ Henüz ekstra panel tanımlı değil.<br><small style="opacity:.7">config/extra_channels.yml dosyasına panel ekleyin.</small></div>';
+                } else if (visible === 0) {
+                    els.extraGrid.innerHTML = '<div class="empty-msg">🔍 Aramanıza uygun ekstra kanal bulunamadı.</div>';
+                }
+                if (els.extraMeta) {
+                    const upd = extraData && extraData.updated_at ? String(extraData.updated_at).replace("T", " ").slice(0, 16) : "";
+                    const resolved = extraChannels().filter((c) => c.resolved).length;
+                    els.extraMeta.textContent = extraChannels().length
+                        ? (resolved + "/" + extraChannels().length + " yayın adresi güncel" + (upd ? " · " + upd : ""))
+                        : "";
+                }
+                const total = extraChannels().length;
+                if (els.badgeExtra) els.badgeExtra.textContent = String(total);
+                markActiveExtraCard();
+            }
+
+            function markActiveExtraCard() {
+                document.querySelectorAll(".ch-card.extra").forEach((card) => {
+                    card.classList.toggle("active", card.getAttribute("data-extra-id") === state.currentExtraId);
+                });
+            }
+
+            function normalizeExtra(json) {
+                if (!json || !Array.isArray(json.panels)) return null;
+                const panels = json.panels.filter((p) => p && Array.isArray(p.channels));
+                return panels.length ? Object.assign({}, json, { panels: panels }) : null;
+            }
+
+            function refreshExtra(silent) {
+                if (!extraSource || typeof fetch !== "function") return Promise.resolve(false);
+                return fetch(extraSource + "?ts=" + Date.now(), { cache: "no-store" })
+                    .then((r) => (r.ok ? r.json() : Promise.reject(new Error("HTTP " + r.status))))
+                    .then((json) => {
+                        const data = normalizeExtra(json);
+                        if (!data) throw new Error("boş liste");
+                        extraData = data;
+                        renderPanelChips();
+                        renderExtra();
+                        return true;
+                    })
+                    .catch(() => false);
+            }
+
+            /** Aktif kanalın sonraki/önceki EXTRA kanalına geç (← → tuşları için) */
+            function stepExtra(delta) {
+                const list = extraChannels();
+                if (!list.length) return;
+                const i = list.findIndex((c) => c.id === state.currentExtraId);
+                const next = ((i < 0 ? 0 : i + delta) + list.length) % list.length;
+                playExtra(list[next].id, false);
             }
 
             function playMatch(m) {
@@ -876,7 +1285,8 @@
             function updateStats(now) {
                 const list = decoratedMatches(now || new Date());
                 const live = list.filter((m) => m._status === "live").length;
-                els.totalChannels.textContent = String(streamLinks.length);
+                els.totalChannels.textContent = String(streamLinks.length + extraChannels().length);
+                els.totalChannels.title = streamLinks.length + " site kanalı + " + extraChannels().length + " extra (m3u8)";
                 els.totalMatches.textContent = String(list.length);
                 els.totalLive.textContent = String(live);
                 els.badgeChannels.textContent = String(streamLinks.length);
@@ -887,6 +1297,7 @@
             function setView(view) {
                 state.view = view === "list" ? "list" : "grid";
                 els.channelGrid.classList.toggle("view-list", state.view === "list");
+                if (els.extraGrid) els.extraGrid.classList.toggle("view-list", state.view === "list");
                 document.querySelectorAll(".view-btn").forEach((b) => {
                     b.classList.toggle("active", b.getAttribute("data-view") === state.view);
                 });
@@ -899,6 +1310,7 @@
                 document.querySelectorAll(".tab-content").forEach((c) => c.classList.toggle("active", c.id === tabId));
                 els.brandRow.style.display = tabId === "channelsTab" ? "flex" : "none";
                 els.matchFilterRow.style.display = tabId === "matchesTab" ? "flex" : "none";
+                els.panelRow.style.display = tabId === "extraTab" ? "flex" : "none";
             }
 
             /* ---------------- Canlı veri tazeleme ---------------- */
@@ -951,18 +1363,23 @@
                     state.search = norm(els.searchInput.value.trim());
                     renderChannels();
                     renderMatches();
+                    renderExtra();
                 };
 
+                // ◀ ▶ : EXTRA yayın açıkken EXTRA kanallar arasında, değilse site kanalları arasında gezer
                 $("navPrev").onclick = () => {
+                    if (state.currentExtraId) { stepExtra(-1); return; }
                     if (!streamLinks.length) return;
                     playChannel((state.currentIndex - 1 + streamLinks.length) % streamLinks.length, false);
                 };
                 $("navNext").onclick = () => {
+                    if (state.currentExtraId) { stepExtra(1); return; }
                     if (!streamLinks.length) return;
                     playChannel((state.currentIndex + 1) % streamLinks.length, false);
                 };
 
                 $("reloadPlayerBtn").onclick = () => {
+                    if (state.currentExtraId) { playSource(state.currentSourceIndex, true); return; }
                     const src = els.iframe.src;
                     if (!src) return;
                     els.iframe.src = "about:blank";
@@ -971,12 +1388,29 @@
                 };
 
                 $("fullscreenBtn").onclick = () => {
+                    const isHls = state.playerMode === "hls" && els.playerWrap.classList.contains("mode-hls");
                     const wrap = $("playerWrap");
+                    if (isHls && els.video.webkitEnterFullscreen && !wrap.requestFullscreen) { els.video.webkitEnterFullscreen(); return; } // iOS Safari
                     if (wrap.requestFullscreen) wrap.requestFullscreen();
                     else if (wrap.webkitRequestFullscreen) wrap.webkitRequestFullscreen();
                 };
 
-                $("refreshDataBtn").onclick = () => { refreshMatches(false); };
+                if (els.pipBtn) {
+                    els.pipBtn.onclick = () => {
+                        if (!("pictureInPictureEnabled" in document) || !els.video.requestPictureInPicture) return;
+                        if (document.pictureInPictureElement) { document.exitPictureInPicture(); return; }
+                        els.video.requestPictureInPicture().catch(() => { /* desteklenmiyor */ });
+                    };
+                }
+
+                $("retryStreamBtn").onclick = () => { playSource(state.currentSourceIndex, true); };
+                $("nextSourceBtn").onclick = () => {
+                    const n = state.currentSources.length;
+                    if (!n) return;
+                    playSource((state.currentSourceIndex + 1) % n, true);
+                };
+
+                $("refreshDataBtn").onclick = () => { refreshMatches(false); refreshExtra(true); };
 
                 document.addEventListener("keydown", (e) => {
                     const tag = document.activeElement ? document.activeElement.tagName.toLowerCase() : "";
@@ -985,8 +1419,10 @@
                     else if (e.key === "ArrowLeft") { e.preventDefault(); $("navPrev").click(); }
                     else if (e.key === "g" || e.key === "G") { setView("grid"); }
                     else if (e.key === "l" || e.key === "L") { setView("list"); }
+                    else if (e.key === "s" || e.key === "S") { if (state.currentExtraId) $("nextSourceBtn").click(); }
                     else if (e.key === "1") { setTab("channelsTab"); }
                     else if (e.key === "2") { setTab("matchesTab"); }
+                    else if (e.key === "3") { setTab("extraTab"); }
                 });
             }
 
@@ -1017,7 +1453,13 @@
             }
 
             function applyDeepLink() {
-                const hash = (location.hash || "").replace("#kanal=", "");
+                const raw = location.hash || "";
+                if (raw.indexOf("#extra=") === 0) {
+                    const id = decodeURIComponent(raw.slice("#extra=".length));
+                    if (extraById(id)) { setTab("extraTab"); playExtra(id, false); }
+                    return;
+                }
+                const hash = raw.replace("#kanal=", "");
                 if (!hash) return;
                 const wanted = norm(decodeURIComponent(hash));
                 const idx = channelNames.findIndex((n) => norm(n) === wanted);
@@ -1031,15 +1473,19 @@
                 setTab("channelsTab");
                 renderBrandChips();
                 renderMatchFilters(new Date());
+                renderPanelChips();
                 renderChannels();
                 renderMatches();
+                renderExtra();
                 tickClock();
                 bindEvents();
                 createParticles();
                 applyDeepLink();
                 setInterval(tickClock, 30000);
                 refreshMatches(true);
-                setInterval(() => refreshMatches(true), 5 * 60 * 1000);
+                refreshExtra(true);
+                setInterval(() => { refreshMatches(true); refreshExtra(true); }, 5 * 60 * 1000);
+                window.inadina.ready = true;
             }
 
             // Testler ve konsol kullanımı için
@@ -1047,12 +1493,17 @@
                 state: state,
                 playChannel: playChannel,
                 playMatch: playMatch,
+                playExtra: playExtra,
+                playSource: playSource,
+                extraChannels: extraChannels,
                 renderChannels: renderChannels,
                 renderMatches: renderMatches,
+                renderExtra: renderExtra,
                 setView: setView,
                 setTab: setTab,
                 computeState: computeState,
-                refreshMatches: refreshMatches
+                refreshMatches: refreshMatches,
+                refreshExtra: refreshExtra
             };
 
             if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init);
