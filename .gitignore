@@ -7,3 +7,7 @@ venv/
 # üretilen raporlar repoya commit edilecekse aşağıyı açmayın
 # output/
 # config/current_site.yml
+
+# arayüz testleri (npm install ile kurulur)
+node_modules/
+package-lock.json

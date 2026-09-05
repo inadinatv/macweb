@@ -44,6 +44,19 @@ categorize:
     - "Şimdi"
   # Gün içinde saat geçmişse maçı "canlı/başladı" kategorisine al
   live_grace_minutes: 0               # yayın başlangıcına ne kadar tolerans
+  # Bir maçın ortalama yayın süresi (dakika). Başlangıç + bu süre içinde maç
+  # "CANLI" sayılır; süre dolunca "BİTTİ" olur. Sayfadaki (istemci) durum
+  # hesabı da aynı tabloyu kullanır, böylece bot ile site aynı şeyi söyler.
+  live_window_minutes: 120
+  live_window_by_sport:
+    Futbol: 120
+    Basketbol: 135
+    Voleybol: 150
+    Tenis: 180
+    Buz Hokeyi: 130
+    Hentbol: 125
+    Amerikan Futbolu: 195
+    Beyzbol: 200
   default_sport: "Spor"
   sport_aliases:                       # ana sporda görülen adlar
     Futbol: "Futbol"

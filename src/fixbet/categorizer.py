@@ -18,8 +18,34 @@ def _hhmm_to_minutes(hhmm: str) -> int | None:
         return None
 
 
+def live_window_minutes(sport: str, cat: dict[str, Any] | None = None) -> int:
+    """Bir maçın ortalama yayın süresi (dakika) — "canlı" sayılacağı pencere.
+
+    Eski davranış her maçı başlangıçtan 15 dk sonra "bitti" sayıyordu; bu yüzden
+    canlı listesi neredeyse hiç dolmuyordu. Süre artık spora göre ayarlanabilir.
+    """
+    cat = cat if cat is not None else config.load_settings().get("categorize", {})
+    default = int(cat.get("live_window_minutes", 120))
+    by_sport = cat.get("live_window_by_sport") or {}
+    key = str(sport or "").lower().replace("ı", "i").replace("İ", "i").replace("ş", "s") \
+        .replace("ğ", "g").replace("ü", "u").replace("ö", "o").replace("ç", "c")
+    for name, minutes in by_sport.items():
+        if str(name).lower().replace("ı", "i").replace("İ", "i").replace("ş", "s") \
+                .replace("ğ", "g").replace("ü", "u").replace("ö", "o").replace("ç", "c") == key:
+            return int(minutes)
+    return default
+
+
 def classify(matches: list[Match], now: datetime) -> list[Match]:
-    """Saate göre canlı / başladı / yaklaşan / bitti durumunu işaretler."""
+    """Saate göre canlı / yaklaşan / bitti durumunu işaretler.
+
+    * başlangıç saati ilerideyse -> yaklaşan
+    * başlangıç + yayın penceresi içindeysek -> canlı
+    * pencere dolduysa -> bitti
+    Gece yarısını geçen maçlar (23:xx -> 00:xx) da doğru hesaplanır.
+    """
+    cat = config.load_settings().get("categorize", {})
+    grace = int(cat.get("live_grace_minutes", 0))
     now_min = now.hour * 60 + now.minute
     for m in matches:
         mins = _hhmm_to_minutes(m.time)
@@ -27,15 +53,21 @@ def classify(matches: list[Match], now: datetime) -> list[Match]:
             m.status = "upcoming"
             m.started = False
             continue
-        if mins <= now_min - 15:            # maç süresi dolmuş
-            m.status = "finished"
-            m.started = True
-        elif mins <= now_min:               # yayın başlamış
+        # gece yarısı düzeltmesi: maç 20:00'den sonra, saat 03:00'ten önceyse
+        if now_min < 3 * 60 and mins > 20 * 60:
+            elapsed = now_min + 24 * 60 - mins
+        else:
+            elapsed = now_min - mins
+        elapsed += grace
+        if elapsed < 0:
+            m.status = "upcoming"
+            m.started = False
+        elif elapsed <= live_window_minutes(m.sport, cat):
             m.status = "live"
             m.started = True
         else:
-            m.status = "upcoming"
-            m.started = False
+            m.status = "finished"
+            m.started = True
     return matches
 
 

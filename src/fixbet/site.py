@@ -1,14 +1,12 @@
 """GitHub Pages için repo köküne index.html üretir.
 
-Kullanıcının mevcut İNADİNA TV şablonunu (src/fixbet/templates/index.html)
-kullanır ve:
-  * Ölü/sabit alan adı yerine GÜNCEL site adresini (config/current_site.yml)
-    bağlar,
-  * 7/24 kanal listesini güncel adresle üretir,
-  * Günün maçlarını (canlı / yaklaşan / günün maçı / lig bazlı) gömer.
+Kullanıcının İNADİNA TV şablonunu (src/fixbet/templates/index.html) kullanır ve:
+  * 7/24 kanal listesini güncel adresle üretir (ad, marka, ikon, durum),
+  * günün maçlarını **gerçek kaynak verisinden** gömer (uydurma/sabit maç yok),
+  * istemcinin taze veri çekebilmesi için output/today_matches.json yolunu verir.
 
-Böylece GitHub Pages'te gösterilen index.html git'e push edildiği için
-her zaman güncel adresi ve maçları gösterir.
+Sayfa tasarımı tek yerden (şablon) yönetilir; ``python fixbet.py run`` her
+çalıştığında index.html bu şablondan yeniden yazılır.
 """
 from __future__ import annotations
 
@@ -24,87 +22,140 @@ from .models import Match
 REPO_ROOT = config.ROOT
 TEMPLATE = config.ROOT / "src" / "fixbet" / "templates" / "index.html"
 INDEX_OUT = REPO_ROOT / "index.html"
+# İstemci tarafı tazeleme: GitHub Pages ile aynı kökten okunan gerçek veri dosyası
+MATCHES_SOURCE = "output/today_matches.json"
+
+# Kanal adı -> ikon (marka bazlı, görsel amaçlı)
+_ICON_RULES: list[tuple[list[str], str]] = [
+    (["bein", "beın"], "⚽"),
+    (["s sport"], "🏀"),
+    (["smartspor", "smart spor"], "🏟️"),
+    (["tivibu"], "📺"),
+    (["tabii", "tabıı"], "📡"),
+    (["euro"], "🚴"),
+    (["a spor"], "⚽"),
+    (["trt"], "🇹🇷"),
+    (["atv", "tv 8", "tv8"], "📺"),
+]
+
+
+def channel_icon(name: str) -> str:
+    """Kanal adına uygun emoji simgesini üretir."""
+    low = (name or "").lower().replace("ı", "i").replace("ş", "s")
+    for keywords, icon in _ICON_RULES:
+        if any(kw in low for kw in keywords):
+            return icon
+    return "📡"
+
+
+def ordered_channels(channels_data: dict[str, Any]) -> list[dict[str, Any]]:
+    """Kanal listesini marka sırasına göre düzleştirir (gruplu, okunur sıra)."""
+    if not channels_data:
+        return []
+    by_brand = channels_data.get("by_brand") or {}
+    if by_brand:
+        out: list[dict[str, Any]] = []
+        seen: set[str] = set()
+        for group in by_brand.values():
+            for ch in group:
+                cid = ch.get("channel_id") or ch.get("name") or ""
+                if cid in seen:
+                    continue
+                seen.add(cid)
+                out.append(ch)
+        return out
+    return list(channels_data.get("channels") or [])
+
+
+def channel_payload(channel_list: list[dict[str, Any]]) -> dict[str, list[str]]:
+    """Şablondaki JS dizilerini üretir: bağlantı, ad, marka, ikon, durum."""
+    links: list[str] = []
+    names: list[str] = []
+    brands: list[str] = []
+    icons: list[str] = []
+    statuses: list[str] = []
+    for ch in channel_list:
+        url = ch.get("url") or ""
+        if not url:
+            continue
+        links.append(url)
+        names.append(ch.get("name") or "")
+        brands.append(ch.get("brand") or "Diğer")
+        icons.append(channel_icon(ch.get("name") or ""))
+        statuses.append(ch.get("status") or "7/24")
+    return {"links": links, "names": names, "brands": brands, "icons": icons, "statuses": statuses}
+
+
+_FOLD = str.maketrans({"ı": "i", "İ": "i", "ş": "s", "Ş": "s", "ğ": "g", "Ğ": "g",
+                       "ü": "u", "Ü": "u", "ö": "o", "Ö": "o", "ç": "c", "Ç": "c"})
+
+
+def fold_key(text: str) -> str:
+    """Sayfadaki norm() ile birebir aynı anahtar biçimi (Türkçe harf katlaması)."""
+    return str(text or "").lower().translate(_FOLD)
+
+
+def live_window(settings: dict[str, Any] | None = None) -> dict[str, int]:
+    """Spor bazlı canlı yayın penceresi (dakika) — istemci de aynı tabloyu kullanır."""
+    settings = settings if settings is not None else config.load_settings()
+    cat = settings.get("categorize", {}) or {}
+    table: dict[str, int] = {"default": int(cat.get("live_window_minutes", 120))}
+    for sport, minutes in (cat.get("live_window_by_sport") or {}).items():
+        table[fold_key(sport)] = int(minutes)
+    return table
+
+
+def matches_payload(matches: list[Match], channel_list: list[dict[str, Any]],
+                    date: str) -> list[dict[str, Any]]:
+    """Maçları sayfanın kullandığı sade JSON biçimine çevirir (gerçek veri)."""
+    names_by_id: dict[str, str] = {}
+    for ch in channel_list:
+        cid = ch.get("channel_id") or ""
+        if cid:
+            names_by_id[cid] = ch.get("name") or cid.upper()
+    base = scraper.current_base_url()
+    out: list[dict[str, Any]] = []
+    for m in matches:
+        stream = m.url or (f"{base}/channel.html?id={m.channel_id or m.match_id}" if base else "")
+        cid = m.channel_id or m.match_id
+        out.append({
+            "id": m.match_id,
+            "home": m.home,
+            "away": m.away,
+            "league": m.league,
+            "time": m.time,
+            "sport": m.sport or "Spor",
+            "status": m.status,
+            "isMod": bool(m.is_match_of_day),
+            "channelId": cid,
+            "channelName": names_by_id.get(cid, (cid or "").upper()),
+            "streamUrl": stream,
+            "logoHome": m.logo_home or "",
+            "logoAway": m.logo_away or "",
+            "date": date,
+        })
+    out.sort(key=lambda x: (x["time"] or "99:99"))
+    return out
 
 
 def _match_groups_html(matches: list[Match]) -> str:
-    """Maçları canlı/yaklaşan/günün maçı + lig bazında, zengin ve kategorize HTML'e çevirir.
-
-    Her maç kartı oynatıcıya bağlanır (bütünleşik), takım logoları gösterilir,
-    ve istemci (client) tarafı yeniden canlı durumu hesaplayabilmesi için
-    data-time / data-status / data-stream öznitelikleri taşır.
-    """
-    def logo_img(url: str | None) -> str:
-        if not url:
-            return ""
-        return (f'<span class="team-logo"><img loading="lazy" src="{escape(url)}" '
-                f'alt="" onerror="this.style.display=\'none\'"></span>')
-
+    """Maçları JS'siz ortam (noscript) için okunur HTML listesine çevirir."""
     def card(m: Match) -> str:
         cls = "live" if m.status in ("live", "started") else ("up" if m.status == "upcoming" else "done")
-        # Client, saate göre yeniden hesaplasın diye gerçek durumu da ekle
-        mod = '<span class="match-badge mod" data-is-mod="1">★ GÜNÜN MAÇI</span>' if m.is_match_of_day else ""
-        stream = m.url or ""
-        watch = (
-            f'<button class="match-watch" data-stream="{escape(stream)}" title="{escape(m.home)} vs {escape(m.away)}">'
-            f'▶ İZLE</button>' if stream else ""
-        )
-        # İlk 5 canlı/başlayan maça otomatik canlı işareti (badge JS ile güncellenir)
+        mod = ' ★ Günün Maçı' if m.is_match_of_day else ""
         return (
-            f'<div class="match-card {cls}" data-time="{escape(m.time or "")}" data-status="{m.status}" '
-            f'data-league="{escape(m.league)}">'
-            f'<span class="match-time">{escape(m.time or "--:--")}</span>'
-            f'<span class="match-teams">{logo_img(m.logo_home)}'
-            f'<span class="mt-name"><b>{escape(m.home)}</b><span class="mt-vs">vs</span><b>{escape(m.away)}</b></span>'
-            f'{logo_img(m.logo_away)}'
-            f'<span class="match-league">{escape(m.league)}</span></span>'
-            f'<span class="match-badge {cls}" data-badge>{_badge_label(m.status)}</span>{mod}{watch}'
-            f'</div>'
+            f'<li class="match-row {cls}">'
+            f'<b>{escape(m.time or "--:--")}</b> '
+            f'{escape(m.home)} - {escape(m.away)} '
+            f'<span class="match-league">({escape(m.league)})</span>'
+            f'<span class="match-badge {cls}">{_badge_label(m.status)}{escape(mod)}</span>'
+            f'</li>'
         )
 
-    def group(title: str, items: list[Match], accent: str, gkey: str = "") -> str:
-        if not items:
-            return ""
-        gid = f' data-group="{gkey}"' if gkey else ""
-        title_html = (f'<div class="match-group-title" style="color:{accent}">'
-                      f'<span>{title} <span class="mcount">({len(items)})</span></span></div>')
-        rows = "".join(card(m) for m in sorted(items, key=lambda x: (x.time or "99:99")))
-        return f'<div class="match-group"{gid}>{title_html}<div class="match-list">{rows}</div></div>'
-
-    live = [m for m in matches if m.status in ("live", "started")]
-    upcoming = [m for m in matches if m.status == "upcoming"]
-    done = [m for m in matches if m.status == "finished"]
-    mod = [m for m in matches if m.is_match_of_day]
-    sport_groups: dict[str, list[Match]] = {}
-    for m in matches:
-        sport_groups.setdefault(m.sport or "Spor", []).append(m)
-
-    # Lig bazlı
-    by_league: dict[str, list[Match]] = {}
-    for m in matches:
-        by_league.setdefault(m.league or "Diğer", []).append(m)
-    league_html = "".join(group(f"🏆 {escape(lg)}", grp, "#ffcc33") for lg, grp in by_league.items())
-
-    # Filtre sekmeleri (client tarafı grupları gösterir/gizler)
-    filter_bar = (
-        '<div class="match-filters" id="matchFilters">'
-        '<button class="mf-btn active" data-mf="all">Tümü</button>'
-        '<button class="mf-btn" data-mf="live">🔴 Canlı</button>'
-        '<button class="mf-btn" data-mf="mod">⭐ Günün Maçı</button>'
-        '<button class="mf-btn" data-mf="upcoming">⏰ Yaklaşan</button>'
-        '<button class="mf-btn" data-mf="done">✅ Bitti</button>'
-        '</div>'
-    )
-
-    parts = [
-        group("🔴 CANLI", live, "#ff2d7a", "live"),
-        group("⭐ GÜNÜN MAÇI", mod, "#ffcc33", "mod"),
-        group("⏰ YAKLAŞAN", upcoming, "#00eaff", "upcoming"),
-        group("✅ BİTTİ", done, "#8d84aa", "done"),
-        group("🏆 LİG BAZLI", matches, "#ffcc33"),
-    ]
     if not matches:
-        parts.append('<div class="empty-msg">Bugün için maç listesi alınamadı. Bot çalıştığında burada güncellenir.</div>')
-    return filter_bar + "\n" + "\n".join(p for p in parts if p)
+        return '<p class="empty-msg">Bugün için maç listesi alınamadı.</p>'
+    items = sorted(matches, key=lambda x: (x.time or "99:99"))
+    return '<ul class="match-list">' + "".join(card(m) for m in items) + "</ul>"
 
 
 def _badge_label(status: str) -> str:
@@ -115,35 +166,41 @@ def _badge_label(status: str) -> str:
     return "BİTTİ"
 
 
-def _channels_js(channel_list: list[dict[str, Any]]) -> tuple[str, str]:
-    """Kanal listesinden streamLinks + channelNames JS dizilerini üretir."""
-    links = [ch.get("url") or "" for ch in channel_list]
-    names = [ch.get("name", "") for ch in channel_list]
-    return json.dumps(links, ensure_ascii=False), json.dumps(names, ensure_ascii=False)
+def _js(value: Any) -> str:
+    """JSON'u <script> içine güvenle gömer (</script> kaçışı ile)."""
+    return json.dumps(value, ensure_ascii=False).replace("</", "<\\/")
 
 
-def build_index_html(matches: list[Match], channels_data: dict[str, Any] | None = None) -> str | None:
+def build_index_html(matches: list[Match], channels_data: dict[str, Any] | None = None,
+                     now: datetime | None = None) -> str | None:
     """index.html üretir ve repo köküne yazar. Şablon yoksa None döner."""
     if not TEMPLATE.exists():
         return None
 
     base = scraper.current_base_url()
-    now = datetime.now().strftime("%Y-%m-%d %H:%M")
+    now = now or datetime.now()
 
     if channels_data is None:
         channels_data = channels.categorize(channels.fetch_channels())
-    channel_list = channels_data.get("channels", [])
-    stream_links, channel_names = _channels_js(channel_list)
-
-    matches_html = _match_groups_html(matches)
-    site_addr = base or "—"
+    channel_list = ordered_channels(channels_data)
+    payload = channel_payload(channel_list)
 
     html = TEMPLATE.read_text(encoding="utf-8")
-    html = html.replace("{{SITE_ADDR}}", escape(site_addr))
-    html = html.replace("{{UPDATED_AT}}", escape(now))
-    html = html.replace("{{STREAM_LINKS}}", stream_links)
-    html = html.replace("{{CHANNEL_NAMES}}", channel_names)
-    html = html.replace("{{MATCHES_HTML}}", matches_html)
+    replacements = {
+        "{{SITE_ADDR}}": escape(base or ""),
+        "{{UPDATED_AT}}": escape(now.strftime("%Y-%m-%d %H:%M")),
+        "{{MATCHES_SOURCE}}": MATCHES_SOURCE,
+        "{{STREAM_LINKS}}": _js(payload["links"]),
+        "{{CHANNEL_NAMES}}": _js(payload["names"]),
+        "{{CHANNEL_BRANDS}}": _js(payload["brands"]),
+        "{{CHANNEL_ICONS}}": _js(payload["icons"]),
+        "{{CHANNEL_STATUSES}}": _js(payload["statuses"]),
+        "{{LIVE_WINDOW_JSON}}": _js(live_window()),
+        "{{MATCHES_JSON}}": _js(matches_payload(matches, channel_list, now.strftime("%Y-%m-%d"))),
+        "{{MATCHES_HTML}}": _match_groups_html(matches),
+    }
+    for token, value in replacements.items():
+        html = html.replace(token, value)
 
     os.makedirs(INDEX_OUT.parent, exist_ok=True)
     INDEX_OUT.write_text(html, encoding="utf-8")
