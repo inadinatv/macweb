@@ -1,40 +1,43 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-09-05 19:40  
-> **Toplam maç:** 7  |  **Canlı:** 7  |  **Yaklaşan:** 0
+> **Güncellenme:** 2026-09-05 21:07  
+> **Toplam maç:** 7  |  **Canlı:** 1  |  **Yaklaşan:** 0
 
 ## 🔴 CANLI
 
-- 🔴 **St. Etienne vs Montpellier** — `21:00` | Fransa Ligue 2 <https://fixbettv84.com/channel.html?id=b4>
-- 🔴 **Le Havre vs Brest** — `21:45` | Fransa Ligue 1 <https://fixbettv84.com/channel.html?id=bm2>
-- 🔴 **Nice vs Le Mans** — `21:45` | Fransa Ligue 1 <https://fixbettv84.com/channel.html?id=b3>
-- 🔴 **Roma vs Atalanta** — `21:45` | İtalya Serie A <https://fixbettv84.com/channel.html?id=ss2>
-- 🔴 **Villarreal vs Deportivo** — `22:00` | İspanya La Liga <https://fixbettv84.com/channel.html?id=ss>
-- 🔴 **Bragantino vs Bahia** — `22:00` | Brezilya Serie A <https://fixbettv84.com/channel.html?id=sms2>
 - 🔴 **Sporting Lisbon vs Nacional** — `22:30` | Portekiz Liga NOS <https://fixbettv84.com/channel.html?id=b2>
+
+## ✅ BİTTİ
+
+- ✅ **St. Etienne vs Montpellier** — `21:00` | Fransa Ligue 2 <https://fixbettv84.com/channel.html?id=b4>
+- ✅ **Le Havre vs Brest** — `21:45` | Fransa Ligue 1 <https://fixbettv84.com/channel.html?id=bm2>
+- ✅ **Nice vs Le Mans** — `21:45` | Fransa Ligue 1 <https://fixbettv84.com/channel.html?id=b3>
+- ✅ **Roma vs Atalanta** — `21:45` | İtalya Serie A <https://fixbettv84.com/channel.html?id=ss2>
+- ✅ **Villarreal vs Deportivo** — `22:00` | İspanya La Liga <https://fixbettv84.com/channel.html?id=ss>
+- ✅ **Bragantino vs Bahia** — `22:00` | Brezilya Serie A <https://fixbettv84.com/channel.html?id=sms2>
 
 ---
 ## 🏆 Lig Bazlı
 
 ### Brezilya Serie A
-- 🔴 Bragantino vs Bahia — 22:00
+- ⏰ Bragantino vs Bahia — 22:00
 
 ### Fransa Ligue 1
-- 🔴 Le Havre vs Brest — 21:45
-- 🔴 Nice vs Le Mans — 21:45
+- ⏰ Le Havre vs Brest — 21:45
+- ⏰ Nice vs Le Mans — 21:45
 
 ### Fransa Ligue 2
-- 🔴 St. Etienne vs Montpellier — 21:00
+- ⏰ St. Etienne vs Montpellier — 21:00
 
 ### Portekiz Liga NOS
 - 🔴 Sporting Lisbon vs Nacional — 22:30
 
 ### İspanya La Liga
-- 🔴 Villarreal vs Deportivo — 22:00
+- ⏰ Villarreal vs Deportivo — 22:00
 
 ### İtalya Serie A
-- 🔴 Roma vs Atalanta — 21:45
+- ⏰ Roma vs Atalanta — 21:45
 
 ---
 ## 📺 7/24 KANALLAR (31)
