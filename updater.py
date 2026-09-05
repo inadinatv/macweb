@@ -271,6 +271,8 @@ def update_files():
     stream_links = [f"https://{active_domain}/channel?id={c['id']}" for c in CHANNELS_DATA]
     channel_names = [c["name"] for c in CHANNELS_DATA]
     quality_labels = [c["quality"] for c in CHANNELS_DATA]
+    channel_categories = [c["category"] for c in CHANNELS_DATA]
+    channel_icons = [c["icon"] for c in CHANNELS_DATA]
     
     live_matches = get_live_matches(active_domain)
     daily_matches = get_daily_matches(active_domain)
@@ -303,6 +305,8 @@ def update_files():
         const streamLinks = {json.dumps(stream_links, ensure_ascii=False, indent=12)};
         const channelNames = {json.dumps(channel_names, ensure_ascii=False, indent=12)};
         const qualityLabels = {json.dumps(quality_labels, ensure_ascii=False, indent=12)};
+        const channelCategories = {json.dumps(channel_categories, ensure_ascii=False, indent=12)};
+        const channelIcons = {json.dumps(channel_icons, ensure_ascii=False, indent=12)};
         const liveMatchesData = {json.dumps(live_matches, ensure_ascii=False, indent=12)};
         const dailyMatchesData = {json.dumps(daily_matches, ensure_ascii=False, indent=12)};
         /*BOT_END*/"""

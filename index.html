@@ -196,13 +196,6 @@
         .stat-title { font-size: 0.65rem; letter-spacing: 2px; color: var(--text-muted); text-transform: uppercase; margin-bottom: 4px; }
         .stat-val { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 1.6rem; color: var(--neon-purple); text-shadow: 0 0 12px rgba(155,77,255,0.5); }
 
-        .gamepad-indicator {
-            font-size: 0.8rem; color: #b794f4; display: flex; align-items: center; justify-content: center; gap: 8px;
-            background: rgba(155,77,255,0.1); padding: 8px 12px; border-radius: 12px; border: 1px solid rgba(155,77,255,0.25);
-        }
-        .gamepad-dot { width: 8px; height: 8px; background: #9b4dff; border-radius: 50%; box-shadow: 0 0 10px #9b4dff; }
-        .gamepad-dot.inactive { background: #555; box-shadow: none; }
-
         /* Categorized System / Tabs Section */
         .system-section {
             background: rgba(12,10,26,0.92); border: 1px solid rgba(255,45,122,0.25);
@@ -230,6 +223,45 @@
         .tab-badge { background: rgba(0,0,0,0.4); padding: 2px 8px; border-radius: 10px; font-size: 0.8rem; font-weight: 800; color: var(--neon-gold); }
         .tab-btn.active .tab-badge { background: var(--neon-pink); color: #fff; }
 
+        /* Channel Category Row - NEW: kategori butonları */
+        .channel-cat-row {
+            display: flex; align-items: center; gap: 10px; overflow-x: auto; padding: 4px 2px 16px; margin-bottom: 6px;
+            scrollbar-width: none; -ms-overflow-style: none;
+        }
+        .channel-cat-row::-webkit-scrollbar { display: none; }
+        .channel-cat-btn {
+            flex: 0 0 auto; display: flex; align-items: center; gap: 8px;
+            padding: 10px 18px; border-radius: 16px;
+            background: rgba(255,255,255,0.04); border: 1.5px solid rgba(255,255,255,0.08);
+            color: var(--text-muted); font-family: 'Barlow Condensed', sans-serif;
+            font-weight: 800; font-size: 0.95rem; letter-spacing: 1px;
+            cursor: pointer; transition: all 0.28s ease; white-space: nowrap; outline: none;
+            position: relative; overflow: hidden;
+        }
+        .channel-cat-btn::before {
+            content: ''; position: absolute; inset: 0; border-radius: 16px;
+            background: linear-gradient(135deg, rgba(255,45,122,0.12), rgba(155,77,255,0.12));
+            opacity: 0; transition: opacity 0.28s ease;
+        }
+        .channel-cat-btn:hover {
+            background: rgba(255,45,122,0.10); color: #fff; border-color: rgba(255,45,122,0.35);
+            transform: translateY(-2px); box-shadow: 0 6px 18px rgba(0,0,0,0.35), 0 0 15px rgba(255,45,122,0.15);
+        }
+        .channel-cat-btn:hover::before { opacity: 1; }
+        .channel-cat-btn.active {
+            background: linear-gradient(135deg, var(--neon-pink) 0%, var(--neon-purple) 100%);
+            color: #fff; border-color: transparent;
+            box-shadow: 0 0 20px rgba(255,45,122,0.5), 0 8px 22px rgba(0,0,0,0.45);
+            transform: translateY(-1px);
+        }
+        .channel-cat-btn .cat-count {
+            background: rgba(0,0,0,0.28); padding: 2px 8px; border-radius: 20px;
+            font-size: 0.78rem; font-weight: 800; min-width: 26px; text-align: center; position: relative; z-index: 1;
+        }
+        .channel-cat-btn.active .cat-count { background: rgba(255,255,255,0.22); color: #fff; }
+        .cat-icon { font-size: 1.15rem; position: relative; z-index: 1; }
+        .cat-label { position: relative; z-index: 1; }
+
         /* Filter Pills */
         .filter-row { display: flex; align-items: center; gap: 8px; overflow-x: auto; padding-bottom: 14px; margin-bottom: 16px; scrollbar-width: none; }
         .filter-row::-webkit-scrollbar { display: none; }
@@ -246,31 +278,95 @@
         .tab-content.active { display: block; animation: fadeIn 0.4s ease; }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
 
-        /* Channel Carousel Grid */
+        /* Channel Grid - NEW ızgara kart tasarımı */
         .channel-grid {
-            display: grid; grid-template-columns: repeat(auto-fill, minmax(135px, 1fr)); gap: 14px;
+            display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: 16px;
         }
-        .ch-btn {
-            padding: 16px 12px; border-radius: 18px; border: 1.5px solid rgba(255,255,255,0.08);
-            background: linear-gradient(180deg, rgba(25,18,45,0.9) 0%, rgba(12,8,25,0.95) 100%);
-            color: white; cursor: pointer; transition: all 0.3s cubic-bezier(0.4,0,0.2,1);
-            text-align: center; position: relative; overflow: hidden; outline: none;
-            display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px;
+
+        .ch-card {
+            position: relative;
+            background: linear-gradient(145deg, rgba(28,20,52,0.96) 0%, rgba(14,11,30,0.98) 100%);
+            border: 1.5px solid rgba(255,255,255,0.07);
+            border-radius: 22px; padding: 16px 14px 16px;
+            cursor: pointer; transition: all 0.35s cubic-bezier(0.4,0,0.2,1);
+            overflow: hidden; text-align: center;
+            display: flex; flex-direction: column; align-items: center; gap: 8px;
+            isolation: isolate; min-height: 158px;
+            animation: cardIn 0.45s ease both;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.04);
         }
-        .ch-btn:hover {
-            border-color: rgba(255,45,122,0.6); transform: translateY(-4px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.5), 0 0 25px rgba(255,45,122,0.25);
-            background: linear-gradient(180deg, rgba(35,22,55,0.95) 0%, rgba(18,10,35,0.98) 100%);
+        @keyframes cardIn { from { opacity:0; transform: translateY(14px) scale(0.96);} to { opacity:1; transform: translateY(0) scale(1);} }
+        .ch-card::before {
+            content: ''; position: absolute; inset: 0; border-radius: 22px; padding: 1.5px;
+            background: linear-gradient(135deg, rgba(255,45,122,0), rgba(155,77,255,0));
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor; mask-composite: exclude;
+            opacity: 0; transition: opacity 0.35s; pointer-events: none;
         }
-        .ch-btn.active {
-            border-color: var(--neon-pink)!important;
-            background: linear-gradient(180deg, rgba(255,45,122,0.25) 0%, rgba(155,77,255,0.2) 100%)!important;
-            box-shadow: 0 0 30px rgba(255,45,122,0.5), 0 6px 20px rgba(0,0,0,0.5)!important;
-            transform: translateY(-2px);
+        .ch-card::after {
+            content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%;
+            background: radial-gradient(circle at center, rgba(255,45,122,0.06) 0%, transparent 60%);
+            opacity: 0; transition: opacity 0.35s; pointer-events: none;
         }
-        .ch-icon { font-size: 1.5rem; margin-bottom: 2px; }
-        .ch-number { font-family: 'Bebas Neue', sans-serif; font-size: 1.6rem; color: var(--neon-gold); line-height: 1; }
-        .ch-label { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: #ddd; }
+        .ch-card:hover {
+            transform: translateY(-6px) scale(1.02);
+            border-color: rgba(255,45,122,0.45);
+            box-shadow: 0 14px 35px rgba(0,0,0,0.55), 0 0 28px rgba(255,45,122,0.22), 0 0 12px rgba(155,77,255,0.18);
+            background: linear-gradient(145deg, rgba(38,26,68,0.98) 0%, rgba(18,14,38,0.98) 100%);
+        }
+        .ch-card:hover::before { opacity: 1; background: linear-gradient(135deg, rgba(255,45,122,0.8), rgba(155,77,255,0.7), rgba(0,234,255,0.5)); }
+        .ch-card:hover::after { opacity: 1; }
+        .ch-card.active {
+            border-color: var(--neon-pink) !important;
+            background: linear-gradient(145deg, rgba(255,45,122,0.18) 0%, rgba(155,77,255,0.20) 100%) !important;
+            box-shadow: 0 0 32px rgba(255,45,122,0.45), 0 10px 30px rgba(0,0,0,0.5) !important;
+            transform: translateY(-3px) scale(1.02);
+        }
+        .ch-card.active::before { opacity: 1; background: linear-gradient(135deg, var(--neon-pink), var(--neon-purple)); }
+
+        .ch-card-top { display: flex; align-items: center; justify-content: space-between; width: 100%; margin-bottom: 2px; position: relative; z-index: 1; }
+        .ch-quality {
+            font-size: 0.62rem; font-weight: 900; letter-spacing: 0.8px; padding: 3px 8px; border-radius: 20px;
+            background: rgba(255,204,51,0.13); color: var(--neon-gold); border: 1px solid rgba(255,204,51,0.30); line-height: 1;
+        }
+        .ch-card.active .ch-quality { background: linear-gradient(135deg, #ffcc33, #ffb700); color: #000; border-color: transparent; box-shadow: 0 0 10px rgba(255,204,51,0.5); }
+        .ch-live-dot { width: 8px; height: 8px; background: #00ff88; border-radius: 50%; box-shadow: 0 0 10px #00ff88; animation: livePulse 1.6s infinite; flex-shrink: 0; }
+        .ch-card.active .ch-live-dot { background: var(--neon-pink); box-shadow: 0 0 10px var(--neon-pink); }
+        @keyframes livePulse { 0%,100% { opacity:1; transform:scale(1);} 50% { opacity:0.45; transform:scale(0.82);} }
+
+        .ch-icon-wrap {
+            width: 64px; height: 64px; border-radius: 18px;
+            background: radial-gradient(circle at 30% 30%, rgba(255,45,122,0.18), rgba(155,77,255,0.14) 50%, rgba(0,234,255,0.08));
+            border: 1px solid rgba(255,255,255,0.07);
+            display: flex; align-items: center; justify-content: center;
+            font-size: 2rem; box-shadow: inset 0 1px 1px rgba(255,255,255,0.08), 0 6px 18px rgba(0,0,0,0.35);
+            transition: transform 0.35s ease, box-shadow 0.35s ease; position: relative; z-index: 1;
+        }
+        .ch-card:hover .ch-icon-wrap { transform: scale(1.08) rotate(1.5deg); box-shadow: 0 8px 22px rgba(0,0,0,0.45), 0 0 18px rgba(255,45,122,0.18); }
+        .ch-card.active .ch-icon-wrap { background: radial-gradient(circle at 30% 30%, rgba(255,45,122,0.30), rgba(155,77,255,0.28)); border-color: rgba(255,45,122,0.35); box-shadow: 0 0 18px rgba(255,45,122,0.3); }
+
+        .ch-name {
+            font-family: 'Barlow Condensed', sans-serif; font-weight: 800; font-size: 0.92rem;
+            letter-spacing: 0.6px; line-height: 1.15; color: #f0e8ff; text-transform: uppercase;
+            position: relative; z-index: 1; min-height: 2.2em; display: flex; align-items: center; justify-content: center;
+        }
+        .ch-category {
+            font-size: 0.66rem; font-weight: 700; letter-spacing: 1.2px; color: var(--text-muted);
+            text-transform: uppercase; background: rgba(255,255,255,0.05); padding: 3px 9px; border-radius: 20px;
+            border: 1px solid rgba(255,255,255,0.06); position: relative; z-index: 1; line-height: 1;
+        }
+        .ch-card.active .ch-category { background: rgba(255,45,122,0.18); color: #ffb3d1; border-color: rgba(255,45,122,0.3); }
+        .ch-number {
+            position: absolute; top: 10px; right: 12px; font-family: 'Bebas Neue', sans-serif;
+            font-size: 0.82rem; color: rgba(255,255,255,0.13); letter-spacing: 1px; z-index: 1;
+        }
+        .ch-play-hint {
+            margin-top: 2px; font-size: 0.70rem; font-weight: 800; letter-spacing: 1.2px; color: var(--neon-cyan);
+            opacity: 0; transform: translateY(4px); transition: all 0.28s ease; position: relative; z-index: 1;
+            display: flex; align-items: center; gap: 4px;
+        }
+        .ch-card:hover .ch-play-hint { opacity: 1; transform: translateY(0); }
+        .ch-card.active .ch-play-hint { opacity: 1; transform: translateY(0); color: var(--neon-pink); }
 
         /* Match Cards Grid */
         .match-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 16px; }
@@ -313,7 +409,7 @@
         }
         .play-match-btn:hover { transform: scale(1.05); box-shadow: 0 0 25px rgba(255,45,122,0.6); }
 
-        .empty-msg { text-align: center; padding: 40px 20px; color: var(--text-muted); font-size: 1rem; }
+        .empty-msg { text-align: center; padding: 40px 20px; color: var(--text-muted); font-size: 1rem; grid-column: 1/-1; background: rgba(255,255,255,0.02); border:1px dashed rgba(255,255,255,0.08); border-radius:16px; }
 
         /* Responsive Breakpoints */
         @media (max-width: 1024px) {
@@ -330,6 +426,8 @@
             .search-box { width: 100%; }
             .match-grid { grid-template-columns: 1fr; }
             .tab-btn { font-size: 0.95rem; padding: 8px 14px; }
+            .channel-grid { grid-template-columns: repeat(auto-fill, minmax(145px, 1fr)); gap: 12px; }
+            .channel-cat-btn { padding: 8px 14px; font-size: 0.88rem; }
         }
     </style>
 </head>
@@ -401,11 +499,6 @@
                             <div class="stat-val" id="totalLiveCount" style="color:var(--neon-pink);">0</div>
                         </div>
                     </div>
-
-                    <div class="gamepad-indicator" id="gamepadStatus">
-                        <span class="gamepad-dot inactive" id="gamepadDot"></span>
-                        <span id="gamepadText">Kumanda Bekleniyor</span>
-                    </div>
                 </div>
             </div>
         </div>
@@ -426,7 +519,10 @@
                 </div>
             </div>
 
-            <!-- Sport Category Filter Row -->
+            <!-- Kanal Kategori Butonları - ızgara filtre -->
+            <div class="channel-cat-row" id="channelCategoryRow"></div>
+
+            <!-- Maç Kategori Filtresi - sadece maç sekmelerinde görünür -->
             <div class="filter-row" id="filterRow">
                 <button class="filter-pill active" data-filter="all">Tümü</button>
                 <button class="filter-pill" data-filter="futbol">⚽ Futbol</button>
@@ -556,6 +652,72 @@
             "1080p HD",
             "1080p HD",
             "1080p HD"
+];
+        const channelCategories = [
+            "futbol",
+            "futbol",
+            "futbol",
+            "futbol",
+            "futbol",
+            "futbol",
+            "futbol",
+            "basketbol",
+            "basketbol",
+            "spor",
+            "spor",
+            "futbol",
+            "futbol",
+            "futbol",
+            "futbol",
+            "spor",
+            "spor",
+            "genel",
+            "futbol",
+            "genel",
+            "genel",
+            "spor",
+            "diger",
+            "diger",
+            "futbol",
+            "futbol",
+            "futbol",
+            "futbol",
+            "futbol",
+            "futbol",
+            "futbol"
+];
+        const channelIcons = [
+            "⚽",
+            "⚽",
+            "⚽",
+            "⚽",
+            "⚽",
+            "⚽",
+            "⚽",
+            "🏀",
+            "🏀",
+            "🧠",
+            "🧠",
+            "📡",
+            "📡",
+            "📡",
+            "📡",
+            "🇹🇷",
+            "🇹🇷",
+            "🇹🇷",
+            "⚽",
+            "📺",
+            "📺",
+            "📺",
+            "🚴",
+            "🚴",
+            "📡",
+            "📡",
+            "📡",
+            "📡",
+            "📡",
+            "📡",
+            "📡"
 ];
         const liveMatchesData = [
             {
@@ -726,6 +888,30 @@
 ];
         /*BOT_END*/
 
+        // Fallback safety if BOT variables missing after manual edit
+        if (typeof channelCategories === 'undefined' || !Array.isArray(channelCategories) || channelCategories.length !== streamLinks.length) {
+            // derive from data if available, otherwise generic
+            var _fallbackCats = [];
+            for (var i=0;i<streamLinks.length;i++) _fallbackCats.push('genel');
+            // try to use channelIcons mapping: if icon is football-like treat as futbol etc is not reliable
+            // so just leave as genel, will show all under Tümü
+            window.channelCategories = _fallbackCats;
+        }
+        if (typeof channelIcons === 'undefined' || !Array.isArray(channelIcons) || channelIcons.length !== streamLinks.length) {
+            window.channelIcons = channelNames.map(function(name){
+                if (name.includes('BEIN')) return '⚽';
+                if (name.includes('S SPORT')) return '🏀';
+                if (name.includes('EURO')) return '🚴';
+                if (name.includes('TRT')) return '🇹🇷';
+                if (name.includes('TABİİ')) return '📡';
+                if (name.includes('TİVİBU')) return '📡';
+                if (name.includes('SMART')) return '🧠';
+                if (name.includes('A SPOR')) return '⚽';
+                if (name.includes('ATV') || name.includes('TV 8')) return '📺';
+                return '📺';
+            });
+        }
+
         // Elements
         const iframe = document.getElementById("liveIframe");
         const playerTitle = document.getElementById("playerTitle");
@@ -750,23 +936,71 @@
         const channelGrid = document.getElementById("channelGrid");
         const liveMatchesGrid = document.getElementById("liveMatchesGrid");
         const dailyMatchesGrid = document.getElementById("dailyMatchesGrid");
+        const channelCategoryRow = document.getElementById("channelCategoryRow");
+        const filterRow = document.getElementById("filterRow");
 
         let currentIndex = 0;
         let activeFilter = "all";
         let activeTab = "channelsTab";
+        let activeChannelCategory = "all";
 
-        const channelIcons = channelNames.map(name => {
-            if (name.includes('BEIN')) return '⚽';
-            if (name.includes('S SPOR')) return '🏀';
-            if (name.includes('EURO')) return '🚴';
-            if (name.includes('TRT')) return '🇹🇷';
-            if (name.includes('TABİİ')) return '📡';
-            if (name.includes('TİVİBU')) return '📡';
-            if (name.includes('SMART')) return '🧠';
-            if (name.includes('A SPOR')) return '⚽';
-            if (name.includes('ATV') || name.includes('TV 8')) return '📺';
-            return '📺';
-        });
+        // Kanal kategori tanımları - streams.json kategorilerine göre
+        const CHANNEL_CAT_DEFS = [
+            { id: 'all', label: 'TÜMÜ', icon: '✨' },
+            { id: 'futbol', label: 'FUTBOL', icon: '⚽' },
+            { id: 'basketbol', label: 'BASKETBOL', icon: '🏀' },
+            { id: 'spor', label: 'SPOR', icon: '🏟️' },
+            { id: 'genel', label: 'ULUSAL', icon: '📺' },
+            { id: 'diger', label: 'DİĞER', icon: '🌍' },
+        ];
+
+        const CATEGORY_LABELS_TR = {
+            futbol: 'Futbol',
+            basketbol: 'Basketbol',
+            spor: 'Spor',
+            genel: 'Ulusal',
+            diger: 'Diğer'
+        };
+
+        function getChannelCountsByCategory(){
+            const counts = { all: streamLinks.length, futbol:0, basketbol:0, spor:0, genel:0, diger:0 };
+            channelCategories.forEach(cat => {
+                if (counts.hasOwnProperty(cat)) counts[cat]++;
+                else counts[cat] = (counts[cat]||0)+1;
+            });
+            return counts;
+        }
+
+        function renderChannelCategoryButtons(){
+            const counts = getChannelCountsByCategory();
+            channelCategoryRow.innerHTML = "";
+            CHANNEL_CAT_DEFS.forEach(def => {
+                const count = counts[def.id] || 0;
+                // Sadece veri olan kategorileri + Tümü göster, boş kategoriyi gizle (ama Tümü her zaman)
+                if (def.id !== 'all' && count === 0) return;
+                const btn = document.createElement("button");
+                btn.className = "channel-cat-btn" + (activeChannelCategory === def.id ? " active" : "");
+                btn.setAttribute("data-cat", def.id);
+                btn.innerHTML = `<span class="cat-icon">${def.icon}</span><span class="cat-label">${def.label}</span><span class="cat-count">${count}</span>`;
+                btn.onclick = () => {
+                    activeChannelCategory = def.id;
+                    document.querySelectorAll(".channel-cat-btn").forEach(b=>b.classList.remove("active"));
+                    btn.classList.add("active");
+                    renderChannels();
+                };
+                channelCategoryRow.appendChild(btn);
+            });
+        }
+
+        function updateCategoryRowVisibility(){
+            if (activeTab === "channelsTab") {
+                channelCategoryRow.style.display = "flex";
+                filterRow.style.display = "none";
+            } else {
+                channelCategoryRow.style.display = "none";
+                filterRow.style.display = "flex";
+            }
+        }
 
         function initData() {
             if (typeof activeDomain !== 'undefined' && activeDomain) {
@@ -780,6 +1014,8 @@
             badgeLive.textContent = liveMatchesData.length;
             badgeDaily.textContent = dailyMatchesData.length;
 
+            renderChannelCategoryButtons();
+            updateCategoryRowVisibility();
             renderChannels();
             renderLiveMatches();
             renderDailyMatches();
@@ -799,7 +1035,7 @@
             setTimeout(() => { playerLoading.classList.remove("active"); }, 600);
 
             const chName = channelNames[index];
-            const chIcon = channelIcons[index] || '📡';
+            const chIcon = (typeof channelIcons !== 'undefined' && channelIcons[index]) ? channelIcons[index] : '📡';
             const quality = qualityLabels[index] || 'HD';
 
             nowChannel.textContent = chName;
@@ -807,9 +1043,11 @@
             playerIcon.textContent = chIcon;
             nowQuality.textContent = quality;
 
-            document.querySelectorAll(".ch-btn").forEach((btn, i) => {
-                if (i === index) btn.classList.add("active");
-                else btn.classList.remove("active");
+            // Aktif kartı güncelle - tüm kartlarda active sınıfını yeniden değerlendir
+            document.querySelectorAll(".ch-card").forEach(card => {
+                const idx = parseInt(card.getAttribute("data-idx"), 10);
+                if (idx === index) card.classList.add("active");
+                else card.classList.remove("active");
             });
 
             updateNavButtons();
@@ -831,25 +1069,44 @@
             channelGrid.innerHTML = "";
             const searchVal = searchInput.value.toLowerCase().trim();
 
+            let visibleCount = 0;
             streamLinks.forEach((url, i) => {
                 const name = channelNames[i];
-                if (searchVal && !name.toLowerCase().includes(searchVal)) return;
+                const cat = channelCategories[i] || 'genel';
+                const quality = qualityLabels[i] || 'HD';
+                const icon = channelIcons[i] || '📡';
 
-                const btn = document.createElement("button");
-                btn.className = "ch-btn" + (i === currentIndex ? " active" : "");
-                let num = (i + 1).toString().padStart(2, '0');
+                // Kategori filtresi
+                if (activeChannelCategory !== 'all' && cat !== activeChannelCategory) return;
+                // Arama filtresi
+                if (searchVal && !name.toLowerCase().includes(searchVal) && !cat.toLowerCase().includes(searchVal)) return;
 
-                btn.innerHTML = `
-                    <span class="ch-icon">${channelIcons[i] || '📡'}</span>
-                    <div class="ch-number">${num}</div>
-                    <div class="ch-label">${name}</div>
+                const card = document.createElement("div");
+                card.className = "ch-card" + (i === currentIndex ? " active" : "");
+                card.setAttribute("data-idx", i);
+                card.style.animationDelay = (visibleCount * 32) + "ms";
+                const catLabel = CATEGORY_LABELS_TR[cat] || cat.toUpperCase();
+                const num = (i + 1).toString().padStart(2, '0');
+
+                card.innerHTML = `
+                    <div class="ch-number">#${num}</div>
+                    <div class="ch-card-top">
+                        <span class="ch-quality">${quality}</span>
+                        <span class="ch-live-dot" title="Canlı"></span>
+                    </div>
+                    <div class="ch-icon-wrap">${icon}</div>
+                    <div class="ch-name">${name}</div>
+                    <div class="ch-category">${catLabel}</div>
+                    <div class="ch-play-hint">▶ İZLE</div>
                 `;
-                btn.onclick = () => switchChannel(i);
-                channelGrid.appendChild(btn);
+                card.onclick = () => switchChannel(i);
+                channelGrid.appendChild(card);
+                visibleCount++;
             });
 
-            if (channelGrid.children.length === 0) {
-                channelGrid.innerHTML = `<div class="empty-msg">Aramanıza uygun kanal bulunamadı.</div>`;
+            if (visibleCount === 0) {
+                const catName = activeChannelCategory === 'all' ? '' : ` <b>${CATEGORY_LABELS_TR[activeChannelCategory] || activeChannelCategory}</b> kategorisinde`;
+                channelGrid.innerHTML = `<div class="empty-msg">🔍${catName} aramanıza uygun kanal bulunamadı.<br><small style="opacity:0.7">Farklı bir kategori veya arama terimi deneyin.</small></div>`;
             }
         }
 
@@ -943,29 +1200,29 @@
                 btn.classList.add("active");
                 activeTab = btn.getAttribute("data-tab");
                 document.getElementById(activeTab).classList.add("active");
+                updateCategoryRowVisibility();
             };
         });
 
-        // Filter Pills
+        // Filter Pills - sadece maçları filtreler
         document.querySelectorAll(".filter-pill").forEach(pill => {
             pill.onclick = () => {
                 document.querySelectorAll(".filter-pill").forEach(p => p.classList.remove("active"));
                 pill.classList.add("active");
                 activeFilter = pill.getAttribute("data-filter");
-                renderChannels();
                 renderLiveMatches();
                 renderDailyMatches();
             };
         });
 
-        // Search Input
+        // Search Input - kanallar kategoriye göre + maçlar filtreye göre
         searchInput.oninput = () => {
             renderChannels();
             renderLiveMatches();
             renderDailyMatches();
         };
 
-        // Navigation Prev / Next
+        // Navigation Prev / Next - kategoriye değil global sıraya göre ama filtreli grid'de kalır
         navPrev.onclick = () => switchChannel((currentIndex - 1 + streamLinks.length) % streamLinks.length);
         navNext.onclick = () => switchChannel((currentIndex + 1) % streamLinks.length);
 
@@ -986,7 +1243,7 @@
             else if (playerWrap.msRequestFullscreen) playerWrap.msRequestFullscreen();
         };
 
-        // Keyboard & Gamepad Control
+        // Keyboard Control (kumanda desteği kaldırıldı, sadece klavye okları)
         document.addEventListener("keydown", (e) => {
             const tag = document.activeElement ? document.activeElement.tagName.toLowerCase() : "";
             if (tag === "input" || tag === "textarea") return;
@@ -994,23 +1251,6 @@
             if (e.key === "ArrowRight") { e.preventDefault(); navNext.click(); }
             else if (e.key === "ArrowLeft") { e.preventDefault(); navPrev.click(); }
         });
-
-        // Gamepad Polling
-        let gamepadConnected = false;
-        function updateGamepadStatus(conn) {
-            gamepadConnected = conn;
-            const dot = document.getElementById("gamepadDot");
-            const txt = document.getElementById("gamepadText");
-            if (conn) {
-                dot.classList.remove("inactive");
-                txt.textContent = "🎮 Kumanda Bağlı";
-            } else {
-                dot.classList.add("inactive");
-                txt.textContent = "Kumanda Bekleniyor";
-            }
-        }
-        window.addEventListener("gamepadconnected", () => updateGamepadStatus(true));
-        window.addEventListener("gamepaddisconnected", () => updateGamepadStatus(false));
 
         // Background Particles
         function createParticles() {
