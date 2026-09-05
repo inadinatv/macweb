@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>İNADİNA TV - Spor Paneli</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@400;600;700;900&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --neon-pink: #ff2d7a;
+            --neon-purple: #9b4dff;
+            --neon-cyan: #00eaff;
+            --neon-gold: #ffcc33;
+            --bg-dark: #05050b;
+            --bg-card: rgba(12, 10, 24, 0.85);
+            --text-main: #f4efff;
+            --text-muted: #8d84aa;
+            --radius-xl: 28px;
+            --radius-lg: 22px;
+            --radius-md: 16px;
+            --glow-pink: 0 0 30px rgba(255, 45, 122, 0.5), 0 0 60px rgba(255, 45, 122, 0.2);
+            --glow-purple: 0 0 30px rgba(155, 77, 255, 0.5), 0 0 60px rgba(155, 77, 255, 0.2);
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Barlow', sans-serif;
+            color: var(--text-main);
+            min-height: 100vh;
+            background: var(--bg-dark);
+            overflow-x: hidden;
+            background-image:
+                radial-gradient(ellipse at 20% 20%, rgba(255,45,122,0.06) 0%, transparent 55%),
+                radial-gradient(ellipse at 80% 60%, rgba(155,77,255,0.07) 0%, transparent 55%),
+                radial-gradient(ellipse at 50% 90%, rgba(0,234,255,0.05) 0%, transparent 55%),
+                radial-gradient(ellipse at 10% 80%, rgba(255,204,51,0.04) 0%, transparent 50%);
+            background-attachment: fixed;
+        }
+
+        .bg-particles { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; overflow: hidden; }
+        .particle { position: absolute; border-radius: 50%; animation: floatUp linear infinite; opacity: 0; }
+        @keyframes floatUp {
+            0% { transform: translateY(100vh) scale(0); opacity: 0; }
+            10% { opacity: 0.8; }
+            90% { opacity: 0.2; }
+            100% { transform: translateY(-10vh) scale(1.5); opacity: 0; }
+        }
+
+        .wrapper { width: min(1380px, calc(100% - 32px)); margin: 0 auto; padding: 22px 0; position: relative; z-index: 1; }
+
+        .site-header {
+            display: flex; align-items: center; justify-content: space-between; padding: 18px 28px; margin-bottom: 22px;
+            background: rgba(12,10,24,0.9); border: 1px solid rgba(255,45,122,0.35);
+            border-radius: var(--radius-xl); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+            box-shadow: var(--glow-pink); position: relative; overflow: hidden;
+        }
+        .site-header::before {
+            content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%;
+            background: conic-gradient(from 0deg, transparent, rgba(255,45,122,0.08), transparent, rgba(155,77,255,0.08), transparent);
+            animation: headerRotate 8s linear infinite; pointer-events: none;
+        }
+        @keyframes headerRotate { to { transform: rotate(360deg); } }
+
+        .logo-main {
+            font-family: 'Bebas Neue', sans-serif; font-size: 2.8rem; letter-spacing: 5px;
+            background: linear-gradient(135deg, #ff2d7a 0%, #ff6bac 30%, #9b4dff 60%, #c471ff 100%);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+            filter: drop-shadow(0 0 18px rgba(255,45,122,0.5)); position: relative; z-index: 1;
+            animation: logoPulse 3s ease-in-out infinite;
+        }
+        @keyframes logoPulse {
+            0%, 100% { filter: drop-shadow(0 0 18px rgba(255,45,122,0.5)); }
+            50% { filter: drop-shadow(0 0 30px rgba(255,45,122,0.8)) drop-shadow(0 0 50px rgba(155,77,255,0.5)); }
+        }
+
+        .live-badge {
+            color: var(--neon-cyan); font-weight: 900; letter-spacing: 3px; font-size: 1rem;
+            position: relative; z-index: 1; display: flex; align-items: center; gap: 8px;
+            animation: liveBlink 2s ease-in-out infinite;
+        }
+        .live-dot {
+            width: 12px; height: 12px; background: #ff2d2d; border-radius: 50%; display: inline-block;
+            box-shadow: 0 0 15px #ff2d2d, 0 0 30px #ff2d2d; animation: dotPulse 1.2s ease-in-out infinite;
+        }
+        @keyframes dotPulse {
+            0%, 100% { box-shadow: 0 0 15px #ff2d2d, 0 0 30px #ff2d2d; }
+            50% { box-shadow: 0 0 25px #ff2d2d, 0 0 50px #ff2d2d, 0 0 70px #ff2d2d; }
+        }
+        @keyframes liveBlink { 0%, 100% { opacity: 1; } 50% { opacity: 0.75; } }
+
+        .main-layout { display: grid; grid-template-columns: 1fr 340px; gap: 20px; margin-bottom: 20px; }
+
+        .player-wrap {
+            position: relative; aspect-ratio: 16 / 9; background: #000; border-radius: 30px; overflow: hidden;
+            border: 2px solid rgba(255,45,122,0.4); box-shadow: var(--glow-pink), 0 0 80px rgba(255,45,122,0.15);
+            transition: all 0.4s ease;
+        }
+        .player-wrap:hover { border-color: rgba(255,45,122,0.7); box-shadow: 0 0 40px rgba(255,45,122,0.6), 0 0 90px rgba(255,45,122,0.25), 0 0 120px rgba(155,77,255,0.15); }
+        .player-wrap iframe { width: 100%; height: 100%; border: 0; display: block; position: relative; z-index: 2; }
+        .player-wrap.player-flash { border-color: var(--neon-gold); box-shadow: 0 0 50px rgba(255,204,51,0.7), 0 0 100px rgba(255,204,51,0.3); }
+        .player-tip{ position:absolute; inset:0; display:flex; align-items:center; justify-content:center;
+            color:var(--text-muted); font-size:1rem; letter-spacing:1px; z-index:1; text-align:center; padding:20px; }
+
+        .side-panel { display: flex; flex-direction: column; gap: 16px; }
+
+        .now-playing-card {
+            background: rgba(255,45,122,0.08); border: 1px solid rgba(255,45,122,0.4);
+            border-radius: var(--radius-lg); padding: 20px 16px 16px; text-align: center;
+            backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+            box-shadow: var(--glow-pink); position: relative; overflow: hidden;
+            display: flex; flex-direction: column; align-items: center;
+        }
+        .now-playing-card::after {
+            content: ''; position: absolute; top: -40%; left: -40%; width: 180%; height: 180%;
+            background: conic-gradient(from 0deg, transparent, rgba(255,45,122,0.06), transparent, rgba(255,204,51,0.06), transparent);
+            animation: cardShimmer 6s linear infinite; pointer-events: none;
+        }
+        @keyframes cardShimmer { to { transform: rotate(360deg); } }
+
+        .now-label { font-size: 0.7rem; letter-spacing: 4px; color: var(--text-muted); font-weight: 600; text-transform: uppercase; position: relative; z-index: 1; }
+
+        .channel-selector-row {
+            display: flex; align-items: center; justify-content: center; gap: 12px;
+            margin: 10px 0 8px; z-index: 2; position: relative; width: 100%;
+        }
+
+        .nav-btn {
+            width: 42px; height: 42px; border-radius: 50%;
+            background: rgba(255,45,122,0.18); border: 2px solid rgba(255,45,122,0.6);
+            color: #fff; font-size: 1.3rem; cursor: pointer;
+            display: flex; align-items: center; justify-content: center;
+            transition: all 0.25s ease; backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);
+            outline: none; -webkit-tap-highlight-color: transparent;
+            box-shadow: 0 0 12px rgba(255,45,122,0.4);
+            flex-shrink: 0;
+        }
+        .nav-btn:hover { background: rgba(255,45,122,0.4); border-color: var(--neon-pink); box-shadow: 0 0 25px rgba(255,45,122,0.8); transform: scale(1.08); }
+        .nav-btn:active { transform: scale(0.9); transition: transform 0.1s ease; }
+
+        .now-channel {
+            font-family: 'Bebas Neue', sans-serif; font-size: 2rem; color: var(--neon-pink);
+            text-shadow: 0 0 20px rgba(255,45,122,0.5); letter-spacing: 2px;
+            transition: all 0.3s ease; min-width: 130px; text-align: center; position: relative; z-index: 1;
+        }
+
+        .now-quality-badge {
+            display: inline-block; background: linear-gradient(135deg, #ffcc33, #ffa800); color: #000;
+            padding: 4px 14px; border-radius: 12px; font-weight: 900; font-size: 0.8rem; letter-spacing: 2px;
+            position: relative; z-index: 1; box-shadow: 0 0 20px rgba(255,204,51,0.5);
+        }
+
+        .quick-info {
+            background: rgba(12,10,24,0.85); border: 1px solid rgba(155,77,255,0.3);
+            border-radius: var(--radius-lg); padding: 16px 20px;
+            backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+            box-shadow: var(--glow-purple); text-align: center; position: relative; z-index: 1;
+            display: flex; flex-direction: column; gap: 10px;
+        }
+        .info-row { display: flex; flex-direction: column; align-items: center; gap: 4px; }
+        .info-title { font-size: 0.65rem; letter-spacing: 3px; color: var(--text-muted); text-transform: uppercase; }
+        .info-val { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 1.6rem; color: var(--neon-purple); text-shadow: 0 0 15px rgba(155,77,255,0.5); }
+        .gamepad-indicator { font-size: 0.8rem; color: #b794f4; display: flex; align-items: center; justify-content: center; gap: 6px; margin-top: 4px; }
+        .gamepad-dot { width: 8px; height: 8px; background: #9b4dff; border-radius: 50%; box-shadow: 0 0 10px #9b4dff; }
+        .gamepad-dot.inactive { background: #555; box-shadow: none; }
+
+        .channels-section {
+            background: rgba(12,10,24,0.9); border: 1px solid rgba(255,45,122,0.25);
+            border-radius: 28px; padding: 24px 20px; backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+            box-shadow: 0 0 40px rgba(0,0,0,0.5), 0 0 60px rgba(255,45,122,0.08); position: relative; z-index: 1;
+        }
+        .section-title { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 1rem; letter-spacing: 3px; color: var(--text-muted); margin-bottom: 16px; text-transform: uppercase; text-align: center; }
+        .channel-row { display: flex; gap: 14px; overflow-x: auto; padding: 6px 4px 14px; scroll-behavior: smooth; -webkit-overflow-scrolling: touch; scrollbar-width: thin; scrollbar-color: rgba(255,45,122,0.4) transparent; }
+        .channel-row::-webkit-scrollbar { height: 5px; }
+        .channel-row::-webkit-scrollbar-track { background: transparent; border-radius: 10px; }
+        .channel-row::-webkit-scrollbar-thumb { background: rgba(255,45,122,0.4); border-radius: 10px; }
+
+        .ch-btn {
+            flex: 0 0 auto; min-width: 120px; padding: 20px 18px; border-radius: 20px;
+            border: 2px solid rgba(255,255,255,0.1);
+            background: linear-gradient(180deg, rgba(30,20,50,0.9) 0%, rgba(15,10,30,0.95) 100%);
+            color: white; cursor: pointer; transition: all 0.35s cubic-bezier(0.4,0,0.2,1);
+            text-align: center; position: relative; overflow: hidden;
+            -webkit-tap-highlight-color: transparent; user-select: none; outline: none;
+        }
+        .ch-btn::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(180deg, rgba(255,45,122,0.08) 0%, transparent 60%); opacity: 0; transition: opacity 0.35s ease; pointer-events: none; }
+        .ch-btn:hover { border-color: rgba(255,45,122,0.6); transform: translateY(-4px); box-shadow: 0 12px 30px rgba(0,0,0,0.5), 0 0 30px rgba(255,45,122,0.3); background: linear-gradient(180deg, rgba(40,25,60,0.95) 0%, rgba(20,12,38,0.98) 100%); }
+        .ch-btn:hover::before { opacity: 1; }
+        .ch-btn:active { transform: scale(0.95); transition: transform 0.1s ease; border-color: var(--neon-pink); }
+        .ch-btn.active { border-color: var(--neon-pink)!important; background: linear-gradient(180deg, rgba(255,45,122,0.25) 0%, rgba(155,77,255,0.2) 100%)!important; box-shadow: 0 0 35px rgba(255,45,122,0.5), 0 0 65px rgba(255,45,122,0.2), 0 8px 25px rgba(0,0,0,0.5)!important; transform: translateY(-2px); animation: activeGlow 2s ease-in-out infinite; }
+        @keyframes activeGlow { 0%,100% { box-shadow: 0 0 35px rgba(255,45,122,0.5), 0 0 65px rgba(255,45,122,0.2), 0 8px 25px rgba(0,0,0,0.5); } 50% { box-shadow: 0 0 50px rgba(255,45,122,0.7), 0 0 85px rgba(255,45,122,0.35), 0 8px 25px rgba(0,0,0,0.5); } }
+        .ch-number { font-family: 'Bebas Neue', sans-serif; font-size: 1.8rem; letter-spacing: 2px; color: var(--neon-gold); text-shadow: 0 0 12px rgba(255,204,51,0.4); transition: all 0.3s ease; line-height: 1; }
+        .ch-btn.active .ch-number { color: #fff; text-shadow: 0 0 20px rgba(255,255,255,0.7), 0 0 40px rgba(255,204,51,0.6); font-size: 2rem; }
+        .ch-label { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; margin-top: 6px; letter-spacing: 2px; color: #ccc; transition: all 0.3s ease; line-height: 1.2; }
+        .ch-btn.active .ch-label { color: #fff; letter-spacing: 3px; }
+        .ch-icon { font-size: 1.4rem; margin-bottom: 4px; display: block; transition: all 0.3s ease; opacity: 0.6; }
+        .ch-btn.active .ch-icon { opacity: 1; filter: drop-shadow(0 0 8px rgba(255,255,255,0.6)); }
+
+        @media (max-width: 1024px) {
+            .main-layout { grid-template-columns: 1fr; }
+            .side-panel { flex-direction: row; flex-wrap: wrap; gap: 12px; }
+            .now-playing-card { flex: 1 1 200px; min-width: 180px; padding: 16px 12px 12px; }
+            .quick-info { flex: 1 1 150px; min-width: 140px; padding: 14px; }
+            .now-channel { font-size: 1.6rem; min-width: 100px; }
+            .nav-btn { width: 36px; height: 36px; font-size: 1.1rem; }
+            .ch-btn { min-width: 100px; padding: 16px 14px; border-radius: 16px; }
+            .ch-number { font-size: 1.4rem; }
+            .ch-btn.active .ch-number { font-size: 1.5rem; }
+            .ch-label { font-size: 0.7rem; }
+        }
+        @media (max-width: 600px) {
+            .wrapper { padding: 12px 0; width: calc(100% - 16px); }
+            .site-header { padding: 12px 16px; border-radius: 20px; margin-bottom: 14px; }
+            .logo-main { font-size: 1.8rem; letter-spacing: 2px; }
+            .live-badge { font-size: 0.75rem; letter-spacing: 1px; }
+            .live-dot { width: 8px; height: 8px; }
+            .player-wrap { border-radius: 18px; border-width: 1px; }
+            .now-channel { font-size: 1.4rem; min-width: 80px; }
+            .nav-btn { width: 32px; height: 32px; font-size: 1rem; }
+            .ch-btn { min-width: 85px; padding: 14px 10px; border-radius: 14px; }
+            .ch-number { font-size: 1.2rem; }
+            .ch-btn.active .ch-number { font-size: 1.3rem; }
+            .ch-label { font-size: 0.65rem; letter-spacing: 1px; }
+            .ch-icon { font-size: 1.1rem; }
+        }
+
+        /* ---- Bot ekleri: maç bölümü & adres şeridi ---- */
+        .address-strip{
+            background: rgba(12,10,24,0.7); border:1px solid rgba(0,234,255,0.25);
+            border-radius: 14px; padding: 10px 18px; margin-bottom: 18px;
+            color: var(--text-muted); font-size: 0.85rem; letter-spacing: 1px; text-align:center;
+            backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+            position: relative; z-index: 1; display:flex; align-items:center; justify-content:center; gap:14px; flex-wrap:wrap;
+        }
+        .address-strip .live-clock{ color:var(--neon-gold); font-weight:800; font-family:'Bebas Neue',sans-serif; letter-spacing:2px; font-size:1.1rem; }
+        .address-strip b{ color: var(--neon-cyan); }
+        .matches-section{
+            background: rgba(12,10,24,0.9); border:1px solid rgba(155,77,255,0.3);
+            border-radius: 28px; padding: 24px 20px; margin-bottom: 20px;
+            backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+            box-shadow: 0 0 40px rgba(0,0,0,0.5), 0 0 60px rgba(155,77,255,0.08);
+            position: relative; z-index: 1;
+        }
+        .match-filters{ display:flex; gap:8px; flex-wrap:wrap; justify-content:center; margin-bottom:18px; }
+        .mf-btn{ background:rgba(20,16,38,0.8); border:1px solid rgba(155,77,255,0.3); color:var(--text-muted);
+            font-weight:700; font-size:0.72rem; letter-spacing:1px; padding:7px 16px; border-radius:24px; cursor:pointer; transition:all .2s; text-transform:uppercase; }
+        .mf-btn:hover{ border-color:var(--neon-purple); color:#fff; }
+        .mf-btn.active{ background:linear-gradient(135deg,var(--neon-pink),var(--neon-purple)); color:#fff; border-color:transparent; box-shadow:0 0 20px rgba(255,45,122,0.4); }
+        .match-group{ margin-bottom: 18px; scroll-margin-top: 20px; }
+        .match-group.is-hidden{ display:none; }
+        .match-group-title{
+            font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:0.9rem;
+            letter-spacing:3px; text-transform:uppercase; color:var(--neon-cyan); margin-bottom:10px;
+            display:flex; align-items:center; gap:8px;
+        }
+        .match-group-title .mcount{ color:var(--text-muted); font-weight:400; }
+        .match-list{ display:flex; flex-direction:column; gap:8px; }
+        .match-card{
+            display:flex; align-items:center; gap:12px;
+            background: rgba(20,16,38,0.7); border:1px solid rgba(155,77,255,0.25);
+            border-radius: 14px; padding: 10px 14px; font-size:0.95rem; flex-wrap:wrap; transition:all .25s;
+        }
+        .match-card:hover{ border-color:rgba(255,45,122,0.5); transform:translateY(-2px); box-shadow:0 8px 22px rgba(0,0,0,0.4); }
+        .match-card.live{ border-color: rgba(255,45,122,0.7); box-shadow:0 0 18px rgba(255,45,122,0.25); }
+        .match-card.live .match-time{ animation: liveBlink 1.4s ease-in-out infinite; }
+        .match-time{ font-family:'Barlow Condensed',sans-serif; font-weight:900; font-size:1.2rem; color:var(--neon-gold); min-width:52px; text-align:center; }
+        .match-teams{ flex:1; min-width:180px; display:flex; align-items:center; gap:8px; flex-wrap:wrap; }
+        .match-teams .mt-name{ display:inline-flex; align-items:center; gap:8px; font-weight:700; flex-wrap:wrap; }
+        .match-teams .mt-vs{ color:var(--text-muted); font-weight:400; font-size:0.8rem; text-transform:uppercase; letter-spacing:1px; }
+        .team-logo img{ width:26px; height:26px; object-fit:contain; display:block; filter:drop-shadow(0 0 6px rgba(255,45,122,0.4)); }
+        .match-league{ color:var(--text-muted); font-size:0.75rem; display:block; width:100%; }
+        .match-badge{ font-size:0.68rem; font-weight:900; letter-spacing:1px; padding:3px 10px; border-radius:20px; }
+        .match-badge.live{ background:linear-gradient(135deg,#ff2d2d,#ff2d7a); color:#fff; box-shadow:0 0 15px rgba(255,45,122,0.5); animation: liveBlink 1.6s ease-in-out infinite; }
+        .match-badge.up{ background:rgba(0,234,255,0.15); color:var(--neon-cyan); border:1px solid rgba(0,234,255,0.4); }
+        .match-badge.done{ background:rgba(141,132,170,0.2); color:var(--text-muted); }
+        .match-badge.mod{ background:linear-gradient(135deg,#ffcc33,#ffa800); color:#000; }
+        .match-watch{ color:var(--neon-pink); font-family:inherit; background:transparent; cursor:pointer; font-weight:800; font-size:0.8rem; border:1px solid rgba(255,45,122,0.6); border-radius:20px; padding:5px 14px; transition:all .2s; letter-spacing:1px; }
+        .match-watch:hover{ background:var(--neon-pink); color:#000; box-shadow:0 0 18px rgba(255,45,122,0.6); transform:scale(1.04); }
+        .empty-msg{ color:var(--text-muted); font-size:0.9rem; text-align:center; padding:12px; }
+
+        /* Kanal arama */
+        .channel-search{ display:flex; justify-content:center; margin-bottom:16px; }
+        .channel-search input{ width:100%; max-width:360px; background:rgba(20,16,38,0.8); border:1px solid rgba(155,77,255,0.3);
+            color:var(--text-main); padding:10px 18px; font-size:0.9rem; border-radius:24px; outline:none; transition:all .2s; font-family:inherit; }
+        .channel-search input:focus{ border-color:var(--neon-cyan); box-shadow:0 0 20px rgba(0,234,255,0.25); }
+        .channel-search::placeholder{ color:var(--text-muted); }
+        .channel-search input::placeholder{ color:var(--text-muted); }
+        .no-result{ color:var(--text-muted); text-align:center; font-size:0.85rem; padding:20px; display:none; }
+    </style>
+</head>
+<body>
+    <div class="bg-particles" id="bgParticles"></div>
+
+    <div class="wrapper">
+        <header class="site-header">
+            <div class="logo-main">İNADİNA TV</div>
+            <div class="live-badge"><span class="live-dot"></span> CANLI YAYIN</div>
+        </header>
+
+        <div class="address-strip">
+            <span>📡 <b>Kaynak:</b> <span id="siteAddress">{{SITE_ADDR}}</span></span>
+            <span>🕑 <span id="liveClock" class="live-clock">--:--:--</span> <span style="font-size:0.75rem">(yerel)</span></span>
+            <span>🔄 Güncellenme: <span id="updatedAt">{{UPDATED_AT}}</span></span>
+        </div>
+
+        <div class="main-layout">
+            <div class="player-wrap" id="playerWrap">
+                <div class="player-tip" id="playerTip">🎬 Kanal seçin, yayın burada oynasın</div>
+                <iframe id="liveIframe" src="" allowfullscreen allow="autoplay; encrypted-media" loading="lazy"></iframe>
+            </div>
+
+            <div class="side-panel">
+                <div class="now-playing-card">
+                    <div class="now-label">📡 ŞU AN İZLENİYOR</div>
+                    <div class="channel-selector-row">
+                        <button class="nav-btn" id="navPrev" title="Önceki Kanal" aria-label="Önceki kanal">◀</button>
+                        <div class="now-channel" id="nowChannel">-</div>
+                        <button class="nav-btn" id="navNext" title="Sonraki Kanal" aria-label="Sonraki kanal">▶</button>
+                    </div>
+                    <span class="now-quality-badge" id="nowQuality">HD</span>
+                </div>
+
+                <div class="quick-info">
+                    <div class="info-row">
+                        <div class="info-title">📺 TOPLAM KANAL</div>
+                        <div class="info-val" id="totalChannels">0</div>
+                    </div>
+                    <div class="gamepad-indicator" id="gamepadStatus">
+                        <span class="gamepad-dot inactive" id="gamepadDot"></span>
+                        <span id="gamepadText">Kumanda bekleniyor</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="matches-section" id="matchesSection">
+            <div class="section-title">⚽ GÜNÜN MAÇLARI</div>
+            {{MATCHES_HTML}}
+        </div>
+
+        <div class="channels-section">
+            <div class="section-title">🎯 KANAL SEÇİNİZ</div>
+            <div class="channel-search">
+                <input type="text" id="channelSearch" placeholder="🔎 Kanal ara... (örn. Bein, TRT, Tabii)" autocomplete="off">
+            </div>
+            <div class="channel-row" id="channelRow"></div>
+            <div class="no-result" id="noResult">Eşleşen kanal bulunamadı.</div>
+        </div>
+    </div>
+
+    <script>
+        /*BOT_START*/
+        const streamLinks = {{STREAM_LINKS}};
+        const channelNames = {{CHANNEL_NAMES}};
+        const qualityLabels = streamLinks.map(function(){ return "HD"; });
+        /*BOT_END*/
+
+        const iframe = document.getElementById("liveIframe");
+        const nowChannel = document.getElementById("nowChannel");
+        const nowQuality = document.getElementById("nowQuality");
+        const channelRow = document.getElementById("channelRow");
+        const navPrev = document.getElementById("navPrev");
+        const navNext = document.getElementById("navNext");
+        const totalChannels = document.getElementById("totalChannels");
+        const gamepadDot = document.getElementById("gamepadDot");
+        const gamepadText = document.getElementById("gamepadText");
+        const playerWrap = document.getElementById("playerWrap");
+        const playerTip = document.getElementById("playerTip");
+
+        let currentIndex = 0;
+        
+        const channelIcons = channelNames.map(function(name) {
+            if (name.indexOf('BEIN') !== -1) return '⚽';
+            if (name.indexOf('S SPOR') !== -1) return '🏀';
+            if (name.indexOf('EURO') !== -1) return '🚴';
+            if (name.indexOf('TRT') !== -1) return '🇹🇷';
+            if (name.indexOf('TABI') !== -1) return '📡';
+            if (name.indexOf('TİVİBU') !== -1) return '📡';
+            if (name.indexOf('SMART') !== -1 || name.indexOf('AKILLI') !== -1) return '🧠';
+            if (name.indexOf('BİR SPOR') !== -1) return '⚽';
+            if (name.indexOf('ATV') !== -1) return '📺';
+            if (name.indexOf('TV 8') !== -1) return '📺';
+            return '📺';
+        });
+
+        function buildButtons() {
+            channelRow.innerHTML = "";
+            totalChannels.textContent = streamLinks.length;
+            
+            streamLinks.forEach(function(url, i) {
+                const btn = document.createElement("button");
+                btn.className = "ch-btn" + (i === 0 ? " active" : "");
+                const icon = channelIcons[i] || "📡";
+                
+                let num = (i + 1).toString();
+                if (num.length < 2) num = "0" + num;
+                
+                btn.innerHTML = '<span class="ch-icon">' + icon + '</span>' +
+                                '<div class="ch-number">' + num + '</div>' +
+                                '<div class="ch-label">' + channelNames[i] + '</div>';
+                
+                btn.onclick = function() { switchChannel(i, true); };
+                btn.setAttribute("data-index", i);
+                channelRow.appendChild(btn);
+            });
+            
+            if (streamLinks.length > 0) {
+                currentIndex = 0;
+                switchChannel(0, false);
+            }
+        }
+
+        // scrollTo=true olduğunda kullanıcı seçiminde player'e yumuşakça kaydır
+        function switchChannel(index, scrollTo) {
+            if (index < 0 || index >= streamLinks.length) return;
+            if (scrollTo === undefined) scrollTo = false;
+            currentIndex = index;
+            iframe.src = streamLinks[index];
+            nowChannel.textContent = channelNames[index];
+            nowQuality.textContent = qualityLabels[index];
+            if (playerTip) playerTip.style.display = "none";
+
+            const buttons = document.querySelectorAll(".ch-btn");
+            for (let i = 0; i < buttons.length; i++) {
+                if (i === index) {
+                    buttons[i].classList.add("active");
+                } else {
+                    buttons[i].classList.remove("active");
+                }
+            }
+
+            const activeBtn = document.querySelector(".ch-btn.active");
+            if (activeBtn && activeBtn.scrollIntoView) {
+                activeBtn.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "center" });
+            }
+
+            // ⬇ Kullanıcı kanala tıkladığında player'e kaydır
+            if (scrollTo && playerWrap && playerWrap.scrollIntoView) {
+                playerWrap.scrollIntoView({ behavior: "smooth", block: "start" });
+                playerWrap.classList.add("player-flash");
+                setTimeout(function(){ playerWrap.classList.remove("player-flash"); }, 1200);
+            }
+
+            updateNavButtons();
+        }
+
+        function nextChannel() { switchChannel((currentIndex + 1) % streamLinks.length, true); }
+        function prevChannel() { switchChannel((currentIndex - 1 + streamLinks.length) % streamLinks.length, true); }
+
+        function updateNavButtons() {
+            if (streamLinks.length <= 1) {
+                navPrev.style.opacity = "0.4"; navPrev.style.pointerEvents = "none";
+                navNext.style.opacity = "0.4"; navNext.style.pointerEvents = "none";
+            } else {
+                navPrev.style.opacity = "1"; navPrev.style.pointerEvents = "auto";
+                navNext.style.opacity = "1"; navNext.style.pointerEvents = "auto";
+            }
+        }
+
+        navPrev.addEventListener("click", prevChannel);
+        navNext.addEventListener("click", nextChannel);
+
+        document.addEventListener("keydown", function(e) {
+            const tag = document.activeElement ? document.activeElement.tagName.toLowerCase() : "";
+            if (tag === "input" || tag === "textarea" || tag === "select") return;
+            if (e.key === "ArrowRight") { e.preventDefault(); nextChannel(); }
+            else if (e.key === "ArrowLeft") { e.preventDefault(); prevChannel(); }
+        });
+
+        // ========== GAMEPAD (KUMANDA) DESTEĞİ ==========
+        let gamepadConnected = false;
+        let prevAxes = [0,0,0,0];
+        let prevButtons = [];
+
+        function updateGamepadStatus(connected) {
+            gamepadConnected = connected;
+            if (connected) {
+                gamepadDot.classList.remove("inactive");
+                gamepadText.textContent = "🎮 Kumanda bağlı";
+            } else {
+                gamepadDot.classList.add("inactive");
+                gamepadText.textContent = "Kumanda bekleniyor";
+            }
+        }
+
+        window.addEventListener("gamepadconnected", function(e) {
+            updateGamepadStatus(true);
+        });
+        window.addEventListener("gamepaddisconnected", function(e) {
+            updateGamepadStatus(false);
+        });
+
+        function pollGamepad() {
+            const gamepads = navigator.getGamepads ? navigator.getGamepads() : [];
+            let activeGamepad = null;
+            for (let i = 0; i < gamepads.length; i++) {
+                if (gamepads[i] && gamepads[i].connected) { 
+                    activeGamepad = gamepads[i]; 
+                    break; 
+                }
+            }
+
+            if (activeGamepad) {
+                if (!gamepadConnected) updateGamepadStatus(true);
+
+                const dpadLeft = (activeGamepad.buttons[14] && activeGamepad.buttons[14].pressed) ? true : false;
+                const dpadRight = (activeGamepad.buttons[15] && activeGamepad.buttons[15].pressed) ? true : false;
+                const axisX = activeGamepad.axes[0] || 0;
+
+                if (!prevButtons.length) {
+                    prevButtons = activeGamepad.buttons.map(function(b) { return b.pressed; });
+                    prevAxes = activeGamepad.axes.slice();
+                    requestAnimationFrame(pollGamepad);
+                    return;
+                }
+
+                if (dpadLeft && !prevButtons[14]) {
+                    prevChannel();
+                } else if (dpadRight && !prevButtons[15]) {
+                    nextChannel();
+                }
+
+                const threshold = 0.6;
+                if (axisX < -threshold && prevAxes[0] >= -threshold) {
+                    prevChannel();
+                } else if (axisX > threshold && prevAxes[0] <= threshold) {
+                    nextChannel();
+                }
+
+                prevButtons = activeGamepad.buttons.map(function(b) { return b.pressed; });
+                prevAxes = activeGamepad.axes.slice();
+            } else {
+                if (gamepadConnected) updateGamepadStatus(false);
+            }
+            requestAnimationFrame(pollGamepad);
+        }
+
+        if (navigator.getGamepads) {
+            const initialGamepads = navigator.getGamepads();
+            let found = false;
+            for (let i = 0; i < initialGamepads.length; i++) { 
+                if (initialGamepads[i] && initialGamepads[i].connected) { found = true; break; } 
+            }
+            if (found) updateGamepadStatus(true);
+            requestAnimationFrame(pollGamepad);
+        }
+
+        function createParticles() {
+            const container = document.getElementById("bgParticles");
+            const colors = ["rgba(255,45,122,0.7)","rgba(155,77,255,0.6)","rgba(0,234,255,0.5)","rgba(255,204,51,0.6)","rgba(255,255,255,0.4)"];
+            for (let i=0; i<30; i++) {
+                const p = document.createElement("div");
+                p.classList.add("particle");
+                const size = Math.random()*4+1.5;
+                p.style.width = size+"px"; p.style.height = size+"px";
+                p.style.left = Math.random()*100+"%";
+                p.style.backgroundColor = colors[Math.floor(Math.random()*colors.length)];
+                p.style.animationDuration = Math.random()*12+8+"s";
+                p.style.animationDelay = Math.random()*10+"s";
+                p.style.boxShadow = "0 0 " + (size*3) + "px " + p.style.backgroundColor;
+                container.appendChild(p);
+            }
+        }
+
+        // ========== MAÇ OYNATICIYA BAĞLAMA (kartlardaki ▶ İZLE) ==========
+        function bindMatchStreams() {
+            const watchBtns = document.querySelectorAll(".match-watch[data-stream]");
+            watchBtns.forEach(function(btn) {
+                btn.addEventListener("click", function(ev) {
+                    ev.preventDefault();
+                    const url = btn.getAttribute("data-stream");
+                    if (!url) return;
+                    iframe.src = url;
+                    nowChannel.textContent = btn.getAttribute("title") || "Maç";
+                    nowQuality.textContent = "CANLI";
+                    if (playerTip) playerTip.style.display = "none";
+                    if (playerWrap && playerWrap.scrollIntoView) {
+                        playerWrap.scrollIntoView({ behavior: "smooth", block: "start" });
+                        playerWrap.classList.add("player-flash");
+                        setTimeout(function(){ playerWrap.classList.remove("player-flash"); }, 1200);
+                    }
+                });
+            });
+        }
+
+        // ========== MAÇ FİLTRELERİ (Tümü / Canlı / Günün / Yaklaşan / Bitti) ==========
+        function bindMatchFilters() {
+            const btns = document.querySelectorAll(".mf-btn");
+            btns.forEach(function(b) {
+                b.addEventListener("click", function() {
+                    btns.forEach(function(x){ x.classList.remove("active"); });
+                    b.classList.add("active");
+                    const f = b.getAttribute("data-mf");
+                    const groups = document.querySelectorAll(".match-group");
+                    groups.forEach(function(g) {
+                        const gkey = g.getAttribute("data-group");
+                        let show = true;
+                        if (f === "all") show = true;
+                        else if (f === "live") show = (gkey === "live");
+                        else if (f === "mod") show = (gkey === "mod");
+                        else if (f === "upcoming") show = (gkey === "upcoming");
+                        else if (f === "done") show = (gkey === "done");
+                        g.classList.toggle("is-hidden", !show);
+                    });
+                });
+            });
+        }
+
+        // ========== KANAL ARAMA ==========
+        function bindChannelSearch() {
+            const input = document.getElementById("channelSearch");
+            const noResult = document.getElementById("noResult");
+            if (!input) return;
+            input.addEventListener("input", function() {
+                const q = input.value.toLowerCase().trim();
+                let count = 0;
+                const btns = document.querySelectorAll(".ch-btn");
+                for (let i = 0; i < btns.length; i++) {
+                    const label = (channelNames[i] || "").toLowerCase();
+                    const show = q === "" || label.indexOf(q) !== -1;
+                    btns[i].style.display = show ? "" : "none";
+                    if (show) count++;
+                }
+                if (noResult) noResult.style.display = (count === 0 && q !== "") ? "block" : "none";
+            });
+        }
+
+        // ========== CANLI SAAT ==========
+        function startClock() {
+            const clock = document.getElementById("liveClock");
+            if (!clock) return;
+            function tick() {
+                const d = new Date();
+                const h = String(d.getHours()).padStart(2, "0");
+                const m = String(d.getMinutes()).padStart(2, "0");
+                const s = String(d.getSeconds()).padStart(2, "0");
+                clock.textContent = h + ":" + m + ":" + s;
+            }
+            tick();
+            setInterval(tick, 1000);
+        }
+
+        // ========== İSTEMCİ TARAFI CANLI DURUM GÜNCELLEME ==========
+        // Maç kartlarındaki gerçek saate göre CANLI / YAKLAŞAN / BİTTİ etiketini
+        // tarayıcı saatiyle yeniden hesaplar (site verisi + gerçek saat).
+        function refreshLiveStatus() {
+            const now = new Date();
+            const nowMin = now.getHours() * 60 + now.getMinutes();
+            const cards = document.querySelectorAll(".match-card[data-time]");
+            cards.forEach(function(card) {
+                const t = (card.getAttribute("data-time") || "").split(":");
+                if (t.length !== 2) return;
+                const mins = parseInt(t[0], 10) * 60 + parseInt(t[1], 10);
+                if (isNaN(mins)) return;
+                const badgeEl = card.querySelector("[data-badge]");
+                let status, cls;
+                if (mins <= nowMin - 105) { status = "BİTTİ"; cls = "done"; }
+                else if (mins <= nowMin) { status = "CANLI"; cls = "live"; }
+                else { status = "YAKLAŞAN"; cls = "up"; }
+                card.className = "match-card " + cls;
+                if (badgeEl) { badgeEl.textContent = status; badgeEl.className = "match-badge " + cls; }
+            });
+        }
+
+        function initApp() {
+            buildButtons();
+            createParticles();
+            updateNavButtons();
+            bindMatchStreams();
+            bindMatchFilters();
+            bindChannelSearch();
+            startClock();
+            refreshLiveStatus();
+            setInterval(refreshLiveStatus, 30000);
+        }
+
+        if (document.readyState === "loading") {
+            document.addEventListener("DOMContentLoaded", initApp);
+        } else {
+            initApp();
+        }
+    </script>
+</body>
+</html>
