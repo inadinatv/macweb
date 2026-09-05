@@ -161,6 +161,41 @@
         .gamepad-indicator { font-size: 0.8rem; color: #b794f4; display: flex; align-items: center; justify-content: center; gap: 6px; margin-top: 4px; }
         .gamepad-dot { width: 8px; height: 8px; background: #9b4dff; border-radius: 50%; box-shadow: 0 0 10px #9b4dff; }
         .gamepad-dot.inactive { background: #555; box-shadow: none; }
+        /* --- KANAL KATEGORİ FİLTRE & IZGARA KART TASARIMI (kumanda kaldırıldı, kategori eklendi) --- */
+        .channel-cat-row { display:flex; align-items:center; gap:10px; overflow-x:auto; padding:4px 2px 14px; margin-bottom:10px; scrollbar-width:none; -ms-overflow-style:none; }
+        .channel-cat-row::-webkit-scrollbar { display:none; }
+        .channel-cat-btn { flex:0 0 auto; display:flex; align-items:center; gap:8px; padding:9px 16px; border-radius:16px; background:rgba(255,255,255,0.04); border:1.5px solid rgba(255,255,255,0.08); color:var(--text-muted); font-family:'Barlow Condensed',sans-serif; font-weight:800; font-size:0.92rem; letter-spacing:1px; cursor:pointer; transition:all .28s ease; white-space:nowrap; position:relative; overflow:hidden; }
+        .channel-cat-btn:hover{ background:rgba(255,45,122,0.10); color:#fff; border-color:rgba(255,45,122,0.35); transform:translateY(-2px); box-shadow:0 6px 18px rgba(0,0,0,0.35); }
+        .channel-cat-btn.active{ background:linear-gradient(135deg,var(--neon-pink) 0%, var(--neon-purple) 100%); color:#fff; border-color:transparent; box-shadow:0 0 20px rgba(255,45,122,0.5),0 8px 22px rgba(0,0,0,0.45); }
+        .channel-cat-btn .cat-count{ background:rgba(0,0,0,0.28); padding:2px 8px; border-radius:20px; font-size:0.78rem; font-weight:800; min-width:24px; text-align:center; }
+        .channel-cat-btn.active .cat-count{ background:rgba(255,255,255,0.22); }
+        .channel-grid{ display:grid; grid-template-columns:repeat(auto-fill,minmax(165px,1fr)); gap:16px; }
+        .ch-card{ position:relative; background:linear-gradient(145deg,rgba(28,20,52,0.96) 0%,rgba(14,11,30,0.98) 100%); border:1.5px solid rgba(255,255,255,0.07); border-radius:22px; padding:16px 14px 16px; cursor:pointer; transition:all .35s cubic-bezier(0.4,0,0.2,1); overflow:hidden; text-align:center; display:flex; flex-direction:column; align-items:center; gap:8px; isolation:isolate; min-height:158px; animation:cardIn .45s ease both; box-shadow:0 6px 20px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.04); }
+        @keyframes cardIn{ from{opacity:0; transform:translateY(14px) scale(0.96);} to{opacity:1; transform:translateY(0) scale(1);} }
+        .ch-card::before{ content:''; position:absolute; inset:0; border-radius:22px; padding:1.5px; background:linear-gradient(135deg,rgba(255,45,122,0),rgba(155,77,255,0)); -webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0); -webkit-mask-composite:xor; mask-composite:exclude; opacity:0; transition:opacity .35s; pointer-events:none; }
+        .ch-card:hover{ transform:translateY(-6px) scale(1.02); border-color:rgba(255,45,122,0.45); box-shadow:0 14px 35px rgba(0,0,0,0.55),0 0 28px rgba(255,45,122,0.22); background:linear-gradient(145deg,rgba(38,26,68,0.98) 0%,rgba(18,14,38,0.98) 100%); }
+        .ch-card:hover::before{ opacity:1; background:linear-gradient(135deg,rgba(255,45,122,0.8),rgba(155,77,255,0.7),rgba(0,234,255,0.5)); }
+        .ch-card.active{ border-color:var(--neon-pink)!important; background:linear-gradient(145deg,rgba(255,45,122,0.18) 0%,rgba(155,77,255,0.20) 100%)!important; box-shadow:0 0 32px rgba(255,45,122,0.45),0 10px 30px rgba(0,0,0,0.5)!important; }
+        .ch-card.active::before{ opacity:1; background:linear-gradient(135deg,var(--neon-pink),var(--neon-purple)); }
+        .ch-card-top{ display:flex; align-items:center; justify-content:space-between; width:100%; margin-bottom:2px; position:relative; z-index:1; }
+        .ch-quality{ font-size:0.62rem; font-weight:900; letter-spacing:.8px; padding:3px 8px; border-radius:20px; background:rgba(255,204,51,0.13); color:var(--neon-gold); border:1px solid rgba(255,204,51,0.30); line-height:1; }
+        .ch-card.active .ch-quality{ background:linear-gradient(135deg,#ffcc33,#ffb700); color:#000; border-color:transparent; box-shadow:0 0 10px rgba(255,204,51,0.5); }
+        .ch-live-dot{ width:8px; height:8px; background:#00ff88; border-radius:50%; box-shadow:0 0 10px #00ff88; animation:livePulse 1.6s infinite; flex-shrink:0; }
+        .ch-card.active .ch-live-dot{ background:var(--neon-pink); box-shadow:0 0 10px var(--neon-pink); }
+        @keyframes livePulse{ 0%,100%{opacity:1; transform:scale(1);} 50%{opacity:.45; transform:scale(0.82);} }
+        .ch-icon-wrap{ width:64px; height:64px; border-radius:18px; background:radial-gradient(circle at 30% 30%,rgba(255,45,122,0.18),rgba(155,77,255,0.14) 50%,rgba(0,234,255,0.08)); border:1px solid rgba(255,255,255,0.07); display:flex; align-items:center; justify-content:center; font-size:2rem; box-shadow:inset 0 1px 1px rgba(255,255,255,0.08),0 6px 18px rgba(0,0,0,0.35); transition:transform .35s ease; position:relative; z-index:1; }
+        .ch-card:hover .ch-icon-wrap{ transform:scale(1.08) rotate(1.5deg); }
+        .ch-card.active .ch-icon-wrap{ background:radial-gradient(circle at 30% 30%,rgba(255,45,122,0.30),rgba(155,77,255,0.28)); border-color:rgba(255,45,122,0.35); box-shadow:0 0 18px rgba(255,45,122,0.3); }
+        .ch-name{ font-family:'Barlow Condensed',sans-serif; font-weight:800; font-size:0.92rem; letter-spacing:.6px; line-height:1.15; color:#f0e8ff; text-transform:uppercase; position:relative; z-index:1; min-height:2.2em; display:flex; align-items:center; justify-content:center; }
+        .ch-category{ font-size:0.66rem; font-weight:700; letter-spacing:1.2px; color:var(--text-muted); text-transform:uppercase; background:rgba(255,255,255,0.05); padding:3px 9px; border-radius:20px; border:1px solid rgba(255,255,255,0.06); position:relative; z-index:1; line-height:1; }
+        .ch-card.active .ch-category{ background:rgba(255,45,122,0.18); color:#ffb3d1; border-color:rgba(255,45,122,0.3); }
+        .ch-number{ position:absolute; top:10px; right:12px; font-family:'Bebas Neue',sans-serif; font-size:0.82rem; color:rgba(255,255,255,0.13); letter-spacing:1px; z-index:1; }
+        .ch-play-hint{ margin-top:2px; font-size:0.70rem; font-weight:800; letter-spacing:1.2px; color:var(--neon-cyan); opacity:0; transform:translateY(4px); transition:all .28s ease; position:relative; z-index:1; display:flex; align-items:center; gap:4px; }
+        .ch-card:hover .ch-play-hint{ opacity:1; transform:translateY(0); }
+        .ch-card.active .ch-play-hint{ opacity:1; transform:translateY(0); color:var(--neon-pink); }
+        /* Eski yatay channel-row'u gizle, grid kullan */
+        .channel-row{ display:none !important; }
+        
 
         .channels-section {
             background: rgba(12,10,24,0.9); border: 1px solid rgba(255,45,122,0.25);
@@ -323,12 +358,12 @@
                         <div class="info-title">📺 TOPLAM KANAL</div>
                         <div class="info-val" id="totalChannels">0</div>
                     </div>
-                    <div class="gamepad-indicator" id="gamepadStatus">
-                        <span class="gamepad-dot inactive" id="gamepadDot"></span>
-                        <span id="gamepadText">Kumanda bekleniyor</span>
+                                    <div class="quick-info">
+                    <div class="info-row">
+                        <div class="info-title">📺 TOPLAM KANAL</div>
+                        <div class="info-val" id="totalChannels">0</div>
                     </div>
                 </div>
-            </div>
         </div>
 
         <div class="matches-section" id="matchesSection">
@@ -341,6 +376,9 @@
             <div class="channel-search">
                 <input type="text" id="channelSearch" placeholder="🔎 Kanal ara... (örn. Bein, TRT, Tabii)" autocomplete="off">
             </div>
+            <!-- Kanal Kategori Butonları: ızgara filtre -->
+            <div class="channel-cat-row" id="channelCategoryRow"></div>
+            <div class="channel-grid" id="channelGrid"></div>
             <div class="channel-row" id="channelRow"></div>
             <div class="no-result" id="noResult">Eşleşen kanal bulunamadı.</div>
         </div>
@@ -351,6 +389,9 @@
         const streamLinks = {{STREAM_LINKS}};
         const channelNames = {{CHANNEL_NAMES}};
         const qualityLabels = streamLinks.map(function(){ return "HD"; });
+        // Kategori & ikon: tamamen istemci tarafında türet (kategori ızgara için)
+        const channelCategories = channelNames.map(function(n){ var l=n.toLowerCase(); if(l.includes('bein')||l.includes('beın')||l.includes('tivibu')||l.includes('tabii')||l.includes('a spor')||l.includes('max')) return 'futbol'; if(l.includes('s sport')) return 'basketbol'; if(l.includes('smart')||l.includes('trt spor')||l.includes('trt yıldız')) return 'spor'; if(l.includes('trt 1')||l.includes('atv')|| (l.includes('tv 8') && !l.includes('spor'))) return 'genel'; if(l.includes('euro')) return 'diger'; return l.includes('spor')?'spor':'diger'; });
+        const channelIcons = channelNames.map(function(name) { if (name.indexOf('BEIN') !== -1) return '⚽'; if (name.indexOf('S SPOR') !== -1) return '🏀'; if (name.indexOf('EURO') !== -1) return '🚴'; if (name.indexOf('TRT') !== -1) return '🇹🇷'; if (name.indexOf('TABII') !== -1 || name.indexOf('TABİİ') !== -1) return '📡'; if (name.indexOf('TİVİBU') !== -1) return '📡'; if (name.indexOf('SMART') !== -1) return '🧠'; if (name.indexOf('A SPOR') !== -1) return '⚽'; if (name.indexOf('ATV') !== -1) return '📺'; if (name.indexOf('TV 8') !== -1) return '📺'; return '📺'; });
         /*BOT_END*/
 
         const iframe = document.getElementById("liveIframe");
@@ -360,12 +401,23 @@
         const navPrev = document.getElementById("navPrev");
         const navNext = document.getElementById("navNext");
         const totalChannels = document.getElementById("totalChannels");
-        const gamepadDot = document.getElementById("gamepadDot");
-        const gamepadText = document.getElementById("gamepadText");
+        // kumanda göstergesi kaldırıldı
         const playerWrap = document.getElementById("playerWrap");
         const playerTip = document.getElementById("playerTip");
 
         let currentIndex = 0;
+        let activeChannelCategory = 'all';
+        const CHANNEL_CAT_DEFS = [
+            {id:'all', label:'TÜMÜ', icon:'✨'},
+            {id:'futbol', label:'FUTBOL', icon:'⚽'},
+            {id:'basketbol', label:'BASKETBOL', icon:'🏀'},
+            {id:'spor', label:'SPOR', icon:'🏟️'},
+            {id:'genel', label:'ULUSAL', icon:'📺'},
+            {id:'diger', label:'DİĞER', icon:'🌍'},
+        ];
+        const CATEGORY_LABELS_TR = {futbol:'Futbol', basketbol:'Basketbol', spor:'Spor', genel:'Ulusal', diger:'Diğer'};
+        const channelCategoryRow = document.getElementById("channelCategoryRow");
+        const channelGrid = document.getElementById("channelGrid");
         
         const channelIcons = channelNames.map(function(name) {
             if (name.indexOf('BEIN') !== -1) return '⚽';
@@ -381,34 +433,64 @@
             return '📺';
         });
 
-        function buildButtons() {
-            channelRow.innerHTML = "";
-            totalChannels.textContent = streamLinks.length;
-            
-            streamLinks.forEach(function(url, i) {
-                const btn = document.createElement("button");
-                btn.className = "ch-btn" + (i === 0 ? " active" : "");
-                const icon = channelIcons[i] || "📡";
-                
-                let num = (i + 1).toString();
-                if (num.length < 2) num = "0" + num;
-                
-                btn.innerHTML = '<span class="ch-icon">' + icon + '</span>' +
-                                '<div class="ch-number">' + num + '</div>' +
-                                '<div class="ch-label">' + channelNames[i] + '</div>';
-                
-                btn.onclick = function() { switchChannel(i, true); };
-                btn.setAttribute("data-index", i);
-                channelRow.appendChild(btn);
+        function getChannelCounts(){
+            const c={all:streamLinks.length,futbol:0,basketbol:0,spor:0,genel:0,diger:0};
+            channelCategories.forEach(function(cat){ if(c.hasOwnProperty(cat)) c[cat]++; else c[cat]=(c[cat]||0)+1; });
+            return c;
+        }
+        function renderCategoryButtons(){
+            if(!channelCategoryRow) return;
+            const counts=getChannelCounts();
+            channelCategoryRow.innerHTML="";
+            CHANNEL_CAT_DEFS.forEach(function(def){
+                const cnt=counts[def.id]||0;
+                if(def.id!=='all' && cnt===0) return;
+                const btn=document.createElement("button");
+                btn.className="channel-cat-btn"+(activeChannelCategory===def.id?" active":"");
+                btn.setAttribute("data-cat",def.id);
+                btn.innerHTML='<span class="cat-icon">'+def.icon+'</span><span>'+def.label+'</span><span class="cat-count">'+cnt+'</span>';
+                btn.onclick=function(){ activeChannelCategory=def.id; document.querySelectorAll(".channel-cat-btn").forEach(function(b){b.classList.remove("active");}); btn.classList.add("active"); buildButtons(); };
+                channelCategoryRow.appendChild(btn);
             });
-            
-            if (streamLinks.length > 0) {
-                currentIndex = 0;
-                switchChannel(0, false);
+        }
+        function buildButtons() {
+            // kategori + grid render (ızgara kartları)
+            const grid = channelGrid || channelRow;
+            if(!grid) return;
+            grid.innerHTML = "";
+            const q = (document.getElementById("channelSearch") && document.getElementById("channelSearch").value || "").toLowerCase().trim();
+            let visible=0;
+            totalChannels.textContent = streamLinks.length;
+            streamLinks.forEach(function(url, i) {
+                const name=channelNames[i];
+                const cat=channelCategories[i]||'genel';
+                const qual=qualityLabels[i]||'HD';
+                const icon=channelIcons[i]||'📡';
+                if(activeChannelCategory!=='all' && cat!==activeChannelCategory) return;
+                if(q && name.toLowerCase().indexOf(q)===-1 && cat.indexOf(q)===-1) return;
+                const card=document.createElement("div");
+                card.className="ch-card"+(i===currentIndex?" active":"");
+                card.setAttribute("data-index",i);
+                card.style.animationDelay=(visible*32)+"ms";
+                const catLabel=CATEGORY_LABELS_TR[cat]||cat.toUpperCase();
+                let num=(i+1).toString(); if(num.length<2) num="0"+num;
+                card.innerHTML='<div class="ch-number">#'+num+'</div><div class="ch-card-top"><span class="ch-quality">'+qual+'</span><span class="ch-live-dot"></span></div><div class="ch-icon-wrap">'+icon+'</div><div class="ch-name">'+name+'</div><div class="ch-category">'+catLabel+'</div><div class="ch-play-hint">▶ İZLE</div>';
+                card.onclick=function(){ switchChannel(i,true); };
+                grid.appendChild(card);
+                visible++;
+            });
+            const noResult=document.getElementById("noResult");
+            if(noResult) noResult.style.display=(visible===0?"block":"none");
+            // aktif kart highlight
+            document.querySelectorAll(".ch-card").forEach(function(card){
+                const idx=parseInt(card.getAttribute("data-index"),10);
+                if(idx===currentIndex) card.classList.add("active"); else card.classList.remove("active");
+            });
+            if (streamLinks.length > 0 && visible>0 && currentIndex>=streamLinks.length) {
+                currentIndex=0;
             }
         }
 
-        // scrollTo=true olduğunda kullanıcı seçiminde player'e yumuşakça kaydır
         function switchChannel(index, scrollTo) {
             if (index < 0 || index >= streamLinks.length) return;
             if (scrollTo === undefined) scrollTo = false;
@@ -417,28 +499,19 @@
             nowChannel.textContent = channelNames[index];
             nowQuality.textContent = qualityLabels[index];
             if (playerTip) playerTip.style.display = "none";
-
-            const buttons = document.querySelectorAll(".ch-btn");
-            for (let i = 0; i < buttons.length; i++) {
-                if (i === index) {
-                    buttons[i].classList.add("active");
-                } else {
-                    buttons[i].classList.remove("active");
-                }
-            }
-
-            const activeBtn = document.querySelector(".ch-btn.active");
+            document.querySelectorAll(".ch-card, .ch-btn").forEach(function(el){
+                const idx=parseInt(el.getAttribute("data-index"),10);
+                if(idx===index) el.classList.add("active"); else el.classList.remove("active");
+            });
+            const activeBtn = document.querySelector(".ch-card.active, .ch-btn.active");
             if (activeBtn && activeBtn.scrollIntoView) {
                 activeBtn.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "center" });
             }
-
-            // ⬇ Kullanıcı kanala tıkladığında player'e kaydır
             if (scrollTo && playerWrap && playerWrap.scrollIntoView) {
                 playerWrap.scrollIntoView({ behavior: "smooth", block: "start" });
                 playerWrap.classList.add("player-flash");
                 setTimeout(function(){ playerWrap.classList.remove("player-flash"); }, 1200);
             }
-
             updateNavButtons();
         }
 
@@ -465,83 +538,7 @@
             else if (e.key === "ArrowLeft") { e.preventDefault(); prevChannel(); }
         });
 
-        // ========== GAMEPAD (KUMANDA) DESTEĞİ ==========
-        let gamepadConnected = false;
-        let prevAxes = [0,0,0,0];
-        let prevButtons = [];
-
-        function updateGamepadStatus(connected) {
-            gamepadConnected = connected;
-            if (connected) {
-                gamepadDot.classList.remove("inactive");
-                gamepadText.textContent = "🎮 Kumanda bağlı";
-            } else {
-                gamepadDot.classList.add("inactive");
-                gamepadText.textContent = "Kumanda bekleniyor";
-            }
-        }
-
-        window.addEventListener("gamepadconnected", function(e) {
-            updateGamepadStatus(true);
-        });
-        window.addEventListener("gamepaddisconnected", function(e) {
-            updateGamepadStatus(false);
-        });
-
-        function pollGamepad() {
-            const gamepads = navigator.getGamepads ? navigator.getGamepads() : [];
-            let activeGamepad = null;
-            for (let i = 0; i < gamepads.length; i++) {
-                if (gamepads[i] && gamepads[i].connected) { 
-                    activeGamepad = gamepads[i]; 
-                    break; 
-                }
-            }
-
-            if (activeGamepad) {
-                if (!gamepadConnected) updateGamepadStatus(true);
-
-                const dpadLeft = (activeGamepad.buttons[14] && activeGamepad.buttons[14].pressed) ? true : false;
-                const dpadRight = (activeGamepad.buttons[15] && activeGamepad.buttons[15].pressed) ? true : false;
-                const axisX = activeGamepad.axes[0] || 0;
-
-                if (!prevButtons.length) {
-                    prevButtons = activeGamepad.buttons.map(function(b) { return b.pressed; });
-                    prevAxes = activeGamepad.axes.slice();
-                    requestAnimationFrame(pollGamepad);
-                    return;
-                }
-
-                if (dpadLeft && !prevButtons[14]) {
-                    prevChannel();
-                } else if (dpadRight && !prevButtons[15]) {
-                    nextChannel();
-                }
-
-                const threshold = 0.6;
-                if (axisX < -threshold && prevAxes[0] >= -threshold) {
-                    prevChannel();
-                } else if (axisX > threshold && prevAxes[0] <= threshold) {
-                    nextChannel();
-                }
-
-                prevButtons = activeGamepad.buttons.map(function(b) { return b.pressed; });
-                prevAxes = activeGamepad.axes.slice();
-            } else {
-                if (gamepadConnected) updateGamepadStatus(false);
-            }
-            requestAnimationFrame(pollGamepad);
-        }
-
-        if (navigator.getGamepads) {
-            const initialGamepads = navigator.getGamepads();
-            let found = false;
-            for (let i = 0; i < initialGamepads.length; i++) { 
-                if (initialGamepads[i] && initialGamepads[i].connected) { found = true; break; } 
-            }
-            if (found) updateGamepadStatus(true);
-            requestAnimationFrame(pollGamepad);
-        }
+        // Kumanda desteği kaldırıldı (kategori ızgara sistemi ile değiştirildi)
 
         function createParticles() {
             const container = document.getElementById("bgParticles");
@@ -604,23 +601,10 @@
             });
         }
 
-        // ========== KANAL ARAMA ==========
         function bindChannelSearch() {
             const input = document.getElementById("channelSearch");
-            const noResult = document.getElementById("noResult");
             if (!input) return;
-            input.addEventListener("input", function() {
-                const q = input.value.toLowerCase().trim();
-                let count = 0;
-                const btns = document.querySelectorAll(".ch-btn");
-                for (let i = 0; i < btns.length; i++) {
-                    const label = (channelNames[i] || "").toLowerCase();
-                    const show = q === "" || label.indexOf(q) !== -1;
-                    btns[i].style.display = show ? "" : "none";
-                    if (show) count++;
-                }
-                if (noResult) noResult.style.display = (count === 0 && q !== "") ? "block" : "none";
-            });
+            input.addEventListener("input", function() { buildButtons(); });
         }
 
         // ========== CANLI SAAT ==========
@@ -661,6 +645,7 @@
         }
 
         function initApp() {
+            renderCategoryButtons();
             buildButtons();
             createParticles();
             updateNavButtons();
@@ -670,6 +655,7 @@
             startClock();
             refreshLiveStatus();
             setInterval(refreshLiveStatus, 30000);
+            if(streamLinks.length>0){ currentIndex=0; switchChannel(0,false); }
         }
 
         if (document.readyState === "loading") {
