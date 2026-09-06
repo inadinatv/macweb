@@ -9,11 +9,13 @@
       "fixbettv84.com",
       "fixbettv19.com"
     ],
-    "last_checked": "2026-09-06T04:40:31+00:00",
+    "last_checked": "2026-09-06T12:24:07+00:00",
     "note": "OK",
     "probed": 200
   },
   "date": "2026-09-06",
+  "timezone": "Europe/Istanbul",
+  "generated_at": "2026-09-06T15:23:31+03:00",
   "matches": [
     {
       "match_id": "zirve",
@@ -30,7 +32,15 @@
       "started": false,
       "raw_event": "20:00 | Trendyol Süper Lig [Günün Maçı]",
       "url": "https://fixbettv84.com/channel.html?id=zirve",
-      "fetched_at": ""
+      "fetched_at": "",
+      "status_source": "schedule",
+      "raw_status": "",
+      "score_home": null,
+      "score_away": null,
+      "score_source": "",
+      "score_updated_at": "",
+      "event_id": "",
+      "starts_at": "2026-09-06T20:00:00+03:00"
     },
     {
       "match_id": "smarts",
@@ -47,7 +57,15 @@
       "started": true,
       "raw_event": "03:00 | Brezilya Serie A",
       "url": "https://fixbettv84.com/channel.html?id=smarts",
-      "fetched_at": ""
+      "fetched_at": "",
+      "status_source": "schedule",
+      "raw_status": "",
+      "score_home": null,
+      "score_away": null,
+      "score_source": "",
+      "score_updated_at": "",
+      "event_id": "",
+      "starts_at": "2026-09-06T03:00:00+03:00"
     },
     {
       "match_id": "trtspor",
@@ -60,11 +78,19 @@
       "channel_id": "trtspor",
       "logo_home": "https://img.sporekrani.com/teams/qMoYbPRcGX7GBkht1uSrafddF2ZV1rodvYJ4xVLl.png",
       "logo_away": "https://img.sporekrani.com/teams/GdLWh94GLymE9aN8nd1PoUXb4FR9GpPOnCSTdkoy.png",
-      "status": "upcoming",
-      "started": false,
+      "status": "finished",
+      "started": true,
       "raw_event": "12:30 | FIBA Kadınlar Dünya Kupası",
       "url": "https://fixbettv84.com/channel.html?id=trtspor",
-      "fetched_at": ""
+      "fetched_at": "",
+      "status_source": "schedule",
+      "raw_status": "",
+      "score_home": null,
+      "score_away": null,
+      "score_source": "",
+      "score_updated_at": "",
+      "event_id": "",
+      "starts_at": "2026-09-06T12:30:00+03:00"
     },
     {
       "match_id": "b5",
@@ -81,7 +107,15 @@
       "started": false,
       "raw_event": "16:00 | Fransa Ligue 1",
       "url": "https://fixbettv84.com/channel.html?id=b5",
-      "fetched_at": ""
+      "fetched_at": "",
+      "status_source": "schedule",
+      "raw_status": "",
+      "score_home": null,
+      "score_away": null,
+      "score_source": "",
+      "score_updated_at": "",
+      "event_id": "",
+      "starts_at": "2026-09-06T16:00:00+03:00"
     },
     {
       "match_id": "ss",
@@ -98,7 +132,15 @@
       "started": false,
       "raw_event": "16:00 | İtalya Serie A",
       "url": "https://fixbettv84.com/channel.html?id=ss",
-      "fetched_at": ""
+      "fetched_at": "",
+      "status_source": "schedule",
+      "raw_status": "",
+      "score_home": null,
+      "score_away": null,
+      "score_source": "",
+      "score_updated_at": "",
+      "event_id": "",
+      "starts_at": "2026-09-06T16:00:00+03:00"
     },
     {
       "match_id": "ss2",
@@ -115,7 +157,15 @@
       "started": false,
       "raw_event": "16:00 | İtalya Serie A",
       "url": "https://fixbettv84.com/channel.html?id=ss2",
-      "fetched_at": ""
+      "fetched_at": "",
+      "status_source": "schedule",
+      "raw_status": "",
+      "score_home": null,
+      "score_away": null,
+      "score_source": "",
+      "score_updated_at": "",
+      "event_id": "",
+      "starts_at": "2026-09-06T16:00:00+03:00"
     },
     {
       "match_id": "b3",
@@ -132,7 +182,15 @@
       "started": false,
       "raw_event": "16:00 | İngiltere Premier Lig",
       "url": "https://fixbettv84.com/channel.html?id=b3",
-      "fetched_at": ""
+      "fetched_at": "",
+      "status_source": "schedule",
+      "raw_status": "",
+      "score_home": null,
+      "score_away": null,
+      "score_source": "",
+      "score_updated_at": "",
+      "event_id": "",
+      "starts_at": "2026-09-06T16:00:00+03:00"
     },
     {
       "match_id": "zirve",
@@ -149,7 +207,15 @@
       "started": false,
       "raw_event": "17:00 | Trendyol Süper Lig",
       "url": "https://fixbettv84.com/channel.html?id=zirve",
-      "fetched_at": ""
+      "fetched_at": "",
+      "status_source": "schedule",
+      "raw_status": "",
+      "score_home": null,
+      "score_away": null,
+      "score_source": "",
+      "score_updated_at": "",
+      "event_id": "",
+      "starts_at": "2026-09-06T17:00:00+03:00"
     },
     {
       "match_id": "b2",
@@ -166,7 +232,15 @@
       "started": false,
       "raw_event": "17:00 | Trendyol Süper Lig",
       "url": "https://fixbettv84.com/channel.html?id=b2",
-      "fetched_at": ""
+      "fetched_at": "",
+      "status_source": "schedule",
+      "raw_status": "",
+      "score_home": null,
+      "score_away": null,
+      "score_source": "",
+      "score_updated_at": "",
+      "event_id": "",
+      "starts_at": "2026-09-06T17:00:00+03:00"
     },
     {
       "match_id": "ss",
@@ -183,7 +257,15 @@
       "started": false,
       "raw_event": "17:15 | İspanya La Liga",
       "url": "https://fixbettv84.com/channel.html?id=ss",
-      "fetched_at": ""
+      "fetched_at": "",
+      "status_source": "schedule",
+      "raw_status": "",
+      "score_home": null,
+      "score_away": null,
+      "score_source": "",
+      "score_updated_at": "",
+      "event_id": "",
+      "starts_at": "2026-09-06T17:15:00+03:00"
     },
     {
       "match_id": "ss2",
@@ -200,7 +282,15 @@
       "started": false,
       "raw_event": "18:00 | Girit Basketbol Turnuvası",
       "url": "https://fixbettv84.com/channel.html?id=ss2",
-      "fetched_at": ""
+      "fetched_at": "",
+      "status_source": "schedule",
+      "raw_status": "",
+      "score_home": null,
+      "score_away": null,
+      "score_source": "",
+      "score_updated_at": "",
+      "event_id": "",
+      "starts_at": "2026-09-06T18:00:00+03:00"
     },
     {
       "match_id": "b3",
@@ -217,7 +307,15 @@
       "started": false,
       "raw_event": "18:30 | İngiltere Premier Lig",
       "url": "https://fixbettv84.com/channel.html?id=b3",
-      "fetched_at": ""
+      "fetched_at": "",
+      "status_source": "schedule",
+      "raw_status": "",
+      "score_home": null,
+      "score_away": null,
+      "score_source": "",
+      "score_updated_at": "",
+      "event_id": "",
+      "starts_at": "2026-09-06T18:30:00+03:00"
     },
     {
       "match_id": "ss",
@@ -234,7 +332,15 @@
       "started": false,
       "raw_event": "19:00 | İtalya Serie A",
       "url": "https://fixbettv84.com/channel.html?id=ss",
-      "fetched_at": ""
+      "fetched_at": "",
+      "status_source": "schedule",
+      "raw_status": "",
+      "score_home": null,
+      "score_away": null,
+      "score_source": "",
+      "score_updated_at": "",
+      "event_id": "",
+      "starts_at": "2026-09-06T19:00:00+03:00"
     },
     {
       "match_id": "trt1",
@@ -251,7 +357,15 @@
       "started": false,
       "raw_event": "19:00 | CEV Kadınlar Avrupa Şampiyonası",
       "url": "https://fixbettv84.com/channel.html?id=trt1",
-      "fetched_at": ""
+      "fetched_at": "",
+      "status_source": "schedule",
+      "raw_status": "",
+      "score_home": null,
+      "score_away": null,
+      "score_source": "",
+      "score_updated_at": "",
+      "event_id": "",
+      "starts_at": "2026-09-06T19:00:00+03:00"
     },
     {
       "match_id": "ss",
@@ -268,7 +382,15 @@
       "started": false,
       "raw_event": "19:30 | İspanya La Liga",
       "url": "https://fixbettv84.com/channel.html?id=ss",
-      "fetched_at": ""
+      "fetched_at": "",
+      "status_source": "schedule",
+      "raw_status": "",
+      "score_home": null,
+      "score_away": null,
+      "score_source": "",
+      "score_updated_at": "",
+      "event_id": "",
+      "starts_at": "2026-09-06T19:30:00+03:00"
     },
     {
       "match_id": "b2",
@@ -285,7 +407,15 @@
       "started": false,
       "raw_event": "20:00 | Trendyol Süper Lig",
       "url": "https://fixbettv84.com/channel.html?id=b2",
-      "fetched_at": ""
+      "fetched_at": "",
+      "status_source": "schedule",
+      "raw_status": "",
+      "score_home": null,
+      "score_away": null,
+      "score_source": "",
+      "score_updated_at": "",
+      "event_id": "",
+      "starts_at": "2026-09-06T20:00:00+03:00"
     },
     {
       "match_id": "trtspor",
@@ -302,7 +432,15 @@
       "started": false,
       "raw_event": "20:00 | Trendyol 1. Lig",
       "url": "https://fixbettv84.com/channel.html?id=trtspor",
-      "fetched_at": ""
+      "fetched_at": "",
+      "status_source": "schedule",
+      "raw_status": "",
+      "score_home": null,
+      "score_away": null,
+      "score_source": "",
+      "score_updated_at": "",
+      "event_id": "",
+      "starts_at": "2026-09-06T20:00:00+03:00"
     },
     {
       "match_id": "bm1",
@@ -319,7 +457,15 @@
       "started": false,
       "raw_event": "20:00 | Trendyol 1. Lig",
       "url": "https://fixbettv84.com/channel.html?id=bm1",
-      "fetched_at": ""
+      "fetched_at": "",
+      "status_source": "schedule",
+      "raw_status": "",
+      "score_home": null,
+      "score_away": null,
+      "score_source": "",
+      "score_updated_at": "",
+      "event_id": "",
+      "starts_at": "2026-09-06T20:00:00+03:00"
     },
     {
       "match_id": "b5",
@@ -336,7 +482,15 @@
       "started": false,
       "raw_event": "20:00 | Trendyol 1. Lig",
       "url": "https://fixbettv84.com/channel.html?id=b5",
-      "fetched_at": ""
+      "fetched_at": "",
+      "status_source": "schedule",
+      "raw_status": "",
+      "score_home": null,
+      "score_away": null,
+      "score_source": "",
+      "score_updated_at": "",
+      "event_id": "",
+      "starts_at": "2026-09-06T20:00:00+03:00"
     },
     {
       "match_id": "smarts",
@@ -353,7 +507,15 @@
       "started": false,
       "raw_event": "20:45 | Arjantin Primera Division",
       "url": "https://fixbettv84.com/channel.html?id=smarts",
-      "fetched_at": ""
+      "fetched_at": "",
+      "status_source": "schedule",
+      "raw_status": "",
+      "score_home": null,
+      "score_away": null,
+      "score_source": "",
+      "score_updated_at": "",
+      "event_id": "",
+      "starts_at": "2026-09-06T20:45:00+03:00"
     },
     {
       "match_id": "b4",
@@ -370,7 +532,15 @@
       "started": false,
       "raw_event": "21:45 | Fransa Ligue 1",
       "url": "https://fixbettv84.com/channel.html?id=b4",
-      "fetched_at": ""
+      "fetched_at": "",
+      "status_source": "schedule",
+      "raw_status": "",
+      "score_home": null,
+      "score_away": null,
+      "score_source": "",
+      "score_updated_at": "",
+      "event_id": "",
+      "starts_at": "2026-09-06T21:45:00+03:00"
     },
     {
       "match_id": "ss2",
@@ -387,7 +557,15 @@
       "started": false,
       "raw_event": "21:45 | İtalya Serie A",
       "url": "https://fixbettv84.com/channel.html?id=ss2",
-      "fetched_at": ""
+      "fetched_at": "",
+      "status_source": "schedule",
+      "raw_status": "",
+      "score_home": null,
+      "score_away": null,
+      "score_source": "",
+      "score_updated_at": "",
+      "event_id": "",
+      "starts_at": "2026-09-06T21:45:00+03:00"
     },
     {
       "match_id": "trtspor2",
@@ -404,7 +582,15 @@
       "started": false,
       "raw_event": "21:45 | FIBA Kadınlar Dünya Kupası",
       "url": "https://fixbettv84.com/channel.html?id=trtspor2",
-      "fetched_at": ""
+      "fetched_at": "",
+      "status_source": "schedule",
+      "raw_status": "",
+      "score_home": null,
+      "score_away": null,
+      "score_source": "",
+      "score_updated_at": "",
+      "event_id": "",
+      "starts_at": "2026-09-06T21:45:00+03:00"
     },
     {
       "match_id": "ss",
@@ -421,7 +607,15 @@
       "started": false,
       "raw_event": "22:00 | İspanya La Liga",
       "url": "https://fixbettv84.com/channel.html?id=ss",
-      "fetched_at": ""
+      "fetched_at": "",
+      "status_source": "schedule",
+      "raw_status": "",
+      "score_home": null,
+      "score_away": null,
+      "score_source": "",
+      "score_updated_at": "",
+      "event_id": "",
+      "starts_at": "2026-09-06T22:00:00+03:00"
     }
   ]
 }
