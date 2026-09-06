@@ -6,6 +6,22 @@ raporlar üreten gelişmiş otomasyon botu.
 
 ---
 
+## Player ve skor güncellemesi
+
+- Atom'un güncel `/matches?id=...` player yolu ve worker → nihai HLS çözümlemesi;
+  master/media, göreli URI ve imzalı query desteği.
+- Gerçek oynatma/loading, sınırlı retry/kurtarma, stall kontrolü, açıklayıcı loglar;
+  Chromium MSE/hls.js ve Apple native HLS ayrımı.
+- Günün maçlarında **CANLI / DEVRE / MS + küçük skor**, ertelendi/iptal durumları.
+  Asıl kaynak skor vermediğinde tanımlı ligler için ESPN'den kesin eşleşmeyle alınır;
+  eksik skor tahmin edilmez veya 0–0 yapılmaz.
+- Header/CORS isteyen kaynaklar için isteğe bağlı, izin listeli HLS hizmeti.
+  **GitHub Pages backend çalıştırmaz:** gerekli hizmet ayrıca HTTPS ile deploy
+  edilip `playback.proxy_url` ayarlanmalıdır; varsayılan doğrudan yayınlar korunur.
+
+**İnceleme bulguları, doğrulama sınırları, deployment ve skor kapsamı:**
+[Player / skor işletim notları](docs/PLAYER-SCORES.md).
+
 ## 🧠 Nasıl çalışır?
 
 1. **Güncel adres takibi** (`src/fixbet/domain_checker.py`)
@@ -17,10 +33,15 @@ raporlar üreten gelişmiş otomasyon botu.
 2. **Maç ID çekme** (`src/fixbet/scraper.py`, `parser.py`)
    - Sitenin maç listesinin geldiği stabil kaynaktan ham HTML çekilir
      (`data-reality.com/matches.php`, yedeği `matches2.php`).
-   - Her maçın **match ID**'si (`channel?id=<id>`) ve takım/lisans/kategori bilgileri çıkarılır.
+   - Her satırın kanal kimliği (`channel?id=<id>`) ve takım/lig/kategori bilgileri çıkarılır.
+     Bu kimlik gün içinde tekrar edebilir; skor eşleştirmesi için etkinlik ID'si sayılmaz.
 
-3. **Kategorize etme** (`src/fixbet/categorizer.py`)
-   - Maçlar saate göre **🔴 Canlı / ⏰ Yaklaşan / ✅ Bitti** olarak işaretlenir.
+3. **Durum ve skor** (`src/fixbet/match_state.py`, `scores.py`, `categorizer.py`)
+   - Önce kaynağın gerçek durumu kullanılır: **CANLI / DEVRE / MS / Ertelendi / İptal**.
+   - Kaynak skor/durum vermiyorsa `config/scores.yml` içindeki ligler ESPN scoreboard
+     ile zenginleştirilir (spor/lig/tarih/saat ve iki takımın kesin eşleşmesi).
+   - Hiç gerçek durum yoksa eski saat tabanlı canlı/yaklaşan/bitti tahmini korunur;
+     bu tahminden skor üretilmez.
    - `[Günün Maçı]` etiketiyle **⭐ Günün Maçı** kategorisi oluşturulur.
    - **Spor** ve **Lig** bazlı alt gruplar üretilir.
 
@@ -33,13 +54,18 @@ raporlar üreten gelişmiş otomasyon botu.
    - Repo kökündeki **`index.html`** her çalıştırmada şablondan yeniden üretilir
      (tek kaynak: şablon). Sayfada **uydurma/sabit maç yoktur**; gömülen her maç
      kaynaktan çekilen gerçek programdır.
-   - **İki sekme:** 📺 TV KANALLARI ve 📅 GÜNÜN MAÇLARI. Eski "canlı maçlar"
+   - **Üç sekme:** 📺 TV KANALLARI, 📅 GÜNÜN MAÇLARI ve ⚡ EXTRA. Eski "canlı maçlar"
      sekmesi sabit örnek veriyle dolduğu için kaldırıldı — canlılık bilgisi artık
-     günün maçları içinde **gerçek başlangıç saatine göre** hesaplanıyor.
-   - **Durum hesabı:** Başlangıç saati + spora göre yayın penceresi
+     günün maçları içinde **kaynak durumu varsa ondan, yoksa program saatinden** belirleniyor.
+   - **Yedek durum hesabı:** Gerçek durum gelmediğinde başlangıç saati + spora göre yayın penceresi
      (`settings.yml → categorize.live_window_by_sport`) → 🔴 Canlı / ⏰ Yaklaşan /
      ✅ Bitti. Aynı tablo sayfaya da gömülür, yani bot ile site aynı şeyi söyler.
-     Sayaçlar ("1 sa 20 dk kaldı", "≈ 63'") cihazın saatine göre 30 sn'de bir tazelenir.
+     Sayaçlar ("1 sa 20 dk kaldı", "≈ 63'") 30 sn'de bir tazelenir; programın saat
+     dilimi korunur. Gerçek kaynak durumu saatten gelen tahminle ezilmez.
+   - **Skor:** Tamamlanan maçta MS + final skor; canlı/devrede varsa güncel skor.
+     Eksik, ertelenen, iptal veya başlamayan maçta skor yok. Canlı skor snapshot'ı
+     eskirse “son skor” notu gösterilir. Küçük skor rozeti uzun takım isimlerinde
+     ve mobil görünümde düzeni bozmaz.
    - **Kanala tıkla → yayın player'de:** Alttaki kanal kartına (veya maç
      kartındaki ▶ İZLE'ye) tıklayınca yayın doğrudan oynatıcıda açılır ve sayfa
      yumuşakça player'e kayar (kısa altın "flash" animasyonu ile).
@@ -56,7 +82,7 @@ raporlar üreten gelişmiş otomasyon botu.
 6. **⚡ EXTRA paneller — doğrudan m3u8 kanallar** (`src/fixbet/extras.py` + `config/extra_channels.yml`)
    - Ana siteden bağımsız ek kaynaklar:
      - **ATOM SPOR** (14 kanal: Bein Sports 1-5, S Sport / 2 / Plus, Tivibu Spor 1-3, SmartSpor,
-       TV 8,5, Bein Sports Haber) — kanal sayfasından (`/kanal/<slug>`) m3u8 çıkarılır.
+       TV 8,5, Bein Sports Haber) — player sayfasından (`/matches?id=<slug>`) veya worker yönlendirmesinden HLS çözülür.
      - **SELÇUK SPOR / Sporcafe** (14 kanal: Bein Sports 1-5, Max 1-2, S Sport 1-2, Tivibu 1-2,
        SmartSpor, A Spor, Eurosport 1) — **iki aşamalı**: ana sayfadan oynatıcı sunucusu
        (`main.uxsyplayer….click`) bulunur, oynatıcı sayfasındaki `this.adsBaseUrl` kökünden
@@ -109,6 +135,12 @@ python fixbet.py build-index
 
 # Sadece EXTRA panelleri (Atom / Selçuk m3u8 adresleri) yenile ve sayfayı güncelle
 python fixbet.py extras
+
+# İsteğe bağlı sayfa + HLS hizmeti (üretimde HTTPS reverse proxy gerekir)
+python fixbet.py web --host 0.0.0.0 --port 8000
+
+# Ağ erişimi olan ortamda playlist/segment/header/MIME tanılaması
+python fixbet.py diagnose-stream atom:bein-sports-1
 ```
 
 Çıktılar `output/` klasörüne ve güncel adres `config/current_site.yml` dosyasına yazılır.
@@ -118,6 +150,9 @@ python fixbet.py extras
 ## ✅ Testler
 
 ```bash
+pip install -r requirements-dev.txt
+python -m pytest -q tests        # tüm Python testleri + (npm kuruluysa) jsdom sarmalayıcısı
+
 python tests/test_pipeline.py     # maç ayrıştırma + canlı/yaklaşan/bitti sınıflandırması
 python tests/test_channels.py     # 7/24 kanal listesi + marka grupları
 python tests/test_site.py         # index.html üretimi (şablon + gerçek veri)
@@ -125,12 +160,16 @@ python tests/test_extras.py       # EXTRA paneller: m3u8 çıkarma, ayna taramas
 
 npm install && npm test           # sayfanın kendi JS'i jsdom içinde çalıştırılır
 python tests/test_frontend.py     # aynı arayüz testlerinin pytest/sade-python sarmalayıcısı
+npx playwright install --with-deps chromium
+npm run test:browser             # gerçek HLS medya + Chromium + mobil düzen
 ```
 
 Arayüz testleri üretilen `index.html`'in JavaScript'ini gerçekten çalıştırır: kanal
 kartlarının çizilmesi, ızgara/liste geçişi, karta tıklayınca yayının açılıp player'e
 kaydırılması, günün maçlarının gerçek veriden gelmesi, arama/filtre ve canlı tazeleme,
 EXTRA sekmesi ve HLS oynatıcı (hls.js / yerel HLS, kaynak değiştirme, hata katmanı, derin bağlantı).
+Gerçek Chromium testleri ayrıca sentetik TS/fMP4/AES/byte-range medyayı oynatır;
+header gerektiren key/segmentlerin gerçek backend üzerinden erişildiğini doğrular.
 `workflow-tests-example.yml` dosyasını `.github/workflows/tests.yml` olarak kopyalarsanız
 bu testler her push/PR'da otomatik koşar (bu depodaki GitHub App token'ının `workflows`
 yetkisi olmadığı için dosya kökte örnek olarak duruyor).
@@ -157,7 +196,8 @@ fixbet-bot/
 ├── requirements.txt
 ├── README.md
 ├── config/
-│   ├── settings.yml          # bot/kaynak/izleme/kategori ayarları
+│   ├── settings.yml          # bot/kaynak/izleme/kategori + HLS hizmeti ayarları
+│   ├── scores.yml            # ikincil skor kaynağı, lig ve açık takım adı eşlemeleri
 │   ├── mirrors.yml           # güncel adres arayan kalıplar
 │   ├── channels.yml          # bilinen kanal kimlikleri
 │   ├── extra_channels.yml    # ⚡ EXTRA paneller (Atom Spor + Selçuk Spor m3u8, yeni paneller buraya)
@@ -167,7 +207,13 @@ fixbet-bot/
 │   ├── domain_checker.py     # güncel site adresi takibi
 │   ├── scraper.py            # maç listesi çekme
 │   ├── parser.py             # HTML -> Match modeli
-│   ├── categorizer.py        # canlı/lig/spor/aygünü kategorize etme
+│   ├── categorizer.py        # durum/lig/spor/gün kategorileri
+│   ├── match_state.py        # paylaşılan status sözlüğü ve skor doğrulama
+│   ├── scores.py             # kesin etkinlik eşleşmesiyle gerçek skor zenginleştirmesi
+│   ├── stream_proxy.py       # izin listeli HLS playlist/segment/key taşıması
+│   ├── http_transport.py     # public-IP soket kontrolü; TLS/SNI doğrulaması
+│   ├── web.py                # isteğe bağlı HTTP hizmeti (TLS proxy arkasında)
+│   ├── diagnostics.py        # HLS HTTP / CORS / MIME / codec tanılaması
 │   ├── reports.py            # HTML/MD/JSON çıktılar
 │   ├── site.py               # şablondan index.html üretimi
 │   ├── channels.py           # 7/24 kanal listesi

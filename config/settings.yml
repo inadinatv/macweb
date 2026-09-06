@@ -63,3 +63,15 @@ categorize:
     Basketbol: "Basketbol"
     Voleybol: "Voleybol"
     Tenis: "Tenis"
+
+# GitHub Pages bir backend çalıştırmaz. Header/CORS gerektiren yayınlar için
+# `python fixbet.py web` hizmetini HTTPS altında yayımlayıp tam /api/hls URL'sini
+# buraya yazın. Boşken önce doğrudan HLS denenir; aynı kökteki web hizmeti varsa
+# api/playback.json üzerinden otomatik bulunur. Üçüncü taraf açık proxy kullanılmaz.
+playback:
+  proxy_url: ""
+  # Hizmet botla aynı output/ dizinini paylaşmıyorsa aşağıdaki GH Pages JSON'unu
+  # kullanın: https://inadinatv.github.io/macweb/output/extra_channels.json
+  registry_url: ""
+  allowed_origins:
+    - "https://inadinatv.github.io"

@@ -1,19 +1,23 @@
 """Günün maçlarını kategorize eder: canlı / başladı / yaklaşan, spora ve lige göre gruplar."""
 from __future__ import annotations
 
-from datetime import datetime
+from datetime import datetime, timedelta
 from typing import Any
+from zoneinfo import ZoneInfo
 
 from . import config, scraper
 from .models import Match
+from .match_state import ACTIVE_STATUSES, STATUS_LABELS, normalize_status
 
-status_map = {"live": "canlı", "started": "başladı", "upcoming": "yaklaşan", "finished": "bitti"}
+status_map = {**{key: label.lower() for key, label in STATUS_LABELS.items()},
+              "live": "canlı", "started": "başladı", "upcoming": "yaklaşan", "finished": "bitti"}
 
 
 def _hhmm_to_minutes(hhmm: str) -> int | None:
     try:
         h, m = hhmm.split(":")
-        return int(h) * 60 + int(m)
+        h, m = int(h), int(m)
+        return h * 60 + m if 0 <= h < 24 and 0 <= m < 60 else None
     except Exception:
         return None
 
@@ -44,10 +48,21 @@ def classify(matches: list[Match], now: datetime) -> list[Match]:
     * pencere dolduysa -> bitti
     Gece yarısını geçen maçlar (23:xx -> 00:xx) da doğru hesaplanır.
     """
-    cat = config.load_settings().get("categorize", {})
+    settings = config.load_settings()
+    cat = settings.get("categorize", {})
+    tz = ZoneInfo(settings.get("bot", {}).get("timezone", "Europe/Istanbul"))
+    local_now = now.astimezone(tz) if now.tzinfo else now.replace(tzinfo=tz)
     grace = int(cat.get("live_grace_minutes", 0))
-    now_min = now.hour * 60 + now.minute
+    now_min = local_now.hour * 60 + local_now.minute
     for m in matches:
+        source_status = normalize_status(m.raw_status) or normalize_status(m.status)
+        explicit = m.status_source != "schedule" or normalize_status(m.raw_status) or m.status not in ("upcoming", "live", "finished")
+        if source_status and explicit:
+            m.status = source_status
+            if m.status_source == "schedule":
+                m.status_source = "source"
+            m.started = source_status in ACTIVE_STATUSES | {"finished", "suspended", "abandoned"}
+            continue
         mins = _hhmm_to_minutes(m.time)
         if mins is None:
             m.status = "upcoming"
@@ -58,6 +73,15 @@ def classify(matches: list[Match], now: datetime) -> list[Match]:
             elapsed = now_min + 24 * 60 - mins
         else:
             elapsed = now_min - mins
+        if m.starts_at:
+            try:
+                start = datetime.fromisoformat(m.starts_at.replace("Z", "+00:00"))
+                if start.tzinfo:
+                    elapsed = (local_now - start).total_seconds() // 60
+            except ValueError:
+                pass
+        else:
+            m.starts_at = (local_now - timedelta(minutes=elapsed)).replace(second=0, microsecond=0).isoformat()
         elapsed += grace
         if elapsed < 0:
             m.status = "upcoming"
@@ -96,14 +120,17 @@ def categorize(matches: list[Match], now: datetime) -> dict[str, Any]:
     finished: list[Match] = []
     upcoming: list[Match] = []
     match_of_day: list[Match] = []
+    other = {s: [] for s in ("postponed", "cancelled", "suspended", "abandoned")}
 
     for m in matches:
         by_league.setdefault(m.league or cat.get("default_sport", "Bilinmiyor"), []).append(m)
         by_sport.setdefault(m.sport or cat.get("default_sport", "Spor"), []).append(m)
-        if m.status == "live":
+        if m.status in ACTIVE_STATUSES:
             live.append(m)
         elif m.status == "finished":
             finished.append(m)
+        elif m.status in other:
+            other[m.status].append(m)
         else:
             upcoming.append(m)
         if m.is_match_of_day:
@@ -136,7 +163,9 @@ def categorize(matches: list[Match], now: datetime) -> dict[str, Any]:
             "upcoming": len(upcoming),
             "finished": len(finished),
             "match_of_day": len(match_of_day),
+            **{status: len(group) for status, group in other.items()},
         },
+        **{status: bucket(group) for status, group in other.items()},
         "live": bucket(live),
         "upcoming": bucket(upcoming),
         "finished": bucket(finished),

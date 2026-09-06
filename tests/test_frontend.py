@@ -29,7 +29,7 @@ def test_frontend_jsdom():
         return
     res = subprocess.run(
         [node, "--test", "tests/frontend.test.mjs"],
-        cwd=ROOT, capture_output=True, text=True,
+        cwd=ROOT, capture_output=True, text=True, timeout=60,
     )
     print(res.stdout[-4000:])
     assert res.returncode == 0, f"arayüz testleri başarısız:\n{res.stdout[-4000:]}\n{res.stderr[-2000:]}"

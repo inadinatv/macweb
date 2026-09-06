@@ -1,0 +1,14 @@
+#EXTM3U
+#EXT-X-VERSION:3
+#EXT-X-TARGETDURATION:1
+#EXT-X-MEDIA-SEQUENCE:0
+#EXT-X-PLAYLIST-TYPE:VOD
+#EXTINF:1.000000,
+part0.jpg?token=test%2Bsignature&n=1
+#EXTINF:1.000000,
+part1.jpg?token=test%2Bsignature&n=1
+#EXTINF:1.000000,
+part2.jpg?token=test%2Bsignature&n=1
+#EXTINF:1.000000,
+part3.jpg?token=test%2Bsignature&n=1
+#EXT-X-ENDLIST

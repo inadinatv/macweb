@@ -19,10 +19,11 @@ from __future__ import annotations
 import base64
 import concurrent.futures as cf
 import json
+import html
 import os
 import re
 import urllib.parse
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from datetime import datetime, timedelta, timezone
 from typing import Any, Callable
 
@@ -47,6 +48,7 @@ class FetchResult:
     status: int
     url: str      # yönlendirmeler sonrası nihai adres
     text: str
+    headers: dict[str, str] = field(default_factory=dict)
 
 
 # fetch(url, headers, timeout) -> FetchResult | None  (ağ hatası → None)
@@ -55,8 +57,16 @@ Fetcher = Callable[[str, dict[str, str], float], "FetchResult | None"]
 
 def _http_get(url: str, headers: dict[str, str], timeout: float) -> FetchResult | None:
     try:
-        resp = requests.get(url, headers=headers, timeout=timeout, allow_redirects=True)
-        return FetchResult(resp.status_code, resp.url, resp.text)
+        with requests.get(url, headers=headers, timeout=(5, timeout), allow_redirects=True, stream=True) as resp:
+            # Yanlışlıkla sonsuz/büyük bir segment yanıtı gelirse HTML çözümleyici
+            # tüm yayını belleğe indirmesin. Mevcut/yedek kaynaklar korunur.
+            body = bytearray()
+            for chunk in resp.iter_content(16384):
+                body.extend(chunk)
+                if len(body) > 2 * 1024 * 1024:
+                    return None
+            encoding = "utf-8-sig" if body.startswith(b"\xef\xbb\xbf") else resp.encoding or "utf-8"
+            return FetchResult(resp.status_code, resp.url, body.decode(encoding, errors="replace"), dict(resp.headers))
     except requests.exceptions.RequestException:
         return None
 
@@ -65,11 +75,11 @@ def _http_get(url: str, headers: dict[str, str], timeout: float) -> FetchResult 
 # m3u8 çıkarma
 # ---------------------------------------------------------------------------
 _M3U8_ABS = re.compile(r'(https?://[^\s\'"<>\\]+\.m3u8[^\s\'"<>\\]*)', re.I)
-_M3U8_REL = re.compile(r'[\'"](/[^\s\'"<>]+\.m3u8[^\s\'"<>]*)[\'"]', re.I)
+_M3U8_REL = re.compile(r'[\'"]([^\s\'"<>]+\.m3u8[^\s\'"<>]*)[\'"]', re.I)
 _M3U8_ENC = re.compile(r'(https?%3A%2F%2F[^\s\'"<>]+(?:%2E|\.)m3u8[^\s\'"<>]*)', re.I)
 _ATOB = re.compile(r'atob\(\s*[\'"]([A-Za-z0-9+/=]+)[\'"]\s*\)')
 _B64_LONG = re.compile(r'[\'"]([A-Za-z0-9+/=]{40,})[\'"]')
-_IFRAME = re.compile(r'<iframe[^>]+src=["\'](https?://[^"\']+)["\']', re.I)
+_IFRAME = re.compile(r'<iframe[^>]+src=["\']([^"\']+)["\']', re.I)
 _PLACEHOLDER = re.compile(r"\{[a-z_]+\}")
 
 
@@ -80,26 +90,37 @@ def _b64_text(blob: str) -> str | None:
         return None
 
 
+def is_hls_playlist(text: str) -> bool:
+    body = (text or "").lstrip("\ufeff \r\n\t")
+    return body.startswith("#EXTM3U") and "#EXT" in body[7:]
+
+
 def find_m3u8(text: str, base_url: str) -> str | None:
     """Sayfa/script metninden ilk m3u8 adresini çıkarır (yoksa None)."""
     if not text:
         return None
+    # Playlist içindeki ilk varyantı değil, yönlendirme sonrası playlist'in
+    # KENDİ adresini döndür. Uzantısız worker URL'leri de gerçek HLS olabilir.
+    if is_hls_playlist(text):
+        return base_url
     # JSON içinde kaçışlı eğik çizgiler (https:\/\/...) sık görülür
-    plain = text.replace("\\/", "/")
+    plain = text.replace("\\/", "/").replace("\\u0026", "&")
+    # JS içindeki &not= / &copy= gibi imzalı query parçaları HTML entity değildir.
+    plain = re.sub(r"&(?:#[0-9]+|#x[0-9a-fA-F]+|[A-Za-z][A-Za-z0-9]+);", lambda m: html.unescape(m[0]), plain)
 
     m = _M3U8_ABS.search(plain)
     if m:
         return m.group(1)
 
-    m = _M3U8_REL.search(plain)
-    if m:
-        parsed = urllib.parse.urlparse(base_url)
-        if parsed.scheme and parsed.netloc:
-            return f"{parsed.scheme}://{parsed.netloc}{m.group(1)}"
-
     m = _M3U8_ENC.search(plain)
     if m:
         return urllib.parse.unquote(m.group(1))
+
+    m = _M3U8_REL.search(plain)
+    if m:
+        url = urllib.parse.urljoin(base_url, m.group(1))
+        if urllib.parse.urlsplit(url).scheme in ("http", "https"):
+            return url
 
     for blob in _ATOB.findall(plain):
         decoded = _b64_text(blob)
@@ -171,8 +192,12 @@ def extract_m3u8_from_page(url: str, referrer: str | None, fetch: Fetcher,
         return found
     if depth <= 0:
         return None
+    final_url = res.url or url
     for src in _IFRAME.findall(res.text)[:6]:
-        found = extract_m3u8_from_page(src, url, fetch, headers, timeout, depth - 1, rules, fmt)
+        src = urllib.parse.urljoin(final_url, html.unescape(src))
+        if urllib.parse.urlsplit(src).scheme not in ("http", "https") or src == final_url:
+            continue
+        found = extract_m3u8_from_page(src, final_url, fetch, headers, timeout, depth - 1, rules, fmt)
         if found:
             return found
     return None
@@ -420,16 +445,30 @@ def resolve_channel(panel: dict[str, Any], ctx: dict[str, Any], ch: dict[str, An
                                           rules=rules, fmt=fmt) or ""
         if resolved:
             resolved_at = now.isoformat(timespec="seconds")
+    # Atom'un worker'ı başka bir CDN'e yönlenir. Bot nihai adresi çözer;
+    # tarayıcıdaki fazladan cross-origin redirect zinciri ortadan kalkar.
+    # Worker adresi yine yedekte kalır; CDN değişiminde bir sonraki tur yeniler.
+    if not resolved and fallback and fetch is not None and panel.get("resolve_fallback", False):
+        resolved = extract_m3u8_from_page(fallback, referrer, fetch, headers, timeout) or ""
+        if resolved:
+            resolved_at = now.isoformat(timespec="seconds")
     if not resolved and previous:
         prev_url, prev_at = previous.get("resolved_url"), previous.get("resolved_at")
         if prev_url and _fresh(prev_at, now, keep_hours):
             resolved, resolved_at, stale = str(prev_url), prev_at, True
 
-    sources: list[dict[str, str]] = []
+    sources: list[dict[str, Any]] = []
 
     def add(url: str, typ: str) -> None:
         if url and all(s["url"] != url for s in sources):
             sources.append({"type": typ, "url": url, "label": ""})
+            if typ == "hls":
+                sources[-1]["mime_type"] = "application/vnd.apple.mpegurl"
+                if ch.get("request_headers"):
+                    # Yalnızca herkese açık header'lar; gizli anahtarları buraya koymayın.
+                    sources[-1]["headers"] = dict(ch["request_headers"])
+                if (panel.get("playback") or {}).get("require_proxy"):
+                    sources[-1]["requires_proxy"] = True
 
     add(static, "hls")
     add(resolved, "hls")
