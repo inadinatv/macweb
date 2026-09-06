@@ -7,7 +7,7 @@
  *
  *   npm install && npm test
  */
-import test from "node:test";
+import test, { afterEach } from "node:test";
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import path from "node:path";
@@ -20,11 +20,14 @@ const TODAY = JSON.parse(readFileSync(path.join(ROOT, "output", "today_matches.j
 const EXTRA = JSON.parse(readFileSync(path.join(ROOT, "output", "extra_channels.json"), "utf8"));
 const EXTRA_COUNT = EXTRA.panels.reduce((n, p) => n + p.channels.length, 0);
 
+const openPages = new Set();
+afterEach(() => { for (const dom of openPages) dom.window.close(); openPages.clear(); });
+
 async function loadPage(options = {}) {
   const errors = [];
   const virtualConsole = new VirtualConsole();
   virtualConsole.on("jsdomError", (e) => errors.push(String(e && e.message)));
-  const dom = new JSDOM(HTML, {
+  const dom = new JSDOM(options.html || HTML, {
     runScripts: "dangerously",
     pretendToBeVisual: true,
     url: "https://inadinatv.github.io/macweb/",
@@ -55,29 +58,35 @@ async function loadPage(options = {}) {
       if (options.hls !== "none") {
         window.Hls = class FakeHls {
           static isSupported() { return options.hls !== "unsupported"; }
-          constructor() { this.handlers = {}; window.hlsInstances = (window.hlsInstances || []).concat(this); }
+          constructor(config) { this.config = config; this.handlers = {}; window.hlsInstances = (window.hlsInstances || []).concat(this); }
           on(evt, fn) { this.handlers[evt] = fn; }
           loadSource(url) { window.hlsLog.push("load:" + url); this.url = url; }
           attachMedia(video) {
             this.video = video;
             const behavior = (options.behavior && options.behavior(this.url)) || "ok";
             setTimeout(() => {
-              if (behavior === "ok") this.handlers[FakeHls.Events.MANIFEST_PARSED] && this.handlers[FakeHls.Events.MANIFEST_PARSED]();
+              if (behavior === "pending") return;
+              if (behavior === "ok" || behavior === "manifest-only") {
+                this.handlers[FakeHls.Events.MANIFEST_PARSED]?.("manifest", { levels: [{ width: 1920, height: 1080, videoCodec: "avc1.640028", audioCodec: "mp4a.40.2" }] });
+                if (behavior === "ok") video.dispatchEvent(new window.Event("playing"));
+              }
               else this.handlers[FakeHls.Events.ERROR] && this.handlers[FakeHls.Events.ERROR]("hlsError",
                 { fatal: true, type: FakeHls.ErrorTypes.NETWORK_ERROR, details: FakeHls.ErrorDetails.MANIFEST_LOAD_ERROR });
             }, 5);
           }
           destroy() { window.hlsLog.push("destroy:" + this.url); }
-          startLoad() {}
-          recoverMediaError() {}
+          startLoad() { window.hlsLog.push("startLoad"); }
+          recoverMediaError() { window.hlsLog.push("recoverMediaError"); }
         };
-        window.Hls.Events = { MANIFEST_PARSED: "hlsManifestParsed", ERROR: "hlsError" };
+        window.Hls.Events = { MANIFEST_PARSED: "hlsManifestParsed", ERROR: "hlsError", LEVEL_LOADED: "levelLoaded", BUFFER_CODECS: "bufferCodecs" };
         window.Hls.ErrorTypes = { NETWORK_ERROR: "networkError", MEDIA_ERROR: "mediaError" };
         window.Hls.ErrorDetails = { MANIFEST_LOAD_ERROR: "manifestLoadError", MANIFEST_LOAD_TIMEOUT: "manifestLoadTimeOut", MANIFEST_PARSING_ERROR: "manifestParsingError" };
       }
       if (options.fetchImpl) window.fetch = options.fetchImpl;
+      if (options.beforeParse) options.beforeParse(window);
     },
   });
+  openPages.add(dom);
   const window = dom.window;
   // init() DOMContentLoaded'da çalışır; bitince window.inadina.ready = true olur
   for (let i = 0; i < 200 && !(window.inadina && window.inadina.ready); i++) {
@@ -158,8 +167,7 @@ test("günün maçları gerçek programdan geliyor", async () => {
   assert.equal(list.length, TODAY.matches.length, "maç sayısı gerçek veriyle uyuşmuyor");
 
   const text = window.document.getElementById("matchesGrid").textContent;
-  assert.ok(text.includes("Fenerbahçe"), "gerçek maç yok: " + text.slice(0, 120));
-  assert.ok(text.includes("Newcastle"), "gerçek maç yok");
+  for (const m of TODAY.matches) assert.ok(text.includes(m.home) && text.includes(m.away), "gerçek maç eksik: " + m.home);
   assert.ok(text.includes("⭐ Günün Maçı"), "günün maçı rozeti yok");
   assert.equal(window.document.querySelectorAll(".match-card.is-mod").length, 1, "tek günün maçı olmalı");
   assert.equal(window.document.getElementById("badgeMatches").textContent, String(TODAY.matches.length));
@@ -170,7 +178,7 @@ test("maç kartındaki İZLE butonu yayını player'de açıyor", async () => {
   const { window, dom } = await loadPage();
   window.inadina.setTab("matchesTab");
   const first = matchCards(window)[0];
-  const expected = [...TODAY.matches].sort((a, b) => a.time.localeCompare(b.time))[0];
+  const expected = TODAY.matches.find((m) => first.textContent.includes(m.home) && first.textContent.includes(m.away));
   window.scrolledTo.length = 0;
   first.querySelector(".play-match-btn").click();
 
@@ -185,13 +193,13 @@ test("durum hesabı gerçek saate göre yapılıyor", async () => {
   const { window, dom } = await loadPage();
   const cs = window.inadina.computeState;
   const m = { time: "20:00", date: "2026-09-05", sport: "Futbol" };
-  assert.equal(cs(m, new Date("2026-09-05T19:30:00")).status, "upcoming");
-  assert.equal(cs(m, new Date("2026-09-05T20:05:00")).status, "live");
-  assert.equal(cs(m, new Date("2026-09-05T21:59:00")).status, "live");
-  assert.equal(cs(m, new Date("2026-09-05T22:30:00")).status, "finished");
+  assert.equal(cs(m, new Date("2026-09-05T19:30:00+03:00")).status, "upcoming");
+  assert.equal(cs(m, new Date("2026-09-05T20:05:00+03:00")).status, "live");
+  assert.equal(cs(m, new Date("2026-09-05T21:59:00+03:00")).status, "live");
+  assert.equal(cs(m, new Date("2026-09-05T22:30:00+03:00")).status, "finished");
   // voleybol için pencere daha uzun (150 dk)
   const v = { time: "20:00", date: "2026-09-05", sport: "Voleybol" };
-  assert.equal(cs(v, new Date("2026-09-05T22:20:00")).status, "live");
+  assert.equal(cs(v, new Date("2026-09-05T22:20:00+03:00")).status, "live");
   dom.window.close();
 });
 
@@ -414,6 +422,7 @@ test("#extra= derin bağlantısı EXTRA sekmesini açıp yayını başlatıyor",
       window.HTMLMediaElement.prototype.canPlayType = function () { return "maybe"; };
     },
   });
+  openPages.add(dom);
   const window = dom.window;
   for (let i = 0; i < 200 && !(window.inadina && window.inadina.ready); i++) await tick(10);
   assert.deepEqual(errors, [], "sayfa hatası: " + errors.join("; "));
@@ -480,4 +489,266 @@ test("EXTRA tazelemesi başarısız olursa gömülü liste kullanılmaya devam e
   assert.equal(extraCards(window).length, EXTRA_COUNT);
   assert.deepEqual(errors, [], "beklenmeyen sayfa hatası: " + errors.join("; "));
   dom.window.close();
+});
+
+/* ---------------- Gerçek durum + dinamik skor ---------------- */
+function remoteRow(event, status, scores = [2, 1], extra = {}) {
+  return { match_id: "ss", channel_id: "ss", event_id: event, home: "Ev " + event, away: "Dep " + event,
+    league: "Test Ligi", sport: "Futbol", time: "20:00", status, status_source: "source",
+    score_home: scores[0], score_away: scores[1], score_source: "source", score_updated_at: new Date().toISOString(),
+    url: "https://player.test/channel?id=ss", ...extra };
+}
+const byEvent = (window, id) => [...matchCards(window)].find(c => c.dataset.event === id);
+function withExtra(data, playback = {}) {
+  return HTML.replace(/let extraData = [^\n]+;/, "let extraData = " + JSON.stringify(data) + ";")
+    .replace(/const playbackConfig = [^\n]+;/, "const playbackConfig = " + JSON.stringify(playback) + ";");
+}
+function singleExtra(source) {
+  return { panels: [{ id: "test", name: "Test", channels: [{ id: "test:one", name: "Test", sources: [source] }] }] };
+}
+
+test("final, canlı, devre skorları doğru takımlarla; diğer durumlarda skor gizli", async () => {
+  const rows = [remoteRow("ft", "FT"), remoteRow("live", "CANLI", [0, 0]), remoteRow("ht", "HT", [1, 3]),
+    remoteRow("pre", "NS", [0, 0]), remoteRow("ppd", "PST"), remoteRow("cancel", "CANC"),
+    remoteRow("abandoned", "ABD"), remoteRow("partial", "FT", [null, 2]), remoteRow("none", "FT", [null, null])];
+  const json = { date: "2026-09-06", timezone: "Europe/Istanbul", matches: rows };
+  const { window } = await loadPage({ fetchImpl: async url => ({ ok: true, json: async () => String(url).includes("extra_channels") ? EXTRA : json }) });
+  await window.inadina.refreshMatches();
+  window.inadina.setTab("matchesTab");
+  for (const [id, status, score] of [["ft", "finished", [2,1]], ["live", "live", [0,0]], ["ht", "halftime", [1,3]]]) {
+    const c = byEvent(window, id);
+    assert.equal(c.dataset.status, status);
+    assert.equal(c.querySelector('[data-score-side="home"]').textContent, String(score[0]));
+    assert.equal(c.querySelector('[data-score-side="away"]').textContent, String(score[1]));
+    assert.ok(c.querySelector('.match-score').getAttribute('aria-label').includes("Ev " + id));
+  }
+  assert.ok(byEvent(window,"ft").querySelector('.match-status-tag').textContent.includes('MS'));
+  assert.equal(byEvent(window,"ht").querySelector('.match-status-tag').textContent, 'DEVRE');
+  for (const id of ["pre","ppd","cancel","abandoned","partial","none"]) assert.equal(byEvent(window,id).querySelector('.match-score'), null, id);
+  assert.equal(byEvent(window,"ppd").querySelector('.match-status-tag').textContent, 'Ertelendi');
+  assert.equal(byEvent(window,"cancel").querySelector('.match-status-tag').textContent, 'İptal');
+  assert.equal(window.document.getElementById('totalLiveCount').textContent, '2');
+  // Canlı filtresi devre arasındaki maçı kaybetmez.
+  const chip = [...window.document.querySelectorAll('#matchFilterRow .chip')].find(c=>c.textContent.includes('Canlı'));
+  chip.click();
+  assert.equal(matchCards(window).length, 2);
+});
+
+test("skorlar canlı yenilemede güncellenir; biten maç saat hesabıyla tekrar canlı olmaz", async () => {
+  let json = {date:'2026-09-06', matches:[remoteRow('event', 'HT', [1,0])]};
+  const {window} = await loadPage({fetchImpl:async url=>({ok:true,json:async()=>String(url).includes('extra_channels')?EXTRA:json})});
+  await window.inadina.refreshMatches();
+  assert.equal(byEvent(window,'event').dataset.status,'halftime');
+  json = {date:'2026-09-06',matches:[remoteRow('event','FT',[2,1])]};
+  await window.inadina.refreshMatches();
+  assert.equal(byEvent(window,'event').dataset.status,'finished');
+  const normalized=window.inadina.normalizeRemote(json)[0];
+  assert.equal(window.inadina.computeState(normalized,new Date('2026-09-06T20:30:00+03:00')).status,'finished');
+  assert.equal(byEvent(window,'event').querySelector('[data-score-side="home"]').textContent,'2');
+});
+
+test("gömülü ve uzaktan alınan durum/skor verisi eşdeğer, eski saat tahmini korunur", async () => {
+  const raw=remoteRow('embedded','finished',[3,0]);
+  const embedded={id:raw.match_id,eventId:raw.event_id,home:raw.home,away:raw.away,league:raw.league,sport:raw.sport,time:raw.time,date:'2026-09-06',
+    status:'finished',statusSource:'source',scoreHome:3,scoreAway:0,scoreSource:'source',scoreUpdatedAt:raw.score_updated_at};
+  const html=HTML.replace(/let matchesData = [^\n]+;/,'let matchesData = '+JSON.stringify([embedded])+';');
+  const {window}=await loadPage({html});
+  const before=byEvent(window,'embedded').querySelector('.match-score').textContent;
+  window.fetch=async()=>({ok:true,json:async()=>({date:'2026-09-06',matches:[raw]})});
+  await window.inadina.refreshMatches();
+  assert.equal(byEvent(window,'embedded').querySelector('.match-score').textContent,before);
+  const legacy=window.inadina.normalizeRemote({date:'2026-09-06',matches:[{...raw,status:'upcoming',status_source:undefined,score_home:undefined,score_away:undefined}]})[0];
+  assert.equal(legacy.statusSource,'schedule');
+  assert.equal(window.inadina.computeState(legacy,new Date('2026-09-06T20:30:00+03:00')).status,'live');
+});
+
+test("eksik/geçersiz skor 0 olmaz; uzun takım isimleri kaçırılır ve üç sütun düzenini korur", async () => {
+  const name='Çok Uzun Takım Adı '.repeat(8)+'<img src=x onerror=alert(1)>';
+  const json={date:'2026-09-06',matches:[remoteRow('long','FT',[123,101],{home:name}),
+    remoteRow('bad1','FT',[false,2]),remoteRow('bad2','FT',['',0]),remoteRow('bad3','FT',[-1,2]),remoteRow('bad4','FT',[2.5,1])]};
+  const {window}=await loadPage({fetchImpl:async url=>({ok:true,json:async()=>String(url).includes('extra_channels')?EXTRA:json})});
+  await window.inadina.refreshMatches();
+  const long=byEvent(window,'long');
+  assert.equal(long.querySelector('.team-name').textContent,name);
+  assert.equal(long.querySelector('.team-name').title,name);
+  assert.equal(long.querySelector('.match-teams').children.length,3);
+  assert.equal(long.querySelectorAll('img').length,0);
+  for (const id of ['bad1','bad2','bad3','bad4']) assert.equal(byEvent(window,id).querySelector('.match-score'),null);
+});
+
+test("maç saati ziyaretçinin saat dilimine bağlı değil; geçerli start ISO ve 30 saniye sınırı",async()=>{
+  const {window}=await loadPage();
+  const cs=window.inadina.computeState, m={time:'20:00',date:'2026-09-06',sport:'Futbol',statusSource:'schedule'};
+  assert.equal(cs(m,new Date('2026-09-06T16:59:30Z')).status,'upcoming');
+  assert.equal(cs(m,new Date('2026-09-06T17:00:00Z')).status,'live');
+  assert.equal(cs({...m,startsAt:'2026-09-05T23:30:00+03:00'},new Date('2026-09-06T00:30:00+03:00')).status,'live');
+  assert.equal(cs({...m,time:'25:99'},new Date()).start,null);
+  assert.equal(cs({...m,status:'cancelled',statusSource:'source'},new Date()).status,'cancelled');
+});
+
+test("canlı skor kaynağı eskidiyse son skor notu görünür; eski snapshot final yapılmaz",async()=>{
+  const json={date:'2026-09-06',matches:[remoteRow('stale','live',[1,0],{score_updated_at:'2020-01-01T00:00:00Z'})]};
+  const {window}=await loadPage({fetchImpl:async url=>({ok:true,json:async()=>String(url).includes('extra_channels')?EXTRA:json})});
+  await window.inadina.refreshMatches();
+  assert.equal(byEvent(window,'stale').dataset.status,'live');
+  assert.equal(byEvent(window,'stale').querySelector('.score-note').textContent,'son skor');
+});
+
+/* ---------------- HLS hata/race/timeout regresyonları ---------------- */
+function captureDeadlines(window) {
+  const set=window.setTimeout.bind(window), clear=window.clearTimeout.bind(window);
+  let id=100000;
+  const pending=new Map();
+  window.setTimeout=(fn,ms,...args)=>{
+    if(ms>=15000 && ms<=25000){pending.set(++id,{fn,ms,args});return id;}
+    return set(fn,ms,...args);
+  };
+  window.clearTimeout=(key)=>{pending.delete(key);clear(key);};
+  window.fireDeadline=(ms)=>{
+    const entry=[...pending].find(([key,t])=>t.ms===ms);
+    assert.ok(entry,'beklenen timer yok: '+ms);
+    pending.delete(entry[0]);entry[1].fn(...entry[1].args);
+  };
+}
+
+test("playlist parse edilmesi loading'i kapatmaz, segment gelmezse süreli hata oluşur",async()=>{
+  const {window}=await loadPage({behavior:()=> 'manifest-only',beforeParse:captureDeadlines});
+  window.inadina.playExtra(window.inadina.extraChannels()[0].id,false);
+  await tick();
+  assert.ok(window.document.getElementById('playerLoading').classList.contains('active'));
+  window.fireDeadline(25000);await tick();
+  assert.ok(window.document.getElementById('playerError').classList.contains('active'));
+  assert.ok(!window.document.getElementById('playerLoading').classList.contains('active'));
+});
+
+test("HLS Promise beklerken site kanalına geçiş eski yayını yeniden başlatmaz",async()=>{
+  const {window}=await loadPage();
+  window.inadina.playExtra(window.inadina.extraChannels()[0].id,false);
+  window.inadina.playChannel(2,false); // Hls Promise callback'inden ÖNCE
+  await tick();
+  assert.equal(window.hlsLog.length,0);
+  assert.equal(window.inadina.state.playerMode,'iframe');
+  assert.ok(window.document.getElementById('liveIframe').src.includes('id=b3'));
+});
+
+test("fatal network sonsuz startLoad yapmaz; media recovery sadece bir kez",async()=>{
+  const html=withExtra(singleExtra({type:'hls',url:'https://cdn.test/one.m3u8'}));
+  const {window}=await loadPage({html,behavior:()=> 'pending'});
+  window.inadina.playExtra('test:one',false);await tick();
+  let hls=window.hlsInstances.at(-1);
+  const media={fatal:true,type:'mediaError',details:'bufferAppendError'};
+  hls.handlers.hlsError('error',media);hls.handlers.hlsError('error',media);
+  await tick();
+  assert.equal(window.hlsLog.filter(x=>x==='recoverMediaError').length,1);
+  assert.ok(window.document.getElementById('playerError').classList.contains('active'));
+  window.inadina.playSource(0,true);await tick();hls=window.hlsInstances.at(-1);
+  hls.handlers.hlsError('error',{fatal:true,type:'networkError',details:'fragLoadError',response:{code:404,url:'https://cdn.test/s.ts?token=secret'}});
+  await tick();
+  assert.ok(!window.hlsLog.includes('startLoad'));
+  assert.ok(!JSON.stringify(window.inadina.playerLogs).includes('secret'));
+  assert.ok(window.document.getElementById('playerErrorMsg').textContent.includes('404'));
+});
+
+test("oynatma başladıktan sonra stall loading ve timeout etkin kalır",async()=>{
+  const {window}=await loadPage({beforeParse:w=>{
+    captureDeadlines(w);Object.defineProperty(w.HTMLMediaElement.prototype,'paused',{configurable:true,get(){return false;}});
+  }});
+  window.inadina.playExtra(window.inadina.extraChannels()[0].id,false);await tick();
+  const video=window.document.getElementById('hlsVideo');
+  assert.ok(!window.document.getElementById('playerLoading').classList.contains('active'));
+  video.dispatchEvent(new window.Event('waiting'));
+  assert.ok(window.document.getElementById('playerLoading').classList.contains('active'));
+  window.fireDeadline(20000);await tick();
+  assert.ok(window.document.getElementById('playerError').classList.contains('active'));
+});
+
+test("autoplay engeli hata değil: kullanıcı tek dokunuşla yayını başlatabilir",async()=>{
+  const {window}=await loadPage({behavior:()=> 'manifest-only',beforeParse:w=>{
+    w.HTMLMediaElement.prototype.play=function(){return Promise.reject(new w.DOMException('Not allowed','NotAllowedError'));};
+  }});
+  window.inadina.playExtra(window.inadina.extraChannels()[0].id,false);await tick();
+  assert.ok(window.document.getElementById('playerStart').classList.contains('active'));
+  assert.ok(!window.document.getElementById('playerError').classList.contains('active'));
+  window.HTMLMediaElement.prototype.play=function(){this.dispatchEvent(new window.Event('playing'));return Promise.resolve();};
+  window.document.getElementById('startStreamBtn').click();await tick();
+  assert.ok(!window.document.getElementById('playerStart').classList.contains('active'));
+});
+
+test("kaynak header'ları bütün HLS isteklerinde kullanılır; native yol custom header'ı yutmaz",async()=>{
+  const html=withExtra(singleExtra({type:'hls',url:'https://cdn.test/extensionless?ID=a',headers:{'X-Stream-Client':'test'}}));
+  const {window}=await loadPage({html,nativeHls:true});
+  window.inadina.playExtra('test:one',false);await tick();
+  const hls=window.hlsInstances[0];assert.ok(hls);
+  for(const request of ['manifest','segment','key']){
+    const sent={};const xhr={setRequestHeader:(k,v)=>sent[k]=v};
+    hls.config.xhrSetup(xhr,'https://cdn.test/'+request);
+    assert.deepEqual(sent,{'X-Stream-Client':'test'});assert.equal(xhr.withCredentials,false);
+  }
+});
+
+test("CORS/network hatasında aynı kaynak yapılandırılmış proxy ile bir kez denenir",async()=>{
+  const html=withExtra(singleExtra({type:'hls',url:'https://cdn.test/one.m3u8'}),{proxy_url:'https://proxy.test/api/hls'});
+  const {window}=await loadPage({html,behavior:url=>url.includes('proxy.test')?'ok':'fail'});
+  window.inadina.playExtra('test:one',false);await tick(60);
+  const loads=window.hlsLog.filter(x=>x.startsWith('load:'));
+  assert.equal(loads.length,2);
+  const proxied=new URL(loads[1].slice(5));
+  assert.equal(proxied.searchParams.get('channel'),'test:one');assert.equal(proxied.searchParams.get('source'),'0');
+  assert.equal(window.inadina.state.currentSourceIndex,0);
+  assert.ok(!window.document.getElementById('playerError').classList.contains('active'));
+});
+
+test("yasak header ve mixed content istemcide taklit edilmez",async()=>{
+  for (const source of [{type:'hls',url:'https://cdn.test/one.m3u8',headers:{Referer:'https://site.test',Origin:'https://site.test','User-Agent':'ExternalPlayer'}},
+    {type:'hls',url:'http://cdn.test/one.m3u8'}]) {
+    const {window,dom}=await loadPage({html:withExtra(singleExtra(source))});
+    window.inadina.playExtra('test:one',false);await tick();
+    assert.equal(window.hlsLog.length,0);
+    assert.ok(window.document.getElementById('playerErrorMsg').textContent.includes('hizmeti gerekiyor'));
+    dom.window.close();
+  }
+});
+
+test("yüklenemeyen CDN Promise'i sıfırlanır, tekrar deneme yeni script yükleyebilir",async()=>{
+  const {window}=await loadPage({beforeParse:w=>{w.SavedHls=w.Hls;delete w.Hls;}});
+  window.inadina.playExtra(window.inadina.extraChannels()[0].id,false);
+  let script=window.document.querySelector('script[src*="hls.js"]');
+  script.dispatchEvent(new window.Event('load')); // onload, ama Hls export yok
+  await tick();script=window.document.querySelector('script[src*="unpkg"]');
+  assert.ok(script);script.dispatchEvent(new window.Event('error'));await tick();
+  assert.ok(window.document.getElementById('playerError').classList.contains('active'));
+  window.inadina.playSource(0,true);
+  script=window.document.querySelector('script[src*="hls.js"]');assert.ok(script);
+  window.Hls=window.SavedHls;script.dispatchEvent(new window.Event('load'));await tick();
+  assert.ok(window.hlsLog.some(x=>x.startsWith('load:')));
+  assert.ok(!window.document.getElementById('playerError').classList.contains('active'));
+});
+
+test('gecikmiş liste isteği daha yeni dinamik skoru ezmez',async()=>{
+  const {window}=await loadPage();
+  const pending=[];
+  window.fetch=()=>new Promise(resolve=>pending.push(resolve));
+  const old=window.inadina.refreshMatches();
+  const fresh=window.inadina.refreshMatches();
+  pending[1]({ok:true,json:async()=>({date:'2026-09-06',matches:[remoteRow('latest','FT',[3,1])]})});
+  await fresh;
+  pending[0]({ok:true,json:async()=>({date:'2026-09-06',matches:[remoteRow('latest','live',[1,1])]})});
+  await old;
+  assert.equal(byEvent(window,'latest').dataset.status,'finished');
+  assert.equal(byEvent(window,'latest').querySelector('[data-score-side="home"]').textContent,'3');
+});
+
+test('Chromium native HLS maybe bildirse de MSE/hls.js tercih edilir',async()=>{
+  const {window}=await loadPage({nativeHls:true,beforeParse:w=>{
+    w.MediaSource={isTypeSupported:()=>true};
+    Object.defineProperty(w.navigator,'vendor',{value:'Google Inc.',configurable:true});
+  }});
+  window.inadina.playExtra(window.inadina.extraChannels()[0].id,false);await tick();
+  assert.ok(window.hlsInstances?.length);
+});
+
+test('üretilen index aynı şablonun CSS ve player/kart kodunu kullanıyor',()=>{
+  const template=readFileSync(path.join(ROOT,'src/fixbet/templates/index.html'),'utf8');
+  assert.equal(HTML.split('/*BOT_END*/')[1],template.split('/*BOT_END*/')[1], 'index.html yeniden üretilmeli');
+  assert.equal(HTML.match(/<style>([\s\S]*?)<\/style>/)[1],template.match(/<style>([\s\S]*?)<\/style>/)[1]);
 });

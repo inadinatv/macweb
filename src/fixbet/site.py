@@ -15,9 +15,11 @@ import os
 from datetime import datetime
 from html import escape
 from typing import Any
+from zoneinfo import ZoneInfo
 
 from . import channels, config, extras, scraper
 from .models import Match
+from .match_state import STATUS_LABELS, STATUS_LOOKUP, display_score, score_pair
 
 REPO_ROOT = config.ROOT
 TEMPLATE = config.ROOT / "src" / "fixbet" / "templates" / "index.html"
@@ -114,10 +116,18 @@ def matches_payload(matches: list[Match], channel_list: list[dict[str, Any]],
         if cid:
             names_by_id[cid] = ch.get("name") or cid.upper()
     base = scraper.current_base_url()
+    tz = ZoneInfo(config.load_settings().get("bot", {}).get("timezone", "Europe/Istanbul"))
     out: list[dict[str, Any]] = []
     for m in matches:
         stream = m.url or (f"{base}/channel.html?id={m.channel_id or m.match_id}" if base else "")
         cid = m.channel_id or m.match_id
+        starts_at = m.starts_at
+        if not starts_at:
+            try:
+                starts_at = datetime.strptime(f"{date} {m.time}", "%Y-%m-%d %H:%M").replace(tzinfo=tz).isoformat()
+            except ValueError:
+                starts_at = ""
+        home_score, away_score = score_pair(m.score_home, m.score_away)
         out.append({
             "id": m.match_id,
             "home": m.home,
@@ -126,6 +136,14 @@ def matches_payload(matches: list[Match], channel_list: list[dict[str, Any]],
             "time": m.time,
             "sport": m.sport or "Spor",
             "status": m.status,
+            "statusSource": m.status_source,
+            "rawStatus": m.raw_status,
+            "scoreHome": home_score,
+            "scoreAway": away_score,
+            "scoreSource": m.score_source,
+            "scoreUpdatedAt": m.score_updated_at,
+            "eventId": m.event_id,
+            "startsAt": starts_at,
             "isMod": bool(m.is_match_of_day),
             "channelId": cid,
             "channelName": names_by_id.get(cid, (cid or "").upper()),
@@ -141,12 +159,12 @@ def matches_payload(matches: list[Match], channel_list: list[dict[str, Any]],
 def _match_groups_html(matches: list[Match]) -> str:
     """Maçları JS'siz ortam (noscript) için okunur HTML listesine çevirir."""
     def card(m: Match) -> str:
-        cls = "live" if m.status in ("live", "started") else ("up" if m.status == "upcoming" else "done")
+        cls = "live" if m.status in ("live", "halftime", "started") else ("up" if m.status == "upcoming" else "done")
         mod = ' ★ Günün Maçı' if m.is_match_of_day else ""
         return (
             f'<li class="match-row {cls}">'
             f'<b>{escape(m.time or "--:--")}</b> '
-            f'{escape(m.home)} - {escape(m.away)} '
+            f'{escape(m.home)} {escape(display_score(m) or "-")} {escape(m.away)} '
             f'<span class="match-league">({escape(m.league)})</span>'
             f'<span class="match-badge {cls}">{_badge_label(m.status)}{escape(mod)}</span>'
             f'</li>'
@@ -159,11 +177,7 @@ def _match_groups_html(matches: list[Match]) -> str:
 
 
 def _badge_label(status: str) -> str:
-    if status in ("live", "started"):
-        return "CANLI"
-    if status == "upcoming":
-        return "YAKLAŞAN"
-    return "BİTTİ"
+    return STATUS_LABELS.get(status, "YAKLAŞAN")
 
 
 def _js(value: Any) -> str:
@@ -177,7 +191,7 @@ def extra_payload(extra_data: dict[str, Any] | None) -> dict[str, Any]:
     for p in (extra_data or {}).get("panels", []):
         chans = []
         for c in p.get("channels", []):
-            sources = [{"type": s.get("type") or "hls", "url": s.get("url") or "", "label": s.get("label") or ""}
+            sources = [dict(s, type=s.get("type") or "hls", label=s.get("label") or "")
                        for s in c.get("sources", []) if s.get("url")]
             if not sources:
                 continue
@@ -188,6 +202,8 @@ def extra_payload(extra_data: dict[str, Any] | None) -> dict[str, Any]:
                 "icon": c.get("icon") or channel_icon(c.get("name") or ""),
                 "panel_name": p.get("name") or p.get("id") or "EXTRA",
                 "resolved": bool(c.get("resolved")),
+                "page_url": c.get("page_url") or "",
+                "referrer": c.get("referrer") or "",
                 "sources": sources,
             })
         panels.append({"id": p.get("id") or "extra", "name": p.get("name") or "EXTRA",
@@ -239,8 +255,12 @@ def build_index_html(matches: list[Match], channels_data: dict[str, Any] | None 
         "{{CHANNEL_ICONS}}": _js(payload["icons"]),
         "{{CHANNEL_STATUSES}}": _js(payload["statuses"]),
         "{{LIVE_WINDOW_JSON}}": _js(live_window()),
+        "{{MATCH_STATUS_JSON}}": _js({"aliases": STATUS_LOOKUP, "labels": STATUS_LABELS,
+                                      "graceMinutes": int(config.load_settings().get("categorize", {}).get("live_grace_minutes", 0))}),
+        "{{MATCH_TIMEZONE_JSON}}": _js(config.load_settings().get("bot", {}).get("timezone", "Europe/Istanbul")),
         "{{MATCHES_JSON}}": _js(matches_payload(matches, channel_list, now.strftime("%Y-%m-%d"))),
         "{{MATCHES_HTML}}": _match_groups_html(matches),
+        "{{PLAYBACK_JSON}}": _js({"proxy_url": config.load_settings().get("playback", {}).get("proxy_url", "")}),
         "{{EXTRA_SOURCE}}": extras.EXTRA_SOURCE,
         "{{EXTRA_JSON}}": _js(extra_payload(extra_data)),
         "{{EXTRA_HTML}}": _extra_groups_html(extra_data),

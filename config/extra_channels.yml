@@ -50,11 +50,20 @@ panels:
       scan_window: 15
       # Sağlık kontrolü ilk kanalın sayfasında yapılır; boş bırakılırsa
       # "kanal slug'ı ya da m3u8 izi" aranır (park sayfaları elenir).
-      must_contain_any: []
-    page_template: "{base_url}/kanal/{slug}"
+      must_contain_any: ["matches?id=", "bein-sports-1"]
+    # 2026-09: /kanal/<slug> artık çalışmıyor; gerçek player /matches?id=...
+    page_template: "{base_url}/matches?id={slug}"
+    health_path: "/"
+    resolve_fallback: true
+    playback:
+      # Proxy sadece bu panel için izin verilen yayın alanlarına erişebilir.
+      allowed_hosts: ["tv.atomspor.workers.dev", "corestream.ardastream.live", "global.ardastream.live"]
+      headers:
+        Referer: "{referrer}"
+        Origin: "{origin}"
     fallback_template: "https://tv.atomspor.workers.dev/?ID={slug}"
     embed_fallback: true
-    referrer: "{base_url}"
+    referrer: "{base_url}/"
     logo: "https://hizliresim.com/gm50rk9b"
     channels:
       - { slug: "bein-sports-1",     name: "BEIN SPORTS 1" }

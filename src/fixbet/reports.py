@@ -9,6 +9,7 @@ from typing import Any
 
 from . import config, extras
 from .models import Match
+from .match_state import STATUS_LABELS, SCORE_STATUSES, score_pair
 
 OUTPUT = config.OUTPUT_DIR
 
@@ -32,7 +33,7 @@ def write_json_data(matches: list[Match], categorized: dict[str, Any], site: dic
         json.dump({"site": site, "live": categorized["live"]}, fh, ensure_ascii=False, indent=2)
     # Günün maçları
     with open(OUTPUT / "today_matches.json", "w", encoding="utf-8") as fh:
-        json.dump({"site": site, "date": categorized["meta"]["date"], "matches": payload["matches"]},
+        json.dump({"site": site, "date": categorized["meta"]["date"], "timezone": config.load_settings().get("bot", {}).get("timezone", "Europe/Istanbul"), "generated_at": categorized["meta"]["generated_at"], "matches": payload["matches"]},
                   fh, ensure_ascii=False, indent=2)
     # 7/24 kanallar ayrı dosya
     with open(OUTPUT / "channels.json", "w", encoding="utf-8") as fh:
@@ -58,17 +59,22 @@ def write_markdown(categorized: dict[str, Any], site: dict[str, Any],
         lines.append(f"## {title}")
         lines.append("")
         for m in items:
-            emoji = "🔴" if m["status"] == "live" else ("⏰" if m["status"] == "upcoming" else "✅")
+            label = STATUS_LABELS.get(m["status"], "YAKLAŞAN")
+            h, a = score_pair(m.get("score_home"), m.get("score_away"))
+            result = f"{h} - {a}" if m["status"] in SCORE_STATUSES and h is not None else "vs"
+            emoji = "🔴" if m["status"] in ("live", "halftime") else ("⏰" if m["status"] == "upcoming" else "✅")
             mod = " ★ **Günün Maçı**" if m.get("is_match_of_day") else ""
             url = m.get("url") or ""
             link = f"<{url}>" if url else ""
-            lines.append(f"- {emoji} **{m['home']} vs {m['away']}** — `{m['time']}` | {m['league']}"
+            lines.append(f"- {emoji} **{m['home']} {result} {m['away']}** — {label} · `{m['time']}` | {m['league']}"
                          f"{mod} {link}")
         lines.append("")
 
     block("🔴 CANLI", categorized["live"])
     block("⏰ YAKLAŞAN", categorized["upcoming"])
     block("✅ BİTTİ", categorized["finished"])
+    for status in ("postponed", "cancelled", "suspended", "abandoned"):
+        block(STATUS_LABELS[status], categorized.get(status, []))
     block("⭐ GÜNÜN MAÇI", categorized["match_of_the_day"])
 
     # Lige göre
@@ -124,8 +130,10 @@ def write_html(categorized: dict[str, Any], site: dict[str, Any],
     c = categorized["counts"]
 
     def item(m: dict) -> str:
-        cls = {"live": "live", "started": "live", "upcoming": "up", "finished": "done"}.get(m["status"], "up")
-        badge = {"live": "CANLI", "started": "CANLI", "upcoming": "YAKLAŞAN", "finished": "BİTTİ"}.get(m["status"], "")
+        cls = {"live": "live", "halftime": "live", "started": "live", "upcoming": "up", "finished": "done"}.get(m["status"], "up")
+        badge = STATUS_LABELS.get(m["status"], "YAKLAŞAN")
+        h, a = score_pair(m.get("score_home"), m.get("score_away"))
+        result = f"{h} - {a}" if m["status"] in SCORE_STATUSES and h is not None else "vs"
         status_color = {"live": "#e74c3c", "upcoming": "#2e86de", "finished": "#7f8c8d"}.get(m["status"], "#2e86de")
         mod = '<span class="mod">★ GÜNÜN MAÇI</span>' if m.get("is_match_of_day") else ""
         url = m.get("url") or ""
@@ -136,7 +144,7 @@ def write_html(categorized: dict[str, Any], site: dict[str, Any],
                      if m.get("logo_home") else "")
         return (
             f'<div class="row {cls}"><span class="time">{escape(m["time"] or "--:--")}</span>'
-            f'<span class="teams"><b>{escape(m["home"])}</b> vs <b>{escape(m["away"])}</b></span>'
+            f'<span class="teams"><b>{escape(m["home"])}</b> {result} <b>{escape(m["away"])}</b></span>'
             f'<span class="lg">{escape(m.get("league") or "")}</span>'
             f'<span class="st" style="color:{status_color}">{badge}</span>{mod}{link}</div>'
         )

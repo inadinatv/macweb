@@ -324,7 +324,8 @@ def test_refresh_writes_output_and_site_embeds_extra():
     sel_base = sel_cfg["base_url"]
     player = "https://main.uxsyplayerNEW.click"
     net = FakeNet({
-        BASE + "/kanal/bein-sports-1": (200, 'src:"https://edge.x/bs1/index.m3u8"'),
+        BASE + "/": (200, '<a href="matches?id=bein-sports-1">BEIN</a>'),
+        BASE + "/matches?id=bein-sports-1": (200, 'src:"https://edge.x/bs1/index.m3u8"'),
         # Selçuk: ana sayfa oynatıcı alan adını verir, oynatıcı sayfası adsBaseUrl taşır
         sel_base + "/": (200, f'<script src="{player}/embed.js"></script> uxsyplayer'),
         player + "/index.php?id=selcukbeinsports1": (200, "this.adsBaseUrl = 'https://cdn.sel/hls/';"),
@@ -366,7 +367,8 @@ def test_refresh_writes_output_and_site_embeds_extra():
     assert "⚡ ATOM SPOR" in html and "⚡ SELÇUK SPOR" in html
     payload = site.extra_payload(data)
     assert payload["panels"][0]["channels"][0]["sources"][0]["type"] == "hls"
-    assert "page_url" not in payload["panels"][0]["channels"][0]  # sayfaya gereksiz alan gömülmez
+    assert payload["panels"][0]["channels"][0]["page_url"] == BASE + "/matches?id=bein-sports-1"
+    assert payload["panels"][0]["channels"][0]["referrer"] == BASE + "/"
     print("OK: refresh_writes_output_and_site_embeds_extra")
 
 
@@ -383,3 +385,50 @@ if __name__ == "__main__":
     test_selcuk_mirror_scan_numbered()
     test_refresh_writes_output_and_site_embeds_extra()
     print("\nEKSTRA PANEL TESTLERİ GEÇTİ ✅")
+
+
+def test_direct_playlist_redirect_keeps_master_not_first_variant():
+    master = '#EXTM3U\n#EXT-X-STREAM-INF:BANDWIDTH=7000000,CODECS="avc1.640028,mp4a.40.2"\ntracks-v1a1/mono.m3u8\n'
+    final = 'https://cdn.test/live/master.m3u8?token=a%2Bb'
+    assert extras.find_m3u8(master, final) == final
+    def redirected(url, headers, timeout):
+        return extras.FetchResult(200, final, master, {'Content-Type': 'application/vnd.apple.mpegurl'})
+    assert extras.extract_m3u8_from_page('https://worker.test/?ID=channel', BASE, redirected) == final
+    media = '#EXTM3U\n#EXT-X-TARGETDURATION:6\n#EXTINF:6,\nhttps://seg.test/one.jpg\n'
+    assert extras.find_m3u8(media, final) == final
+    assert extras.find_m3u8('src="../live/index.m3u8?token=a%2Bb&amp;n=1"', 'https://cdn.test/player/p') == 'https://cdn.test/live/index.m3u8?token=a%2Bb&n=1'
+    assert extras.find_m3u8('src="//cdn.test/live/index.m3u8"', BASE) == 'https://cdn.test/live/index.m3u8'
+
+
+def test_relative_iframe_uses_redirected_parent_and_referer():
+    calls = []
+    def fetch(url, headers, timeout):
+        calls.append((url, headers))
+        if len(calls) == 1:
+            return extras.FetchResult(200, 'https://site.test/new/page', '<iframe src="../embed/player"></iframe>')
+        return extras.FetchResult(200, url, 'file="https://cdn.test/live/master.m3u8"')
+    assert extras.extract_m3u8_from_page(BASE + '/old', BASE, fetch) == 'https://cdn.test/live/master.m3u8'
+    assert calls[1][0] == 'https://site.test/embed/player'
+    assert calls[1][1]['Referer'] == 'https://site.test/new/page'
+
+
+def test_worker_is_resolved_even_when_channel_page_is_unavailable():
+    panel = _panel(resolve_fallback=True)
+    now = datetime(2026, 9, 6, 12, tzinfo=timezone.utc)
+    final = 'https://cdn.test/live/mono.m3u8'
+    def fetch(url, headers, timeout):
+        if url.startswith('https://tv.atomspor.workers.dev/'):
+            return extras.FetchResult(200, final, '#EXTM3U\n#EXT-X-TARGETDURATION:10\n#EXTINF:10,\nhttps://seg.test/s.jpg\n')
+        return None
+    ch = extras.resolve_channel(panel, {'base_url': BASE, 'healthy': False}, panel['channels'][0], None,
+                                fetch, extras.DEFAULT_HEADERS, 3, now, 6)
+    assert ch['resolved_url'] == final
+    assert ch['sources'][0]['url'] == final
+    assert ch['sources'][1]['url'].startswith('https://tv.atomspor.workers.dev/')
+    assert ch['sources'][0]['mime_type'] == 'application/vnd.apple.mpegurl'
+
+
+def test_signed_query_and_encoded_scheme_are_not_corrupted():
+    direct = 'https://cdn.test/index.m3u8?auth=a%2Bb&not=0&copy=1'
+    assert extras.find_m3u8('src="' + direct + '"', BASE) == direct
+    assert extras.find_m3u8('src="https%3A%2F%2Fcdn.test%2Findex.m3u8%3Fauth%3Da%252Bb"', BASE) == 'https://cdn.test/index.m3u8?auth=a%2Bb'

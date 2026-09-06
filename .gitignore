@@ -11,3 +11,9 @@ venv/
 # arayüz testleri (npm install ile kurulur)
 node_modules/
 package-lock.json
+
+# Yerel tanılama / test çıktıları
+.cache/
+.pytest_cache/
+test-results/
+playwright-report/

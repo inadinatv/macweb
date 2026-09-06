@@ -17,7 +17,7 @@ import time
 from datetime import datetime
 from zoneinfo import ZoneInfo
 
-from . import categorizer, channels, config, domain_checker, extras, parser, reports, scraper, site
+from . import categorizer, channels, config, domain_checker, extras, parser, reports, scraper, scores, site
 from .models import Match
 
 TZ = ZoneInfo("Europe/Istanbul")
@@ -55,6 +55,7 @@ def pipeline() -> dict:
         if matches:
             print(f"[!] Kaynak boş döndü — son gerçek liste kullanılıyor ({len(matches)} maç).")
     matches = categorizer.enrich(matches)
+    matches = refresh_scores(matches, now)
     matches = categorizer.classify(matches, now)
     categorized = categorizer.categorize(matches, now)
 
@@ -80,6 +81,15 @@ def pipeline() -> dict:
         print(f"[!] yayınlama adımı hatası: {exc}")
 
     return {"site": site_info, "categorized": categorized, "matches": matches, "now": now}
+
+
+def refresh_scores(matches: list[Match], now: datetime) -> list[Match]:
+    """İkincil skor kaynağındaki hata maç/kanal boru hattını durdurmasın."""
+    try:
+        return scores.enrich(matches, now, previous=load_matches_from_output(now))
+    except Exception as exc:
+        print(f"[!] Skor güncellemesi tamamlanamadı ({type(exc).__name__}); maç programı korunuyor.")
+        return matches
 
 
 def refresh_extras(now: datetime | None = None) -> dict:
@@ -182,12 +192,33 @@ def main(argv: list[str] | None = None) -> int:
     sub.add_parser("extras", help="Sadece ekstra panelleri (m3u8 kanallar) çözümle ve sayfayı güncelle")
     sub.add_parser("matches", help="Maçları çek ve kategorize et")
     sub.add_parser("cat", help="Özeti konsola bas")
+    web_parser = sub.add_parser("web", help="Sayfa + isteğe bağlı HLS proxy hizmeti (HTTPS reverse proxy arkasında)")
+    web_parser.add_argument("--host", default="0.0.0.0")
+    web_parser.add_argument("--port", type=int, default=8000)
+    diag_parser = sub.add_parser("diagnose-stream", help="HLS playlist/segment HTTP, MIME, CORS ve codec tanılaması")
+    diag_parser.add_argument("channel_id", help="örn. atom:bein-sports-1")
+    diag_parser.add_argument("--source", type=int, default=0)
+    diag_parser.add_argument("--page-origin", default="https://inadinatv.github.io")
 
     s = sub.add_parser("serve", help="Sürekli izleme")
     s.add_argument("interval", nargs="?", type=int, default=5, help="dakika cinsinden aralık")
 
     args = parser_.parse_args(argv)
 
+    if args.cmd == "diagnose-stream":
+        import json
+        from .diagnostics import diagnose
+        try:
+            result = diagnose(args.channel_id, args.source, args.page_origin)
+        except ValueError as exc:
+            print(f"[!] {exc}", file=sys.stderr)
+            return 1
+        print(json.dumps(result, ensure_ascii=False, indent=2))
+        return 0
+    if args.cmd == "web":
+        from .web import serve as serve_web
+        serve_web(args.host, args.port)
+        return 0
     if args.cmd in (None, "run"):
         result = pipeline()
         _print_summary(result)
@@ -207,17 +238,17 @@ def main(argv: list[str] | None = None) -> int:
         site.build_index_html(matches, channels_data, now, extra_data=data)
         return 0
     if args.cmd == "update-site":
-        site = domain_checker.check_current_site()
-        domain_checker.log(site)
+        site_info = domain_checker.check_current_site()
+        domain_checker.log(site_info)
         return 0
     if args.cmd == "matches":
         now = _now()
         raw = scraper.fetch_matches_html()
         matches = parser.parse(raw)
         matches = categorizer.enrich(matches)
+        matches = refresh_scores(matches, now)
         matches = categorizer.classify(matches, now)
         categorized = categorizer.categorize(matches, now)
-        from . import channels
         channels_data = channels.categorize(channels.fetch_channels())
         reports.write_json_data(matches, categorized, config.load_current_site(), channels_data)
         _print_summary({"categorized": categorized, "site": config.load_current_site()})
@@ -225,7 +256,8 @@ def main(argv: list[str] | None = None) -> int:
     if args.cmd == "cat":
         now = _now()
         raw = scraper.fetch_matches_html()
-        matches = categorizer.classify(categorizer.enrich(parser.parse(raw)), now)
+        matches = refresh_scores(categorizer.enrich(parser.parse(raw)), now)
+        matches = categorizer.classify(matches, now)
         categorized = categorizer.categorize(matches, now)
         _print_summary({"categorized": categorized, "site": config.load_current_site()})
         return 0

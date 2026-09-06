@@ -22,17 +22,18 @@
           "panel_name": "ATOM SPOR",
           "icon": "⚽",
           "logo": "https://hizliresim.com/gm50rk9b",
-          "page_url": "https://www.atomsportv514.top/kanal/bein-sports-1",
-          "referrer": "https://www.atomsportv514.top",
+          "page_url": "https://www.atomsportv514.top/matches?id=bein-sports-1",
+          "referrer": "https://www.atomsportv514.top/",
           "sources": [
             {
               "type": "hls",
               "url": "https://tv.atomspor.workers.dev/?ID=bein-sports-1",
-              "label": "Kaynak 1"
+              "label": "Kaynak 1",
+              "mime_type": "application/vnd.apple.mpegurl"
             },
             {
               "type": "embed",
-              "url": "https://www.atomsportv514.top/kanal/bein-sports-1",
+              "url": "https://www.atomsportv514.top/matches?id=bein-sports-1",
               "label": "Site"
             }
           ],
@@ -50,17 +51,18 @@
           "panel_name": "ATOM SPOR",
           "icon": "⚽",
           "logo": "https://hizliresim.com/gm50rk9b",
-          "page_url": "https://www.atomsportv514.top/kanal/bein-sports-2",
-          "referrer": "https://www.atomsportv514.top",
+          "page_url": "https://www.atomsportv514.top/matches?id=bein-sports-2",
+          "referrer": "https://www.atomsportv514.top/",
           "sources": [
             {
               "type": "hls",
               "url": "https://tv.atomspor.workers.dev/?ID=bein-sports-2",
-              "label": "Kaynak 1"
+              "label": "Kaynak 1",
+              "mime_type": "application/vnd.apple.mpegurl"
             },
             {
               "type": "embed",
-              "url": "https://www.atomsportv514.top/kanal/bein-sports-2",
+              "url": "https://www.atomsportv514.top/matches?id=bein-sports-2",
               "label": "Site"
             }
           ],
@@ -78,17 +80,18 @@
           "panel_name": "ATOM SPOR",
           "icon": "⚽",
           "logo": "https://hizliresim.com/gm50rk9b",
-          "page_url": "https://www.atomsportv514.top/kanal/bein-sports-3",
-          "referrer": "https://www.atomsportv514.top",
+          "page_url": "https://www.atomsportv514.top/matches?id=bein-sports-3",
+          "referrer": "https://www.atomsportv514.top/",
           "sources": [
             {
               "type": "hls",
               "url": "https://tv.atomspor.workers.dev/?ID=bein-sports-3",
-              "label": "Kaynak 1"
+              "label": "Kaynak 1",
+              "mime_type": "application/vnd.apple.mpegurl"
             },
             {
               "type": "embed",
-              "url": "https://www.atomsportv514.top/kanal/bein-sports-3",
+              "url": "https://www.atomsportv514.top/matches?id=bein-sports-3",
               "label": "Site"
             }
           ],
@@ -106,17 +109,18 @@
           "panel_name": "ATOM SPOR",
           "icon": "⚽",
           "logo": "https://hizliresim.com/gm50rk9b",
-          "page_url": "https://www.atomsportv514.top/kanal/bein-sports-4",
-          "referrer": "https://www.atomsportv514.top",
+          "page_url": "https://www.atomsportv514.top/matches?id=bein-sports-4",
+          "referrer": "https://www.atomsportv514.top/",
           "sources": [
             {
               "type": "hls",
               "url": "https://tv.atomspor.workers.dev/?ID=bein-sports-4",
-              "label": "Kaynak 1"
+              "label": "Kaynak 1",
+              "mime_type": "application/vnd.apple.mpegurl"
             },
             {
               "type": "embed",
-              "url": "https://www.atomsportv514.top/kanal/bein-sports-4",
+              "url": "https://www.atomsportv514.top/matches?id=bein-sports-4",
               "label": "Site"
             }
           ],
@@ -134,17 +138,18 @@
           "panel_name": "ATOM SPOR",
           "icon": "⚽",
           "logo": "https://hizliresim.com/gm50rk9b",
-          "page_url": "https://www.atomsportv514.top/kanal/bein-sports-5",
-          "referrer": "https://www.atomsportv514.top",
+          "page_url": "https://www.atomsportv514.top/matches?id=bein-sports-5",
+          "referrer": "https://www.atomsportv514.top/",
           "sources": [
             {
               "type": "hls",
               "url": "https://tv.atomspor.workers.dev/?ID=bein-sports-5",
-              "label": "Kaynak 1"
+              "label": "Kaynak 1",
+              "mime_type": "application/vnd.apple.mpegurl"
             },
             {
               "type": "embed",
-              "url": "https://www.atomsportv514.top/kanal/bein-sports-5",
+              "url": "https://www.atomsportv514.top/matches?id=bein-sports-5",
               "label": "Site"
             }
           ],
@@ -162,17 +167,18 @@
           "panel_name": "ATOM SPOR",
           "icon": "🏀",
           "logo": "https://hizliresim.com/gm50rk9b",
-          "page_url": "https://www.atomsportv514.top/kanal/s-sport",
-          "referrer": "https://www.atomsportv514.top",
+          "page_url": "https://www.atomsportv514.top/matches?id=s-sport",
+          "referrer": "https://www.atomsportv514.top/",
           "sources": [
             {
               "type": "hls",
               "url": "https://tv.atomspor.workers.dev/?ID=s-sport",
-              "label": "Kaynak 1"
+              "label": "Kaynak 1",
+              "mime_type": "application/vnd.apple.mpegurl"
             },
             {
               "type": "embed",
-              "url": "https://www.atomsportv514.top/kanal/s-sport",
+              "url": "https://www.atomsportv514.top/matches?id=s-sport",
               "label": "Site"
             }
           ],
@@ -190,17 +196,18 @@
           "panel_name": "ATOM SPOR",
           "icon": "🏀",
           "logo": "https://hizliresim.com/gm50rk9b",
-          "page_url": "https://www.atomsportv514.top/kanal/s-sport-2",
-          "referrer": "https://www.atomsportv514.top",
+          "page_url": "https://www.atomsportv514.top/matches?id=s-sport-2",
+          "referrer": "https://www.atomsportv514.top/",
           "sources": [
             {
               "type": "hls",
               "url": "https://tv.atomspor.workers.dev/?ID=s-sport-2",
-              "label": "Kaynak 1"
+              "label": "Kaynak 1",
+              "mime_type": "application/vnd.apple.mpegurl"
             },
             {
               "type": "embed",
-              "url": "https://www.atomsportv514.top/kanal/s-sport-2",
+              "url": "https://www.atomsportv514.top/matches?id=s-sport-2",
               "label": "Site"
             }
           ],
@@ -218,17 +225,18 @@
           "panel_name": "ATOM SPOR",
           "icon": "🏀",
           "logo": "https://hizliresim.com/gm50rk9b",
-          "page_url": "https://www.atomsportv514.top/kanal/ssport-plus",
-          "referrer": "https://www.atomsportv514.top",
+          "page_url": "https://www.atomsportv514.top/matches?id=ssport-plus",
+          "referrer": "https://www.atomsportv514.top/",
           "sources": [
             {
               "type": "hls",
               "url": "https://tv.atomspor.workers.dev/?ID=ssport-plus",
-              "label": "Kaynak 1"
+              "label": "Kaynak 1",
+              "mime_type": "application/vnd.apple.mpegurl"
             },
             {
               "type": "embed",
-              "url": "https://www.atomsportv514.top/kanal/ssport-plus",
+              "url": "https://www.atomsportv514.top/matches?id=ssport-plus",
               "label": "Site"
             }
           ],
@@ -246,17 +254,18 @@
           "panel_name": "ATOM SPOR",
           "icon": "📺",
           "logo": "https://hizliresim.com/gm50rk9b",
-          "page_url": "https://www.atomsportv514.top/kanal/tivibu-spor-1",
-          "referrer": "https://www.atomsportv514.top",
+          "page_url": "https://www.atomsportv514.top/matches?id=tivibu-spor-1",
+          "referrer": "https://www.atomsportv514.top/",
           "sources": [
             {
               "type": "hls",
               "url": "https://tv.atomspor.workers.dev/?ID=tivibu-spor-1",
-              "label": "Kaynak 1"
+              "label": "Kaynak 1",
+              "mime_type": "application/vnd.apple.mpegurl"
             },
             {
               "type": "embed",
-              "url": "https://www.atomsportv514.top/kanal/tivibu-spor-1",
+              "url": "https://www.atomsportv514.top/matches?id=tivibu-spor-1",
               "label": "Site"
             }
           ],
@@ -274,17 +283,18 @@
           "panel_name": "ATOM SPOR",
           "icon": "📺",
           "logo": "https://hizliresim.com/gm50rk9b",
-          "page_url": "https://www.atomsportv514.top/kanal/tivibu-spor-2",
-          "referrer": "https://www.atomsportv514.top",
+          "page_url": "https://www.atomsportv514.top/matches?id=tivibu-spor-2",
+          "referrer": "https://www.atomsportv514.top/",
           "sources": [
             {
               "type": "hls",
               "url": "https://tv.atomspor.workers.dev/?ID=tivibu-spor-2",
-              "label": "Kaynak 1"
+              "label": "Kaynak 1",
+              "mime_type": "application/vnd.apple.mpegurl"
             },
             {
               "type": "embed",
-              "url": "https://www.atomsportv514.top/kanal/tivibu-spor-2",
+              "url": "https://www.atomsportv514.top/matches?id=tivibu-spor-2",
               "label": "Site"
             }
           ],
@@ -302,17 +312,18 @@
           "panel_name": "ATOM SPOR",
           "icon": "📺",
           "logo": "https://hizliresim.com/gm50rk9b",
-          "page_url": "https://www.atomsportv514.top/kanal/tivibu-spor-3",
-          "referrer": "https://www.atomsportv514.top",
+          "page_url": "https://www.atomsportv514.top/matches?id=tivibu-spor-3",
+          "referrer": "https://www.atomsportv514.top/",
           "sources": [
             {
               "type": "hls",
               "url": "https://tv.atomspor.workers.dev/?ID=tivibu-spor-3",
-              "label": "Kaynak 1"
+              "label": "Kaynak 1",
+              "mime_type": "application/vnd.apple.mpegurl"
             },
             {
               "type": "embed",
-              "url": "https://www.atomsportv514.top/kanal/tivibu-spor-3",
+              "url": "https://www.atomsportv514.top/matches?id=tivibu-spor-3",
               "label": "Site"
             }
           ],
@@ -330,17 +341,18 @@
           "panel_name": "ATOM SPOR",
           "icon": "🏟️",
           "logo": "https://hizliresim.com/gm50rk9b",
-          "page_url": "https://www.atomsportv514.top/kanal/smart-spor",
-          "referrer": "https://www.atomsportv514.top",
+          "page_url": "https://www.atomsportv514.top/matches?id=smart-spor",
+          "referrer": "https://www.atomsportv514.top/",
           "sources": [
             {
               "type": "hls",
               "url": "https://tv.atomspor.workers.dev/?ID=smart-spor",
-              "label": "Kaynak 1"
+              "label": "Kaynak 1",
+              "mime_type": "application/vnd.apple.mpegurl"
             },
             {
               "type": "embed",
-              "url": "https://www.atomsportv514.top/kanal/smart-spor",
+              "url": "https://www.atomsportv514.top/matches?id=smart-spor",
               "label": "Site"
             }
           ],
@@ -358,17 +370,18 @@
           "panel_name": "ATOM SPOR",
           "icon": "📺",
           "logo": "https://hizliresim.com/gm50rk9b",
-          "page_url": "https://www.atomsportv514.top/kanal/tv-8-5",
-          "referrer": "https://www.atomsportv514.top",
+          "page_url": "https://www.atomsportv514.top/matches?id=tv-8-5",
+          "referrer": "https://www.atomsportv514.top/",
           "sources": [
             {
               "type": "hls",
               "url": "https://tv.atomspor.workers.dev/?ID=tv-8-5",
-              "label": "Kaynak 1"
+              "label": "Kaynak 1",
+              "mime_type": "application/vnd.apple.mpegurl"
             },
             {
               "type": "embed",
-              "url": "https://www.atomsportv514.top/kanal/tv-8-5",
+              "url": "https://www.atomsportv514.top/matches?id=tv-8-5",
               "label": "Site"
             }
           ],
@@ -386,17 +399,18 @@
           "panel_name": "ATOM SPOR",
           "icon": "⚽",
           "logo": "https://hizliresim.com/gm50rk9b",
-          "page_url": "https://www.atomsportv514.top/kanal/bein-sports-haber",
-          "referrer": "https://www.atomsportv514.top",
+          "page_url": "https://www.atomsportv514.top/matches?id=bein-sports-haber",
+          "referrer": "https://www.atomsportv514.top/",
           "sources": [
             {
               "type": "hls",
               "url": "https://tv.atomspor.workers.dev/?ID=bein-sports-haber",
-              "label": "Kaynak 1"
+              "label": "Kaynak 1",
+              "mime_type": "application/vnd.apple.mpegurl"
             },
             {
               "type": "embed",
-              "url": "https://www.atomsportv514.top/kanal/bein-sports-haber",
+              "url": "https://www.atomsportv514.top/matches?id=bein-sports-haber",
               "label": "Site"
             }
           ],
@@ -433,7 +447,8 @@
             {
               "type": "hls",
               "url": "https://dga1op10s1u3lea.82250d06d39d38.click/live/selcukbeinsports1/playlist.m3u8",
-              "label": "Kaynak 1"
+              "label": "Kaynak 1",
+              "mime_type": "application/vnd.apple.mpegurl"
             },
             {
               "type": "embed",
@@ -445,7 +460,7 @@
           "fresh": true,
           "resolved_url": "https://dga1op10s1u3lea.82250d06d39d38.click/live/selcukbeinsports1/playlist.m3u8",
           "resolved_at": "2026-09-06T04:39:54+00:00",
-          "stale": false
+          "stale": true
         },
         {
           "id": "selcuk:selcukbeinsports2",
@@ -461,7 +476,8 @@
             {
               "type": "hls",
               "url": "https://dga1op10s1u3lea.82250d06d39d38.click/live/selcukbeinsports2/playlist.m3u8",
-              "label": "Kaynak 1"
+              "label": "Kaynak 1",
+              "mime_type": "application/vnd.apple.mpegurl"
             },
             {
               "type": "embed",
@@ -473,7 +489,7 @@
           "fresh": true,
           "resolved_url": "https://dga1op10s1u3lea.82250d06d39d38.click/live/selcukbeinsports2/playlist.m3u8",
           "resolved_at": "2026-09-06T04:39:54+00:00",
-          "stale": false
+          "stale": true
         },
         {
           "id": "selcuk:selcukbeinsports3",
@@ -489,7 +505,8 @@
             {
               "type": "hls",
               "url": "https://dga1op10s1u3lea.82250d06d39d38.click/live/selcukbeinsports3/playlist.m3u8",
-              "label": "Kaynak 1"
+              "label": "Kaynak 1",
+              "mime_type": "application/vnd.apple.mpegurl"
             },
             {
               "type": "embed",
@@ -501,7 +518,7 @@
           "fresh": true,
           "resolved_url": "https://dga1op10s1u3lea.82250d06d39d38.click/live/selcukbeinsports3/playlist.m3u8",
           "resolved_at": "2026-09-06T04:39:54+00:00",
-          "stale": false
+          "stale": true
         },
         {
           "id": "selcuk:selcukbeinsports4",
@@ -517,7 +534,8 @@
             {
               "type": "hls",
               "url": "https://dga1op10s1u3lea.82250d06d39d38.click/live/selcukbeinsports4/playlist.m3u8",
-              "label": "Kaynak 1"
+              "label": "Kaynak 1",
+              "mime_type": "application/vnd.apple.mpegurl"
             },
             {
               "type": "embed",
@@ -529,7 +547,7 @@
           "fresh": true,
           "resolved_url": "https://dga1op10s1u3lea.82250d06d39d38.click/live/selcukbeinsports4/playlist.m3u8",
           "resolved_at": "2026-09-06T04:39:54+00:00",
-          "stale": false
+          "stale": true
         },
         {
           "id": "selcuk:selcukbeinsports5",
@@ -545,7 +563,8 @@
             {
               "type": "hls",
               "url": "https://dga1op10s1u3lea.82250d06d39d38.click/live/selcukbeinsports5/playlist.m3u8",
-              "label": "Kaynak 1"
+              "label": "Kaynak 1",
+              "mime_type": "application/vnd.apple.mpegurl"
             },
             {
               "type": "embed",
@@ -557,7 +576,7 @@
           "fresh": true,
           "resolved_url": "https://dga1op10s1u3lea.82250d06d39d38.click/live/selcukbeinsports5/playlist.m3u8",
           "resolved_at": "2026-09-06T04:39:54+00:00",
-          "stale": false
+          "stale": true
         },
         {
           "id": "selcuk:selcukbeinsportsmax1",
@@ -573,7 +592,8 @@
             {
               "type": "hls",
               "url": "https://dga1op10s1u3lea.82250d06d39d38.click/live/selcukbeinsportsmax1/playlist.m3u8",
-              "label": "Kaynak 1"
+              "label": "Kaynak 1",
+              "mime_type": "application/vnd.apple.mpegurl"
             },
             {
               "type": "embed",
@@ -585,7 +605,7 @@
           "fresh": true,
           "resolved_url": "https://dga1op10s1u3lea.82250d06d39d38.click/live/selcukbeinsportsmax1/playlist.m3u8",
           "resolved_at": "2026-09-06T04:39:54+00:00",
-          "stale": false
+          "stale": true
         },
         {
           "id": "selcuk:selcukbeinsportsmax2",
@@ -601,7 +621,8 @@
             {
               "type": "hls",
               "url": "https://dga1op10s1u3lea.82250d06d39d38.click/live/selcukbeinsportsmax2/playlist.m3u8",
-              "label": "Kaynak 1"
+              "label": "Kaynak 1",
+              "mime_type": "application/vnd.apple.mpegurl"
             },
             {
               "type": "embed",
@@ -613,7 +634,7 @@
           "fresh": true,
           "resolved_url": "https://dga1op10s1u3lea.82250d06d39d38.click/live/selcukbeinsportsmax2/playlist.m3u8",
           "resolved_at": "2026-09-06T04:39:54+00:00",
-          "stale": false
+          "stale": true
         },
         {
           "id": "selcuk:selcukssport",
@@ -629,7 +650,8 @@
             {
               "type": "hls",
               "url": "https://dga1op10s1u3lea.82250d06d39d38.click/live/selcukssport/playlist.m3u8",
-              "label": "Kaynak 1"
+              "label": "Kaynak 1",
+              "mime_type": "application/vnd.apple.mpegurl"
             },
             {
               "type": "embed",
@@ -641,7 +663,7 @@
           "fresh": true,
           "resolved_url": "https://dga1op10s1u3lea.82250d06d39d38.click/live/selcukssport/playlist.m3u8",
           "resolved_at": "2026-09-06T04:39:54+00:00",
-          "stale": false
+          "stale": true
         },
         {
           "id": "selcuk:selcukssport2",
@@ -657,7 +679,8 @@
             {
               "type": "hls",
               "url": "https://dga1op10s1u3lea.82250d06d39d38.click/live/selcukssport2/playlist.m3u8",
-              "label": "Kaynak 1"
+              "label": "Kaynak 1",
+              "mime_type": "application/vnd.apple.mpegurl"
             },
             {
               "type": "embed",
@@ -669,7 +692,7 @@
           "fresh": true,
           "resolved_url": "https://dga1op10s1u3lea.82250d06d39d38.click/live/selcukssport2/playlist.m3u8",
           "resolved_at": "2026-09-06T04:39:54+00:00",
-          "stale": false
+          "stale": true
         },
         {
           "id": "selcuk:selcuktivibuspor1",
@@ -685,7 +708,8 @@
             {
               "type": "hls",
               "url": "https://dga1op10s1u3lea.82250d06d39d38.click/live/selcuktivibuspor1/playlist.m3u8",
-              "label": "Kaynak 1"
+              "label": "Kaynak 1",
+              "mime_type": "application/vnd.apple.mpegurl"
             },
             {
               "type": "embed",
@@ -697,7 +721,7 @@
           "fresh": true,
           "resolved_url": "https://dga1op10s1u3lea.82250d06d39d38.click/live/selcuktivibuspor1/playlist.m3u8",
           "resolved_at": "2026-09-06T04:39:54+00:00",
-          "stale": false
+          "stale": true
         },
         {
           "id": "selcuk:selcuktivibuspor2",
@@ -713,7 +737,8 @@
             {
               "type": "hls",
               "url": "https://dga1op10s1u3lea.82250d06d39d38.click/live/selcuktivibuspor2/playlist.m3u8",
-              "label": "Kaynak 1"
+              "label": "Kaynak 1",
+              "mime_type": "application/vnd.apple.mpegurl"
             },
             {
               "type": "embed",
@@ -725,7 +750,7 @@
           "fresh": true,
           "resolved_url": "https://dga1op10s1u3lea.82250d06d39d38.click/live/selcuktivibuspor2/playlist.m3u8",
           "resolved_at": "2026-09-06T04:39:54+00:00",
-          "stale": false
+          "stale": true
         },
         {
           "id": "selcuk:selcuksmartspor",
@@ -741,7 +766,8 @@
             {
               "type": "hls",
               "url": "https://dga1op10s1u3lea.82250d06d39d38.click/live/selcuksmartspor/playlist.m3u8",
-              "label": "Kaynak 1"
+              "label": "Kaynak 1",
+              "mime_type": "application/vnd.apple.mpegurl"
             },
             {
               "type": "embed",
@@ -753,7 +779,7 @@
           "fresh": true,
           "resolved_url": "https://dga1op10s1u3lea.82250d06d39d38.click/live/selcuksmartspor/playlist.m3u8",
           "resolved_at": "2026-09-06T04:39:54+00:00",
-          "stale": false
+          "stale": true
         },
         {
           "id": "selcuk:selcukaspor",
@@ -769,7 +795,8 @@
             {
               "type": "hls",
               "url": "https://dga1op10s1u3lea.82250d06d39d38.click/live/selcukaspor/playlist.m3u8",
-              "label": "Kaynak 1"
+              "label": "Kaynak 1",
+              "mime_type": "application/vnd.apple.mpegurl"
             },
             {
               "type": "embed",
@@ -781,7 +808,7 @@
           "fresh": true,
           "resolved_url": "https://dga1op10s1u3lea.82250d06d39d38.click/live/selcukaspor/playlist.m3u8",
           "resolved_at": "2026-09-06T04:39:54+00:00",
-          "stale": false
+          "stale": true
         },
         {
           "id": "selcuk:selcukeurosport1",
@@ -797,7 +824,8 @@
             {
               "type": "hls",
               "url": "https://dga1op10s1u3lea.82250d06d39d38.click/live/selcukeurosport1/playlist.m3u8",
-              "label": "Kaynak 1"
+              "label": "Kaynak 1",
+              "mime_type": "application/vnd.apple.mpegurl"
             },
             {
               "type": "embed",
@@ -809,7 +837,7 @@
           "fresh": true,
           "resolved_url": "https://dga1op10s1u3lea.82250d06d39d38.click/live/selcukeurosport1/playlist.m3u8",
           "resolved_at": "2026-09-06T04:39:54+00:00",
-          "stale": false
+          "stale": true
         }
       ]
     }

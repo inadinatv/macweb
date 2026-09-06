@@ -1,0 +1,33 @@
+# Mevcut data-reality maç programında skor / gerçek status yok.
+# İkincil, herkese açık ESPN scoreboard sadece kesin eşleşmeler için kullanılır.
+# Desteklenmeyen veya belirsiz bir karşılaşmaya skor UYDURULMAZ.
+enabled: true
+request_timeout_seconds: 8
+max_workers: 4
+max_start_difference_minutes: 45
+
+# Lig + spor ayrımı zorunlu: aynı isimli kadın/erkek, genç veya farklı spor
+# takımları birbiriyle eşleşmez. Yeni ligler açıkça eklenmelidir.
+leagues:
+  - { name: "Trendyol Süper Lig", sport: "Futbol", path: "soccer/tur.1" }
+  - { name: "İngiltere Premier Lig", sport: "Futbol", path: "soccer/eng.1" }
+  - { name: "İspanya La Liga", sport: "Futbol", path: "soccer/esp.1" }
+  - { name: "İtalya Serie A", sport: "Futbol", path: "soccer/ita.1" }
+  - { name: "Fransa Ligue 1", sport: "Futbol", path: "soccer/fra.1" }
+  - { name: "Almanya Bundesliga", sport: "Futbol", path: "soccer/ger.1" }
+  - { name: "Brezilya Serie A", sport: "Futbol", path: "soccer/bra.1" }
+  - { name: "Arjantin Primera Division", sport: "Futbol", path: "soccer/arg.1" }
+  - { name: "NBA", sport: "Basketbol", path: "basketball/nba" }
+  - { name: "WNBA", sport: "Basketbol", path: "basketball/wnba" }
+
+# Sadece açık ad eşlemeleri; yaklaşık/fuzzy eşleşme veya takım yer değiştirme yok.
+team_aliases:
+  soccer/eng.1:
+    Manchester Utd: "Manchester United"
+  soccer/fra.1:
+    Marsilya: "Marseille"
+    PSG: "Paris Saint-Germain"
+    St. Etienne: "Saint-Etienne"
+  soccer/esp.1:
+    Ath. Bilbao: "Athletic Club"
+    Atletico Madrid: "Atlético Madrid"
