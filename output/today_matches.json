@@ -9,7 +9,7 @@
       "fixbettv84.com",
       "fixbettv19.com"
     ],
-    "last_checked": "2026-09-06T00:22:00+00:00",
+    "last_checked": "2026-09-06T04:40:31+00:00",
     "note": "OK",
     "probed": 200
   },
@@ -43,7 +43,7 @@
       "channel_id": "smarts",
       "logo_home": "https://img.sporekrani.com/teams/CPOxyikCHueiXKjPIFlshfFalfAXXXhtrDIDU1gT.png",
       "logo_away": "https://img.sporekrani.com/teams/qpFLlgJa0SkCr8EjA1uyH0Zsk7yFnLdqM4b7JWVN.png",
-      "status": "live",
+      "status": "finished",
       "started": true,
       "raw_event": "03:00 | Brezilya Serie A",
       "url": "https://fixbettv84.com/channel.html?id=smarts",

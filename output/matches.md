@@ -1,12 +1,8 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-09-06 00:22  
-> **Toplam maç:** 24  |  **Canlı:** 1  |  **Yaklaşan:** 23
-
-## 🔴 CANLI
-
-- 🔴 **Fluminense vs Vasco Da Gama** — `03:00` | Brezilya Serie A <https://fixbettv84.com/channel.html?id=smarts>
+> **Güncellenme:** 2026-09-06 04:40  
+> **Toplam maç:** 24  |  **Canlı:** 0  |  **Yaklaşan:** 23
 
 ## ⏰ YAKLAŞAN
 
@@ -34,6 +30,10 @@
 - ⏰ **İtalya vs ABD** — `21:45` | FIBA Kadınlar Dünya Kupası <https://fixbettv84.com/channel.html?id=trtspor2>
 - ⏰ **Espanyol vs Sevilla** — `22:00` | İspanya La Liga <https://fixbettv84.com/channel.html?id=ss>
 
+## ✅ BİTTİ
+
+- ✅ **Fluminense vs Vasco Da Gama** — `03:00` | Brezilya Serie A <https://fixbettv84.com/channel.html?id=smarts>
+
 ## ⭐ GÜNÜN MAÇI
 
 - ⏰ **Trabzonspor vs Gençlerbirliği** — `20:00` | Trendyol Süper Lig ★ **Günün Maçı** <https://fixbettv84.com/channel.html?id=zirve>
@@ -45,7 +45,7 @@
 - ⏰ Rosario Central vs Newell's Old Boys — 20:45
 
 ### Brezilya Serie A
-- 🔴 Fluminense vs Vasco Da Gama — 03:00
+- ⏰ Fluminense vs Vasco Da Gama — 03:00
 
 ### CEV Kadınlar Avrupa Şampiyonası
 - ⏰ İtalya vs Türkiye — 19:00
