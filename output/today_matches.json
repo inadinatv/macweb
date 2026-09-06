@@ -9,13 +9,13 @@
       "fixbettv84.com",
       "fixbettv19.com"
     ],
-    "last_checked": "2026-09-06T19:43:12+00:00",
+    "last_checked": "2026-09-06T21:34:02+00:00",
     "note": "OK",
     "probed": 200
   },
-  "date": "2026-09-06",
+  "date": "2026-09-07",
   "timezone": "Europe/Istanbul",
-  "generated_at": "2026-09-06T22:42:36+03:00",
+  "generated_at": "2026-09-07T00:33:26+03:00",
   "matches": [
     {
       "match_id": "zirve",
@@ -28,8 +28,8 @@
       "channel_id": "zirve",
       "logo_home": "https://img.sporekrani.com/teams/du8xrhC2p6tNr2lBt0EpxnnyUp94NYKETlbvtfqe.png",
       "logo_away": "https://img.sporekrani.com/teams/KlRsFgW5XWpxdPoNf5JCGYFMMxDMdJUBroZOkwYW.png",
-      "status": "finished",
-      "started": true,
+      "status": "upcoming",
+      "started": false,
       "raw_event": "20:00 | Trendyol Süper Lig [Günün Maçı]",
       "url": "https://fixbettv84.com/channel.html?id=zirve",
       "fetched_at": "",
@@ -40,7 +40,7 @@
       "score_source": "",
       "score_updated_at": "",
       "event_id": "",
-      "starts_at": "2026-09-06T20:00:00+03:00"
+      "starts_at": "2026-09-07T20:00:00+03:00"
     },
     {
       "match_id": "smarts",
@@ -53,8 +53,8 @@
       "channel_id": "smarts",
       "logo_home": "https://img.sporekrani.com/teams/CPOxyikCHueiXKjPIFlshfFalfAXXXhtrDIDU1gT.png",
       "logo_away": "https://img.sporekrani.com/teams/qpFLlgJa0SkCr8EjA1uyH0Zsk7yFnLdqM4b7JWVN.png",
-      "status": "finished",
-      "started": true,
+      "status": "upcoming",
+      "started": false,
       "raw_event": "03:00 | Brezilya Serie A",
       "url": "https://fixbettv84.com/channel.html?id=smarts",
       "fetched_at": "",
@@ -65,7 +65,7 @@
       "score_source": "",
       "score_updated_at": "",
       "event_id": "",
-      "starts_at": "2026-09-06T03:00:00+03:00"
+      "starts_at": "2026-09-07T03:00:00+03:00"
     },
     {
       "match_id": "trtspor",
@@ -78,8 +78,8 @@
       "channel_id": "trtspor",
       "logo_home": "https://img.sporekrani.com/teams/qMoYbPRcGX7GBkht1uSrafddF2ZV1rodvYJ4xVLl.png",
       "logo_away": "https://img.sporekrani.com/teams/GdLWh94GLymE9aN8nd1PoUXb4FR9GpPOnCSTdkoy.png",
-      "status": "finished",
-      "started": true,
+      "status": "upcoming",
+      "started": false,
       "raw_event": "12:30 | FIBA Kadınlar Dünya Kupası",
       "url": "https://fixbettv84.com/channel.html?id=trtspor",
       "fetched_at": "",
@@ -90,7 +90,7 @@
       "score_source": "",
       "score_updated_at": "",
       "event_id": "",
-      "starts_at": "2026-09-06T12:30:00+03:00"
+      "starts_at": "2026-09-07T12:30:00+03:00"
     },
     {
       "match_id": "b5",
@@ -103,8 +103,8 @@
       "channel_id": "b5",
       "logo_home": "https://img.sporekrani.com/teams/merEUshzKsL8eSWmrJyTmqmTamPp750C8hrG6adz.png",
       "logo_away": "https://img.sporekrani.com/teams/USjNm0E7IrKEufHjSOg9Fa9ZX00zRby3dPD9yc3v.png",
-      "status": "finished",
-      "started": true,
+      "status": "upcoming",
+      "started": false,
       "raw_event": "16:00 | Fransa Ligue 1",
       "url": "https://fixbettv84.com/channel.html?id=b5",
       "fetched_at": "",
@@ -115,7 +115,7 @@
       "score_source": "",
       "score_updated_at": "",
       "event_id": "",
-      "starts_at": "2026-09-06T16:00:00+03:00"
+      "starts_at": "2026-09-07T16:00:00+03:00"
     },
     {
       "match_id": "ss",
@@ -128,8 +128,8 @@
       "channel_id": "ss",
       "logo_home": "https://img.sporekrani.com/teams/rEPoSdmXIssbUPpZBiE066d4vKN65ZTH1LKluFBj.png",
       "logo_away": "https://img.sporekrani.com/teams/mv1nSUQYZ51WrepW8mT1tcMKhrtTtGeZGHPrPXpp.png",
-      "status": "finished",
-      "started": true,
+      "status": "upcoming",
+      "started": false,
       "raw_event": "16:00 | İtalya Serie A",
       "url": "https://fixbettv84.com/channel.html?id=ss",
       "fetched_at": "",
@@ -140,7 +140,7 @@
       "score_source": "",
       "score_updated_at": "",
       "event_id": "",
-      "starts_at": "2026-09-06T16:00:00+03:00"
+      "starts_at": "2026-09-07T16:00:00+03:00"
     },
     {
       "match_id": "ss2",
@@ -153,8 +153,8 @@
       "channel_id": "ss2",
       "logo_home": "https://img.sporekrani.com/teams/LTKO6KqFrkW7ojXoVk1WIXGpU9t0LHGBSi0phipG.png",
       "logo_away": "https://img.sporekrani.com/teams/OPnPXA43cg4rpWPkD94xaXrcuATAJwJVlQpmxaoO.png",
-      "status": "finished",
-      "started": true,
+      "status": "upcoming",
+      "started": false,
       "raw_event": "16:00 | İtalya Serie A",
       "url": "https://fixbettv84.com/channel.html?id=ss2",
       "fetched_at": "",
@@ -165,7 +165,7 @@
       "score_source": "",
       "score_updated_at": "",
       "event_id": "",
-      "starts_at": "2026-09-06T16:00:00+03:00"
+      "starts_at": "2026-09-07T16:00:00+03:00"
     },
     {
       "match_id": "b3",
@@ -178,8 +178,8 @@
       "channel_id": "b3",
       "logo_home": "https://img.sporekrani.com/teams/ilrMavY5AgzKRt52pbr7JhakxVJUeuGx8CX2JUg9.png",
       "logo_away": "https://img.sporekrani.com/teams/4Oa5393ovYudsgE2snx6Q1iJPYlP6WooxyETwIMg.png",
-      "status": "finished",
-      "started": true,
+      "status": "upcoming",
+      "started": false,
       "raw_event": "16:00 | İngiltere Premier Lig",
       "url": "https://fixbettv84.com/channel.html?id=b3",
       "fetched_at": "",
@@ -190,7 +190,7 @@
       "score_source": "",
       "score_updated_at": "",
       "event_id": "",
-      "starts_at": "2026-09-06T16:00:00+03:00"
+      "starts_at": "2026-09-07T16:00:00+03:00"
     },
     {
       "match_id": "zirve",
@@ -203,8 +203,8 @@
       "channel_id": "zirve",
       "logo_home": "https://img.sporekrani.com/teams/V8j30a2ng4nlBmArptHawOVHFk5ArigAyuoxEMW4.png",
       "logo_away": "https://img.sporekrani.com/teams/6tysH2wYQ1v9IuI7O08RkwVRJ9t5t9Yot5hLFWo3.png",
-      "status": "finished",
-      "started": true,
+      "status": "upcoming",
+      "started": false,
       "raw_event": "17:00 | Trendyol Süper Lig",
       "url": "https://fixbettv84.com/channel.html?id=zirve",
       "fetched_at": "",
@@ -215,7 +215,7 @@
       "score_source": "",
       "score_updated_at": "",
       "event_id": "",
-      "starts_at": "2026-09-06T17:00:00+03:00"
+      "starts_at": "2026-09-07T17:00:00+03:00"
     },
     {
       "match_id": "b2",
@@ -228,8 +228,8 @@
       "channel_id": "b2",
       "logo_home": "https://img.sporekrani.com/teams/ul472wqFpxYMSgwffkI2iBvLOVijrewsahXT1Yew.png",
       "logo_away": "https://img.sporekrani.com/teams/ouGNMRhym0INKIOCfx8RcQSXiBEyegOlV0DX0CMv.png",
-      "status": "finished",
-      "started": true,
+      "status": "upcoming",
+      "started": false,
       "raw_event": "17:00 | Trendyol Süper Lig",
       "url": "https://fixbettv84.com/channel.html?id=b2",
       "fetched_at": "",
@@ -240,7 +240,7 @@
       "score_source": "",
       "score_updated_at": "",
       "event_id": "",
-      "starts_at": "2026-09-06T17:00:00+03:00"
+      "starts_at": "2026-09-07T17:00:00+03:00"
     },
     {
       "match_id": "ss",
@@ -253,8 +253,8 @@
       "channel_id": "ss",
       "logo_home": "https://img.sporekrani.com/teams/Y9VhvVlSoziCgaYOC7LWQxCpuf5Kjzyj2CG5TzFZ.png",
       "logo_away": "https://img.sporekrani.com/teams/V1BNoPDhMg8Ga7F3BZsRmaWtFdoylxIakmdCFFVH.png",
-      "status": "finished",
-      "started": true,
+      "status": "upcoming",
+      "started": false,
       "raw_event": "17:15 | İspanya La Liga",
       "url": "https://fixbettv84.com/channel.html?id=ss",
       "fetched_at": "",
@@ -265,7 +265,7 @@
       "score_source": "",
       "score_updated_at": "",
       "event_id": "",
-      "starts_at": "2026-09-06T17:15:00+03:00"
+      "starts_at": "2026-09-07T17:15:00+03:00"
     },
     {
       "match_id": "ss2",
@@ -278,8 +278,8 @@
       "channel_id": "ss2",
       "logo_home": "https://img.sporekrani.com/teams/JpCgEKkWMRwVzuFSvfEcxYeWSSdoS3i0z3gEMc5B.png",
       "logo_away": "https://img.sporekrani.com/teams/6fad4a16-b5bd-4727-8443-ddac90b0d13c.png",
-      "status": "finished",
-      "started": true,
+      "status": "upcoming",
+      "started": false,
       "raw_event": "18:00 | Girit Basketbol Turnuvası",
       "url": "https://fixbettv84.com/channel.html?id=ss2",
       "fetched_at": "",
@@ -290,7 +290,7 @@
       "score_source": "",
       "score_updated_at": "",
       "event_id": "",
-      "starts_at": "2026-09-06T18:00:00+03:00"
+      "starts_at": "2026-09-07T18:00:00+03:00"
     },
     {
       "match_id": "b3",
@@ -303,8 +303,8 @@
       "channel_id": "b3",
       "logo_home": "https://img.sporekrani.com/teams/Oyf1KjdNrQ3JRqlad56loSKdEvRBippxrf4sgKYr.png",
       "logo_away": "https://img.sporekrani.com/teams/HEaOoDOTOZxr47Y7oapYCUYyrX7oXF1kObvuta1I.png",
-      "status": "finished",
-      "started": true,
+      "status": "upcoming",
+      "started": false,
       "raw_event": "18:30 | İngiltere Premier Lig",
       "url": "https://fixbettv84.com/channel.html?id=b3",
       "fetched_at": "",
@@ -315,7 +315,7 @@
       "score_source": "",
       "score_updated_at": "",
       "event_id": "",
-      "starts_at": "2026-09-06T18:30:00+03:00"
+      "starts_at": "2026-09-07T18:30:00+03:00"
     },
     {
       "match_id": "ss",
@@ -328,8 +328,8 @@
       "channel_id": "ss",
       "logo_home": "https://img.sporekrani.com/teams/yvJcdDez3AGTCvvt7oV2cMOiPa59Ai7yJEoNJ4fb.png",
       "logo_away": "https://img.sporekrani.com/teams/Q96RhzIvvVKfOsDwkfuOCb4fnH0laPjlZqrwV1WQ.png",
-      "status": "finished",
-      "started": true,
+      "status": "upcoming",
+      "started": false,
       "raw_event": "19:00 | İtalya Serie A",
       "url": "https://fixbettv84.com/channel.html?id=ss",
       "fetched_at": "",
@@ -340,7 +340,7 @@
       "score_source": "",
       "score_updated_at": "",
       "event_id": "",
-      "starts_at": "2026-09-06T19:00:00+03:00"
+      "starts_at": "2026-09-07T19:00:00+03:00"
     },
     {
       "match_id": "trt1",
@@ -353,8 +353,8 @@
       "channel_id": "trt1",
       "logo_home": "https://img.sporekrani.com/teams/gBydEa3e72G6EpauybB9bEPsLrJrRuv1WHboiDr0.png",
       "logo_away": "https://img.sporekrani.com/teams/qMoYbPRcGX7GBkht1uSrafddF2ZV1rodvYJ4xVLl.png",
-      "status": "finished",
-      "started": true,
+      "status": "upcoming",
+      "started": false,
       "raw_event": "19:00 | CEV Kadınlar Avrupa Şampiyonası",
       "url": "https://fixbettv84.com/channel.html?id=trt1",
       "fetched_at": "",
@@ -365,7 +365,7 @@
       "score_source": "",
       "score_updated_at": "",
       "event_id": "",
-      "starts_at": "2026-09-06T19:00:00+03:00"
+      "starts_at": "2026-09-07T19:00:00+03:00"
     },
     {
       "match_id": "ss",
@@ -378,8 +378,8 @@
       "channel_id": "ss",
       "logo_home": "https://img.sporekrani.com/teams/10knqsaeT9A9LEcdaDavo1Y8vaAlyAd6gSqTPqvc.png",
       "logo_away": "https://img.sporekrani.com/teams/U2MC3dHsLDfsYd5jppT9qRYUNQaPoZfOGQCWiwGR.png",
-      "status": "finished",
-      "started": true,
+      "status": "upcoming",
+      "started": false,
       "raw_event": "19:30 | İspanya La Liga",
       "url": "https://fixbettv84.com/channel.html?id=ss",
       "fetched_at": "",
@@ -390,7 +390,7 @@
       "score_source": "",
       "score_updated_at": "",
       "event_id": "",
-      "starts_at": "2026-09-06T19:30:00+03:00"
+      "starts_at": "2026-09-07T19:30:00+03:00"
     },
     {
       "match_id": "b2",
@@ -403,8 +403,8 @@
       "channel_id": "b2",
       "logo_home": "https://img.sporekrani.com/teams/E5z8Bn4qWHNHmPLyXFt7tPQ1hakiwTMvrJsJoTAt.png",
       "logo_away": "https://img.sporekrani.com/teams/8Jp58CuzBxNnoszxM45sBKCAGuwyyp14LKmzBFsM.png",
-      "status": "finished",
-      "started": true,
+      "status": "upcoming",
+      "started": false,
       "raw_event": "20:00 | Trendyol Süper Lig",
       "url": "https://fixbettv84.com/channel.html?id=b2",
       "fetched_at": "",
@@ -415,7 +415,7 @@
       "score_source": "",
       "score_updated_at": "",
       "event_id": "",
-      "starts_at": "2026-09-06T20:00:00+03:00"
+      "starts_at": "2026-09-07T20:00:00+03:00"
     },
     {
       "match_id": "trtspor",
@@ -428,8 +428,8 @@
       "channel_id": "trtspor",
       "logo_home": "https://img.sporekrani.com/teams/KBAAmRJd9WIOVdbAPQRu6FomTde1e61fpTy7Hw0j.png",
       "logo_away": "https://img.sporekrani.com/teams/ZWFgnB5u64sACD0oSXhflEFzCwG4i2OF0GkXxEhM.png",
-      "status": "finished",
-      "started": true,
+      "status": "upcoming",
+      "started": false,
       "raw_event": "20:00 | Trendyol 1. Lig",
       "url": "https://fixbettv84.com/channel.html?id=trtspor",
       "fetched_at": "",
@@ -440,7 +440,7 @@
       "score_source": "",
       "score_updated_at": "",
       "event_id": "",
-      "starts_at": "2026-09-06T20:00:00+03:00"
+      "starts_at": "2026-09-07T20:00:00+03:00"
     },
     {
       "match_id": "bm1",
@@ -453,8 +453,8 @@
       "channel_id": "bm1",
       "logo_home": "https://img.sporekrani.com/teams/sg0cda0Keq1cqcIweLi0VqrCFpJnValsbnWQTsH6.png",
       "logo_away": "https://img.sporekrani.com/teams/cU1zPr2fv5AX9MqyLhTCdvKV67SPbVIWb8gUgdak.png",
-      "status": "finished",
-      "started": true,
+      "status": "upcoming",
+      "started": false,
       "raw_event": "20:00 | Trendyol 1. Lig",
       "url": "https://fixbettv84.com/channel.html?id=bm1",
       "fetched_at": "",
@@ -465,7 +465,7 @@
       "score_source": "",
       "score_updated_at": "",
       "event_id": "",
-      "starts_at": "2026-09-06T20:00:00+03:00"
+      "starts_at": "2026-09-07T20:00:00+03:00"
     },
     {
       "match_id": "b5",
@@ -478,8 +478,8 @@
       "channel_id": "b5",
       "logo_home": "https://upload.wikimedia.org/wikipedia/tr/c/c8/Mu%C4%9Flaspor.png",
       "logo_away": "https://img.sporekrani.com/teams/0kzZCnbPpEIdi71Uo0SQsMPizNPEXkupWjY8UFZy.png",
-      "status": "finished",
-      "started": true,
+      "status": "upcoming",
+      "started": false,
       "raw_event": "20:00 | Trendyol 1. Lig",
       "url": "https://fixbettv84.com/channel.html?id=b5",
       "fetched_at": "",
@@ -490,7 +490,7 @@
       "score_source": "",
       "score_updated_at": "",
       "event_id": "",
-      "starts_at": "2026-09-06T20:00:00+03:00"
+      "starts_at": "2026-09-07T20:00:00+03:00"
     },
     {
       "match_id": "smarts",
@@ -503,7 +503,7 @@
       "channel_id": "smarts",
       "logo_home": "https://img.sporekrani.com/teams/Hw3VdP5PmBy0WD4GWOCZpXJoq7nONUqRKS0kPuEM.png",
       "logo_away": "https://img.sporekrani.com/teams/Z6yMU9mwu5REZIjjZcFyvZUhyIoYnD6IRnxJOeYf.png",
-      "status": "live",
+      "status": "finished",
       "started": true,
       "raw_event": "20:45 | Arjantin Primera Division",
       "url": "https://fixbettv84.com/channel.html?id=smarts",
@@ -528,7 +528,7 @@
       "channel_id": "b4",
       "logo_home": "https://img.sporekrani.com/teams/44iDo4u0c4isz06F25UBz1IpLjYNIWQgTQRwrw1H.png",
       "logo_away": "https://img.sporekrani.com/teams/bGq0SnnRShXGOeGGcHTFWPxg7kfVLRmDkj2WLGa0.png",
-      "status": "live",
+      "status": "finished",
       "started": true,
       "raw_event": "21:45 | Fransa Ligue 1",
       "url": "https://fixbettv84.com/channel.html?id=b4",
@@ -553,7 +553,7 @@
       "channel_id": "ss2",
       "logo_home": "https://img.sporekrani.com/teams/vO6cd2q3gTvdTPyowsHljArWR9GOZUMm7O1jfuGv.png",
       "logo_away": "https://img.sporekrani.com/teams/Umt11f7Yj0Bos3S2nfly9TyBSNDDrrjf7Jox91Q0.png",
-      "status": "live",
+      "status": "finished",
       "started": true,
       "raw_event": "21:45 | İtalya Serie A",
       "url": "https://fixbettv84.com/channel.html?id=ss2",
@@ -578,7 +578,7 @@
       "channel_id": "trtspor2",
       "logo_home": "https://img.sporekrani.com/teams/gBydEa3e72G6EpauybB9bEPsLrJrRuv1WHboiDr0.png",
       "logo_away": "https://img.sporekrani.com/teams/XQoWS56vbBlFWHiF8JGvnvH8aaitxkFdY9lN9yVm.png",
-      "status": "live",
+      "status": "finished",
       "started": true,
       "raw_event": "21:45 | FIBA Kadınlar Dünya Kupası",
       "url": "https://fixbettv84.com/channel.html?id=trtspor2",
@@ -603,7 +603,7 @@
       "channel_id": "ss",
       "logo_home": "https://img.sporekrani.com/teams/Rvc3hxlSnQ2qg0017vM16AcGJ9fSNFnvlr6DaFjd.png",
       "logo_away": "https://img.sporekrani.com/teams/Sq5lFdvY15DRcy50oKMOnuruBvxEqNuR2UmkEGxV.png",
-      "status": "live",
+      "status": "finished",
       "started": true,
       "raw_event": "22:00 | İspanya La Liga",
       "url": "https://fixbettv84.com/channel.html?id=ss",
