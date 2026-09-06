@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-06T19:29:00+00:00",
+  "updated_at": "2026-09-06T19:42:36+00:00",
   "source": "output/extra_channels.json",
   "total": 28,
   "panels": [
@@ -46,7 +46,7 @@
           "resolved": true,
           "fresh": true,
           "resolved_url": "https://corestream.ardastream.live//beintv/tracks-v1a1/mono.m3u8",
-          "resolved_at": "2026-09-06T19:29:00+00:00",
+          "resolved_at": "2026-09-06T19:42:36+00:00",
           "stale": false
         },
         {
@@ -81,7 +81,7 @@
           "resolved": true,
           "fresh": true,
           "resolved_url": "https://corestream.ardastream.live//bein2/tracks-v1a1/mono.m3u8",
-          "resolved_at": "2026-09-06T19:29:00+00:00",
+          "resolved_at": "2026-09-06T19:42:36+00:00",
           "stale": false
         },
         {
@@ -116,7 +116,7 @@
           "resolved": true,
           "fresh": true,
           "resolved_url": "https://corestream.ardastream.live//bein3/tracks-v1a1/mono.m3u8",
-          "resolved_at": "2026-09-06T19:29:00+00:00",
+          "resolved_at": "2026-09-06T19:42:36+00:00",
           "stale": false
         },
         {
@@ -151,7 +151,7 @@
           "resolved": true,
           "fresh": true,
           "resolved_url": "https://corestream.ardastream.live//bein4/tracks-v1a1/mono.m3u8",
-          "resolved_at": "2026-09-06T19:29:00+00:00",
+          "resolved_at": "2026-09-06T19:42:36+00:00",
           "stale": false
         },
         {
@@ -221,7 +221,7 @@
           "resolved": true,
           "fresh": true,
           "resolved_url": "https://corestream.ardastream.live//s-sport/tracks-v1a1/mono.m3u8",
-          "resolved_at": "2026-09-06T19:29:00+00:00",
+          "resolved_at": "2026-09-06T19:42:36+00:00",
           "stale": false
         },
         {
@@ -256,7 +256,7 @@
           "resolved": true,
           "fresh": true,
           "resolved_url": "https://corestream.ardastream.live//s-sport2/tracks-v1a1/mono.m3u8",
-          "resolved_at": "2026-09-06T19:29:00+00:00",
+          "resolved_at": "2026-09-06T19:42:36+00:00",
           "stale": false
         },
         {
@@ -501,7 +501,7 @@
           "resolved": true,
           "fresh": true,
           "resolved_url": "https://dga1op10s1u3lea.82250d06d39d38.click/live/selcukbeinsports1/playlist.m3u8",
-          "resolved_at": "2026-09-06T19:29:00+00:00",
+          "resolved_at": "2026-09-06T19:42:36+00:00",
           "stale": false
         },
         {
@@ -530,7 +530,7 @@
           "resolved": true,
           "fresh": true,
           "resolved_url": "https://dga1op10s1u3lea.82250d06d39d38.click/live/selcukbeinsports2/playlist.m3u8",
-          "resolved_at": "2026-09-06T19:29:00+00:00",
+          "resolved_at": "2026-09-06T19:42:36+00:00",
           "stale": false
         },
         {
@@ -559,7 +559,7 @@
           "resolved": true,
           "fresh": true,
           "resolved_url": "https://dga1op10s1u3lea.82250d06d39d38.click/live/selcukbeinsports3/playlist.m3u8",
-          "resolved_at": "2026-09-06T19:29:00+00:00",
+          "resolved_at": "2026-09-06T19:42:36+00:00",
           "stale": false
         },
         {
@@ -588,7 +588,7 @@
           "resolved": true,
           "fresh": true,
           "resolved_url": "https://dga1op10s1u3lea.82250d06d39d38.click/live/selcukbeinsports4/playlist.m3u8",
-          "resolved_at": "2026-09-06T19:29:00+00:00",
+          "resolved_at": "2026-09-06T19:42:36+00:00",
           "stale": false
         },
         {
@@ -617,7 +617,7 @@
           "resolved": true,
           "fresh": true,
           "resolved_url": "https://dga1op10s1u3lea.82250d06d39d38.click/live/selcukbeinsports5/playlist.m3u8",
-          "resolved_at": "2026-09-06T19:29:00+00:00",
+          "resolved_at": "2026-09-06T19:42:36+00:00",
           "stale": false
         },
         {
@@ -646,7 +646,7 @@
           "resolved": true,
           "fresh": true,
           "resolved_url": "https://dga1op10s1u3lea.82250d06d39d38.click/live/selcukbeinsportsmax1/playlist.m3u8",
-          "resolved_at": "2026-09-06T19:29:00+00:00",
+          "resolved_at": "2026-09-06T19:42:36+00:00",
           "stale": false
         },
         {
@@ -675,7 +675,7 @@
           "resolved": true,
           "fresh": true,
           "resolved_url": "https://dga1op10s1u3lea.82250d06d39d38.click/live/selcukbeinsportsmax2/playlist.m3u8",
-          "resolved_at": "2026-09-06T19:29:00+00:00",
+          "resolved_at": "2026-09-06T19:42:36+00:00",
           "stale": false
         },
         {
@@ -704,7 +704,7 @@
           "resolved": true,
           "fresh": true,
           "resolved_url": "https://dga1op10s1u3lea.82250d06d39d38.click/live/selcukssport/playlist.m3u8",
-          "resolved_at": "2026-09-06T19:29:00+00:00",
+          "resolved_at": "2026-09-06T19:42:36+00:00",
           "stale": false
         },
         {
@@ -733,7 +733,7 @@
           "resolved": true,
           "fresh": true,
           "resolved_url": "https://dga1op10s1u3lea.82250d06d39d38.click/live/selcukssport2/playlist.m3u8",
-          "resolved_at": "2026-09-06T19:29:00+00:00",
+          "resolved_at": "2026-09-06T19:42:36+00:00",
           "stale": false
         },
         {
@@ -762,7 +762,7 @@
           "resolved": true,
           "fresh": true,
           "resolved_url": "https://dga1op10s1u3lea.82250d06d39d38.click/live/selcuktivibuspor1/playlist.m3u8",
-          "resolved_at": "2026-09-06T19:29:00+00:00",
+          "resolved_at": "2026-09-06T19:42:36+00:00",
           "stale": false
         },
         {
@@ -791,7 +791,7 @@
           "resolved": true,
           "fresh": true,
           "resolved_url": "https://dga1op10s1u3lea.82250d06d39d38.click/live/selcuktivibuspor2/playlist.m3u8",
-          "resolved_at": "2026-09-06T19:29:00+00:00",
+          "resolved_at": "2026-09-06T19:42:36+00:00",
           "stale": false
         },
         {
@@ -820,7 +820,7 @@
           "resolved": true,
           "fresh": true,
           "resolved_url": "https://dga1op10s1u3lea.82250d06d39d38.click/live/selcuksmartspor/playlist.m3u8",
-          "resolved_at": "2026-09-06T19:29:00+00:00",
+          "resolved_at": "2026-09-06T19:42:36+00:00",
           "stale": false
         },
         {
@@ -849,7 +849,7 @@
           "resolved": true,
           "fresh": true,
           "resolved_url": "https://dga1op10s1u3lea.82250d06d39d38.click/live/selcukaspor/playlist.m3u8",
-          "resolved_at": "2026-09-06T19:29:00+00:00",
+          "resolved_at": "2026-09-06T19:42:36+00:00",
           "stale": false
         },
         {
@@ -878,7 +878,7 @@
           "resolved": true,
           "fresh": true,
           "resolved_url": "https://dga1op10s1u3lea.82250d06d39d38.click/live/selcukeurosport1/playlist.m3u8",
-          "resolved_at": "2026-09-06T19:29:00+00:00",
+          "resolved_at": "2026-09-06T19:42:36+00:00",
           "stale": false
         }
       ]
