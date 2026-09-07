@@ -1,18 +1,17 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-09-07 10:25  
-> **Toplam maç:** 14  |  **Canlı:** 1  |  **Yaklaşan:** 12
+> **Güncellenme:** 2026-09-07 14:34  
+> **Toplam maç:** 14  |  **Canlı:** 3  |  **Yaklaşan:** 9
 
 ## 🔴 CANLI
 
-- 🔴 **Porto Riko vs Türkiye** — CANLI · `12:30` | FIBA Kadınlar Dünya Kupası <https://fixbettv84.com/channel.html?id=trtspor>
+- 🔴 **Nijerya vs Fransa** — CANLI · `15:30` | FIBA Kadınlar Dünya Kupası <https://fixbettv84.com/channel.html?id=ss>
+- 🔴 **Esenler Erokspor vs Kayserispor** — CANLI · `17:00` | Trendyol 1. Lig <https://fixbettv84.com/channel.html?id=trtspor>
+- 🔴 **İstanbulspor vs Iğdırspor** — CANLI · `17:00` | Trendyol 1. Lig <https://fixbettv84.com/channel.html?id=bm1>
 
 ## ⏰ YAKLAŞAN
 
-- ⏰ **Nijerya vs Fransa** — YAKLAŞAN · `15:30` | FIBA Kadınlar Dünya Kupası <https://fixbettv84.com/channel.html?id=ss>
-- ⏰ **Esenler Erokspor vs Kayserispor** — YAKLAŞAN · `17:00` | Trendyol 1. Lig <https://fixbettv84.com/channel.html?id=trtspor>
-- ⏰ **İstanbulspor vs Iğdırspor** — YAKLAŞAN · `17:00` | Trendyol 1. Lig <https://fixbettv84.com/channel.html?id=bm1>
 - ⏰ **Cagliari vs Lecce** — YAKLAŞAN · `19:30` | İtalya Serie A <https://fixbettv84.com/channel.html?id=ss2>
 - ⏰ **Mardin 1969 vs Bodrumspor** — YAKLAŞAN · `20:00` | Trendyol 1. Lig <https://fixbettv84.com/channel.html?id=bm2>
 - ⏰ **Manisa FK vs Bursaspor** — YAKLAŞAN · `20:00` | Trendyol 1. Lig <https://fixbettv84.com/channel.html?id=trtspor>
@@ -26,6 +25,7 @@
 ## ✅ BİTTİ
 
 - ✅ **River Plate vs I. Rivadavia** — MS · `01:15` | Arjantin Primera Division <https://fixbettv84.com/channel.html?id=smarts>
+- ✅ **Porto Riko vs Türkiye** — MS · `12:30` | FIBA Kadınlar Dünya Kupası <https://fixbettv84.com/channel.html?id=trtspor>
 
 ---
 ## 🏆 Lig Bazlı
@@ -34,15 +34,15 @@
 - ⏰ River Plate vs I. Rivadavia — 01:15
 
 ### FIBA Kadınlar Dünya Kupası
-- 🔴 Porto Riko vs Türkiye — 12:30
-- ⏰ Nijerya vs Fransa — 15:30
+- ⏰ Porto Riko vs Türkiye — 12:30
+- 🔴 Nijerya vs Fransa — 15:30
 
 ### Fransa Ligue 2
 - ⏰ Nantes vs Nancy — 21:45
 
 ### Trendyol 1. Lig
-- ⏰ Esenler Erokspor vs Kayserispor — 17:00
-- ⏰ İstanbulspor vs Iğdırspor — 17:00
+- 🔴 Esenler Erokspor vs Kayserispor — 17:00
+- 🔴 İstanbulspor vs Iğdırspor — 17:00
 - ⏰ Mardin 1969 vs Bodrumspor — 20:00
 - ⏰ Manisa FK vs Bursaspor — 20:00
 
