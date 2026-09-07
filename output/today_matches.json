@@ -9,13 +9,13 @@
       "fixbettv84.com",
       "fixbettv19.com"
     ],
-    "last_checked": "2026-09-07T19:31:02+00:00",
+    "last_checked": "2026-09-07T20:54:10+00:00",
     "note": "OK",
     "probed": 200
   },
   "date": "2026-09-07",
   "timezone": "Europe/Istanbul",
-  "generated_at": "2026-09-07T22:30:26+03:00",
+  "generated_at": "2026-09-07T23:53:33+03:00",
   "matches": [
     {
       "match_id": "smarts",
@@ -303,7 +303,7 @@
       "channel_id": "ss2",
       "logo_home": "https://img.sporekrani.com/teams/eslNA0BywbyRPxZIdPZgRkHDryOQNrb2kMAXtBSo.png",
       "logo_away": "https://img.sporekrani.com/teams/PN7T7NdRQZTxSD7h0otuXh3vWdNuWq46fIUIDB24.png",
-      "status": "live",
+      "status": "finished",
       "started": true,
       "raw_event": "21:45 | İtalya Serie A",
       "url": "https://fixbettv84.com/channel.html?id=ss2",
@@ -328,7 +328,7 @@
       "channel_id": "b4",
       "logo_home": "https://img.sporekrani.com/teams/Dul8NpM4cNEq2jABiVXGw6UJyhpM6LiLcikukaQW.png",
       "logo_away": "https://img.sporekrani.com/teams/KKjwy3Jwuf9mndXm31QneEpHCAursxCvDeoAYeKY.png",
-      "status": "live",
+      "status": "finished",
       "started": true,
       "raw_event": "21:45 | Fransa Ligue 2",
       "url": "https://fixbettv84.com/channel.html?id=b4",

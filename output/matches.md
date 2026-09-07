@@ -1,13 +1,11 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-09-07 19:31  
-> **Toplam maç:** 14  |  **Canlı:** 3  |  **Yaklaşan:** 0
+> **Güncellenme:** 2026-09-07 20:54  
+> **Toplam maç:** 14  |  **Canlı:** 1  |  **Yaklaşan:** 0
 
 ## 🔴 CANLI
 
-- 🔴 **Udinese vs Lazio** — CANLI · `21:45` | İtalya Serie A <https://fixbettv84.com/channel.html?id=ss2>
-- 🔴 **Nantes vs Nancy** — CANLI · `21:45` | Fransa Ligue 2 <https://fixbettv84.com/channel.html?id=b4>
 - 🔴 **Elche vs Real Sociedad** — CANLI · `22:30` | İspanya La Liga <https://fixbettv84.com/channel.html?id=ss>
 
 ## ✅ BİTTİ
@@ -23,6 +21,8 @@
 - ✅ **Göztepe vs Gaziantep FK** — MS · `20:00` | Trendyol Süper Lig <https://fixbettv84.com/channel.html?id=b2>
 - ✅ **Ç.Rizespor vs Alanyaspor** — MS · `20:00` | Trendyol Süper Lig <https://fixbettv84.com/channel.html?id=zirve>
 - ✅ **Getafe vs Celta Vigo** — MS · `20:00` | İspanya La Liga <https://fixbettv84.com/channel.html?id=ss>
+- ✅ **Udinese vs Lazio** — MS · `21:45` | İtalya Serie A <https://fixbettv84.com/channel.html?id=ss2>
+- ✅ **Nantes vs Nancy** — MS · `21:45` | Fransa Ligue 2 <https://fixbettv84.com/channel.html?id=b4>
 
 ---
 ## 🏆 Lig Bazlı
@@ -35,7 +35,7 @@
 - ⏰ Nijerya vs Fransa — 15:30
 
 ### Fransa Ligue 2
-- 🔴 Nantes vs Nancy — 21:45
+- ⏰ Nantes vs Nancy — 21:45
 
 ### Trendyol 1. Lig
 - ⏰ Esenler Erokspor vs Kayserispor — 17:00
@@ -53,7 +53,7 @@
 
 ### İtalya Serie A
 - ⏰ Cagliari vs Lecce — 19:30
-- 🔴 Udinese vs Lazio — 21:45
+- ⏰ Udinese vs Lazio — 21:45
 
 ---
 ## 📺 7/24 KANALLAR (31)
