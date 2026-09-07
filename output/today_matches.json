@@ -9,13 +9,13 @@
       "fixbettv84.com",
       "fixbettv19.com"
     ],
-    "last_checked": "2026-09-07T14:34:18+00:00",
+    "last_checked": "2026-09-07T15:57:07+00:00",
     "note": "OK",
     "probed": 200
   },
   "date": "2026-09-07",
   "timezone": "Europe/Istanbul",
-  "generated_at": "2026-09-07T17:33:37+03:00",
+  "generated_at": "2026-09-07T18:56:31+03:00",
   "matches": [
     {
       "match_id": "smarts",
@@ -78,7 +78,7 @@
       "channel_id": "ss",
       "logo_home": "https://img.sporekrani.com/teams/RGPnIxzXOWKOaD2doYD5q46smgi9AbkaqHe378BV.png",
       "logo_away": "https://img.sporekrani.com/teams/uv5BEd4Mnu1AXmXTMmiEWQmrLysM7e4WLywYhYk3.png",
-      "status": "live",
+      "status": "finished",
       "started": true,
       "raw_event": "15:30 | FIBA Kadınlar Dünya Kupası",
       "url": "https://fixbettv84.com/channel.html?id=ss",

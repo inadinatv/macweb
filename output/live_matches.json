@@ -9,36 +9,11 @@
       "fixbettv84.com",
       "fixbettv19.com"
     ],
-    "last_checked": "2026-09-07T14:34:18+00:00",
+    "last_checked": "2026-09-07T15:57:07+00:00",
     "note": "OK",
     "probed": 200
   },
   "live": [
-    {
-      "match_id": "ss",
-      "home": "Nijerya",
-      "away": "Fransa",
-      "league": "FIBA Kadınlar Dünya Kupası",
-      "time": "15:30",
-      "sport": "Basketbol",
-      "is_match_of_day": false,
-      "channel_id": "ss",
-      "logo_home": "https://img.sporekrani.com/teams/RGPnIxzXOWKOaD2doYD5q46smgi9AbkaqHe378BV.png",
-      "logo_away": "https://img.sporekrani.com/teams/uv5BEd4Mnu1AXmXTMmiEWQmrLysM7e4WLywYhYk3.png",
-      "status": "live",
-      "started": true,
-      "raw_event": "15:30 | FIBA Kadınlar Dünya Kupası",
-      "url": "https://fixbettv84.com/channel.html?id=ss",
-      "fetched_at": "",
-      "status_source": "schedule",
-      "raw_status": "",
-      "score_home": null,
-      "score_away": null,
-      "score_source": "",
-      "score_updated_at": "",
-      "event_id": "",
-      "starts_at": "2026-09-07T15:30:00+03:00"
-    },
     {
       "match_id": "trtspor",
       "home": "Esenler Erokspor",
