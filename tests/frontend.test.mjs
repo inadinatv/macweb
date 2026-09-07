@@ -756,3 +756,177 @@ test('üretilen index aynı şablonun CSS ve player/kart kodunu kullanıyor',()=
   assert.equal(HTML.split('/*BOT_END*/')[1],template.split('/*BOT_END*/')[1], 'index.html yeniden üretilmeli');
   assert.equal(HTML.match(/<style>([\s\S]*?)<\/style>/)[1],template.match(/<style>([\s\S]*?)<\/style>/)[1]);
 });
+
+/* ---------------- LİG PUANI butonu + PUAN DURUMU modalı ---------------- */
+const STANDINGS_JSON = JSON.parse(readFileSync(path.join(ROOT, "output", "standings.json"), "utf8"));
+const leagueBtn = (window) => window.document.getElementById("leagueBtn");
+const modal = (window) => window.document.getElementById("leagueModal");
+const modalOpen = (window) => modal(window).classList.contains("open");
+const bodyRows = (window) => window.document.querySelectorAll("#standingsBody tr");
+
+test("LİG PUANI butonu saatin hemen yanında ve tablo ikonu içeriyor", () => {
+  // buton, saat widget'ı ile aynı header-meta satırında ve ondan SONRA gelmeli
+  assert.ok(HTML.includes('id="liveClock"'), "saat widget'ı yok");
+  assert.ok(HTML.includes('id="leagueBtn"'), "LİG PUANI butonu yok");
+  assert.ok(HTML.includes("LİG PUANI"), "LİG PUANI etiketi yok");
+  assert.ok(/class="league-btn"/.test(HTML), "league-btn sınıfı yok");
+  assert.ok(/\.league-btn \{/.test(HTML), "league-btn CSS'i yok");
+  // solunda küçük tablo ikonu (inline SVG)
+  const btn = HTML.slice(HTML.indexOf('id="leagueBtn"'));
+  assert.ok(/lg-icon[\s\S]{0,80}<svg/.test(btn), "butonun solunda tablo ikonu yok");
+  assert.ok(HTML.indexOf('id="liveClock"') < HTML.indexOf('id="leagueBtn"'), "buton saatten önce gelmemeli");
+  // neon mavi + pembe parlama
+  const css = HTML.slice(HTML.indexOf(".league-btn {"), HTML.indexOf(".league-btn .lg-caret"));
+  assert.ok(/rgba\(0,234,255/.test(css) && /rgba\(255,45,122/.test(css), "mavi+pembe neon parlama yok");
+});
+
+test("PUAN DURUMU modalı backdrop-filter karartma ve neon pembe kenar kullanıyor", () => {
+  assert.ok(/\.modal-overlay \{[\s\S]*?backdrop-filter: blur/.test(HTML), "backdrop-filter karartma yok");
+  assert.ok(/\.modal-panel \{[\s\S]*?border: 2px solid var\(--neon-pink\)/.test(HTML), "neon pembe modal kenarı yok");
+  assert.ok(HTML.includes('id="leagueModalClose"'), "kapatma (X) butonu yok");
+  assert.ok(/<h2 class="modal-title"[^>]*>PUAN DURUMU<\/h2>/.test(HTML), "PUAN DURUMU başlığı yok");
+  assert.ok(/\.modal-title \{[\s\S]*?color: var\(--neon-pink\)/.test(HTML), "başlık neon pembe değil");
+  // erişilebilirlik
+  assert.ok(HTML.includes('aria-modal="true"') && HTML.includes('aria-labelledby="leagueModalTitle"'), "dialog ARIA eksik");
+  // ince satır ayracı
+  assert.ok(/\.standings-table tbody td \{[\s\S]*?border-bottom: 1px solid rgba\(255,255,255,0\.06\)/.test(HTML),
+    "ince satır ayracı yok");
+});
+
+test("tablo başlıkları SIRA/TAKIM/O/G/B/M/AV/P sırasında", () => {
+  const head = HTML.slice(HTML.indexOf('id="standingsTable"'), HTML.indexOf('id="standingsBody"'));
+  const cols = [...head.matchAll(/<th[^>]*>([^<]+)<\/th>/g)].map((m) => m[1]);
+  assert.deepEqual(cols, ["SIRA", "TAKIM", "O", "G", "B", "M", "AV", "P"]);
+});
+
+test("modal başlangıçta kapalı; LİG PUANI'na tıklayınca açılıyor ve tabloyu çiziyor", async () => {
+  const { window, dom } = await loadPage();
+  assert.equal(modalOpen(window), false, "modal açık başlamamalı");
+  assert.equal(bodyRows(window).length, STANDINGS_JSON.leagues[0].rows.length, "satır sayısı gerçek veriyle uyuşmuyor");
+
+  leagueBtn(window).click();
+  assert.equal(modalOpen(window), true, "modal açılmadı");
+  assert.equal(leagueBtn(window).getAttribute("aria-expanded"), "true");
+  assert.equal(window.document.body.style.overflow, "hidden", "arka plan kaydırması kilitlenmedi");
+  assert.equal(window.document.activeElement, window.document.getElementById("leagueModalClose"),
+    "odak kapatma butonuna gitmedi");
+
+  const rows = bodyRows(window);
+  assert.equal(rows.length, 18, "18 takım bekleniyor");
+  const cells = [...rows[0].querySelectorAll("td")].map((td) => td.textContent.trim());
+  assert.equal(cells.length, 8, "8 sütun olmalı");
+  assert.equal(cells[0], "1");
+  assert.ok(cells[1].includes("Galatasaray"), "lider Galatasaray olmalı: " + cells[1]);
+  assert.deepEqual(cells.slice(2), ["4", "3", "1", "0", "+6", "10"], "O/G/B/M/AV/P değerleri yanlış");
+  // son sıradaki takım
+  const last = [...rows[17].querySelectorAll("td")].map((td) => td.textContent.trim());
+  assert.equal(last[0], "18");
+  assert.ok(last[1].includes("Konyaspor"), "son sıra Konyaspor olmalı: " + last[1]);
+  assert.equal(last[7], "0");
+  assert.ok(window.document.getElementById("leagueModalSub").textContent.includes("Trendyol Süper Lig"));
+  dom.window.close();
+});
+
+test("modal X butonu, Escape ve karartılmış alana tıklama ile kapanıyor", async () => {
+  const { window, dom } = await loadPage();
+  const close = window.document.getElementById("leagueModalClose");
+
+  window.inadina.openLeagueModal();
+  assert.equal(modalOpen(window), true);
+  close.click();
+  assert.equal(modalOpen(window), false, "X butonu kapatmadı");
+  assert.equal(window.document.body.style.overflow, "", "kaydırma kilidi açılmadı");
+  assert.equal(leagueBtn(window).getAttribute("aria-expanded"), "false");
+
+  window.inadina.openLeagueModal();
+  window.document.dispatchEvent(new window.KeyboardEvent("keydown", { key: "Escape", bubbles: true }));
+  assert.equal(modalOpen(window), false, "Escape kapatmadı");
+
+  window.inadina.openLeagueModal();
+  modal(window).dispatchEvent(new window.MouseEvent("click", { bubbles: true })); // overlay'in kendisi
+  assert.equal(modalOpen(window), false, "dışarı tıklama kapatmadı");
+
+  window.inadina.openLeagueModal();
+  window.document.querySelector(".modal-panel").dispatchEvent(new window.MouseEvent("click", { bubbles: true }));
+  assert.equal(modalOpen(window), true, "panele tıklama kapatmamalı");
+  dom.window.close();
+});
+
+test("modal açıkken kanal kısayolları çalışmıyor", async () => {
+  const { window, dom } = await loadPage();
+  window.inadina.openLeagueModal();
+  const before = window.inadina.state.currentIndex;
+  window.document.dispatchEvent(new window.KeyboardEvent("keydown", { key: "ArrowRight", bubbles: true }));
+  assert.equal(window.inadina.state.currentIndex, before, "ok tuşu kanal değiştirmemeli");
+  assert.equal(modalOpen(window), true, "ok tuşu modalı kapatmamalı");
+  dom.window.close();
+});
+
+test("puan tablosu yoksa uydurma satır basılmıyor, dürüst boş durum gösteriliyor", async () => {
+  const html = HTML.replace(/let standingsData = \{[\s\S]*?\};\n/, "let standingsData = {leagues: []};\n");
+  assert.notEqual(html, HTML, "standingsData değiştirilemedi");
+  const { window, dom } = await loadPage({ html });
+  window.inadina.openLeagueModal();
+  assert.equal(bodyRows(window).length, 0, "boş tabloda satır olmamalı");
+  assert.equal(window.document.getElementById("standingsTable").hidden, true, "boş tablo gizlenmeli");
+  assert.equal(window.document.getElementById("standingsEmpty").hidden, false, "boş durum mesajı görünmeli");
+  assert.ok(window.document.getElementById("standingsEmpty").textContent.includes("uydurma"),
+    "boş durum kaynağı açıklamalı");
+  dom.window.close();
+});
+
+test("eksik sayısal alan tire gösterilir, uydurma sayıya dönüşmez", async () => {
+  assert.deepEqual(
+    (await loadPage()).window.inadina.normalizeStandings({
+      source: "test", generated_at: "",
+      leagues: [{ id: "x", name: "X", season: "", updated_at: "", rows: [
+        { team: "A Takımı", rank: 1, played: 3, wins: 1, draws: null, losses: 2, diff: null, points: 3 },
+      ] }],
+    }).leagues[0].rows[0].draws, null);
+  const { window, dom } = await loadPage();
+  const norm = window.inadina.normalizeStandings({ leagues: [{ rows: [
+    { team: "<img src=x onerror=alert(1)>", played: "çok", wins: "1", draws: 0, losses: 0, diff: 0, points: 3,
+      logo: "javascript:alert(1)" },
+  ] }] });
+  assert.equal(norm.leagues[0].rows[0].played, null, "sayı olmayan O null olmalı");
+  assert.equal(norm.leagues[0].rows[0].logo, "", "https olmayan logo atılmalı");
+  assert.equal(norm.leagues[0].rows[0].team, "<img src=x onerror=alert(1)>", "takım adı korunmalı");
+  dom.window.close();
+});
+
+test("uzak puan durumu tazelenir; boş yanıt son bilinen tabloyu silmez", async () => {
+  const fresh = JSON.parse(JSON.stringify(STANDINGS_JSON));
+  fresh.leagues[0].rows[0].points = 99;
+  fresh.leagues[0].rows[0].team = "Taze Takım";
+
+  const { window, dom } = await loadPage({
+    fetchImpl: async (url) => ({ ok: true, json: async () => (String(url).includes("standings") ? fresh : { panels: [] }) }),
+  });
+  await window.inadina.refreshStandings(true);
+  const first = [...bodyRows(window)[0].querySelectorAll("td")].map((td) => td.textContent.trim());
+  assert.ok(first[1].includes("Taze Takım"), "taze tablo çizilmedi");
+  assert.equal(first[7], "99");
+
+  const empty = await (await loadPage({
+    fetchImpl: async (url) => ({ ok: true, json: async () => (String(url).includes("standings") ? { leagues: [] } : { panels: [] }) }),
+  })).window.inadina.refreshStandings(true);
+  assert.equal(empty, false, "boş yanıt kabul edilmemeli");
+
+  const { window: w3, dom: d3 } = await loadPage({
+    fetchImpl: async () => ({ ok: false, status: 404, json: async () => ({}) }),
+  });
+  assert.equal(await w3.inadina.refreshStandings(true), false, "hata yanıtı false dönmeli");
+  assert.equal(bodyRows(w3).length, 18, "kaynak kesilince gömülü tablo kalmalı");
+  d3.window.close();
+  dom.window.close();
+});
+
+test("üretilen index.html gerçek puan durumu verisini gömüyor", () => {
+  assert.ok(HTML.includes('"Trendyol Süper Lig"'), "lig adı gömülmedi");
+  assert.ok(HTML.includes('"source": "espn"') || HTML.includes('"source":"espn"'), "kaynak belirtilmedi");
+  assert.ok(HTML.includes('const standingsSource = "output/standings.json"'), "canlı tazeleme yolu yok");
+  // JS'siz ortam için noscript tablosu
+  const noscript = HTML.slice(HTML.indexOf("<noscript>"), HTML.indexOf("</noscript>"));
+  assert.ok(/PUAN DURUMU/.test(noscript) && /Galatasaray/.test(noscript), "noscript puan tablosu yok");
+  assert.ok(!/Sunucu/i.test(HTML), "'Sunucu' yazısı olmamalı");
+});

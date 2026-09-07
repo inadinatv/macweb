@@ -21,7 +21,8 @@ from .http_transport import public_get
 from .stream_proxy import StreamError, StreamProxy, validate_url
 
 log = logging.getLogger(__name__)
-STATIC_FILES = {"index.html", "output/today_matches.json", "output/extra_channels.json", "output/channels.json"}
+STATIC_FILES = {"index.html", "output/today_matches.json", "output/extra_channels.json",
+                "output/channels.json", "output/standings.json"}
 
 
 class PublishedRegistry:

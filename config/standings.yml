@@ -1,0 +1,29 @@
+# Lig puan durumu (PUAN DURUMU modalı) — gerçek kaynak: ESPN standings.
+#
+# Skorlardaki ilke burada da geçerlidir (bkz. config/scores.yml):
+#   * Sayfa asla uydurma/sabit puan tablosu göstermez.
+#   * Sıra, O/G/B/M, averaj ve puan değerleri kaynaktan geldiği gibi yazılır.
+#   * Kaynak erişilemezse son bilinen tablo (output/standings.json) korunur;
+#     tablo hiç yoksa arayüz dürüst bir "veri yok" mesajı gösterir.
+enabled: true
+request_timeout_seconds: 8
+max_workers: 4
+
+# Gösterilecek ligler. `path` ESPN standings yoludur (scores.yml ile aynı biçim).
+leagues:
+  - { name: "Trendyol Süper Lig", sport: "Futbol", path: "soccer/tur.1" }
+
+# Sunum katmanı: ESPN takım adlarını ASCII katlamalı verir (Besiktas, Fenerbahce …).
+# Bu eşleme YALNIZCA görünen adı Türkçeleştirir; hiçbir sayısal değeri değiştirmez
+# ve eşleşmeyen takımlar kaynaktaki adıyla gösterilir (scores.yml'deki team_aliases
+# ile aynı yaklaşım).
+display_names:
+  soccer/tur.1:
+    Besiktas: "Beşiktaş"
+    Genclerbirligi: "Gençlerbirliği"
+    Fenerbahce: "Fenerbahçe"
+    Kasimpasa: "Kasımpaşa"
+    Caykur Rizespor: "Çaykur Rizespor"
+    Istanbul Basaksehir: "Başakşehir"
+    Eyupspor: "Eyüpspor"
+    Goztepe: "Göztepe"

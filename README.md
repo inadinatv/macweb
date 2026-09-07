@@ -105,11 +105,31 @@ raporlar üreten gelişmiş otomasyon botu.
    - Yeni bir extra panel eklemek için `config/extra_channels.yml` → `panels` altına yeni blok
      eklemek yeterlidir; sayfa/bot tarafında kod değişikliği gerekmez.
 
-7. **Raporlar** (`src/fixbet/reports.py` → `output/`)
+7. **🏆 Lig puan durumu — LİG PUANI butonu** (`src/fixbet/standings.py` + `config/standings.yml`)
+   - Saatin hemen yanındaki **LİG PUANI** butonu (neon mavi/pembe kenar, solda tablo ikonu)
+     ekranın ortasında karartılmış (`backdrop-filter`) bir **PUAN DURUMU** modalı açar.
+     Modalın dış kenarları neon pembe, sağ üstünde kapatma (X) butonu vardır; **Esc**,
+     X veya karartılmış alana tıklama ile kapanır.
+   - Tablo sütunları: **SIRA · TAKIM · O · G · B · M · AV · P**, satır aralarında ince ayraç çizgileri.
+     Kaynak notundan gelen Avrupa/düşme hattı rozetleri sıra hücresinde renklendirilir.
+   - **Veri gerçek kaynaktan gelir** (ESPN `standings` ucu, `config/standings.yml → leagues`).
+     Skorlardaki ilke burada da geçerlidir: **sayfa asla uydurma puan tablosu göstermez.**
+     Sıra/O/G/B/M/averaj/puan kaynaktan geldiği gibi yazılır; yalnızca kaynak averajı hiç
+     vermediğinde attığı-yediği farkı, puan eksikse G×3+B kuralı uygulanır (ikisi de kaynağın
+     kendi sayılarından). `O` veya `G/B/M` eksikse satır **atlanır**, doldurulmaz.
+   - Kaynak bir lig için erişilemezse o ligin **son bilinen** tablosu korunur
+     (`output/standings.json`); tablo hiç yoksa modal dürüst bir "veri yok" mesajı gösterir.
+   - `config/standings.yml → display_names` yalnızca ESPN'in ASCII takım adlarını Türkçeleştirir
+     (Besiktas → Beşiktaş); **hiçbir sayısal değeri değiştirmez**, eşleşmeyen ad aynen kalır.
+   - Sayfa açılışta ve 5 dakikada bir `output/standings.json` dosyasını okur; JS kapalıysa
+     `<noscript>` içinde aynı tablo düz HTML olarak basılır.
+
+8. **Raporlar** (`src/fixbet/reports.py` → `output/`)
    - `report.html` → tarayıcıda açılan, kendi kendine yeten canlı panel (maçlar + 7/24 kanallar).
    - `matches.md` → okunabilir günlük maç listesi + kanal listesi.
    - `matches.json`, `live_matches.json`, `today_matches.json`, `channels.json` → makine okunur veri.
    - `extra_channels.json` → EXTRA panellerin güncel m3u8 adresleri (sayfa 5 dakikada bir okur).
+   - `standings.json` → lig puan durumu (sayfa 5 dakikada bir okur).
 
 ---
 
@@ -136,6 +156,9 @@ python fixbet.py build-index
 # Sadece EXTRA panelleri (Atom / Selçuk m3u8 adresleri) yenile ve sayfayı güncelle
 python fixbet.py extras
 
+# Sadece lig puan durumunu çek ve sayfayı güncelle
+python fixbet.py standings
+
 # İsteğe bağlı sayfa + HLS hizmeti (üretimde HTTPS reverse proxy gerekir)
 python fixbet.py web --host 0.0.0.0 --port 8000
 
@@ -157,6 +180,7 @@ python tests/test_pipeline.py     # maç ayrıştırma + canlı/yaklaşan/bitti 
 python tests/test_channels.py     # 7/24 kanal listesi + marka grupları
 python tests/test_site.py         # index.html üretimi (şablon + gerçek veri)
 python tests/test_extras.py       # EXTRA paneller: m3u8 çıkarma, ayna taraması, yedek kaynaklar (ağsız)
+python tests/test_standings.py    # puan durumu ayrıştırma, uydurma satır üretilmemesi, yedek tablo (ağsız)
 
 npm install && npm test           # sayfanın kendi JS'i jsdom içinde çalıştırılır
 python tests/test_frontend.py     # aynı arayüz testlerinin pytest/sade-python sarmalayıcısı
@@ -167,7 +191,9 @@ npm run test:browser             # gerçek HLS medya + Chromium + mobil düzen
 Arayüz testleri üretilen `index.html`'in JavaScript'ini gerçekten çalıştırır: kanal
 kartlarının çizilmesi, ızgara/liste geçişi, karta tıklayınca yayının açılıp player'e
 kaydırılması, günün maçlarının gerçek veriden gelmesi, arama/filtre ve canlı tazeleme,
-EXTRA sekmesi ve HLS oynatıcı (hls.js / yerel HLS, kaynak değiştirme, hata katmanı, derin bağlantı).
+EXTRA sekmesi ve HLS oynatıcı (hls.js / yerel HLS, kaynak değiştirme, hata katmanı, derin bağlantı),
+**LİG PUANI / PUAN DURUMU modalı** (açma-kapama, sütun sırası, gerçek tablonun çizilmesi,
+tabloda veri yokken uydurma satır basılmaması).
 Gerçek Chromium testleri ayrıca sentetik TS/fMP4/AES/byte-range medyayı oynatır;
 header gerektiren key/segmentlerin gerçek backend üzerinden erişildiğini doğrular.
 `workflow-tests-example.yml` dosyasını `.github/workflows/tests.yml` olarak kopyalarsanız
@@ -198,6 +224,7 @@ fixbet-bot/
 ├── config/
 │   ├── settings.yml          # bot/kaynak/izleme/kategori + HLS hizmeti ayarları
 │   ├── scores.yml            # ikincil skor kaynağı, lig ve açık takım adı eşlemeleri
+│   ├── standings.yml         # 🏆 lig puan durumu (PUAN DURUMU modalı) ligleri + görünen ad eşlemesi
 │   ├── mirrors.yml           # güncel adres arayan kalıplar
 │   ├── channels.yml          # bilinen kanal kimlikleri
 │   ├── extra_channels.yml    # ⚡ EXTRA paneller (Atom Spor + Selçuk Spor m3u8, yeni paneller buraya)
@@ -210,6 +237,7 @@ fixbet-bot/
 │   ├── categorizer.py        # durum/lig/spor/gün kategorileri
 │   ├── match_state.py        # paylaşılan status sözlüğü ve skor doğrulama
 │   ├── scores.py             # kesin etkinlik eşleşmesiyle gerçek skor zenginleştirmesi
+│   ├── standings.py          # 🏆 lig puan durumu (ESPN standings -> output/standings.json)
 │   ├── stream_proxy.py       # izin listeli HLS playlist/segment/key taşıması
 │   ├── http_transport.py     # public-IP soket kontrolü; TLS/SNI doğrulaması
 │   ├── web.py                # isteğe bağlı HTTP hizmeti (TLS proxy arkasında)

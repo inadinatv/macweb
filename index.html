@@ -86,6 +86,38 @@
             font-family: 'Barlow Condensed', sans-serif; font-weight: 700; letter-spacing: 1.5px;
             color: var(--neon-gold); font-size: 1rem;
         }
+
+        /* ---------- LİG PUANI butonu (saatin hemen yanı) ---------- */
+        .league-btn {
+            position: relative; display: inline-flex; align-items: center; gap: 8px;
+            padding: 6px 15px 6px 12px; border-radius: 20px; cursor: pointer;
+            font-family: 'Barlow Condensed', sans-serif; font-weight: 700; letter-spacing: 1.6px;
+            font-size: 0.95rem; color: #eaf7ff; text-transform: uppercase;
+            /* Kenarlar: neon mavi → pembe degrade (padding-box/border-box tekniği) */
+            background:
+                linear-gradient(#0f0c22, #14102c) padding-box,
+                linear-gradient(120deg, var(--neon-cyan) 0%, #7b6bff 45%, var(--neon-pink) 100%) border-box;
+            border: 1px solid transparent;
+            box-shadow:
+                0 0 10px rgba(0,234,255,0.35), 0 0 22px rgba(255,45,122,0.30),
+                inset 0 0 12px rgba(0,234,255,0.10);
+            transition: transform .25s ease, box-shadow .25s ease, filter .25s ease;
+        }
+        .league-btn:hover {
+            transform: translateY(-1px);
+            box-shadow:
+                0 0 16px rgba(0,234,255,0.55), 0 0 34px rgba(255,45,122,0.45),
+                inset 0 0 16px rgba(255,45,122,0.14);
+        }
+        .league-btn:active { transform: translateY(0); }
+        .league-btn:focus-visible { outline: 2px solid var(--neon-cyan); outline-offset: 2px; }
+        .league-btn .lg-icon { display: flex; align-items: center; color: var(--neon-cyan); filter: drop-shadow(0 0 6px rgba(0,234,255,0.75)); }
+        .league-btn .lg-icon svg { width: 15px; height: 15px; display: block; }
+        .league-btn .lg-text {
+            background: linear-gradient(120deg, var(--neon-cyan), #ffffff 55%, var(--neon-pink));
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+        }
+        .league-btn .lg-caret { font-size: 0.7rem; opacity: .75; color: var(--neon-pink); }
         .search-box { position: relative; min-width: 230px; z-index: 1; }
         .search-input {
             width: 100%; background: rgba(20,16,40,0.8); border: 1px solid rgba(155,77,255,0.3);
@@ -447,6 +479,90 @@
             grid-column: 1/-1; background: rgba(255,255,255,0.02); border: 1px dashed rgba(255,255,255,0.1); border-radius: 14px;
         }
 
+        /* ---------- PUAN DURUMU modalı ---------- */
+        .modal-overlay {
+            position: fixed; inset: 0; z-index: 900; display: none;
+            align-items: center; justify-content: center; padding: 20px;
+            /* Arka planı hafif karart + bulanıklaştır */
+            background: rgba(4,3,10,0.72);
+            backdrop-filter: blur(9px) saturate(120%); -webkit-backdrop-filter: blur(9px) saturate(120%);
+        }
+        .modal-overlay.open { display: flex; animation: modalFade .22s ease; }
+        @keyframes modalFade { from { opacity: 0; } to { opacity: 1; } }
+        .modal-panel {
+            position: relative; width: min(660px, 100%); max-height: min(82vh, 720px);
+            display: flex; flex-direction: column; overflow: hidden;
+            background: rgba(11,9,24,0.97);
+            /* Dış kenarlar: belirgin neon pembe */
+            border: 2px solid var(--neon-pink); border-radius: 20px;
+            box-shadow: var(--glow-pink), 0 0 70px rgba(255,45,122,0.22), 0 24px 60px rgba(0,0,0,0.6);
+            animation: modalPop .26s cubic-bezier(.2,.9,.3,1.15);
+        }
+        @keyframes modalPop { from { transform: translateY(14px) scale(.97); opacity: 0; } to { transform: none; opacity: 1; } }
+        .modal-head {
+            display: flex; align-items: flex-start; justify-content: space-between; gap: 12px;
+            padding: 16px 18px 12px; border-bottom: 1px solid rgba(255,45,122,0.28);
+            background: linear-gradient(180deg, rgba(255,45,122,0.10), rgba(255,45,122,0));
+        }
+        .modal-title {
+            font-family: 'Bebas Neue', sans-serif; font-size: 1.85rem; line-height: 1.05; letter-spacing: 3px;
+            /* Neon pembe harfler */
+            color: var(--neon-pink);
+            text-shadow: 0 0 10px rgba(255,45,122,0.85), 0 0 26px rgba(255,45,122,0.45), 0 0 48px rgba(255,45,122,0.22);
+        }
+        .modal-sub { color: var(--text-muted); font-size: 0.74rem; letter-spacing: .4px; margin-top: 3px; }
+        .modal-close {
+            flex: 0 0 auto; width: 34px; height: 34px; display: flex; align-items: center; justify-content: center;
+            border-radius: 11px; cursor: pointer; font-size: 1rem; line-height: 1; color: #ffd7e6;
+            background: rgba(255,45,122,0.12); border: 1px solid rgba(255,45,122,0.45);
+            transition: all .25s ease; outline: none; font-family: inherit;
+        }
+        .modal-close:hover { background: rgba(255,45,122,0.32); color: #fff; box-shadow: 0 0 16px rgba(255,45,122,0.55); transform: rotate(90deg); }
+        .modal-close:focus-visible { outline: 2px solid var(--neon-cyan); outline-offset: 2px; }
+        .modal-body { overflow: auto; padding: 6px 18px 18px; }
+        .modal-body::-webkit-scrollbar { width: 8px; }
+        .modal-body::-webkit-scrollbar-thumb { background: rgba(255,45,122,0.35); border-radius: 8px; }
+
+        .standings-table { width: 100%; border-collapse: collapse; font-size: 0.86rem; table-layout: fixed; }
+        .standings-table thead th {
+            font-family: 'Barlow Condensed', sans-serif; font-weight: 700; letter-spacing: 1.2px;
+            font-size: 0.72rem; color: var(--neon-pink); text-transform: uppercase; text-align: right;
+            padding: 10px 6px 8px; border-bottom: 1px solid rgba(255,45,122,0.35); white-space: nowrap;
+        }
+        .standings-table thead th.col-rank, .standings-table thead th.col-team { text-align: left; }
+        .standings-table tbody td {
+            padding: 8px 6px; text-align: right; color: #d9d2ec; font-variant-numeric: tabular-nums;
+            /* Satır arası çok ince, karanlık temaya uygun ayrıştırıcı çizgi */
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+        }
+        .standings-table tbody tr:last-child td { border-bottom: none; }
+        .standings-table tbody tr { transition: background .2s ease; }
+        .standings-table tbody tr:hover { background: rgba(255,45,122,0.07); }
+        .standings-table .cell-rank { text-align: left; width: 44px; color: var(--text-muted); font-weight: 700; }
+        .standings-table .cell-team { text-align: left; color: #fff; font-weight: 600; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+        .standings-table .cell-team .t-logo { width: 17px; height: 17px; margin-right: 7px; vertical-align: -3px; object-fit: contain; }
+        .standings-table .cell-points { color: var(--neon-gold); font-weight: 800; font-size: 0.95rem; text-shadow: 0 0 10px rgba(255,204,51,0.35); }
+        .standings-table .cell-pos { color: #8fd8ff; }
+        /* Sıra rozetleri: Avrupa hattı / düşme hattı (kaynak notundan gelir) */
+        .standings-table .cell-rank .rk {
+            display: inline-flex; align-items: center; justify-content: center;
+            min-width: 22px; height: 22px; padding: 0 5px; border-radius: 7px;
+            background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.10); font-size: 0.78rem;
+        }
+        .standings-table .cell-rank .rk.qualify { color: #7dffc0; border-color: rgba(0,255,136,0.45); background: rgba(0,255,136,0.10); }
+        .standings-table .cell-rank .rk.relegate { color: #ff9ba7; border-color: rgba(255,45,122,0.5); background: rgba(255,45,122,0.12); }
+        .standings-note {
+            display: flex; align-items: center; gap: 12px; flex-wrap: wrap; justify-content: center;
+            margin-top: 12px; padding-top: 10px; border-top: 1px solid rgba(255,255,255,0.06);
+            color: var(--text-muted); font-size: 0.7rem;
+        }
+        .standings-note b { color: #b6adc9; font-weight: 700; }
+        .standings-empty { padding: 26px 14px; text-align: center; color: var(--text-muted); font-size: 0.88rem; line-height: 1.7; }
+        .standings-empty b { color: var(--neon-pink); }
+        .modal-foot { display: flex; align-items: center; justify-content: space-between; gap: 10px; flex-wrap: wrap;
+            padding: 10px 18px; border-top: 1px solid rgba(255,45,122,0.22); background: rgba(255,45,122,0.05);
+            color: var(--text-muted); font-size: 0.7rem; }
+
         /* ---------- Footer ---------- */
         .site-footer {
             margin-top: 18px; padding: 14px 18px; border-radius: 16px;
@@ -483,6 +599,16 @@
             .match-grid { grid-template-columns: 1fr; }
             .tab-btn { font-size: 0.92rem; padding: 8px 14px; }
             .view-btn { font-size: 0.78rem; padding: 5px 9px; }
+            .league-btn { padding: 6px 12px 6px 10px; font-size: 0.88rem; letter-spacing: 1.2px; }
+            .modal-overlay { padding: 10px; }
+            .modal-panel { max-height: 88vh; border-radius: 16px; }
+            .modal-title { font-size: 1.45rem; letter-spacing: 2px; }
+            .modal-body { padding: 4px 10px 12px; }
+            .standings-table { font-size: 0.78rem; }
+            .standings-table thead th { font-size: 0.66rem; padding: 8px 3px 6px; letter-spacing: .6px; }
+            .standings-table tbody td { padding: 7px 3px; }
+            .standings-table .cell-rank { width: 34px; }
+            .standings-table .cell-team .t-logo { display: none; }
         }
         @media (prefers-reduced-motion: reduce) {
             * { animation: none !important; transition: none !important; }
@@ -500,6 +626,12 @@
             </div>
             <div class="header-meta">
                 <div class="clock-chip" title="Yerel saat">🕒 <span id="liveClock">--:--</span></div>
+                <button type="button" class="league-btn" id="leagueBtn" title="Lig puan durumunu aç"
+                        aria-haspopup="dialog" aria-controls="leagueModal" aria-expanded="false">
+                    <span class="lg-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3.5" width="18" height="17" rx="2.4"></rect><path d="M3 9.3h18M3 14.9h18M9.2 9.3v11.2M15 9.3v11.2"></path></svg></span>
+                    <span class="lg-text">LİG PUANI</span>
+                    <span class="lg-caret" aria-hidden="true">▾</span>
+                </button>
                 <div class="search-box">
                     <span class="search-icon">🔍</span>
                     <input type="text" id="searchInput" class="search-input" placeholder="Kanal veya maç ara..." aria-label="Kanal veya maç ara" />
@@ -625,8 +757,45 @@
                 <h2 style="margin-bottom:10px;">Günün Maçları</h2>
                 <ul class="match-list"><li class="match-row done"><b>01:15</b> River Plate - I. Rivadavia <span class="match-league">(Arjantin Primera Division)</span><span class="match-badge done">MS</span></li><li class="match-row done"><b>12:30</b> Porto Riko - Türkiye <span class="match-league">(FIBA Kadınlar Dünya Kupası)</span><span class="match-badge done">MS</span></li><li class="match-row done"><b>15:30</b> Nijerya - Fransa <span class="match-league">(FIBA Kadınlar Dünya Kupası)</span><span class="match-badge done">MS</span></li><li class="match-row done"><b>17:00</b> Esenler Erokspor - Kayserispor <span class="match-league">(Trendyol 1. Lig)</span><span class="match-badge done">MS</span></li><li class="match-row done"><b>17:00</b> İstanbulspor - Iğdırspor <span class="match-league">(Trendyol 1. Lig)</span><span class="match-badge done">MS</span></li><li class="match-row done"><b>19:30</b> Cagliari - Lecce <span class="match-league">(İtalya Serie A)</span><span class="match-badge done">MS</span></li><li class="match-row done"><b>20:00</b> Mardin 1969 - Bodrumspor <span class="match-league">(Trendyol 1. Lig)</span><span class="match-badge done">MS</span></li><li class="match-row done"><b>20:00</b> Manisa FK - Bursaspor <span class="match-league">(Trendyol 1. Lig)</span><span class="match-badge done">MS</span></li><li class="match-row done"><b>20:00</b> Göztepe - Gaziantep FK <span class="match-league">(Trendyol Süper Lig)</span><span class="match-badge done">MS</span></li><li class="match-row done"><b>20:00</b> Ç.Rizespor - Alanyaspor <span class="match-league">(Trendyol Süper Lig)</span><span class="match-badge done">MS</span></li><li class="match-row done"><b>20:00</b> Getafe - Celta Vigo <span class="match-league">(İspanya La Liga)</span><span class="match-badge done">MS</span></li><li class="match-row live"><b>21:45</b> Udinese - Lazio <span class="match-league">(İtalya Serie A)</span><span class="match-badge live">CANLI</span></li><li class="match-row live"><b>21:45</b> Nantes - Nancy <span class="match-league">(Fransa Ligue 2)</span><span class="match-badge live">CANLI</span></li><li class="match-row live"><b>22:30</b> Elche - Real Sociedad <span class="match-league">(İspanya La Liga)</span><span class="match-badge live">CANLI</span></li></ul>
                 <h3 style="margin:14px 0 6px;">⚡ ATOM SPOR</h3><ul class="match-list"><li><a href="https://corestream.ardastream.live//beintv/tracks-v1a1/mono.m3u8" target="_blank" rel="noopener">BEIN SPORTS 1</a> <small>(m3u8)</small></li><li><a href="https://corestream.ardastream.live//bein2/tracks-v1a1/mono.m3u8" target="_blank" rel="noopener">BEIN SPORTS 2</a> <small>(m3u8)</small></li><li><a href="https://corestream.ardastream.live//bein3/tracks-v1a1/mono.m3u8" target="_blank" rel="noopener">BEIN SPORTS 3</a> <small>(m3u8)</small></li><li><a href="https://corestream.ardastream.live//bein4/tracks-v1a1/mono.m3u8" target="_blank" rel="noopener">BEIN SPORTS 4</a> <small>(m3u8)</small></li><li><a href="https://tv.atomspor.workers.dev/?ID=bein-sports-5" target="_blank" rel="noopener">BEIN SPORTS 5</a> <small>(m3u8)</small></li><li><a href="https://corestream.ardastream.live//s-sport/tracks-v1a1/mono.m3u8" target="_blank" rel="noopener">S SPORT</a> <small>(m3u8)</small></li><li><a href="https://corestream.ardastream.live//s-sport2/tracks-v1a1/mono.m3u8" target="_blank" rel="noopener">S SPORT 2</a> <small>(m3u8)</small></li><li><a href="https://tv.atomspor.workers.dev/?ID=ssport-plus" target="_blank" rel="noopener">S SPORT PLUS</a> <small>(m3u8)</small></li><li><a href="https://tv.atomspor.workers.dev/?ID=tivibu-spor-1" target="_blank" rel="noopener">TIVIBU SPOR 1</a> <small>(m3u8)</small></li><li><a href="https://tv.atomspor.workers.dev/?ID=tivibu-spor-2" target="_blank" rel="noopener">TIVIBU SPOR 2</a> <small>(m3u8)</small></li><li><a href="https://tv.atomspor.workers.dev/?ID=tivibu-spor-3" target="_blank" rel="noopener">TIVIBU SPOR 3</a> <small>(m3u8)</small></li><li><a href="https://tv.atomspor.workers.dev/?ID=smart-spor" target="_blank" rel="noopener">SMARTSPOR</a> <small>(m3u8)</small></li><li><a href="https://tv.atomspor.workers.dev/?ID=tv-8-5" target="_blank" rel="noopener">TV 8,5</a> <small>(m3u8)</small></li><li><a href="https://tv.atomspor.workers.dev/?ID=bein-sports-haber" target="_blank" rel="noopener">BEIN SPORTS HABER</a> <small>(m3u8)</small></li></ul><h3 style="margin:14px 0 6px;">⚡ SELÇUK SPOR</h3><ul class="match-list"><li><a href="https://dga1op10s1u3lea.82250d06d39d38.click/live/selcukbeinsports1/playlist.m3u8" target="_blank" rel="noopener">BEIN SPORTS 1</a> <small>(m3u8)</small></li><li><a href="https://dga1op10s1u3lea.82250d06d39d38.click/live/selcukbeinsports2/playlist.m3u8" target="_blank" rel="noopener">BEIN SPORTS 2</a> <small>(m3u8)</small></li><li><a href="https://dga1op10s1u3lea.82250d06d39d38.click/live/selcukbeinsports3/playlist.m3u8" target="_blank" rel="noopener">BEIN SPORTS 3</a> <small>(m3u8)</small></li><li><a href="https://dga1op10s1u3lea.82250d06d39d38.click/live/selcukbeinsports4/playlist.m3u8" target="_blank" rel="noopener">BEIN SPORTS 4</a> <small>(m3u8)</small></li><li><a href="https://dga1op10s1u3lea.82250d06d39d38.click/live/selcukbeinsports5/playlist.m3u8" target="_blank" rel="noopener">BEIN SPORTS 5</a> <small>(m3u8)</small></li><li><a href="https://dga1op10s1u3lea.82250d06d39d38.click/live/selcukbeinsportsmax1/playlist.m3u8" target="_blank" rel="noopener">BEIN SPORTS MAX 1</a> <small>(m3u8)</small></li><li><a href="https://dga1op10s1u3lea.82250d06d39d38.click/live/selcukbeinsportsmax2/playlist.m3u8" target="_blank" rel="noopener">BEIN SPORTS MAX 2</a> <small>(m3u8)</small></li><li><a href="https://dga1op10s1u3lea.82250d06d39d38.click/live/selcukssport/playlist.m3u8" target="_blank" rel="noopener">S SPORT</a> <small>(m3u8)</small></li><li><a href="https://dga1op10s1u3lea.82250d06d39d38.click/live/selcukssport2/playlist.m3u8" target="_blank" rel="noopener">S SPORT 2</a> <small>(m3u8)</small></li><li><a href="https://dga1op10s1u3lea.82250d06d39d38.click/live/selcuktivibuspor1/playlist.m3u8" target="_blank" rel="noopener">TIVIBU SPOR 1</a> <small>(m3u8)</small></li><li><a href="https://dga1op10s1u3lea.82250d06d39d38.click/live/selcuktivibuspor2/playlist.m3u8" target="_blank" rel="noopener">TIVIBU SPOR 2</a> <small>(m3u8)</small></li><li><a href="https://dga1op10s1u3lea.82250d06d39d38.click/live/selcuksmartspor/playlist.m3u8" target="_blank" rel="noopener">SMARTSPOR</a> <small>(m3u8)</small></li><li><a href="https://dga1op10s1u3lea.82250d06d39d38.click/live/selcukaspor/playlist.m3u8" target="_blank" rel="noopener">A SPOR</a> <small>(m3u8)</small></li><li><a href="https://dga1op10s1u3lea.82250d06d39d38.click/live/selcukeurosport1/playlist.m3u8" target="_blank" rel="noopener">EUROSPORT 1</a> <small>(m3u8)</small></li></ul>
+                <h3 style="margin:14px 0 6px;">🏆 Trendyol Süper Lig — PUAN DURUMU</h3><table style="border-collapse:collapse;width:100%;font-size:13px;color:#f4efff;"><thead><tr style="color:#ff2d7a;"><th style="padding:4px 6px;text-align:left;border-bottom:1px solid rgba(255,255,255,0.12);">SIRA</th><th style="padding:4px 6px;text-align:left;border-bottom:1px solid rgba(255,255,255,0.12);">TAKIM</th><th style="padding:4px 6px;text-align:right;border-bottom:1px solid rgba(255,255,255,0.12);">O</th><th style="padding:4px 6px;text-align:right;border-bottom:1px solid rgba(255,255,255,0.12);">G</th><th style="padding:4px 6px;text-align:right;border-bottom:1px solid rgba(255,255,255,0.12);">B</th><th style="padding:4px 6px;text-align:right;border-bottom:1px solid rgba(255,255,255,0.12);">M</th><th style="padding:4px 6px;text-align:right;border-bottom:1px solid rgba(255,255,255,0.12);">AV</th><th style="padding:4px 6px;text-align:right;border-bottom:1px solid rgba(255,255,255,0.12);">P</th></tr></thead><tbody><tr><td style="padding:4px 6px;border-bottom:1px solid rgba(255,255,255,0.07);">1</td><td style="padding:4px 6px;border-bottom:1px solid rgba(255,255,255,0.07);">Galatasaray</td><td style="padding:4px 6px;text-align:right;border-bottom:1px solid rgba(255,255,255,0.07);">4</td><td style="padding:4px 6px;text-align:right;border-bottom:1px solid rgba(255,255,255,0.07);">3</td><td style="padding:4px 6px;text-align:right;border-bottom:1px solid rgba(255,255,255,0.07);">1</td><td style="padding:4px 6px;text-align:right;border-bottom:1px solid rgba(255,255,255,0.07);">0</td><td style="padding:4px 6px;text-align:right;border-bottom:1px solid rgba(255,255,255,0.07);">6</td><td style="padding:4px 6px;text-align:right;border-bottom:1px solid rgba(255,255,255,0.07);"><b>10</b></td></tr><tr><td style="padding:4px 6px;border-bottom:1px solid rgba(255,255,255,0.07);">2</td><td style="padding:4px 6px;border-bottom:1px solid rgba(255,255,255,0.07);">Beşiktaş</td><td style="padding:4px 6px;text-align:right;border-bottom:1px solid rgba(255,255,255,0.07);">4</td><td style="padding:4px 6px;text-align:right;border-bottom:1px solid rgba(255,255,255,0.07);">3</td><td style="padding:4px 6px;text-align:right;border-bottom:1px solid rgba(255,255,255,0.07);">0</td><td style="padding:4px 6px;text-align:right;border-bottom:1px solid rgba(255,255,255,0.07);">1</td><td style="padding:4px 6px;text-align:right;border-bottom:1px solid rgba(255,255,255,0.07);">5</td><td style="padding:4px 6px;text-align:right;border-bottom:1px solid rgba(255,255,255,0.07);"><b>9</b></td></tr><tr><td style="padding:4px 6px;border-bottom:1px solid rgba(255,255,255,0.07);">3</td><td style="padding:4px 6px;border-bottom:1px solid rgba(255,255,255,0.07);">Kocaelispor</td><td style="padding:4px 6px;text-align:right;border-bottom:1px solid rgba(255,255,255,0.07);">4</td><td style="padding:4px 6px;text-align:right;border-bottom:1px solid rgba(255,255,255,0.07);">3</td><td style="padding:4px 6px;text-align:right;border-bottom:1px solid rgba(255,255,255,0.07);">0</td><td style="padding:4px 6px;text-align:right;border-bottom:1px solid rgba(255,255,255,0.07);">1</td><td style="padding:4px 6px;text-align:right;border-bottom:1px solid rgba(255,255,255,0.07);">2</td><td style="padding:4px 6px;text-align:right;border-bottom:1px solid rgba(255,255,255,0.07);"><b>9</b></td></tr><tr><td style="padding:4px 6px;border-bottom:1px solid rgba(255,255,255,0.07);">4</td><td style="padding:4px 6px;border-bottom:1px solid rgba(255,255,255,0.07);">Trabzonspor</td><td style="padding:4px 6px;text-align:right;border-bottom:1px solid rgba(255,255,255,0.07);">4</td><td style="padding:4px 6px;text-align:right;border-bottom:1px solid rgba(255,255,255,0.07);">2</td><td style="padding:4px 6px;text-align:right;border-bottom:1px solid rgba(255,255,255,0.07);">1</td><td style="padding:4px 6px;text-align:right;border-bottom:1px solid rgba(255,255,255,0.07);">1</td><td style="padding:4px 6px;text-align:right;border-bottom:1px solid rgba(255,255,255,0.07);">5</td><td style="padding:4px 6px;text-align:right;border-bottom:1px solid rgba(255,255,255,0.07);"><b>7</b></td></tr><tr><td style="padding:4px 6px;border-bottom:1px solid rgba(255,255,255,0.07);">5</td><td style="padding:4px 6px;border-bottom:1px solid rgba(255,255,255,0.07);">Amed SFK</td><td style="padding:4px 6px;text-align:right;border-bottom:1px solid rgba(255,255,255,0.07);">4</td><td style="padding:4px 6px;text-align:right;border-bottom:1px solid rgba(255,255,255,0.07);">2</td><td style="padding:4px 6px;text-align:right;border-bottom:1px solid rgba(255,255,255,0.07);">1</td><td style="padding:4px 6px;text-align:right;border-bottom:1px solid rgba(255,255,255,0.07);">1</td><td style="padding:4px 6px;text-align:right;border-bottom:1px solid rgba(255,255,255,0.07);">2</td><td style="padding:4px 6px;text-align:right;border-bottom:1px solid rgba(255,255,255,0.07);"><b>7</b></td></tr><tr><td style="padding:4px 6px;border-bottom:1px solid rgba(255,255,255,0.07);">6</td><td style="padding:4px 6px;border-bottom:1px solid rgba(255,255,255,0.07);">Gaziantep FK</td><td style="padding:4px 6px;text-align:right;border-bottom:1px solid rgba(255,255,255,0.07);">4</td><td style="padding:4px 6px;text-align:right;border-bottom:1px solid rgba(255,255,255,0.07);">2</td><td style="padding:4px 6px;text-align:right;border-bottom:1px solid rgba(255,255,255,0.07);">1</td><td style="padding:4px 6px;text-align:right;border-bottom:1px solid rgba(255,255,255,0.07);">1</td><td style="padding:4px 6px;text-align:right;border-bottom:1px solid rgba(255,255,255,0.07);">2</td><td style="padding:4px 6px;text-align:right;border-bottom:1px solid rgba(255,255,255,0.07);"><b>7</b></td></tr><tr><td style="padding:4px 6px;border-bottom:1px solid rgba(255,255,255,0.07);">7</td><td style="padding:4px 6px;border-bottom:1px solid rgba(255,255,255,0.07);">Alanyaspor</td><td style="padding:4px 6px;text-align:right;border-bottom:1px solid rgba(255,255,255,0.07);">4</td><td style="padding:4px 6px;text-align:right;border-bottom:1px solid rgba(255,255,255,0.07);">2</td><td style="padding:4px 6px;text-align:right;border-bottom:1px solid rgba(255,255,255,0.07);">1</td><td style="padding:4px 6px;text-align:right;border-bottom:1px solid rgba(255,255,255,0.07);">1</td><td style="padding:4px 6px;text-align:right;border-bottom:1px solid rgba(255,255,255,0.07);">1</td><td style="padding:4px 6px;text-align:right;border-bottom:1px solid rgba(255,255,255,0.07);"><b>7</b></td></tr><tr><td style="padding:4px 6px;border-bottom:1px solid rgba(255,255,255,0.07);">8</td><td style="padding:4px 6px;border-bottom:1px solid rgba(255,255,255,0.07);">Gençlerbirliği</td><td style="padding:4px 6px;text-align:right;border-bottom:1px solid rgba(255,255,255,0.07);">4</td><td style="padding:4px 6px;text-align:right;border-bottom:1px solid rgba(255,255,255,0.07);">2</td><td style="padding:4px 6px;text-align:right;border-bottom:1px solid rgba(255,255,255,0.07);">1</td><td style="padding:4px 6px;text-align:right;border-bottom:1px solid rgba(255,255,255,0.07);">1</td><td style="padding:4px 6px;text-align:right;border-bottom:1px solid rgba(255,255,255,0.07);">-3</td><td style="padding:4px 6px;text-align:right;border-bottom:1px solid rgba(255,255,255,0.07);"><b>7</b></td></tr><tr><td style="padding:4px 6px;border-bottom:1px solid rgba(255,255,255,0.07);">9</td><td style="padding:4px 6px;border-bottom:1px solid rgba(255,255,255,0.07);">Fenerbahçe</td><td style="padding:4px 6px;text-align:right;border-bottom:1px solid rgba(255,255,255,0.07);">4</td><td style="padding:4px 6px;text-align:right;border-bottom:1px solid rgba(255,255,255,0.07);">2</td><td style="padding:4px 6px;text-align:right;border-bottom:1px solid rgba(255,255,255,0.07);">0</td><td style="padding:4px 6px;text-align:right;border-bottom:1px solid rgba(255,255,255,0.07);">2</td><td style="padding:4px 6px;text-align:right;border-bottom:1px solid rgba(255,255,255,0.07);">2</td><td style="padding:4px 6px;text-align:right;border-bottom:1px solid rgba(255,255,255,0.07);"><b>6</b></td></tr><tr><td style="padding:4px 6px;border-bottom:1px solid rgba(255,255,255,0.07);">10</td><td style="padding:4px 6px;border-bottom:1px solid rgba(255,255,255,0.07);">Kasımpaşa</td><td style="padding:4px 6px;text-align:right;border-bottom:1px solid rgba(255,255,255,0.07);">4</td><td style="padding:4px 6px;text-align:right;border-bottom:1px solid rgba(255,255,255,0.07);">1</td><td style="padding:4px 6px;text-align:right;border-bottom:1px solid rgba(255,255,255,0.07);">3</td><td style="padding:4px 6px;text-align:right;border-bottom:1px solid rgba(255,255,255,0.07);">0</td><td style="padding:4px 6px;text-align:right;border-bottom:1px solid rgba(255,255,255,0.07);">1</td><td style="padding:4px 6px;text-align:right;border-bottom:1px solid rgba(255,255,255,0.07);"><b>6</b></td></tr><tr><td style="padding:4px 6px;border-bottom:1px solid rgba(255,255,255,0.07);">11</td><td style="padding:4px 6px;border-bottom:1px solid rgba(255,255,255,0.07);">Çaykur Rizespor</td><td style="padding:4px 6px;text-align:right;border-bottom:1px solid rgba(255,255,255,0.07);">4</td><td style="padding:4px 6px;text-align:right;border-bottom:1px solid rgba(255,255,255,0.07);">2</td><td style="padding:4px 6px;text-align:right;border-bottom:1px solid rgba(255,255,255,0.07);">0</td><td style="padding:4px 6px;text-align:right;border-bottom:1px solid rgba(255,255,255,0.07);">2</td><td style="padding:4px 6px;text-align:right;border-bottom:1px solid rgba(255,255,255,0.07);">-1</td><td style="padding:4px 6px;text-align:right;border-bottom:1px solid rgba(255,255,255,0.07);"><b>6</b></td></tr><tr><td style="padding:4px 6px;border-bottom:1px solid rgba(255,255,255,0.07);">12</td><td style="padding:4px 6px;border-bottom:1px solid rgba(255,255,255,0.07);">Başakşehir</td><td style="padding:4px 6px;text-align:right;border-bottom:1px solid rgba(255,255,255,0.07);">4</td><td style="padding:4px 6px;text-align:right;border-bottom:1px solid rgba(255,255,255,0.07);">1</td><td style="padding:4px 6px;text-align:right;border-bottom:1px solid rgba(255,255,255,0.07);">1</td><td style="padding:4px 6px;text-align:right;border-bottom:1px solid rgba(255,255,255,0.07);">2</td><td style="padding:4px 6px;text-align:right;border-bottom:1px solid rgba(255,255,255,0.07);">0</td><td style="padding:4px 6px;text-align:right;border-bottom:1px solid rgba(255,255,255,0.07);"><b>4</b></td></tr><tr><td style="padding:4px 6px;border-bottom:1px solid rgba(255,255,255,0.07);">13</td><td style="padding:4px 6px;border-bottom:1px solid rgba(255,255,255,0.07);">Samsunspor</td><td style="padding:4px 6px;text-align:right;border-bottom:1px solid rgba(255,255,255,0.07);">4</td><td style="padding:4px 6px;text-align:right;border-bottom:1px solid rgba(255,255,255,0.07);">1</td><td style="padding:4px 6px;text-align:right;border-bottom:1px solid rgba(255,255,255,0.07);">1</td><td style="padding:4px 6px;text-align:right;border-bottom:1px solid rgba(255,255,255,0.07);">2</td><td style="padding:4px 6px;text-align:right;border-bottom:1px solid rgba(255,255,255,0.07);">-1</td><td style="padding:4px 6px;text-align:right;border-bottom:1px solid rgba(255,255,255,0.07);"><b>4</b></td></tr><tr><td style="padding:4px 6px;border-bottom:1px solid rgba(255,255,255,0.07);">14</td><td style="padding:4px 6px;border-bottom:1px solid rgba(255,255,255,0.07);">Çorum FK</td><td style="padding:4px 6px;text-align:right;border-bottom:1px solid rgba(255,255,255,0.07);">4</td><td style="padding:4px 6px;text-align:right;border-bottom:1px solid rgba(255,255,255,0.07);">1</td><td style="padding:4px 6px;text-align:right;border-bottom:1px solid rgba(255,255,255,0.07);">1</td><td style="padding:4px 6px;text-align:right;border-bottom:1px solid rgba(255,255,255,0.07);">2</td><td style="padding:4px 6px;text-align:right;border-bottom:1px solid rgba(255,255,255,0.07);">-2</td><td style="padding:4px 6px;text-align:right;border-bottom:1px solid rgba(255,255,255,0.07);"><b>4</b></td></tr><tr><td style="padding:4px 6px;border-bottom:1px solid rgba(255,255,255,0.07);">15</td><td style="padding:4px 6px;border-bottom:1px solid rgba(255,255,255,0.07);">Erzurum BB</td><td style="padding:4px 6px;text-align:right;border-bottom:1px solid rgba(255,255,255,0.07);">4</td><td style="padding:4px 6px;text-align:right;border-bottom:1px solid rgba(255,255,255,0.07);">1</td><td style="padding:4px 6px;text-align:right;border-bottom:1px solid rgba(255,255,255,0.07);">1</td><td style="padding:4px 6px;text-align:right;border-bottom:1px solid rgba(255,255,255,0.07);">2</td><td style="padding:4px 6px;text-align:right;border-bottom:1px solid rgba(255,255,255,0.07);">-6</td><td style="padding:4px 6px;text-align:right;border-bottom:1px solid rgba(255,255,255,0.07);"><b>4</b></td></tr><tr><td style="padding:4px 6px;border-bottom:1px solid rgba(255,255,255,0.07);">16</td><td style="padding:4px 6px;border-bottom:1px solid rgba(255,255,255,0.07);">Eyüpspor</td><td style="padding:4px 6px;text-align:right;border-bottom:1px solid rgba(255,255,255,0.07);">4</td><td style="padding:4px 6px;text-align:right;border-bottom:1px solid rgba(255,255,255,0.07);">1</td><td style="padding:4px 6px;text-align:right;border-bottom:1px solid rgba(255,255,255,0.07);">0</td><td style="padding:4px 6px;text-align:right;border-bottom:1px solid rgba(255,255,255,0.07);">3</td><td style="padding:4px 6px;text-align:right;border-bottom:1px solid rgba(255,255,255,0.07);">-4</td><td style="padding:4px 6px;text-align:right;border-bottom:1px solid rgba(255,255,255,0.07);"><b>3</b></td></tr><tr><td style="padding:4px 6px;border-bottom:1px solid rgba(255,255,255,0.07);">17</td><td style="padding:4px 6px;border-bottom:1px solid rgba(255,255,255,0.07);">Göztepe</td><td style="padding:4px 6px;text-align:right;border-bottom:1px solid rgba(255,255,255,0.07);">4</td><td style="padding:4px 6px;text-align:right;border-bottom:1px solid rgba(255,255,255,0.07);">0</td><td style="padding:4px 6px;text-align:right;border-bottom:1px solid rgba(255,255,255,0.07);">1</td><td style="padding:4px 6px;text-align:right;border-bottom:1px solid rgba(255,255,255,0.07);">3</td><td style="padding:4px 6px;text-align:right;border-bottom:1px solid rgba(255,255,255,0.07);">-4</td><td style="padding:4px 6px;text-align:right;border-bottom:1px solid rgba(255,255,255,0.07);"><b>1</b></td></tr><tr><td style="padding:4px 6px;border-bottom:1px solid rgba(255,255,255,0.07);">18</td><td style="padding:4px 6px;border-bottom:1px solid rgba(255,255,255,0.07);">Konyaspor</td><td style="padding:4px 6px;text-align:right;border-bottom:1px solid rgba(255,255,255,0.07);">4</td><td style="padding:4px 6px;text-align:right;border-bottom:1px solid rgba(255,255,255,0.07);">0</td><td style="padding:4px 6px;text-align:right;border-bottom:1px solid rgba(255,255,255,0.07);">0</td><td style="padding:4px 6px;text-align:right;border-bottom:1px solid rgba(255,255,255,0.07);">4</td><td style="padding:4px 6px;text-align:right;border-bottom:1px solid rgba(255,255,255,0.07);">-5</td><td style="padding:4px 6px;text-align:right;border-bottom:1px solid rgba(255,255,255,0.07);"><b>0</b></td></tr></tbody></table>
             </div>
         </noscript>
+    </div>
+
+    <!-- PUAN DURUMU modalı: LİG PUANI butonuyla açılır (gerçek puan tablosu) -->
+    <div class="modal-overlay" id="leagueModal" role="dialog" aria-modal="true" aria-labelledby="leagueModalTitle">
+        <div class="modal-panel" role="document">
+            <div class="modal-head">
+                <div>
+                    <h2 class="modal-title" id="leagueModalTitle">PUAN DURUMU</h2>
+                    <div class="modal-sub" id="leagueModalSub">Lig puan durumu yükleniyor…</div>
+                </div>
+                <button type="button" class="modal-close" id="leagueModalClose" aria-label="Kapat" title="Kapat (Esc)">✕</button>
+            </div>
+            <div class="modal-body">
+                <table class="standings-table" id="standingsTable">
+                    <thead>
+                        <tr>
+                            <th class="col-rank" scope="col">SIRA</th>
+                            <th class="col-team" scope="col">TAKIM</th>
+                            <th scope="col" title="Oynanan maç">O</th>
+                            <th scope="col" title="Galibiyet">G</th>
+                            <th scope="col" title="Beraberlik">B</th>
+                            <th scope="col" title="Mağlubiyet">M</th>
+                            <th scope="col" title="Averaj">AV</th>
+                            <th scope="col" title="Puan">P</th>
+                        </tr>
+                    </thead>
+                    <tbody id="standingsBody"></tbody>
+                </table>
+                <div class="standings-empty" id="standingsEmpty" hidden></div>
+                <div class="standings-note" id="standingsNote"></div>
+            </div>
+            <div class="modal-foot">
+                <span><b>O</b> oynanan · <b>G</b> galibiyet · <b>B</b> beraberlik · <b>M</b> mağlubiyet · <b>AV</b> averaj · <b>P</b> puan</span>
+                <button type="button" class="mini-btn" id="standingsRefreshBtn" title="Puan durumunu yeniden yükle">🔄 Yenile</button>
+            </div>
+        </div>
     </div>
 
     <script>
@@ -645,6 +814,8 @@
         const playbackConfig = {"proxy_url": ""};
         const extraSource = "output/extra_channels.json";
         let extraData = {"updated_at": "2026-09-07T19:30:26+00:00", "panels": [{"id": "atom", "name": "ATOM SPOR", "icon": "⚛️", "channels": [{"id": "atom:bein-sports-1", "slug": "bein-sports-1", "name": "BEIN SPORTS 1", "icon": "⚽", "panel_name": "ATOM SPOR", "resolved": true, "page_url": "https://www.atomsportv514.top/matches?id=bein-sports-1", "referrer": "https://www.atomsportv514.top/", "sources": [{"type": "hls", "url": "https://corestream.ardastream.live//beintv/tracks-v1a1/mono.m3u8", "label": "Kaynak 1", "mime_type": "application/vnd.apple.mpegurl"}, {"type": "hls", "url": "https://tv.atomspor.workers.dev/?ID=bein-sports-1", "label": "Kaynak 2", "mime_type": "application/vnd.apple.mpegurl"}, {"type": "embed", "url": "https://www.atomsportv514.top/matches?id=bein-sports-1", "label": "Site"}]}, {"id": "atom:bein-sports-2", "slug": "bein-sports-2", "name": "BEIN SPORTS 2", "icon": "⚽", "panel_name": "ATOM SPOR", "resolved": true, "page_url": "https://www.atomsportv514.top/matches?id=bein-sports-2", "referrer": "https://www.atomsportv514.top/", "sources": [{"type": "hls", "url": "https://corestream.ardastream.live//bein2/tracks-v1a1/mono.m3u8", "label": "Kaynak 1", "mime_type": "application/vnd.apple.mpegurl"}, {"type": "hls", "url": "https://tv.atomspor.workers.dev/?ID=bein-sports-2", "label": "Kaynak 2", "mime_type": "application/vnd.apple.mpegurl"}, {"type": "embed", "url": "https://www.atomsportv514.top/matches?id=bein-sports-2", "label": "Site"}]}, {"id": "atom:bein-sports-3", "slug": "bein-sports-3", "name": "BEIN SPORTS 3", "icon": "⚽", "panel_name": "ATOM SPOR", "resolved": true, "page_url": "https://www.atomsportv514.top/matches?id=bein-sports-3", "referrer": "https://www.atomsportv514.top/", "sources": [{"type": "hls", "url": "https://corestream.ardastream.live//bein3/tracks-v1a1/mono.m3u8", "label": "Kaynak 1", "mime_type": "application/vnd.apple.mpegurl"}, {"type": "hls", "url": "https://tv.atomspor.workers.dev/?ID=bein-sports-3", "label": "Kaynak 2", "mime_type": "application/vnd.apple.mpegurl"}, {"type": "embed", "url": "https://www.atomsportv514.top/matches?id=bein-sports-3", "label": "Site"}]}, {"id": "atom:bein-sports-4", "slug": "bein-sports-4", "name": "BEIN SPORTS 4", "icon": "⚽", "panel_name": "ATOM SPOR", "resolved": true, "page_url": "https://www.atomsportv514.top/matches?id=bein-sports-4", "referrer": "https://www.atomsportv514.top/", "sources": [{"type": "hls", "url": "https://corestream.ardastream.live//bein4/tracks-v1a1/mono.m3u8", "label": "Kaynak 1", "mime_type": "application/vnd.apple.mpegurl"}, {"type": "hls", "url": "https://tv.atomspor.workers.dev/?ID=bein-sports-4", "label": "Kaynak 2", "mime_type": "application/vnd.apple.mpegurl"}, {"type": "embed", "url": "https://www.atomsportv514.top/matches?id=bein-sports-4", "label": "Site"}]}, {"id": "atom:bein-sports-5", "slug": "bein-sports-5", "name": "BEIN SPORTS 5", "icon": "⚽", "panel_name": "ATOM SPOR", "resolved": false, "page_url": "https://www.atomsportv514.top/matches?id=bein-sports-5", "referrer": "https://www.atomsportv514.top/", "sources": [{"type": "hls", "url": "https://tv.atomspor.workers.dev/?ID=bein-sports-5", "label": "Kaynak 1", "mime_type": "application/vnd.apple.mpegurl"}, {"type": "embed", "url": "https://www.atomsportv514.top/matches?id=bein-sports-5", "label": "Site"}]}, {"id": "atom:s-sport", "slug": "s-sport", "name": "S SPORT", "icon": "🏀", "panel_name": "ATOM SPOR", "resolved": true, "page_url": "https://www.atomsportv514.top/matches?id=s-sport", "referrer": "https://www.atomsportv514.top/", "sources": [{"type": "hls", "url": "https://corestream.ardastream.live//s-sport/tracks-v1a1/mono.m3u8", "label": "Kaynak 1", "mime_type": "application/vnd.apple.mpegurl"}, {"type": "hls", "url": "https://tv.atomspor.workers.dev/?ID=s-sport", "label": "Kaynak 2", "mime_type": "application/vnd.apple.mpegurl"}, {"type": "embed", "url": "https://www.atomsportv514.top/matches?id=s-sport", "label": "Site"}]}, {"id": "atom:s-sport-2", "slug": "s-sport-2", "name": "S SPORT 2", "icon": "🏀", "panel_name": "ATOM SPOR", "resolved": true, "page_url": "https://www.atomsportv514.top/matches?id=s-sport-2", "referrer": "https://www.atomsportv514.top/", "sources": [{"type": "hls", "url": "https://corestream.ardastream.live//s-sport2/tracks-v1a1/mono.m3u8", "label": "Kaynak 1", "mime_type": "application/vnd.apple.mpegurl"}, {"type": "hls", "url": "https://tv.atomspor.workers.dev/?ID=s-sport-2", "label": "Kaynak 2", "mime_type": "application/vnd.apple.mpegurl"}, {"type": "embed", "url": "https://www.atomsportv514.top/matches?id=s-sport-2", "label": "Site"}]}, {"id": "atom:ssport-plus", "slug": "ssport-plus", "name": "S SPORT PLUS", "icon": "🏀", "panel_name": "ATOM SPOR", "resolved": false, "page_url": "https://www.atomsportv514.top/matches?id=ssport-plus", "referrer": "https://www.atomsportv514.top/", "sources": [{"type": "hls", "url": "https://tv.atomspor.workers.dev/?ID=ssport-plus", "label": "Kaynak 1", "mime_type": "application/vnd.apple.mpegurl"}, {"type": "embed", "url": "https://www.atomsportv514.top/matches?id=ssport-plus", "label": "Site"}]}, {"id": "atom:tivibu-spor-1", "slug": "tivibu-spor-1", "name": "TIVIBU SPOR 1", "icon": "📺", "panel_name": "ATOM SPOR", "resolved": false, "page_url": "https://www.atomsportv514.top/matches?id=tivibu-spor-1", "referrer": "https://www.atomsportv514.top/", "sources": [{"type": "hls", "url": "https://tv.atomspor.workers.dev/?ID=tivibu-spor-1", "label": "Kaynak 1", "mime_type": "application/vnd.apple.mpegurl"}, {"type": "embed", "url": "https://www.atomsportv514.top/matches?id=tivibu-spor-1", "label": "Site"}]}, {"id": "atom:tivibu-spor-2", "slug": "tivibu-spor-2", "name": "TIVIBU SPOR 2", "icon": "📺", "panel_name": "ATOM SPOR", "resolved": false, "page_url": "https://www.atomsportv514.top/matches?id=tivibu-spor-2", "referrer": "https://www.atomsportv514.top/", "sources": [{"type": "hls", "url": "https://tv.atomspor.workers.dev/?ID=tivibu-spor-2", "label": "Kaynak 1", "mime_type": "application/vnd.apple.mpegurl"}, {"type": "embed", "url": "https://www.atomsportv514.top/matches?id=tivibu-spor-2", "label": "Site"}]}, {"id": "atom:tivibu-spor-3", "slug": "tivibu-spor-3", "name": "TIVIBU SPOR 3", "icon": "📺", "panel_name": "ATOM SPOR", "resolved": false, "page_url": "https://www.atomsportv514.top/matches?id=tivibu-spor-3", "referrer": "https://www.atomsportv514.top/", "sources": [{"type": "hls", "url": "https://tv.atomspor.workers.dev/?ID=tivibu-spor-3", "label": "Kaynak 1", "mime_type": "application/vnd.apple.mpegurl"}, {"type": "embed", "url": "https://www.atomsportv514.top/matches?id=tivibu-spor-3", "label": "Site"}]}, {"id": "atom:smart-spor", "slug": "smart-spor", "name": "SMARTSPOR", "icon": "🏟️", "panel_name": "ATOM SPOR", "resolved": false, "page_url": "https://www.atomsportv514.top/matches?id=smart-spor", "referrer": "https://www.atomsportv514.top/", "sources": [{"type": "hls", "url": "https://tv.atomspor.workers.dev/?ID=smart-spor", "label": "Kaynak 1", "mime_type": "application/vnd.apple.mpegurl"}, {"type": "embed", "url": "https://www.atomsportv514.top/matches?id=smart-spor", "label": "Site"}]}, {"id": "atom:tv-8-5", "slug": "tv-8-5", "name": "TV 8,5", "icon": "📺", "panel_name": "ATOM SPOR", "resolved": false, "page_url": "https://www.atomsportv514.top/matches?id=tv-8-5", "referrer": "https://www.atomsportv514.top/", "sources": [{"type": "hls", "url": "https://tv.atomspor.workers.dev/?ID=tv-8-5", "label": "Kaynak 1", "mime_type": "application/vnd.apple.mpegurl"}, {"type": "embed", "url": "https://www.atomsportv514.top/matches?id=tv-8-5", "label": "Site"}]}, {"id": "atom:bein-sports-haber", "slug": "bein-sports-haber", "name": "BEIN SPORTS HABER", "icon": "⚽", "panel_name": "ATOM SPOR", "resolved": false, "page_url": "https://www.atomsportv514.top/matches?id=bein-sports-haber", "referrer": "https://www.atomsportv514.top/", "sources": [{"type": "hls", "url": "https://tv.atomspor.workers.dev/?ID=bein-sports-haber", "label": "Kaynak 1", "mime_type": "application/vnd.apple.mpegurl"}, {"type": "embed", "url": "https://www.atomsportv514.top/matches?id=bein-sports-haber", "label": "Site"}]}]}, {"id": "selcuk", "name": "SELÇUK SPOR", "icon": "🎥", "channels": [{"id": "selcuk:selcukbeinsports1", "slug": "selcukbeinsports1", "name": "BEIN SPORTS 1", "icon": "⚽", "panel_name": "SELÇUK SPOR", "resolved": true, "page_url": "https://main.uxsyplayer6859599e6c.click/index.php?id=selcukbeinsports1", "referrer": "https://www.sporcafe-0c2608ad69.xyz/", "sources": [{"type": "hls", "url": "https://dga1op10s1u3lea.82250d06d39d38.click/live/selcukbeinsports1/playlist.m3u8", "label": "Kaynak 1", "mime_type": "application/vnd.apple.mpegurl"}, {"type": "embed", "url": "https://main.uxsyplayer6859599e6c.click/index.php?id=selcukbeinsports1", "label": "Site"}]}, {"id": "selcuk:selcukbeinsports2", "slug": "selcukbeinsports2", "name": "BEIN SPORTS 2", "icon": "⚽", "panel_name": "SELÇUK SPOR", "resolved": true, "page_url": "https://main.uxsyplayer6859599e6c.click/index.php?id=selcukbeinsports2", "referrer": "https://www.sporcafe-0c2608ad69.xyz/", "sources": [{"type": "hls", "url": "https://dga1op10s1u3lea.82250d06d39d38.click/live/selcukbeinsports2/playlist.m3u8", "label": "Kaynak 1", "mime_type": "application/vnd.apple.mpegurl"}, {"type": "embed", "url": "https://main.uxsyplayer6859599e6c.click/index.php?id=selcukbeinsports2", "label": "Site"}]}, {"id": "selcuk:selcukbeinsports3", "slug": "selcukbeinsports3", "name": "BEIN SPORTS 3", "icon": "⚽", "panel_name": "SELÇUK SPOR", "resolved": true, "page_url": "https://main.uxsyplayer6859599e6c.click/index.php?id=selcukbeinsports3", "referrer": "https://www.sporcafe-0c2608ad69.xyz/", "sources": [{"type": "hls", "url": "https://dga1op10s1u3lea.82250d06d39d38.click/live/selcukbeinsports3/playlist.m3u8", "label": "Kaynak 1", "mime_type": "application/vnd.apple.mpegurl"}, {"type": "embed", "url": "https://main.uxsyplayer6859599e6c.click/index.php?id=selcukbeinsports3", "label": "Site"}]}, {"id": "selcuk:selcukbeinsports4", "slug": "selcukbeinsports4", "name": "BEIN SPORTS 4", "icon": "⚽", "panel_name": "SELÇUK SPOR", "resolved": true, "page_url": "https://main.uxsyplayer6859599e6c.click/index.php?id=selcukbeinsports4", "referrer": "https://www.sporcafe-0c2608ad69.xyz/", "sources": [{"type": "hls", "url": "https://dga1op10s1u3lea.82250d06d39d38.click/live/selcukbeinsports4/playlist.m3u8", "label": "Kaynak 1", "mime_type": "application/vnd.apple.mpegurl"}, {"type": "embed", "url": "https://main.uxsyplayer6859599e6c.click/index.php?id=selcukbeinsports4", "label": "Site"}]}, {"id": "selcuk:selcukbeinsports5", "slug": "selcukbeinsports5", "name": "BEIN SPORTS 5", "icon": "⚽", "panel_name": "SELÇUK SPOR", "resolved": true, "page_url": "https://main.uxsyplayer6859599e6c.click/index.php?id=selcukbeinsports5", "referrer": "https://www.sporcafe-0c2608ad69.xyz/", "sources": [{"type": "hls", "url": "https://dga1op10s1u3lea.82250d06d39d38.click/live/selcukbeinsports5/playlist.m3u8", "label": "Kaynak 1", "mime_type": "application/vnd.apple.mpegurl"}, {"type": "embed", "url": "https://main.uxsyplayer6859599e6c.click/index.php?id=selcukbeinsports5", "label": "Site"}]}, {"id": "selcuk:selcukbeinsportsmax1", "slug": "selcukbeinsportsmax1", "name": "BEIN SPORTS MAX 1", "icon": "⚽", "panel_name": "SELÇUK SPOR", "resolved": true, "page_url": "https://main.uxsyplayer6859599e6c.click/index.php?id=selcukbeinsportsmax1", "referrer": "https://www.sporcafe-0c2608ad69.xyz/", "sources": [{"type": "hls", "url": "https://dga1op10s1u3lea.82250d06d39d38.click/live/selcukbeinsportsmax1/playlist.m3u8", "label": "Kaynak 1", "mime_type": "application/vnd.apple.mpegurl"}, {"type": "embed", "url": "https://main.uxsyplayer6859599e6c.click/index.php?id=selcukbeinsportsmax1", "label": "Site"}]}, {"id": "selcuk:selcukbeinsportsmax2", "slug": "selcukbeinsportsmax2", "name": "BEIN SPORTS MAX 2", "icon": "⚽", "panel_name": "SELÇUK SPOR", "resolved": true, "page_url": "https://main.uxsyplayer6859599e6c.click/index.php?id=selcukbeinsportsmax2", "referrer": "https://www.sporcafe-0c2608ad69.xyz/", "sources": [{"type": "hls", "url": "https://dga1op10s1u3lea.82250d06d39d38.click/live/selcukbeinsportsmax2/playlist.m3u8", "label": "Kaynak 1", "mime_type": "application/vnd.apple.mpegurl"}, {"type": "embed", "url": "https://main.uxsyplayer6859599e6c.click/index.php?id=selcukbeinsportsmax2", "label": "Site"}]}, {"id": "selcuk:selcukssport", "slug": "selcukssport", "name": "S SPORT", "icon": "🏀", "panel_name": "SELÇUK SPOR", "resolved": true, "page_url": "https://main.uxsyplayer6859599e6c.click/index.php?id=selcukssport", "referrer": "https://www.sporcafe-0c2608ad69.xyz/", "sources": [{"type": "hls", "url": "https://dga1op10s1u3lea.82250d06d39d38.click/live/selcukssport/playlist.m3u8", "label": "Kaynak 1", "mime_type": "application/vnd.apple.mpegurl"}, {"type": "embed", "url": "https://main.uxsyplayer6859599e6c.click/index.php?id=selcukssport", "label": "Site"}]}, {"id": "selcuk:selcukssport2", "slug": "selcukssport2", "name": "S SPORT 2", "icon": "🏀", "panel_name": "SELÇUK SPOR", "resolved": true, "page_url": "https://main.uxsyplayer6859599e6c.click/index.php?id=selcukssport2", "referrer": "https://www.sporcafe-0c2608ad69.xyz/", "sources": [{"type": "hls", "url": "https://dga1op10s1u3lea.82250d06d39d38.click/live/selcukssport2/playlist.m3u8", "label": "Kaynak 1", "mime_type": "application/vnd.apple.mpegurl"}, {"type": "embed", "url": "https://main.uxsyplayer6859599e6c.click/index.php?id=selcukssport2", "label": "Site"}]}, {"id": "selcuk:selcuktivibuspor1", "slug": "selcuktivibuspor1", "name": "TIVIBU SPOR 1", "icon": "📺", "panel_name": "SELÇUK SPOR", "resolved": true, "page_url": "https://main.uxsyplayer6859599e6c.click/index.php?id=selcuktivibuspor1", "referrer": "https://www.sporcafe-0c2608ad69.xyz/", "sources": [{"type": "hls", "url": "https://dga1op10s1u3lea.82250d06d39d38.click/live/selcuktivibuspor1/playlist.m3u8", "label": "Kaynak 1", "mime_type": "application/vnd.apple.mpegurl"}, {"type": "embed", "url": "https://main.uxsyplayer6859599e6c.click/index.php?id=selcuktivibuspor1", "label": "Site"}]}, {"id": "selcuk:selcuktivibuspor2", "slug": "selcuktivibuspor2", "name": "TIVIBU SPOR 2", "icon": "📺", "panel_name": "SELÇUK SPOR", "resolved": true, "page_url": "https://main.uxsyplayer6859599e6c.click/index.php?id=selcuktivibuspor2", "referrer": "https://www.sporcafe-0c2608ad69.xyz/", "sources": [{"type": "hls", "url": "https://dga1op10s1u3lea.82250d06d39d38.click/live/selcuktivibuspor2/playlist.m3u8", "label": "Kaynak 1", "mime_type": "application/vnd.apple.mpegurl"}, {"type": "embed", "url": "https://main.uxsyplayer6859599e6c.click/index.php?id=selcuktivibuspor2", "label": "Site"}]}, {"id": "selcuk:selcuksmartspor", "slug": "selcuksmartspor", "name": "SMARTSPOR", "icon": "🏟️", "panel_name": "SELÇUK SPOR", "resolved": true, "page_url": "https://main.uxsyplayer6859599e6c.click/index.php?id=selcuksmartspor", "referrer": "https://www.sporcafe-0c2608ad69.xyz/", "sources": [{"type": "hls", "url": "https://dga1op10s1u3lea.82250d06d39d38.click/live/selcuksmartspor/playlist.m3u8", "label": "Kaynak 1", "mime_type": "application/vnd.apple.mpegurl"}, {"type": "embed", "url": "https://main.uxsyplayer6859599e6c.click/index.php?id=selcuksmartspor", "label": "Site"}]}, {"id": "selcuk:selcukaspor", "slug": "selcukaspor", "name": "A SPOR", "icon": "⚽", "panel_name": "SELÇUK SPOR", "resolved": true, "page_url": "https://main.uxsyplayer6859599e6c.click/index.php?id=selcukaspor", "referrer": "https://www.sporcafe-0c2608ad69.xyz/", "sources": [{"type": "hls", "url": "https://dga1op10s1u3lea.82250d06d39d38.click/live/selcukaspor/playlist.m3u8", "label": "Kaynak 1", "mime_type": "application/vnd.apple.mpegurl"}, {"type": "embed", "url": "https://main.uxsyplayer6859599e6c.click/index.php?id=selcukaspor", "label": "Site"}]}, {"id": "selcuk:selcukeurosport1", "slug": "selcukeurosport1", "name": "EUROSPORT 1", "icon": "🚴", "panel_name": "SELÇUK SPOR", "resolved": true, "page_url": "https://main.uxsyplayer6859599e6c.click/index.php?id=selcukeurosport1", "referrer": "https://www.sporcafe-0c2608ad69.xyz/", "sources": [{"type": "hls", "url": "https://dga1op10s1u3lea.82250d06d39d38.click/live/selcukeurosport1/playlist.m3u8", "label": "Kaynak 1", "mime_type": "application/vnd.apple.mpegurl"}, {"type": "embed", "url": "https://main.uxsyplayer6859599e6c.click/index.php?id=selcukeurosport1", "label": "Site"}]}]}]};
+        const standingsSource = "output/standings.json";
+        let standingsData = {"source": "espn", "generated_at": "2026-09-07T23:53:40+03:00", "leagues": [{"id": "soccer/tur.1", "name": "Trendyol Süper Lig", "sport": "Futbol", "season": "2026-27 Turkish Super Lig", "updated_at": "2026-09-07T23:53:40+03:00", "rows": [{"rank": 1, "team": "Galatasaray", "abbr": "GAL", "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/432.png", "played": 4, "wins": 3, "draws": 1, "losses": 0, "goalsFor": 12, "goalsAgainst": 6, "diff": 6, "points": 10, "note": "Champions League"}, {"rank": 2, "team": "Beşiktaş", "abbr": "BES", "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/1895.png", "played": 4, "wins": 3, "draws": 0, "losses": 1, "goalsFor": 9, "goalsAgainst": 4, "diff": 5, "points": 9, "note": "Champions League qualifying"}, {"rank": 3, "team": "Kocaelispor", "abbr": "KOC", "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/995.png", "played": 4, "wins": 3, "draws": 0, "losses": 1, "goalsFor": 5, "goalsAgainst": 3, "diff": 2, "points": 9, "note": "Europa League qualifying"}, {"rank": 4, "team": "Trabzonspor", "abbr": "TRAB", "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/997.png", "played": 4, "wins": 2, "draws": 1, "losses": 1, "goalsFor": 9, "goalsAgainst": 4, "diff": 5, "points": 7, "note": "Conference League qualifying"}, {"rank": 5, "team": "Amed SFK", "abbr": "AMED", "logo": "", "played": 4, "wins": 2, "draws": 1, "losses": 1, "goalsFor": 7, "goalsAgainst": 5, "diff": 2, "points": 7, "note": ""}, {"rank": 6, "team": "Gaziantep FK", "abbr": "GAZ", "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/20070.png", "played": 4, "wins": 2, "draws": 1, "losses": 1, "goalsFor": 7, "goalsAgainst": 5, "diff": 2, "points": 7, "note": ""}, {"rank": 7, "team": "Alanyaspor", "abbr": "ALA", "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/9078.png", "played": 4, "wins": 2, "draws": 1, "losses": 1, "goalsFor": 4, "goalsAgainst": 3, "diff": 1, "points": 7, "note": ""}, {"rank": 8, "team": "Gençlerbirliği", "abbr": "GEN", "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/996.png", "played": 4, "wins": 2, "draws": 1, "losses": 1, "goalsFor": 4, "goalsAgainst": 7, "diff": -3, "points": 7, "note": ""}, {"rank": 9, "team": "Fenerbahçe", "abbr": "FEN", "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/436.png", "played": 4, "wins": 2, "draws": 0, "losses": 2, "goalsFor": 8, "goalsAgainst": 6, "diff": 2, "points": 6, "note": ""}, {"rank": 10, "team": "Kasımpaşa", "abbr": "KAS", "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/6870.png", "played": 4, "wins": 1, "draws": 3, "losses": 0, "goalsFor": 5, "goalsAgainst": 4, "diff": 1, "points": 6, "note": ""}, {"rank": 11, "team": "Çaykur Rizespor", "abbr": "CAY", "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/7656.png", "played": 4, "wins": 2, "draws": 0, "losses": 2, "goalsFor": 3, "goalsAgainst": 4, "diff": -1, "points": 6, "note": ""}, {"rank": 12, "team": "Başakşehir", "abbr": "IBFK", "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/7914.png", "played": 4, "wins": 1, "draws": 1, "losses": 2, "goalsFor": 6, "goalsAgainst": 6, "diff": 0, "points": 4, "note": ""}, {"rank": 13, "team": "Samsunspor", "abbr": "SAM", "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/11429.png", "played": 4, "wins": 1, "draws": 1, "losses": 2, "goalsFor": 5, "goalsAgainst": 6, "diff": -1, "points": 4, "note": ""}, {"rank": 14, "team": "Çorum FK", "abbr": "COR", "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/132334.png", "played": 4, "wins": 1, "draws": 1, "losses": 2, "goalsFor": 7, "goalsAgainst": 9, "diff": -2, "points": 4, "note": ""}, {"rank": 15, "team": "Erzurum BB", "abbr": "ERZ", "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/19267.png", "played": 4, "wins": 1, "draws": 1, "losses": 2, "goalsFor": 2, "goalsAgainst": 8, "diff": -6, "points": 4, "note": ""}, {"rank": 16, "team": "Eyüpspor", "abbr": "EYU", "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/20729.png", "played": 4, "wins": 1, "draws": 0, "losses": 3, "goalsFor": 2, "goalsAgainst": 6, "diff": -4, "points": 3, "note": "Relegated"}, {"rank": 17, "team": "Göztepe", "abbr": "GOZ", "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/789.png", "played": 4, "wins": 0, "draws": 1, "losses": 3, "goalsFor": 7, "goalsAgainst": 11, "diff": -4, "points": 1, "note": "Relegated"}, {"rank": 18, "team": "Konyaspor", "abbr": "KNY", "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/7648.png", "played": 4, "wins": 0, "draws": 0, "losses": 4, "goalsFor": 3, "goalsAgainst": 8, "diff": -5, "points": 0, "note": "Relegated"}]}]};
         /*BOT_END*/
 
         (function () {
@@ -715,7 +886,15 @@
                 totalMatches: $("totalMatchesCount"),
                 totalLive: $("totalLiveCount"),
                 liveClock: $("liveClock"),
-                updatedAt: $("updatedAtText")
+                updatedAt: $("updatedAtText"),
+                leagueBtn: $("leagueBtn"),
+                leagueModal: $("leagueModal"),
+                leagueModalClose: $("leagueModalClose"),
+                leagueModalSub: $("leagueModalSub"),
+                standingsTable: $("standingsTable"),
+                standingsBody: $("standingsBody"),
+                standingsEmpty: $("standingsEmpty"),
+                standingsNote: $("standingsNote")
             };
 
             /* ---------------- Saat & maç durumu ---------------- */
@@ -998,7 +1177,7 @@
             const HLS_CDN_BACKUP = "https://unpkg.com/hls.js@1.7.2/dist/hls.min.js";
             const STARTUP_TIMEOUT = 25000, STALL_TIMEOUT = 20000;
             let hlsInstance = null, hlsLibPromise = null, proxyDiscovery = null;
-            let matchesRefreshToken = 0, extraRefreshToken = 0;
+            let matchesRefreshToken = 0, extraRefreshToken = 0, standingsRefreshToken = 0;
             let hlsFailTimer = null, stallTimer = null, playToken = 0;
             const playerLogs = [];
 
@@ -1713,6 +1892,141 @@
                     .catch(() => { if (!silent && request === matchesRefreshToken) els.updatedAt.textContent = updatedAt + " (çevrimdışı)"; return false; }).finally(() => clearTimeout(timeout));
             }
 
+            /* ---------------- LİG PUANI → PUAN DURUMU modalı ---------------- */
+            /** Sayısal puan tablosu alanı: sayı değilse null (boş hücre uydurulmaz). */
+            const statNumber = (v) => (/^-?[0-9]{1,4}$/.test(String(v == null ? "" : v).trim()) ? Number(String(v).trim()) : null);
+            /** Takım logosu yalnızca https adresiyle gömülür. */
+            const safeLogo = (u) => (/^https:\/\/[^\s"'<>]+$/i.test(String(u || "")) ? String(u) : "");
+
+            /** Gömülü/uzak puan durumunu doğrular; satırı olmayan lig listelenmez. */
+            function normalizeStandings(json) {
+                if (!json || !Array.isArray(json.leagues)) return null;
+                const leagues = [];
+                json.leagues.forEach((lg) => {
+                    if (!lg || !Array.isArray(lg.rows)) return;
+                    const rows = [];
+                    lg.rows.forEach((r) => {
+                        if (!r || !r.team) return;
+                        rows.push({
+                            rank: statNumber(r.rank), team: String(r.team),
+                            abbr: r.abbr ? String(r.abbr) : "", logo: safeLogo(r.logo),
+                            played: statNumber(r.played), wins: statNumber(r.wins),
+                            draws: statNumber(r.draws), losses: statNumber(r.losses),
+                            goalsFor: statNumber(r.goalsFor), goalsAgainst: statNumber(r.goalsAgainst),
+                            diff: statNumber(r.diff), points: statNumber(r.points),
+                            note: r.note ? String(r.note) : ""
+                        });
+                    });
+                    if (rows.length) leagues.push({
+                        id: String(lg.id || ""), name: String(lg.name || ""),
+                        season: String(lg.season || ""), updatedAt: String(lg.updated_at || ""), rows: rows
+                    });
+                });
+                return { source: String(json.source || ""), generatedAt: String(json.generated_at || ""), leagues: leagues };
+            }
+
+            /** Kaynak notundan rozet sınıfı: Avrupa hattı / düşme hattı. */
+            function rankBadgeClass(note) {
+                const n = norm(note);
+                if (/relegat|kume|küme|drop/.test(n)) return "relegate";
+                if (/champions|europa|conference|qualify|libertadores/.test(n)) return "qualify";
+                return "";
+            }
+
+            function formatStamp(iso) {
+                const d = iso ? new Date(iso) : null;
+                if (!d || isNaN(d.getTime())) return "";
+                return pad(d.getDate()) + "." + pad(d.getMonth() + 1) + "." + d.getFullYear() + " " +
+                    pad(d.getHours()) + ":" + pad(d.getMinutes());
+            }
+
+            function renderStandings() {
+                if (!els.standingsBody || !els.standingsTable) return;
+                const data = normalizeStandings(standingsData);
+                const league = data && data.leagues.length ? data.leagues[0] : null;
+                const rows = league ? league.rows : [];
+
+                if (!rows.length) {
+                    // Tablo yoksa uydurma satır BASILMAZ; dürüst boş durum gösterilir.
+                    els.standingsTable.hidden = true;
+                    els.standingsEmpty.hidden = false;
+                    els.standingsEmpty.innerHTML =
+                        "📊 Puan durumu verisi henüz yok.<br>" +
+                        "<small style=\"opacity:.75\">Tablo botun <b>output/standings.json</b> çıktısından gelir; " +
+                        "kaynağa ulaşılamadığında sayfa uydurma puan tablosu göstermez. " +
+                        "Bot bir sonraki çalışmasında tabloyu doldurur.</small>";
+                    els.standingsNote.innerHTML = "";
+                    els.leagueModalSub.textContent = "Veri bekleniyor";
+                    return;
+                }
+
+                const dash = (v) => (v == null ? "–" : String(v));
+                els.standingsTable.hidden = false;
+                els.standingsEmpty.hidden = true;
+                els.standingsBody.innerHTML = rows.map((r) => {
+                    const badge = rankBadgeClass(r.note);
+                    const av = r.diff == null ? "–" : (r.diff > 0 ? "+" + r.diff : String(r.diff));
+                    const logo = r.logo ? '<img class="t-logo" src="' + esc(r.logo) + '" alt="" loading="lazy" />' : "";
+                    return "<tr>" +
+                        '<td class="cell-rank"><span class="rk' + (badge ? " " + badge : "") + '">' + esc(dash(r.rank)) + "</span></td>" +
+                        '<td class="cell-team" title="' + esc(r.team) + '">' + logo + esc(r.team) + "</td>" +
+                        "<td>" + esc(dash(r.played)) + "</td>" +
+                        "<td>" + esc(dash(r.wins)) + "</td>" +
+                        "<td>" + esc(dash(r.draws)) + "</td>" +
+                        "<td>" + esc(dash(r.losses)) + "</td>" +
+                        '<td class="cell-pos">' + esc(av) + "</td>" +
+                        '<td class="cell-points">' + esc(dash(r.points)) + "</td>" +
+                        "</tr>";
+                }).join("");
+
+                els.leagueModalSub.textContent = [league.name, league.season].filter(Boolean).join(" · ");
+                const stamp = formatStamp(league.updatedAt);
+                els.standingsNote.innerHTML =
+                    "<span>Kaynak: <b>" + esc(data.source || "—") + "</b></span>" +
+                    (stamp ? "<span>Son güncelleme: <b>" + esc(stamp) + "</b></span>" : "") +
+                    "<span><b>" + rows.length + "</b> takım</span>";
+            }
+
+            let leagueModalReturnFocus = null;
+            function isLeagueModalOpen() { return !!(els.leagueModal && els.leagueModal.classList.contains("open")); }
+
+            function openLeagueModal() {
+                if (!els.leagueModal || isLeagueModalOpen()) return;
+                leagueModalReturnFocus = document.activeElement;
+                els.leagueModal.classList.add("open");
+                document.body.style.overflow = "hidden";   // arka plan kaydırması kilitlenir
+                if (els.leagueBtn) els.leagueBtn.setAttribute("aria-expanded", "true");
+                if (els.leagueModalClose) els.leagueModalClose.focus();
+            }
+
+            function closeLeagueModal() {
+                if (!els.leagueModal || !isLeagueModalOpen()) return;
+                els.leagueModal.classList.remove("open");
+                document.body.style.overflow = "";
+                if (els.leagueBtn) els.leagueBtn.setAttribute("aria-expanded", "false");
+                if (leagueModalReturnFocus && typeof leagueModalReturnFocus.focus === "function") leagueModalReturnFocus.focus();
+                leagueModalReturnFocus = null;
+            }
+
+            function refreshStandings(silent) {
+                if (!standingsSource || typeof fetch !== "function") return Promise.resolve(false);
+                const request = ++standingsRefreshToken;
+                const controller = new AbortController();
+                const timeout = setTimeout(() => controller.abort(), 6000);
+                return fetch(standingsSource + "?ts=" + Date.now(), { cache: "no-store", signal: controller.signal })
+                    .then((r) => (r.ok ? r.json() : Promise.reject(new Error("HTTP " + r.status))))
+                    .then((json) => {
+                        if (request !== standingsRefreshToken) return false;
+                        const data = normalizeStandings(json);
+                        // Boş yanıt mevcut tabloyu SİLMEZ: son bilinen tablo kalır.
+                        if (!data || !data.leagues.length) throw new Error("boş tablo");
+                        standingsData = data;
+                        renderStandings();
+                        return true;
+                    })
+                    .catch(() => false).finally(() => clearTimeout(timeout));
+            }
+
             /* ---------------- Olaylar ---------------- */
             function bindEvents() {
                 document.querySelectorAll(".tab-btn").forEach((btn) => {
@@ -1766,9 +2080,23 @@
                     playSource((state.currentSourceIndex + 1) % n, true);
                 };
 
-                $("refreshDataBtn").onclick = () => { refreshMatches(false); refreshExtra(true); };
+                $("refreshDataBtn").onclick = () => { refreshMatches(false); refreshExtra(true); refreshStandings(true); };
+
+                // LİG PUANI → PUAN DURUMU modalı
+                if (els.leagueBtn) els.leagueBtn.onclick = openLeagueModal;
+                if (els.leagueModalClose) els.leagueModalClose.onclick = closeLeagueModal;
+                if (els.leagueModal) {
+                    // Karartılmış alanın kendisine tıklamak modalı kapatır (panele tıklamak kapatmaz)
+                    els.leagueModal.onclick = (e) => { if (e.target === els.leagueModal) closeLeagueModal(); };
+                }
+                if ($("standingsRefreshBtn")) $("standingsRefreshBtn").onclick = () => { refreshStandings(false); };
 
                 document.addEventListener("keydown", (e) => {
+                    // Modal açıkken: Esc kapatır, kanal kısayolları çalışmaz.
+                    if (isLeagueModalOpen()) {
+                        if (e.key === "Escape") { e.preventDefault(); closeLeagueModal(); }
+                        return;
+                    }
                     const tag = document.activeElement ? document.activeElement.tagName.toLowerCase() : "";
                     if (tag === "input" || tag === "textarea" || e.metaKey || e.ctrlKey || e.altKey) return;
                     if (e.key === "ArrowRight") { e.preventDefault(); $("navNext").click(); }
@@ -1833,6 +2161,7 @@
                 renderChannels();
                 renderMatches();
                 renderExtra();
+                renderStandings();
                 tickClock();
                 bindEvents();
                 createParticles();
@@ -1840,7 +2169,8 @@
                 setInterval(tickClock, 30000);
                 refreshMatches(true);
                 refreshExtra(true);
-                setInterval(() => { refreshMatches(true); refreshExtra(true); }, 5 * 60 * 1000);
+                refreshStandings(true);
+                setInterval(() => { refreshMatches(true); refreshExtra(true); refreshStandings(true); }, 5 * 60 * 1000);
                 window.inadina.ready = true;
             }
 
@@ -1862,7 +2192,13 @@
                 computeState: computeState,
                 normalizeRemote: normalizeRemote,
                 refreshMatches: refreshMatches,
-                refreshExtra: refreshExtra
+                refreshExtra: refreshExtra,
+                normalizeStandings: normalizeStandings,
+                renderStandings: renderStandings,
+                refreshStandings: refreshStandings,
+                openLeagueModal: openLeagueModal,
+                closeLeagueModal: closeLeagueModal,
+                isLeagueModalOpen: isLeagueModalOpen
             };
 
             if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init);
