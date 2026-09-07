@@ -525,6 +525,10 @@ test("final, canlı, devre skorları doğru takımlarla; diğer durumlarda skor 
   assert.ok(byEvent(window,"ft").querySelector('.match-status-tag').textContent.includes('MS'));
   assert.equal(byEvent(window,"ht").querySelector('.match-status-tag').textContent, 'DEVRE');
   for (const id of ["pre","ppd","cancel","abandoned","partial","none"]) assert.equal(byEvent(window,id).querySelector('.match-score'), null, id);
+  // Biten fakat skoru alınamayan maç: sahte 0-0 yerine açık placeholder.
+  for (const id of ["partial","none"]) assert.equal(byEvent(window,id).querySelector('.mt-vs').textContent, 'Skor yok', id);
+  // Henüz oynanmamış/oynanmayacak maçlarda placeholder değil "vs" kalır.
+  for (const id of ["pre","ppd","cancel"]) assert.equal(byEvent(window,id).querySelector('.mt-vs').textContent, 'vs', id);
   assert.equal(byEvent(window,"ppd").querySelector('.match-status-tag').textContent, 'Ertelendi');
   assert.equal(byEvent(window,"cancel").querySelector('.match-status-tag').textContent, 'İptal');
   assert.equal(window.document.getElementById('totalLiveCount').textContent, '2');

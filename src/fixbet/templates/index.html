@@ -417,6 +417,7 @@
         }
         .match-teams .team-logo img { width: 24px; height: 24px; object-fit: contain; display: block; filter: drop-shadow(0 0 6px rgba(255,45,122,0.35)); }
         .match-teams .mt-vs { color: var(--text-muted); font-size: 0.72rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
+        .match-teams .mt-vs.no-score { text-transform: none; letter-spacing: 0.3px; font-size: 0.62rem; white-space: nowrap; opacity: .75; }
         .match-team { display: flex; align-items: center; gap: 6px; min-width: 0; }
         .home-team { justify-content: flex-end; text-align: right; }
         .away-team { justify-content: flex-start; text-align: left; }
@@ -1600,7 +1601,9 @@
                             '<span data-score-side="home" aria-hidden="true">' + m._score[0] + '</span><span class="score-dash" aria-hidden="true">-</span>' +
                             '<span data-score-side="away" aria-hidden="true">' + m._score[1] + '</span></span>' +
                             (m._scoreStale ? '<small class="score-note">son skor</small>' : "") + '</span>'
-                        : '<span class="mt-vs">vs</span>';
+                        : m._status === "finished"
+                            ? '<span class="mt-vs no-score" title="Bu maç için veri kaynağından final skoru alınamadı">Skor yok</span>'
+                            : '<span class="mt-vs">vs</span>';
                     card.innerHTML =
                         '<div class="match-header">' +
                             '<span class="match-league">' + m._icon + " <span>" + esc(m.league || "") + "</span></span>" +

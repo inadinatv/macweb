@@ -21,9 +21,10 @@ def match(**kwargs):
 
 
 def event(status="STATUS_FULL_TIME", home="Manchester United", away="Chelsea", pair=("2", "1"),
-          date="2026-09-06T17:00Z", id="123"):
+          date="2026-09-06T17:00Z", id="123", neutral=False):
     # Away önce gelebilir. Array sırasını kullanmak skorları ters bağlar.
     return {"id": id, "date": date, "competitions": [{"id": id, "date": date,
+        "neutralSite": neutral,
         "status": {"type": {"name": status, "state": "post", "completed": True}},
         "competitors": [
             {"homeAway": "away", "score": pair[1], "team": {"displayName": away}},
@@ -44,6 +45,17 @@ def test_correct_sides_aliases_and_real_status():
     assert m.score_updated_at == NOW.isoformat()
     categorizer.classify([m], NOW)
     assert m.status == "finished"  # 20:00 + 1 saat diye yeniden canlıya dönmez
+
+
+def test_neutral_site_swapped_sides_still_bind_scores_to_correct_teams():
+    # Turnuva (tarafsız saha): sağlayıcı programın "ev" takımını away listeler.
+    swapped = event(home="Chelsea", away="Manchester United", pair=("1", "3"), neutral=True)
+    m = enrich([match()], [swapped])[0]
+    assert (m.score_home, m.score_away) == (3, 1)  # skor kendi takımına döner
+    # Tarafsız saha DEĞİLSE taraf değişimi eşleşme sayılmaz (farklı maç olabilir).
+    not_neutral = event(home="Chelsea", away="Manchester United", pair=("1", "3"))
+    m = enrich([match()], [not_neutral])[0]
+    assert m.score_home is None and m.status_source == "schedule"
 
 
 def test_no_channel_id_matching_or_reversed_teams():
