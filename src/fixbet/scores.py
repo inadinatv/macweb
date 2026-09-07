@@ -102,6 +102,7 @@ def competitions(data: dict) -> list[dict]:
                 continue
             result.append({"id": str(comp.get("id") or event.get("id") or ""), "start": date,
                            "home": home[0], "away": away[0], "status": state,
+                           "neutral": bool(comp.get("neutralSite")),
                            "raw_status": str((status.get("type") or {}).get("name") or "")})
     return result
 
@@ -169,22 +170,36 @@ def enrich(matches: list[Match], now: datetime, previous: list[Match] | None = N
             key = fold(name)
             return aliases.get(key, key)
 
+        def orientation(comp, match):
+            """Skorun hangi tarafa ait olduğunu İSİMLE belirler; None = eşleşme yok.
+
+            Turnuvalarda (tarafsız saha) sağlayıcı ev/deplasmanı programın tersine
+            listeleyebilir; bu durumda skorlar isim eşleşmesine göre çevrilir.
+            """
+            if canonical(match.home) in _names(comp["home"], canonical) and canonical(match.away) in _names(comp["away"], canonical):
+                return "straight"
+            if comp.get("neutral") and canonical(match.home) in _names(comp["away"], canonical) \
+                    and canonical(match.away) in _names(comp["home"], canonical):
+                return "swapped"
+            return None
+
         for match in group:
             scheduled = start_time(match, now, tz)
             if not scheduled:
                 continue
-            candidates = [c for c in results[path]
+            candidates = [(c, orientation(c, match)) for c in results[path]
                           if c["start"].astimezone(tz).date() == now.date()
-                          and abs(c["start"] - scheduled) <= tolerance
-                          and canonical(match.home) in _names(c["home"], canonical)
-                          and canonical(match.away) in _names(c["away"], canonical)]
+                          and abs(c["start"] - scheduled) <= tolerance]
+            candidates = [(c, o) for c, o in candidates if o]
             if len(candidates) != 1:
                 continue
-            found = candidates[0]
+            found, side = candidates[0]
             if match.status == "finished" and match.status_source != "schedule" and found["status"] in ("upcoming", "live", "halftime"):
                 # Gecikmiş scoreboard/cache yanıtı doğrulanmış finali geriye alamaz.
                 continue
-            h, a = score_pair(found["home"].get("score"), found["away"].get("score"))
+            # Skor, isim eşleşmesinin belirlediği tarafa bağlanır (asla ters yazılmaz).
+            ours_home, ours_away = (found["home"], found["away"]) if side == "straight" else (found["away"], found["home"])
+            h, a = score_pair(ours_home.get("score"), ours_away.get("score"))
             prior_status = match.status
             match.status, match.status_source = found["status"], "espn"
             match.raw_status, match.event_id = found["raw_status"], found["id"]

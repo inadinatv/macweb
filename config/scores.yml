@@ -17,13 +17,42 @@ leagues:
   - { name: "Almanya Bundesliga", sport: "Futbol", path: "soccer/ger.1" }
   - { name: "Brezilya Serie A", sport: "Futbol", path: "soccer/bra.1" }
   - { name: "Arjantin Primera Division", sport: "Futbol", path: "soccer/arg.1" }
+  # ESPN tur.2 scoreboard'u etkinlik yayınlamıyor (boş events); Trendyol 1. Lig
+  # bilerek eklenmedi — boş istek üretmek yerine skor alanı boş bırakılır.
+  - { name: "Fransa Ligue 2", sport: "Futbol", path: "soccer/fra.2" }
   - { name: "NBA", sport: "Basketbol", path: "basketball/nba" }
   - { name: "WNBA", sport: "Basketbol", path: "basketball/wnba" }
+  # ESPN, FIBA Dünya Kupası turnuvalarını (kadın/erkek dönüşümlü) tek "fiba"
+  # scoreboard'unda yayınlar; lig+spor+tarih+takım adı eşleşmesi yine zorunludur.
+  - { name: "FIBA Kadınlar Dünya Kupası", sport: "Basketbol", path: "basketball/fiba" }
+  - { name: "FIBA Dünya Kupası", sport: "Basketbol", path: "basketball/fiba" }
 
-# Sadece açık ad eşlemeleri; yaklaşık/fuzzy eşleşme veya takım yer değiştirme yok.
+# Sadece açık ad eşlemeleri; yaklaşık/fuzzy eşleşme yok. Skor her zaman kendi
+# takımına bağlanır; sağlayıcı tarafsız sahada ev/deplasmanı ters listelese bile
+# eşleşme yine iki takımın açık adı üzerinden yapılır (scores.py).
 team_aliases:
   soccer/eng.1:
     Manchester Utd: "Manchester United"
+  soccer/tur.1:
+    Ç.Rizespor: "Caykur Rizespor"
+  soccer/arg.1:
+    I. Rivadavia: "Independiente Rivadavia"
+  basketball/fiba:
+    ABD: "United States"
+    Almanya: "Germany"
+    Avustralya: "Australia"
+    Belçika: "Belgium"
+    Çekya: "Czechia"
+    Çek Cumhuriyeti: "Czechia"
+    Çin: "China"
+    Fransa: "France"
+    Güney Kore: "South Korea"
+    İspanya: "Spain"
+    İtalya: "Italy"
+    Japonya: "Japan"
+    Macaristan: "Hungary"
+    Nijerya: "Nigeria"
+    Porto Riko: "Puerto Rico"
   soccer/fra.1:
     Marsilya: "Marseille"
     PSG: "Paris Saint-Germain"
