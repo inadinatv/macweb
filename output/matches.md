@@ -1,12 +1,15 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-09-07 05:18  
-> **Toplam maç:** 14  |  **Canlı:** 0  |  **Yaklaşan:** 13
+> **Güncellenme:** 2026-09-07 10:25  
+> **Toplam maç:** 14  |  **Canlı:** 1  |  **Yaklaşan:** 12
+
+## 🔴 CANLI
+
+- 🔴 **Porto Riko vs Türkiye** — CANLI · `12:30` | FIBA Kadınlar Dünya Kupası <https://fixbettv84.com/channel.html?id=trtspor>
 
 ## ⏰ YAKLAŞAN
 
-- ⏰ **Porto Riko vs Türkiye** — YAKLAŞAN · `12:30` | FIBA Kadınlar Dünya Kupası <https://fixbettv84.com/channel.html?id=trtspor>
 - ⏰ **Nijerya vs Fransa** — YAKLAŞAN · `15:30` | FIBA Kadınlar Dünya Kupası <https://fixbettv84.com/channel.html?id=ss>
 - ⏰ **Esenler Erokspor vs Kayserispor** — YAKLAŞAN · `17:00` | Trendyol 1. Lig <https://fixbettv84.com/channel.html?id=trtspor>
 - ⏰ **İstanbulspor vs Iğdırspor** — YAKLAŞAN · `17:00` | Trendyol 1. Lig <https://fixbettv84.com/channel.html?id=bm1>
@@ -31,7 +34,7 @@
 - ⏰ River Plate vs I. Rivadavia — 01:15
 
 ### FIBA Kadınlar Dünya Kupası
-- ⏰ Porto Riko vs Türkiye — 12:30
+- 🔴 Porto Riko vs Türkiye — 12:30
 - ⏰ Nijerya vs Fransa — 15:30
 
 ### Fransa Ligue 2

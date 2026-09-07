@@ -9,9 +9,35 @@
       "fixbettv84.com",
       "fixbettv19.com"
     ],
-    "last_checked": "2026-09-07T05:18:15+00:00",
+    "last_checked": "2026-09-07T10:25:28+00:00",
     "note": "OK",
     "probed": 200
   },
-  "live": []
+  "live": [
+    {
+      "match_id": "trtspor",
+      "home": "Porto Riko",
+      "away": "Türkiye",
+      "league": "FIBA Kadınlar Dünya Kupası",
+      "time": "12:30",
+      "sport": "Basketbol",
+      "is_match_of_day": false,
+      "channel_id": "trtspor",
+      "logo_home": "https://img.sporekrani.com/teams/mAFsABwwjmgpSE6BUjAPiBjfjKmLHT1ZmSEEi0i7.png",
+      "logo_away": "https://img.sporekrani.com/teams/HwxkZXxFIewvfdwJ9mTxUsaD4OTsL7tX90RWNUCW.png",
+      "status": "live",
+      "started": true,
+      "raw_event": "12:30 | FIBA Kadınlar Dünya Kupası",
+      "url": "https://fixbettv84.com/channel.html?id=trtspor",
+      "fetched_at": "",
+      "status_source": "schedule",
+      "raw_status": "",
+      "score_home": null,
+      "score_away": null,
+      "score_source": "",
+      "score_updated_at": "",
+      "event_id": "",
+      "starts_at": "2026-09-07T12:30:00+03:00"
+    }
+  ]
 }

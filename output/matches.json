@@ -9,20 +9,20 @@
       "fixbettv84.com",
       "fixbettv19.com"
     ],
-    "last_checked": "2026-09-07T05:18:15+00:00",
+    "last_checked": "2026-09-07T10:25:28+00:00",
     "note": "OK",
     "probed": 200
   },
   "categories": {
     "meta": {
-      "generated_at": "2026-09-07T08:17:39+03:00",
+      "generated_at": "2026-09-07T13:24:52+03:00",
       "date": "2026-09-07",
       "total_matches": 14
     },
     "counts": {
       "total": 14,
-      "live": 0,
-      "upcoming": 13,
+      "live": 1,
+      "upcoming": 12,
       "finished": 1,
       "match_of_day": 0,
       "postponed": 0,
@@ -34,8 +34,7 @@
     "cancelled": [],
     "suspended": [],
     "abandoned": [],
-    "live": [],
-    "upcoming": [
+    "live": [
       {
         "match_id": "trtspor",
         "home": "Porto Riko",
@@ -47,8 +46,8 @@
         "channel_id": "trtspor",
         "logo_home": "https://img.sporekrani.com/teams/mAFsABwwjmgpSE6BUjAPiBjfjKmLHT1ZmSEEi0i7.png",
         "logo_away": "https://img.sporekrani.com/teams/HwxkZXxFIewvfdwJ9mTxUsaD4OTsL7tX90RWNUCW.png",
-        "status": "upcoming",
-        "started": false,
+        "status": "live",
+        "started": true,
         "raw_event": "12:30 | FIBA Kadınlar Dünya Kupası",
         "url": "https://fixbettv84.com/channel.html?id=trtspor",
         "fetched_at": "",
@@ -60,7 +59,9 @@
         "score_updated_at": "",
         "event_id": "",
         "starts_at": "2026-09-07T12:30:00+03:00"
-      },
+      }
+    ],
+    "upcoming": [
       {
         "match_id": "ss",
         "home": "Nijerya",
@@ -430,8 +431,8 @@
           "channel_id": "trtspor",
           "logo_home": "https://img.sporekrani.com/teams/mAFsABwwjmgpSE6BUjAPiBjfjKmLHT1ZmSEEi0i7.png",
           "logo_away": "https://img.sporekrani.com/teams/HwxkZXxFIewvfdwJ9mTxUsaD4OTsL7tX90RWNUCW.png",
-          "status": "upcoming",
-          "started": false,
+          "status": "live",
+          "started": true,
           "raw_event": "12:30 | FIBA Kadınlar Dünya Kupası",
           "url": "https://fixbettv84.com/channel.html?id=trtspor",
           "fetched_at": "",
@@ -769,8 +770,8 @@
           "channel_id": "trtspor",
           "logo_home": "https://img.sporekrani.com/teams/mAFsABwwjmgpSE6BUjAPiBjfjKmLHT1ZmSEEi0i7.png",
           "logo_away": "https://img.sporekrani.com/teams/HwxkZXxFIewvfdwJ9mTxUsaD4OTsL7tX90RWNUCW.png",
-          "status": "upcoming",
-          "started": false,
+          "status": "live",
+          "started": true,
           "raw_event": "12:30 | FIBA Kadınlar Dünya Kupası",
           "url": "https://fixbettv84.com/channel.html?id=trtspor",
           "fetched_at": "",
@@ -1150,8 +1151,8 @@
       "channel_id": "trtspor",
       "logo_home": "https://img.sporekrani.com/teams/mAFsABwwjmgpSE6BUjAPiBjfjKmLHT1ZmSEEi0i7.png",
       "logo_away": "https://img.sporekrani.com/teams/HwxkZXxFIewvfdwJ9mTxUsaD4OTsL7tX90RWNUCW.png",
-      "status": "upcoming",
-      "started": false,
+      "status": "live",
+      "started": true,
       "raw_event": "12:30 | FIBA Kadınlar Dünya Kupası",
       "url": "https://fixbettv84.com/channel.html?id=trtspor",
       "fetched_at": "",
