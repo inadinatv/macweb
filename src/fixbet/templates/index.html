@@ -86,6 +86,38 @@
             font-family: 'Barlow Condensed', sans-serif; font-weight: 700; letter-spacing: 1.5px;
             color: var(--neon-gold); font-size: 1rem;
         }
+
+        /* ---------- LİG PUANI butonu (saatin hemen yanı) ---------- */
+        .league-btn {
+            position: relative; display: inline-flex; align-items: center; gap: 8px;
+            padding: 6px 15px 6px 12px; border-radius: 20px; cursor: pointer;
+            font-family: 'Barlow Condensed', sans-serif; font-weight: 700; letter-spacing: 1.6px;
+            font-size: 0.95rem; color: #eaf7ff; text-transform: uppercase;
+            /* Kenarlar: neon mavi → pembe degrade (padding-box/border-box tekniği) */
+            background:
+                linear-gradient(#0f0c22, #14102c) padding-box,
+                linear-gradient(120deg, var(--neon-cyan) 0%, #7b6bff 45%, var(--neon-pink) 100%) border-box;
+            border: 1px solid transparent;
+            box-shadow:
+                0 0 10px rgba(0,234,255,0.35), 0 0 22px rgba(255,45,122,0.30),
+                inset 0 0 12px rgba(0,234,255,0.10);
+            transition: transform .25s ease, box-shadow .25s ease, filter .25s ease;
+        }
+        .league-btn:hover {
+            transform: translateY(-1px);
+            box-shadow:
+                0 0 16px rgba(0,234,255,0.55), 0 0 34px rgba(255,45,122,0.45),
+                inset 0 0 16px rgba(255,45,122,0.14);
+        }
+        .league-btn:active { transform: translateY(0); }
+        .league-btn:focus-visible { outline: 2px solid var(--neon-cyan); outline-offset: 2px; }
+        .league-btn .lg-icon { display: flex; align-items: center; color: var(--neon-cyan); filter: drop-shadow(0 0 6px rgba(0,234,255,0.75)); }
+        .league-btn .lg-icon svg { width: 15px; height: 15px; display: block; }
+        .league-btn .lg-text {
+            background: linear-gradient(120deg, var(--neon-cyan), #ffffff 55%, var(--neon-pink));
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+        }
+        .league-btn .lg-caret { font-size: 0.7rem; opacity: .75; color: var(--neon-pink); }
         .search-box { position: relative; min-width: 230px; z-index: 1; }
         .search-input {
             width: 100%; background: rgba(20,16,40,0.8); border: 1px solid rgba(155,77,255,0.3);
@@ -447,6 +479,90 @@
             grid-column: 1/-1; background: rgba(255,255,255,0.02); border: 1px dashed rgba(255,255,255,0.1); border-radius: 14px;
         }
 
+        /* ---------- PUAN DURUMU modalı ---------- */
+        .modal-overlay {
+            position: fixed; inset: 0; z-index: 900; display: none;
+            align-items: center; justify-content: center; padding: 20px;
+            /* Arka planı hafif karart + bulanıklaştır */
+            background: rgba(4,3,10,0.72);
+            backdrop-filter: blur(9px) saturate(120%); -webkit-backdrop-filter: blur(9px) saturate(120%);
+        }
+        .modal-overlay.open { display: flex; animation: modalFade .22s ease; }
+        @keyframes modalFade { from { opacity: 0; } to { opacity: 1; } }
+        .modal-panel {
+            position: relative; width: min(660px, 100%); max-height: min(82vh, 720px);
+            display: flex; flex-direction: column; overflow: hidden;
+            background: rgba(11,9,24,0.97);
+            /* Dış kenarlar: belirgin neon pembe */
+            border: 2px solid var(--neon-pink); border-radius: 20px;
+            box-shadow: var(--glow-pink), 0 0 70px rgba(255,45,122,0.22), 0 24px 60px rgba(0,0,0,0.6);
+            animation: modalPop .26s cubic-bezier(.2,.9,.3,1.15);
+        }
+        @keyframes modalPop { from { transform: translateY(14px) scale(.97); opacity: 0; } to { transform: none; opacity: 1; } }
+        .modal-head {
+            display: flex; align-items: flex-start; justify-content: space-between; gap: 12px;
+            padding: 16px 18px 12px; border-bottom: 1px solid rgba(255,45,122,0.28);
+            background: linear-gradient(180deg, rgba(255,45,122,0.10), rgba(255,45,122,0));
+        }
+        .modal-title {
+            font-family: 'Bebas Neue', sans-serif; font-size: 1.85rem; line-height: 1.05; letter-spacing: 3px;
+            /* Neon pembe harfler */
+            color: var(--neon-pink);
+            text-shadow: 0 0 10px rgba(255,45,122,0.85), 0 0 26px rgba(255,45,122,0.45), 0 0 48px rgba(255,45,122,0.22);
+        }
+        .modal-sub { color: var(--text-muted); font-size: 0.74rem; letter-spacing: .4px; margin-top: 3px; }
+        .modal-close {
+            flex: 0 0 auto; width: 34px; height: 34px; display: flex; align-items: center; justify-content: center;
+            border-radius: 11px; cursor: pointer; font-size: 1rem; line-height: 1; color: #ffd7e6;
+            background: rgba(255,45,122,0.12); border: 1px solid rgba(255,45,122,0.45);
+            transition: all .25s ease; outline: none; font-family: inherit;
+        }
+        .modal-close:hover { background: rgba(255,45,122,0.32); color: #fff; box-shadow: 0 0 16px rgba(255,45,122,0.55); transform: rotate(90deg); }
+        .modal-close:focus-visible { outline: 2px solid var(--neon-cyan); outline-offset: 2px; }
+        .modal-body { overflow: auto; padding: 6px 18px 18px; }
+        .modal-body::-webkit-scrollbar { width: 8px; }
+        .modal-body::-webkit-scrollbar-thumb { background: rgba(255,45,122,0.35); border-radius: 8px; }
+
+        .standings-table { width: 100%; border-collapse: collapse; font-size: 0.86rem; table-layout: fixed; }
+        .standings-table thead th {
+            font-family: 'Barlow Condensed', sans-serif; font-weight: 700; letter-spacing: 1.2px;
+            font-size: 0.72rem; color: var(--neon-pink); text-transform: uppercase; text-align: right;
+            padding: 10px 6px 8px; border-bottom: 1px solid rgba(255,45,122,0.35); white-space: nowrap;
+        }
+        .standings-table thead th.col-rank, .standings-table thead th.col-team { text-align: left; }
+        .standings-table tbody td {
+            padding: 8px 6px; text-align: right; color: #d9d2ec; font-variant-numeric: tabular-nums;
+            /* Satır arası çok ince, karanlık temaya uygun ayrıştırıcı çizgi */
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+        }
+        .standings-table tbody tr:last-child td { border-bottom: none; }
+        .standings-table tbody tr { transition: background .2s ease; }
+        .standings-table tbody tr:hover { background: rgba(255,45,122,0.07); }
+        .standings-table .cell-rank { text-align: left; width: 44px; color: var(--text-muted); font-weight: 700; }
+        .standings-table .cell-team { text-align: left; color: #fff; font-weight: 600; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+        .standings-table .cell-team .t-logo { width: 17px; height: 17px; margin-right: 7px; vertical-align: -3px; object-fit: contain; }
+        .standings-table .cell-points { color: var(--neon-gold); font-weight: 800; font-size: 0.95rem; text-shadow: 0 0 10px rgba(255,204,51,0.35); }
+        .standings-table .cell-pos { color: #8fd8ff; }
+        /* Sıra rozetleri: Avrupa hattı / düşme hattı (kaynak notundan gelir) */
+        .standings-table .cell-rank .rk {
+            display: inline-flex; align-items: center; justify-content: center;
+            min-width: 22px; height: 22px; padding: 0 5px; border-radius: 7px;
+            background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.10); font-size: 0.78rem;
+        }
+        .standings-table .cell-rank .rk.qualify { color: #7dffc0; border-color: rgba(0,255,136,0.45); background: rgba(0,255,136,0.10); }
+        .standings-table .cell-rank .rk.relegate { color: #ff9ba7; border-color: rgba(255,45,122,0.5); background: rgba(255,45,122,0.12); }
+        .standings-note {
+            display: flex; align-items: center; gap: 12px; flex-wrap: wrap; justify-content: center;
+            margin-top: 12px; padding-top: 10px; border-top: 1px solid rgba(255,255,255,0.06);
+            color: var(--text-muted); font-size: 0.7rem;
+        }
+        .standings-note b { color: #b6adc9; font-weight: 700; }
+        .standings-empty { padding: 26px 14px; text-align: center; color: var(--text-muted); font-size: 0.88rem; line-height: 1.7; }
+        .standings-empty b { color: var(--neon-pink); }
+        .modal-foot { display: flex; align-items: center; justify-content: space-between; gap: 10px; flex-wrap: wrap;
+            padding: 10px 18px; border-top: 1px solid rgba(255,45,122,0.22); background: rgba(255,45,122,0.05);
+            color: var(--text-muted); font-size: 0.7rem; }
+
         /* ---------- Footer ---------- */
         .site-footer {
             margin-top: 18px; padding: 14px 18px; border-radius: 16px;
@@ -483,6 +599,16 @@
             .match-grid { grid-template-columns: 1fr; }
             .tab-btn { font-size: 0.92rem; padding: 8px 14px; }
             .view-btn { font-size: 0.78rem; padding: 5px 9px; }
+            .league-btn { padding: 6px 12px 6px 10px; font-size: 0.88rem; letter-spacing: 1.2px; }
+            .modal-overlay { padding: 10px; }
+            .modal-panel { max-height: 88vh; border-radius: 16px; }
+            .modal-title { font-size: 1.45rem; letter-spacing: 2px; }
+            .modal-body { padding: 4px 10px 12px; }
+            .standings-table { font-size: 0.78rem; }
+            .standings-table thead th { font-size: 0.66rem; padding: 8px 3px 6px; letter-spacing: .6px; }
+            .standings-table tbody td { padding: 7px 3px; }
+            .standings-table .cell-rank { width: 34px; }
+            .standings-table .cell-team .t-logo { display: none; }
         }
         @media (prefers-reduced-motion: reduce) {
             * { animation: none !important; transition: none !important; }
@@ -500,6 +626,12 @@
             </div>
             <div class="header-meta">
                 <div class="clock-chip" title="Yerel saat">🕒 <span id="liveClock">--:--</span></div>
+                <button type="button" class="league-btn" id="leagueBtn" title="Lig puan durumunu aç"
+                        aria-haspopup="dialog" aria-controls="leagueModal" aria-expanded="false">
+                    <span class="lg-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3.5" width="18" height="17" rx="2.4"></rect><path d="M3 9.3h18M3 14.9h18M9.2 9.3v11.2M15 9.3v11.2"></path></svg></span>
+                    <span class="lg-text">LİG PUANI</span>
+                    <span class="lg-caret" aria-hidden="true">▾</span>
+                </button>
                 <div class="search-box">
                     <span class="search-icon">🔍</span>
                     <input type="text" id="searchInput" class="search-input" placeholder="Kanal veya maç ara..." aria-label="Kanal veya maç ara" />
@@ -625,8 +757,45 @@
                 <h2 style="margin-bottom:10px;">Günün Maçları</h2>
                 {{MATCHES_HTML}}
                 {{EXTRA_HTML}}
+                {{STANDINGS_HTML}}
             </div>
         </noscript>
+    </div>
+
+    <!-- PUAN DURUMU modalı: LİG PUANI butonuyla açılır (gerçek puan tablosu) -->
+    <div class="modal-overlay" id="leagueModal" role="dialog" aria-modal="true" aria-labelledby="leagueModalTitle">
+        <div class="modal-panel" role="document">
+            <div class="modal-head">
+                <div>
+                    <h2 class="modal-title" id="leagueModalTitle">PUAN DURUMU</h2>
+                    <div class="modal-sub" id="leagueModalSub">Lig puan durumu yükleniyor…</div>
+                </div>
+                <button type="button" class="modal-close" id="leagueModalClose" aria-label="Kapat" title="Kapat (Esc)">✕</button>
+            </div>
+            <div class="modal-body">
+                <table class="standings-table" id="standingsTable">
+                    <thead>
+                        <tr>
+                            <th class="col-rank" scope="col">SIRA</th>
+                            <th class="col-team" scope="col">TAKIM</th>
+                            <th scope="col" title="Oynanan maç">O</th>
+                            <th scope="col" title="Galibiyet">G</th>
+                            <th scope="col" title="Beraberlik">B</th>
+                            <th scope="col" title="Mağlubiyet">M</th>
+                            <th scope="col" title="Averaj">AV</th>
+                            <th scope="col" title="Puan">P</th>
+                        </tr>
+                    </thead>
+                    <tbody id="standingsBody"></tbody>
+                </table>
+                <div class="standings-empty" id="standingsEmpty" hidden></div>
+                <div class="standings-note" id="standingsNote"></div>
+            </div>
+            <div class="modal-foot">
+                <span><b>O</b> oynanan · <b>G</b> galibiyet · <b>B</b> beraberlik · <b>M</b> mağlubiyet · <b>AV</b> averaj · <b>P</b> puan</span>
+                <button type="button" class="mini-btn" id="standingsRefreshBtn" title="Puan durumunu yeniden yükle">🔄 Yenile</button>
+            </div>
+        </div>
     </div>
 
     <script>
@@ -645,6 +814,8 @@
         const playbackConfig = {{PLAYBACK_JSON}};
         const extraSource = "{{EXTRA_SOURCE}}";
         let extraData = {{EXTRA_JSON}};
+        const standingsSource = "{{STANDINGS_SOURCE}}";
+        let standingsData = {{STANDINGS_JSON}};
         /*BOT_END*/
 
         (function () {
@@ -715,7 +886,15 @@
                 totalMatches: $("totalMatchesCount"),
                 totalLive: $("totalLiveCount"),
                 liveClock: $("liveClock"),
-                updatedAt: $("updatedAtText")
+                updatedAt: $("updatedAtText"),
+                leagueBtn: $("leagueBtn"),
+                leagueModal: $("leagueModal"),
+                leagueModalClose: $("leagueModalClose"),
+                leagueModalSub: $("leagueModalSub"),
+                standingsTable: $("standingsTable"),
+                standingsBody: $("standingsBody"),
+                standingsEmpty: $("standingsEmpty"),
+                standingsNote: $("standingsNote")
             };
 
             /* ---------------- Saat & maç durumu ---------------- */
@@ -998,7 +1177,7 @@
             const HLS_CDN_BACKUP = "https://unpkg.com/hls.js@1.7.2/dist/hls.min.js";
             const STARTUP_TIMEOUT = 25000, STALL_TIMEOUT = 20000;
             let hlsInstance = null, hlsLibPromise = null, proxyDiscovery = null;
-            let matchesRefreshToken = 0, extraRefreshToken = 0;
+            let matchesRefreshToken = 0, extraRefreshToken = 0, standingsRefreshToken = 0;
             let hlsFailTimer = null, stallTimer = null, playToken = 0;
             const playerLogs = [];
 
@@ -1713,6 +1892,141 @@
                     .catch(() => { if (!silent && request === matchesRefreshToken) els.updatedAt.textContent = updatedAt + " (çevrimdışı)"; return false; }).finally(() => clearTimeout(timeout));
             }
 
+            /* ---------------- LİG PUANI → PUAN DURUMU modalı ---------------- */
+            /** Sayısal puan tablosu alanı: sayı değilse null (boş hücre uydurulmaz). */
+            const statNumber = (v) => (/^-?[0-9]{1,4}$/.test(String(v == null ? "" : v).trim()) ? Number(String(v).trim()) : null);
+            /** Takım logosu yalnızca https adresiyle gömülür. */
+            const safeLogo = (u) => (/^https:\/\/[^\s"'<>]+$/i.test(String(u || "")) ? String(u) : "");
+
+            /** Gömülü/uzak puan durumunu doğrular; satırı olmayan lig listelenmez. */
+            function normalizeStandings(json) {
+                if (!json || !Array.isArray(json.leagues)) return null;
+                const leagues = [];
+                json.leagues.forEach((lg) => {
+                    if (!lg || !Array.isArray(lg.rows)) return;
+                    const rows = [];
+                    lg.rows.forEach((r) => {
+                        if (!r || !r.team) return;
+                        rows.push({
+                            rank: statNumber(r.rank), team: String(r.team),
+                            abbr: r.abbr ? String(r.abbr) : "", logo: safeLogo(r.logo),
+                            played: statNumber(r.played), wins: statNumber(r.wins),
+                            draws: statNumber(r.draws), losses: statNumber(r.losses),
+                            goalsFor: statNumber(r.goalsFor), goalsAgainst: statNumber(r.goalsAgainst),
+                            diff: statNumber(r.diff), points: statNumber(r.points),
+                            note: r.note ? String(r.note) : ""
+                        });
+                    });
+                    if (rows.length) leagues.push({
+                        id: String(lg.id || ""), name: String(lg.name || ""),
+                        season: String(lg.season || ""), updatedAt: String(lg.updated_at || ""), rows: rows
+                    });
+                });
+                return { source: String(json.source || ""), generatedAt: String(json.generated_at || ""), leagues: leagues };
+            }
+
+            /** Kaynak notundan rozet sınıfı: Avrupa hattı / düşme hattı. */
+            function rankBadgeClass(note) {
+                const n = norm(note);
+                if (/relegat|kume|küme|drop/.test(n)) return "relegate";
+                if (/champions|europa|conference|qualify|libertadores/.test(n)) return "qualify";
+                return "";
+            }
+
+            function formatStamp(iso) {
+                const d = iso ? new Date(iso) : null;
+                if (!d || isNaN(d.getTime())) return "";
+                return pad(d.getDate()) + "." + pad(d.getMonth() + 1) + "." + d.getFullYear() + " " +
+                    pad(d.getHours()) + ":" + pad(d.getMinutes());
+            }
+
+            function renderStandings() {
+                if (!els.standingsBody || !els.standingsTable) return;
+                const data = normalizeStandings(standingsData);
+                const league = data && data.leagues.length ? data.leagues[0] : null;
+                const rows = league ? league.rows : [];
+
+                if (!rows.length) {
+                    // Tablo yoksa uydurma satır BASILMAZ; dürüst boş durum gösterilir.
+                    els.standingsTable.hidden = true;
+                    els.standingsEmpty.hidden = false;
+                    els.standingsEmpty.innerHTML =
+                        "📊 Puan durumu verisi henüz yok.<br>" +
+                        "<small style=\"opacity:.75\">Tablo botun <b>output/standings.json</b> çıktısından gelir; " +
+                        "kaynağa ulaşılamadığında sayfa uydurma puan tablosu göstermez. " +
+                        "Bot bir sonraki çalışmasında tabloyu doldurur.</small>";
+                    els.standingsNote.innerHTML = "";
+                    els.leagueModalSub.textContent = "Veri bekleniyor";
+                    return;
+                }
+
+                const dash = (v) => (v == null ? "–" : String(v));
+                els.standingsTable.hidden = false;
+                els.standingsEmpty.hidden = true;
+                els.standingsBody.innerHTML = rows.map((r) => {
+                    const badge = rankBadgeClass(r.note);
+                    const av = r.diff == null ? "–" : (r.diff > 0 ? "+" + r.diff : String(r.diff));
+                    const logo = r.logo ? '<img class="t-logo" src="' + esc(r.logo) + '" alt="" loading="lazy" />' : "";
+                    return "<tr>" +
+                        '<td class="cell-rank"><span class="rk' + (badge ? " " + badge : "") + '">' + esc(dash(r.rank)) + "</span></td>" +
+                        '<td class="cell-team" title="' + esc(r.team) + '">' + logo + esc(r.team) + "</td>" +
+                        "<td>" + esc(dash(r.played)) + "</td>" +
+                        "<td>" + esc(dash(r.wins)) + "</td>" +
+                        "<td>" + esc(dash(r.draws)) + "</td>" +
+                        "<td>" + esc(dash(r.losses)) + "</td>" +
+                        '<td class="cell-pos">' + esc(av) + "</td>" +
+                        '<td class="cell-points">' + esc(dash(r.points)) + "</td>" +
+                        "</tr>";
+                }).join("");
+
+                els.leagueModalSub.textContent = [league.name, league.season].filter(Boolean).join(" · ");
+                const stamp = formatStamp(league.updatedAt);
+                els.standingsNote.innerHTML =
+                    "<span>Kaynak: <b>" + esc(data.source || "—") + "</b></span>" +
+                    (stamp ? "<span>Son güncelleme: <b>" + esc(stamp) + "</b></span>" : "") +
+                    "<span><b>" + rows.length + "</b> takım</span>";
+            }
+
+            let leagueModalReturnFocus = null;
+            function isLeagueModalOpen() { return !!(els.leagueModal && els.leagueModal.classList.contains("open")); }
+
+            function openLeagueModal() {
+                if (!els.leagueModal || isLeagueModalOpen()) return;
+                leagueModalReturnFocus = document.activeElement;
+                els.leagueModal.classList.add("open");
+                document.body.style.overflow = "hidden";   // arka plan kaydırması kilitlenir
+                if (els.leagueBtn) els.leagueBtn.setAttribute("aria-expanded", "true");
+                if (els.leagueModalClose) els.leagueModalClose.focus();
+            }
+
+            function closeLeagueModal() {
+                if (!els.leagueModal || !isLeagueModalOpen()) return;
+                els.leagueModal.classList.remove("open");
+                document.body.style.overflow = "";
+                if (els.leagueBtn) els.leagueBtn.setAttribute("aria-expanded", "false");
+                if (leagueModalReturnFocus && typeof leagueModalReturnFocus.focus === "function") leagueModalReturnFocus.focus();
+                leagueModalReturnFocus = null;
+            }
+
+            function refreshStandings(silent) {
+                if (!standingsSource || typeof fetch !== "function") return Promise.resolve(false);
+                const request = ++standingsRefreshToken;
+                const controller = new AbortController();
+                const timeout = setTimeout(() => controller.abort(), 6000);
+                return fetch(standingsSource + "?ts=" + Date.now(), { cache: "no-store", signal: controller.signal })
+                    .then((r) => (r.ok ? r.json() : Promise.reject(new Error("HTTP " + r.status))))
+                    .then((json) => {
+                        if (request !== standingsRefreshToken) return false;
+                        const data = normalizeStandings(json);
+                        // Boş yanıt mevcut tabloyu SİLMEZ: son bilinen tablo kalır.
+                        if (!data || !data.leagues.length) throw new Error("boş tablo");
+                        standingsData = data;
+                        renderStandings();
+                        return true;
+                    })
+                    .catch(() => false).finally(() => clearTimeout(timeout));
+            }
+
             /* ---------------- Olaylar ---------------- */
             function bindEvents() {
                 document.querySelectorAll(".tab-btn").forEach((btn) => {
@@ -1766,9 +2080,23 @@
                     playSource((state.currentSourceIndex + 1) % n, true);
                 };
 
-                $("refreshDataBtn").onclick = () => { refreshMatches(false); refreshExtra(true); };
+                $("refreshDataBtn").onclick = () => { refreshMatches(false); refreshExtra(true); refreshStandings(true); };
+
+                // LİG PUANI → PUAN DURUMU modalı
+                if (els.leagueBtn) els.leagueBtn.onclick = openLeagueModal;
+                if (els.leagueModalClose) els.leagueModalClose.onclick = closeLeagueModal;
+                if (els.leagueModal) {
+                    // Karartılmış alanın kendisine tıklamak modalı kapatır (panele tıklamak kapatmaz)
+                    els.leagueModal.onclick = (e) => { if (e.target === els.leagueModal) closeLeagueModal(); };
+                }
+                if ($("standingsRefreshBtn")) $("standingsRefreshBtn").onclick = () => { refreshStandings(false); };
 
                 document.addEventListener("keydown", (e) => {
+                    // Modal açıkken: Esc kapatır, kanal kısayolları çalışmaz.
+                    if (isLeagueModalOpen()) {
+                        if (e.key === "Escape") { e.preventDefault(); closeLeagueModal(); }
+                        return;
+                    }
                     const tag = document.activeElement ? document.activeElement.tagName.toLowerCase() : "";
                     if (tag === "input" || tag === "textarea" || e.metaKey || e.ctrlKey || e.altKey) return;
                     if (e.key === "ArrowRight") { e.preventDefault(); $("navNext").click(); }
@@ -1833,6 +2161,7 @@
                 renderChannels();
                 renderMatches();
                 renderExtra();
+                renderStandings();
                 tickClock();
                 bindEvents();
                 createParticles();
@@ -1840,7 +2169,8 @@
                 setInterval(tickClock, 30000);
                 refreshMatches(true);
                 refreshExtra(true);
-                setInterval(() => { refreshMatches(true); refreshExtra(true); }, 5 * 60 * 1000);
+                refreshStandings(true);
+                setInterval(() => { refreshMatches(true); refreshExtra(true); refreshStandings(true); }, 5 * 60 * 1000);
                 window.inadina.ready = true;
             }
 
@@ -1862,7 +2192,13 @@
                 computeState: computeState,
                 normalizeRemote: normalizeRemote,
                 refreshMatches: refreshMatches,
-                refreshExtra: refreshExtra
+                refreshExtra: refreshExtra,
+                normalizeStandings: normalizeStandings,
+                renderStandings: renderStandings,
+                refreshStandings: refreshStandings,
+                openLeagueModal: openLeagueModal,
+                closeLeagueModal: closeLeagueModal,
+                isLeagueModalOpen: isLeagueModalOpen
             };
 
             if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init);

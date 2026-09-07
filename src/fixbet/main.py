@@ -17,7 +17,7 @@ import time
 from datetime import datetime
 from zoneinfo import ZoneInfo
 
-from . import categorizer, channels, config, domain_checker, extras, parser, reports, scraper, scores, site
+from . import categorizer, channels, config, domain_checker, extras, parser, reports, scraper, scores, site, standings
 from .models import Match
 
 TZ = ZoneInfo("Europe/Istanbul")
@@ -65,8 +65,11 @@ def pipeline() -> dict:
     # 2c) Ekstra paneller (Atom Spor vb. doğrudan m3u8 kaynakları) -> output/extra_channels.json
     extra_data = refresh_extras(now)
 
+    # 2ç) Lig puan durumu (PUAN DURUMU modalı) -> output/standings.json
+    standings_data = refresh_standings(now)
+
     # 2d) GitHub Pages için repo köküne index.html üret (güncel adres + maçlar + extra)
-    site.build_index_html(matches, channels_data, extra_data=extra_data)
+    site.build_index_html(matches, channels_data, extra_data=extra_data, standings_data=standings_data)
 
     # 3) Raporlar
     reports.write_json_data(matches, categorized, site_info, channels_data)
@@ -101,6 +104,17 @@ def refresh_extras(now: datetime | None = None) -> dict:
     except Exception as exc:  # noqa: BLE001 - ekstra panel ana akışı durdurmasın
         print(f"[!] Ekstra paneller çözümlenemedi: {exc} — son bilinen liste kullanılıyor.")
         return extras.load_or_build(now)
+
+
+def refresh_standings(now: datetime | None = None) -> dict:
+    """Puan durumunu yeniler; hata olursa son bilinen tabloyla devam eder."""
+    try:
+        data = standings.refresh(now)
+        print(f"[standings] {standings.summary(data)}")
+        return data
+    except Exception as exc:  # noqa: BLE001 - puan durumu ana akışı durdurmasın
+        print(f"[!] Puan durumu güncellenemedi: {exc} — son bilinen tablo kullanılıyor.")
+        return standings.load_or_build(now)
 
 
 def load_matches_from_output(now: datetime | None = None) -> list[Match]:
@@ -147,11 +161,13 @@ def build_index_from_output() -> str | None:
 
     matches = categorizer.classify(matches, now)
     extra_data = extras.load_or_build(now)
-    out = site.build_index_html(matches, channels_data, now, extra_data=extra_data)
+    standings_data = standings.load_or_build(now)
+    out = site.build_index_html(matches, channels_data, now, extra_data=extra_data,
+                                standings_data=standings_data)
     live = sum(1 for m in matches if m.status == "live")
     print(f"index.html üretildi: {out}")
     print(f"  {len(matches)} maç ({live} canlı) · {channels_data.get('total', 0)} kanal · "
-          f"{extra_data.get('total', 0)} extra (m3u8)")
+          f"{extra_data.get('total', 0)} extra (m3u8) · {standings.summary(standings_data)}")
     return out
 
 
@@ -190,6 +206,7 @@ def main(argv: list[str] | None = None) -> int:
     sub.add_parser("update-site", help="Sadece güncel adresi güncelle")
     sub.add_parser("build-index", help="output/ verisinden index.html'i yeniden üret (çevrimdışı)")
     sub.add_parser("extras", help="Sadece ekstra panelleri (m3u8 kanallar) çözümle ve sayfayı güncelle")
+    sub.add_parser("standings", help="Sadece lig puan durumunu çek ve sayfayı güncelle")
     sub.add_parser("matches", help="Maçları çek ve kategorize et")
     sub.add_parser("cat", help="Özeti konsola bas")
     web_parser = sub.add_parser("web", help="Sayfa + isteğe bağlı HLS proxy hizmeti (HTTPS reverse proxy arkasında)")
@@ -236,6 +253,19 @@ def main(argv: list[str] | None = None) -> int:
         channels_data = (_json.loads(ch_path.read_text(encoding="utf-8")).get("channels", {})
                          if ch_path.exists() else {})
         site.build_index_html(matches, channels_data, now, extra_data=data)
+        return 0
+    if args.cmd == "standings":
+        now = _now()
+        data = refresh_standings(now)
+        print(f"Puan durumu: {standings.summary(data)}")
+        # Sayfayı da tazele (eldeki son maç/kanal/extra verisiyle)
+        matches = categorizer.classify(load_matches_from_output(now), now)
+        import json as _json
+        ch_path = config.OUTPUT_DIR / "channels.json"
+        channels_data = (_json.loads(ch_path.read_text(encoding="utf-8")).get("channels", {})
+                         if ch_path.exists() else {})
+        site.build_index_html(matches, channels_data, now, extra_data=extras.load_or_build(now),
+                              standings_data=data)
         return 0
     if args.cmd == "update-site":
         site_info = domain_checker.check_current_site()

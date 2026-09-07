@@ -17,7 +17,7 @@ from html import escape
 from typing import Any
 from zoneinfo import ZoneInfo
 
-from . import channels, config, extras, scraper
+from . import channels, config, extras, scraper, standings
 from .models import Match
 from .match_state import STATUS_LABELS, STATUS_LOOKUP, display_score, score_pair
 
@@ -228,8 +228,58 @@ def _extra_groups_html(extra_data: dict[str, Any] | None) -> str:
     return "".join(blocks)
 
 
+def standings_payload(data: dict[str, Any] | None) -> dict[str, Any]:
+    """Puan durumunu sayfanın beklediği sade JSON'a indirger.
+
+    Yalnızca tablonun göstereceği alanlar bırakılır; sayısal değerler kaynaktan
+    geldiği gibi aktarılır (hiçbir değer burada hesaplanmaz/uydurulmaz).
+    """
+    keep = ("rank", "team", "abbr", "logo", "played", "wins", "draws", "losses",
+            "goalsFor", "goalsAgainst", "diff", "points", "note")
+    leagues = []
+    for lg in (data or {}).get("leagues", []):
+        rows = [{k: r.get(k) for k in keep} for r in lg.get("rows", []) if isinstance(r, dict) and r.get("team")]
+        if not rows:
+            continue
+        leagues.append({"id": lg.get("id") or "", "name": lg.get("name") or "",
+                        "sport": lg.get("sport") or "Futbol", "season": lg.get("season") or "",
+                        "updated_at": lg.get("updated_at") or "", "rows": rows})
+    return {"source": (data or {}).get("source") or "", "generated_at": (data or {}).get("generated_at") or "",
+            "leagues": leagues}
+
+
+def _standings_groups_html(data: dict[str, Any] | None) -> str:
+    """Puan durumunu JS'siz ortam (noscript) için okunur HTML tablosuna çevirir."""
+    payload = standings_payload(data)
+    blocks: list[str] = []
+    for lg in payload["leagues"]:
+        rows = "".join(
+            f'<tr><td style="padding:4px 6px;border-bottom:1px solid rgba(255,255,255,0.07);">{escape(str(r.get("rank") or "-"))}</td>'
+            f'<td style="padding:4px 6px;border-bottom:1px solid rgba(255,255,255,0.07);">{escape(str(r.get("team") or ""))}</td>'
+            f'<td style="padding:4px 6px;text-align:right;border-bottom:1px solid rgba(255,255,255,0.07);">{escape(str(r.get("played") if r.get("played") is not None else "-"))}</td>'
+            f'<td style="padding:4px 6px;text-align:right;border-bottom:1px solid rgba(255,255,255,0.07);">{escape(str(r.get("wins") if r.get("wins") is not None else "-"))}</td>'
+            f'<td style="padding:4px 6px;text-align:right;border-bottom:1px solid rgba(255,255,255,0.07);">{escape(str(r.get("draws") if r.get("draws") is not None else "-"))}</td>'
+            f'<td style="padding:4px 6px;text-align:right;border-bottom:1px solid rgba(255,255,255,0.07);">{escape(str(r.get("losses") if r.get("losses") is not None else "-"))}</td>'
+            f'<td style="padding:4px 6px;text-align:right;border-bottom:1px solid rgba(255,255,255,0.07);">{escape(str(r.get("diff") if r.get("diff") is not None else "-"))}</td>'
+            f'<td style="padding:4px 6px;text-align:right;border-bottom:1px solid rgba(255,255,255,0.07);"><b>{escape(str(r.get("points") if r.get("points") is not None else "-"))}</b></td></tr>'
+            for r in lg["rows"])
+        blocks.append(
+            f'<h3 style="margin:14px 0 6px;">🏆 {escape(lg["name"])} — PUAN DURUMU</h3>'
+            '<table style="border-collapse:collapse;width:100%;font-size:13px;color:#f4efff;">'
+            '<thead><tr style="color:#ff2d7a;">'
+            + "".join(f'<th style="padding:4px 6px;text-align:{align};border-bottom:1px solid rgba(255,255,255,0.12);">{h}</th>'
+                      for h, align in (("SIRA", "left"), ("TAKIM", "left"), ("O", "right"), ("G", "right"),
+                                       ("B", "right"), ("M", "right"), ("AV", "right"), ("P", "right")))
+            + f'</tr></thead><tbody>{rows}</tbody></table>')
+    if not blocks:
+        return ('<h3 style="margin:14px 0 6px;">🏆 PUAN DURUMU</h3>'
+                '<p class="empty-msg">Puan durumu verisi henüz alınamadı.</p>')
+    return "".join(blocks)
+
+
 def build_index_html(matches: list[Match], channels_data: dict[str, Any] | None = None,
-                     now: datetime | None = None, extra_data: dict[str, Any] | None = None) -> str | None:
+                     now: datetime | None = None, extra_data: dict[str, Any] | None = None,
+                     standings_data: dict[str, Any] | None = None) -> str | None:
     """index.html üretir ve repo köküne yazar. Şablon yoksa None döner."""
     if not TEMPLATE.exists():
         return None
@@ -243,6 +293,8 @@ def build_index_html(matches: list[Match], channels_data: dict[str, Any] | None 
     payload = channel_payload(channel_list)
     if extra_data is None:
         extra_data = extras.load_or_build(now)
+    if standings_data is None:
+        standings_data = standings.load_or_build(now)
 
     html = TEMPLATE.read_text(encoding="utf-8")
     replacements = {
@@ -264,6 +316,9 @@ def build_index_html(matches: list[Match], channels_data: dict[str, Any] | None 
         "{{EXTRA_SOURCE}}": extras.EXTRA_SOURCE,
         "{{EXTRA_JSON}}": _js(extra_payload(extra_data)),
         "{{EXTRA_HTML}}": _extra_groups_html(extra_data),
+        "{{STANDINGS_SOURCE}}": standings.STANDINGS_SOURCE,
+        "{{STANDINGS_JSON}}": _js(standings_payload(standings_data)),
+        "{{STANDINGS_HTML}}": _standings_groups_html(standings_data),
     }
     for token, value in replacements.items():
         html = html.replace(token, value)

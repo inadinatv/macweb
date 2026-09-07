@@ -37,7 +37,8 @@ def test_template_markers():
                 "{{CHANNEL_ICONS}}", "{{CHANNEL_STATUSES}}", "{{MATCHES_JSON}}",
                 "{{MATCHES_SOURCE}}", "{{LIVE_WINDOW_JSON}}", "{{MATCHES_HTML}}",
                 "{{SITE_ADDR}}", "{{UPDATED_AT}}",
-                "{{EXTRA_SOURCE}}", "{{EXTRA_JSON}}", "{{EXTRA_HTML}}"):
+                "{{EXTRA_SOURCE}}", "{{EXTRA_JSON}}", "{{EXTRA_HTML}}",
+                "{{STANDINGS_SOURCE}}", "{{STANDINGS_JSON}}", "{{STANDINGS_HTML}}"):
         assert tok in tpl, f"eksik yer tutucu: {tok}"
     assert "/*BOT_START*/" in tpl and "/*BOT_END*/" in tpl
     print("OK: template_markers")
@@ -186,6 +187,75 @@ def test_build_index_html_fills_everything():
     print("OK: build_index_html_fills_everything")
 
 
+def test_league_standings_button_and_modal():
+    """LİG PUANI butonu + PUAN DURUMU modalı ve gerçek puan tablosu gömülür."""
+    tpl = site.TEMPLATE.read_text(encoding="utf-8")
+    # buton saat widget'ının hemen yanında, kendi sınıfıyla (tab-btn değil)
+    assert 'id="leagueBtn"' in tpl and "LİG PUANI" in tpl
+    assert 'class="league-btn"' in tpl
+    assert tpl.index('id="liveClock"') < tpl.index('id="leagueBtn"'), "buton saatten sonra gelmeli"
+    assert tpl.count('class="tab-btn') == 3, "sekme sayısı değişmemeli"
+    # modal: karartma, neon pembe kenar, kapatma butonu, başlık
+    assert 'id="leagueModal"' in tpl and 'id="leagueModalClose"' in tpl
+    assert "backdrop-filter: blur" in tpl
+    assert "border: 2px solid var(--neon-pink)" in tpl
+    assert 'class="modal-title" id="leagueModalTitle">PUAN DURUMU<' in tpl
+    # sütunlar
+    head = tpl[tpl.index('id="standingsTable"'):tpl.index('id="standingsBody"')]
+    assert [c for c in ("SIRA", "TAKIM", "O", "G", "B", "M", "AV", "P")] == \
+        [h for h in ("SIRA", "TAKIM", "O", "G", "B", "M", "AV", "P") if h in head]
+    print("OK: league_standings_button_and_modal")
+
+
+def test_standings_payload_and_noscript_table():
+    """Puan durumu JSON'u sadeleşir ve JS'siz ortam için tabloya dönüşür."""
+    data = {"source": "espn", "generated_at": "2026-09-07T22:47:00+03:00", "leagues": [{
+        "id": "soccer/tur.1", "name": "Trendyol Süper Lig", "sport": "Futbol",
+        "season": "2026-27 Turkish Super Lig", "updated_at": "2026-09-07T22:47:00+03:00", "teams": 1,
+        "rows": [{"rank": 1, "team": "Galatasaray", "sourceTeam": "Galatasaray", "abbr": "GAL",
+                  "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/432.png", "played": 4,
+                  "wins": 3, "draws": 1, "losses": 0, "goalsFor": 12, "goalsAgainst": 6,
+                  "diff": 6, "points": 10, "note": "Champions League"}]}]}
+    payload = site.standings_payload(data)
+    row = payload["leagues"][0]["rows"][0]
+    assert "sourceTeam" not in row, "iç alan sayfaya sızmamalı"
+    assert (row["played"], row["points"], row["diff"]) == (4, 10, 6), "sayılar değişmemeli"
+
+    html = site._standings_groups_html(data)
+    assert "PUAN DURUMU" in html and "Galatasaray" in html
+    assert "<th" in html and "SIRA" in html and "AV" in html
+    # boş tablo: uydurma satır değil, dürüst mesaj
+    empty = site._standings_groups_html({"leagues": []})
+    assert "Galatasaray" not in empty and "henüz alınamadı" in empty
+    assert site.standings_payload(None)["leagues"] == []
+    print("OK: standings_payload_and_noscript_table")
+
+
+def test_generated_index_embeds_real_standings():
+    matches = _get_matches()
+    with tempfile.TemporaryDirectory() as tmp:
+        from pathlib import Path
+        original = site.INDEX_OUT
+        site.INDEX_OUT = Path(tmp) / "index.html"
+        try:
+            site.build_index_html(matches, _get_channels(), datetime(2026, 9, 4, 20, 8))
+            html = site.INDEX_OUT.read_text(encoding="utf-8")
+        finally:
+            site.INDEX_OUT = original
+    assert "{{" not in html
+    assert 'const standingsSource = "output/standings.json"' in html
+    assert '"source": "espn"' in html or '"source":"espn"' in html
+    # output/standings.json doluysa lider tabloya gömülmüş olmalı
+    from fixbet import standings
+    seeded = standings.load_or_build()
+    if seeded.get("leagues"):
+        leader = seeded["leagues"][0]["rows"][0]["team"]
+        assert leader in html, f"lider ({leader}) sayfaya gömülmedi"
+        noscript = html[html.index("<noscript>"):html.index("</noscript>")]
+        assert "PUAN DURUMU" in noscript and leader in noscript, "noscript puan tablosu yok"
+    print("OK: generated_index_embeds_real_standings")
+
+
 if __name__ == "__main__":
     test_template_markers()
     test_no_server_text_and_no_fake_matches()
@@ -197,4 +267,7 @@ if __name__ == "__main__":
     test_live_window_table()
     test_match_groups_html()
     test_build_index_html_fills_everything()
+    test_league_standings_button_and_modal()
+    test_standings_payload_and_noscript_table()
+    test_generated_index_embeds_real_standings()
     print("\nSİTE TESTLERİ GEÇTİ ✅")
