@@ -9,35 +9,9 @@
       "fixbettv84.com",
       "fixbettv19.com"
     ],
-    "last_checked": "2026-09-06T23:04:40+00:00",
+    "last_checked": "2026-09-07T00:28:42+00:00",
     "note": "OK",
     "probed": 200
   },
-  "live": [
-    {
-      "match_id": "smarts",
-      "home": "River Plate",
-      "away": "I. Rivadavia",
-      "league": "Arjantin Primera Division",
-      "time": "01:15",
-      "sport": "Futbol",
-      "is_match_of_day": false,
-      "channel_id": "smarts",
-      "logo_home": "https://img.sporekrani.com/teams/BjyiUqH8rlvFCAi2XmyYYDwXa24FcEKdObS3zlll.png",
-      "logo_away": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7f/Escudo_del_Club_Independiente_Rivadavia.svg/1280px-Escudo_del_Club_Independiente_Rivadavia.svg.png",
-      "status": "live",
-      "started": true,
-      "raw_event": "01:15 | Arjantin Primera Division",
-      "url": "https://fixbettv84.com/channel.html?id=smarts",
-      "fetched_at": "",
-      "status_source": "schedule",
-      "raw_status": "",
-      "score_home": null,
-      "score_away": null,
-      "score_source": "",
-      "score_updated_at": "",
-      "event_id": "",
-      "starts_at": "2026-09-07T01:15:00+03:00"
-    }
-  ]
+  "live": []
 }

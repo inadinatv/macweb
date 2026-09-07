@@ -1,12 +1,8 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-09-06 23:04  
-> **Toplam maç:** 14  |  **Canlı:** 1  |  **Yaklaşan:** 10
-
-## 🔴 CANLI
-
-- 🔴 **River Plate vs I. Rivadavia** — CANLI · `01:15` | Arjantin Primera Division <https://fixbettv84.com/channel.html?id=smarts>
+> **Güncellenme:** 2026-09-07 00:28  
+> **Toplam maç:** 14  |  **Canlı:** 0  |  **Yaklaşan:** 13
 
 ## ⏰ YAKLAŞAN
 
@@ -20,18 +16,19 @@
 - ⏰ **Göztepe vs Gaziantep FK** — YAKLAŞAN · `20:00` | Trendyol Süper Lig <https://fixbettv84.com/channel.html?id=b2>
 - ⏰ **Ç.Rizespor vs Alanyaspor** — YAKLAŞAN · `20:00` | Trendyol Süper Lig <https://fixbettv84.com/channel.html?id=zirve>
 - ⏰ **Getafe vs Celta Vigo** — YAKLAŞAN · `20:00` | İspanya La Liga <https://fixbettv84.com/channel.html?id=ss>
+- ⏰ **Udinese vs Lazio** — YAKLAŞAN · `21:45` | İtalya Serie A <https://fixbettv84.com/channel.html?id=ss2>
+- ⏰ **Nantes vs Nancy** — YAKLAŞAN · `21:45` | Fransa Ligue 2 <https://fixbettv84.com/channel.html?id=b4>
+- ⏰ **Elche vs Real Sociedad** — YAKLAŞAN · `22:30` | İspanya La Liga <https://fixbettv84.com/channel.html?id=ss>
 
 ## ✅ BİTTİ
 
-- ✅ **Udinese vs Lazio** — MS · `21:45` | İtalya Serie A <https://fixbettv84.com/channel.html?id=ss2>
-- ✅ **Nantes vs Nancy** — MS · `21:45` | Fransa Ligue 2 <https://fixbettv84.com/channel.html?id=b4>
-- ✅ **Elche vs Real Sociedad** — MS · `22:30` | İspanya La Liga <https://fixbettv84.com/channel.html?id=ss>
+- ✅ **River Plate vs I. Rivadavia** — MS · `01:15` | Arjantin Primera Division <https://fixbettv84.com/channel.html?id=smarts>
 
 ---
 ## 🏆 Lig Bazlı
 
 ### Arjantin Primera Division
-- 🔴 River Plate vs I. Rivadavia — 01:15
+- ⏰ River Plate vs I. Rivadavia — 01:15
 
 ### FIBA Kadınlar Dünya Kupası
 - ⏰ Porto Riko vs Türkiye — 12:30
@@ -118,7 +115,7 @@
 - 🟢 **BEIN SPORTS 2** <https://corestream.ardastream.live//bein2/tracks-v1a1/mono.m3u8>
 - 🟢 **BEIN SPORTS 3** <https://corestream.ardastream.live//bein3/tracks-v1a1/mono.m3u8>
 - 🟢 **BEIN SPORTS 4** <https://corestream.ardastream.live//bein4/tracks-v1a1/mono.m3u8>
-- 🟡 **BEIN SPORTS 5** <https://corestream.ardastream.live//bein5/tracks-v1a1/mono.m3u8>
+- ⚪ **BEIN SPORTS 5** <https://tv.atomspor.workers.dev/?ID=bein-sports-5>
 - 🟢 **S SPORT** <https://corestream.ardastream.live//s-sport/tracks-v1a1/mono.m3u8>
 - 🟢 **S SPORT 2** <https://corestream.ardastream.live//s-sport2/tracks-v1a1/mono.m3u8>
 - ⚪ **S SPORT PLUS** <https://tv.atomspor.workers.dev/?ID=ssport-plus>
