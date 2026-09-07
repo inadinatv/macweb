@@ -9,35 +9,9 @@
       "fixbettv84.com",
       "fixbettv19.com"
     ],
-    "last_checked": "2026-09-07T20:54:10+00:00",
+    "last_checked": "2026-09-07T22:13:30+00:00",
     "note": "OK",
     "probed": 200
   },
-  "live": [
-    {
-      "match_id": "ss",
-      "home": "Elche",
-      "away": "Real Sociedad",
-      "league": "İspanya La Liga",
-      "time": "22:30",
-      "sport": "Futbol",
-      "is_match_of_day": false,
-      "channel_id": "ss",
-      "logo_home": "https://img.sporekrani.com/teams/1GTqbFOWAge3rRRmcirtfqnvp2ivJLQPl9M8Eoz1.png",
-      "logo_away": "https://img.sporekrani.com/teams/RbiXIxSInZpo96JB1zjL7hIdTAKqU4k9fGpXJx5c.png",
-      "status": "live",
-      "started": true,
-      "raw_event": "22:30 | İspanya La Liga",
-      "url": "https://fixbettv84.com/channel.html?id=ss",
-      "fetched_at": "",
-      "status_source": "schedule",
-      "raw_status": "",
-      "score_home": null,
-      "score_away": null,
-      "score_source": "",
-      "score_updated_at": "",
-      "event_id": "",
-      "starts_at": "2026-09-07T22:30:00+03:00"
-    }
-  ]
+  "live": []
 }
