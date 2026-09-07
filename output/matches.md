@@ -1,31 +1,28 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-09-07 15:57  
-> **Toplam maç:** 14  |  **Canlı:** 2  |  **Yaklaşan:** 9
+> **Güncellenme:** 2026-09-07 19:31  
+> **Toplam maç:** 14  |  **Canlı:** 3  |  **Yaklaşan:** 0
 
 ## 🔴 CANLI
 
-- 🔴 **Esenler Erokspor vs Kayserispor** — CANLI · `17:00` | Trendyol 1. Lig <https://fixbettv84.com/channel.html?id=trtspor>
-- 🔴 **İstanbulspor vs Iğdırspor** — CANLI · `17:00` | Trendyol 1. Lig <https://fixbettv84.com/channel.html?id=bm1>
-
-## ⏰ YAKLAŞAN
-
-- ⏰ **Cagliari vs Lecce** — YAKLAŞAN · `19:30` | İtalya Serie A <https://fixbettv84.com/channel.html?id=ss2>
-- ⏰ **Mardin 1969 vs Bodrumspor** — YAKLAŞAN · `20:00` | Trendyol 1. Lig <https://fixbettv84.com/channel.html?id=bm2>
-- ⏰ **Manisa FK vs Bursaspor** — YAKLAŞAN · `20:00` | Trendyol 1. Lig <https://fixbettv84.com/channel.html?id=trtspor>
-- ⏰ **Göztepe vs Gaziantep FK** — YAKLAŞAN · `20:00` | Trendyol Süper Lig <https://fixbettv84.com/channel.html?id=b2>
-- ⏰ **Ç.Rizespor vs Alanyaspor** — YAKLAŞAN · `20:00` | Trendyol Süper Lig <https://fixbettv84.com/channel.html?id=zirve>
-- ⏰ **Getafe vs Celta Vigo** — YAKLAŞAN · `20:00` | İspanya La Liga <https://fixbettv84.com/channel.html?id=ss>
-- ⏰ **Udinese vs Lazio** — YAKLAŞAN · `21:45` | İtalya Serie A <https://fixbettv84.com/channel.html?id=ss2>
-- ⏰ **Nantes vs Nancy** — YAKLAŞAN · `21:45` | Fransa Ligue 2 <https://fixbettv84.com/channel.html?id=b4>
-- ⏰ **Elche vs Real Sociedad** — YAKLAŞAN · `22:30` | İspanya La Liga <https://fixbettv84.com/channel.html?id=ss>
+- 🔴 **Udinese vs Lazio** — CANLI · `21:45` | İtalya Serie A <https://fixbettv84.com/channel.html?id=ss2>
+- 🔴 **Nantes vs Nancy** — CANLI · `21:45` | Fransa Ligue 2 <https://fixbettv84.com/channel.html?id=b4>
+- 🔴 **Elche vs Real Sociedad** — CANLI · `22:30` | İspanya La Liga <https://fixbettv84.com/channel.html?id=ss>
 
 ## ✅ BİTTİ
 
 - ✅ **River Plate vs I. Rivadavia** — MS · `01:15` | Arjantin Primera Division <https://fixbettv84.com/channel.html?id=smarts>
 - ✅ **Porto Riko vs Türkiye** — MS · `12:30` | FIBA Kadınlar Dünya Kupası <https://fixbettv84.com/channel.html?id=trtspor>
 - ✅ **Nijerya vs Fransa** — MS · `15:30` | FIBA Kadınlar Dünya Kupası <https://fixbettv84.com/channel.html?id=ss>
+- ✅ **Esenler Erokspor vs Kayserispor** — MS · `17:00` | Trendyol 1. Lig <https://fixbettv84.com/channel.html?id=trtspor>
+- ✅ **İstanbulspor vs Iğdırspor** — MS · `17:00` | Trendyol 1. Lig <https://fixbettv84.com/channel.html?id=bm1>
+- ✅ **Cagliari vs Lecce** — MS · `19:30` | İtalya Serie A <https://fixbettv84.com/channel.html?id=ss2>
+- ✅ **Mardin 1969 vs Bodrumspor** — MS · `20:00` | Trendyol 1. Lig <https://fixbettv84.com/channel.html?id=bm2>
+- ✅ **Manisa FK vs Bursaspor** — MS · `20:00` | Trendyol 1. Lig <https://fixbettv84.com/channel.html?id=trtspor>
+- ✅ **Göztepe vs Gaziantep FK** — MS · `20:00` | Trendyol Süper Lig <https://fixbettv84.com/channel.html?id=b2>
+- ✅ **Ç.Rizespor vs Alanyaspor** — MS · `20:00` | Trendyol Süper Lig <https://fixbettv84.com/channel.html?id=zirve>
+- ✅ **Getafe vs Celta Vigo** — MS · `20:00` | İspanya La Liga <https://fixbettv84.com/channel.html?id=ss>
 
 ---
 ## 🏆 Lig Bazlı
@@ -38,11 +35,11 @@
 - ⏰ Nijerya vs Fransa — 15:30
 
 ### Fransa Ligue 2
-- ⏰ Nantes vs Nancy — 21:45
+- 🔴 Nantes vs Nancy — 21:45
 
 ### Trendyol 1. Lig
-- 🔴 Esenler Erokspor vs Kayserispor — 17:00
-- 🔴 İstanbulspor vs Iğdırspor — 17:00
+- ⏰ Esenler Erokspor vs Kayserispor — 17:00
+- ⏰ İstanbulspor vs Iğdırspor — 17:00
 - ⏰ Mardin 1969 vs Bodrumspor — 20:00
 - ⏰ Manisa FK vs Bursaspor — 20:00
 
@@ -52,11 +49,11 @@
 
 ### İspanya La Liga
 - ⏰ Getafe vs Celta Vigo — 20:00
-- ⏰ Elche vs Real Sociedad — 22:30
+- 🔴 Elche vs Real Sociedad — 22:30
 
 ### İtalya Serie A
 - ⏰ Cagliari vs Lecce — 19:30
-- ⏰ Udinese vs Lazio — 21:45
+- 🔴 Udinese vs Lazio — 21:45
 
 ---
 ## 📺 7/24 KANALLAR (31)
