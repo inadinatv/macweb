@@ -1,37 +1,37 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-09-08 20:26  
-> **Toplam maç:** 8  |  **Canlı:** 5  |  **Yaklaşan:** 0
+> **Güncellenme:** 2026-09-08 22:23  
+> **Toplam maç:** 8  |  **Canlı:** 0  |  **Yaklaşan:** 3
 
-## 🔴 CANLI
+## ⏰ YAKLAŞAN
 
-- 🔴 **Almanya vs Güney Kore** — CANLI · `21:45` | FIBA Kadınlar Dünya Kupası <https://fixbettv84.com/channel.html?id=ss>
-- 🔴 **Borussia Dortmund vs Villarreal** — CANLI · `22:00` | UEFA Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=ex2>
-- 🔴 **Porto vs Manchester City** — CANLI · `22:00` | UEFA Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=ex1>
-- 🔴 **Lille vs Real Betis** — CANLI · `22:00` | UEFA Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=ex3>
-- 🔴 **Real Madrid vs Inter** — CANLI · `22:00` | UEFA Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=ex7>
+- ⏰ **Porto Riko vs Çin** — YAKLAŞAN · `18:45` | FIBA Kadınlar Dünya Kupası <https://fixbettv84.com/channel.html?id=ss>
+- ⏰ **Barcelona vs Feyenoord** — YAKLAŞAN · `19:45` | UEFA Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=ex7>
+- ⏰ **Stuttgart vs Viking** — YAKLAŞAN · `19:45` | UEFA Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=ex1>
 
 ## ✅ BİTTİ
 
-- ✅ **Macaristan vs Japonya** — MS · `18:45` | FIBA Kadınlar Dünya Kupası <https://fixbettv84.com/channel.html?id=ss>
-- ✅ **AEK vs LASK Linz** — MS · `19:45` | UEFA Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=ex7>
-- ✅ **Club Brugge vs Aston Villa** — MS · `19:45` | UEFA Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=ex1>
+- ✅ **İtalya vs Avustralya** — MS · `21:45` | FIBA Kadınlar Dünya Kupası <https://fixbettv84.com/channel.html?id=trtspor2>
+- ✅ **Sporting Lisbon vs Galatasaray** — MS · `22:00` | UEFA Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=trt1>
+- ✅ **PSG vs Slovan Bratislava** — MS · `22:00` | UEFA Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=ex1>
+- ✅ **Napoli vs Arsenal** — MS · `22:00` | UEFA Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=ex2>
+- ✅ **Liverpool vs Atletico Madrid** — MS · `22:00` | UEFA Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=ex7>
 
 ---
 ## 🏆 Lig Bazlı
 
 ### FIBA Kadınlar Dünya Kupası
-- ⏰ Macaristan vs Japonya — 18:45
-- 🔴 Almanya vs Güney Kore — 21:45
+- ⏰ Porto Riko vs Çin — 18:45
+- ⏰ İtalya vs Avustralya — 21:45
 
 ### UEFA Şampiyonlar Ligi
-- ⏰ AEK vs LASK Linz — 19:45
-- ⏰ Club Brugge vs Aston Villa — 19:45
-- 🔴 Borussia Dortmund vs Villarreal — 22:00
-- 🔴 Porto vs Manchester City — 22:00
-- 🔴 Lille vs Real Betis — 22:00
-- 🔴 Real Madrid vs Inter — 22:00
+- ⏰ Barcelona vs Feyenoord — 19:45
+- ⏰ Stuttgart vs Viking — 19:45
+- ⏰ Sporting Lisbon vs Galatasaray — 22:00
+- ⏰ PSG vs Slovan Bratislava — 22:00
+- ⏰ Napoli vs Arsenal — 22:00
+- ⏰ Liverpool vs Atletico Madrid — 22:00
 
 ---
 ## 📺 7/24 KANALLAR (31)
