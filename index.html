@@ -444,7 +444,7 @@
         .match-status-tag.halftime { color: var(--neon-gold); border-color: rgba(255,204,51,.3); background: rgba(255,204,51,.08); }
         .match-status-tag.mod { background: linear-gradient(135deg, #ffcc33, #ffa800); color: #000; border-color: transparent; }
         .match-teams {
-            font-family: 'Barlow Condensed', sans-serif; font-size: 1.2rem; font-weight: 700; color: #fff;
+            font-family: 'Barlow Condensed', sans-serif; font-size: 1.32rem; font-weight: 700; color: #fff; text-shadow: 0 1px 6px rgba(0,0,0,.55);
             display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); align-items: center; gap: 8px; text-align: center;
         }
         .match-teams .team-logo img { width: 24px; height: 24px; object-fit: contain; display: block; filter: drop-shadow(0 0 6px rgba(255,45,122,0.35)); }
@@ -456,9 +456,9 @@
         .team-logo { flex: 0 0 24px; }
         .team-name { min-width: 0; overflow: hidden; overflow-wrap: anywhere; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; }
         .score-wrap { display: flex; align-items: center; flex-direction: column; gap: 3px; }
-        .match-score { display: inline-flex; align-items: center; gap: 5px; white-space: nowrap; font-family: 'Barlow', sans-serif; font-size: .82rem; font-weight: 700; font-variant-numeric: tabular-nums; line-height: 1.25; color: var(--text-main); background: rgba(158,147,188,.1); border: 1px solid rgba(158,147,188,.2); border-radius: 7px; padding: 4px 7px; }
-        .match-score .score-dash { color: var(--text-muted); font-size: .7rem; }
-        .is-live .match-score { border-color: rgba(255,45,122,.25); background: rgba(255,45,122,.08); }
+        .match-score { display: inline-flex; align-items: center; gap: 6px; white-space: nowrap; font-family: 'Barlow Condensed', sans-serif; font-size: 1.15rem; font-weight: 800; font-variant-numeric: tabular-nums; line-height: 1.2; color: #fff; background: rgba(158,147,188,.14); border: 1px solid rgba(158,147,188,.35); border-radius: 8px; padding: 4px 10px; text-shadow: 0 0 8px rgba(244,239,255,.35); }
+        .match-score .score-dash { color: var(--text-muted); font-size: .85rem; }
+        .is-live .match-score { border-color: rgba(255,45,122,.45); background: rgba(255,45,122,.12); text-shadow: 0 0 10px rgba(255,45,122,.5); }
         .score-note { font: 500 .58rem 'Barlow', sans-serif; color: var(--text-muted); }
         .match-time-big { font-family: 'Bebas Neue', sans-serif; font-size: 1.1rem; color: var(--neon-gold); letter-spacing: 1px; }
         .match-footer {
@@ -523,26 +523,30 @@
         .modal-body::-webkit-scrollbar { width: 8px; }
         .modal-body::-webkit-scrollbar-thumb { background: rgba(255,45,122,0.35); border-radius: 8px; }
 
-        .standings-table { width: 100%; border-collapse: collapse; font-size: 0.86rem; table-layout: fixed; }
+        .standings-table { width: 100%; border-collapse: collapse; font-size: 0.95rem; table-layout: fixed; }
         .standings-table thead th {
             font-family: 'Barlow Condensed', sans-serif; font-weight: 700; letter-spacing: 1.2px;
-            font-size: 0.72rem; color: var(--neon-pink); text-transform: uppercase; text-align: right;
-            padding: 10px 6px 8px; border-bottom: 1px solid rgba(255,45,122,0.35); white-space: nowrap;
+            font-size: 0.78rem; color: var(--neon-pink); text-transform: uppercase; text-align: right;
+            padding: 11px 8px 9px; border-bottom: 2px solid rgba(255,45,122,0.45); white-space: nowrap;
         }
         .standings-table thead th.col-rank, .standings-table thead th.col-team { text-align: left; }
+        /* Liste görünümü: sıra dar, takım kolonu geniş; isimler tam görünür */
+        .standings-table thead th.col-rank { width: 46px; }
+        .standings-table thead th.col-team { width: 42%; }
         .standings-table tbody td {
-            padding: 8px 6px; text-align: right; color: #d9d2ec; font-variant-numeric: tabular-nums;
-            /* Satır arası çok ince, karanlık temaya uygun ayrıştırıcı çizgi */
-            border-bottom: 1px solid rgba(255,255,255,0.06);
+            padding: 10px 8px; text-align: right; color: #ece7f8; font-weight: 600; font-variant-numeric: tabular-nums;
+            /* Satır aralarında belirgin ayırıcı çizgiler */
+            border-bottom: 1px solid rgba(255,255,255,0.16);
         }
+        .standings-table tbody tr:nth-child(even) { background: rgba(255,255,255,0.03); }
         .standings-table tbody tr:last-child td { border-bottom: none; }
         .standings-table tbody tr { transition: background .2s ease; }
         .standings-table tbody tr:hover { background: rgba(255,45,122,0.07); }
-        .standings-table .cell-rank { text-align: left; width: 44px; color: var(--text-muted); font-weight: 700; }
-        .standings-table .cell-team { text-align: left; color: #fff; font-weight: 600; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-        .standings-table .cell-team .t-logo { width: 17px; height: 17px; margin-right: 7px; vertical-align: -3px; object-fit: contain; }
-        .standings-table .cell-points { color: var(--neon-gold); font-weight: 800; font-size: 0.95rem; text-shadow: 0 0 10px rgba(255,204,51,0.35); }
-        .standings-table .cell-pos { color: #8fd8ff; }
+        .standings-table .cell-rank { text-align: left; color: #c9c0de; font-weight: 800; }
+        .standings-table .cell-team { text-align: left; color: #fff; font-weight: 700; font-size: 1.05rem; letter-spacing: .2px; white-space: normal; overflow-wrap: anywhere; }
+        .standings-table .cell-team .t-logo { width: 20px; height: 20px; margin-right: 8px; vertical-align: -4px; object-fit: contain; }
+        .standings-table .cell-points { color: var(--neon-gold); font-weight: 800; font-size: 1.08rem; text-shadow: 0 0 10px rgba(255,204,51,0.35); }
+        .standings-table .cell-pos { color: #8fd8ff; font-weight: 700; }
         /* Sıra rozetleri: Avrupa hattı / düşme hattı (kaynak notundan gelir) */
         .standings-table .cell-rank .rk {
             display: inline-flex; align-items: center; justify-content: center;
@@ -604,10 +608,12 @@
             .modal-panel { max-height: 88vh; border-radius: 16px; }
             .modal-title { font-size: 1.45rem; letter-spacing: 2px; }
             .modal-body { padding: 4px 10px 12px; }
-            .standings-table { font-size: 0.78rem; }
-            .standings-table thead th { font-size: 0.66rem; padding: 8px 3px 6px; letter-spacing: .6px; }
-            .standings-table tbody td { padding: 7px 3px; }
-            .standings-table .cell-rank { width: 34px; }
+            .standings-table { font-size: 0.88rem; }
+            .standings-table thead th { font-size: 0.7rem; padding: 8px 4px 7px; letter-spacing: .6px; }
+            .standings-table thead th.col-rank { width: 36px; }
+            .standings-table thead th.col-team { width: 40%; }
+            .standings-table tbody td { padding: 9px 4px; }
+            .standings-table .cell-team { font-size: 0.95rem; }
             .standings-table .cell-team .t-logo { display: none; }
         }
         @media (prefers-reduced-motion: reduce) {
