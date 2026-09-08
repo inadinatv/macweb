@@ -523,26 +523,30 @@
         .modal-body::-webkit-scrollbar { width: 8px; }
         .modal-body::-webkit-scrollbar-thumb { background: rgba(255,45,122,0.35); border-radius: 8px; }
 
-        .standings-table { width: 100%; border-collapse: collapse; font-size: 0.86rem; table-layout: fixed; }
+        .standings-table { width: 100%; border-collapse: collapse; font-size: 0.95rem; table-layout: fixed; }
         .standings-table thead th {
             font-family: 'Barlow Condensed', sans-serif; font-weight: 700; letter-spacing: 1.2px;
-            font-size: 0.72rem; color: var(--neon-pink); text-transform: uppercase; text-align: right;
-            padding: 10px 6px 8px; border-bottom: 1px solid rgba(255,45,122,0.35); white-space: nowrap;
+            font-size: 0.78rem; color: var(--neon-pink); text-transform: uppercase; text-align: right;
+            padding: 11px 8px 9px; border-bottom: 2px solid rgba(255,45,122,0.45); white-space: nowrap;
         }
         .standings-table thead th.col-rank, .standings-table thead th.col-team { text-align: left; }
+        /* Liste görünümü: sıra dar, takım kolonu geniş; isimler tam görünür */
+        .standings-table thead th.col-rank { width: 46px; }
+        .standings-table thead th.col-team { width: 42%; }
         .standings-table tbody td {
-            padding: 8px 6px; text-align: right; color: #d9d2ec; font-variant-numeric: tabular-nums;
-            /* Satır arası çok ince, karanlık temaya uygun ayrıştırıcı çizgi */
-            border-bottom: 1px solid rgba(255,255,255,0.06);
+            padding: 10px 8px; text-align: right; color: #ece7f8; font-weight: 600; font-variant-numeric: tabular-nums;
+            /* Satır aralarında belirgin ayırıcı çizgiler */
+            border-bottom: 1px solid rgba(255,255,255,0.16);
         }
+        .standings-table tbody tr:nth-child(even) { background: rgba(255,255,255,0.03); }
         .standings-table tbody tr:last-child td { border-bottom: none; }
         .standings-table tbody tr { transition: background .2s ease; }
         .standings-table tbody tr:hover { background: rgba(255,45,122,0.07); }
-        .standings-table .cell-rank { text-align: left; width: 44px; color: var(--text-muted); font-weight: 700; }
-        .standings-table .cell-team { text-align: left; color: #fff; font-weight: 600; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-        .standings-table .cell-team .t-logo { width: 17px; height: 17px; margin-right: 7px; vertical-align: -3px; object-fit: contain; }
-        .standings-table .cell-points { color: var(--neon-gold); font-weight: 800; font-size: 0.95rem; text-shadow: 0 0 10px rgba(255,204,51,0.35); }
-        .standings-table .cell-pos { color: #8fd8ff; }
+        .standings-table .cell-rank { text-align: left; color: #c9c0de; font-weight: 800; }
+        .standings-table .cell-team { text-align: left; color: #fff; font-weight: 700; font-size: 1.05rem; letter-spacing: .2px; white-space: normal; overflow-wrap: anywhere; }
+        .standings-table .cell-team .t-logo { width: 20px; height: 20px; margin-right: 8px; vertical-align: -4px; object-fit: contain; }
+        .standings-table .cell-points { color: var(--neon-gold); font-weight: 800; font-size: 1.08rem; text-shadow: 0 0 10px rgba(255,204,51,0.35); }
+        .standings-table .cell-pos { color: #8fd8ff; font-weight: 700; }
         /* Sıra rozetleri: Avrupa hattı / düşme hattı (kaynak notundan gelir) */
         .standings-table .cell-rank .rk {
             display: inline-flex; align-items: center; justify-content: center;
@@ -604,10 +608,12 @@
             .modal-panel { max-height: 88vh; border-radius: 16px; }
             .modal-title { font-size: 1.45rem; letter-spacing: 2px; }
             .modal-body { padding: 4px 10px 12px; }
-            .standings-table { font-size: 0.78rem; }
-            .standings-table thead th { font-size: 0.66rem; padding: 8px 3px 6px; letter-spacing: .6px; }
-            .standings-table tbody td { padding: 7px 3px; }
-            .standings-table .cell-rank { width: 34px; }
+            .standings-table { font-size: 0.88rem; }
+            .standings-table thead th { font-size: 0.7rem; padding: 8px 4px 7px; letter-spacing: .6px; }
+            .standings-table thead th.col-rank { width: 36px; }
+            .standings-table thead th.col-team { width: 40%; }
+            .standings-table tbody td { padding: 9px 4px; }
+            .standings-table .cell-team { font-size: 0.95rem; }
             .standings-table .cell-team .t-logo { display: none; }
         }
         @media (prefers-reduced-motion: reduce) {

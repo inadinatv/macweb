@@ -788,9 +788,9 @@ test("PUAN DURUMU modalı backdrop-filter karartma ve neon pembe kenar kullanıy
   assert.ok(/\.modal-title \{[\s\S]*?color: var\(--neon-pink\)/.test(HTML), "başlık neon pembe değil");
   // erişilebilirlik
   assert.ok(HTML.includes('aria-modal="true"') && HTML.includes('aria-labelledby="leagueModalTitle"'), "dialog ARIA eksik");
-  // ince satır ayracı
-  assert.ok(/\.standings-table tbody td \{[\s\S]*?border-bottom: 1px solid rgba\(255,255,255,0\.06\)/.test(HTML),
-    "ince satır ayracı yok");
+  // satır ayracı: liste görünümü için belirgin çizgi
+  assert.ok(/\.standings-table tbody td \{[\s\S]*?border-bottom: 1px solid rgba\(255,255,255,0\.16\)/.test(HTML),
+    "satır ayracı yok");
 });
 
 test("tablo başlıkları SIRA/TAKIM/O/G/B/M/AV/P sırasında", () => {
