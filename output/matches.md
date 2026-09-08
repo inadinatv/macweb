@@ -1,7 +1,7 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-09-08 13:09  
+> **Güncellenme:** 2026-09-08 13:36  
 > **Toplam maç:** 8  |  **Canlı:** 0  |  **Yaklaşan:** 8
 
 ## ⏰ YAKLAŞAN
@@ -86,7 +86,7 @@
 ## ⚡ EKSTRA PANELLER — m3u8 (28)
 
 ### ⚛️ ATOM SPOR ✅ `https://www.atomsportv514.top`
-- 🟢 **BEIN SPORTS 1** <https://corestream.ardastream.live//beintv/tracks-v1a1/mono.m3u8>
+- 🟡 **BEIN SPORTS 1** <https://corestream.ardastream.live//beintv/tracks-v1a1/mono.m3u8>
 - 🟢 **BEIN SPORTS 2** <https://corestream.ardastream.live//bein2/tracks-v1a1/mono.m3u8>
 - 🟢 **BEIN SPORTS 3** <https://corestream.ardastream.live//bein3/tracks-v1a1/mono.m3u8>
 - 🟢 **BEIN SPORTS 4** <https://corestream.ardastream.live//bein4/tracks-v1a1/mono.m3u8>
