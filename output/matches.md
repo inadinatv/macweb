@@ -1,37 +1,37 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-09-08 17:26  
-> **Toplam maç:** 8  |  **Canlı:** 3  |  **Yaklaşan:** 5
+> **Güncellenme:** 2026-09-08 19:59  
+> **Toplam maç:** 8  |  **Canlı:** 5  |  **Yaklaşan:** 0
 
 ## 🔴 CANLI
 
-- 🔴 **Macaristan vs Japonya** — CANLI · `18:45` | FIBA Kadınlar Dünya Kupası <https://fixbettv84.com/channel.html?id=ss>
-- 🔴 **AEK vs LASK Linz** — CANLI · `19:45` | UEFA Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=ex7>
-- 🔴 **Club Brugge vs Aston Villa** — CANLI · `19:45` | UEFA Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=ex1>
+- 🔴 **Almanya vs Güney Kore** — CANLI · `21:45` | FIBA Kadınlar Dünya Kupası <https://fixbettv84.com/channel.html?id=ss>
+- 🔴 **Borussia Dortmund vs Villarreal** — CANLI · `22:00` | UEFA Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=ex2>
+- 🔴 **Porto vs Manchester City** — CANLI · `22:00` | UEFA Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=ex1>
+- 🔴 **Lille vs Real Betis** — CANLI · `22:00` | UEFA Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=ex3>
+- 🔴 **Real Madrid vs Inter** — CANLI · `22:00` | UEFA Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=ex7>
 
-## ⏰ YAKLAŞAN
+## ✅ BİTTİ
 
-- ⏰ **Almanya vs Güney Kore** — YAKLAŞAN · `21:45` | FIBA Kadınlar Dünya Kupası <https://fixbettv84.com/channel.html?id=ss>
-- ⏰ **Borussia Dortmund vs Villarreal** — YAKLAŞAN · `22:00` | UEFA Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=ex2>
-- ⏰ **Porto vs Manchester City** — YAKLAŞAN · `22:00` | UEFA Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=ex1>
-- ⏰ **Lille vs Real Betis** — YAKLAŞAN · `22:00` | UEFA Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=ex3>
-- ⏰ **Real Madrid vs Inter** — YAKLAŞAN · `22:00` | UEFA Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=ex7>
+- ✅ **Macaristan vs Japonya** — MS · `18:45` | FIBA Kadınlar Dünya Kupası <https://fixbettv84.com/channel.html?id=ss>
+- ✅ **AEK vs LASK Linz** — MS · `19:45` | UEFA Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=ex7>
+- ✅ **Club Brugge vs Aston Villa** — MS · `19:45` | UEFA Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=ex1>
 
 ---
 ## 🏆 Lig Bazlı
 
 ### FIBA Kadınlar Dünya Kupası
-- 🔴 Macaristan vs Japonya — 18:45
-- ⏰ Almanya vs Güney Kore — 21:45
+- ⏰ Macaristan vs Japonya — 18:45
+- 🔴 Almanya vs Güney Kore — 21:45
 
 ### UEFA Şampiyonlar Ligi
-- 🔴 AEK vs LASK Linz — 19:45
-- 🔴 Club Brugge vs Aston Villa — 19:45
-- ⏰ Borussia Dortmund vs Villarreal — 22:00
-- ⏰ Porto vs Manchester City — 22:00
-- ⏰ Lille vs Real Betis — 22:00
-- ⏰ Real Madrid vs Inter — 22:00
+- ⏰ AEK vs LASK Linz — 19:45
+- ⏰ Club Brugge vs Aston Villa — 19:45
+- 🔴 Borussia Dortmund vs Villarreal — 22:00
+- 🔴 Porto vs Manchester City — 22:00
+- 🔴 Lille vs Real Betis — 22:00
+- 🔴 Real Madrid vs Inter — 22:00
 
 ---
 ## 📺 7/24 KANALLAR (31)
@@ -89,13 +89,13 @@
 ## ⚡ EKSTRA PANELLER — m3u8 (28)
 
 ### ⚛️ ATOM SPOR ✅ `https://www.atomsportv514.top`
-- 🟢 **BEIN SPORTS 1** <https://corestream.ardastream.live//beintv/tracks-v1a1/mono.m3u8>
-- 🟢 **BEIN SPORTS 2** <https://corestream.ardastream.live//bein2/tracks-v1a1/mono.m3u8>
-- 🟢 **BEIN SPORTS 3** <https://corestream.ardastream.live//bein3/tracks-v1a1/mono.m3u8>
-- 🟢 **BEIN SPORTS 4** <https://corestream.ardastream.live//bein4/tracks-v1a1/mono.m3u8>
+- 🟡 **BEIN SPORTS 1** <https://corestream.ardastream.live//beintv/tracks-v1a1/mono.m3u8>
+- 🟡 **BEIN SPORTS 2** <https://corestream.ardastream.live//bein2/tracks-v1a1/mono.m3u8>
+- 🟡 **BEIN SPORTS 3** <https://corestream.ardastream.live//bein3/tracks-v1a1/mono.m3u8>
+- 🟡 **BEIN SPORTS 4** <https://corestream.ardastream.live//bein4/tracks-v1a1/mono.m3u8>
 - ⚪ **BEIN SPORTS 5** <https://tv.atomspor.workers.dev/?ID=bein-sports-5>
-- 🟢 **S SPORT** <https://corestream.ardastream.live//s-sport/tracks-v1a1/mono.m3u8>
-- 🟢 **S SPORT 2** <https://corestream.ardastream.live//s-sport2/tracks-v1a1/mono.m3u8>
+- 🟡 **S SPORT** <https://corestream.ardastream.live//s-sport/tracks-v1a1/mono.m3u8>
+- 🟡 **S SPORT 2** <https://corestream.ardastream.live//s-sport2/tracks-v1a1/mono.m3u8>
 - ⚪ **S SPORT PLUS** <https://tv.atomspor.workers.dev/?ID=ssport-plus>
 - ⚪ **TIVIBU SPOR 1** <https://tv.atomspor.workers.dev/?ID=tivibu-spor-1>
 - ⚪ **TIVIBU SPOR 2** <https://tv.atomspor.workers.dev/?ID=tivibu-spor-2>
