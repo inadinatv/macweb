@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-09T18:54:24+00:00",
+  "updated_at": "2026-09-09T19:49:00+00:00",
   "source": "output/extra_channels.json",
   "total": 67,
   "panels": [
@@ -10,9 +10,9 @@
       "base_url": "https://www.atomsportv514.top",
       "player_base": "",
       "stream_base": "",
-      "healthy": false,
-      "resolved": 4,
-      "fresh": 0,
+      "healthy": true,
+      "resolved": 5,
+      "fresh": 4,
       "total": 14,
       "channels": [
         {
@@ -28,7 +28,7 @@
           "sources": [
             {
               "type": "hls",
-              "url": "https://corestream.d72377a9ds0ec71.cfd//beintv/tracks-v1a1/mono.m3u8",
+              "url": "https://corestream.d72377a9ds0ec71.cfd//hls/trt1.m3u8",
               "label": "Kaynak 1",
               "mime_type": "application/vnd.apple.mpegurl"
             },
@@ -45,10 +45,10 @@
             }
           ],
           "resolved": true,
-          "fresh": false,
-          "resolved_url": "https://corestream.d72377a9ds0ec71.cfd//beintv/tracks-v1a1/mono.m3u8",
-          "resolved_at": "2026-09-09T17:17:55+00:00",
-          "stale": true
+          "fresh": true,
+          "resolved_url": "https://corestream.d72377a9ds0ec71.cfd//hls/trt1.m3u8",
+          "resolved_at": "2026-09-09T19:49:00+00:00",
+          "stale": false
         },
         {
           "id": "atom:bein-sports-2",
@@ -92,8 +92,14 @@
           "sources": [
             {
               "type": "hls",
-              "url": "https://tv.atomspor.workers.dev/?ID=bein-sports-3",
+              "url": "https://corestream.d72377a9ds0ec71.cfd//bein3/tracks-v1a1/mono.m3u8",
               "label": "Kaynak 1",
+              "mime_type": "application/vnd.apple.mpegurl"
+            },
+            {
+              "type": "hls",
+              "url": "https://tv.atomspor.workers.dev/?ID=bein-sports-3",
+              "label": "Kaynak 2",
               "mime_type": "application/vnd.apple.mpegurl"
             },
             {
@@ -102,10 +108,10 @@
               "label": "Site"
             }
           ],
-          "resolved": false,
-          "fresh": false,
-          "resolved_url": null,
-          "resolved_at": null,
+          "resolved": true,
+          "fresh": true,
+          "resolved_url": "https://corestream.d72377a9ds0ec71.cfd//bein3/tracks-v1a1/mono.m3u8",
+          "resolved_at": "2026-09-09T19:49:00+00:00",
           "stale": false
         },
         {
@@ -138,10 +144,10 @@
             }
           ],
           "resolved": true,
-          "fresh": false,
+          "fresh": true,
           "resolved_url": "https://corestream.d72377a9ds0ec71.cfd//bein4/tracks-v1a1/mono.m3u8",
-          "resolved_at": "2026-09-09T17:17:55+00:00",
-          "stale": true
+          "resolved_at": "2026-09-09T19:49:00+00:00",
+          "stale": false
         },
         {
           "id": "atom:bein-sports-5",
@@ -202,10 +208,10 @@
             }
           ],
           "resolved": true,
-          "fresh": false,
+          "fresh": true,
           "resolved_url": "https://corestream.d72377a9ds0ec71.cfd//s-sport/tracks-v1a1/mono.m3u8",
-          "resolved_at": "2026-09-09T17:17:55+00:00",
-          "stale": true
+          "resolved_at": "2026-09-09T19:49:00+00:00",
+          "stale": false
         },
         {
           "id": "atom:s-sport-2",
@@ -454,9 +460,9 @@
       "base_url": "https://www.sporcafe-0c2608ad69.xyz",
       "player_base": "https://main.uxsyplayer6859599e6c.click",
       "stream_base": "",
-      "healthy": false,
+      "healthy": true,
       "resolved": 14,
-      "fresh": 0,
+      "fresh": 14,
       "total": 14,
       "channels": [
         {
@@ -483,10 +489,10 @@
             }
           ],
           "resolved": true,
-          "fresh": false,
+          "fresh": true,
           "resolved_url": "https://dga1op10s1u3lea.82250d06d39d38.click/live/selcukbeinsports1/playlist.m3u8",
-          "resolved_at": "2026-09-09T17:17:55+00:00",
-          "stale": true
+          "resolved_at": "2026-09-09T19:49:00+00:00",
+          "stale": false
         },
         {
           "id": "selcuk:selcukbeinsports2",
@@ -512,10 +518,10 @@
             }
           ],
           "resolved": true,
-          "fresh": false,
+          "fresh": true,
           "resolved_url": "https://dga1op10s1u3lea.82250d06d39d38.click/live/selcukbeinsports2/playlist.m3u8",
-          "resolved_at": "2026-09-09T17:17:55+00:00",
-          "stale": true
+          "resolved_at": "2026-09-09T19:49:00+00:00",
+          "stale": false
         },
         {
           "id": "selcuk:selcukbeinsports3",
@@ -541,10 +547,10 @@
             }
           ],
           "resolved": true,
-          "fresh": false,
+          "fresh": true,
           "resolved_url": "https://dga1op10s1u3lea.82250d06d39d38.click/live/selcukbeinsports3/playlist.m3u8",
-          "resolved_at": "2026-09-09T17:17:55+00:00",
-          "stale": true
+          "resolved_at": "2026-09-09T19:49:00+00:00",
+          "stale": false
         },
         {
           "id": "selcuk:selcukbeinsports4",
@@ -570,10 +576,10 @@
             }
           ],
           "resolved": true,
-          "fresh": false,
+          "fresh": true,
           "resolved_url": "https://dga1op10s1u3lea.82250d06d39d38.click/live/selcukbeinsports4/playlist.m3u8",
-          "resolved_at": "2026-09-09T17:17:55+00:00",
-          "stale": true
+          "resolved_at": "2026-09-09T19:49:00+00:00",
+          "stale": false
         },
         {
           "id": "selcuk:selcukbeinsports5",
@@ -599,10 +605,10 @@
             }
           ],
           "resolved": true,
-          "fresh": false,
+          "fresh": true,
           "resolved_url": "https://dga1op10s1u3lea.82250d06d39d38.click/live/selcukbeinsports5/playlist.m3u8",
-          "resolved_at": "2026-09-09T17:17:55+00:00",
-          "stale": true
+          "resolved_at": "2026-09-09T19:49:00+00:00",
+          "stale": false
         },
         {
           "id": "selcuk:selcukbeinsportsmax1",
@@ -628,10 +634,10 @@
             }
           ],
           "resolved": true,
-          "fresh": false,
+          "fresh": true,
           "resolved_url": "https://dga1op10s1u3lea.82250d06d39d38.click/live/selcukbeinsportsmax1/playlist.m3u8",
-          "resolved_at": "2026-09-09T17:17:55+00:00",
-          "stale": true
+          "resolved_at": "2026-09-09T19:49:00+00:00",
+          "stale": false
         },
         {
           "id": "selcuk:selcukbeinsportsmax2",
@@ -657,10 +663,10 @@
             }
           ],
           "resolved": true,
-          "fresh": false,
+          "fresh": true,
           "resolved_url": "https://dga1op10s1u3lea.82250d06d39d38.click/live/selcukbeinsportsmax2/playlist.m3u8",
-          "resolved_at": "2026-09-09T17:17:55+00:00",
-          "stale": true
+          "resolved_at": "2026-09-09T19:49:00+00:00",
+          "stale": false
         },
         {
           "id": "selcuk:selcukssport",
@@ -686,10 +692,10 @@
             }
           ],
           "resolved": true,
-          "fresh": false,
+          "fresh": true,
           "resolved_url": "https://dga1op10s1u3lea.82250d06d39d38.click/live/selcukssport/playlist.m3u8",
-          "resolved_at": "2026-09-09T17:17:55+00:00",
-          "stale": true
+          "resolved_at": "2026-09-09T19:49:00+00:00",
+          "stale": false
         },
         {
           "id": "selcuk:selcukssport2",
@@ -715,10 +721,10 @@
             }
           ],
           "resolved": true,
-          "fresh": false,
+          "fresh": true,
           "resolved_url": "https://dga1op10s1u3lea.82250d06d39d38.click/live/selcukssport2/playlist.m3u8",
-          "resolved_at": "2026-09-09T17:17:55+00:00",
-          "stale": true
+          "resolved_at": "2026-09-09T19:49:00+00:00",
+          "stale": false
         },
         {
           "id": "selcuk:selcuktivibuspor1",
@@ -744,10 +750,10 @@
             }
           ],
           "resolved": true,
-          "fresh": false,
+          "fresh": true,
           "resolved_url": "https://dga1op10s1u3lea.82250d06d39d38.click/live/selcuktivibuspor1/playlist.m3u8",
-          "resolved_at": "2026-09-09T17:17:55+00:00",
-          "stale": true
+          "resolved_at": "2026-09-09T19:49:00+00:00",
+          "stale": false
         },
         {
           "id": "selcuk:selcuktivibuspor2",
@@ -773,10 +779,10 @@
             }
           ],
           "resolved": true,
-          "fresh": false,
+          "fresh": true,
           "resolved_url": "https://dga1op10s1u3lea.82250d06d39d38.click/live/selcuktivibuspor2/playlist.m3u8",
-          "resolved_at": "2026-09-09T17:17:55+00:00",
-          "stale": true
+          "resolved_at": "2026-09-09T19:49:00+00:00",
+          "stale": false
         },
         {
           "id": "selcuk:selcuksmartspor",
@@ -802,10 +808,10 @@
             }
           ],
           "resolved": true,
-          "fresh": false,
+          "fresh": true,
           "resolved_url": "https://dga1op10s1u3lea.82250d06d39d38.click/live/selcuksmartspor/playlist.m3u8",
-          "resolved_at": "2026-09-09T17:17:55+00:00",
-          "stale": true
+          "resolved_at": "2026-09-09T19:49:00+00:00",
+          "stale": false
         },
         {
           "id": "selcuk:selcukaspor",
@@ -831,10 +837,10 @@
             }
           ],
           "resolved": true,
-          "fresh": false,
+          "fresh": true,
           "resolved_url": "https://dga1op10s1u3lea.82250d06d39d38.click/live/selcukaspor/playlist.m3u8",
-          "resolved_at": "2026-09-09T17:17:55+00:00",
-          "stale": true
+          "resolved_at": "2026-09-09T19:49:00+00:00",
+          "stale": false
         },
         {
           "id": "selcuk:selcukeurosport1",
@@ -860,10 +866,10 @@
             }
           ],
           "resolved": true,
-          "fresh": false,
+          "fresh": true,
           "resolved_url": "https://dga1op10s1u3lea.82250d06d39d38.click/live/selcukeurosport1/playlist.m3u8",
-          "resolved_at": "2026-09-09T17:17:55+00:00",
-          "stale": true
+          "resolved_at": "2026-09-09T19:49:00+00:00",
+          "stale": false
         }
       ]
     },
@@ -873,10 +879,10 @@
       "icon": "🌴",
       "base_url": "https://mahsunsports80.xyz",
       "player_base": "",
-      "stream_base": "https://andro.evrenesoglu99.click",
-      "healthy": false,
-      "resolved": 0,
-      "fresh": 0,
+      "stream_base": "https://andro.evrenesoglu99.click/checklist",
+      "healthy": true,
+      "resolved": 39,
+      "fresh": 39,
       "total": 39,
       "channels": [
         {
@@ -902,10 +908,10 @@
               "label": "Site"
             }
           ],
-          "resolved": false,
-          "fresh": false,
-          "resolved_url": null,
-          "resolved_at": null,
+          "resolved": true,
+          "fresh": true,
+          "resolved_url": "https://andro.evrenesoglu99.click/checklist/androstreamlivebs1.m3u8",
+          "resolved_at": "2026-09-09T19:49:00+00:00",
           "stale": false
         },
         {
@@ -931,10 +937,10 @@
               "label": "Site"
             }
           ],
-          "resolved": false,
-          "fresh": false,
-          "resolved_url": null,
-          "resolved_at": null,
+          "resolved": true,
+          "fresh": true,
+          "resolved_url": "https://andro.evrenesoglu99.click/checklist/androstreamlivebs2.m3u8",
+          "resolved_at": "2026-09-09T19:49:00+00:00",
           "stale": false
         },
         {
@@ -960,10 +966,10 @@
               "label": "Site"
             }
           ],
-          "resolved": false,
-          "fresh": false,
-          "resolved_url": null,
-          "resolved_at": null,
+          "resolved": true,
+          "fresh": true,
+          "resolved_url": "https://andro.evrenesoglu99.click/checklist/androstreamlivebs3.m3u8",
+          "resolved_at": "2026-09-09T19:49:00+00:00",
           "stale": false
         },
         {
@@ -989,10 +995,10 @@
               "label": "Site"
             }
           ],
-          "resolved": false,
-          "fresh": false,
-          "resolved_url": null,
-          "resolved_at": null,
+          "resolved": true,
+          "fresh": true,
+          "resolved_url": "https://andro.evrenesoglu99.click/checklist/androstreamlivebs4.m3u8",
+          "resolved_at": "2026-09-09T19:49:00+00:00",
           "stale": false
         },
         {
@@ -1018,10 +1024,10 @@
               "label": "Site"
             }
           ],
-          "resolved": false,
-          "fresh": false,
-          "resolved_url": null,
-          "resolved_at": null,
+          "resolved": true,
+          "fresh": true,
+          "resolved_url": "https://andro.evrenesoglu99.click/checklist/androstreamlivebs5.m3u8",
+          "resolved_at": "2026-09-09T19:49:00+00:00",
           "stale": false
         },
         {
@@ -1047,10 +1053,10 @@
               "label": "Site"
             }
           ],
-          "resolved": false,
-          "fresh": false,
-          "resolved_url": null,
-          "resolved_at": null,
+          "resolved": true,
+          "fresh": true,
+          "resolved_url": "https://andro.evrenesoglu99.click/checklist/androstreamlivebsm1.m3u8",
+          "resolved_at": "2026-09-09T19:49:00+00:00",
           "stale": false
         },
         {
@@ -1076,10 +1082,10 @@
               "label": "Site"
             }
           ],
-          "resolved": false,
-          "fresh": false,
-          "resolved_url": null,
-          "resolved_at": null,
+          "resolved": true,
+          "fresh": true,
+          "resolved_url": "https://andro.evrenesoglu99.click/checklist/androstreamlivebsm2.m3u8",
+          "resolved_at": "2026-09-09T19:49:00+00:00",
           "stale": false
         },
         {
@@ -1105,10 +1111,10 @@
               "label": "Site"
             }
           ],
-          "resolved": false,
-          "fresh": false,
-          "resolved_url": null,
-          "resolved_at": null,
+          "resolved": true,
+          "fresh": true,
+          "resolved_url": "https://andro.evrenesoglu99.click/checklist/androstreamlivess1.m3u8",
+          "resolved_at": "2026-09-09T19:49:00+00:00",
           "stale": false
         },
         {
@@ -1134,10 +1140,10 @@
               "label": "Site"
             }
           ],
-          "resolved": false,
-          "fresh": false,
-          "resolved_url": null,
-          "resolved_at": null,
+          "resolved": true,
+          "fresh": true,
+          "resolved_url": "https://andro.evrenesoglu99.click/checklist/androstreamlivess2.m3u8",
+          "resolved_at": "2026-09-09T19:49:00+00:00",
           "stale": false
         },
         {
@@ -1163,10 +1169,10 @@
               "label": "Site"
             }
           ],
-          "resolved": false,
-          "fresh": false,
-          "resolved_url": null,
-          "resolved_at": null,
+          "resolved": true,
+          "fresh": true,
+          "resolved_url": "https://andro.evrenesoglu99.click/checklist/androstreamlivessplus1.m3u8",
+          "resolved_at": "2026-09-09T19:49:00+00:00",
           "stale": false
         },
         {
@@ -1192,10 +1198,10 @@
               "label": "Site"
             }
           ],
-          "resolved": false,
-          "fresh": false,
-          "resolved_url": null,
-          "resolved_at": null,
+          "resolved": true,
+          "fresh": true,
+          "resolved_url": "https://andro.evrenesoglu99.click/checklist/androstreamlivets.m3u8",
+          "resolved_at": "2026-09-09T19:49:00+00:00",
           "stale": false
         },
         {
@@ -1221,10 +1227,10 @@
               "label": "Site"
             }
           ],
-          "resolved": false,
-          "fresh": false,
-          "resolved_url": null,
-          "resolved_at": null,
+          "resolved": true,
+          "fresh": true,
+          "resolved_url": "https://andro.evrenesoglu99.click/checklist/androstreamlivets1.m3u8",
+          "resolved_at": "2026-09-09T19:49:00+00:00",
           "stale": false
         },
         {
@@ -1250,10 +1256,10 @@
               "label": "Site"
             }
           ],
-          "resolved": false,
-          "fresh": false,
-          "resolved_url": null,
-          "resolved_at": null,
+          "resolved": true,
+          "fresh": true,
+          "resolved_url": "https://andro.evrenesoglu99.click/checklist/androstreamlivets2.m3u8",
+          "resolved_at": "2026-09-09T19:49:00+00:00",
           "stale": false
         },
         {
@@ -1279,10 +1285,10 @@
               "label": "Site"
             }
           ],
-          "resolved": false,
-          "fresh": false,
-          "resolved_url": null,
-          "resolved_at": null,
+          "resolved": true,
+          "fresh": true,
+          "resolved_url": "https://andro.evrenesoglu99.click/checklist/androstreamlivets3.m3u8",
+          "resolved_at": "2026-09-09T19:49:00+00:00",
           "stale": false
         },
         {
@@ -1308,10 +1314,10 @@
               "label": "Site"
             }
           ],
-          "resolved": false,
-          "fresh": false,
-          "resolved_url": null,
-          "resolved_at": null,
+          "resolved": true,
+          "fresh": true,
+          "resolved_url": "https://andro.evrenesoglu99.click/checklist/androstreamlivets4.m3u8",
+          "resolved_at": "2026-09-09T19:49:00+00:00",
           "stale": false
         },
         {
@@ -1337,10 +1343,10 @@
               "label": "Site"
             }
           ],
-          "resolved": false,
-          "fresh": false,
-          "resolved_url": null,
-          "resolved_at": null,
+          "resolved": true,
+          "fresh": true,
+          "resolved_url": "https://andro.evrenesoglu99.click/checklist/androstreamlivesm1.m3u8",
+          "resolved_at": "2026-09-09T19:49:00+00:00",
           "stale": false
         },
         {
@@ -1366,10 +1372,10 @@
               "label": "Site"
             }
           ],
-          "resolved": false,
-          "fresh": false,
-          "resolved_url": null,
-          "resolved_at": null,
+          "resolved": true,
+          "fresh": true,
+          "resolved_url": "https://andro.evrenesoglu99.click/checklist/androstreamlivesm2.m3u8",
+          "resolved_at": "2026-09-09T19:49:00+00:00",
           "stale": false
         },
         {
@@ -1395,10 +1401,10 @@
               "label": "Site"
             }
           ],
-          "resolved": false,
-          "fresh": false,
-          "resolved_url": null,
-          "resolved_at": null,
+          "resolved": true,
+          "fresh": true,
+          "resolved_url": "https://andro.evrenesoglu99.click/checklist/androstreamlivees1.m3u8",
+          "resolved_at": "2026-09-09T19:49:00+00:00",
           "stale": false
         },
         {
@@ -1424,10 +1430,10 @@
               "label": "Site"
             }
           ],
-          "resolved": false,
-          "fresh": false,
-          "resolved_url": null,
-          "resolved_at": null,
+          "resolved": true,
+          "fresh": true,
+          "resolved_url": "https://andro.evrenesoglu99.click/checklist/androstreamlivees2.m3u8",
+          "resolved_at": "2026-09-09T19:49:00+00:00",
           "stale": false
         },
         {
@@ -1453,10 +1459,10 @@
               "label": "Site"
             }
           ],
-          "resolved": false,
-          "fresh": false,
-          "resolved_url": null,
-          "resolved_at": null,
+          "resolved": true,
+          "fresh": true,
+          "resolved_url": "https://andro.evrenesoglu99.click/checklist/androstreamlivetb.m3u8",
+          "resolved_at": "2026-09-09T19:49:00+00:00",
           "stale": false
         },
         {
@@ -1482,10 +1488,10 @@
               "label": "Site"
             }
           ],
-          "resolved": false,
-          "fresh": false,
-          "resolved_url": null,
-          "resolved_at": null,
+          "resolved": true,
+          "fresh": true,
+          "resolved_url": "https://andro.evrenesoglu99.click/checklist/androstreamlivetb1.m3u8",
+          "resolved_at": "2026-09-09T19:49:00+00:00",
           "stale": false
         },
         {
@@ -1511,10 +1517,10 @@
               "label": "Site"
             }
           ],
-          "resolved": false,
-          "fresh": false,
-          "resolved_url": null,
-          "resolved_at": null,
+          "resolved": true,
+          "fresh": true,
+          "resolved_url": "https://andro.evrenesoglu99.click/checklist/androstreamlivetb2.m3u8",
+          "resolved_at": "2026-09-09T19:49:00+00:00",
           "stale": false
         },
         {
@@ -1540,10 +1546,10 @@
               "label": "Site"
             }
           ],
-          "resolved": false,
-          "fresh": false,
-          "resolved_url": null,
-          "resolved_at": null,
+          "resolved": true,
+          "fresh": true,
+          "resolved_url": "https://andro.evrenesoglu99.click/checklist/androstreamlivetb3.m3u8",
+          "resolved_at": "2026-09-09T19:49:00+00:00",
           "stale": false
         },
         {
@@ -1569,10 +1575,10 @@
               "label": "Site"
             }
           ],
-          "resolved": false,
-          "fresh": false,
-          "resolved_url": null,
-          "resolved_at": null,
+          "resolved": true,
+          "fresh": true,
+          "resolved_url": "https://andro.evrenesoglu99.click/checklist/androstreamlivetb4.m3u8",
+          "resolved_at": "2026-09-09T19:49:00+00:00",
           "stale": false
         },
         {
@@ -1598,10 +1604,10 @@
               "label": "Site"
             }
           ],
-          "resolved": false,
-          "fresh": false,
-          "resolved_url": null,
-          "resolved_at": null,
+          "resolved": true,
+          "fresh": true,
+          "resolved_url": "https://andro.evrenesoglu99.click/checklist/androstreamlivetb5.m3u8",
+          "resolved_at": "2026-09-09T19:49:00+00:00",
           "stale": false
         },
         {
@@ -1627,10 +1633,10 @@
               "label": "Site"
             }
           ],
-          "resolved": false,
-          "fresh": false,
-          "resolved_url": null,
-          "resolved_at": null,
+          "resolved": true,
+          "fresh": true,
+          "resolved_url": "https://andro.evrenesoglu99.click/checklist/androstreamlivetb6.m3u8",
+          "resolved_at": "2026-09-09T19:49:00+00:00",
           "stale": false
         },
         {
@@ -1656,10 +1662,10 @@
               "label": "Site"
             }
           ],
-          "resolved": false,
-          "fresh": false,
-          "resolved_url": null,
-          "resolved_at": null,
+          "resolved": true,
+          "fresh": true,
+          "resolved_url": "https://andro.evrenesoglu99.click/checklist/androstreamlivetb7.m3u8",
+          "resolved_at": "2026-09-09T19:49:00+00:00",
           "stale": false
         },
         {
@@ -1685,10 +1691,10 @@
               "label": "Site"
             }
           ],
-          "resolved": false,
-          "fresh": false,
-          "resolved_url": null,
-          "resolved_at": null,
+          "resolved": true,
+          "fresh": true,
+          "resolved_url": "https://andro.evrenesoglu99.click/checklist/androstreamlivetb8.m3u8",
+          "resolved_at": "2026-09-09T19:49:00+00:00",
           "stale": false
         },
         {
@@ -1714,10 +1720,10 @@
               "label": "Site"
             }
           ],
-          "resolved": false,
-          "fresh": false,
-          "resolved_url": null,
-          "resolved_at": null,
+          "resolved": true,
+          "fresh": true,
+          "resolved_url": "https://andro.evrenesoglu99.click/checklist/androstreamliveexn.m3u8",
+          "resolved_at": "2026-09-09T19:49:00+00:00",
           "stale": false
         },
         {
@@ -1743,10 +1749,10 @@
               "label": "Site"
             }
           ],
-          "resolved": false,
-          "fresh": false,
-          "resolved_url": null,
-          "resolved_at": null,
+          "resolved": true,
+          "fresh": true,
+          "resolved_url": "https://andro.evrenesoglu99.click/checklist/androstreamliveexn1.m3u8",
+          "resolved_at": "2026-09-09T19:49:00+00:00",
           "stale": false
         },
         {
@@ -1772,10 +1778,10 @@
               "label": "Site"
             }
           ],
-          "resolved": false,
-          "fresh": false,
-          "resolved_url": null,
-          "resolved_at": null,
+          "resolved": true,
+          "fresh": true,
+          "resolved_url": "https://andro.evrenesoglu99.click/checklist/androstreamliveexn2.m3u8",
+          "resolved_at": "2026-09-09T19:49:00+00:00",
           "stale": false
         },
         {
@@ -1801,10 +1807,10 @@
               "label": "Site"
             }
           ],
-          "resolved": false,
-          "fresh": false,
-          "resolved_url": null,
-          "resolved_at": null,
+          "resolved": true,
+          "fresh": true,
+          "resolved_url": "https://andro.evrenesoglu99.click/checklist/androstreamliveexn3.m3u8",
+          "resolved_at": "2026-09-09T19:49:00+00:00",
           "stale": false
         },
         {
@@ -1830,10 +1836,10 @@
               "label": "Site"
             }
           ],
-          "resolved": false,
-          "fresh": false,
-          "resolved_url": null,
-          "resolved_at": null,
+          "resolved": true,
+          "fresh": true,
+          "resolved_url": "https://andro.evrenesoglu99.click/checklist/androstreamliveexn4.m3u8",
+          "resolved_at": "2026-09-09T19:49:00+00:00",
           "stale": false
         },
         {
@@ -1859,10 +1865,10 @@
               "label": "Site"
             }
           ],
-          "resolved": false,
-          "fresh": false,
-          "resolved_url": null,
-          "resolved_at": null,
+          "resolved": true,
+          "fresh": true,
+          "resolved_url": "https://andro.evrenesoglu99.click/checklist/androstreamliveexn5.m3u8",
+          "resolved_at": "2026-09-09T19:49:00+00:00",
           "stale": false
         },
         {
@@ -1888,10 +1894,10 @@
               "label": "Site"
             }
           ],
-          "resolved": false,
-          "fresh": false,
-          "resolved_url": null,
-          "resolved_at": null,
+          "resolved": true,
+          "fresh": true,
+          "resolved_url": "https://andro.evrenesoglu99.click/checklist/androstreamliveexn6.m3u8",
+          "resolved_at": "2026-09-09T19:49:00+00:00",
           "stale": false
         },
         {
@@ -1917,10 +1923,10 @@
               "label": "Site"
             }
           ],
-          "resolved": false,
-          "fresh": false,
-          "resolved_url": null,
-          "resolved_at": null,
+          "resolved": true,
+          "fresh": true,
+          "resolved_url": "https://andro.evrenesoglu99.click/checklist/androstreamliveexn7.m3u8",
+          "resolved_at": "2026-09-09T19:49:00+00:00",
           "stale": false
         },
         {
@@ -1946,10 +1952,10 @@
               "label": "Site"
             }
           ],
-          "resolved": false,
-          "fresh": false,
-          "resolved_url": null,
-          "resolved_at": null,
+          "resolved": true,
+          "fresh": true,
+          "resolved_url": "https://andro.evrenesoglu99.click/checklist/androstreamliveexn8.m3u8",
+          "resolved_at": "2026-09-09T19:49:00+00:00",
           "stale": false
         },
         {
@@ -1975,10 +1981,10 @@
               "label": "Site"
             }
           ],
-          "resolved": false,
-          "fresh": false,
-          "resolved_url": null,
-          "resolved_at": null,
+          "resolved": true,
+          "fresh": true,
+          "resolved_url": "https://andro.evrenesoglu99.click/checklist/androstreamliveidm.m3u8",
+          "resolved_at": "2026-09-09T19:49:00+00:00",
           "stale": false
         },
         {
@@ -2004,10 +2010,10 @@
               "label": "Site"
             }
           ],
-          "resolved": false,
-          "fresh": false,
-          "resolved_url": null,
-          "resolved_at": null,
+          "resolved": true,
+          "fresh": true,
+          "resolved_url": "https://andro.evrenesoglu99.click/checklist/androstreamlivecbcs.m3u8",
+          "resolved_at": "2026-09-09T19:49:00+00:00",
           "stale": false
         }
       ]
