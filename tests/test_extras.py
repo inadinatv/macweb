@@ -323,12 +323,23 @@ def test_refresh_writes_output_and_site_embeds_extra():
     assert len(sel_cfg["channels"]) == 14
     sel_base = sel_cfg["base_url"]
     player = "https://main.uxsyplayerNEW.click"
+
+    mah_cfg = next(p for p in cfg["panels"] if p["id"] == "mahsun")
+    mah_base = mah_cfg["base_url"]
+    n_mahsun = len(mah_cfg["channels"])
+    assert n_mahsun > 0
     net = FakeNet({
         BASE + "/": (200, '<a href="matches?id=bein-sports-1">BEIN</a>'),
         BASE + "/matches?id=bein-sports-1": (200, 'src:"https://edge.x/bs1/index.m3u8"'),
         # Selçuk: ana sayfa oynatıcı alan adını verir, oynatıcı sayfası adsBaseUrl taşır
         sel_base + "/": (200, f'<script src="{player}/embed.js"></script> uxsyplayer'),
         player + "/index.php?id=selcukbeinsports1": (200, "this.adsBaseUrl = 'https://cdn.sel/hls/';"),
+        # Mahsun: event.html baseurls dizisini taşır; ilk andro sunucusu canlı,
+        # ilk kanalın (bs1) m3u8 doğrulaması başarılı — diğerleri bu sahte ağda yok.
+        mah_base + "/event.html?id=androstreamlivebs1": (
+            200, "var baseurls = ['https://andro.fake.click', 'https://andro.b.click/checklist'];"),
+        "https://andro.fake.click/checklist/androstreamlivebs1.m3u8": (
+            200, "#EXTM3U\n#EXT-X-TARGETDURATION:4\n#EXTINF:4.0,\nseg1.ts\n"),
     })
     with tempfile.TemporaryDirectory() as tmp:
         orig_out, orig_idx = extras.EXTRA_OUTPUT, site.INDEX_OUT
@@ -338,7 +349,8 @@ def test_refresh_writes_output_and_site_embeds_extra():
             data = extras.refresh(now, fetch=net)
             assert extras.EXTRA_OUTPUT.exists()
             saved = json.loads(extras.EXTRA_OUTPUT.read_text(encoding="utf-8"))
-            assert saved["total"] == 28 and saved["panels"][0]["resolved"] == 1
+            assert saved["total"] == 28 + n_mahsun
+            assert saved["panels"][0]["resolved"] == 1
             assert saved["source"] == "output/extra_channels.json"
             sel = saved["panels"][1]
             assert sel["id"] == "selcuk" and sel["player_base"] == player and sel["resolved"] == 1
@@ -347,6 +359,17 @@ def test_refresh_writes_output_and_site_embeds_extra():
             assert sbs1["sources"][-1] == {"type": "embed", "label": "Site",
                                            "url": player + "/index.php?id=selcukbeinsports1"}
             assert sbs1["referrer"] == sel_base + "/"
+            # Mahsun: baseurls'den sunucu bulundu, doğrulanan kanal canlı çözüldü
+            mah = saved["panels"][2]
+            assert mah["id"] == "mahsun" and mah["healthy"] is True
+            assert mah["stream_base"] == "https://andro.fake.click"
+            assert mah["resolved"] == 1
+            mbs1 = mah["channels"][0]
+            assert mbs1["slug"] == "androstreamlivebs1" and mbs1["resolved"] is True
+            assert mbs1["sources"][0] == {"type": "hls", "url": "https://andro.fake.click/checklist/androstreamlivebs1.m3u8",
+                                          "label": "Kaynak 1", "mime_type": "application/vnd.apple.mpegurl"}
+            assert mbs1["sources"][-1]["type"] == "embed"
+            assert mbs1["referrer"] == mah_base + "/"
 
             out = site.build_index_html([], {"total": 0, "by_brand": {}, "channels": []},
                                         datetime(2026, 9, 5, 15, 0), extra_data=data)
@@ -432,3 +455,129 @@ def test_signed_query_and_encoded_scheme_are_not_corrupted():
     direct = 'https://cdn.test/index.m3u8?auth=a%2Bb&not=0&copy=1'
     assert extras.find_m3u8('src="' + direct + '"', BASE) == direct
     assert extras.find_m3u8('src="https%3A%2F%2Fcdn.test%2Findex.m3u8%3Fauth%3Da%252Bb"', BASE) == 'https://cdn.test/index.m3u8?auth=a%2Bb'
+
+
+# ---------------------------------------------------------------------------
+# MAHSUN SPORTS (androstream) — baseurls sunucu dizisi + {stream_base} şablonu
+# ---------------------------------------------------------------------------
+MAH_BASE = "https://mahsunsports80.xyz"
+PLAYLIST = "#EXTM3U\n#EXT-X-TARGETDURATION:4\n#EXTINF:4.0,\nhttps://seg/1.jpg\n"
+
+
+def _mahsun_panel(**over):
+    panel = {
+        "id": "mahsun", "name": "MAHSUN SPORTS", "icon": "🌴",
+        "base_url": MAH_BASE,
+        "mirror": {"pattern": "mahsunsports{n}.xyz", "preferred_number": 80,
+                   "scan_window": 4, "must_contain_any": ["baseurls"]},
+        "health_path": "event.html?id=androstreamlivebs1",
+        "player": {
+            "stream_base_array_pattern": r"baseurls\s*=\s*\[(.*?)\]",
+            "stream_template": "{stream_base}/checklist/{slug}.m3u8",
+            "default_stream_base": "https://andro.default.click",
+            "verify_static": True,
+        },
+        "embed_template": "{base_url}/event.html?id={slug}",
+        "referrer": "{base_url}/",
+        "channels": [
+            {"slug": "androstreamlivebs1", "name": "BEIN SPORTS 1",
+             "url": "{stream_base}/checklist/{slug}.m3u8"},
+            {"slug": "androstreamlivebs2", "name": "BEIN SPORTS 2",
+             "url": "{stream_base}/checklist/{slug}.m3u8"},
+        ],
+    }
+    panel.update(over)
+    return panel
+
+
+def test_array_stream_servers_parses_baseurls():
+    html = ("var baseurls = ['https://andro.a.click',\n"
+            "  \"https://andro.b.click/checklist\",\n"
+            "  'not-a-url', 'https://andro.a.click/'];")
+    servers = extras.array_stream_servers(html, r"baseurls\s*=\s*\[(.*?)\]")
+    assert servers == ["https://andro.a.click", "https://andro.b.click/checklist"]
+    assert extras.array_stream_servers("<html>baseurls yok</html>", r"baseurls\s*=\s*\[(.*?)\]") == []
+    assert extras.array_stream_servers(html, "") == []
+    # checklist yolu sunucuda zaten varsa şablonda çift path oluşmaz
+    url = extras._stream_url("{stream_base}/checklist/{slug}.m3u8",
+                             {"stream_base": "https://andro.b.click/checklist", "slug": "x1"})
+    assert url == "https://andro.b.click/checklist/x1.m3u8"
+    url = extras._stream_url("{stream_base}/checklist/{slug}.m3u8",
+                             {"stream_base": "https://andro.a.click", "slug": "x1"})
+    assert url == "https://andro.a.click/checklist/x1.m3u8"
+    # stream_base yoksa şablon kurulamaz → boş
+    assert extras._stream_url("{stream_base}/checklist/{slug}.m3u8", {"slug": "x1"}) == ""
+    print("OK: array_stream_servers_parses_baseurls")
+
+
+def test_mahsun_server_discovery_and_verified_static():
+    """İlk andro sunucusu ölüyse dizideki sonraki denenir; /checklist'li sunucu
+    şablonla birleştirilir (çift path yok) ve kanal adresi HLS doğrulamasından geçer."""
+    now = datetime(2026, 9, 9, 12, 0, tzinfo=timezone.utc)
+    net = FakeNet({
+        MAH_BASE + "/event.html?id=androstreamlivebs1": (
+            200, "baseurls = ['https://andro.dead.click', 'https://andro.live.click/checklist'];"),
+        "https://andro.live.click/checklist/androstreamlivebs1.m3u8": (200, PLAYLIST),
+        "https://andro.live.click/checklist/androstreamlivebs2.m3u8": (200, PLAYLIST),
+    })
+    out = extras.resolve_panel(_mahsun_panel(), None, net, extras.DEFAULT_HEADERS, 5, now, 6)
+    assert out["base_url"] == MAH_BASE and out["healthy"] is True
+    # ölü sunucu atlandı, checklist'li sunucu kazandı
+    assert out["stream_base"] == "https://andro.live.click/checklist"
+    by = {c["slug"]: c for c in out["channels"]}
+    bs1 = by["androstreamlivebs1"]
+    assert bs1["resolved"] is True and bs1["fresh"] is True and bs1["stale"] is False
+    assert bs1["resolved_url"] == "https://andro.live.click/checklist/androstreamlivebs1.m3u8"
+    assert [s["type"] for s in bs1["sources"]] == ["hls", "embed"]
+    assert bs1["sources"][-1]["url"] == MAH_BASE + "/event.html?id=androstreamlivebs1"
+    # sunucu sonda Referer = site adresi ile istendi
+    probe_hdr = next(h for u, h in net.calls
+                     if u == "https://andro.live.click/checklist/androstreamlivebs1.m3u8")
+    assert probe_hdr["Referer"] == MAH_BASE + "/"
+    bs2 = by["androstreamlivebs2"]
+    assert bs2["resolved"] is True  # bu sahte ağda bs2 de canlı
+    print("OK: mahsun_server_discovery_and_verified_static")
+
+
+def test_mahsun_unverified_channel_and_previous_stream_base():
+    """Kanal m3u8 bu turda doğrulanamadıysa çözümsüz kalır ama şablon adresi yine
+    de kaynak olarak eklenir; sunucu bulunamazsa son bilinen korunur."""
+    now = datetime(2026, 9, 9, 12, 0, tzinfo=timezone.utc)
+    net = FakeNet({
+        MAH_BASE + "/event.html?id=androstreamlivebs1": (
+            200, "baseurls = ['https://andro.dead.click'];"),
+        # bs1 doğrulaması ölü, bs2 canlı
+        "https://andro.dead.click/checklist/androstreamlivebs2.m3u8": (200, PLAYLIST),
+    })
+    previous = {"base_url": MAH_BASE, "stream_base": "https://andro.prev.click",
+                "channels": [{"slug": "androstreamlivebs1",
+                              "resolved_url": "https://andro.prev.click/checklist/androstreamlivebs1.m3u8",
+                              "resolved_at": now.isoformat(timespec="seconds")}]}
+    out = extras.resolve_panel(_mahsun_panel(), previous, net, extras.DEFAULT_HEADERS, 5, now, 6)
+    # dizideki hiçbir sunucu bs1 için HLS vermedi → son bilinen stream_base korundu
+    assert out["stream_base"] == "https://andro.prev.click"
+    by = {c["slug"]: c for c in out["channels"]}
+    bs1 = by["androstreamlivebs1"]
+    # önceki taze çözüm korundu (stale)
+    assert bs1["resolved"] is True and bs1["stale"] is True
+    assert bs1["sources"][0]["url"] == "https://andro.prev.click/checklist/androstreamlivebs1.m3u8"
+    bs2 = by["androstreamlivebs2"]
+    # bs2'nin önceki çözümü yok; şablon son bilinen sunucuyla kuruldu ama bu
+    # sahte ağda doğrulanamadı → doğrulanmamış kaynak + embed yedeği
+    assert bs2["resolved"] is False
+    assert bs2["sources"][0]["url"] == "https://andro.prev.click/checklist/androstreamlivebs2.m3u8"
+    assert bs2["sources"][-1]["type"] == "embed"
+    print("OK: mahsun_unverified_channel_and_previous_stream_base")
+
+
+def test_mahsun_offline_uses_default_stream_base():
+    """Ağ yoksa (fetch=None) default_stream_base ile kanal adresleri kurulur,
+    önceki kanal çözümleri süreye bakılmaksızın korunur."""
+    now = datetime(2026, 9, 9, 12, 0, tzinfo=timezone.utc)
+    out = extras.resolve_panel(_mahsun_panel(), None, None, extras.DEFAULT_HEADERS, 5, now, None)
+    assert out["healthy"] is None
+    assert out["stream_base"] == "https://andro.default.click"
+    bs1 = out["channels"][0]
+    assert bs1["sources"][0]["url"] == "https://andro.default.click/checklist/androstreamlivebs1.m3u8"
+    assert bs1["sources"][-1]["url"] == MAH_BASE + "/event.html?id=androstreamlivebs1"
+    print("OK: mahsun_offline_uses_default_stream_base")
