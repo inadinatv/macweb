@@ -9,13 +9,13 @@
       "fixbettv84.com",
       "fixbettv19.com"
     ],
-    "last_checked": "2026-09-09T20:10:16+00:00",
+    "last_checked": "2026-09-09T21:59:46+00:00",
     "note": "OK",
     "probed": 200
   },
-  "date": "2026-09-09",
+  "date": "2026-09-10",
   "timezone": "Europe/Istanbul",
-  "generated_at": "2026-09-09T23:09:39+03:00",
+  "generated_at": "2026-09-10T00:59:10+03:00",
   "matches": [
     {
       "match_id": "ss",
@@ -28,8 +28,8 @@
       "channel_id": "ss",
       "logo_home": "https://img.sporekrani.com/teams/mAFsABwwjmgpSE6BUjAPiBjfjKmLHT1ZmSEEi0i7.png",
       "logo_away": "https://img.sporekrani.com/teams/S0VW51K3JvM4oY7Wcpng5sON3vH1x1LxtrCgzQ0g.png",
-      "status": "finished",
-      "started": true,
+      "status": "upcoming",
+      "started": false,
       "raw_event": "18:45 | FIBA Kadınlar Dünya Kupası",
       "url": "https://fixbettv84.com/channel.html?id=ss",
       "fetched_at": "",
@@ -40,7 +40,7 @@
       "score_source": "",
       "score_updated_at": "",
       "event_id": "",
-      "starts_at": "2026-09-09T18:45:00+03:00"
+      "starts_at": "2026-09-10T18:45:00+03:00"
     },
     {
       "match_id": "ex7",
@@ -53,8 +53,8 @@
       "channel_id": "ex7",
       "logo_home": "https://img.sporekrani.com/teams/V1BNoPDhMg8Ga7F3BZsRmaWtFdoylxIakmdCFFVH.png",
       "logo_away": "https://img.sporekrani.com/teams/72zu1mtxHg55ElfIxkjjHITrolFseHhm9onyNb0U.png",
-      "status": "finished",
-      "started": true,
+      "status": "upcoming",
+      "started": false,
       "raw_event": "19:45 | UEFA Şampiyonlar Ligi",
       "url": "https://fixbettv84.com/channel.html?id=ex7",
       "fetched_at": "",
@@ -65,7 +65,7 @@
       "score_source": "",
       "score_updated_at": "",
       "event_id": "",
-      "starts_at": "2026-09-09T19:45:00+03:00"
+      "starts_at": "2026-09-10T19:45:00+03:00"
     },
     {
       "match_id": "ex1",
@@ -78,8 +78,8 @@
       "channel_id": "ex1",
       "logo_home": "https://img.sporekrani.com/teams/J5oLtYwaAAY7Y7LQMYzMUBKc8enAy9vU2OmYUszQ.png",
       "logo_away": "https://img.sporekrani.com/teams/d49004d8-6ae6-4d8f-a7ec-ec3d6d83a02b.png",
-      "status": "finished",
-      "started": true,
+      "status": "upcoming",
+      "started": false,
       "raw_event": "19:45 | UEFA Şampiyonlar Ligi",
       "url": "https://fixbettv84.com/channel.html?id=ex1",
       "fetched_at": "",
@@ -90,7 +90,7 @@
       "score_source": "",
       "score_updated_at": "",
       "event_id": "",
-      "starts_at": "2026-09-09T19:45:00+03:00"
+      "starts_at": "2026-09-10T19:45:00+03:00"
     },
     {
       "match_id": "trtspor2",
@@ -103,7 +103,7 @@
       "channel_id": "trtspor2",
       "logo_home": "https://img.sporekrani.com/teams/gBydEa3e72G6EpauybB9bEPsLrJrRuv1WHboiDr0.png",
       "logo_away": "https://img.sporekrani.com/teams/GdLWh94GLymE9aN8nd1PoUXb4FR9GpPOnCSTdkoy.png",
-      "status": "live",
+      "status": "finished",
       "started": true,
       "raw_event": "21:45 | FIBA Kadınlar Dünya Kupası",
       "url": "https://fixbettv84.com/channel.html?id=trtspor2",
@@ -128,7 +128,7 @@
       "channel_id": "trt1",
       "logo_home": "https://img.sporekrani.com/teams/wmkMpVv7deEV46KqRI9Evc7cCPEqzIIZoGNt6t1j.png",
       "logo_away": "https://img.sporekrani.com/teams/GG15p6Gkt4vy5CbGDmFNuSLHMC5ojiP0GatfJCdh.png",
-      "status": "live",
+      "status": "finished",
       "started": true,
       "raw_event": "22:00 | UEFA Şampiyonlar Ligi",
       "url": "https://fixbettv84.com/channel.html?id=trt1",
@@ -153,7 +153,7 @@
       "channel_id": "ex1",
       "logo_home": "https://img.sporekrani.com/teams/V4H7yH7E3GBuSO94SIr4WuLrfqCZsFEC5hMm5mWH.png",
       "logo_away": "https://img.sporekrani.com/teams/EykZD4iDJGeN1pKrwrjkamv51twk7cX01K5QFwkM.png",
-      "status": "live",
+      "status": "finished",
       "started": true,
       "raw_event": "22:00 | UEFA Şampiyonlar Ligi",
       "url": "https://fixbettv84.com/channel.html?id=ex1",
@@ -178,7 +178,7 @@
       "channel_id": "ex2",
       "logo_home": "https://img.sporekrani.com/teams/HabaH51e4AEYIabuLgRB8Jmh6BMr3XqLhJmQxwYV.png",
       "logo_away": "https://img.sporekrani.com/teams/Oyf1KjdNrQ3JRqlad56loSKdEvRBippxrf4sgKYr.png",
-      "status": "live",
+      "status": "finished",
       "started": true,
       "raw_event": "22:00 | UEFA Şampiyonlar Ligi",
       "url": "https://fixbettv84.com/channel.html?id=ex2",
@@ -203,7 +203,7 @@
       "channel_id": "ex7",
       "logo_home": "https://img.sporekrani.com/teams/X76hf7UqTjpEwibxSUfBvyeMdUHQDmX8kfAU6hfR.png",
       "logo_away": "https://img.sporekrani.com/teams/H10jNhPECZT9nUGgVPEIrTvidVb9HyX9xEepUWuf.png",
-      "status": "live",
+      "status": "finished",
       "started": true,
       "raw_event": "22:00 | UEFA Şampiyonlar Ligi",
       "url": "https://fixbettv84.com/channel.html?id=ex7",
