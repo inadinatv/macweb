@@ -1,14 +1,17 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-09-09 13:45  
-> **Toplam maç:** 8  |  **Canlı:** 0  |  **Yaklaşan:** 8
+> **Güncellenme:** 2026-09-09 17:18  
+> **Toplam maç:** 8  |  **Canlı:** 3  |  **Yaklaşan:** 5
+
+## 🔴 CANLI
+
+- 🔴 **Porto Riko vs Çin** — CANLI · `18:45` | FIBA Kadınlar Dünya Kupası <https://fixbettv84.com/channel.html?id=ss>
+- 🔴 **Barcelona vs Feyenoord** — CANLI · `19:45` | UEFA Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=ex7>
+- 🔴 **Stuttgart vs Viking** — CANLI · `19:45` | UEFA Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=ex1>
 
 ## ⏰ YAKLAŞAN
 
-- ⏰ **Porto Riko vs Çin** — YAKLAŞAN · `18:45` | FIBA Kadınlar Dünya Kupası <https://fixbettv84.com/channel.html?id=ss>
-- ⏰ **Barcelona vs Feyenoord** — YAKLAŞAN · `19:45` | UEFA Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=ex7>
-- ⏰ **Stuttgart vs Viking** — YAKLAŞAN · `19:45` | UEFA Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=ex1>
 - ⏰ **İtalya vs Avustralya** — YAKLAŞAN · `21:45` | FIBA Kadınlar Dünya Kupası <https://fixbettv84.com/channel.html?id=trtspor2>
 - ⏰ **Sporting Lisbon vs Galatasaray** — YAKLAŞAN · `22:00` | UEFA Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=trt1>
 - ⏰ **PSG vs Slovan Bratislava** — YAKLAŞAN · `22:00` | UEFA Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=ex1>
@@ -19,12 +22,12 @@
 ## 🏆 Lig Bazlı
 
 ### FIBA Kadınlar Dünya Kupası
-- ⏰ Porto Riko vs Çin — 18:45
+- 🔴 Porto Riko vs Çin — 18:45
 - ⏰ İtalya vs Avustralya — 21:45
 
 ### UEFA Şampiyonlar Ligi
-- ⏰ Barcelona vs Feyenoord — 19:45
-- ⏰ Stuttgart vs Viking — 19:45
+- 🔴 Barcelona vs Feyenoord — 19:45
+- 🔴 Stuttgart vs Viking — 19:45
 - ⏰ Sporting Lisbon vs Galatasaray — 22:00
 - ⏰ PSG vs Slovan Bratislava — 22:00
 - ⏰ Napoli vs Arsenal — 22:00

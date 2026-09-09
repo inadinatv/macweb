@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-09T13:44:17+00:00",
+  "updated_at": "2026-09-09T17:17:55+00:00",
   "source": "output/extra_channels.json",
   "total": 28,
   "panels": [
@@ -46,7 +46,7 @@
           "resolved": true,
           "fresh": true,
           "resolved_url": "https://corestream.d72377a9ds0ec71.cfd//beintv/tracks-v1a1/mono.m3u8",
-          "resolved_at": "2026-09-09T13:44:17+00:00",
+          "resolved_at": "2026-09-09T17:17:55+00:00",
           "stale": false
         },
         {
@@ -139,7 +139,7 @@
           "resolved": true,
           "fresh": true,
           "resolved_url": "https://corestream.d72377a9ds0ec71.cfd//bein4/tracks-v1a1/mono.m3u8",
-          "resolved_at": "2026-09-09T13:44:17+00:00",
+          "resolved_at": "2026-09-09T17:17:55+00:00",
           "stale": false
         },
         {
@@ -203,7 +203,7 @@
           "resolved": true,
           "fresh": true,
           "resolved_url": "https://corestream.d72377a9ds0ec71.cfd//s-sport/tracks-v1a1/mono.m3u8",
-          "resolved_at": "2026-09-09T13:44:17+00:00",
+          "resolved_at": "2026-09-09T17:17:55+00:00",
           "stale": false
         },
         {
@@ -238,7 +238,7 @@
           "resolved": true,
           "fresh": true,
           "resolved_url": "https://corestream.d72377a9ds0ec71.cfd//s-sport2/tracks-v1a1/mono.m3u8",
-          "resolved_at": "2026-09-09T13:44:17+00:00",
+          "resolved_at": "2026-09-09T17:17:55+00:00",
           "stale": false
         },
         {
@@ -483,7 +483,7 @@
           "resolved": true,
           "fresh": true,
           "resolved_url": "https://dga1op10s1u3lea.82250d06d39d38.click/live/selcukbeinsports1/playlist.m3u8",
-          "resolved_at": "2026-09-09T13:44:17+00:00",
+          "resolved_at": "2026-09-09T17:17:55+00:00",
           "stale": false
         },
         {
@@ -512,7 +512,7 @@
           "resolved": true,
           "fresh": true,
           "resolved_url": "https://dga1op10s1u3lea.82250d06d39d38.click/live/selcukbeinsports2/playlist.m3u8",
-          "resolved_at": "2026-09-09T13:44:17+00:00",
+          "resolved_at": "2026-09-09T17:17:55+00:00",
           "stale": false
         },
         {
@@ -541,7 +541,7 @@
           "resolved": true,
           "fresh": true,
           "resolved_url": "https://dga1op10s1u3lea.82250d06d39d38.click/live/selcukbeinsports3/playlist.m3u8",
-          "resolved_at": "2026-09-09T13:44:17+00:00",
+          "resolved_at": "2026-09-09T17:17:55+00:00",
           "stale": false
         },
         {
@@ -570,7 +570,7 @@
           "resolved": true,
           "fresh": true,
           "resolved_url": "https://dga1op10s1u3lea.82250d06d39d38.click/live/selcukbeinsports4/playlist.m3u8",
-          "resolved_at": "2026-09-09T13:44:17+00:00",
+          "resolved_at": "2026-09-09T17:17:55+00:00",
           "stale": false
         },
         {
@@ -599,7 +599,7 @@
           "resolved": true,
           "fresh": true,
           "resolved_url": "https://dga1op10s1u3lea.82250d06d39d38.click/live/selcukbeinsports5/playlist.m3u8",
-          "resolved_at": "2026-09-09T13:44:17+00:00",
+          "resolved_at": "2026-09-09T17:17:55+00:00",
           "stale": false
         },
         {
@@ -628,7 +628,7 @@
           "resolved": true,
           "fresh": true,
           "resolved_url": "https://dga1op10s1u3lea.82250d06d39d38.click/live/selcukbeinsportsmax1/playlist.m3u8",
-          "resolved_at": "2026-09-09T13:44:17+00:00",
+          "resolved_at": "2026-09-09T17:17:55+00:00",
           "stale": false
         },
         {
@@ -657,7 +657,7 @@
           "resolved": true,
           "fresh": true,
           "resolved_url": "https://dga1op10s1u3lea.82250d06d39d38.click/live/selcukbeinsportsmax2/playlist.m3u8",
-          "resolved_at": "2026-09-09T13:44:17+00:00",
+          "resolved_at": "2026-09-09T17:17:55+00:00",
           "stale": false
         },
         {
@@ -686,7 +686,7 @@
           "resolved": true,
           "fresh": true,
           "resolved_url": "https://dga1op10s1u3lea.82250d06d39d38.click/live/selcukssport/playlist.m3u8",
-          "resolved_at": "2026-09-09T13:44:17+00:00",
+          "resolved_at": "2026-09-09T17:17:55+00:00",
           "stale": false
         },
         {
@@ -715,7 +715,7 @@
           "resolved": true,
           "fresh": true,
           "resolved_url": "https://dga1op10s1u3lea.82250d06d39d38.click/live/selcukssport2/playlist.m3u8",
-          "resolved_at": "2026-09-09T13:44:17+00:00",
+          "resolved_at": "2026-09-09T17:17:55+00:00",
           "stale": false
         },
         {
@@ -744,7 +744,7 @@
           "resolved": true,
           "fresh": true,
           "resolved_url": "https://dga1op10s1u3lea.82250d06d39d38.click/live/selcuktivibuspor1/playlist.m3u8",
-          "resolved_at": "2026-09-09T13:44:17+00:00",
+          "resolved_at": "2026-09-09T17:17:55+00:00",
           "stale": false
         },
         {
@@ -773,7 +773,7 @@
           "resolved": true,
           "fresh": true,
           "resolved_url": "https://dga1op10s1u3lea.82250d06d39d38.click/live/selcuktivibuspor2/playlist.m3u8",
-          "resolved_at": "2026-09-09T13:44:17+00:00",
+          "resolved_at": "2026-09-09T17:17:55+00:00",
           "stale": false
         },
         {
@@ -802,7 +802,7 @@
           "resolved": true,
           "fresh": true,
           "resolved_url": "https://dga1op10s1u3lea.82250d06d39d38.click/live/selcuksmartspor/playlist.m3u8",
-          "resolved_at": "2026-09-09T13:44:17+00:00",
+          "resolved_at": "2026-09-09T17:17:55+00:00",
           "stale": false
         },
         {
@@ -831,7 +831,7 @@
           "resolved": true,
           "fresh": true,
           "resolved_url": "https://dga1op10s1u3lea.82250d06d39d38.click/live/selcukaspor/playlist.m3u8",
-          "resolved_at": "2026-09-09T13:44:17+00:00",
+          "resolved_at": "2026-09-09T17:17:55+00:00",
           "stale": false
         },
         {
@@ -860,7 +860,7 @@
           "resolved": true,
           "fresh": true,
           "resolved_url": "https://dga1op10s1u3lea.82250d06d39d38.click/live/selcukeurosport1/playlist.m3u8",
-          "resolved_at": "2026-09-09T13:44:17+00:00",
+          "resolved_at": "2026-09-09T17:17:55+00:00",
           "stale": false
         }
       ]
