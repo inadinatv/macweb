@@ -1,22 +1,19 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-09-08 22:23  
-> **Toplam maç:** 8  |  **Canlı:** 0  |  **Yaklaşan:** 3
+> **Güncellenme:** 2026-09-09 00:22  
+> **Toplam maç:** 8  |  **Canlı:** 0  |  **Yaklaşan:** 8
 
 ## ⏰ YAKLAŞAN
 
 - ⏰ **Porto Riko vs Çin** — YAKLAŞAN · `18:45` | FIBA Kadınlar Dünya Kupası <https://fixbettv84.com/channel.html?id=ss>
 - ⏰ **Barcelona vs Feyenoord** — YAKLAŞAN · `19:45` | UEFA Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=ex7>
 - ⏰ **Stuttgart vs Viking** — YAKLAŞAN · `19:45` | UEFA Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=ex1>
-
-## ✅ BİTTİ
-
-- ✅ **İtalya vs Avustralya** — MS · `21:45` | FIBA Kadınlar Dünya Kupası <https://fixbettv84.com/channel.html?id=trtspor2>
-- ✅ **Sporting Lisbon vs Galatasaray** — MS · `22:00` | UEFA Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=trt1>
-- ✅ **PSG vs Slovan Bratislava** — MS · `22:00` | UEFA Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=ex1>
-- ✅ **Napoli vs Arsenal** — MS · `22:00` | UEFA Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=ex2>
-- ✅ **Liverpool vs Atletico Madrid** — MS · `22:00` | UEFA Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=ex7>
+- ⏰ **İtalya vs Avustralya** — YAKLAŞAN · `21:45` | FIBA Kadınlar Dünya Kupası <https://fixbettv84.com/channel.html?id=trtspor2>
+- ⏰ **Sporting Lisbon vs Galatasaray** — YAKLAŞAN · `22:00` | UEFA Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=trt1>
+- ⏰ **PSG vs Slovan Bratislava** — YAKLAŞAN · `22:00` | UEFA Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=ex1>
+- ⏰ **Napoli vs Arsenal** — YAKLAŞAN · `22:00` | UEFA Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=ex2>
+- ⏰ **Liverpool vs Atletico Madrid** — YAKLAŞAN · `22:00` | UEFA Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=ex7>
 
 ---
 ## 🏆 Lig Bazlı
@@ -89,13 +86,13 @@
 ## ⚡ EKSTRA PANELLER — m3u8 (28)
 
 ### ⚛️ ATOM SPOR ✅ `https://www.atomsportv514.top`
-- 🟡 **BEIN SPORTS 1** <https://corestream.ardastream.live//beintv/tracks-v1a1/mono.m3u8>
-- 🟡 **BEIN SPORTS 2** <https://corestream.ardastream.live//bein2/tracks-v1a1/mono.m3u8>
-- 🟡 **BEIN SPORTS 3** <https://corestream.ardastream.live//bein3/tracks-v1a1/mono.m3u8>
-- 🟡 **BEIN SPORTS 4** <https://corestream.ardastream.live//bein4/tracks-v1a1/mono.m3u8>
+- ⚪ **BEIN SPORTS 1** <https://tv.atomspor.workers.dev/?ID=bein-sports-1>
+- ⚪ **BEIN SPORTS 2** <https://tv.atomspor.workers.dev/?ID=bein-sports-2>
+- ⚪ **BEIN SPORTS 3** <https://tv.atomspor.workers.dev/?ID=bein-sports-3>
+- ⚪ **BEIN SPORTS 4** <https://tv.atomspor.workers.dev/?ID=bein-sports-4>
 - ⚪ **BEIN SPORTS 5** <https://tv.atomspor.workers.dev/?ID=bein-sports-5>
-- 🟡 **S SPORT** <https://corestream.ardastream.live//s-sport/tracks-v1a1/mono.m3u8>
-- 🟡 **S SPORT 2** <https://corestream.ardastream.live//s-sport2/tracks-v1a1/mono.m3u8>
+- ⚪ **S SPORT** <https://tv.atomspor.workers.dev/?ID=s-sport>
+- ⚪ **S SPORT 2** <https://tv.atomspor.workers.dev/?ID=s-sport-2>
 - ⚪ **S SPORT PLUS** <https://tv.atomspor.workers.dev/?ID=ssport-plus>
 - ⚪ **TIVIBU SPOR 1** <https://tv.atomspor.workers.dev/?ID=tivibu-spor-1>
 - ⚪ **TIVIBU SPOR 2** <https://tv.atomspor.workers.dev/?ID=tivibu-spor-2>

@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-08T22:22:43+00:00",
+  "updated_at": "2026-09-09T00:21:52+00:00",
   "source": "output/extra_channels.json",
   "total": 28,
   "panels": [
@@ -10,7 +10,7 @@
       "base_url": "https://www.atomsportv514.top",
       "player_base": "",
       "healthy": true,
-      "resolved": 6,
+      "resolved": 0,
       "fresh": 0,
       "total": 14,
       "channels": [
@@ -27,14 +27,8 @@
           "sources": [
             {
               "type": "hls",
-              "url": "https://corestream.ardastream.live//beintv/tracks-v1a1/mono.m3u8",
-              "label": "Kaynak 1",
-              "mime_type": "application/vnd.apple.mpegurl"
-            },
-            {
-              "type": "hls",
               "url": "https://tv.atomspor.workers.dev/?ID=bein-sports-1",
-              "label": "Kaynak 2",
+              "label": "Kaynak 1",
               "mime_type": "application/vnd.apple.mpegurl"
             },
             {
@@ -43,11 +37,11 @@
               "label": "Site"
             }
           ],
-          "resolved": true,
+          "resolved": false,
           "fresh": false,
-          "resolved_url": "https://corestream.ardastream.live//beintv/tracks-v1a1/mono.m3u8",
-          "resolved_at": "2026-09-08T17:25:41+00:00",
-          "stale": true
+          "resolved_url": null,
+          "resolved_at": null,
+          "stale": false
         },
         {
           "id": "atom:bein-sports-2",
@@ -62,14 +56,8 @@
           "sources": [
             {
               "type": "hls",
-              "url": "https://corestream.ardastream.live//bein2/tracks-v1a1/mono.m3u8",
-              "label": "Kaynak 1",
-              "mime_type": "application/vnd.apple.mpegurl"
-            },
-            {
-              "type": "hls",
               "url": "https://tv.atomspor.workers.dev/?ID=bein-sports-2",
-              "label": "Kaynak 2",
+              "label": "Kaynak 1",
               "mime_type": "application/vnd.apple.mpegurl"
             },
             {
@@ -78,11 +66,11 @@
               "label": "Site"
             }
           ],
-          "resolved": true,
+          "resolved": false,
           "fresh": false,
-          "resolved_url": "https://corestream.ardastream.live//bein2/tracks-v1a1/mono.m3u8",
-          "resolved_at": "2026-09-08T17:25:41+00:00",
-          "stale": true
+          "resolved_url": null,
+          "resolved_at": null,
+          "stale": false
         },
         {
           "id": "atom:bein-sports-3",
@@ -97,14 +85,8 @@
           "sources": [
             {
               "type": "hls",
-              "url": "https://corestream.ardastream.live//bein3/tracks-v1a1/mono.m3u8",
-              "label": "Kaynak 1",
-              "mime_type": "application/vnd.apple.mpegurl"
-            },
-            {
-              "type": "hls",
               "url": "https://tv.atomspor.workers.dev/?ID=bein-sports-3",
-              "label": "Kaynak 2",
+              "label": "Kaynak 1",
               "mime_type": "application/vnd.apple.mpegurl"
             },
             {
@@ -113,11 +95,11 @@
               "label": "Site"
             }
           ],
-          "resolved": true,
+          "resolved": false,
           "fresh": false,
-          "resolved_url": "https://corestream.ardastream.live//bein3/tracks-v1a1/mono.m3u8",
-          "resolved_at": "2026-09-08T17:25:41+00:00",
-          "stale": true
+          "resolved_url": null,
+          "resolved_at": null,
+          "stale": false
         },
         {
           "id": "atom:bein-sports-4",
@@ -132,14 +114,8 @@
           "sources": [
             {
               "type": "hls",
-              "url": "https://corestream.ardastream.live//bein4/tracks-v1a1/mono.m3u8",
-              "label": "Kaynak 1",
-              "mime_type": "application/vnd.apple.mpegurl"
-            },
-            {
-              "type": "hls",
               "url": "https://tv.atomspor.workers.dev/?ID=bein-sports-4",
-              "label": "Kaynak 2",
+              "label": "Kaynak 1",
               "mime_type": "application/vnd.apple.mpegurl"
             },
             {
@@ -148,11 +124,11 @@
               "label": "Site"
             }
           ],
-          "resolved": true,
+          "resolved": false,
           "fresh": false,
-          "resolved_url": "https://corestream.ardastream.live//bein4/tracks-v1a1/mono.m3u8",
-          "resolved_at": "2026-09-08T17:25:41+00:00",
-          "stale": true
+          "resolved_url": null,
+          "resolved_at": null,
+          "stale": false
         },
         {
           "id": "atom:bein-sports-5",
@@ -196,14 +172,8 @@
           "sources": [
             {
               "type": "hls",
-              "url": "https://corestream.ardastream.live//s-sport/tracks-v1a1/mono.m3u8",
-              "label": "Kaynak 1",
-              "mime_type": "application/vnd.apple.mpegurl"
-            },
-            {
-              "type": "hls",
               "url": "https://tv.atomspor.workers.dev/?ID=s-sport",
-              "label": "Kaynak 2",
+              "label": "Kaynak 1",
               "mime_type": "application/vnd.apple.mpegurl"
             },
             {
@@ -212,11 +182,11 @@
               "label": "Site"
             }
           ],
-          "resolved": true,
+          "resolved": false,
           "fresh": false,
-          "resolved_url": "https://corestream.ardastream.live//s-sport/tracks-v1a1/mono.m3u8",
-          "resolved_at": "2026-09-08T17:25:41+00:00",
-          "stale": true
+          "resolved_url": null,
+          "resolved_at": null,
+          "stale": false
         },
         {
           "id": "atom:s-sport-2",
@@ -231,14 +201,8 @@
           "sources": [
             {
               "type": "hls",
-              "url": "https://corestream.ardastream.live//s-sport2/tracks-v1a1/mono.m3u8",
-              "label": "Kaynak 1",
-              "mime_type": "application/vnd.apple.mpegurl"
-            },
-            {
-              "type": "hls",
               "url": "https://tv.atomspor.workers.dev/?ID=s-sport-2",
-              "label": "Kaynak 2",
+              "label": "Kaynak 1",
               "mime_type": "application/vnd.apple.mpegurl"
             },
             {
@@ -247,11 +211,11 @@
               "label": "Site"
             }
           ],
-          "resolved": true,
+          "resolved": false,
           "fresh": false,
-          "resolved_url": "https://corestream.ardastream.live//s-sport2/tracks-v1a1/mono.m3u8",
-          "resolved_at": "2026-09-08T17:25:41+00:00",
-          "stale": true
+          "resolved_url": null,
+          "resolved_at": null,
+          "stale": false
         },
         {
           "id": "atom:ssport-plus",
@@ -495,7 +459,7 @@
           "resolved": true,
           "fresh": true,
           "resolved_url": "https://dga1op10s1u3lea.82250d06d39d38.click/live/selcukbeinsports1/playlist.m3u8",
-          "resolved_at": "2026-09-08T22:22:43+00:00",
+          "resolved_at": "2026-09-09T00:21:52+00:00",
           "stale": false
         },
         {
@@ -524,7 +488,7 @@
           "resolved": true,
           "fresh": true,
           "resolved_url": "https://dga1op10s1u3lea.82250d06d39d38.click/live/selcukbeinsports2/playlist.m3u8",
-          "resolved_at": "2026-09-08T22:22:43+00:00",
+          "resolved_at": "2026-09-09T00:21:52+00:00",
           "stale": false
         },
         {
@@ -553,7 +517,7 @@
           "resolved": true,
           "fresh": true,
           "resolved_url": "https://dga1op10s1u3lea.82250d06d39d38.click/live/selcukbeinsports3/playlist.m3u8",
-          "resolved_at": "2026-09-08T22:22:43+00:00",
+          "resolved_at": "2026-09-09T00:21:52+00:00",
           "stale": false
         },
         {
@@ -582,7 +546,7 @@
           "resolved": true,
           "fresh": true,
           "resolved_url": "https://dga1op10s1u3lea.82250d06d39d38.click/live/selcukbeinsports4/playlist.m3u8",
-          "resolved_at": "2026-09-08T22:22:43+00:00",
+          "resolved_at": "2026-09-09T00:21:52+00:00",
           "stale": false
         },
         {
@@ -611,7 +575,7 @@
           "resolved": true,
           "fresh": true,
           "resolved_url": "https://dga1op10s1u3lea.82250d06d39d38.click/live/selcukbeinsports5/playlist.m3u8",
-          "resolved_at": "2026-09-08T22:22:43+00:00",
+          "resolved_at": "2026-09-09T00:21:52+00:00",
           "stale": false
         },
         {
@@ -640,7 +604,7 @@
           "resolved": true,
           "fresh": true,
           "resolved_url": "https://dga1op10s1u3lea.82250d06d39d38.click/live/selcukbeinsportsmax1/playlist.m3u8",
-          "resolved_at": "2026-09-08T22:22:43+00:00",
+          "resolved_at": "2026-09-09T00:21:52+00:00",
           "stale": false
         },
         {
@@ -669,7 +633,7 @@
           "resolved": true,
           "fresh": true,
           "resolved_url": "https://dga1op10s1u3lea.82250d06d39d38.click/live/selcukbeinsportsmax2/playlist.m3u8",
-          "resolved_at": "2026-09-08T22:22:43+00:00",
+          "resolved_at": "2026-09-09T00:21:52+00:00",
           "stale": false
         },
         {
@@ -698,7 +662,7 @@
           "resolved": true,
           "fresh": true,
           "resolved_url": "https://dga1op10s1u3lea.82250d06d39d38.click/live/selcukssport/playlist.m3u8",
-          "resolved_at": "2026-09-08T22:22:43+00:00",
+          "resolved_at": "2026-09-09T00:21:52+00:00",
           "stale": false
         },
         {
@@ -727,7 +691,7 @@
           "resolved": true,
           "fresh": true,
           "resolved_url": "https://dga1op10s1u3lea.82250d06d39d38.click/live/selcukssport2/playlist.m3u8",
-          "resolved_at": "2026-09-08T22:22:43+00:00",
+          "resolved_at": "2026-09-09T00:21:52+00:00",
           "stale": false
         },
         {
@@ -756,7 +720,7 @@
           "resolved": true,
           "fresh": true,
           "resolved_url": "https://dga1op10s1u3lea.82250d06d39d38.click/live/selcuktivibuspor1/playlist.m3u8",
-          "resolved_at": "2026-09-08T22:22:43+00:00",
+          "resolved_at": "2026-09-09T00:21:52+00:00",
           "stale": false
         },
         {
@@ -785,7 +749,7 @@
           "resolved": true,
           "fresh": true,
           "resolved_url": "https://dga1op10s1u3lea.82250d06d39d38.click/live/selcuktivibuspor2/playlist.m3u8",
-          "resolved_at": "2026-09-08T22:22:43+00:00",
+          "resolved_at": "2026-09-09T00:21:52+00:00",
           "stale": false
         },
         {
@@ -814,7 +778,7 @@
           "resolved": true,
           "fresh": true,
           "resolved_url": "https://dga1op10s1u3lea.82250d06d39d38.click/live/selcuksmartspor/playlist.m3u8",
-          "resolved_at": "2026-09-08T22:22:43+00:00",
+          "resolved_at": "2026-09-09T00:21:52+00:00",
           "stale": false
         },
         {
@@ -843,7 +807,7 @@
           "resolved": true,
           "fresh": true,
           "resolved_url": "https://dga1op10s1u3lea.82250d06d39d38.click/live/selcukaspor/playlist.m3u8",
-          "resolved_at": "2026-09-08T22:22:43+00:00",
+          "resolved_at": "2026-09-09T00:21:52+00:00",
           "stale": false
         },
         {
@@ -872,7 +836,7 @@
           "resolved": true,
           "fresh": true,
           "resolved_url": "https://dga1op10s1u3lea.82250d06d39d38.click/live/selcukeurosport1/playlist.m3u8",
-          "resolved_at": "2026-09-08T22:22:43+00:00",
+          "resolved_at": "2026-09-09T00:21:52+00:00",
           "stale": false
         }
       ]
