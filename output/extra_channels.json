@@ -1,7 +1,7 @@
 {
-  "updated_at": "2026-09-09T17:17:55+00:00",
+  "updated_at": "2026-09-09T18:54:24+00:00",
   "source": "output/extra_channels.json",
-  "total": 28,
+  "total": 67,
   "panels": [
     {
       "id": "atom",
@@ -9,9 +9,10 @@
       "icon": "⚛️",
       "base_url": "https://www.atomsportv514.top",
       "player_base": "",
-      "healthy": true,
+      "stream_base": "",
+      "healthy": false,
       "resolved": 4,
-      "fresh": 4,
+      "fresh": 0,
       "total": 14,
       "channels": [
         {
@@ -44,10 +45,10 @@
             }
           ],
           "resolved": true,
-          "fresh": true,
+          "fresh": false,
           "resolved_url": "https://corestream.d72377a9ds0ec71.cfd//beintv/tracks-v1a1/mono.m3u8",
           "resolved_at": "2026-09-09T17:17:55+00:00",
-          "stale": false
+          "stale": true
         },
         {
           "id": "atom:bein-sports-2",
@@ -137,10 +138,10 @@
             }
           ],
           "resolved": true,
-          "fresh": true,
+          "fresh": false,
           "resolved_url": "https://corestream.d72377a9ds0ec71.cfd//bein4/tracks-v1a1/mono.m3u8",
           "resolved_at": "2026-09-09T17:17:55+00:00",
-          "stale": false
+          "stale": true
         },
         {
           "id": "atom:bein-sports-5",
@@ -201,10 +202,10 @@
             }
           ],
           "resolved": true,
-          "fresh": true,
+          "fresh": false,
           "resolved_url": "https://corestream.d72377a9ds0ec71.cfd//s-sport/tracks-v1a1/mono.m3u8",
           "resolved_at": "2026-09-09T17:17:55+00:00",
-          "stale": false
+          "stale": true
         },
         {
           "id": "atom:s-sport-2",
@@ -236,10 +237,10 @@
             }
           ],
           "resolved": true,
-          "fresh": true,
+          "fresh": false,
           "resolved_url": "https://corestream.d72377a9ds0ec71.cfd//s-sport2/tracks-v1a1/mono.m3u8",
           "resolved_at": "2026-09-09T17:17:55+00:00",
-          "stale": false
+          "stale": true
         },
         {
           "id": "atom:ssport-plus",
@@ -452,9 +453,10 @@
       "icon": "🎥",
       "base_url": "https://www.sporcafe-0c2608ad69.xyz",
       "player_base": "https://main.uxsyplayer6859599e6c.click",
-      "healthy": true,
+      "stream_base": "",
+      "healthy": false,
       "resolved": 14,
-      "fresh": 14,
+      "fresh": 0,
       "total": 14,
       "channels": [
         {
@@ -481,10 +483,10 @@
             }
           ],
           "resolved": true,
-          "fresh": true,
+          "fresh": false,
           "resolved_url": "https://dga1op10s1u3lea.82250d06d39d38.click/live/selcukbeinsports1/playlist.m3u8",
           "resolved_at": "2026-09-09T17:17:55+00:00",
-          "stale": false
+          "stale": true
         },
         {
           "id": "selcuk:selcukbeinsports2",
@@ -510,10 +512,10 @@
             }
           ],
           "resolved": true,
-          "fresh": true,
+          "fresh": false,
           "resolved_url": "https://dga1op10s1u3lea.82250d06d39d38.click/live/selcukbeinsports2/playlist.m3u8",
           "resolved_at": "2026-09-09T17:17:55+00:00",
-          "stale": false
+          "stale": true
         },
         {
           "id": "selcuk:selcukbeinsports3",
@@ -539,10 +541,10 @@
             }
           ],
           "resolved": true,
-          "fresh": true,
+          "fresh": false,
           "resolved_url": "https://dga1op10s1u3lea.82250d06d39d38.click/live/selcukbeinsports3/playlist.m3u8",
           "resolved_at": "2026-09-09T17:17:55+00:00",
-          "stale": false
+          "stale": true
         },
         {
           "id": "selcuk:selcukbeinsports4",
@@ -568,10 +570,10 @@
             }
           ],
           "resolved": true,
-          "fresh": true,
+          "fresh": false,
           "resolved_url": "https://dga1op10s1u3lea.82250d06d39d38.click/live/selcukbeinsports4/playlist.m3u8",
           "resolved_at": "2026-09-09T17:17:55+00:00",
-          "stale": false
+          "stale": true
         },
         {
           "id": "selcuk:selcukbeinsports5",
@@ -597,10 +599,10 @@
             }
           ],
           "resolved": true,
-          "fresh": true,
+          "fresh": false,
           "resolved_url": "https://dga1op10s1u3lea.82250d06d39d38.click/live/selcukbeinsports5/playlist.m3u8",
           "resolved_at": "2026-09-09T17:17:55+00:00",
-          "stale": false
+          "stale": true
         },
         {
           "id": "selcuk:selcukbeinsportsmax1",
@@ -626,10 +628,10 @@
             }
           ],
           "resolved": true,
-          "fresh": true,
+          "fresh": false,
           "resolved_url": "https://dga1op10s1u3lea.82250d06d39d38.click/live/selcukbeinsportsmax1/playlist.m3u8",
           "resolved_at": "2026-09-09T17:17:55+00:00",
-          "stale": false
+          "stale": true
         },
         {
           "id": "selcuk:selcukbeinsportsmax2",
@@ -655,10 +657,10 @@
             }
           ],
           "resolved": true,
-          "fresh": true,
+          "fresh": false,
           "resolved_url": "https://dga1op10s1u3lea.82250d06d39d38.click/live/selcukbeinsportsmax2/playlist.m3u8",
           "resolved_at": "2026-09-09T17:17:55+00:00",
-          "stale": false
+          "stale": true
         },
         {
           "id": "selcuk:selcukssport",
@@ -684,10 +686,10 @@
             }
           ],
           "resolved": true,
-          "fresh": true,
+          "fresh": false,
           "resolved_url": "https://dga1op10s1u3lea.82250d06d39d38.click/live/selcukssport/playlist.m3u8",
           "resolved_at": "2026-09-09T17:17:55+00:00",
-          "stale": false
+          "stale": true
         },
         {
           "id": "selcuk:selcukssport2",
@@ -713,10 +715,10 @@
             }
           ],
           "resolved": true,
-          "fresh": true,
+          "fresh": false,
           "resolved_url": "https://dga1op10s1u3lea.82250d06d39d38.click/live/selcukssport2/playlist.m3u8",
           "resolved_at": "2026-09-09T17:17:55+00:00",
-          "stale": false
+          "stale": true
         },
         {
           "id": "selcuk:selcuktivibuspor1",
@@ -742,10 +744,10 @@
             }
           ],
           "resolved": true,
-          "fresh": true,
+          "fresh": false,
           "resolved_url": "https://dga1op10s1u3lea.82250d06d39d38.click/live/selcuktivibuspor1/playlist.m3u8",
           "resolved_at": "2026-09-09T17:17:55+00:00",
-          "stale": false
+          "stale": true
         },
         {
           "id": "selcuk:selcuktivibuspor2",
@@ -771,10 +773,10 @@
             }
           ],
           "resolved": true,
-          "fresh": true,
+          "fresh": false,
           "resolved_url": "https://dga1op10s1u3lea.82250d06d39d38.click/live/selcuktivibuspor2/playlist.m3u8",
           "resolved_at": "2026-09-09T17:17:55+00:00",
-          "stale": false
+          "stale": true
         },
         {
           "id": "selcuk:selcuksmartspor",
@@ -800,10 +802,10 @@
             }
           ],
           "resolved": true,
-          "fresh": true,
+          "fresh": false,
           "resolved_url": "https://dga1op10s1u3lea.82250d06d39d38.click/live/selcuksmartspor/playlist.m3u8",
           "resolved_at": "2026-09-09T17:17:55+00:00",
-          "stale": false
+          "stale": true
         },
         {
           "id": "selcuk:selcukaspor",
@@ -829,10 +831,10 @@
             }
           ],
           "resolved": true,
-          "fresh": true,
+          "fresh": false,
           "resolved_url": "https://dga1op10s1u3lea.82250d06d39d38.click/live/selcukaspor/playlist.m3u8",
           "resolved_at": "2026-09-09T17:17:55+00:00",
-          "stale": false
+          "stale": true
         },
         {
           "id": "selcuk:selcukeurosport1",
@@ -858,9 +860,1154 @@
             }
           ],
           "resolved": true,
-          "fresh": true,
+          "fresh": false,
           "resolved_url": "https://dga1op10s1u3lea.82250d06d39d38.click/live/selcukeurosport1/playlist.m3u8",
           "resolved_at": "2026-09-09T17:17:55+00:00",
+          "stale": true
+        }
+      ]
+    },
+    {
+      "id": "mahsun",
+      "name": "MAHSUN SPORTS",
+      "icon": "🌴",
+      "base_url": "https://mahsunsports80.xyz",
+      "player_base": "",
+      "stream_base": "https://andro.evrenesoglu99.click",
+      "healthy": false,
+      "resolved": 0,
+      "fresh": 0,
+      "total": 39,
+      "channels": [
+        {
+          "id": "mahsun:androstreamlivebs1",
+          "slug": "androstreamlivebs1",
+          "name": "BEIN SPORTS 1",
+          "panel": "mahsun",
+          "panel_name": "MAHSUN SPORTS",
+          "icon": "⚽",
+          "logo": "",
+          "page_url": "",
+          "referrer": "https://mahsunsports80.xyz/",
+          "sources": [
+            {
+              "type": "hls",
+              "url": "https://andro.evrenesoglu99.click/checklist/androstreamlivebs1.m3u8",
+              "label": "Kaynak 1",
+              "mime_type": "application/vnd.apple.mpegurl"
+            },
+            {
+              "type": "embed",
+              "url": "https://mahsunsports80.xyz/event.html?id=androstreamlivebs1",
+              "label": "Site"
+            }
+          ],
+          "resolved": false,
+          "fresh": false,
+          "resolved_url": null,
+          "resolved_at": null,
+          "stale": false
+        },
+        {
+          "id": "mahsun:androstreamlivebs2",
+          "slug": "androstreamlivebs2",
+          "name": "BEIN SPORTS 2",
+          "panel": "mahsun",
+          "panel_name": "MAHSUN SPORTS",
+          "icon": "⚽",
+          "logo": "",
+          "page_url": "",
+          "referrer": "https://mahsunsports80.xyz/",
+          "sources": [
+            {
+              "type": "hls",
+              "url": "https://andro.evrenesoglu99.click/checklist/androstreamlivebs2.m3u8",
+              "label": "Kaynak 1",
+              "mime_type": "application/vnd.apple.mpegurl"
+            },
+            {
+              "type": "embed",
+              "url": "https://mahsunsports80.xyz/event.html?id=androstreamlivebs2",
+              "label": "Site"
+            }
+          ],
+          "resolved": false,
+          "fresh": false,
+          "resolved_url": null,
+          "resolved_at": null,
+          "stale": false
+        },
+        {
+          "id": "mahsun:androstreamlivebs3",
+          "slug": "androstreamlivebs3",
+          "name": "BEIN SPORTS 3",
+          "panel": "mahsun",
+          "panel_name": "MAHSUN SPORTS",
+          "icon": "⚽",
+          "logo": "",
+          "page_url": "",
+          "referrer": "https://mahsunsports80.xyz/",
+          "sources": [
+            {
+              "type": "hls",
+              "url": "https://andro.evrenesoglu99.click/checklist/androstreamlivebs3.m3u8",
+              "label": "Kaynak 1",
+              "mime_type": "application/vnd.apple.mpegurl"
+            },
+            {
+              "type": "embed",
+              "url": "https://mahsunsports80.xyz/event.html?id=androstreamlivebs3",
+              "label": "Site"
+            }
+          ],
+          "resolved": false,
+          "fresh": false,
+          "resolved_url": null,
+          "resolved_at": null,
+          "stale": false
+        },
+        {
+          "id": "mahsun:androstreamlivebs4",
+          "slug": "androstreamlivebs4",
+          "name": "BEIN SPORTS 4",
+          "panel": "mahsun",
+          "panel_name": "MAHSUN SPORTS",
+          "icon": "⚽",
+          "logo": "",
+          "page_url": "",
+          "referrer": "https://mahsunsports80.xyz/",
+          "sources": [
+            {
+              "type": "hls",
+              "url": "https://andro.evrenesoglu99.click/checklist/androstreamlivebs4.m3u8",
+              "label": "Kaynak 1",
+              "mime_type": "application/vnd.apple.mpegurl"
+            },
+            {
+              "type": "embed",
+              "url": "https://mahsunsports80.xyz/event.html?id=androstreamlivebs4",
+              "label": "Site"
+            }
+          ],
+          "resolved": false,
+          "fresh": false,
+          "resolved_url": null,
+          "resolved_at": null,
+          "stale": false
+        },
+        {
+          "id": "mahsun:androstreamlivebs5",
+          "slug": "androstreamlivebs5",
+          "name": "BEIN SPORTS 5",
+          "panel": "mahsun",
+          "panel_name": "MAHSUN SPORTS",
+          "icon": "⚽",
+          "logo": "",
+          "page_url": "",
+          "referrer": "https://mahsunsports80.xyz/",
+          "sources": [
+            {
+              "type": "hls",
+              "url": "https://andro.evrenesoglu99.click/checklist/androstreamlivebs5.m3u8",
+              "label": "Kaynak 1",
+              "mime_type": "application/vnd.apple.mpegurl"
+            },
+            {
+              "type": "embed",
+              "url": "https://mahsunsports80.xyz/event.html?id=androstreamlivebs5",
+              "label": "Site"
+            }
+          ],
+          "resolved": false,
+          "fresh": false,
+          "resolved_url": null,
+          "resolved_at": null,
+          "stale": false
+        },
+        {
+          "id": "mahsun:androstreamlivebsm1",
+          "slug": "androstreamlivebsm1",
+          "name": "BEIN SPORTS MAX 1",
+          "panel": "mahsun",
+          "panel_name": "MAHSUN SPORTS",
+          "icon": "⚽",
+          "logo": "",
+          "page_url": "",
+          "referrer": "https://mahsunsports80.xyz/",
+          "sources": [
+            {
+              "type": "hls",
+              "url": "https://andro.evrenesoglu99.click/checklist/androstreamlivebsm1.m3u8",
+              "label": "Kaynak 1",
+              "mime_type": "application/vnd.apple.mpegurl"
+            },
+            {
+              "type": "embed",
+              "url": "https://mahsunsports80.xyz/event.html?id=androstreamlivebsm1",
+              "label": "Site"
+            }
+          ],
+          "resolved": false,
+          "fresh": false,
+          "resolved_url": null,
+          "resolved_at": null,
+          "stale": false
+        },
+        {
+          "id": "mahsun:androstreamlivebsm2",
+          "slug": "androstreamlivebsm2",
+          "name": "BEIN SPORTS MAX 2",
+          "panel": "mahsun",
+          "panel_name": "MAHSUN SPORTS",
+          "icon": "⚽",
+          "logo": "",
+          "page_url": "",
+          "referrer": "https://mahsunsports80.xyz/",
+          "sources": [
+            {
+              "type": "hls",
+              "url": "https://andro.evrenesoglu99.click/checklist/androstreamlivebsm2.m3u8",
+              "label": "Kaynak 1",
+              "mime_type": "application/vnd.apple.mpegurl"
+            },
+            {
+              "type": "embed",
+              "url": "https://mahsunsports80.xyz/event.html?id=androstreamlivebsm2",
+              "label": "Site"
+            }
+          ],
+          "resolved": false,
+          "fresh": false,
+          "resolved_url": null,
+          "resolved_at": null,
+          "stale": false
+        },
+        {
+          "id": "mahsun:androstreamlivess1",
+          "slug": "androstreamlivess1",
+          "name": "S SPORT 1",
+          "panel": "mahsun",
+          "panel_name": "MAHSUN SPORTS",
+          "icon": "🏀",
+          "logo": "",
+          "page_url": "",
+          "referrer": "https://mahsunsports80.xyz/",
+          "sources": [
+            {
+              "type": "hls",
+              "url": "https://andro.evrenesoglu99.click/checklist/androstreamlivess1.m3u8",
+              "label": "Kaynak 1",
+              "mime_type": "application/vnd.apple.mpegurl"
+            },
+            {
+              "type": "embed",
+              "url": "https://mahsunsports80.xyz/event.html?id=androstreamlivess1",
+              "label": "Site"
+            }
+          ],
+          "resolved": false,
+          "fresh": false,
+          "resolved_url": null,
+          "resolved_at": null,
+          "stale": false
+        },
+        {
+          "id": "mahsun:androstreamlivess2",
+          "slug": "androstreamlivess2",
+          "name": "S SPORT 2",
+          "panel": "mahsun",
+          "panel_name": "MAHSUN SPORTS",
+          "icon": "🏀",
+          "logo": "",
+          "page_url": "",
+          "referrer": "https://mahsunsports80.xyz/",
+          "sources": [
+            {
+              "type": "hls",
+              "url": "https://andro.evrenesoglu99.click/checklist/androstreamlivess2.m3u8",
+              "label": "Kaynak 1",
+              "mime_type": "application/vnd.apple.mpegurl"
+            },
+            {
+              "type": "embed",
+              "url": "https://mahsunsports80.xyz/event.html?id=androstreamlivess2",
+              "label": "Site"
+            }
+          ],
+          "resolved": false,
+          "fresh": false,
+          "resolved_url": null,
+          "resolved_at": null,
+          "stale": false
+        },
+        {
+          "id": "mahsun:androstreamlivessplus1",
+          "slug": "androstreamlivessplus1",
+          "name": "S SPORT PLUS",
+          "panel": "mahsun",
+          "panel_name": "MAHSUN SPORTS",
+          "icon": "🏀",
+          "logo": "",
+          "page_url": "",
+          "referrer": "https://mahsunsports80.xyz/",
+          "sources": [
+            {
+              "type": "hls",
+              "url": "https://andro.evrenesoglu99.click/checklist/androstreamlivessplus1.m3u8",
+              "label": "Kaynak 1",
+              "mime_type": "application/vnd.apple.mpegurl"
+            },
+            {
+              "type": "embed",
+              "url": "https://mahsunsports80.xyz/event.html?id=androstreamlivessplus1",
+              "label": "Site"
+            }
+          ],
+          "resolved": false,
+          "fresh": false,
+          "resolved_url": null,
+          "resolved_at": null,
+          "stale": false
+        },
+        {
+          "id": "mahsun:androstreamlivets",
+          "slug": "androstreamlivets",
+          "name": "TIVIBU SPOR",
+          "panel": "mahsun",
+          "panel_name": "MAHSUN SPORTS",
+          "icon": "📺",
+          "logo": "",
+          "page_url": "",
+          "referrer": "https://mahsunsports80.xyz/",
+          "sources": [
+            {
+              "type": "hls",
+              "url": "https://andro.evrenesoglu99.click/checklist/androstreamlivets.m3u8",
+              "label": "Kaynak 1",
+              "mime_type": "application/vnd.apple.mpegurl"
+            },
+            {
+              "type": "embed",
+              "url": "https://mahsunsports80.xyz/event.html?id=androstreamlivets",
+              "label": "Site"
+            }
+          ],
+          "resolved": false,
+          "fresh": false,
+          "resolved_url": null,
+          "resolved_at": null,
+          "stale": false
+        },
+        {
+          "id": "mahsun:androstreamlivets1",
+          "slug": "androstreamlivets1",
+          "name": "TIVIBU SPOR 1",
+          "panel": "mahsun",
+          "panel_name": "MAHSUN SPORTS",
+          "icon": "📺",
+          "logo": "",
+          "page_url": "",
+          "referrer": "https://mahsunsports80.xyz/",
+          "sources": [
+            {
+              "type": "hls",
+              "url": "https://andro.evrenesoglu99.click/checklist/androstreamlivets1.m3u8",
+              "label": "Kaynak 1",
+              "mime_type": "application/vnd.apple.mpegurl"
+            },
+            {
+              "type": "embed",
+              "url": "https://mahsunsports80.xyz/event.html?id=androstreamlivets1",
+              "label": "Site"
+            }
+          ],
+          "resolved": false,
+          "fresh": false,
+          "resolved_url": null,
+          "resolved_at": null,
+          "stale": false
+        },
+        {
+          "id": "mahsun:androstreamlivets2",
+          "slug": "androstreamlivets2",
+          "name": "TIVIBU SPOR 2",
+          "panel": "mahsun",
+          "panel_name": "MAHSUN SPORTS",
+          "icon": "📺",
+          "logo": "",
+          "page_url": "",
+          "referrer": "https://mahsunsports80.xyz/",
+          "sources": [
+            {
+              "type": "hls",
+              "url": "https://andro.evrenesoglu99.click/checklist/androstreamlivets2.m3u8",
+              "label": "Kaynak 1",
+              "mime_type": "application/vnd.apple.mpegurl"
+            },
+            {
+              "type": "embed",
+              "url": "https://mahsunsports80.xyz/event.html?id=androstreamlivets2",
+              "label": "Site"
+            }
+          ],
+          "resolved": false,
+          "fresh": false,
+          "resolved_url": null,
+          "resolved_at": null,
+          "stale": false
+        },
+        {
+          "id": "mahsun:androstreamlivets3",
+          "slug": "androstreamlivets3",
+          "name": "TIVIBU SPOR 3",
+          "panel": "mahsun",
+          "panel_name": "MAHSUN SPORTS",
+          "icon": "📺",
+          "logo": "",
+          "page_url": "",
+          "referrer": "https://mahsunsports80.xyz/",
+          "sources": [
+            {
+              "type": "hls",
+              "url": "https://andro.evrenesoglu99.click/checklist/androstreamlivets3.m3u8",
+              "label": "Kaynak 1",
+              "mime_type": "application/vnd.apple.mpegurl"
+            },
+            {
+              "type": "embed",
+              "url": "https://mahsunsports80.xyz/event.html?id=androstreamlivets3",
+              "label": "Site"
+            }
+          ],
+          "resolved": false,
+          "fresh": false,
+          "resolved_url": null,
+          "resolved_at": null,
+          "stale": false
+        },
+        {
+          "id": "mahsun:androstreamlivets4",
+          "slug": "androstreamlivets4",
+          "name": "TIVIBU SPOR 4",
+          "panel": "mahsun",
+          "panel_name": "MAHSUN SPORTS",
+          "icon": "📺",
+          "logo": "",
+          "page_url": "",
+          "referrer": "https://mahsunsports80.xyz/",
+          "sources": [
+            {
+              "type": "hls",
+              "url": "https://andro.evrenesoglu99.click/checklist/androstreamlivets4.m3u8",
+              "label": "Kaynak 1",
+              "mime_type": "application/vnd.apple.mpegurl"
+            },
+            {
+              "type": "embed",
+              "url": "https://mahsunsports80.xyz/event.html?id=androstreamlivets4",
+              "label": "Site"
+            }
+          ],
+          "resolved": false,
+          "fresh": false,
+          "resolved_url": null,
+          "resolved_at": null,
+          "stale": false
+        },
+        {
+          "id": "mahsun:androstreamlivesm1",
+          "slug": "androstreamlivesm1",
+          "name": "SMARTSPOR",
+          "panel": "mahsun",
+          "panel_name": "MAHSUN SPORTS",
+          "icon": "🏟️",
+          "logo": "",
+          "page_url": "",
+          "referrer": "https://mahsunsports80.xyz/",
+          "sources": [
+            {
+              "type": "hls",
+              "url": "https://andro.evrenesoglu99.click/checklist/androstreamlivesm1.m3u8",
+              "label": "Kaynak 1",
+              "mime_type": "application/vnd.apple.mpegurl"
+            },
+            {
+              "type": "embed",
+              "url": "https://mahsunsports80.xyz/event.html?id=androstreamlivesm1",
+              "label": "Site"
+            }
+          ],
+          "resolved": false,
+          "fresh": false,
+          "resolved_url": null,
+          "resolved_at": null,
+          "stale": false
+        },
+        {
+          "id": "mahsun:androstreamlivesm2",
+          "slug": "androstreamlivesm2",
+          "name": "SMARTSPOR 2",
+          "panel": "mahsun",
+          "panel_name": "MAHSUN SPORTS",
+          "icon": "🏟️",
+          "logo": "",
+          "page_url": "",
+          "referrer": "https://mahsunsports80.xyz/",
+          "sources": [
+            {
+              "type": "hls",
+              "url": "https://andro.evrenesoglu99.click/checklist/androstreamlivesm2.m3u8",
+              "label": "Kaynak 1",
+              "mime_type": "application/vnd.apple.mpegurl"
+            },
+            {
+              "type": "embed",
+              "url": "https://mahsunsports80.xyz/event.html?id=androstreamlivesm2",
+              "label": "Site"
+            }
+          ],
+          "resolved": false,
+          "fresh": false,
+          "resolved_url": null,
+          "resolved_at": null,
+          "stale": false
+        },
+        {
+          "id": "mahsun:androstreamlivees1",
+          "slug": "androstreamlivees1",
+          "name": "EUROSPORT 1",
+          "panel": "mahsun",
+          "panel_name": "MAHSUN SPORTS",
+          "icon": "🚴",
+          "logo": "",
+          "page_url": "",
+          "referrer": "https://mahsunsports80.xyz/",
+          "sources": [
+            {
+              "type": "hls",
+              "url": "https://andro.evrenesoglu99.click/checklist/androstreamlivees1.m3u8",
+              "label": "Kaynak 1",
+              "mime_type": "application/vnd.apple.mpegurl"
+            },
+            {
+              "type": "embed",
+              "url": "https://mahsunsports80.xyz/event.html?id=androstreamlivees1",
+              "label": "Site"
+            }
+          ],
+          "resolved": false,
+          "fresh": false,
+          "resolved_url": null,
+          "resolved_at": null,
+          "stale": false
+        },
+        {
+          "id": "mahsun:androstreamlivees2",
+          "slug": "androstreamlivees2",
+          "name": "EUROSPORT 2",
+          "panel": "mahsun",
+          "panel_name": "MAHSUN SPORTS",
+          "icon": "🚴",
+          "logo": "",
+          "page_url": "",
+          "referrer": "https://mahsunsports80.xyz/",
+          "sources": [
+            {
+              "type": "hls",
+              "url": "https://andro.evrenesoglu99.click/checklist/androstreamlivees2.m3u8",
+              "label": "Kaynak 1",
+              "mime_type": "application/vnd.apple.mpegurl"
+            },
+            {
+              "type": "embed",
+              "url": "https://mahsunsports80.xyz/event.html?id=androstreamlivees2",
+              "label": "Site"
+            }
+          ],
+          "resolved": false,
+          "fresh": false,
+          "resolved_url": null,
+          "resolved_at": null,
+          "stale": false
+        },
+        {
+          "id": "mahsun:androstreamlivetb",
+          "slug": "androstreamlivetb",
+          "name": "TABII SPOR",
+          "panel": "mahsun",
+          "panel_name": "MAHSUN SPORTS",
+          "icon": "📡",
+          "logo": "",
+          "page_url": "",
+          "referrer": "https://mahsunsports80.xyz/",
+          "sources": [
+            {
+              "type": "hls",
+              "url": "https://andro.evrenesoglu99.click/checklist/androstreamlivetb.m3u8",
+              "label": "Kaynak 1",
+              "mime_type": "application/vnd.apple.mpegurl"
+            },
+            {
+              "type": "embed",
+              "url": "https://mahsunsports80.xyz/event.html?id=androstreamlivetb",
+              "label": "Site"
+            }
+          ],
+          "resolved": false,
+          "fresh": false,
+          "resolved_url": null,
+          "resolved_at": null,
+          "stale": false
+        },
+        {
+          "id": "mahsun:androstreamlivetb1",
+          "slug": "androstreamlivetb1",
+          "name": "TABII SPOR 1",
+          "panel": "mahsun",
+          "panel_name": "MAHSUN SPORTS",
+          "icon": "📡",
+          "logo": "",
+          "page_url": "",
+          "referrer": "https://mahsunsports80.xyz/",
+          "sources": [
+            {
+              "type": "hls",
+              "url": "https://andro.evrenesoglu99.click/checklist/androstreamlivetb1.m3u8",
+              "label": "Kaynak 1",
+              "mime_type": "application/vnd.apple.mpegurl"
+            },
+            {
+              "type": "embed",
+              "url": "https://mahsunsports80.xyz/event.html?id=androstreamlivetb1",
+              "label": "Site"
+            }
+          ],
+          "resolved": false,
+          "fresh": false,
+          "resolved_url": null,
+          "resolved_at": null,
+          "stale": false
+        },
+        {
+          "id": "mahsun:androstreamlivetb2",
+          "slug": "androstreamlivetb2",
+          "name": "TABII SPOR 2",
+          "panel": "mahsun",
+          "panel_name": "MAHSUN SPORTS",
+          "icon": "📡",
+          "logo": "",
+          "page_url": "",
+          "referrer": "https://mahsunsports80.xyz/",
+          "sources": [
+            {
+              "type": "hls",
+              "url": "https://andro.evrenesoglu99.click/checklist/androstreamlivetb2.m3u8",
+              "label": "Kaynak 1",
+              "mime_type": "application/vnd.apple.mpegurl"
+            },
+            {
+              "type": "embed",
+              "url": "https://mahsunsports80.xyz/event.html?id=androstreamlivetb2",
+              "label": "Site"
+            }
+          ],
+          "resolved": false,
+          "fresh": false,
+          "resolved_url": null,
+          "resolved_at": null,
+          "stale": false
+        },
+        {
+          "id": "mahsun:androstreamlivetb3",
+          "slug": "androstreamlivetb3",
+          "name": "TABII SPOR 3",
+          "panel": "mahsun",
+          "panel_name": "MAHSUN SPORTS",
+          "icon": "📡",
+          "logo": "",
+          "page_url": "",
+          "referrer": "https://mahsunsports80.xyz/",
+          "sources": [
+            {
+              "type": "hls",
+              "url": "https://andro.evrenesoglu99.click/checklist/androstreamlivetb3.m3u8",
+              "label": "Kaynak 1",
+              "mime_type": "application/vnd.apple.mpegurl"
+            },
+            {
+              "type": "embed",
+              "url": "https://mahsunsports80.xyz/event.html?id=androstreamlivetb3",
+              "label": "Site"
+            }
+          ],
+          "resolved": false,
+          "fresh": false,
+          "resolved_url": null,
+          "resolved_at": null,
+          "stale": false
+        },
+        {
+          "id": "mahsun:androstreamlivetb4",
+          "slug": "androstreamlivetb4",
+          "name": "TABII SPOR 4",
+          "panel": "mahsun",
+          "panel_name": "MAHSUN SPORTS",
+          "icon": "📡",
+          "logo": "",
+          "page_url": "",
+          "referrer": "https://mahsunsports80.xyz/",
+          "sources": [
+            {
+              "type": "hls",
+              "url": "https://andro.evrenesoglu99.click/checklist/androstreamlivetb4.m3u8",
+              "label": "Kaynak 1",
+              "mime_type": "application/vnd.apple.mpegurl"
+            },
+            {
+              "type": "embed",
+              "url": "https://mahsunsports80.xyz/event.html?id=androstreamlivetb4",
+              "label": "Site"
+            }
+          ],
+          "resolved": false,
+          "fresh": false,
+          "resolved_url": null,
+          "resolved_at": null,
+          "stale": false
+        },
+        {
+          "id": "mahsun:androstreamlivetb5",
+          "slug": "androstreamlivetb5",
+          "name": "TABII SPOR 5",
+          "panel": "mahsun",
+          "panel_name": "MAHSUN SPORTS",
+          "icon": "📡",
+          "logo": "",
+          "page_url": "",
+          "referrer": "https://mahsunsports80.xyz/",
+          "sources": [
+            {
+              "type": "hls",
+              "url": "https://andro.evrenesoglu99.click/checklist/androstreamlivetb5.m3u8",
+              "label": "Kaynak 1",
+              "mime_type": "application/vnd.apple.mpegurl"
+            },
+            {
+              "type": "embed",
+              "url": "https://mahsunsports80.xyz/event.html?id=androstreamlivetb5",
+              "label": "Site"
+            }
+          ],
+          "resolved": false,
+          "fresh": false,
+          "resolved_url": null,
+          "resolved_at": null,
+          "stale": false
+        },
+        {
+          "id": "mahsun:androstreamlivetb6",
+          "slug": "androstreamlivetb6",
+          "name": "TABII SPOR 6",
+          "panel": "mahsun",
+          "panel_name": "MAHSUN SPORTS",
+          "icon": "📡",
+          "logo": "",
+          "page_url": "",
+          "referrer": "https://mahsunsports80.xyz/",
+          "sources": [
+            {
+              "type": "hls",
+              "url": "https://andro.evrenesoglu99.click/checklist/androstreamlivetb6.m3u8",
+              "label": "Kaynak 1",
+              "mime_type": "application/vnd.apple.mpegurl"
+            },
+            {
+              "type": "embed",
+              "url": "https://mahsunsports80.xyz/event.html?id=androstreamlivetb6",
+              "label": "Site"
+            }
+          ],
+          "resolved": false,
+          "fresh": false,
+          "resolved_url": null,
+          "resolved_at": null,
+          "stale": false
+        },
+        {
+          "id": "mahsun:androstreamlivetb7",
+          "slug": "androstreamlivetb7",
+          "name": "TABII SPOR 7",
+          "panel": "mahsun",
+          "panel_name": "MAHSUN SPORTS",
+          "icon": "📡",
+          "logo": "",
+          "page_url": "",
+          "referrer": "https://mahsunsports80.xyz/",
+          "sources": [
+            {
+              "type": "hls",
+              "url": "https://andro.evrenesoglu99.click/checklist/androstreamlivetb7.m3u8",
+              "label": "Kaynak 1",
+              "mime_type": "application/vnd.apple.mpegurl"
+            },
+            {
+              "type": "embed",
+              "url": "https://mahsunsports80.xyz/event.html?id=androstreamlivetb7",
+              "label": "Site"
+            }
+          ],
+          "resolved": false,
+          "fresh": false,
+          "resolved_url": null,
+          "resolved_at": null,
+          "stale": false
+        },
+        {
+          "id": "mahsun:androstreamlivetb8",
+          "slug": "androstreamlivetb8",
+          "name": "TABII SPOR 8",
+          "panel": "mahsun",
+          "panel_name": "MAHSUN SPORTS",
+          "icon": "📡",
+          "logo": "",
+          "page_url": "",
+          "referrer": "https://mahsunsports80.xyz/",
+          "sources": [
+            {
+              "type": "hls",
+              "url": "https://andro.evrenesoglu99.click/checklist/androstreamlivetb8.m3u8",
+              "label": "Kaynak 1",
+              "mime_type": "application/vnd.apple.mpegurl"
+            },
+            {
+              "type": "embed",
+              "url": "https://mahsunsports80.xyz/event.html?id=androstreamlivetb8",
+              "label": "Site"
+            }
+          ],
+          "resolved": false,
+          "fresh": false,
+          "resolved_url": null,
+          "resolved_at": null,
+          "stale": false
+        },
+        {
+          "id": "mahsun:androstreamliveexn",
+          "slug": "androstreamliveexn",
+          "name": "EXXEN SPOR",
+          "panel": "mahsun",
+          "panel_name": "MAHSUN SPORTS",
+          "icon": "📡",
+          "logo": "",
+          "page_url": "",
+          "referrer": "https://mahsunsports80.xyz/",
+          "sources": [
+            {
+              "type": "hls",
+              "url": "https://andro.evrenesoglu99.click/checklist/androstreamliveexn.m3u8",
+              "label": "Kaynak 1",
+              "mime_type": "application/vnd.apple.mpegurl"
+            },
+            {
+              "type": "embed",
+              "url": "https://mahsunsports80.xyz/event.html?id=androstreamliveexn",
+              "label": "Site"
+            }
+          ],
+          "resolved": false,
+          "fresh": false,
+          "resolved_url": null,
+          "resolved_at": null,
+          "stale": false
+        },
+        {
+          "id": "mahsun:androstreamliveexn1",
+          "slug": "androstreamliveexn1",
+          "name": "EXXEN SPOR 1",
+          "panel": "mahsun",
+          "panel_name": "MAHSUN SPORTS",
+          "icon": "📡",
+          "logo": "",
+          "page_url": "",
+          "referrer": "https://mahsunsports80.xyz/",
+          "sources": [
+            {
+              "type": "hls",
+              "url": "https://andro.evrenesoglu99.click/checklist/androstreamliveexn1.m3u8",
+              "label": "Kaynak 1",
+              "mime_type": "application/vnd.apple.mpegurl"
+            },
+            {
+              "type": "embed",
+              "url": "https://mahsunsports80.xyz/event.html?id=androstreamliveexn1",
+              "label": "Site"
+            }
+          ],
+          "resolved": false,
+          "fresh": false,
+          "resolved_url": null,
+          "resolved_at": null,
+          "stale": false
+        },
+        {
+          "id": "mahsun:androstreamliveexn2",
+          "slug": "androstreamliveexn2",
+          "name": "EXXEN SPOR 2",
+          "panel": "mahsun",
+          "panel_name": "MAHSUN SPORTS",
+          "icon": "📡",
+          "logo": "",
+          "page_url": "",
+          "referrer": "https://mahsunsports80.xyz/",
+          "sources": [
+            {
+              "type": "hls",
+              "url": "https://andro.evrenesoglu99.click/checklist/androstreamliveexn2.m3u8",
+              "label": "Kaynak 1",
+              "mime_type": "application/vnd.apple.mpegurl"
+            },
+            {
+              "type": "embed",
+              "url": "https://mahsunsports80.xyz/event.html?id=androstreamliveexn2",
+              "label": "Site"
+            }
+          ],
+          "resolved": false,
+          "fresh": false,
+          "resolved_url": null,
+          "resolved_at": null,
+          "stale": false
+        },
+        {
+          "id": "mahsun:androstreamliveexn3",
+          "slug": "androstreamliveexn3",
+          "name": "EXXEN SPOR 3",
+          "panel": "mahsun",
+          "panel_name": "MAHSUN SPORTS",
+          "icon": "📡",
+          "logo": "",
+          "page_url": "",
+          "referrer": "https://mahsunsports80.xyz/",
+          "sources": [
+            {
+              "type": "hls",
+              "url": "https://andro.evrenesoglu99.click/checklist/androstreamliveexn3.m3u8",
+              "label": "Kaynak 1",
+              "mime_type": "application/vnd.apple.mpegurl"
+            },
+            {
+              "type": "embed",
+              "url": "https://mahsunsports80.xyz/event.html?id=androstreamliveexn3",
+              "label": "Site"
+            }
+          ],
+          "resolved": false,
+          "fresh": false,
+          "resolved_url": null,
+          "resolved_at": null,
+          "stale": false
+        },
+        {
+          "id": "mahsun:androstreamliveexn4",
+          "slug": "androstreamliveexn4",
+          "name": "EXXEN SPOR 4",
+          "panel": "mahsun",
+          "panel_name": "MAHSUN SPORTS",
+          "icon": "📡",
+          "logo": "",
+          "page_url": "",
+          "referrer": "https://mahsunsports80.xyz/",
+          "sources": [
+            {
+              "type": "hls",
+              "url": "https://andro.evrenesoglu99.click/checklist/androstreamliveexn4.m3u8",
+              "label": "Kaynak 1",
+              "mime_type": "application/vnd.apple.mpegurl"
+            },
+            {
+              "type": "embed",
+              "url": "https://mahsunsports80.xyz/event.html?id=androstreamliveexn4",
+              "label": "Site"
+            }
+          ],
+          "resolved": false,
+          "fresh": false,
+          "resolved_url": null,
+          "resolved_at": null,
+          "stale": false
+        },
+        {
+          "id": "mahsun:androstreamliveexn5",
+          "slug": "androstreamliveexn5",
+          "name": "EXXEN SPOR 5",
+          "panel": "mahsun",
+          "panel_name": "MAHSUN SPORTS",
+          "icon": "📡",
+          "logo": "",
+          "page_url": "",
+          "referrer": "https://mahsunsports80.xyz/",
+          "sources": [
+            {
+              "type": "hls",
+              "url": "https://andro.evrenesoglu99.click/checklist/androstreamliveexn5.m3u8",
+              "label": "Kaynak 1",
+              "mime_type": "application/vnd.apple.mpegurl"
+            },
+            {
+              "type": "embed",
+              "url": "https://mahsunsports80.xyz/event.html?id=androstreamliveexn5",
+              "label": "Site"
+            }
+          ],
+          "resolved": false,
+          "fresh": false,
+          "resolved_url": null,
+          "resolved_at": null,
+          "stale": false
+        },
+        {
+          "id": "mahsun:androstreamliveexn6",
+          "slug": "androstreamliveexn6",
+          "name": "EXXEN SPOR 6",
+          "panel": "mahsun",
+          "panel_name": "MAHSUN SPORTS",
+          "icon": "📡",
+          "logo": "",
+          "page_url": "",
+          "referrer": "https://mahsunsports80.xyz/",
+          "sources": [
+            {
+              "type": "hls",
+              "url": "https://andro.evrenesoglu99.click/checklist/androstreamliveexn6.m3u8",
+              "label": "Kaynak 1",
+              "mime_type": "application/vnd.apple.mpegurl"
+            },
+            {
+              "type": "embed",
+              "url": "https://mahsunsports80.xyz/event.html?id=androstreamliveexn6",
+              "label": "Site"
+            }
+          ],
+          "resolved": false,
+          "fresh": false,
+          "resolved_url": null,
+          "resolved_at": null,
+          "stale": false
+        },
+        {
+          "id": "mahsun:androstreamliveexn7",
+          "slug": "androstreamliveexn7",
+          "name": "EXXEN SPOR 7",
+          "panel": "mahsun",
+          "panel_name": "MAHSUN SPORTS",
+          "icon": "📡",
+          "logo": "",
+          "page_url": "",
+          "referrer": "https://mahsunsports80.xyz/",
+          "sources": [
+            {
+              "type": "hls",
+              "url": "https://andro.evrenesoglu99.click/checklist/androstreamliveexn7.m3u8",
+              "label": "Kaynak 1",
+              "mime_type": "application/vnd.apple.mpegurl"
+            },
+            {
+              "type": "embed",
+              "url": "https://mahsunsports80.xyz/event.html?id=androstreamliveexn7",
+              "label": "Site"
+            }
+          ],
+          "resolved": false,
+          "fresh": false,
+          "resolved_url": null,
+          "resolved_at": null,
+          "stale": false
+        },
+        {
+          "id": "mahsun:androstreamliveexn8",
+          "slug": "androstreamliveexn8",
+          "name": "EXXEN SPOR 8",
+          "panel": "mahsun",
+          "panel_name": "MAHSUN SPORTS",
+          "icon": "📡",
+          "logo": "",
+          "page_url": "",
+          "referrer": "https://mahsunsports80.xyz/",
+          "sources": [
+            {
+              "type": "hls",
+              "url": "https://andro.evrenesoglu99.click/checklist/androstreamliveexn8.m3u8",
+              "label": "Kaynak 1",
+              "mime_type": "application/vnd.apple.mpegurl"
+            },
+            {
+              "type": "embed",
+              "url": "https://mahsunsports80.xyz/event.html?id=androstreamliveexn8",
+              "label": "Site"
+            }
+          ],
+          "resolved": false,
+          "fresh": false,
+          "resolved_url": null,
+          "resolved_at": null,
+          "stale": false
+        },
+        {
+          "id": "mahsun:androstreamliveidm",
+          "slug": "androstreamliveidm",
+          "name": "IDMAN TV",
+          "panel": "mahsun",
+          "panel_name": "MAHSUN SPORTS",
+          "icon": "📡",
+          "logo": "",
+          "page_url": "",
+          "referrer": "https://mahsunsports80.xyz/",
+          "sources": [
+            {
+              "type": "hls",
+              "url": "https://andro.evrenesoglu99.click/checklist/androstreamliveidm.m3u8",
+              "label": "Kaynak 1",
+              "mime_type": "application/vnd.apple.mpegurl"
+            },
+            {
+              "type": "embed",
+              "url": "https://mahsunsports80.xyz/event.html?id=androstreamliveidm",
+              "label": "Site"
+            }
+          ],
+          "resolved": false,
+          "fresh": false,
+          "resolved_url": null,
+          "resolved_at": null,
+          "stale": false
+        },
+        {
+          "id": "mahsun:androstreamlivecbcs",
+          "slug": "androstreamlivecbcs",
+          "name": "CBC SPORT",
+          "panel": "mahsun",
+          "panel_name": "MAHSUN SPORTS",
+          "icon": "📡",
+          "logo": "",
+          "page_url": "",
+          "referrer": "https://mahsunsports80.xyz/",
+          "sources": [
+            {
+              "type": "hls",
+              "url": "https://andro.evrenesoglu99.click/checklist/androstreamlivecbcs.m3u8",
+              "label": "Kaynak 1",
+              "mime_type": "application/vnd.apple.mpegurl"
+            },
+            {
+              "type": "embed",
+              "url": "https://mahsunsports80.xyz/event.html?id=androstreamlivecbcs",
+              "label": "Site"
+            }
+          ],
+          "resolved": false,
+          "fresh": false,
+          "resolved_url": null,
+          "resolved_at": null,
           "stale": false
         }
       ]

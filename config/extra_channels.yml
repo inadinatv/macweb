@@ -20,10 +20,18 @@
 #          default_base        : bulunamazsa kullanılacak son bilinen oynatıcı adresi
 #          stream_base_patterns: oynatıcı sayfasında yayın kökünü bulan regex'ler → {stream_base}
 #          stream_template     : yayın kökünden m3u8 kurma şablonu
+#          stream_base_array_pattern : (Mahsun/androstream) player sayfasındaki
+#                                baseurls=[…] sunucu dizisini yakalar; adaylar
+#                                stream_template ile kurulup gerçek HLS döndüren
+#                                kazanır → panel düzeyinde {stream_base}
+#          default_stream_base : diziden sunucu bulunamazsa kullanılacak son bilinen
+#          verify_static       : şablonla kurulan kanal adresleri her çalışmada
+#                                gerçek HLS listesi döndürüyor mu diye doğrulanır
 #    - fallback_template       : sayfadan m3u8 çıkmazsa kullanılacak yedek yayın
 #    - embed_fallback / embed_template : m3u8 hiç açılmazsa iframe'de denenecek sayfa
 #    - channels[].slug / name  : kanal listesi ({slug} şablonlarda kullanılır)
-#    - channels[].url          : (isteğe bağlı) sabit m3u8 adresi — varsa ilk kaynak
+#    - channels[].url          : (isteğe bağlı) sabit m3u8 adresi — varsa ilk kaynak;
+#                                {stream_base} gibi şablonlar da içerebilir
 #
 #  Bot her çalışmada m3u8 adreslerini yeniler ve output/extra_channels.json'a
 #  yazar; sayfa da bu dosyayı 5 dakikada bir yeniden okur. Oynatıcı, kanal için
@@ -129,3 +137,85 @@ panels:
       - { slug: "selcuksmartspor",      name: "SMARTSPOR" }
       - { slug: "selcukaspor",          name: "A SPOR" }
       - { slug: "selcukeurosport1",     name: "EUROSPORT 1" }
+
+  # --------------------------------------------------------------------------
+  #  MAHSUN SPORTS (androstream) — "Global-Akinci IPTV" ağı:
+  #    1) event.html?id=<kanal-id> sayfasındaki  baseurls = ['https://andro…', …]
+  #       dizisinden yayın sunucuları çıkarılır; ilki için {sunucu}/checklist/<id>.m3u8
+  #       gerçek HLS döndürüyor mu diye denenir, kazanan {stream_base} olur,
+  #    2) kanal adresleri  {stream_base}/checklist/<kanal-id>.m3u8  olarak kurulur
+  #       ve bot her çalışmada doğrular (verify_static).
+  #  Yayınlar doğrudan tarayıcıda açılabilir (andro sunucusu CORS: *).
+  #  Site adı numaralı aynalarla döner (mahsunsports13 / 46 / 80 …); SPA olduğu
+  #  için bilinmeyen yollara ana sayfa döner — bu yüzden sağlık kontrolünde
+  #  gerçek event.html'e özgü "baseurls" işareti aranır.
+  # --------------------------------------------------------------------------
+  - id: mahsun
+    name: "MAHSUN SPORTS"
+    icon: "🌴"
+    enabled: true
+    base_url: "https://mahsunsports80.xyz"
+    entry_urls:
+      - "https://mahsunsports80.xyz/"
+      - "https://mahsunsports.xyz/"
+      - "https://mahsunsports46.xyz/"
+      - "https://mahsunsports13.xyz/"
+    mirror:
+      pattern: "mahsunsports{n}.xyz"
+      preferred_number: 80
+      scan_window: 35
+      must_contain_any: ["baseurls", "androstream"]
+    health_path: "event.html?id=androstreamlivebs1"
+    player:
+      stream_base_array_pattern: "baseurls\\s*=\\s*\\[(.*?)\\]"
+      stream_template: "{stream_base}/checklist/{slug}.m3u8"
+      default_stream_base: "https://andro.evrenesoglu99.click"
+      verify_static: true
+    # m3u8 çıkmazsa/ölürse player sayfası iframe yedeği (X-Frame-Options yok)
+    embed_template: "{base_url}/event.html?id={slug}"
+    referrer: "{base_url}/"
+    playback:
+      # androstream sunucu/segment alan adları dönemsel değişir; isteğe bağlı HLS
+      # proxy'si kullanılıyorsa bu liste güncellenmelidir. Doğrudan oynatım için
+      # proxy gerekmez (m3u8 ve segmentler Access-Control-Allow-Origin: * verir).
+      allowed_hosts: ["andro.evrenesoglu99.click", "cufucufucfu849383.global.ssl.fastly.net"]
+    channels:
+      - { slug: "androstreamlivebs1",  name: "BEIN SPORTS 1",    url: "{stream_base}/checklist/{slug}.m3u8" }
+      - { slug: "androstreamlivebs2",  name: "BEIN SPORTS 2",    url: "{stream_base}/checklist/{slug}.m3u8" }
+      - { slug: "androstreamlivebs3",  name: "BEIN SPORTS 3",    url: "{stream_base}/checklist/{slug}.m3u8" }
+      - { slug: "androstreamlivebs4",  name: "BEIN SPORTS 4",    url: "{stream_base}/checklist/{slug}.m3u8" }
+      - { slug: "androstreamlivebs5",  name: "BEIN SPORTS 5",    url: "{stream_base}/checklist/{slug}.m3u8" }
+      - { slug: "androstreamlivebsm1", name: "BEIN SPORTS MAX 1", url: "{stream_base}/checklist/{slug}.m3u8" }
+      - { slug: "androstreamlivebsm2", name: "BEIN SPORTS MAX 2", url: "{stream_base}/checklist/{slug}.m3u8" }
+      - { slug: "androstreamlivess1",  name: "S SPORT 1",        url: "{stream_base}/checklist/{slug}.m3u8" }
+      - { slug: "androstreamlivess2",  name: "S SPORT 2",        url: "{stream_base}/checklist/{slug}.m3u8" }
+      - { slug: "androstreamlivessplus1", name: "S SPORT PLUS",  url: "{stream_base}/checklist/{slug}.m3u8" }
+      - { slug: "androstreamlivets",   name: "TIVIBU SPOR",      url: "{stream_base}/checklist/{slug}.m3u8" }
+      - { slug: "androstreamlivets1",  name: "TIVIBU SPOR 1",    url: "{stream_base}/checklist/{slug}.m3u8" }
+      - { slug: "androstreamlivets2",  name: "TIVIBU SPOR 2",    url: "{stream_base}/checklist/{slug}.m3u8" }
+      - { slug: "androstreamlivets3",  name: "TIVIBU SPOR 3",    url: "{stream_base}/checklist/{slug}.m3u8" }
+      - { slug: "androstreamlivets4",  name: "TIVIBU SPOR 4",    url: "{stream_base}/checklist/{slug}.m3u8" }
+      - { slug: "androstreamlivesm1",  name: "SMARTSPOR",        url: "{stream_base}/checklist/{slug}.m3u8" }
+      - { slug: "androstreamlivesm2",  name: "SMARTSPOR 2",      url: "{stream_base}/checklist/{slug}.m3u8" }
+      - { slug: "androstreamlivees1",  name: "EUROSPORT 1",      url: "{stream_base}/checklist/{slug}.m3u8" }
+      - { slug: "androstreamlivees2",  name: "EUROSPORT 2",      url: "{stream_base}/checklist/{slug}.m3u8" }
+      - { slug: "androstreamlivetb",   name: "TABII SPOR",       url: "{stream_base}/checklist/{slug}.m3u8" }
+      - { slug: "androstreamlivetb1",  name: "TABII SPOR 1",     url: "{stream_base}/checklist/{slug}.m3u8" }
+      - { slug: "androstreamlivetb2",  name: "TABII SPOR 2",     url: "{stream_base}/checklist/{slug}.m3u8" }
+      - { slug: "androstreamlivetb3",  name: "TABII SPOR 3",     url: "{stream_base}/checklist/{slug}.m3u8" }
+      - { slug: "androstreamlivetb4",  name: "TABII SPOR 4",     url: "{stream_base}/checklist/{slug}.m3u8" }
+      - { slug: "androstreamlivetb5",  name: "TABII SPOR 5",     url: "{stream_base}/checklist/{slug}.m3u8" }
+      - { slug: "androstreamlivetb6",  name: "TABII SPOR 6",     url: "{stream_base}/checklist/{slug}.m3u8" }
+      - { slug: "androstreamlivetb7",  name: "TABII SPOR 7",     url: "{stream_base}/checklist/{slug}.m3u8" }
+      - { slug: "androstreamlivetb8",  name: "TABII SPOR 8",     url: "{stream_base}/checklist/{slug}.m3u8" }
+      - { slug: "androstreamliveexn",  name: "EXXEN SPOR",       url: "{stream_base}/checklist/{slug}.m3u8" }
+      - { slug: "androstreamliveexn1", name: "EXXEN SPOR 1",     url: "{stream_base}/checklist/{slug}.m3u8" }
+      - { slug: "androstreamliveexn2", name: "EXXEN SPOR 2",     url: "{stream_base}/checklist/{slug}.m3u8" }
+      - { slug: "androstreamliveexn3", name: "EXXEN SPOR 3",     url: "{stream_base}/checklist/{slug}.m3u8" }
+      - { slug: "androstreamliveexn4", name: "EXXEN SPOR 4",     url: "{stream_base}/checklist/{slug}.m3u8" }
+      - { slug: "androstreamliveexn5", name: "EXXEN SPOR 5",     url: "{stream_base}/checklist/{slug}.m3u8" }
+      - { slug: "androstreamliveexn6", name: "EXXEN SPOR 6",     url: "{stream_base}/checklist/{slug}.m3u8" }
+      - { slug: "androstreamliveexn7", name: "EXXEN SPOR 7",     url: "{stream_base}/checklist/{slug}.m3u8" }
+      - { slug: "androstreamliveexn8", name: "EXXEN SPOR 8",     url: "{stream_base}/checklist/{slug}.m3u8" }
+      - { slug: "androstreamliveidm",  name: "IDMAN TV",         url: "{stream_base}/checklist/{slug}.m3u8" }
+      - { slug: "androstreamlivecbcs", name: "CBC SPORT",        url: "{stream_base}/checklist/{slug}.m3u8" }

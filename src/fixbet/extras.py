@@ -9,7 +9,12 @@ config/extra_channels.yml içindeki panelleri okur ve her kanal için:
   * panelin adresi değiştiyse bilinen giriş adreslerini (yönlendirme) ve numaralı
     ayna taramasını dener (atomsportv501 → 502 …, sporcafe8 → …),
   * iki aşamalı sitelerde (Selçuk) ana sayfadan oynatıcı sunucusunu bulur
-    (``player.domain_pattern`` → ``{player_base}``).
+    (``player.domain_pattern`` → ``{player_base}``),
+  * sunucu dizisi içeren sitelerde (Mahsun/androstream) player sayfasındaki
+    ``baseurls = […]`` dizisinden yayın sunucusunu bulur, doğrular ve
+    ``{stream_base}`` olarak kanal adreslerine sunar; şablonla kurulan kanal
+    adresleri istenirse gerçek HLS listesi döndürdüğü için doğrulanır
+    (``player.stream_base_array_pattern`` + ``player.verify_static``).
 
 Sonuç output/extra_channels.json dosyasına yazılır; sayfa (index.html) bu
 kanalları kendi HLS oynatıcısında açar ve kaynakları sırayla dener.
@@ -173,6 +178,49 @@ def stream_from_rules(text: str, rules: dict[str, Any] | None, fmt: dict[str, st
     return None
 
 
+def array_stream_servers(text: str, pattern: str) -> list[str]:
+    """``baseurls = ['https://…', …]`` tarzı sunucu dizisini ayıklar (Mahsun/androstream).
+
+    Dizi içindeki her http(s) girdisi tekil ve sondaki ``/`` kırpılmış olarak döner.
+    """
+    if not text or not pattern:
+        return []
+    m = re.search(pattern, text, re.DOTALL | re.IGNORECASE)
+    if not m:
+        return []
+    servers: list[str] = []
+    for part in re.split(r"[,\n]+", m.group(1)):
+        server = part.strip().strip("\"'")
+        if server.lower().startswith(("http://", "https://")):
+            server = server.rstrip("/")
+            if server and server not in servers:
+                servers.append(server)
+    return servers
+
+
+def _stream_url(template: str, mapping: dict[str, str]) -> str:
+    """Şablondan yayın adresi kurar; çift yolları (…/checklist/checklist/…) düzeltir.
+
+    androstream sunucuları ``…/checklist`` yoluyla ya da yolsuz gelir; her iki
+    durumda da tek şablon (``{stream_base}/checklist/{slug}.m3u8``) çalışsın.
+    """
+    url = _fmt(template, mapping)
+    if not url:
+        return ""
+    url = url.replace("/checklist/checklist/", "/checklist/")
+    return re.sub(r"(?<!:)/{2,}", "/", url)
+
+
+def _verify_hls(url: str, referrer: str, fetch: Fetcher, headers: dict[str, str],
+                timeout: float) -> bool:
+    """Adresin gerçekten bir HLS listesi döndürdüğünü kontrol eder."""
+    hdrs = dict(headers)
+    if referrer:
+        hdrs["Referer"] = referrer
+    res = fetch(url, hdrs, timeout)
+    return res is not None and res.status == 200 and is_hls_playlist(res.text or "")
+
+
 def extract_m3u8_from_page(url: str, referrer: str | None, fetch: Fetcher,
                            headers: dict[str, str] | None = None, timeout: float = 8,
                            depth: int = 2, rules: dict[str, Any] | None = None,
@@ -329,7 +377,7 @@ def _probe_base(candidate: str, panel: dict[str, Any], fetch: Fetcher,
     if res is None or res.status != 200:
         return None
     text = res.text or ""
-    if tokens and not any(tok in text for tok in tokens):
+    if tokens and not any(tok.lower() in text.lower() for tok in tokens):
         return None
     final = res.url or url
     return Probe(_origin(final), final, text)
@@ -405,6 +453,48 @@ def find_player_base(panel: dict[str, Any], base_url: str, healthy: bool | None,
     return str((previous or {}).get("player_base") or player.get("default_base") or "").rstrip("/")
 
 
+def find_stream_server(panel: dict[str, Any], base_url: str, healthy: bool | None, html: str,
+                       previous: dict[str, Any] | None, fetch: Fetcher | None,
+                       headers: dict[str, str], timeout: float, player_base: str = "") -> str:
+    """Sunucu dizisi (``baseurls = […]``) içeren sitelerde çalışan yayın sunucusunu bulur.
+
+    Sağlık sayfasındaki (ör. Mahsun ``event.html``) ``player.stream_base_array_pattern``
+    dizisinden adaylar çıkarılır; her aday ``player.stream_template`` ile ilk kanalın
+    slug'ı için kurulur ve gerçek bir HLS listesi döndüren ilk sunucu kazanır.
+    Sonuç panel düzeyinde ``{stream_base}`` olarak kanallara sunulur. Hiçbiri
+    çalışmazsa (ya da ağ yoksa) son bilinen ya da ``player.default_stream_base``
+    korunur; kanallar önceki çözümlerine güvenir.
+    """
+    player = panel.get("player") or {}
+    pattern = str(player.get("stream_base_array_pattern") or "")
+    template = str(player.get("stream_template") or "")
+    if not pattern or not template:
+        return ""
+    known = str((previous or {}).get("stream_base") or player.get("default_stream_base") or "").rstrip("/")
+    if fetch is None:
+        return known
+    servers = array_stream_servers(html or "", pattern)
+    if not servers and healthy and base_url:
+        res = fetch(base_url.rstrip("/") + "/", dict(headers), timeout)
+        if res is not None and res.status == 200:
+            servers = array_stream_servers(res.text or "", pattern)
+    slug = _first_slug(panel)
+    if not servers or not slug:
+        return known
+    hdrs = dict(headers)
+    if base_url:
+        hdrs["Referer"] = base_url + "/"
+    for server in servers:
+        probe = _stream_url(template, {"base_url": base_url, "slug": slug, "stream_base": server,
+                                       "player_base": player_base})
+        if not probe:
+            continue
+        res = fetch(probe, hdrs, timeout)
+        if res is not None and res.status == 200 and is_hls_playlist(res.text or ""):
+            return server
+    return known
+
+
 # ---------------------------------------------------------------------------
 # Kanal çözümleme
 # ---------------------------------------------------------------------------
@@ -419,14 +509,16 @@ def resolve_channel(panel: dict[str, Any], ctx: dict[str, Any], ch: dict[str, An
                     timeout: float, now: datetime, keep_hours: float | None) -> dict[str, Any]:
     """Tek kanal için kaynak listesini üretir.
 
-    ctx: {"base_url", "healthy", "player_base"} — panel düzeyinde bulunan adresler.
+    ctx: {"base_url", "healthy", "player_base", "stream_base"} — panel düzeyinde bulunan adresler.
     """
     slug = str(ch.get("slug") or ch.get("id") or "").strip()
     name = str(ch.get("name") or slug).strip()
     panel_id = str(panel.get("id") or "extra")
     base_url = str(ctx.get("base_url") or "").rstrip("/")
     healthy = ctx.get("healthy")
-    fmt = {"base_url": base_url, "slug": slug, "player_base": str(ctx.get("player_base") or "").rstrip("/")}
+    fmt = {"base_url": base_url, "slug": slug,
+           "player_base": str(ctx.get("player_base") or "").rstrip("/"),
+           "stream_base": str(ctx.get("stream_base") or "").rstrip("/")}
 
     page_url = _fmt(panel.get("page_template"), fmt) if slug else ""
     if panel.get("embed_template"):
@@ -434,7 +526,8 @@ def resolve_channel(panel: dict[str, Any], ctx: dict[str, Any], ch: dict[str, An
     else:
         embed_url = page_url if panel.get("embed_fallback") else ""
     fallback = _fmt(panel.get("fallback_template"), fmt) if slug else ""
-    static = str(ch.get("url") or "").strip()
+    # Kanal adresi artık şablon olabilir (Mahsun: "{stream_base}/checklist/{slug}.m3u8")
+    static = _stream_url(str(ch.get("url") or "").strip(), fmt) if str(ch.get("url") or "").strip() else ""
     referrer = _fmt(panel.get("referrer"), fmt) or (base_url + "/" if base_url else "")
     rules = panel.get("player") or None
 
@@ -445,6 +538,12 @@ def resolve_channel(panel: dict[str, Any], ctx: dict[str, Any], ch: dict[str, An
                                           rules=rules, fmt=fmt) or ""
         if resolved:
             resolved_at = now.isoformat(timespec="seconds")
+    # Mahsun/androstream tarzı panellerde kanal adresi {stream_base} şablonuyla kurulur;
+    # verify_static açıkken gerçekten HLS listesi döndürdüğü bu turda doğrulanır.
+    if (not resolved and static and fetch is not None and healthy is not False
+            and (panel.get("player") or {}).get("verify_static")
+            and _verify_hls(static, referrer, fetch, headers, timeout)):
+        resolved, resolved_at = static, now.isoformat(timespec="seconds")
     # Atom'un worker'ı başka bir CDN'e yönlenir. Bot nihai adresi çözer;
     # tarayıcıdaki fazladan cross-origin redirect zinciri ortadan kalkar.
     # Worker adresi yine yedekte kalır; CDN değişiminde bir sonraki tur yeniler.
@@ -507,7 +606,8 @@ def resolve_panel(panel: dict[str, Any], previous: dict[str, Any] | None, fetch:
                   max_workers: int = 10) -> dict[str, Any]:
     base_url, healthy, html = choose_base_url(panel, previous, fetch, headers, timeout)
     player_base = find_player_base(panel, base_url, healthy, html, previous, fetch, headers, timeout)
-    ctx = {"base_url": base_url, "healthy": healthy, "player_base": player_base}
+    stream_base = find_stream_server(panel, base_url, healthy, html, previous, fetch, headers, timeout, player_base)
+    ctx = {"base_url": base_url, "healthy": healthy, "player_base": player_base, "stream_base": stream_base}
 
     prev_channels = {c.get("slug"): c for c in (previous or {}).get("channels", [])}
     chans = [c for c in (panel.get("channels") or []) if (c.get("slug") or c.get("id"))]
@@ -528,6 +628,7 @@ def resolve_panel(panel: dict[str, Any], previous: dict[str, Any] | None, fetch:
         "icon": str(panel.get("icon") or "⚡"),
         "base_url": base_url,
         "player_base": player_base,
+        "stream_base": stream_base,
         "healthy": healthy,
         "resolved": sum(1 for c in channels if c["resolved"]),
         "fresh": sum(1 for c in channels if c["fresh"]),
