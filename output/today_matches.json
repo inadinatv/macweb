@@ -9,13 +9,13 @@
       "fixbettv84.com",
       "fixbettv19.com"
     ],
-    "last_checked": "2026-09-10T11:42:28+00:00",
+    "last_checked": "2026-09-10T13:12:45+00:00",
     "note": "OK",
     "probed": 200
   },
   "date": "2026-09-10",
   "timezone": "Europe/Istanbul",
-  "generated_at": "2026-09-10T14:41:51+03:00",
+  "generated_at": "2026-09-10T16:12:08+03:00",
   "matches": [
     {
       "match_id": "ss",
@@ -28,7 +28,7 @@
       "channel_id": "ss",
       "logo_home": "https://img.sporekrani.com/teams/XQoWS56vbBlFWHiF8JGvnvH8aaitxkFdY9lN9yVm.png",
       "logo_away": "https://img.sporekrani.com/teams/2cwycELHvhfWGlgjaq4UQprZWPGmtTOgzYSYVoWt.png",
-      "status": "live",
+      "status": "finished",
       "started": true,
       "raw_event": "12:30 | FIBA Kadınlar Dünya Kupası",
       "url": "https://fixbettv84.com/channel.html?id=ss",
@@ -53,8 +53,8 @@
       "channel_id": "ss",
       "logo_home": "https://img.sporekrani.com/teams/S0VW51K3JvM4oY7Wcpng5sON3vH1x1LxtrCgzQ0g.png",
       "logo_away": "https://img.sporekrani.com/teams/uv5BEd4Mnu1AXmXTMmiEWQmrLysM7e4WLywYhYk3.png",
-      "status": "upcoming",
-      "started": false,
+      "status": "live",
+      "started": true,
       "raw_event": "15:30 | FIBA Kadınlar Dünya Kupası",
       "url": "https://fixbettv84.com/channel.html?id=ss",
       "fetched_at": "",

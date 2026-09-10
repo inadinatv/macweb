@@ -1,16 +1,15 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-09-10 11:42  
-> **Toplam maç:** 12  |  **Canlı:** 1  |  **Yaklaşan:** 11
+> **Güncellenme:** 2026-09-10 13:12  
+> **Toplam maç:** 12  |  **Canlı:** 1  |  **Yaklaşan:** 10
 
 ## 🔴 CANLI
 
-- 🔴 **ABD vs Macaristan** — CANLI · `12:30` | FIBA Kadınlar Dünya Kupası <https://fixbettv84.com/channel.html?id=ss>
+- 🔴 **Çin vs Fransa** — CANLI · `15:30` | FIBA Kadınlar Dünya Kupası <https://fixbettv84.com/channel.html?id=ss>
 
 ## ⏰ YAKLAŞAN
 
-- ⏰ **Çin vs Fransa** — YAKLAŞAN · `15:30` | FIBA Kadınlar Dünya Kupası <https://fixbettv84.com/channel.html?id=ss>
 - ⏰ **Belçika vs Almanya** — YAKLAŞAN · `18:45` | FIBA Kadınlar Dünya Kupası <https://fixbettv84.com/channel.html?id=ss>
 - ⏰ **Fenerbahçe vs Roma** — YAKLAŞAN · `19:45` | UEFA Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=trt1>
 - ⏰ **PSV vs Shakhtar Donetsk** — YAKLAŞAN · `19:45` | UEFA Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=ex7>
@@ -22,6 +21,10 @@
 - ⏰ **Bayern Münih vs Bodo Glimt** — YAKLAŞAN · `22:00` | UEFA Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=ex7>
 - ⏰ **Estrela vs Braga** — YAKLAŞAN · `22:15` | Portekiz Liga NOS <https://fixbettv84.com/channel.html?id=b4>
 
+## ✅ BİTTİ
+
+- ✅ **ABD vs Macaristan** — MS · `12:30` | FIBA Kadınlar Dünya Kupası <https://fixbettv84.com/channel.html?id=ss>
+
 ---
 ## 🏆 Lig Bazlı
 
@@ -29,8 +32,8 @@
 - ⏰ Türkiye vs Almanya — 20:00
 
 ### FIBA Kadınlar Dünya Kupası
-- 🔴 ABD vs Macaristan — 12:30
-- ⏰ Çin vs Fransa — 15:30
+- ⏰ ABD vs Macaristan — 12:30
+- 🔴 Çin vs Fransa — 15:30
 - ⏰ Belçika vs Almanya — 18:45
 - ⏰ Avustralya vs İspanya — 21:45
 
