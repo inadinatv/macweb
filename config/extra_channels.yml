@@ -219,3 +219,33 @@ panels:
       - { slug: "androstreamliveexn8", name: "EXXEN SPOR 8",     url: "{stream_base}/checklist/{slug}.m3u8" }
       - { slug: "androstreamliveidm",  name: "IDMAN TV",         url: "{stream_base}/checklist/{slug}.m3u8" }
       - { slug: "androstreamlivecbcs", name: "CBC SPORT",        url: "{stream_base}/checklist/{slug}.m3u8" }
+
+  - id: taraftarium
+    name: "TARAFTARIUM24"
+    icon: "📺"
+    enabled: true
+    base_url: "https://taraftarium24bedava.com"
+    mirror:
+      pattern: "taraftarium{n}.xyz"
+      preferred_number: 24
+      scan_window: 10
+      must_contain_any: ["bein-sports-1"]
+    # Channel sayfaları için template: /channel/watch/{slug}
+    page_template: "{base_url}/channel/watch/{slug}"
+    health_path: "/"
+    resolve_fallback: true
+    playback:
+      allowed_hosts: []
+      headers: {}
+    fallback_template: "{base_url}/channel/watch/{slug}"
+    embed_fallback: false
+    referrer: "{base_url}/"
+    logo: "https://taraftarium24bedava.com/assets/img/football_tv1.png"
+    channels:
+      - { slug: "bein-sports-1",     name: "BEIN SPORTS 1" }
+      - { slug: "bein-sports-2",     name: "BEIN SPORTS 2" }
+      - { slug: "bein-sports-3",     name: "BEIN SPORTS 3" }
+      - { slug: "bein-sports-4",     name: "BEIN SPORTS 4" }
+      - { slug: "bein-sports-5",     name: "BEIN SPORTS 5" }
+      - { slug: "bein-sports-max-1", name: "BEIN SPORTS MAX 1" }
+      - { slug: "bein-sports-max-2", name: "BEIN SPORTS MAX 2" }
