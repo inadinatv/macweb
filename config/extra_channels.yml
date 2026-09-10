@@ -14,7 +14,9 @@
 #                                Sıra: son bilinen adres → base_url → entry_urls →
 #                                ayna taraması; hiçbiri açılmazsa son bilinen korunur
 #    - health_path             : sağlık kontrolü için yol (varsayılan: ilk kanal sayfası)
-#    - page_template           : m3u8'in çıkarılacağı sayfa ({base_url} {slug} {player_base})
+#    - page_template / page_templates : m3u8'in çıkarılacağı sayfa ({base_url}
+#                                {slug} {player_base}); birden çok rota ve ana
+#                                sayfadaki kanal bağlantısı otomatik denenir
 #    - player                  : iki aşamalı siteler için oynatıcı sunucusu:
 #          domain_pattern      : ana sayfada oynatıcı alan adını bulan regex → {player_base}
 #          default_base        : bulunamazsa kullanılacak son bilinen oynatıcı adresi
@@ -220,27 +222,43 @@ panels:
       - { slug: "androstreamliveidm",  name: "IDMAN TV",         url: "{stream_base}/checklist/{slug}.m3u8" }
       - { slug: "androstreamlivecbcs", name: "CBC SPORT",        url: "{stream_base}/checklist/{slug}.m3u8" }
 
+  # --------------------------------------------------------------------------
+  #  TARAFTARIUM24 — ana sayfadaki canlı TV kanalları
+  #    10 Eylül 2026 incelemesi: kanal kutuları /mac-izle/<id> rotasını
+  #    kullanıyor. Kullanıcının verdiği /channel/watch/<id> örneği de eski
+  #    rota olarak korunur; ana sayfadaki güncel bağlantı her zaman önce denenir.
+  #    Alan adı değişirse mevcut ana sayfa yönlendirmesi, giriş adresleri ve
+  #    numaralı alan adı aileleri sırayla taranır.
+  # --------------------------------------------------------------------------
   - id: taraftarium
     name: "TARAFTARIUM24"
     icon: "📺"
     enabled: true
     base_url: "https://taraftarium24bedava.com"
+    entry_urls:
+      - "https://taraftarium24bedava.com/"
+      - "https://taraftarium24.com/"
+      - "https://taraftarium24.xyz/"
     mirror:
-      pattern: "taraftarium{n}.xyz"
+      # Birden fazla alan adı ailesi: yeni numaralı ayna önce bulunur.
+      patterns:
+        - "taraftarium{n}bedava.com"
+        - "taraftarium{n}.com"
+        - "taraftarium{n}.xyz"
       preferred_number: 24
-      scan_window: 10
+      scan_window: 12
+      # Park/boş alan adlarını elemek için ana sayfadaki kanal kimliği aranır.
       must_contain_any: ["bein-sports-1"]
-    # Channel sayfaları için template: /channel/watch/{slug}
-    page_template: "{base_url}/channel/watch/{slug}"
     health_path: "/"
-    resolve_fallback: true
-    playback:
-      allowed_hosts: []
-      headers: {}
-    fallback_template: "{base_url}/channel/watch/{slug}"
-    embed_fallback: false
+    # Güncel rota ana sayfadan otomatik keşfedilir; aşağıdakiler yedektir.
+    page_templates:
+      - "{base_url}/mac-izle/{slug}"
+      - "{base_url}/channel/watch/{slug}"
+      - "{base_url}/channel/watch/{slug}++"
+    page_template: "{base_url}/mac-izle/{slug}"
+    embed_fallback: true
     referrer: "{base_url}/"
-    logo: "https://taraftarium24bedava.com/assets/img/football_tv1.png"
+    logo: "{base_url}/assets/img/football_tv1.png"
     channels:
       - { slug: "bein-sports-1",     name: "BEIN SPORTS 1" }
       - { slug: "bein-sports-2",     name: "BEIN SPORTS 2" }
@@ -249,3 +267,8 @@ panels:
       - { slug: "bein-sports-5",     name: "BEIN SPORTS 5" }
       - { slug: "bein-sports-max-1", name: "BEIN SPORTS MAX 1" }
       - { slug: "bein-sports-max-2", name: "BEIN SPORTS MAX 2" }
+      - { slug: "s-sport",           name: "S SPORT" }
+      - { slug: "s-sport-2",         name: "S SPORT 2" }
+      - { slug: "trt-spor",          name: "TRT SPOR" }
+      - { slug: "trt-1",             name: "TRT 1" }
+      - { slug: "a-spor",             name: "A SPOR" }

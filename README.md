@@ -54,7 +54,7 @@ raporlar üreten gelişmiş otomasyon botu.
    - Repo kökündeki **`index.html`** her çalıştırmada şablondan yeniden üretilir
      (tek kaynak: şablon). Sayfada **uydurma/sabit maç yoktur**; gömülen her maç
      kaynaktan çekilen gerçek programdır.
-   - **Üç sekme:** 📺 TV KANALLARI, 📅 GÜNÜN MAÇLARI ve ⚡ EXTRA. Eski "canlı maçlar"
+   - **Üç sekme:** 📺 TV KANALLARI, 📅 GÜNÜN MAÇLARI ve **⚡ EXTRA PANELLER**. Eski "canlı maçlar"
      sekmesi sabit örnek veriyle dolduğu için kaldırıldı — canlılık bilgisi artık
      günün maçları içinde **kaynak durumu varsa ondan, yoksa program saatinden** belirleniyor.
    - **Yedek durum hesabı:** Gerçek durum gelmediğinde başlangıç saati + spora göre yayın penceresi
@@ -79,7 +79,7 @@ raporlar üreten gelişmiş otomasyon botu.
      dosyasını okumayı dener (bot bu dosyayı 5 dakikada bir günceller); erişilemezse
      gömülü gerçek veriyle sorunsuz çalışmaya devam eder.
 
-6. **⚡ EXTRA paneller — doğrudan m3u8 kanallar** (`src/fixbet/extras.py` + `config/extra_channels.yml`)
+6. **⚡ EXTRA PANELLER — doğrudan m3u8 / panel kanalları** (`src/fixbet/extras.py` + `config/extra_channels.yml`)
    - Ana siteden bağımsız ek kaynaklar:
      - **ATOM SPOR** (14 kanal: Bein Sports 1-5, S Sport / 2 / Plus, Tivibu Spor 1-3, SmartSpor,
        TV 8,5, Bein Sports Haber) — player sayfasından (`/matches?id=<slug>`) veya worker yönlendirmesinden HLS çözülür.
@@ -87,15 +87,21 @@ raporlar üreten gelişmiş otomasyon botu.
        SmartSpor, A Spor, Eurosport 1) — **iki aşamalı**: ana sayfadan oynatıcı sunucusu
        (`main.uxsyplayer….click`) bulunur, oynatıcı sayfasındaki `this.adsBaseUrl` kökünden
        `{kök}{slug}/playlist.m3u8` kurulur.
+     - **TARAFTARIUM24** (12 kanal: Bein Sports 1-5, Bein Sports Max 1-2, S Sport 1-2,
+       TRT Spor, TRT 1, A Spor) — ana sayfadaki kanal ID/linkleri otomatik keşfedilir.
+       Güncel rota (`/mac-izle/<id>`) ve kullanıcının verdiği eski
+       `/channel/watch/<id>` rotası birlikte desteklenir; sayfa HLS vermezse panel sayfası
+       yedek olarak oynatıcıda açılır.
    - Bot her çalışmada **m3u8 adresini çıkarır** (düz link, göreli link, URL-encoded,
-     base64/`atob`, iç içe iframe'ler, ya da `player.stream_base_patterns` kuralları). Çıkaramazsa
-     son çözümü `keep_resolved_hours` kadar korur; yedek olarak panelin `fallback_template`'i
-     (Atom: `tv.atomspor.workers.dev/?ID=<slug>`) ve iframe için kanal/oynatıcı sayfası eklenir.
-   - Panelin adresi değişirse: önce son bilinen adres, sonra `entry_urls` (yönlendirme izlenir —
-     Sporcafe'nin `www.sporcafe-<hex>.xyz` adresleri böyle bulunur), sonra numaralı ayna taraması
-     (**atomsportv501 → 502 → …**, `sporcafe8 → …`). Bulunan adres ve oynatıcı sunucusu
-     `output/extra_channels.json` içinde saklanır; sonraki çalışma buradan başlar.
-   - Sayfada **⚡ EXTRA** sekmesi: aynı kompakt kartlar, panel çipleri, arama, ızgara/liste.
+     base64/`atob`, iç içe iframe'ler, ana sayfadaki kanal bağlantısı veya
+     `player.stream_base_patterns` kuralları). Çıkaramazsa son çözümü
+     `keep_resolved_hours` kadar korur; yedek olarak panelin `fallback_template`'i
+     ve iframe için kanal/oynatıcı sayfası eklenir.
+   - Panelin adresi değişirse: önce son bilinen adres, sonra `entry_urls` (yönlendirme izlenir),
+     sonra birden fazla numaralı alan adı kalıbı taranır (ör. **taraftarium24bedava → 25 …**).
+     Bulunan adres, rota ve oynatıcı sunucusu `output/extra_channels.json` içinde saklanır;
+     sonraki çalışma buradan başlar.
+   - Sayfada **⚡ EXTRA PANELLER** sekmesi: aynı kompakt kartlar, panel çipleri, arama, ızgara/liste.
      Karta tıklayınca yayın **sayfanın kendi HLS oynatıcısında** açılır — Safari/iOS'ta yerel HLS,
      diğer tarayıcılarda `hls.js` (CDN'den yalnızca ilk EXTRA yayında yüklenir).
    - Oynatıcı ekleri: **kaynak çipleri** (Kaynak 1 / Kaynak 2 / 🌐 Site), açılmayan kaynakta
@@ -153,7 +159,7 @@ python fixbet.py serve 5
 # Sayfayı ağ olmadan, output/ içindeki son gerçek veriden yeniden üret
 python fixbet.py build-index
 
-# Sadece EXTRA panelleri (Atom / Selçuk m3u8 adresleri) yenile ve sayfayı güncelle
+# Sadece EXTRA panelleri (Atom / Selçuk / Taraftarium) yenile ve sayfayı güncelle
 python fixbet.py extras
 
 # Sadece lig puan durumunu çek ve sayfayı güncelle
@@ -227,7 +233,7 @@ fixbet-bot/
 │   ├── standings.yml         # 🏆 lig puan durumu (PUAN DURUMU modalı) ligleri + görünen ad eşlemesi
 │   ├── mirrors.yml           # güncel adres arayan kalıplar
 │   ├── channels.yml          # bilinen kanal kimlikleri
-│   ├── extra_channels.yml    # ⚡ EXTRA paneller (Atom Spor + Selçuk Spor m3u8, yeni paneller buraya)
+│   ├── extra_channels.yml    # ⚡ EXTRA PANELLER (Atom + Selçuk + Taraftarium, yeni paneller buraya)
 │   └── current_site.yml      # ⭐ BOT TARAFINDAN OTOMATİK GÜNCELLENEN GÜNCEL ADRES
 ├── src/fixbet/
 │   ├── main.py               # orkestratör

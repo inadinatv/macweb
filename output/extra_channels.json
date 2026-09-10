@@ -1,7 +1,7 @@
 {
   "updated_at": "2026-09-10T20:58:26+00:00",
   "source": "output/extra_channels.json",
-  "total": 67,
+  "total": 79,
   "panels": [
     {
       "id": "atom",
@@ -2020,6 +2020,296 @@
           "fresh": true,
           "resolved_url": "https://andro.evrenesoglu99.click/checklist/androstreamlivecbcs.m3u8",
           "resolved_at": "2026-09-10T20:58:26+00:00",
+          "stale": false
+        }
+      ]
+    },
+    {
+      "id": "taraftarium",
+      "name": "TARAFTARIUM24",
+      "icon": "📺",
+      "base_url": "https://taraftarium24bedava.com",
+      "player_base": "",
+      "stream_base": "",
+      "healthy": true,
+      "resolved": 0,
+      "fresh": 0,
+      "total": 12,
+      "channels": [
+        {
+          "id": "taraftarium:bein-sports-1",
+          "slug": "bein-sports-1",
+          "name": "BEIN SPORTS 1",
+          "panel": "taraftarium",
+          "panel_name": "TARAFTARIUM24",
+          "icon": "⚽",
+          "logo": "https://taraftarium24bedava.com/assets/img/football_tv1.png",
+          "page_url": "https://taraftarium24bedava.com/mac-izle/bein-sports-1",
+          "referrer": "https://taraftarium24bedava.com/",
+          "sources": [
+            {
+              "type": "embed",
+              "url": "https://taraftarium24bedava.com/mac-izle/bein-sports-1",
+              "label": "Site"
+            }
+          ],
+          "resolved": false,
+          "fresh": false,
+          "resolved_url": null,
+          "resolved_at": null,
+          "stale": false
+        },
+        {
+          "id": "taraftarium:bein-sports-2",
+          "slug": "bein-sports-2",
+          "name": "BEIN SPORTS 2",
+          "panel": "taraftarium",
+          "panel_name": "TARAFTARIUM24",
+          "icon": "⚽",
+          "logo": "https://taraftarium24bedava.com/assets/img/football_tv1.png",
+          "page_url": "https://taraftarium24bedava.com/mac-izle/bein-sports-2",
+          "referrer": "https://taraftarium24bedava.com/",
+          "sources": [
+            {
+              "type": "embed",
+              "url": "https://taraftarium24bedava.com/mac-izle/bein-sports-2",
+              "label": "Site"
+            }
+          ],
+          "resolved": false,
+          "fresh": false,
+          "resolved_url": null,
+          "resolved_at": null,
+          "stale": false
+        },
+        {
+          "id": "taraftarium:bein-sports-3",
+          "slug": "bein-sports-3",
+          "name": "BEIN SPORTS 3",
+          "panel": "taraftarium",
+          "panel_name": "TARAFTARIUM24",
+          "icon": "⚽",
+          "logo": "https://taraftarium24bedava.com/assets/img/football_tv1.png",
+          "page_url": "https://taraftarium24bedava.com/mac-izle/bein-sports-3",
+          "referrer": "https://taraftarium24bedava.com/",
+          "sources": [
+            {
+              "type": "embed",
+              "url": "https://taraftarium24bedava.com/mac-izle/bein-sports-3",
+              "label": "Site"
+            }
+          ],
+          "resolved": false,
+          "fresh": false,
+          "resolved_url": null,
+          "resolved_at": null,
+          "stale": false
+        },
+        {
+          "id": "taraftarium:bein-sports-4",
+          "slug": "bein-sports-4",
+          "name": "BEIN SPORTS 4",
+          "panel": "taraftarium",
+          "panel_name": "TARAFTARIUM24",
+          "icon": "⚽",
+          "logo": "https://taraftarium24bedava.com/assets/img/football_tv1.png",
+          "page_url": "https://taraftarium24bedava.com/mac-izle/bein-sports-4",
+          "referrer": "https://taraftarium24bedava.com/",
+          "sources": [
+            {
+              "type": "embed",
+              "url": "https://taraftarium24bedava.com/mac-izle/bein-sports-4",
+              "label": "Site"
+            }
+          ],
+          "resolved": false,
+          "fresh": false,
+          "resolved_url": null,
+          "resolved_at": null,
+          "stale": false
+        },
+        {
+          "id": "taraftarium:bein-sports-5",
+          "slug": "bein-sports-5",
+          "name": "BEIN SPORTS 5",
+          "panel": "taraftarium",
+          "panel_name": "TARAFTARIUM24",
+          "icon": "⚽",
+          "logo": "https://taraftarium24bedava.com/assets/img/football_tv1.png",
+          "page_url": "https://taraftarium24bedava.com/mac-izle/bein-sports-5",
+          "referrer": "https://taraftarium24bedava.com/",
+          "sources": [
+            {
+              "type": "embed",
+              "url": "https://taraftarium24bedava.com/mac-izle/bein-sports-5",
+              "label": "Site"
+            }
+          ],
+          "resolved": false,
+          "fresh": false,
+          "resolved_url": null,
+          "resolved_at": null,
+          "stale": false
+        },
+        {
+          "id": "taraftarium:bein-sports-max-1",
+          "slug": "bein-sports-max-1",
+          "name": "BEIN SPORTS MAX 1",
+          "panel": "taraftarium",
+          "panel_name": "TARAFTARIUM24",
+          "icon": "⚽",
+          "logo": "https://taraftarium24bedava.com/assets/img/football_tv1.png",
+          "page_url": "https://taraftarium24bedava.com/mac-izle/bein-sports-max-1",
+          "referrer": "https://taraftarium24bedava.com/",
+          "sources": [
+            {
+              "type": "embed",
+              "url": "https://taraftarium24bedava.com/mac-izle/bein-sports-max-1",
+              "label": "Site"
+            }
+          ],
+          "resolved": false,
+          "fresh": false,
+          "resolved_url": null,
+          "resolved_at": null,
+          "stale": false
+        },
+        {
+          "id": "taraftarium:bein-sports-max-2",
+          "slug": "bein-sports-max-2",
+          "name": "BEIN SPORTS MAX 2",
+          "panel": "taraftarium",
+          "panel_name": "TARAFTARIUM24",
+          "icon": "⚽",
+          "logo": "https://taraftarium24bedava.com/assets/img/football_tv1.png",
+          "page_url": "https://taraftarium24bedava.com/mac-izle/bein-sports-max-2",
+          "referrer": "https://taraftarium24bedava.com/",
+          "sources": [
+            {
+              "type": "embed",
+              "url": "https://taraftarium24bedava.com/mac-izle/bein-sports-max-2",
+              "label": "Site"
+            }
+          ],
+          "resolved": false,
+          "fresh": false,
+          "resolved_url": null,
+          "resolved_at": null,
+          "stale": false
+        },
+        {
+          "id": "taraftarium:s-sport",
+          "slug": "s-sport",
+          "name": "S SPORT",
+          "panel": "taraftarium",
+          "panel_name": "TARAFTARIUM24",
+          "icon": "🏀",
+          "logo": "https://taraftarium24bedava.com/assets/img/football_tv1.png",
+          "page_url": "https://taraftarium24bedava.com/mac-izle/s-sport",
+          "referrer": "https://taraftarium24bedava.com/",
+          "sources": [
+            {
+              "type": "embed",
+              "url": "https://taraftarium24bedava.com/mac-izle/s-sport",
+              "label": "Site"
+            }
+          ],
+          "resolved": false,
+          "fresh": false,
+          "resolved_url": null,
+          "resolved_at": null,
+          "stale": false
+        },
+        {
+          "id": "taraftarium:s-sport-2",
+          "slug": "s-sport-2",
+          "name": "S SPORT 2",
+          "panel": "taraftarium",
+          "panel_name": "TARAFTARIUM24",
+          "icon": "🏀",
+          "logo": "https://taraftarium24bedava.com/assets/img/football_tv1.png",
+          "page_url": "https://taraftarium24bedava.com/mac-izle/s-sport-2",
+          "referrer": "https://taraftarium24bedava.com/",
+          "sources": [
+            {
+              "type": "embed",
+              "url": "https://taraftarium24bedava.com/mac-izle/s-sport-2",
+              "label": "Site"
+            }
+          ],
+          "resolved": false,
+          "fresh": false,
+          "resolved_url": null,
+          "resolved_at": null,
+          "stale": false
+        },
+        {
+          "id": "taraftarium:trt-spor",
+          "slug": "trt-spor",
+          "name": "TRT SPOR",
+          "panel": "taraftarium",
+          "panel_name": "TARAFTARIUM24",
+          "icon": "🇹🇷",
+          "logo": "https://taraftarium24bedava.com/assets/img/football_tv1.png",
+          "page_url": "https://taraftarium24bedava.com/mac-izle/trt-spor",
+          "referrer": "https://taraftarium24bedava.com/",
+          "sources": [
+            {
+              "type": "embed",
+              "url": "https://taraftarium24bedava.com/mac-izle/trt-spor",
+              "label": "Site"
+            }
+          ],
+          "resolved": false,
+          "fresh": false,
+          "resolved_url": null,
+          "resolved_at": null,
+          "stale": false
+        },
+        {
+          "id": "taraftarium:trt-1",
+          "slug": "trt-1",
+          "name": "TRT 1",
+          "panel": "taraftarium",
+          "panel_name": "TARAFTARIUM24",
+          "icon": "🇹🇷",
+          "logo": "https://taraftarium24bedava.com/assets/img/football_tv1.png",
+          "page_url": "https://taraftarium24bedava.com/mac-izle/trt-1",
+          "referrer": "https://taraftarium24bedava.com/",
+          "sources": [
+            {
+              "type": "embed",
+              "url": "https://taraftarium24bedava.com/mac-izle/trt-1",
+              "label": "Site"
+            }
+          ],
+          "resolved": false,
+          "fresh": false,
+          "resolved_url": null,
+          "resolved_at": null,
+          "stale": false
+        },
+        {
+          "id": "taraftarium:a-spor",
+          "slug": "a-spor",
+          "name": "A SPOR",
+          "panel": "taraftarium",
+          "panel_name": "TARAFTARIUM24",
+          "icon": "⚽",
+          "logo": "https://taraftarium24bedava.com/assets/img/football_tv1.png",
+          "page_url": "https://taraftarium24bedava.com/mac-izle/a-spor",
+          "referrer": "https://taraftarium24bedava.com/",
+          "sources": [
+            {
+              "type": "embed",
+              "url": "https://taraftarium24bedava.com/mac-izle/a-spor",
+              "label": "Site"
+            }
+          ],
+          "resolved": false,
+          "fresh": false,
+          "resolved_url": null,
+          "resolved_at": null,
           "stale": false
         }
       ]

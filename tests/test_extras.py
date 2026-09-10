@@ -328,6 +328,9 @@ def test_refresh_writes_output_and_site_embeds_extra():
     mah_base = mah_cfg["base_url"]
     n_mahsun = len(mah_cfg["channels"])
     assert n_mahsun > 0
+    tara_cfg = next(p for p in cfg["panels"] if p["id"] == "taraftarium")
+    n_taraftarium = len(tara_cfg["channels"])
+    assert n_taraftarium == 12
     net = FakeNet({
         BASE + "/": (200, '<a href="matches?id=bein-sports-1">BEIN</a>'),
         BASE + "/matches?id=bein-sports-1": (200, 'src:"https://edge.x/bs1/index.m3u8"'),
@@ -349,7 +352,7 @@ def test_refresh_writes_output_and_site_embeds_extra():
             data = extras.refresh(now, fetch=net)
             assert extras.EXTRA_OUTPUT.exists()
             saved = json.loads(extras.EXTRA_OUTPUT.read_text(encoding="utf-8"))
-            assert saved["total"] == 28 + n_mahsun
+            assert saved["total"] == 28 + n_mahsun + n_taraftarium
             assert saved["panels"][0]["resolved"] == 1
             assert saved["source"] == "output/extra_channels.json"
             sel = saved["panels"][1]

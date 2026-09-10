@@ -186,7 +186,7 @@ def _js(value: Any) -> str:
 
 
 def extra_payload(extra_data: dict[str, Any] | None) -> dict[str, Any]:
-    """Ekstra panelleri (m3u8 kanallar) sayfanın beklediği sade JSON'a indirger."""
+    """Ekstra panelleri (m3u8 veya panel oynatıcısı) sade JSON'a indirger."""
     panels: list[dict[str, Any]] = []
     for p in (extra_data or {}).get("panels", []):
         chans = []
