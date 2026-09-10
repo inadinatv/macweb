@@ -1,4 +1,5 @@
-"""Ekstra paneller: doğrudan m3u8/HLS kaynaklı kanal grupları (Atom Spor, Selçuk Spor …).
+"""Ekstra paneller: m3u8/HLS veya panel oynatıcısı kaynaklı kanal grupları
+(Atom Spor, Selçuk Spor, Taraftarium24 …).
 
 config/extra_channels.yml içindeki panelleri okur ve her kanal için:
   * kanal/oynatıcı sayfasından m3u8 yayın adresini çıkarır (düz link, göreli link,
@@ -332,11 +333,21 @@ class Probe:
 def mirror_candidates(mirror: dict[str, Any], known: str | None) -> list[str]:
     """Bilinen adres + tercih edilen numara çevresindeki adayları üretir.
 
-    Yüksek numaralar (yeni aynalar) önce denenir.
+    ``pattern`` geriye dönük uyumluluk için tek bir kalıp kabul eder; yeni
+    paneller birden fazla alan adı ailesini ``patterns`` altında tanımlayabilir.
+    Böylece örneğin ``taraftarium24bedava.com`` adresi kapanırsa aynı numaralı
+    ``.xyz``/``.com`` aynaları da denenir. Yüksek numaralar (yeni aynalar)
+    önce denenir ve adaylar tekilleştirilir.
     """
-    pattern = str(mirror.get("pattern") or "")
-    if "{n}" not in pattern:
+    configured = mirror.get("patterns") or mirror.get("pattern") or []
+    if isinstance(configured, str):
+        patterns = [configured]
+    else:
+        patterns = [str(pattern) for pattern in configured if pattern]
+    patterns = [pattern for pattern in patterns if "{n}" in pattern]
+    if not patterns:
         return []
+
     window = int(mirror.get("scan_window", 10))
     centers: list[int] = []
     for c in (_num_in(known), int(mirror.get("preferred_number", 0) or 0)):
@@ -345,7 +356,16 @@ def mirror_candidates(mirror: dict[str, Any], known: str | None) -> list[str]:
     numbers: set[int] = set()
     for c in centers:
         numbers.update(n for n in range(c - window, c + window + 1) if n > 0)
-    return [pattern.format(n=n) for n in sorted(numbers, reverse=True)]
+
+    candidates: list[str] = []
+    seen: set[str] = set()
+    for pattern in patterns:
+        for number in sorted(numbers, reverse=True):
+            candidate = pattern.format(n=number)
+            if candidate not in seen:
+                seen.add(candidate)
+                candidates.append(candidate)
+    return candidates
 
 
 def _health_target(base: str, panel: dict[str, Any]) -> tuple[str, list[str]]:
@@ -504,12 +524,82 @@ def _channel_icon(name: str) -> str:
     return channel_icon(name)
 
 
+def _page_templates(panel: dict[str, Any]) -> list[str]:
+    """Panelin kanal sayfası şablonlarını öncelik sırasıyla döndürür.
+
+    ``page_template`` eski paneller için korunur. Yeni/oynak siteler birden
+    fazla rota (ör. ``/mac-izle/<id>`` ve ``/channel/watch/<id>``) tanımlayabilir.
+    """
+    configured = panel.get("page_templates") or []
+    if isinstance(configured, str):
+        templates = [configured]
+    else:
+        templates = [str(template) for template in configured if template]
+    legacy = str(panel.get("page_template") or "")
+    if legacy and legacy not in templates:
+        templates.append(legacy)
+    return templates
+
+
+def _discover_page_urls(text: str, base_url: str, slug: str) -> list[str]:
+    """Ana sayfadaki kanal bağlantısını bulur.
+
+    Alan adı/rota değişen panellerde sabit bir URL'ye güvenmek yerine mevcut
+    ana sayfadaki aynı kanal kimliğini taşıyan bağlantıyı öne alır. ``++`` gibi
+    sitenin eski örnek URL'sinde görülen sonekler yalnızca karşılaştırmada
+    yumuşatılır; gerçek bağlantıya eklenmez.
+    """
+    if not text or not base_url or not slug:
+        return []
+    origin = _origin(base_url)
+    wanted = slug.casefold()
+    found: list[str] = []
+    seen: set[str] = set()
+    for href in re.findall(r"<a\b[^>]*?\bhref\s*=\s*(['\"])(.*?)\1", text,
+                           flags=re.IGNORECASE | re.DOTALL):
+        raw = html.unescape(href[1]).replace("\\/", "/").strip()
+        if not raw or raw.lower().startswith(("javascript:", "mailto:", "#")):
+            continue
+        url = urllib.parse.urljoin(base_url.rstrip("/") + "/", raw)
+        parsed = urllib.parse.urlsplit(url)
+        if parsed.scheme not in ("http", "https") or _origin(url).casefold() != origin.casefold():
+            continue
+        path_part = urllib.parse.unquote(parsed.path).rstrip("/").rsplit("/", 1)[-1].rstrip("+")
+        query = urllib.parse.parse_qs(parsed.query)
+        query_ids = [urllib.parse.unquote(v).casefold() for v in query.get("id", [])]
+        if path_part.casefold() != wanted and wanted not in query_ids:
+            continue
+        clean = urllib.parse.urlunsplit((parsed.scheme, parsed.netloc, parsed.path,
+                                         parsed.query, ""))
+        if clean not in seen:
+            seen.add(clean)
+            found.append(clean)
+    return found
+
+
+def _channel_page_urls(panel: dict[str, Any], ctx: dict[str, Any], slug: str) -> list[str]:
+    """Bir kanal için keşfedilmiş ve yapılandırılmış sayfa URL'lerini sırala."""
+    if not slug:
+        return []
+    base_url = str(ctx.get("base_url") or "").rstrip("/")
+    fmt = {"base_url": base_url, "slug": slug,
+           "player_base": str(ctx.get("player_base") or "").rstrip("/"),
+           "stream_base": str(ctx.get("stream_base") or "").rstrip("/")}
+    urls = _discover_page_urls(str(ctx.get("home_html") or ""), base_url, slug)
+    for template in _page_templates(panel):
+        url = _fmt(template, fmt)
+        if url and url not in urls:
+            urls.append(url)
+    return urls
+
+
 def resolve_channel(panel: dict[str, Any], ctx: dict[str, Any], ch: dict[str, Any],
                     previous: dict[str, Any] | None, fetch: Fetcher | None, headers: dict[str, str],
                     timeout: float, now: datetime, keep_hours: float | None) -> dict[str, Any]:
     """Tek kanal için kaynak listesini üretir.
 
-    ctx: {"base_url", "healthy", "player_base", "stream_base"} — panel düzeyinde bulunan adresler.
+    ctx: {"base_url", "healthy", "player_base", "stream_base", "home_html"} —
+    panel düzeyinde bulunan adresler.
     """
     slug = str(ch.get("slug") or ch.get("id") or "").strip()
     name = str(ch.get("name") or slug).strip()
@@ -520,7 +610,8 @@ def resolve_channel(panel: dict[str, Any], ctx: dict[str, Any], ch: dict[str, An
            "player_base": str(ctx.get("player_base") or "").rstrip("/"),
            "stream_base": str(ctx.get("stream_base") or "").rstrip("/")}
 
-    page_url = _fmt(panel.get("page_template"), fmt) if slug else ""
+    page_urls = _channel_page_urls(panel, ctx, slug)
+    page_url = page_urls[0] if page_urls else ""
     if panel.get("embed_template"):
         embed_url = _fmt(panel.get("embed_template"), fmt) if slug else ""
     else:
@@ -533,10 +624,19 @@ def resolve_channel(panel: dict[str, Any], ctx: dict[str, Any], ch: dict[str, An
 
     # Adres kapalıysa (healthy=False) kanal başına boşuna istek atılmaz; son çözüm/yedek kullanılır
     resolved, resolved_at, stale = "", None, False
-    if page_url and fetch is not None and healthy is not False:
-        resolved = extract_m3u8_from_page(page_url, referrer, fetch, headers, timeout,
-                                          rules=rules, fmt=fmt) or ""
+    resolved_page_url = ""
+    if page_urls and fetch is not None and healthy is not False:
+        # Önce ana sayfadan keşfedilen rota, sonra yapılandırılmış yedek rotalar.
+        # Böylece site /mac-izle/<id> yerine /channel/watch/<id> kullandığında
+        # bot kod değiştirmeden yeni yolu izler.
+        for candidate in page_urls:
+            resolved = extract_m3u8_from_page(candidate, referrer, fetch, headers, timeout,
+                                              rules=rules, fmt=fmt) or ""
+            if resolved:
+                resolved_page_url = candidate
+                break
         if resolved:
+            page_url = resolved_page_url
             resolved_at = now.isoformat(timespec="seconds")
     # Mahsun/androstream tarzı panellerde kanal adresi {stream_base} şablonuyla kurulur;
     # verify_static açıkken gerçekten HLS listesi döndürdüğü bu turda doğrulanır.
@@ -588,7 +688,7 @@ def resolve_channel(panel: dict[str, Any], ctx: dict[str, Any], ch: dict[str, An
         "panel": panel_id,
         "panel_name": str(panel.get("name") or panel_id.upper()),
         "icon": _channel_icon(name),
-        "logo": str(panel.get("logo") or ch.get("logo") or ""),
+        "logo": _fmt(str(panel.get("logo") or ch.get("logo") or ""), fmt),
         "page_url": page_url,
         "referrer": referrer,
         "sources": sources,
@@ -607,7 +707,10 @@ def resolve_panel(panel: dict[str, Any], previous: dict[str, Any] | None, fetch:
     base_url, healthy, html = choose_base_url(panel, previous, fetch, headers, timeout)
     player_base = find_player_base(panel, base_url, healthy, html, previous, fetch, headers, timeout)
     stream_base = find_stream_server(panel, base_url, healthy, html, previous, fetch, headers, timeout, player_base)
-    ctx = {"base_url": base_url, "healthy": healthy, "player_base": player_base, "stream_base": stream_base}
+    # Sağlık isteği çoğunlukla ana sayfadır; kanal bağlantılarını buradan
+    # keşfedebilmek için HTML'i kanal çözümlerine taşı.
+    ctx = {"base_url": base_url, "healthy": healthy, "player_base": player_base,
+           "stream_base": stream_base, "home_html": html}
 
     prev_channels = {c.get("slug"): c for c in (previous or {}).get("channels", [])}
     chans = [c for c in (panel.get("channels") or []) if (c.get("slug") or c.get("id"))]

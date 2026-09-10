@@ -62,7 +62,7 @@ def pipeline() -> dict:
     # 2b) 7/24 kanal listesi (güncel adresin ana sayfasından)
     channels_data = channels.categorize(channels.fetch_channels())
 
-    # 2c) Ekstra paneller (Atom Spor vb. doğrudan m3u8 kaynakları) -> output/extra_channels.json
+    # 2c) Ekstra paneller (Atom/Selçuk HLS + panel oynatıcıları) -> output/extra_channels.json
     extra_data = refresh_extras(now)
 
     # 2ç) Lig puan durumu (PUAN DURUMU modalı) -> output/standings.json
@@ -205,7 +205,7 @@ def main(argv: list[str] | None = None) -> int:
 
     sub.add_parser("update-site", help="Sadece güncel adresi güncelle")
     sub.add_parser("build-index", help="output/ verisinden index.html'i yeniden üret (çevrimdışı)")
-    sub.add_parser("extras", help="Sadece ekstra panelleri (m3u8 kanallar) çözümle ve sayfayı güncelle")
+    sub.add_parser("extras", help="Sadece ekstra panelleri (m3u8/panel kanalları) çözümle ve sayfayı güncelle")
     sub.add_parser("standings", help="Sadece lig puan durumunu çek ve sayfayı güncelle")
     sub.add_parser("matches", help="Maçları çek ve kategorize et")
     sub.add_parser("cat", help="Özeti konsola bas")
