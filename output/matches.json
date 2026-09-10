@@ -9,20 +9,20 @@
       "fixbettv84.com",
       "fixbettv19.com"
     ],
-    "last_checked": "2026-09-10T06:30:40+00:00",
+    "last_checked": "2026-09-10T11:42:28+00:00",
     "note": "OK",
     "probed": 200
   },
   "categories": {
     "meta": {
-      "generated_at": "2026-09-10T09:30:03+03:00",
+      "generated_at": "2026-09-10T14:41:51+03:00",
       "date": "2026-09-10",
       "total_matches": 12
     },
     "counts": {
       "total": 12,
-      "live": 0,
-      "upcoming": 12,
+      "live": 1,
+      "upcoming": 11,
       "finished": 0,
       "match_of_day": 0,
       "postponed": 0,
@@ -34,8 +34,7 @@
     "cancelled": [],
     "suspended": [],
     "abandoned": [],
-    "live": [],
-    "upcoming": [
+    "live": [
       {
         "match_id": "ss",
         "home": "ABD",
@@ -47,8 +46,8 @@
         "channel_id": "ss",
         "logo_home": "https://img.sporekrani.com/teams/XQoWS56vbBlFWHiF8JGvnvH8aaitxkFdY9lN9yVm.png",
         "logo_away": "https://img.sporekrani.com/teams/2cwycELHvhfWGlgjaq4UQprZWPGmtTOgzYSYVoWt.png",
-        "status": "upcoming",
-        "started": false,
+        "status": "live",
+        "started": true,
         "raw_event": "12:30 | FIBA Kadınlar Dünya Kupası",
         "url": "https://fixbettv84.com/channel.html?id=ss",
         "fetched_at": "",
@@ -60,7 +59,9 @@
         "score_updated_at": "",
         "event_id": "",
         "starts_at": "2026-09-10T12:30:00+03:00"
-      },
+      }
+    ],
+    "upcoming": [
       {
         "match_id": "ss",
         "home": "Çin",
@@ -379,8 +380,8 @@
           "channel_id": "ss",
           "logo_home": "https://img.sporekrani.com/teams/XQoWS56vbBlFWHiF8JGvnvH8aaitxkFdY9lN9yVm.png",
           "logo_away": "https://img.sporekrani.com/teams/2cwycELHvhfWGlgjaq4UQprZWPGmtTOgzYSYVoWt.png",
-          "status": "upcoming",
-          "started": false,
+          "status": "live",
+          "started": true,
           "raw_event": "12:30 | FIBA Kadınlar Dünya Kupası",
           "url": "https://fixbettv84.com/channel.html?id=ss",
           "fetched_at": "",
@@ -662,8 +663,8 @@
           "channel_id": "ss",
           "logo_home": "https://img.sporekrani.com/teams/XQoWS56vbBlFWHiF8JGvnvH8aaitxkFdY9lN9yVm.png",
           "logo_away": "https://img.sporekrani.com/teams/2cwycELHvhfWGlgjaq4UQprZWPGmtTOgzYSYVoWt.png",
-          "status": "upcoming",
-          "started": false,
+          "status": "live",
+          "started": true,
           "raw_event": "12:30 | FIBA Kadınlar Dünya Kupası",
           "url": "https://fixbettv84.com/channel.html?id=ss",
           "fetched_at": "",
@@ -970,8 +971,8 @@
       "channel_id": "ss",
       "logo_home": "https://img.sporekrani.com/teams/XQoWS56vbBlFWHiF8JGvnvH8aaitxkFdY9lN9yVm.png",
       "logo_away": "https://img.sporekrani.com/teams/2cwycELHvhfWGlgjaq4UQprZWPGmtTOgzYSYVoWt.png",
-      "status": "upcoming",
-      "started": false,
+      "status": "live",
+      "started": true,
       "raw_event": "12:30 | FIBA Kadınlar Dünya Kupası",
       "url": "https://fixbettv84.com/channel.html?id=ss",
       "fetched_at": "",

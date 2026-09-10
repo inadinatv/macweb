@@ -9,9 +9,35 @@
       "fixbettv84.com",
       "fixbettv19.com"
     ],
-    "last_checked": "2026-09-10T06:30:40+00:00",
+    "last_checked": "2026-09-10T11:42:28+00:00",
     "note": "OK",
     "probed": 200
   },
-  "live": []
+  "live": [
+    {
+      "match_id": "ss",
+      "home": "ABD",
+      "away": "Macaristan",
+      "league": "FIBA Kadınlar Dünya Kupası",
+      "time": "12:30",
+      "sport": "Basketbol",
+      "is_match_of_day": false,
+      "channel_id": "ss",
+      "logo_home": "https://img.sporekrani.com/teams/XQoWS56vbBlFWHiF8JGvnvH8aaitxkFdY9lN9yVm.png",
+      "logo_away": "https://img.sporekrani.com/teams/2cwycELHvhfWGlgjaq4UQprZWPGmtTOgzYSYVoWt.png",
+      "status": "live",
+      "started": true,
+      "raw_event": "12:30 | FIBA Kadınlar Dünya Kupası",
+      "url": "https://fixbettv84.com/channel.html?id=ss",
+      "fetched_at": "",
+      "status_source": "schedule",
+      "raw_status": "",
+      "score_home": null,
+      "score_away": null,
+      "score_source": "",
+      "score_updated_at": "",
+      "event_id": "",
+      "starts_at": "2026-09-10T12:30:00+03:00"
+    }
+  ]
 }

@@ -1,12 +1,15 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-09-10 06:31  
-> **Toplam maç:** 12  |  **Canlı:** 0  |  **Yaklaşan:** 12
+> **Güncellenme:** 2026-09-10 11:42  
+> **Toplam maç:** 12  |  **Canlı:** 1  |  **Yaklaşan:** 11
+
+## 🔴 CANLI
+
+- 🔴 **ABD vs Macaristan** — CANLI · `12:30` | FIBA Kadınlar Dünya Kupası <https://fixbettv84.com/channel.html?id=ss>
 
 ## ⏰ YAKLAŞAN
 
-- ⏰ **ABD vs Macaristan** — YAKLAŞAN · `12:30` | FIBA Kadınlar Dünya Kupası <https://fixbettv84.com/channel.html?id=ss>
 - ⏰ **Çin vs Fransa** — YAKLAŞAN · `15:30` | FIBA Kadınlar Dünya Kupası <https://fixbettv84.com/channel.html?id=ss>
 - ⏰ **Belçika vs Almanya** — YAKLAŞAN · `18:45` | FIBA Kadınlar Dünya Kupası <https://fixbettv84.com/channel.html?id=ss>
 - ⏰ **Fenerbahçe vs Roma** — YAKLAŞAN · `19:45` | UEFA Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=trt1>
@@ -26,7 +29,7 @@
 - ⏰ Türkiye vs Almanya — 20:00
 
 ### FIBA Kadınlar Dünya Kupası
-- ⏰ ABD vs Macaristan — 12:30
+- 🔴 ABD vs Macaristan — 12:30
 - ⏰ Çin vs Fransa — 15:30
 - ⏰ Belçika vs Almanya — 18:45
 - ⏰ Avustralya vs İspanya — 21:45
