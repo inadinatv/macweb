@@ -1,37 +1,46 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-09-09 23:51  
-> **Toplam maç:** 8  |  **Canlı:** 0  |  **Yaklaşan:** 3
+> **Güncellenme:** 2026-09-10 00:43  
+> **Toplam maç:** 12  |  **Canlı:** 0  |  **Yaklaşan:** 12
 
 ## ⏰ YAKLAŞAN
 
-- ⏰ **Porto Riko vs Çin** — YAKLAŞAN · `18:45` | FIBA Kadınlar Dünya Kupası <https://fixbettv84.com/channel.html?id=ss>
-- ⏰ **Barcelona vs Feyenoord** — YAKLAŞAN · `19:45` | UEFA Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=ex7>
-- ⏰ **Stuttgart vs Viking** — YAKLAŞAN · `19:45` | UEFA Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=ex1>
-
-## ✅ BİTTİ
-
-- ✅ **İtalya vs Avustralya** — MS · `21:45` | FIBA Kadınlar Dünya Kupası <https://fixbettv84.com/channel.html?id=trtspor2>
-- ✅ **Sporting Lisbon vs Galatasaray** — MS · `22:00` | UEFA Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=trt1>
-- ✅ **PSG vs Slovan Bratislava** — MS · `22:00` | UEFA Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=ex1>
-- ✅ **Napoli vs Arsenal** — MS · `22:00` | UEFA Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=ex2>
-- ✅ **Liverpool vs Atletico Madrid** — MS · `22:00` | UEFA Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=ex7>
+- ⏰ **ABD vs Macaristan** — YAKLAŞAN · `12:30` | FIBA Kadınlar Dünya Kupası <https://fixbettv84.com/channel.html?id=ss>
+- ⏰ **Çin vs Fransa** — YAKLAŞAN · `15:30` | FIBA Kadınlar Dünya Kupası <https://fixbettv84.com/channel.html?id=ss>
+- ⏰ **Belçika vs Almanya** — YAKLAŞAN · `18:45` | FIBA Kadınlar Dünya Kupası <https://fixbettv84.com/channel.html?id=ss>
+- ⏰ **Fenerbahçe vs Roma** — YAKLAŞAN · `19:45` | UEFA Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=trt1>
+- ⏰ **PSV vs Shakhtar Donetsk** — YAKLAŞAN · `19:45` | UEFA Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=ex7>
+- ⏰ **Türkiye vs Almanya** — YAKLAŞAN · `20:00` | CEV Erkekler Avrupa Şampiyonası <https://fixbettv84.com/channel.html?id=trtspor>
+- ⏰ **Avustralya vs İspanya** — YAKLAŞAN · `21:45` | FIBA Kadınlar Dünya Kupası <https://fixbettv84.com/channel.html?id=ss>
+- ⏰ **Slavia Prag vs Lens** — YAKLAŞAN · `22:00` | UEFA Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=ex3>
+- ⏰ **Manchester Utd vs Sabah Bakü** — YAKLAŞAN · `22:00` | UEFA Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=ex1>
+- ⏰ **Como vs Leipzig** — YAKLAŞAN · `22:00` | UEFA Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=ex2>
+- ⏰ **Bayern Münih vs Bodo Glimt** — YAKLAŞAN · `22:00` | UEFA Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=ex7>
+- ⏰ **Estrela vs Braga** — YAKLAŞAN · `22:15` | Portekiz Liga NOS <https://fixbettv84.com/channel.html?id=b4>
 
 ---
 ## 🏆 Lig Bazlı
 
+### CEV Erkekler Avrupa Şampiyonası
+- ⏰ Türkiye vs Almanya — 20:00
+
 ### FIBA Kadınlar Dünya Kupası
-- ⏰ Porto Riko vs Çin — 18:45
-- ⏰ İtalya vs Avustralya — 21:45
+- ⏰ ABD vs Macaristan — 12:30
+- ⏰ Çin vs Fransa — 15:30
+- ⏰ Belçika vs Almanya — 18:45
+- ⏰ Avustralya vs İspanya — 21:45
+
+### Portekiz Liga NOS
+- ⏰ Estrela vs Braga — 22:15
 
 ### UEFA Şampiyonlar Ligi
-- ⏰ Barcelona vs Feyenoord — 19:45
-- ⏰ Stuttgart vs Viking — 19:45
-- ⏰ Sporting Lisbon vs Galatasaray — 22:00
-- ⏰ PSG vs Slovan Bratislava — 22:00
-- ⏰ Napoli vs Arsenal — 22:00
-- ⏰ Liverpool vs Atletico Madrid — 22:00
+- ⏰ Fenerbahçe vs Roma — 19:45
+- ⏰ PSV vs Shakhtar Donetsk — 19:45
+- ⏰ Slavia Prag vs Lens — 22:00
+- ⏰ Manchester Utd vs Sabah Bakü — 22:00
+- ⏰ Como vs Leipzig — 22:00
+- ⏰ Bayern Münih vs Bodo Glimt — 22:00
 
 ---
 ## 📺 7/24 KANALLAR (31)
