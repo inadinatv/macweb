@@ -1,15 +1,17 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-09-10 15:09  
-> **Toplam maç:** 12  |  **Canlı:** 0  |  **Yaklaşan:** 10
+> **Güncellenme:** 2026-09-10 18:23  
+> **Toplam maç:** 12  |  **Canlı:** 3  |  **Yaklaşan:** 6
+
+## 🔴 CANLI
+
+- 🔴 **Fenerbahçe vs Roma** — CANLI · `19:45` | UEFA Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=trt1>
+- 🔴 **PSV vs Shakhtar Donetsk** — CANLI · `19:45` | UEFA Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=ex7>
+- 🔴 **Türkiye vs Almanya** — CANLI · `20:00` | CEV Erkekler Avrupa Şampiyonası <https://fixbettv84.com/channel.html?id=trtspor>
 
 ## ⏰ YAKLAŞAN
 
-- ⏰ **Belçika vs Almanya** — YAKLAŞAN · `18:45` | FIBA Kadınlar Dünya Kupası <https://fixbettv84.com/channel.html?id=ss>
-- ⏰ **Fenerbahçe vs Roma** — YAKLAŞAN · `19:45` | UEFA Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=trt1>
-- ⏰ **PSV vs Shakhtar Donetsk** — YAKLAŞAN · `19:45` | UEFA Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=ex7>
-- ⏰ **Türkiye vs Almanya** — YAKLAŞAN · `20:00` | CEV Erkekler Avrupa Şampiyonası <https://fixbettv84.com/channel.html?id=trtspor>
 - ⏰ **Avustralya vs İspanya** — YAKLAŞAN · `21:45` | FIBA Kadınlar Dünya Kupası <https://fixbettv84.com/channel.html?id=ss>
 - ⏰ **Slavia Prag vs Lens** — YAKLAŞAN · `22:00` | UEFA Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=ex3>
 - ⏰ **Manchester Utd vs Sabah Bakü** — YAKLAŞAN · `22:00` | UEFA Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=ex1>
@@ -21,12 +23,13 @@
 
 - ✅ **ABD vs Macaristan** — MS · `12:30` | FIBA Kadınlar Dünya Kupası <https://fixbettv84.com/channel.html?id=ss>
 - ✅ **Çin vs Fransa** — MS · `15:30` | FIBA Kadınlar Dünya Kupası <https://fixbettv84.com/channel.html?id=ss>
+- ✅ **Belçika vs Almanya** — MS · `18:45` | FIBA Kadınlar Dünya Kupası <https://fixbettv84.com/channel.html?id=ss>
 
 ---
 ## 🏆 Lig Bazlı
 
 ### CEV Erkekler Avrupa Şampiyonası
-- ⏰ Türkiye vs Almanya — 20:00
+- 🔴 Türkiye vs Almanya — 20:00
 
 ### FIBA Kadınlar Dünya Kupası
 - ⏰ ABD vs Macaristan — 12:30
@@ -38,8 +41,8 @@
 - ⏰ Estrela vs Braga — 22:15
 
 ### UEFA Şampiyonlar Ligi
-- ⏰ Fenerbahçe vs Roma — 19:45
-- ⏰ PSV vs Shakhtar Donetsk — 19:45
+- 🔴 Fenerbahçe vs Roma — 19:45
+- 🔴 PSV vs Shakhtar Donetsk — 19:45
 - ⏰ Slavia Prag vs Lens — 22:00
 - ⏰ Manchester Utd vs Sabah Bakü — 22:00
 - ⏰ Como vs Leipzig — 22:00
@@ -101,13 +104,13 @@
 ## ⚡ EKSTRA PANELLER — m3u8 (67)
 
 ### ⚛️ ATOM SPOR ✅ `https://www.atomsportv514.top`
-- 🟢 **BEIN SPORTS 1** <https://corestream.d72377a9ds0ec71.cfd//beintv/tracks-v1a1/mono.m3u8>
-- 🟢 **BEIN SPORTS 2** <https://corestream.d72377a9ds0ec71.cfd//bein2/tracks-v1a1/mono.m3u8>
-- 🟢 **BEIN SPORTS 3** <https://corestream.d72377a9ds0ec71.cfd//bein3/tracks-v1a1/mono.m3u8>
-- 🟢 **BEIN SPORTS 4** <https://corestream.d72377a9ds0ec71.cfd//bein4/tracks-v1a1/mono.m3u8>
+- 🟢 **BEIN SPORTS 1** <https://corestream.d72377a9ds0ec24.cfd//hls/trt1.m3u8>
+- 🟢 **BEIN SPORTS 2** <https://corestream.d72377a9ds0ec24.cfd//bein2/tracks-v1a1/mono.m3u8>
+- 🟢 **BEIN SPORTS 3** <https://corestream.d72377a9ds0ec24.cfd//bein3/tracks-v1a1/mono.m3u8>
+- 🟢 **BEIN SPORTS 4** <https://corestream.d72377a9ds0ec24.cfd//bein4/tracks-v1a1/mono.m3u8>
 - ⚪ **BEIN SPORTS 5** <https://tv.atomspor.workers.dev/?ID=bein-sports-5>
-- 🟢 **S SPORT** <https://corestream.d72377a9ds0ec71.cfd//s-sport/tracks-v1a1/mono.m3u8>
-- 🟢 **S SPORT 2** <https://corestream.d72377a9ds0ec71.cfd//s-sport2/tracks-v1a1/mono.m3u8>
+- 🟢 **S SPORT** <https://corestream.d72377a9ds0ec24.cfd//s-sport/tracks-v1a1/mono.m3u8>
+- 🟢 **S SPORT 2** <https://corestream.d72377a9ds0ec24.cfd//s-sport2/tracks-v1a1/mono.m3u8>
 - ⚪ **S SPORT PLUS** <https://tv.atomspor.workers.dev/?ID=ssport-plus>
 - ⚪ **TIVIBU SPOR 1** <https://tv.atomspor.workers.dev/?ID=tivibu-spor-1>
 - ⚪ **TIVIBU SPOR 2** <https://tv.atomspor.workers.dev/?ID=tivibu-spor-2>
