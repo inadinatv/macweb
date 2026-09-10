@@ -1,32 +1,51 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-09-10 20:59  
-> **Toplam maç:** 6  |  **Canlı:** 6  |  **Yaklaşan:** 0
+> **Güncellenme:** 2026-09-10 22:56  
+> **Toplam maç:** 9  |  **Canlı:** 0  |  **Yaklaşan:** 5
 
-## 🔴 CANLI
+## ⏰ YAKLAŞAN
 
-- 🔴 **Avustralya vs İspanya** — CANLI · `21:45` | FIBA Kadınlar Dünya Kupası <https://fixbettv84.com/channel.html?id=ss>
-- 🔴 **Slavia Prag vs Lens** — CANLI · `22:00` | UEFA Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=ex3>
-- 🔴 **Manchester Utd vs Sabah Bakü** — CANLI · `22:00` | UEFA Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=ex1>
-- 🔴 **Como vs Leipzig** — CANLI · `22:00` | UEFA Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=ex2>
-- 🔴 **Bayern Münih vs Bodo Glimt** — CANLI · `22:00` | UEFA Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=ex7>
-- 🔴 **Estrela vs Braga** — CANLI · `22:15` | Portekiz Liga NOS <https://fixbettv84.com/channel.html?id=b4>
+- ⏰ **Gallego/Araujo vs Martin/Fernandez** — YAKLAŞAN · `14:00` | Premier Padel <https://fixbettv84.com/channel.html?id=bm1>
+- ⏰ **Coello/Tapia vs Leal/Guerrero** — YAKLAŞAN · `16:00` | Premier Padel <https://fixbettv84.com/channel.html?id=bm1>
+- ⏰ **Senesi/Pons vs Orsi/Zielinski** — YAKLAŞAN · `19:00` | Premier Padel <https://fixbettv84.com/channel.html?id=bm1>
+- ⏰ **Beşiktaş vs Erzurumspor** — YAKLAŞAN · `20:00` | Trendyol Süper Lig ★ **Günün Maçı** <https://fixbettv84.com/channel.html?id=zirve>
+- ⏰ **Sarıyer vs Bandırmaspor** — YAKLAŞAN · `20:00` | Trendyol 1. Lig <https://fixbettv84.com/channel.html?id=trtspor>
+
+## ✅ BİTTİ
+
+- ✅ **Alonso/Lacabe vs Chingotto/Galan** — MS · `21:00` | Premier Padel <https://fixbettv84.com/channel.html?id=bm1>
+- ✅ **Venezia vs Fiorentina** — MS · `21:45` | İtalya Serie A <https://fixbettv84.com/channel.html?id=ss2>
+- ✅ **Rennes vs Marsilya** — MS · `21:45` | Fransa Ligue 1 <https://fixbettv84.com/channel.html?id=b3>
+- ✅ **Sevilla vs Valencia** — MS · `22:00` | İspanya La Liga <https://fixbettv84.com/channel.html?id=ss>
+
+## ⭐ GÜNÜN MAÇI
+
+- ⏰ **Beşiktaş vs Erzurumspor** — YAKLAŞAN · `20:00` | Trendyol Süper Lig ★ **Günün Maçı** <https://fixbettv84.com/channel.html?id=zirve>
 
 ---
 ## 🏆 Lig Bazlı
 
-### FIBA Kadınlar Dünya Kupası
-- 🔴 Avustralya vs İspanya — 21:45
+### Fransa Ligue 1
+- ⏰ Rennes vs Marsilya — 21:45
 
-### Portekiz Liga NOS
-- 🔴 Estrela vs Braga — 22:15
+### Premier Padel
+- ⏰ Gallego/Araujo vs Martin/Fernandez — 14:00
+- ⏰ Coello/Tapia vs Leal/Guerrero — 16:00
+- ⏰ Senesi/Pons vs Orsi/Zielinski — 19:00
+- ⏰ Alonso/Lacabe vs Chingotto/Galan — 21:00
 
-### UEFA Şampiyonlar Ligi
-- 🔴 Slavia Prag vs Lens — 22:00
-- 🔴 Manchester Utd vs Sabah Bakü — 22:00
-- 🔴 Como vs Leipzig — 22:00
-- 🔴 Bayern Münih vs Bodo Glimt — 22:00
+### Trendyol 1. Lig
+- ⏰ Sarıyer vs Bandırmaspor — 20:00
+
+### Trendyol Süper Lig
+- ⏰ Beşiktaş vs Erzurumspor — 20:00
+
+### İspanya La Liga
+- ⏰ Sevilla vs Valencia — 22:00
+
+### İtalya Serie A
+- ⏰ Venezia vs Fiorentina — 21:45
 
 ---
 ## 📺 7/24 KANALLAR (31)
@@ -81,10 +100,10 @@
 - **TV 8,5** — `7/24` <https://fixbettv84.com/channel.html?id=tv85>
 
 ---
-## ⚡ EKSTRA PANELLER — m3u8 (67)
+## ⚡ EKSTRA PANELLER — m3u8 (79)
 
 ### ⚛️ ATOM SPOR ✅ `https://www.atomsportv514.top`
-- 🟢 **BEIN SPORTS 1** <https://corestream.d72377a9ds0ec24.cfd//tabii/tracks-v1a1/mono.m3u8>
+- 🟢 **BEIN SPORTS 1** <https://corestream.d72377a9ds0ec24.cfd//beintv/tracks-v1a1/mono.m3u8>
 - 🟢 **BEIN SPORTS 2** <https://corestream.d72377a9ds0ec24.cfd//bein2/tracks-v1a1/mono.m3u8>
 - 🟢 **BEIN SPORTS 3** <https://corestream.d72377a9ds0ec24.cfd//bein3/tracks-v1a1/mono.m3u8>
 - 🟢 **BEIN SPORTS 4** <https://corestream.d72377a9ds0ec24.cfd//bein4/tracks-v1a1/mono.m3u8>
@@ -155,3 +174,17 @@
 - 🟢 **EXXEN SPOR 8** <https://andro.evrenesoglu99.click/checklist/androstreamliveexn8.m3u8>
 - 🟢 **IDMAN TV** <https://andro.evrenesoglu99.click/checklist/androstreamliveidm.m3u8>
 - 🟢 **CBC SPORT** <https://andro.evrenesoglu99.click/checklist/androstreamlivecbcs.m3u8>
+
+### 📺 TARAFTARIUM24 ✅ `https://taraftarium24bedava.com`
+- ⚪ **BEIN SPORTS 1**
+- ⚪ **BEIN SPORTS 2**
+- ⚪ **BEIN SPORTS 3**
+- ⚪ **BEIN SPORTS 4**
+- ⚪ **BEIN SPORTS 5**
+- ⚪ **BEIN SPORTS MAX 1**
+- ⚪ **BEIN SPORTS MAX 2**
+- ⚪ **S SPORT**
+- ⚪ **S SPORT 2**
+- ⚪ **TRT SPOR**
+- ⚪ **TRT 1**
+- ⚪ **A SPOR**
