@@ -1,8 +1,8 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-09-10 22:56  
-> **Toplam maç:** 9  |  **Canlı:** 0  |  **Yaklaşan:** 5
+> **Güncellenme:** 2026-09-11 00:39  
+> **Toplam maç:** 9  |  **Canlı:** 0  |  **Yaklaşan:** 9
 
 ## ⏰ YAKLAŞAN
 
@@ -11,13 +11,10 @@
 - ⏰ **Senesi/Pons vs Orsi/Zielinski** — YAKLAŞAN · `19:00` | Premier Padel <https://fixbettv84.com/channel.html?id=bm1>
 - ⏰ **Beşiktaş vs Erzurumspor** — YAKLAŞAN · `20:00` | Trendyol Süper Lig ★ **Günün Maçı** <https://fixbettv84.com/channel.html?id=zirve>
 - ⏰ **Sarıyer vs Bandırmaspor** — YAKLAŞAN · `20:00` | Trendyol 1. Lig <https://fixbettv84.com/channel.html?id=trtspor>
-
-## ✅ BİTTİ
-
-- ✅ **Alonso/Lacabe vs Chingotto/Galan** — MS · `21:00` | Premier Padel <https://fixbettv84.com/channel.html?id=bm1>
-- ✅ **Venezia vs Fiorentina** — MS · `21:45` | İtalya Serie A <https://fixbettv84.com/channel.html?id=ss2>
-- ✅ **Rennes vs Marsilya** — MS · `21:45` | Fransa Ligue 1 <https://fixbettv84.com/channel.html?id=b3>
-- ✅ **Sevilla vs Valencia** — MS · `22:00` | İspanya La Liga <https://fixbettv84.com/channel.html?id=ss>
+- ⏰ **Alonso/Lacabe vs Chingotto/Galan** — YAKLAŞAN · `21:00` | Premier Padel <https://fixbettv84.com/channel.html?id=bm1>
+- ⏰ **Venezia vs Fiorentina** — YAKLAŞAN · `21:45` | İtalya Serie A <https://fixbettv84.com/channel.html?id=ss2>
+- ⏰ **Rennes vs Marsilya** — YAKLAŞAN · `21:45` | Fransa Ligue 1 <https://fixbettv84.com/channel.html?id=b3>
+- ⏰ **Sevilla vs Valencia** — YAKLAŞAN · `22:00` | İspanya La Liga <https://fixbettv84.com/channel.html?id=ss>
 
 ## ⭐ GÜNÜN MAÇI
 
