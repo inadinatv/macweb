@@ -1,7 +1,7 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-09-11 13:06  
+> **Güncellenme:** 2026-09-11 13:49  
 > **Toplam maç:** 9  |  **Canlı:** 1  |  **Yaklaşan:** 7
 
 ## 🔴 CANLI
@@ -106,13 +106,13 @@
 ## ⚡ EKSTRA PANELLER — m3u8 (79)
 
 ### ⚛️ ATOM SPOR ✅ `https://www.atomsportv514.top`
-- 🟢 **BEIN SPORTS 1** <https://corestream.d72377a9ds0ec24.cfd//beintv/tracks-v1a1/mono.m3u8>
-- 🟢 **BEIN SPORTS 2** <https://corestream.d72377a9ds0ec24.cfd//bein2/tracks-v1a1/mono.m3u8>
-- 🟢 **BEIN SPORTS 3** <https://corestream.d72377a9ds0ec24.cfd//bein3/tracks-v1a1/mono.m3u8>
-- 🟢 **BEIN SPORTS 4** <https://corestream.d72377a9ds0ec24.cfd//bein4/tracks-v1a1/mono.m3u8>
+- 🟡 **BEIN SPORTS 1** <https://corestream.d72377a9ds0ec24.cfd//beintv/tracks-v1a1/mono.m3u8>
+- 🟡 **BEIN SPORTS 2** <https://corestream.d72377a9ds0ec24.cfd//bein2/tracks-v1a1/mono.m3u8>
+- 🟡 **BEIN SPORTS 3** <https://corestream.d72377a9ds0ec24.cfd//bein3/tracks-v1a1/mono.m3u8>
+- 🟡 **BEIN SPORTS 4** <https://corestream.d72377a9ds0ec24.cfd//bein4/tracks-v1a1/mono.m3u8>
 - ⚪ **BEIN SPORTS 5** <https://tv.atomspor.workers.dev/?ID=bein-sports-5>
-- 🟢 **S SPORT** <https://corestream.d72377a9ds0ec24.cfd//s-sport/tracks-v1a1/mono.m3u8>
-- 🟢 **S SPORT 2** <https://corestream.d72377a9ds0ec24.cfd//s-sport2/tracks-v1a1/mono.m3u8>
+- 🟡 **S SPORT** <https://corestream.d72377a9ds0ec24.cfd//s-sport/tracks-v1a1/mono.m3u8>
+- 🟡 **S SPORT 2** <https://corestream.d72377a9ds0ec24.cfd//s-sport2/tracks-v1a1/mono.m3u8>
 - ⚪ **S SPORT PLUS** <https://tv.atomspor.workers.dev/?ID=ssport-plus>
 - ⚪ **TIVIBU SPOR 1** <https://tv.atomspor.workers.dev/?ID=tivibu-spor-1>
 - ⚪ **TIVIBU SPOR 2** <https://tv.atomspor.workers.dev/?ID=tivibu-spor-2>
