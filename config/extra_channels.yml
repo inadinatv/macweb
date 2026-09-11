@@ -14,6 +14,9 @@
 #                                Sıra: son bilinen adres → base_url → entry_urls →
 #                                ayna taraması; hiçbiri açılmazsa son bilinen korunur
 #    - health_path             : sağlık kontrolü için yol (varsayılan: ilk kanal sayfası)
+#    - page_route              : (isteğe bağlı) kanal bağlantısının sabitleneceği
+#                                rota; page_url ve iframe yedeği her zaman bu
+#                                rota ile biter (örn. "/channel/watch/")
 #    - page_template / page_templates : m3u8'in çıkarılacağı sayfa ({base_url}
 #                                {slug} {player_base}); birden çok rota ve ana
 #                                sayfadaki kanal bağlantısı otomatik denenir
@@ -224,9 +227,11 @@ panels:
 
   # --------------------------------------------------------------------------
   #  TARAFTARIUM24 — ana sayfadaki canlı TV kanalları
-  #    10 Eylül 2026 incelemesi: kanal kutuları /mac-izle/<id> rotasını
-  #    kullanıyor. Kullanıcının verdiği /channel/watch/<id> örneği de eski
-  #    rota olarak korunur; ana sayfadaki güncel bağlantı her zaman önce denenir.
+  #    Kanal bağlantısı /channel/watch/<slug> rotasına SABİTLİDİR
+  #    (page_route), örn. https://taraftarium24bedava.com/channel/watch/bein-sports-1.
+  #    Sayfadaki kanal linki ve iframe yedeği her zaman bu rota ile biter;
+  #    ana sayfadan keşfedilen eski /mac-izle/<slug> bağlantıları yalnızca
+  #    m3u8 çıkarımı için yedek olarak denenir, bağlantıya yansıtılmaz.
   #    Alan adı değişirse mevcut ana sayfa yönlendirmesi, giriş adresleri ve
   #    numaralı alan adı aileleri sırayla taranır.
   # --------------------------------------------------------------------------
@@ -250,12 +255,13 @@ panels:
       # Park/boş alan adlarını elemek için ana sayfadaki kanal kimliği aranır.
       must_contain_any: ["bein-sports-1"]
     health_path: "/"
-    # Güncel rota ana sayfadan otomatik keşfedilir; aşağıdakiler yedektir.
+    # Kanal bağlantısı bu rotaya sabitlenir; link her zaman /channel/watch/<slug> biter.
+    page_route: "/channel/watch/"
+    # Önce sabit rota denenir; eski /mac-izle rotası yalnızca m3u8 yedeğidir.
     page_templates:
-      - "{base_url}/mac-izle/{slug}"
       - "{base_url}/channel/watch/{slug}"
-      - "{base_url}/channel/watch/{slug}++"
-    page_template: "{base_url}/mac-izle/{slug}"
+      - "{base_url}/mac-izle/{slug}"
+    page_template: "{base_url}/channel/watch/{slug}"
     embed_fallback: true
     referrer: "{base_url}/"
     logo: "{base_url}/assets/img/football_tv1.png"
