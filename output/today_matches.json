@@ -9,13 +9,13 @@
       "fixbettv84.com",
       "fixbettv19.com"
     ],
-    "last_checked": "2026-09-11T20:11:12+00:00",
+    "last_checked": "2026-09-11T22:00:12+00:00",
     "note": "OK",
     "probed": 200
   },
-  "date": "2026-09-11",
+  "date": "2026-09-12",
   "timezone": "Europe/Istanbul",
-  "generated_at": "2026-09-11T23:10:36+03:00",
+  "generated_at": "2026-09-12T00:59:36+03:00",
   "matches": [
     {
       "match_id": "zirve",
@@ -28,8 +28,8 @@
       "channel_id": "zirve",
       "logo_home": "https://img.sporekrani.com/teams/CFvwmLuUD6H974wec5ga09WZXmTeWdI3RneaRBkc.png",
       "logo_away": "https://img.sporekrani.com/teams/nl7AiwO2FssDa5jVO0394Bo1w4GIbsuHiArFtWoc.png",
-      "status": "finished",
-      "started": true,
+      "status": "upcoming",
+      "started": false,
       "raw_event": "20:00 | Trendyol Süper Lig [Günün Maçı]",
       "url": "https://fixbettv84.com/channel.html?id=zirve",
       "fetched_at": "",
@@ -40,7 +40,7 @@
       "score_source": "",
       "score_updated_at": "",
       "event_id": "",
-      "starts_at": "2026-09-11T20:00:00+03:00"
+      "starts_at": "2026-09-12T20:00:00+03:00"
     },
     {
       "match_id": "bm1",
@@ -53,8 +53,8 @@
       "channel_id": "bm1",
       "logo_home": "https://premierpadel.com/favicon.ico",
       "logo_away": "https://premierpadel.com/favicon.ico",
-      "status": "finished",
-      "started": true,
+      "status": "upcoming",
+      "started": false,
       "raw_event": "14:00 | Premier Padel",
       "url": "https://fixbettv84.com/channel.html?id=bm1",
       "fetched_at": "",
@@ -65,7 +65,7 @@
       "score_source": "",
       "score_updated_at": "",
       "event_id": "",
-      "starts_at": "2026-09-11T14:00:00+03:00"
+      "starts_at": "2026-09-12T14:00:00+03:00"
     },
     {
       "match_id": "bm1",
@@ -78,8 +78,8 @@
       "channel_id": "bm1",
       "logo_home": "https://premierpadel.com/favicon.ico",
       "logo_away": "https://premierpadel.com/favicon.ico",
-      "status": "finished",
-      "started": true,
+      "status": "upcoming",
+      "started": false,
       "raw_event": "16:00 | Premier Padel",
       "url": "https://fixbettv84.com/channel.html?id=bm1",
       "fetched_at": "",
@@ -90,7 +90,7 @@
       "score_source": "",
       "score_updated_at": "",
       "event_id": "",
-      "starts_at": "2026-09-11T16:00:00+03:00"
+      "starts_at": "2026-09-12T16:00:00+03:00"
     },
     {
       "match_id": "bm1",
@@ -103,8 +103,8 @@
       "channel_id": "bm1",
       "logo_home": "https://premierpadel.com/favicon.ico",
       "logo_away": "https://premierpadel.com/favicon.ico",
-      "status": "finished",
-      "started": true,
+      "status": "upcoming",
+      "started": false,
       "raw_event": "19:00 | Premier Padel",
       "url": "https://fixbettv84.com/channel.html?id=bm1",
       "fetched_at": "",
@@ -115,7 +115,7 @@
       "score_source": "",
       "score_updated_at": "",
       "event_id": "",
-      "starts_at": "2026-09-11T19:00:00+03:00"
+      "starts_at": "2026-09-12T19:00:00+03:00"
     },
     {
       "match_id": "trtspor",
@@ -128,8 +128,8 @@
       "channel_id": "trtspor",
       "logo_home": "https://img.sporekrani.com/teams/DMMkzvfUGppo6KDRrBSADy1AiDxBAjc9TehQY0zE.png",
       "logo_away": "https://img.sporekrani.com/teams/eCMSnOYhdkN1g2KIVMtcLZYKjyzxUghS4LzkHirS.png",
-      "status": "finished",
-      "started": true,
+      "status": "upcoming",
+      "started": false,
       "raw_event": "20:00 | Trendyol 1. Lig",
       "url": "https://fixbettv84.com/channel.html?id=trtspor",
       "fetched_at": "",
@@ -140,7 +140,7 @@
       "score_source": "",
       "score_updated_at": "",
       "event_id": "",
-      "starts_at": "2026-09-11T20:00:00+03:00"
+      "starts_at": "2026-09-12T20:00:00+03:00"
     },
     {
       "match_id": "bm1",
@@ -178,7 +178,7 @@
       "channel_id": "ss2",
       "logo_home": "https://img.sporekrani.com/teams/mv1nSUQYZ51WrepW8mT1tcMKhrtTtGeZGHPrPXpp.png",
       "logo_away": "https://img.sporekrani.com/teams/4YnawjObsS3ds0V0O46Xr8a5A5h1nXLelqyKgqOe.png",
-      "status": "live",
+      "status": "finished",
       "started": true,
       "raw_event": "21:45 | İtalya Serie A",
       "url": "https://fixbettv84.com/channel.html?id=ss2",
@@ -203,7 +203,7 @@
       "channel_id": "b3",
       "logo_home": "https://img.sporekrani.com/teams/jvTw7VEhr0MhFwiweM6zlrhzKKBue5n06GLtpNCb.png",
       "logo_away": "https://img.sporekrani.com/teams/44iDo4u0c4isz06F25UBz1IpLjYNIWQgTQRwrw1H.png",
-      "status": "live",
+      "status": "finished",
       "started": true,
       "raw_event": "21:45 | Fransa Ligue 1",
       "url": "https://fixbettv84.com/channel.html?id=b3",
@@ -228,7 +228,7 @@
       "channel_id": "ss",
       "logo_home": "https://img.sporekrani.com/teams/Sq5lFdvY15DRcy50oKMOnuruBvxEqNuR2UmkEGxV.png",
       "logo_away": "https://img.sporekrani.com/teams/Y9VhvVlSoziCgaYOC7LWQxCpuf5Kjzyj2CG5TzFZ.png",
-      "status": "live",
+      "status": "finished",
       "started": true,
       "raw_event": "22:00 | İspanya La Liga",
       "url": "https://fixbettv84.com/channel.html?id=ss",

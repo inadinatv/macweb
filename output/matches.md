@@ -1,33 +1,33 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-09-11 20:11  
-> **Toplam maç:** 9  |  **Canlı:** 3  |  **Yaklaşan:** 0
+> **Güncellenme:** 2026-09-11 22:00  
+> **Toplam maç:** 9  |  **Canlı:** 0  |  **Yaklaşan:** 5
 
-## 🔴 CANLI
+## ⏰ YAKLAŞAN
 
-- 🔴 **Venezia vs Fiorentina** — CANLI · `21:45` | İtalya Serie A <https://fixbettv84.com/channel.html?id=ss2>
-- 🔴 **Rennes vs Marsilya** — CANLI · `21:45` | Fransa Ligue 1 <https://fixbettv84.com/channel.html?id=b3>
-- 🔴 **Sevilla vs Valencia** — CANLI · `22:00` | İspanya La Liga <https://fixbettv84.com/channel.html?id=ss>
+- ⏰ **Gallego/Araujo vs Martin/Fernandez** — YAKLAŞAN · `14:00` | Premier Padel <https://fixbettv84.com/channel.html?id=bm1>
+- ⏰ **Coello/Tapia vs Leal/Guerrero** — YAKLAŞAN · `16:00` | Premier Padel <https://fixbettv84.com/channel.html?id=bm1>
+- ⏰ **Senesi/Pons vs Orsi/Zielinski** — YAKLAŞAN · `19:00` | Premier Padel <https://fixbettv84.com/channel.html?id=bm1>
+- ⏰ **Beşiktaş vs Erzurumspor** — YAKLAŞAN · `20:00` | Trendyol Süper Lig ★ **Günün Maçı** <https://fixbettv84.com/channel.html?id=zirve>
+- ⏰ **Sarıyer vs Bandırmaspor** — YAKLAŞAN · `20:00` | Trendyol 1. Lig <https://fixbettv84.com/channel.html?id=trtspor>
 
 ## ✅ BİTTİ
 
-- ✅ **Gallego/Araujo vs Martin/Fernandez** — MS · `14:00` | Premier Padel <https://fixbettv84.com/channel.html?id=bm1>
-- ✅ **Coello/Tapia vs Leal/Guerrero** — MS · `16:00` | Premier Padel <https://fixbettv84.com/channel.html?id=bm1>
-- ✅ **Senesi/Pons vs Orsi/Zielinski** — MS · `19:00` | Premier Padel <https://fixbettv84.com/channel.html?id=bm1>
-- ✅ **Beşiktaş vs Erzurumspor** — MS · `20:00` | Trendyol Süper Lig ★ **Günün Maçı** <https://fixbettv84.com/channel.html?id=zirve>
-- ✅ **Sarıyer vs Bandırmaspor** — MS · `20:00` | Trendyol 1. Lig <https://fixbettv84.com/channel.html?id=trtspor>
 - ✅ **Alonso/Lacabe vs Chingotto/Galan** — MS · `21:00` | Premier Padel <https://fixbettv84.com/channel.html?id=bm1>
+- ✅ **Venezia vs Fiorentina** — MS · `21:45` | İtalya Serie A <https://fixbettv84.com/channel.html?id=ss2>
+- ✅ **Rennes vs Marsilya** — MS · `21:45` | Fransa Ligue 1 <https://fixbettv84.com/channel.html?id=b3>
+- ✅ **Sevilla vs Valencia** — MS · `22:00` | İspanya La Liga <https://fixbettv84.com/channel.html?id=ss>
 
 ## ⭐ GÜNÜN MAÇI
 
-- ✅ **Beşiktaş vs Erzurumspor** — MS · `20:00` | Trendyol Süper Lig ★ **Günün Maçı** <https://fixbettv84.com/channel.html?id=zirve>
+- ⏰ **Beşiktaş vs Erzurumspor** — YAKLAŞAN · `20:00` | Trendyol Süper Lig ★ **Günün Maçı** <https://fixbettv84.com/channel.html?id=zirve>
 
 ---
 ## 🏆 Lig Bazlı
 
 ### Fransa Ligue 1
-- 🔴 Rennes vs Marsilya — 21:45
+- ⏰ Rennes vs Marsilya — 21:45
 
 ### Premier Padel
 - ⏰ Gallego/Araujo vs Martin/Fernandez — 14:00
@@ -42,10 +42,10 @@
 - ⏰ Beşiktaş vs Erzurumspor — 20:00
 
 ### İspanya La Liga
-- 🔴 Sevilla vs Valencia — 22:00
+- ⏰ Sevilla vs Valencia — 22:00
 
 ### İtalya Serie A
-- 🔴 Venezia vs Fiorentina — 21:45
+- ⏰ Venezia vs Fiorentina — 21:45
 
 ---
 ## 📺 7/24 KANALLAR (31)
@@ -104,7 +104,7 @@
 
 ### ⚛️ ATOM SPOR ✅ `https://www.atomsportv514.top`
 - 🟢 **BEIN SPORTS 1** <https://corestream.d72377a9ds0ec71.cfd//beintv/tracks-v1a1/mono.m3u8>
-- 🟢 **BEIN SPORTS 2** <https://corestream.d72377a9ds0ec71.cfd//bein2/tracks-v1a1/mono.m3u8>
+- 🟡 **BEIN SPORTS 2** <https://corestream.d72377a9ds0ec71.cfd//bein2/tracks-v1a1/mono.m3u8>
 - 🟢 **BEIN SPORTS 3** <https://corestream.d72377a9ds0ec71.cfd//bein3/tracks-v1a1/mono.m3u8>
 - 🟢 **BEIN SPORTS 4** <https://corestream.d72377a9ds0ec71.cfd//bein4/tracks-v1a1/mono.m3u8>
 - 🟢 **BEIN SPORTS 5** <https://corestream.d72377a9ds0ec71.cfd//bein5/tracks-v1a1/mono.m3u8>
