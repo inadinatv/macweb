@@ -1,12 +1,11 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-09-11 19:49  
-> **Toplam maç:** 9  |  **Canlı:** 4  |  **Yaklaşan:** 0
+> **Güncellenme:** 2026-09-11 20:11  
+> **Toplam maç:** 9  |  **Canlı:** 3  |  **Yaklaşan:** 0
 
 ## 🔴 CANLI
 
-- 🔴 **Alonso/Lacabe vs Chingotto/Galan** — CANLI · `21:00` | Premier Padel <https://fixbettv84.com/channel.html?id=bm1>
 - 🔴 **Venezia vs Fiorentina** — CANLI · `21:45` | İtalya Serie A <https://fixbettv84.com/channel.html?id=ss2>
 - 🔴 **Rennes vs Marsilya** — CANLI · `21:45` | Fransa Ligue 1 <https://fixbettv84.com/channel.html?id=b3>
 - 🔴 **Sevilla vs Valencia** — CANLI · `22:00` | İspanya La Liga <https://fixbettv84.com/channel.html?id=ss>
@@ -18,6 +17,7 @@
 - ✅ **Senesi/Pons vs Orsi/Zielinski** — MS · `19:00` | Premier Padel <https://fixbettv84.com/channel.html?id=bm1>
 - ✅ **Beşiktaş vs Erzurumspor** — MS · `20:00` | Trendyol Süper Lig ★ **Günün Maçı** <https://fixbettv84.com/channel.html?id=zirve>
 - ✅ **Sarıyer vs Bandırmaspor** — MS · `20:00` | Trendyol 1. Lig <https://fixbettv84.com/channel.html?id=trtspor>
+- ✅ **Alonso/Lacabe vs Chingotto/Galan** — MS · `21:00` | Premier Padel <https://fixbettv84.com/channel.html?id=bm1>
 
 ## ⭐ GÜNÜN MAÇI
 
@@ -33,7 +33,7 @@
 - ⏰ Gallego/Araujo vs Martin/Fernandez — 14:00
 - ⏰ Coello/Tapia vs Leal/Guerrero — 16:00
 - ⏰ Senesi/Pons vs Orsi/Zielinski — 19:00
-- 🔴 Alonso/Lacabe vs Chingotto/Galan — 21:00
+- ⏰ Alonso/Lacabe vs Chingotto/Galan — 21:00
 
 ### Trendyol 1. Lig
 - ⏰ Sarıyer vs Bandırmaspor — 20:00

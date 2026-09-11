@@ -9,36 +9,11 @@
       "fixbettv84.com",
       "fixbettv19.com"
     ],
-    "last_checked": "2026-09-11T19:49:00+00:00",
+    "last_checked": "2026-09-11T20:11:12+00:00",
     "note": "OK",
     "probed": 200
   },
   "live": [
-    {
-      "match_id": "bm1",
-      "home": "Alonso/Lacabe",
-      "away": "Chingotto/Galan",
-      "league": "Premier Padel",
-      "time": "21:00",
-      "sport": "Padel",
-      "is_match_of_day": false,
-      "channel_id": "bm1",
-      "logo_home": "https://premierpadel.com/favicon.ico",
-      "logo_away": "https://premierpadel.com/favicon.ico",
-      "status": "live",
-      "started": true,
-      "raw_event": "21:00 | Premier Padel",
-      "url": "https://fixbettv84.com/channel.html?id=bm1",
-      "fetched_at": "",
-      "status_source": "schedule",
-      "raw_status": "",
-      "score_home": null,
-      "score_away": null,
-      "score_source": "",
-      "score_updated_at": "",
-      "event_id": "",
-      "starts_at": "2026-09-11T21:00:00+03:00"
-    },
     {
       "match_id": "ss2",
       "home": "Venezia",

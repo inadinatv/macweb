@@ -9,13 +9,13 @@
       "fixbettv84.com",
       "fixbettv19.com"
     ],
-    "last_checked": "2026-09-11T19:49:00+00:00",
+    "last_checked": "2026-09-11T20:11:12+00:00",
     "note": "OK",
     "probed": 200
   },
   "date": "2026-09-11",
   "timezone": "Europe/Istanbul",
-  "generated_at": "2026-09-11T22:48:19+03:00",
+  "generated_at": "2026-09-11T23:10:36+03:00",
   "matches": [
     {
       "match_id": "zirve",
@@ -153,7 +153,7 @@
       "channel_id": "bm1",
       "logo_home": "https://premierpadel.com/favicon.ico",
       "logo_away": "https://premierpadel.com/favicon.ico",
-      "status": "live",
+      "status": "finished",
       "started": true,
       "raw_event": "21:00 | Premier Padel",
       "url": "https://fixbettv84.com/channel.html?id=bm1",
