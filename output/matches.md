@@ -1,18 +1,17 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-09-11 13:49  
-> **Toplam maç:** 9  |  **Canlı:** 1  |  **Yaklaşan:** 7
+> **Güncellenme:** 2026-09-11 17:20  
+> **Toplam maç:** 9  |  **Canlı:** 3  |  **Yaklaşan:** 4
 
 ## 🔴 CANLI
 
-- 🔴 **Coello/Tapia vs Leal/Guerrero** — CANLI · `16:00` | Premier Padel <https://fixbettv84.com/channel.html?id=bm1>
+- 🔴 **Senesi/Pons vs Orsi/Zielinski** — CANLI · `19:00` | Premier Padel <https://fixbettv84.com/channel.html?id=bm1>
+- 🔴 **Beşiktaş vs Erzurumspor** — CANLI · `20:00` | Trendyol Süper Lig ★ **Günün Maçı** <https://fixbettv84.com/channel.html?id=zirve>
+- 🔴 **Sarıyer vs Bandırmaspor** — CANLI · `20:00` | Trendyol 1. Lig <https://fixbettv84.com/channel.html?id=trtspor>
 
 ## ⏰ YAKLAŞAN
 
-- ⏰ **Senesi/Pons vs Orsi/Zielinski** — YAKLAŞAN · `19:00` | Premier Padel <https://fixbettv84.com/channel.html?id=bm1>
-- ⏰ **Beşiktaş vs Erzurumspor** — YAKLAŞAN · `20:00` | Trendyol Süper Lig ★ **Günün Maçı** <https://fixbettv84.com/channel.html?id=zirve>
-- ⏰ **Sarıyer vs Bandırmaspor** — YAKLAŞAN · `20:00` | Trendyol 1. Lig <https://fixbettv84.com/channel.html?id=trtspor>
 - ⏰ **Alonso/Lacabe vs Chingotto/Galan** — YAKLAŞAN · `21:00` | Premier Padel <https://fixbettv84.com/channel.html?id=bm1>
 - ⏰ **Venezia vs Fiorentina** — YAKLAŞAN · `21:45` | İtalya Serie A <https://fixbettv84.com/channel.html?id=ss2>
 - ⏰ **Rennes vs Marsilya** — YAKLAŞAN · `21:45` | Fransa Ligue 1 <https://fixbettv84.com/channel.html?id=b3>
@@ -21,10 +20,11 @@
 ## ✅ BİTTİ
 
 - ✅ **Gallego/Araujo vs Martin/Fernandez** — MS · `14:00` | Premier Padel <https://fixbettv84.com/channel.html?id=bm1>
+- ✅ **Coello/Tapia vs Leal/Guerrero** — MS · `16:00` | Premier Padel <https://fixbettv84.com/channel.html?id=bm1>
 
 ## ⭐ GÜNÜN MAÇI
 
-- ⏰ **Beşiktaş vs Erzurumspor** — YAKLAŞAN · `20:00` | Trendyol Süper Lig ★ **Günün Maçı** <https://fixbettv84.com/channel.html?id=zirve>
+- 🔴 **Beşiktaş vs Erzurumspor** — CANLI · `20:00` | Trendyol Süper Lig ★ **Günün Maçı** <https://fixbettv84.com/channel.html?id=zirve>
 
 ---
 ## 🏆 Lig Bazlı
@@ -34,15 +34,15 @@
 
 ### Premier Padel
 - ⏰ Gallego/Araujo vs Martin/Fernandez — 14:00
-- 🔴 Coello/Tapia vs Leal/Guerrero — 16:00
-- ⏰ Senesi/Pons vs Orsi/Zielinski — 19:00
+- ⏰ Coello/Tapia vs Leal/Guerrero — 16:00
+- 🔴 Senesi/Pons vs Orsi/Zielinski — 19:00
 - ⏰ Alonso/Lacabe vs Chingotto/Galan — 21:00
 
 ### Trendyol 1. Lig
-- ⏰ Sarıyer vs Bandırmaspor — 20:00
+- 🔴 Sarıyer vs Bandırmaspor — 20:00
 
 ### Trendyol Süper Lig
-- ⏰ Beşiktaş vs Erzurumspor — 20:00
+- 🔴 Beşiktaş vs Erzurumspor — 20:00
 
 ### İspanya La Liga
 - ⏰ Sevilla vs Valencia — 22:00
@@ -106,13 +106,13 @@
 ## ⚡ EKSTRA PANELLER — m3u8 (79)
 
 ### ⚛️ ATOM SPOR ✅ `https://www.atomsportv514.top`
-- 🟡 **BEIN SPORTS 1** <https://corestream.d72377a9ds0ec24.cfd//beintv/tracks-v1a1/mono.m3u8>
-- 🟡 **BEIN SPORTS 2** <https://corestream.d72377a9ds0ec24.cfd//bein2/tracks-v1a1/mono.m3u8>
-- 🟡 **BEIN SPORTS 3** <https://corestream.d72377a9ds0ec24.cfd//bein3/tracks-v1a1/mono.m3u8>
-- 🟡 **BEIN SPORTS 4** <https://corestream.d72377a9ds0ec24.cfd//bein4/tracks-v1a1/mono.m3u8>
-- ⚪ **BEIN SPORTS 5** <https://tv.atomspor.workers.dev/?ID=bein-sports-5>
-- 🟡 **S SPORT** <https://corestream.d72377a9ds0ec24.cfd//s-sport/tracks-v1a1/mono.m3u8>
-- 🟡 **S SPORT 2** <https://corestream.d72377a9ds0ec24.cfd//s-sport2/tracks-v1a1/mono.m3u8>
+- 🟢 **BEIN SPORTS 1** <https://corestream.d72377a9ds0ec71.cfd//beintv/tracks-v1a1/mono.m3u8>
+- 🟢 **BEIN SPORTS 2** <https://corestream.d72377a9ds0ec71.cfd//bein2/tracks-v1a1/mono.m3u8>
+- 🟢 **BEIN SPORTS 3** <https://corestream.d72377a9ds0ec71.cfd//bein3/tracks-v1a1/mono.m3u8>
+- 🟢 **BEIN SPORTS 4** <https://corestream.d72377a9ds0ec71.cfd//bein4/tracks-v1a1/mono.m3u8>
+- 🟢 **BEIN SPORTS 5** <https://corestream.d72377a9ds0ec71.cfd//bein5/tracks-v1a1/mono.m3u8>
+- 🟢 **S SPORT** <https://corestream.d72377a9ds0ec71.cfd//s-sport/tracks-v1a1/mono.m3u8>
+- 🟢 **S SPORT 2** <https://corestream.d72377a9ds0ec71.cfd//s-sport2/tracks-v1a1/mono.m3u8>
 - ⚪ **S SPORT PLUS** <https://tv.atomspor.workers.dev/?ID=ssport-plus>
 - ⚪ **TIVIBU SPOR 1** <https://tv.atomspor.workers.dev/?ID=tivibu-spor-1>
 - ⚪ **TIVIBU SPOR 2** <https://tv.atomspor.workers.dev/?ID=tivibu-spor-2>
