@@ -577,6 +577,18 @@ def _discover_page_urls(text: str, base_url: str, slug: str) -> list[str]:
     return found
 
 
+def _route_url(page_urls: list[str], route: str) -> str:
+    """Yolu verilen rota ile başlayan (ör. ``/channel/watch/<slug>``) ilk URL'yi döndürür."""
+    if not route:
+        return ""
+    wanted = ("/" + str(route).strip().strip("/")).lower().rstrip("/")
+    for u in page_urls:
+        path = urllib.parse.urlsplit(u).path.lower().rstrip("/")
+        if path == wanted or path.startswith(wanted + "/"):
+            return u
+    return ""
+
+
 def _channel_page_urls(panel: dict[str, Any], ctx: dict[str, Any], slug: str) -> list[str]:
     """Bir kanal için keşfedilmiş ve yapılandırılmış sayfa URL'lerini sırala."""
     if not slug:
@@ -611,7 +623,16 @@ def resolve_channel(panel: dict[str, Any], ctx: dict[str, Any], ch: dict[str, An
            "stream_base": str(ctx.get("stream_base") or "").rstrip("/")}
 
     page_urls = _channel_page_urls(panel, ctx, slug)
-    page_url = page_urls[0] if page_urls else ""
+    # page_route (Taraftarium): kanal bağlantısı tek bir rotaya sabitlenir
+    # (ör. /channel/watch/<slug>). Rota dışındaki adresler (ana sayfadan
+    # keşfedilen /mac-izle/<slug> gibi) yalnızca m3u8 çıkarımı için denenir;
+    # sayfa bağlantısı ve iframe yedeği her zaman sabitlenen rotayı gösterir.
+    pinned_url = _route_url(page_urls, str(panel.get("page_route") or ""))
+    if pinned_url:
+        page_urls = [pinned_url] + [u for u in page_urls if u != pinned_url]
+        page_url = pinned_url
+    else:
+        page_url = page_urls[0] if page_urls else ""
     if panel.get("embed_template"):
         embed_url = _fmt(panel.get("embed_template"), fmt) if slug else ""
     else:
@@ -636,7 +657,9 @@ def resolve_channel(panel: dict[str, Any], ctx: dict[str, Any], ch: dict[str, An
                 resolved_page_url = candidate
                 break
         if resolved:
-            page_url = resolved_page_url
+            # Sabit rota varken bağlantıyi rota dışındaki adrese taşıma.
+            if not pinned_url:
+                page_url = resolved_page_url
             resolved_at = now.isoformat(timespec="seconds")
     # Mahsun/androstream tarzı panellerde kanal adresi {stream_base} şablonuyla kurulur;
     # verify_static açıkken gerçekten HLS listesi döndürdüğü bu turda doğrulanır.
