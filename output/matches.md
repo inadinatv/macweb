@@ -1,57 +1,57 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-09-12 19:49  
-> **Toplam maç:** 24  |  **Canlı:** 4  |  **Yaklaşan:** 1
+> **Güncellenme:** 2026-09-12 21:03  
+> **Toplam maç:** 24  |  **Canlı:** 1  |  **Yaklaşan:** 19
 
 ## 🔴 CANLI
 
-- 🔴 **Paris FC vs Lyon** — CANLI · `21:45` | Fransa Ligue 1 <https://fixbettv84.com/channel.html?id=b4>
-- 🔴 **Atalanta vs Cagliari** — CANLI · `21:45` | İtalya Serie A <https://fixbettv84.com/channel.html?id=ss2>
-- 🔴 **Real Madrid vs Rayo Vallecano** — CANLI · `22:00` | İspanya La Liga <https://fixbettv84.com/channel.html?id=ss>
-- 🔴 **Sunderland vs Arsenal** — CANLI · `22:00` | İngiltere Premier Lig <https://fixbettv84.com/channel.html?id=b3>
+- 🔴 **A.Sabalenka vs E.Rybakina** — CANLI · `23:00` | Amerika Açık Final <https://fixbettv84.com/channel.html?id=eu1>
 
 ## ⏰ YAKLAŞAN
 
-- ⏰ **A.Sabalenka vs E.Rybakina** — YAKLAŞAN · `23:00` | Amerika Açık Final <https://fixbettv84.com/channel.html?id=eu1>
+- ⏰ **Genoa vs Frosinone** — YAKLAŞAN · `16:00` | İtalya Serie A <https://fixbettv84.com/channel.html?id=ss2>
+- ⏰ **Boluspor vs Pendikspor** — YAKLAŞAN · `17:00` | Trendyol 1. Lig <https://fixbettv84.com/channel.html?id=bm1>
+- ⏰ **Vanspor vs Keçiörengücü** — YAKLAŞAN · `17:00` | Trendyol 1. Lig <https://fixbettv84.com/channel.html?id=trtspor>
+- ⏰ **Fransa vs Türkiye** — YAKLAŞAN · `17:00` | CEV Erkekler Avrupa Şampiyonası <https://fixbettv84.com/channel.html?id=trtspor>
+- ⏰ **Aston Villa vs Nottingham Forest** — YAKLAŞAN · `17:00` | İngiltere Premier Lig <https://fixbettv84.com/channel.html?id=bm2>
+- ⏰ **Chelsea vs Hull City** — YAKLAŞAN · `17:00` | İngiltere Premier Lig <https://fixbettv84.com/channel.html?id=b3>
+- ⏰ **Liverpool vs Fulham** — YAKLAŞAN · `17:00` | İngiltere Premier Lig <https://fixbettv84.com/channel.html?id=b5>
+- ⏰ **Eyüpspor vs Ç.Rizespor** — YAKLAŞAN · `17:00` | Trendyol Süper Lig <https://fixbettv84.com/channel.html?id=b2>
+- ⏰ **Samsunspor vs Çorum FK** — YAKLAŞAN · `17:00` | Trendyol Süper Lig <https://fixbettv84.com/channel.html?id=zirve>
+- ⏰ **Osasuna vs Espanyol** — YAKLAŞAN · `17:15` | İspanya La Liga <https://fixbettv84.com/channel.html?id=ss>
+- ⏰ **Lazio vs Milan** — YAKLAŞAN · `19:00` | İtalya Serie A <https://fixbettv84.com/channel.html?id=ss2>
+- ⏰ **Adana Demirspor vs Elazığspor** — YAKLAŞAN · `19:00` | TFF 2. Lig <https://fixbettv84.com/channel.html?id=t1>
+- ⏰ **Athletic Bilbao vs Elche** — YAKLAŞAN · `19:30` | İspanya La Liga <https://fixbettv84.com/channel.html?id=ss>
+- ⏰ **Tottenham vs Everton** — YAKLAŞAN · `19:30` | İngiltere Premier Lig <https://fixbettv84.com/channel.html?id=b3>
+- ⏰ **Konyaspor vs Trabzonspor** — YAKLAŞAN · `20:00` | Trendyol Süper Lig ★ **Günün Maçı** <https://fixbettv84.com/channel.html?id=zirve>
+- ⏰ **Ümraniyespor vs Antalyaspor** — YAKLAŞAN · `20:00` | Trendyol 1. Lig <https://fixbettv84.com/channel.html?id=bm2>
+- ⏰ **Bodrumspor vs Batman Petrol** — YAKLAŞAN · `20:00` | Trendyol 1. Lig <https://fixbettv84.com/channel.html?id=trtspor>
+- ⏰ **Alanyaspor vs Göztepe** — YAKLAŞAN · `20:00` | Trendyol Süper Lig <https://fixbettv84.com/channel.html?id=b2>
+- ⏰ **Casa Pia vs Porto** — YAKLAŞAN · `20:00` | Portekiz Liga NOS <https://fixbettv84.com/channel.html?id=b5>
 
 ## ✅ BİTTİ
 
-- ✅ **Genoa vs Frosinone** — MS · `16:00` | İtalya Serie A <https://fixbettv84.com/channel.html?id=ss2>
-- ✅ **Boluspor vs Pendikspor** — MS · `17:00` | Trendyol 1. Lig <https://fixbettv84.com/channel.html?id=bm1>
-- ✅ **Vanspor vs Keçiörengücü** — MS · `17:00` | Trendyol 1. Lig <https://fixbettv84.com/channel.html?id=trtspor>
-- ✅ **Fransa vs Türkiye** — MS · `17:00` | CEV Erkekler Avrupa Şampiyonası <https://fixbettv84.com/channel.html?id=trtspor>
-- ✅ **Aston Villa vs Nottingham Forest** — MS · `17:00` | İngiltere Premier Lig <https://fixbettv84.com/channel.html?id=bm2>
-- ✅ **Chelsea vs Hull City** — MS · `17:00` | İngiltere Premier Lig <https://fixbettv84.com/channel.html?id=b3>
-- ✅ **Liverpool vs Fulham** — MS · `17:00` | İngiltere Premier Lig <https://fixbettv84.com/channel.html?id=b5>
-- ✅ **Eyüpspor vs Ç.Rizespor** — MS · `17:00` | Trendyol Süper Lig <https://fixbettv84.com/channel.html?id=b2>
-- ✅ **Samsunspor vs Çorum FK** — MS · `17:00` | Trendyol Süper Lig <https://fixbettv84.com/channel.html?id=zirve>
-- ✅ **Osasuna vs Espanyol** — MS · `17:15` | İspanya La Liga <https://fixbettv84.com/channel.html?id=ss>
-- ✅ **Lazio vs Milan** — MS · `19:00` | İtalya Serie A <https://fixbettv84.com/channel.html?id=ss2>
-- ✅ **Adana Demirspor vs Elazığspor** — MS · `19:00` | TFF 2. Lig <https://fixbettv84.com/channel.html?id=t1>
-- ✅ **Athletic Bilbao vs Elche** — MS · `19:30` | İspanya La Liga <https://fixbettv84.com/channel.html?id=ss>
-- ✅ **Tottenham vs Everton** — MS · `19:30` | İngiltere Premier Lig <https://fixbettv84.com/channel.html?id=b3>
-- ✅ **Konyaspor vs Trabzonspor** — MS · `20:00` | Trendyol Süper Lig ★ **Günün Maçı** <https://fixbettv84.com/channel.html?id=zirve>
-- ✅ **Ümraniyespor vs Antalyaspor** — MS · `20:00` | Trendyol 1. Lig <https://fixbettv84.com/channel.html?id=bm2>
-- ✅ **Bodrumspor vs Batman Petrol** — MS · `20:00` | Trendyol 1. Lig <https://fixbettv84.com/channel.html?id=trtspor>
-- ✅ **Alanyaspor vs Göztepe** — MS · `20:00` | Trendyol Süper Lig <https://fixbettv84.com/channel.html?id=b2>
-- ✅ **Casa Pia vs Porto** — MS · `20:00` | Portekiz Liga NOS <https://fixbettv84.com/channel.html?id=b5>
+- ✅ **Paris FC vs Lyon** — MS · `21:45` | Fransa Ligue 1 <https://fixbettv84.com/channel.html?id=b4>
+- ✅ **Atalanta vs Cagliari** — MS · `21:45` | İtalya Serie A <https://fixbettv84.com/channel.html?id=ss2>
+- ✅ **Real Madrid vs Rayo Vallecano** — MS · `22:00` | İspanya La Liga <https://fixbettv84.com/channel.html?id=ss>
+- ✅ **Sunderland vs Arsenal** — MS · `22:00` | İngiltere Premier Lig <https://fixbettv84.com/channel.html?id=b3>
 
 ## ⭐ GÜNÜN MAÇI
 
-- ✅ **Konyaspor vs Trabzonspor** — MS · `20:00` | Trendyol Süper Lig ★ **Günün Maçı** <https://fixbettv84.com/channel.html?id=zirve>
+- ⏰ **Konyaspor vs Trabzonspor** — YAKLAŞAN · `20:00` | Trendyol Süper Lig ★ **Günün Maçı** <https://fixbettv84.com/channel.html?id=zirve>
 
 ---
 ## 🏆 Lig Bazlı
 
 ### Amerika Açık Final
-- ⏰ A.Sabalenka vs E.Rybakina — 23:00
+- 🔴 A.Sabalenka vs E.Rybakina — 23:00
 
 ### CEV Erkekler Avrupa Şampiyonası
 - ⏰ Fransa vs Türkiye — 17:00
 
 ### Fransa Ligue 1
-- 🔴 Paris FC vs Lyon — 21:45
+- ⏰ Paris FC vs Lyon — 21:45
 
 ### Portekiz Liga NOS
 - ⏰ Casa Pia vs Porto — 20:00
@@ -76,17 +76,17 @@
 - ⏰ Chelsea vs Hull City — 17:00
 - ⏰ Liverpool vs Fulham — 17:00
 - ⏰ Tottenham vs Everton — 19:30
-- 🔴 Sunderland vs Arsenal — 22:00
+- ⏰ Sunderland vs Arsenal — 22:00
 
 ### İspanya La Liga
 - ⏰ Osasuna vs Espanyol — 17:15
 - ⏰ Athletic Bilbao vs Elche — 19:30
-- 🔴 Real Madrid vs Rayo Vallecano — 22:00
+- ⏰ Real Madrid vs Rayo Vallecano — 22:00
 
 ### İtalya Serie A
 - ⏰ Genoa vs Frosinone — 16:00
 - ⏰ Lazio vs Milan — 19:00
-- 🔴 Atalanta vs Cagliari — 21:45
+- ⏰ Atalanta vs Cagliari — 21:45
 
 ---
 ## 📺 7/24 KANALLAR (31)
@@ -161,19 +161,19 @@
 
 ### 🎥 SELÇUK SPOR ✅ `https://www.sporcafe-0c2608ad69.xyz`
 - 🟢 **BEIN SPORTS 1** <https://dga1op10s1u3lea.82250d06d39d38.click/live/selcukbeinsports1/playlist.m3u8>
-- 🟢 **BEIN SPORTS 2** <https://dga1op10s1u3lea.82250d06d39d38.click/live/selcukbeinsports2/playlist.m3u8>
+- 🟡 **BEIN SPORTS 2** <https://dga1op10s1u3lea.82250d06d39d38.click/live/selcukbeinsports2/playlist.m3u8>
 - 🟢 **BEIN SPORTS 3** <https://dga1op10s1u3lea.82250d06d39d38.click/live/selcukbeinsports3/playlist.m3u8>
-- 🟢 **BEIN SPORTS 4** <https://dga1op10s1u3lea.82250d06d39d38.click/live/selcukbeinsports4/playlist.m3u8>
-- 🟢 **BEIN SPORTS 5** <https://dga1op10s1u3lea.82250d06d39d38.click/live/selcukbeinsports5/playlist.m3u8>
-- 🟢 **BEIN SPORTS MAX 1** <https://dga1op10s1u3lea.82250d06d39d38.click/live/selcukbeinsportsmax1/playlist.m3u8>
-- 🟢 **BEIN SPORTS MAX 2** <https://dga1op10s1u3lea.82250d06d39d38.click/live/selcukbeinsportsmax2/playlist.m3u8>
-- 🟢 **S SPORT** <https://dga1op10s1u3lea.82250d06d39d38.click/live/selcukssport/playlist.m3u8>
-- 🟢 **S SPORT 2** <https://dga1op10s1u3lea.82250d06d39d38.click/live/selcukssport2/playlist.m3u8>
-- 🟢 **TIVIBU SPOR 1** <https://dga1op10s1u3lea.82250d06d39d38.click/live/selcuktivibuspor1/playlist.m3u8>
+- 🟡 **BEIN SPORTS 4** <https://dga1op10s1u3lea.82250d06d39d38.click/live/selcukbeinsports4/playlist.m3u8>
+- 🟡 **BEIN SPORTS 5** <https://dga1op10s1u3lea.82250d06d39d38.click/live/selcukbeinsports5/playlist.m3u8>
+- 🟡 **BEIN SPORTS MAX 1** <https://dga1op10s1u3lea.82250d06d39d38.click/live/selcukbeinsportsmax1/playlist.m3u8>
+- 🟡 **BEIN SPORTS MAX 2** <https://dga1op10s1u3lea.82250d06d39d38.click/live/selcukbeinsportsmax2/playlist.m3u8>
+- 🟡 **S SPORT** <https://dga1op10s1u3lea.82250d06d39d38.click/live/selcukssport/playlist.m3u8>
+- 🟡 **S SPORT 2** <https://dga1op10s1u3lea.82250d06d39d38.click/live/selcukssport2/playlist.m3u8>
+- 🟡 **TIVIBU SPOR 1** <https://dga1op10s1u3lea.82250d06d39d38.click/live/selcuktivibuspor1/playlist.m3u8>
 - 🟢 **TIVIBU SPOR 2** <https://dga1op10s1u3lea.82250d06d39d38.click/live/selcuktivibuspor2/playlist.m3u8>
-- 🟢 **SMARTSPOR** <https://dga1op10s1u3lea.82250d06d39d38.click/live/selcuksmartspor/playlist.m3u8>
-- 🟢 **A SPOR** <https://dga1op10s1u3lea.82250d06d39d38.click/live/selcukaspor/playlist.m3u8>
-- 🟢 **EUROSPORT 1** <https://dga1op10s1u3lea.82250d06d39d38.click/live/selcukeurosport1/playlist.m3u8>
+- 🟡 **SMARTSPOR** <https://dga1op10s1u3lea.82250d06d39d38.click/live/selcuksmartspor/playlist.m3u8>
+- 🟡 **A SPOR** <https://dga1op10s1u3lea.82250d06d39d38.click/live/selcukaspor/playlist.m3u8>
+- 🟡 **EUROSPORT 1** <https://dga1op10s1u3lea.82250d06d39d38.click/live/selcukeurosport1/playlist.m3u8>
 
 ### 🌴 MAHSUN SPORTS ✅ `https://mahsunsports80.xyz`
 - 🟢 **BEIN SPORTS 1** <https://andro.evrenesoglu99.click/checklist/androstreamlivebs1.m3u8>
