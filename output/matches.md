@@ -1,20 +1,23 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-09-12 12:30  
-> **Toplam maç:** 24  |  **Canlı:** 0  |  **Yaklaşan:** 24
+> **Güncellenme:** 2026-09-12 14:04  
+> **Toplam maç:** 24  |  **Canlı:** 9  |  **Yaklaşan:** 15
+
+## 🔴 CANLI
+
+- 🔴 **Genoa vs Frosinone** — CANLI · `16:00` | İtalya Serie A <https://fixbettv84.com/channel.html?id=ss2>
+- 🔴 **Boluspor vs Pendikspor** — CANLI · `17:00` | Trendyol 1. Lig <https://fixbettv84.com/channel.html?id=bm1>
+- 🔴 **Vanspor vs Keçiörengücü** — CANLI · `17:00` | Trendyol 1. Lig <https://fixbettv84.com/channel.html?id=trtspor>
+- 🔴 **Fransa vs Türkiye** — CANLI · `17:00` | CEV Erkekler Avrupa Şampiyonası <https://fixbettv84.com/channel.html?id=trtspor>
+- 🔴 **Aston Villa vs Nottingham Forest** — CANLI · `17:00` | İngiltere Premier Lig <https://fixbettv84.com/channel.html?id=bm2>
+- 🔴 **Chelsea vs Hull City** — CANLI · `17:00` | İngiltere Premier Lig <https://fixbettv84.com/channel.html?id=b3>
+- 🔴 **Liverpool vs Fulham** — CANLI · `17:00` | İngiltere Premier Lig <https://fixbettv84.com/channel.html?id=b5>
+- 🔴 **Eyüpspor vs Ç.Rizespor** — CANLI · `17:00` | Trendyol Süper Lig <https://fixbettv84.com/channel.html?id=b2>
+- 🔴 **Samsunspor vs Çorum FK** — CANLI · `17:00` | Trendyol Süper Lig <https://fixbettv84.com/channel.html?id=zirve>
 
 ## ⏰ YAKLAŞAN
 
-- ⏰ **Genoa vs Frosinone** — YAKLAŞAN · `16:00` | İtalya Serie A <https://fixbettv84.com/channel.html?id=ss2>
-- ⏰ **Boluspor vs Pendikspor** — YAKLAŞAN · `17:00` | Trendyol 1. Lig <https://fixbettv84.com/channel.html?id=bm1>
-- ⏰ **Vanspor vs Keçiörengücü** — YAKLAŞAN · `17:00` | Trendyol 1. Lig <https://fixbettv84.com/channel.html?id=trtspor>
-- ⏰ **Fransa vs Türkiye** — YAKLAŞAN · `17:00` | CEV Erkekler Avrupa Şampiyonası <https://fixbettv84.com/channel.html?id=trtspor>
-- ⏰ **Aston Villa vs Nottingham Forest** — YAKLAŞAN · `17:00` | İngiltere Premier Lig <https://fixbettv84.com/channel.html?id=bm2>
-- ⏰ **Chelsea vs Hull City** — YAKLAŞAN · `17:00` | İngiltere Premier Lig <https://fixbettv84.com/channel.html?id=b3>
-- ⏰ **Liverpool vs Fulham** — YAKLAŞAN · `17:00` | İngiltere Premier Lig <https://fixbettv84.com/channel.html?id=b5>
-- ⏰ **Eyüpspor vs Ç.Rizespor** — YAKLAŞAN · `17:00` | Trendyol Süper Lig <https://fixbettv84.com/channel.html?id=b2>
-- ⏰ **Samsunspor vs Çorum FK** — YAKLAŞAN · `17:00` | Trendyol Süper Lig <https://fixbettv84.com/channel.html?id=zirve>
 - ⏰ **Osasuna vs Espanyol** — YAKLAŞAN · `17:15` | İspanya La Liga <https://fixbettv84.com/channel.html?id=ss>
 - ⏰ **Lazio vs Milan** — YAKLAŞAN · `19:00` | İtalya Serie A <https://fixbettv84.com/channel.html?id=ss2>
 - ⏰ **Adana Demirspor vs Elazığspor** — YAKLAŞAN · `19:00` | TFF 2. Lig <https://fixbettv84.com/channel.html?id=t1>
@@ -42,7 +45,7 @@
 - ⏰ A.Sabalenka vs E.Rybakina — 23:00
 
 ### CEV Erkekler Avrupa Şampiyonası
-- ⏰ Fransa vs Türkiye — 17:00
+- 🔴 Fransa vs Türkiye — 17:00
 
 ### Fransa Ligue 1
 - ⏰ Paris FC vs Lyon — 21:45
@@ -54,21 +57,21 @@
 - ⏰ Adana Demirspor vs Elazığspor — 19:00
 
 ### Trendyol 1. Lig
-- ⏰ Boluspor vs Pendikspor — 17:00
-- ⏰ Vanspor vs Keçiörengücü — 17:00
+- 🔴 Boluspor vs Pendikspor — 17:00
+- 🔴 Vanspor vs Keçiörengücü — 17:00
 - ⏰ Ümraniyespor vs Antalyaspor — 20:00
 - ⏰ Bodrumspor vs Batman Petrol — 20:00
 
 ### Trendyol Süper Lig
-- ⏰ Eyüpspor vs Ç.Rizespor — 17:00
-- ⏰ Samsunspor vs Çorum FK — 17:00
+- 🔴 Eyüpspor vs Ç.Rizespor — 17:00
+- 🔴 Samsunspor vs Çorum FK — 17:00
 - ⏰ Konyaspor vs Trabzonspor — 20:00
 - ⏰ Alanyaspor vs Göztepe — 20:00
 
 ### İngiltere Premier Lig
-- ⏰ Aston Villa vs Nottingham Forest — 17:00
-- ⏰ Chelsea vs Hull City — 17:00
-- ⏰ Liverpool vs Fulham — 17:00
+- 🔴 Aston Villa vs Nottingham Forest — 17:00
+- 🔴 Chelsea vs Hull City — 17:00
+- 🔴 Liverpool vs Fulham — 17:00
 - ⏰ Tottenham vs Everton — 19:30
 - ⏰ Sunderland vs Arsenal — 22:00
 
@@ -78,7 +81,7 @@
 - ⏰ Real Madrid vs Rayo Vallecano — 22:00
 
 ### İtalya Serie A
-- ⏰ Genoa vs Frosinone — 16:00
+- 🔴 Genoa vs Frosinone — 16:00
 - ⏰ Lazio vs Milan — 19:00
 - ⏰ Atalanta vs Cagliari — 21:45
 
