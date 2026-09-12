@@ -1,23 +1,18 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-09-12 18:54  
-> **Toplam maç:** 24  |  **Canlı:** 7  |  **Yaklaşan:** 3
+> **Güncellenme:** 2026-09-12 19:49  
+> **Toplam maç:** 24  |  **Canlı:** 4  |  **Yaklaşan:** 1
 
 ## 🔴 CANLI
 
-- 🔴 **Konyaspor vs Trabzonspor** — CANLI · `20:00` | Trendyol Süper Lig ★ **Günün Maçı** <https://fixbettv84.com/channel.html?id=zirve>
-- 🔴 **Ümraniyespor vs Antalyaspor** — CANLI · `20:00` | Trendyol 1. Lig <https://fixbettv84.com/channel.html?id=bm2>
-- 🔴 **Bodrumspor vs Batman Petrol** — CANLI · `20:00` | Trendyol 1. Lig <https://fixbettv84.com/channel.html?id=trtspor>
-- 🔴 **Alanyaspor vs Göztepe** — CANLI · `20:00` | Trendyol Süper Lig <https://fixbettv84.com/channel.html?id=b2>
-- 🔴 **Casa Pia vs Porto** — CANLI · `20:00` | Portekiz Liga NOS <https://fixbettv84.com/channel.html?id=b5>
 - 🔴 **Paris FC vs Lyon** — CANLI · `21:45` | Fransa Ligue 1 <https://fixbettv84.com/channel.html?id=b4>
 - 🔴 **Atalanta vs Cagliari** — CANLI · `21:45` | İtalya Serie A <https://fixbettv84.com/channel.html?id=ss2>
+- 🔴 **Real Madrid vs Rayo Vallecano** — CANLI · `22:00` | İspanya La Liga <https://fixbettv84.com/channel.html?id=ss>
+- 🔴 **Sunderland vs Arsenal** — CANLI · `22:00` | İngiltere Premier Lig <https://fixbettv84.com/channel.html?id=b3>
 
 ## ⏰ YAKLAŞAN
 
-- ⏰ **Real Madrid vs Rayo Vallecano** — YAKLAŞAN · `22:00` | İspanya La Liga <https://fixbettv84.com/channel.html?id=ss>
-- ⏰ **Sunderland vs Arsenal** — YAKLAŞAN · `22:00` | İngiltere Premier Lig <https://fixbettv84.com/channel.html?id=b3>
 - ⏰ **A.Sabalenka vs E.Rybakina** — YAKLAŞAN · `23:00` | Amerika Açık Final <https://fixbettv84.com/channel.html?id=eu1>
 
 ## ✅ BİTTİ
@@ -36,10 +31,15 @@
 - ✅ **Adana Demirspor vs Elazığspor** — MS · `19:00` | TFF 2. Lig <https://fixbettv84.com/channel.html?id=t1>
 - ✅ **Athletic Bilbao vs Elche** — MS · `19:30` | İspanya La Liga <https://fixbettv84.com/channel.html?id=ss>
 - ✅ **Tottenham vs Everton** — MS · `19:30` | İngiltere Premier Lig <https://fixbettv84.com/channel.html?id=b3>
+- ✅ **Konyaspor vs Trabzonspor** — MS · `20:00` | Trendyol Süper Lig ★ **Günün Maçı** <https://fixbettv84.com/channel.html?id=zirve>
+- ✅ **Ümraniyespor vs Antalyaspor** — MS · `20:00` | Trendyol 1. Lig <https://fixbettv84.com/channel.html?id=bm2>
+- ✅ **Bodrumspor vs Batman Petrol** — MS · `20:00` | Trendyol 1. Lig <https://fixbettv84.com/channel.html?id=trtspor>
+- ✅ **Alanyaspor vs Göztepe** — MS · `20:00` | Trendyol Süper Lig <https://fixbettv84.com/channel.html?id=b2>
+- ✅ **Casa Pia vs Porto** — MS · `20:00` | Portekiz Liga NOS <https://fixbettv84.com/channel.html?id=b5>
 
 ## ⭐ GÜNÜN MAÇI
 
-- 🔴 **Konyaspor vs Trabzonspor** — CANLI · `20:00` | Trendyol Süper Lig ★ **Günün Maçı** <https://fixbettv84.com/channel.html?id=zirve>
+- ✅ **Konyaspor vs Trabzonspor** — MS · `20:00` | Trendyol Süper Lig ★ **Günün Maçı** <https://fixbettv84.com/channel.html?id=zirve>
 
 ---
 ## 🏆 Lig Bazlı
@@ -54,7 +54,7 @@
 - 🔴 Paris FC vs Lyon — 21:45
 
 ### Portekiz Liga NOS
-- 🔴 Casa Pia vs Porto — 20:00
+- ⏰ Casa Pia vs Porto — 20:00
 
 ### TFF 2. Lig
 - ⏰ Adana Demirspor vs Elazığspor — 19:00
@@ -62,26 +62,26 @@
 ### Trendyol 1. Lig
 - ⏰ Boluspor vs Pendikspor — 17:00
 - ⏰ Vanspor vs Keçiörengücü — 17:00
-- 🔴 Ümraniyespor vs Antalyaspor — 20:00
-- 🔴 Bodrumspor vs Batman Petrol — 20:00
+- ⏰ Ümraniyespor vs Antalyaspor — 20:00
+- ⏰ Bodrumspor vs Batman Petrol — 20:00
 
 ### Trendyol Süper Lig
 - ⏰ Eyüpspor vs Ç.Rizespor — 17:00
 - ⏰ Samsunspor vs Çorum FK — 17:00
-- 🔴 Konyaspor vs Trabzonspor — 20:00
-- 🔴 Alanyaspor vs Göztepe — 20:00
+- ⏰ Konyaspor vs Trabzonspor — 20:00
+- ⏰ Alanyaspor vs Göztepe — 20:00
 
 ### İngiltere Premier Lig
 - ⏰ Aston Villa vs Nottingham Forest — 17:00
 - ⏰ Chelsea vs Hull City — 17:00
 - ⏰ Liverpool vs Fulham — 17:00
 - ⏰ Tottenham vs Everton — 19:30
-- ⏰ Sunderland vs Arsenal — 22:00
+- 🔴 Sunderland vs Arsenal — 22:00
 
 ### İspanya La Liga
 - ⏰ Osasuna vs Espanyol — 17:15
 - ⏰ Athletic Bilbao vs Elche — 19:30
-- ⏰ Real Madrid vs Rayo Vallecano — 22:00
+- 🔴 Real Madrid vs Rayo Vallecano — 22:00
 
 ### İtalya Serie A
 - ⏰ Genoa vs Frosinone — 16:00
