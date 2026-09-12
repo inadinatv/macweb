@@ -1,7 +1,7 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-09-12 21:03  
+> **Güncellenme:** 2026-09-12 22:57  
 > **Toplam maç:** 24  |  **Canlı:** 1  |  **Yaklaşan:** 19
 
 ## 🔴 CANLI
@@ -161,19 +161,19 @@
 
 ### 🎥 SELÇUK SPOR ✅ `https://www.sporcafe-0c2608ad69.xyz`
 - 🟢 **BEIN SPORTS 1** <https://dga1op10s1u3lea.82250d06d39d38.click/live/selcukbeinsports1/playlist.m3u8>
-- 🟡 **BEIN SPORTS 2** <https://dga1op10s1u3lea.82250d06d39d38.click/live/selcukbeinsports2/playlist.m3u8>
+- 🟢 **BEIN SPORTS 2** <https://dga1op10s1u3lea.82250d06d39d38.click/live/selcukbeinsports2/playlist.m3u8>
 - 🟢 **BEIN SPORTS 3** <https://dga1op10s1u3lea.82250d06d39d38.click/live/selcukbeinsports3/playlist.m3u8>
-- 🟡 **BEIN SPORTS 4** <https://dga1op10s1u3lea.82250d06d39d38.click/live/selcukbeinsports4/playlist.m3u8>
-- 🟡 **BEIN SPORTS 5** <https://dga1op10s1u3lea.82250d06d39d38.click/live/selcukbeinsports5/playlist.m3u8>
-- 🟡 **BEIN SPORTS MAX 1** <https://dga1op10s1u3lea.82250d06d39d38.click/live/selcukbeinsportsmax1/playlist.m3u8>
-- 🟡 **BEIN SPORTS MAX 2** <https://dga1op10s1u3lea.82250d06d39d38.click/live/selcukbeinsportsmax2/playlist.m3u8>
-- 🟡 **S SPORT** <https://dga1op10s1u3lea.82250d06d39d38.click/live/selcukssport/playlist.m3u8>
-- 🟡 **S SPORT 2** <https://dga1op10s1u3lea.82250d06d39d38.click/live/selcukssport2/playlist.m3u8>
-- 🟡 **TIVIBU SPOR 1** <https://dga1op10s1u3lea.82250d06d39d38.click/live/selcuktivibuspor1/playlist.m3u8>
+- 🟢 **BEIN SPORTS 4** <https://dga1op10s1u3lea.82250d06d39d38.click/live/selcukbeinsports4/playlist.m3u8>
+- 🟢 **BEIN SPORTS 5** <https://dga1op10s1u3lea.82250d06d39d38.click/live/selcukbeinsports5/playlist.m3u8>
+- 🟢 **BEIN SPORTS MAX 1** <https://dga1op10s1u3lea.82250d06d39d38.click/live/selcukbeinsportsmax1/playlist.m3u8>
+- 🟢 **BEIN SPORTS MAX 2** <https://dga1op10s1u3lea.82250d06d39d38.click/live/selcukbeinsportsmax2/playlist.m3u8>
+- 🟢 **S SPORT** <https://dga1op10s1u3lea.82250d06d39d38.click/live/selcukssport/playlist.m3u8>
+- 🟢 **S SPORT 2** <https://dga1op10s1u3lea.82250d06d39d38.click/live/selcukssport2/playlist.m3u8>
+- 🟢 **TIVIBU SPOR 1** <https://dga1op10s1u3lea.82250d06d39d38.click/live/selcuktivibuspor1/playlist.m3u8>
 - 🟢 **TIVIBU SPOR 2** <https://dga1op10s1u3lea.82250d06d39d38.click/live/selcuktivibuspor2/playlist.m3u8>
-- 🟡 **SMARTSPOR** <https://dga1op10s1u3lea.82250d06d39d38.click/live/selcuksmartspor/playlist.m3u8>
-- 🟡 **A SPOR** <https://dga1op10s1u3lea.82250d06d39d38.click/live/selcukaspor/playlist.m3u8>
-- 🟡 **EUROSPORT 1** <https://dga1op10s1u3lea.82250d06d39d38.click/live/selcukeurosport1/playlist.m3u8>
+- 🟢 **SMARTSPOR** <https://dga1op10s1u3lea.82250d06d39d38.click/live/selcuksmartspor/playlist.m3u8>
+- 🟢 **A SPOR** <https://dga1op10s1u3lea.82250d06d39d38.click/live/selcukaspor/playlist.m3u8>
+- 🟢 **EUROSPORT 1** <https://dga1op10s1u3lea.82250d06d39d38.click/live/selcukeurosport1/playlist.m3u8>
 
 ### 🌴 MAHSUN SPORTS ✅ `https://mahsunsports80.xyz`
 - 🟢 **BEIN SPORTS 1** <https://andro.evrenesoglu99.click/checklist/androstreamlivebs1.m3u8>
