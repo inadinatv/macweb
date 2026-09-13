@@ -1,22 +1,22 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-09-13 13:32  
-> **Toplam maç:** 21  |  **Canlı:** 3  |  **Yaklaşan:** 18
+> **Güncellenme:** 2026-09-13 14:27  
+> **Toplam maç:** 21  |  **Canlı:** 8  |  **Yaklaşan:** 13
 
 ## 🔴 CANLI
 
 - 🔴 **Lille vs Troyes** — CANLI · `16:00` | Fransa Ligue 1 <https://fixbettv84.com/channel.html?id=b5>
 - 🔴 **Lecce vs Monza** — CANLI · `16:00` | İtalya Serie A <https://fixbettv84.com/channel.html?id=ss2>
 - 🔴 **Coventry vs Brighton** — CANLI · `16:00` | İngiltere Premier Lig <https://fixbettv84.com/channel.html?id=b3>
+- 🔴 **Iğdırspor vs Mardin 1969** — CANLI · `17:00` | Trendyol 1. Lig <https://fixbettv84.com/channel.html?id=b2>
+- 🔴 **Sivasspor vs Muğlaspor** — CANLI · `17:00` | Trendyol 1. Lig <https://fixbettv84.com/channel.html?id=trtspor>
+- 🔴 **İsviçre vs Türkiye** — CANLI · `17:00` | CEV Erkekler Avrupa Şampiyonası <https://fixbettv84.com/channel.html?id=trtspor>
+- 🔴 **Gençlerbirliği vs Kasımpaşa** — CANLI · `17:00` | Trendyol Süper Lig <https://fixbettv84.com/channel.html?id=zirve>
+- 🔴 **Levante vs Barcelona** — CANLI · `17:15` | İspanya La Liga <https://fixbettv84.com/channel.html?id=ss>
 
 ## ⏰ YAKLAŞAN
 
-- ⏰ **Iğdırspor vs Mardin 1969** — YAKLAŞAN · `17:00` | Trendyol 1. Lig <https://fixbettv84.com/channel.html?id=b2>
-- ⏰ **Sivasspor vs Muğlaspor** — YAKLAŞAN · `17:00` | Trendyol 1. Lig <https://fixbettv84.com/channel.html?id=trtspor>
-- ⏰ **İsviçre vs Türkiye** — YAKLAŞAN · `17:00` | CEV Erkekler Avrupa Şampiyonası <https://fixbettv84.com/channel.html?id=trtspor>
-- ⏰ **Gençlerbirliği vs Kasımpaşa** — YAKLAŞAN · `17:00` | Trendyol Süper Lig <https://fixbettv84.com/channel.html?id=zirve>
-- ⏰ **Levante vs Barcelona** — YAKLAŞAN · `17:15` | İspanya La Liga <https://fixbettv84.com/channel.html?id=ss>
 - ⏰ **Manchester Utd vs Manchester City** — YAKLAŞAN · `18:30` | İngiltere Premier Lig <https://fixbettv84.com/channel.html?id=b3>
 - ⏰ **Napoli vs Bologna** — YAKLAŞAN · `19:00` | İtalya Serie A <https://fixbettv84.com/channel.html?id=ss2>
 - ⏰ **Getafe vs Deportivo** — YAKLAŞAN · `19:30` | İspanya La Liga <https://fixbettv84.com/channel.html?id=ss>
@@ -42,7 +42,7 @@
 - ⏰ Mirassol vs Vitoria — 22:00
 
 ### CEV Erkekler Avrupa Şampiyonası
-- ⏰ İsviçre vs Türkiye — 17:00
+- 🔴 İsviçre vs Türkiye — 17:00
 
 ### Fransa Ligue 1
 - 🔴 Lille vs Troyes — 16:00
@@ -53,13 +53,13 @@
 - ⏰ Famalicao vs Sporting Lisbon — 22:30
 
 ### Trendyol 1. Lig
-- ⏰ Iğdırspor vs Mardin 1969 — 17:00
-- ⏰ Sivasspor vs Muğlaspor — 17:00
+- 🔴 Iğdırspor vs Mardin 1969 — 17:00
+- 🔴 Sivasspor vs Muğlaspor — 17:00
 - ⏰ Karagümrük vs Manisa FK — 20:00
 - ⏰ Bursaspor vs Esenler Erokspor — 20:00
 
 ### Trendyol Süper Lig
-- ⏰ Gençlerbirliği vs Kasımpaşa — 17:00
+- 🔴 Gençlerbirliği vs Kasımpaşa — 17:00
 - ⏰ Galatasaray vs Kocaelispor — 20:00
 - ⏰ Amedspor vs İstanbul Başakşehir — 20:00
 
@@ -68,7 +68,7 @@
 - ⏰ Manchester Utd vs Manchester City — 18:30
 
 ### İspanya La Liga
-- ⏰ Levante vs Barcelona — 17:15
+- 🔴 Levante vs Barcelona — 17:15
 - ⏰ Getafe vs Deportivo — 19:30
 - ⏰ Real Sociedad vs Atletico Madrid — 22:00
 
