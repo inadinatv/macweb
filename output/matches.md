@@ -1,27 +1,16 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-09-13 17:30  
-> **Toplam maç:** 21  |  **Canlı:** 8  |  **Yaklaşan:** 5
+> **Güncellenme:** 2026-09-13 19:40  
+> **Toplam maç:** 21  |  **Canlı:** 5  |  **Yaklaşan:** 0
 
 ## 🔴 CANLI
 
-- 🔴 **Manchester Utd vs Manchester City** — CANLI · `18:30` | İngiltere Premier Lig <https://fixbettv84.com/channel.html?id=b3>
-- 🔴 **Napoli vs Bologna** — CANLI · `19:00` | İtalya Serie A <https://fixbettv84.com/channel.html?id=ss2>
-- 🔴 **Getafe vs Deportivo** — CANLI · `19:30` | İspanya La Liga <https://fixbettv84.com/channel.html?id=ss>
-- 🔴 **Galatasaray vs Kocaelispor** — CANLI · `20:00` | Trendyol Süper Lig ★ **Günün Maçı** <https://fixbettv84.com/channel.html?id=zirve>
-- 🔴 **Karagümrük vs Manisa FK** — CANLI · `20:00` | Trendyol 1. Lig <https://fixbettv84.com/channel.html?id=bm2>
-- 🔴 **Bursaspor vs Esenler Erokspor** — CANLI · `20:00` | Trendyol 1. Lig <https://fixbettv84.com/channel.html?id=trtspor>
-- 🔴 **Amedspor vs İstanbul Başakşehir** — CANLI · `20:00` | Trendyol Süper Lig <https://fixbettv84.com/channel.html?id=b2>
-- 🔴 **Benfica vs Gil Vicente** — CANLI · `20:00` | Portekiz Liga NOS <https://fixbettv84.com/channel.html?id=b5>
-
-## ⏰ YAKLAŞAN
-
-- ⏰ **Brest vs PSG** — YAKLAŞAN · `21:45` | Fransa Ligue 1 <https://fixbettv84.com/channel.html?id=b3>
-- ⏰ **Sassuolo vs Juventus** — YAKLAŞAN · `21:45` | İtalya Serie A <https://fixbettv84.com/channel.html?id=ss2>
-- ⏰ **Real Sociedad vs Atletico Madrid** — YAKLAŞAN · `22:00` | İspanya La Liga <https://fixbettv84.com/channel.html?id=ss>
-- ⏰ **Mirassol vs Vitoria** — YAKLAŞAN · `22:00` | Brezilya Serie A <https://fixbettv84.com/channel.html?id=smarts>
-- ⏰ **Famalicao vs Sporting Lisbon** — YAKLAŞAN · `22:30` | Portekiz Liga NOS <https://fixbettv84.com/channel.html?id=b5>
+- 🔴 **Brest vs PSG** — CANLI · `21:45` | Fransa Ligue 1 <https://fixbettv84.com/channel.html?id=b3>
+- 🔴 **Sassuolo vs Juventus** — CANLI · `21:45` | İtalya Serie A <https://fixbettv84.com/channel.html?id=ss2>
+- 🔴 **Real Sociedad vs Atletico Madrid** — CANLI · `22:00` | İspanya La Liga <https://fixbettv84.com/channel.html?id=ss>
+- 🔴 **Mirassol vs Vitoria** — CANLI · `22:00` | Brezilya Serie A <https://fixbettv84.com/channel.html?id=smarts>
+- 🔴 **Famalicao vs Sporting Lisbon** — CANLI · `22:30` | Portekiz Liga NOS <https://fixbettv84.com/channel.html?id=b5>
 
 ## ✅ BİTTİ
 
@@ -33,52 +22,60 @@
 - ✅ **İsviçre vs Türkiye** — MS · `17:00` | CEV Erkekler Avrupa Şampiyonası <https://fixbettv84.com/channel.html?id=trtspor>
 - ✅ **Gençlerbirliği vs Kasımpaşa** — MS · `17:00` | Trendyol Süper Lig <https://fixbettv84.com/channel.html?id=zirve>
 - ✅ **Levante vs Barcelona** — MS · `17:15` | İspanya La Liga <https://fixbettv84.com/channel.html?id=ss>
+- ✅ **Manchester Utd vs Manchester City** — MS · `18:30` | İngiltere Premier Lig <https://fixbettv84.com/channel.html?id=b3>
+- ✅ **Napoli vs Bologna** — MS · `19:00` | İtalya Serie A <https://fixbettv84.com/channel.html?id=ss2>
+- ✅ **Getafe vs Deportivo** — MS · `19:30` | İspanya La Liga <https://fixbettv84.com/channel.html?id=ss>
+- ✅ **Galatasaray vs Kocaelispor** — MS · `20:00` | Trendyol Süper Lig ★ **Günün Maçı** <https://fixbettv84.com/channel.html?id=zirve>
+- ✅ **Karagümrük vs Manisa FK** — MS · `20:00` | Trendyol 1. Lig <https://fixbettv84.com/channel.html?id=bm2>
+- ✅ **Bursaspor vs Esenler Erokspor** — MS · `20:00` | Trendyol 1. Lig <https://fixbettv84.com/channel.html?id=trtspor>
+- ✅ **Amedspor vs İstanbul Başakşehir** — MS · `20:00` | Trendyol Süper Lig <https://fixbettv84.com/channel.html?id=b2>
+- ✅ **Benfica vs Gil Vicente** — MS · `20:00` | Portekiz Liga NOS <https://fixbettv84.com/channel.html?id=b5>
 
 ## ⭐ GÜNÜN MAÇI
 
-- 🔴 **Galatasaray vs Kocaelispor** — CANLI · `20:00` | Trendyol Süper Lig ★ **Günün Maçı** <https://fixbettv84.com/channel.html?id=zirve>
+- ✅ **Galatasaray vs Kocaelispor** — MS · `20:00` | Trendyol Süper Lig ★ **Günün Maçı** <https://fixbettv84.com/channel.html?id=zirve>
 
 ---
 ## 🏆 Lig Bazlı
 
 ### Brezilya Serie A
-- ⏰ Mirassol vs Vitoria — 22:00
+- 🔴 Mirassol vs Vitoria — 22:00
 
 ### CEV Erkekler Avrupa Şampiyonası
 - ⏰ İsviçre vs Türkiye — 17:00
 
 ### Fransa Ligue 1
 - ⏰ Lille vs Troyes — 16:00
-- ⏰ Brest vs PSG — 21:45
+- 🔴 Brest vs PSG — 21:45
 
 ### Portekiz Liga NOS
-- 🔴 Benfica vs Gil Vicente — 20:00
-- ⏰ Famalicao vs Sporting Lisbon — 22:30
+- ⏰ Benfica vs Gil Vicente — 20:00
+- 🔴 Famalicao vs Sporting Lisbon — 22:30
 
 ### Trendyol 1. Lig
 - ⏰ Iğdırspor vs Mardin 1969 — 17:00
 - ⏰ Sivasspor vs Muğlaspor — 17:00
-- 🔴 Karagümrük vs Manisa FK — 20:00
-- 🔴 Bursaspor vs Esenler Erokspor — 20:00
+- ⏰ Karagümrük vs Manisa FK — 20:00
+- ⏰ Bursaspor vs Esenler Erokspor — 20:00
 
 ### Trendyol Süper Lig
 - ⏰ Gençlerbirliği vs Kasımpaşa — 17:00
-- 🔴 Galatasaray vs Kocaelispor — 20:00
-- 🔴 Amedspor vs İstanbul Başakşehir — 20:00
+- ⏰ Galatasaray vs Kocaelispor — 20:00
+- ⏰ Amedspor vs İstanbul Başakşehir — 20:00
 
 ### İngiltere Premier Lig
 - ⏰ Coventry vs Brighton — 16:00
-- 🔴 Manchester Utd vs Manchester City — 18:30
+- ⏰ Manchester Utd vs Manchester City — 18:30
 
 ### İspanya La Liga
 - ⏰ Levante vs Barcelona — 17:15
-- 🔴 Getafe vs Deportivo — 19:30
-- ⏰ Real Sociedad vs Atletico Madrid — 22:00
+- ⏰ Getafe vs Deportivo — 19:30
+- 🔴 Real Sociedad vs Atletico Madrid — 22:00
 
 ### İtalya Serie A
 - ⏰ Lecce vs Monza — 16:00
-- 🔴 Napoli vs Bologna — 19:00
-- ⏰ Sassuolo vs Juventus — 21:45
+- ⏰ Napoli vs Bologna — 19:00
+- 🔴 Sassuolo vs Juventus — 21:45
 
 ---
 ## 📺 7/24 KANALLAR (31)
