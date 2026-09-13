@@ -1,12 +1,8 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-09-12 22:57  
-> **Toplam maç:** 24  |  **Canlı:** 1  |  **Yaklaşan:** 19
-
-## 🔴 CANLI
-
-- 🔴 **A.Sabalenka vs E.Rybakina** — CANLI · `23:00` | Amerika Açık Final <https://fixbettv84.com/channel.html?id=eu1>
+> **Güncellenme:** 2026-09-13 00:30  
+> **Toplam maç:** 24  |  **Canlı:** 0  |  **Yaklaşan:** 24
 
 ## ⏰ YAKLAŞAN
 
@@ -29,13 +25,11 @@
 - ⏰ **Bodrumspor vs Batman Petrol** — YAKLAŞAN · `20:00` | Trendyol 1. Lig <https://fixbettv84.com/channel.html?id=trtspor>
 - ⏰ **Alanyaspor vs Göztepe** — YAKLAŞAN · `20:00` | Trendyol Süper Lig <https://fixbettv84.com/channel.html?id=b2>
 - ⏰ **Casa Pia vs Porto** — YAKLAŞAN · `20:00` | Portekiz Liga NOS <https://fixbettv84.com/channel.html?id=b5>
-
-## ✅ BİTTİ
-
-- ✅ **Paris FC vs Lyon** — MS · `21:45` | Fransa Ligue 1 <https://fixbettv84.com/channel.html?id=b4>
-- ✅ **Atalanta vs Cagliari** — MS · `21:45` | İtalya Serie A <https://fixbettv84.com/channel.html?id=ss2>
-- ✅ **Real Madrid vs Rayo Vallecano** — MS · `22:00` | İspanya La Liga <https://fixbettv84.com/channel.html?id=ss>
-- ✅ **Sunderland vs Arsenal** — MS · `22:00` | İngiltere Premier Lig <https://fixbettv84.com/channel.html?id=b3>
+- ⏰ **Paris FC vs Lyon** — YAKLAŞAN · `21:45` | Fransa Ligue 1 <https://fixbettv84.com/channel.html?id=b4>
+- ⏰ **Atalanta vs Cagliari** — YAKLAŞAN · `21:45` | İtalya Serie A <https://fixbettv84.com/channel.html?id=ss2>
+- ⏰ **Real Madrid vs Rayo Vallecano** — YAKLAŞAN · `22:00` | İspanya La Liga <https://fixbettv84.com/channel.html?id=ss>
+- ⏰ **Sunderland vs Arsenal** — YAKLAŞAN · `22:00` | İngiltere Premier Lig <https://fixbettv84.com/channel.html?id=b3>
+- ⏰ **A.Sabalenka vs E.Rybakina** — YAKLAŞAN · `23:00` | Amerika Açık Final <https://fixbettv84.com/channel.html?id=eu1>
 
 ## ⭐ GÜNÜN MAÇI
 
@@ -45,7 +39,7 @@
 ## 🏆 Lig Bazlı
 
 ### Amerika Açık Final
-- 🔴 A.Sabalenka vs E.Rybakina — 23:00
+- ⏰ A.Sabalenka vs E.Rybakina — 23:00
 
 ### CEV Erkekler Avrupa Şampiyonası
 - ⏰ Fransa vs Türkiye — 17:00
@@ -148,7 +142,7 @@
 - 🟢 **BEIN SPORTS 2** <https://corestream.d72377a9ds0ec71.cfd//bein2/tracks-v1a1/mono.m3u8>
 - 🟢 **BEIN SPORTS 3** <https://corestream.d72377a9ds0ec71.cfd//bein3/tracks-v1a1/mono.m3u8>
 - 🟢 **BEIN SPORTS 4** <https://corestream.d72377a9ds0ec71.cfd//bein4/tracks-v1a1/mono.m3u8>
-- 🟡 **BEIN SPORTS 5** <https://corestream.d72377a9ds0ec71.cfd//bein5/tracks-v1a1/mono.m3u8>
+- ⚪ **BEIN SPORTS 5** <https://tv.atomspor.workers.dev/?ID=bein-sports-5>
 - 🟢 **S SPORT** <https://corestream.d72377a9ds0ec71.cfd//s-sport/tracks-v1a1/mono.m3u8>
 - 🟢 **S SPORT 2** <https://corestream.d72377a9ds0ec71.cfd//s-sport2/tracks-v1a1/mono.m3u8>
 - ⚪ **S SPORT PLUS** <https://tv.atomspor.workers.dev/?ID=ssport-plus>

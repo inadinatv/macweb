@@ -9,35 +9,9 @@
       "fixbettv84.com",
       "fixbettv19.com"
     ],
-    "last_checked": "2026-09-12T22:57:10+00:00",
+    "last_checked": "2026-09-13T00:30:20+00:00",
     "note": "OK",
     "probed": 200
   },
-  "live": [
-    {
-      "match_id": "eu1",
-      "home": "A.Sabalenka",
-      "away": "E.Rybakina",
-      "league": "Amerika Açık Final",
-      "time": "23:00",
-      "sport": "Tenis",
-      "is_match_of_day": false,
-      "channel_id": "eu1",
-      "logo_home": "https://static.flashscore.com/res/image/data/xhwEtyEa-I9HZAz1R.png",
-      "logo_away": "https://static.flashscore.com/res/image/data/nwc71xXg-2wyL104C.png",
-      "status": "live",
-      "started": true,
-      "raw_event": "23:00 | Amerika Açık Final",
-      "url": "https://fixbettv84.com/channel.html?id=eu1",
-      "fetched_at": "",
-      "status_source": "schedule",
-      "raw_status": "",
-      "score_home": null,
-      "score_away": null,
-      "score_source": "",
-      "score_updated_at": "",
-      "event_id": "",
-      "starts_at": "2026-09-12T23:00:00+03:00"
-    }
-  ]
+  "live": []
 }
