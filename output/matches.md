@@ -1,14 +1,17 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-09-13 10:18  
-> **Toplam maç:** 21  |  **Canlı:** 0  |  **Yaklaşan:** 21
+> **Güncellenme:** 2026-09-13 13:32  
+> **Toplam maç:** 21  |  **Canlı:** 3  |  **Yaklaşan:** 18
+
+## 🔴 CANLI
+
+- 🔴 **Lille vs Troyes** — CANLI · `16:00` | Fransa Ligue 1 <https://fixbettv84.com/channel.html?id=b5>
+- 🔴 **Lecce vs Monza** — CANLI · `16:00` | İtalya Serie A <https://fixbettv84.com/channel.html?id=ss2>
+- 🔴 **Coventry vs Brighton** — CANLI · `16:00` | İngiltere Premier Lig <https://fixbettv84.com/channel.html?id=b3>
 
 ## ⏰ YAKLAŞAN
 
-- ⏰ **Lille vs Troyes** — YAKLAŞAN · `16:00` | Fransa Ligue 1 <https://fixbettv84.com/channel.html?id=b5>
-- ⏰ **Lecce vs Monza** — YAKLAŞAN · `16:00` | İtalya Serie A <https://fixbettv84.com/channel.html?id=ss2>
-- ⏰ **Coventry vs Brighton** — YAKLAŞAN · `16:00` | İngiltere Premier Lig <https://fixbettv84.com/channel.html?id=b3>
 - ⏰ **Iğdırspor vs Mardin 1969** — YAKLAŞAN · `17:00` | Trendyol 1. Lig <https://fixbettv84.com/channel.html?id=b2>
 - ⏰ **Sivasspor vs Muğlaspor** — YAKLAŞAN · `17:00` | Trendyol 1. Lig <https://fixbettv84.com/channel.html?id=trtspor>
 - ⏰ **İsviçre vs Türkiye** — YAKLAŞAN · `17:00` | CEV Erkekler Avrupa Şampiyonası <https://fixbettv84.com/channel.html?id=trtspor>
@@ -42,7 +45,7 @@
 - ⏰ İsviçre vs Türkiye — 17:00
 
 ### Fransa Ligue 1
-- ⏰ Lille vs Troyes — 16:00
+- 🔴 Lille vs Troyes — 16:00
 - ⏰ Brest vs PSG — 21:45
 
 ### Portekiz Liga NOS
@@ -61,7 +64,7 @@
 - ⏰ Amedspor vs İstanbul Başakşehir — 20:00
 
 ### İngiltere Premier Lig
-- ⏰ Coventry vs Brighton — 16:00
+- 🔴 Coventry vs Brighton — 16:00
 - ⏰ Manchester Utd vs Manchester City — 18:30
 
 ### İspanya La Liga
@@ -70,7 +73,7 @@
 - ⏰ Real Sociedad vs Atletico Madrid — 22:00
 
 ### İtalya Serie A
-- ⏰ Lecce vs Monza — 16:00
+- 🔴 Lecce vs Monza — 16:00
 - ⏰ Napoli vs Bologna — 19:00
 - ⏰ Sassuolo vs Juventus — 21:45
 
@@ -134,7 +137,7 @@
 - 🟢 **BEIN SPORTS 2** <https://corestream.d72377a9ds0ec71.cfd//bein2/tracks-v1a1/mono.m3u8>
 - 🟢 **BEIN SPORTS 3** <https://corestream.d72377a9ds0ec71.cfd//bein3/tracks-v1a1/mono.m3u8>
 - 🟢 **BEIN SPORTS 4** <https://corestream.d72377a9ds0ec71.cfd//bein4/tracks-v1a1/mono.m3u8>
-- ⚪ **BEIN SPORTS 5** <https://tv.atomspor.workers.dev/?ID=bein-sports-5>
+- 🟢 **BEIN SPORTS 5** <https://corestream.d72377a9ds0ec71.cfd//bein5/tracks-v1a1/mono.m3u8>
 - 🟢 **S SPORT** <https://corestream.d72377a9ds0ec71.cfd//s-sport/tracks-v1a1/mono.m3u8>
 - 🟢 **S SPORT 2** <https://corestream.d72377a9ds0ec71.cfd//s-sport2/tracks-v1a1/mono.m3u8>
 - ⚪ **S SPORT PLUS** <https://tv.atomspor.workers.dev/?ID=ssport-plus>
