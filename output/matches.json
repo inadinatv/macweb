@@ -9,13 +9,13 @@
       "fixbettv84.com",
       "fixbettv19.com"
     ],
-    "last_checked": "2026-09-13T05:14:39+00:00",
+    "last_checked": "2026-09-13T10:18:25+00:00",
     "note": "OK",
     "probed": 200
   },
   "categories": {
     "meta": {
-      "generated_at": "2026-09-13T08:14:02+03:00",
+      "generated_at": "2026-09-13T13:17:49+03:00",
       "date": "2026-09-13",
       "total_matches": 21
     },
@@ -2345,14 +2345,14 @@
       "Eurosport": [
         {
           "channel_id": "eu1",
-          "name": "EUROSPORT 1",
+          "name": "EURO SPORT 1",
           "status": "7/24",
           "brand": "Eurosport",
           "url": "https://fixbettv84.com/channel.html?id=eu1"
         },
         {
           "channel_id": "eu2",
-          "name": "EUROSPORT 2",
+          "name": "EURO SPORT 2",
           "status": "7/24",
           "brand": "Eurosport",
           "url": "https://fixbettv84.com/channel.html?id=eu2"
@@ -2499,14 +2499,14 @@
       },
       {
         "channel_id": "eu1",
-        "name": "EUROSPORT 1",
+        "name": "EURO SPORT 1",
         "status": "7/24",
         "brand": "Eurosport",
         "url": "https://fixbettv84.com/channel.html?id=eu1"
       },
       {
         "channel_id": "eu2",
-        "name": "EUROSPORT 2",
+        "name": "EURO SPORT 2",
         "status": "7/24",
         "brand": "Eurosport",
         "url": "https://fixbettv84.com/channel.html?id=eu2"

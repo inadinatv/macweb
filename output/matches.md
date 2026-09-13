@@ -1,7 +1,7 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-09-13 05:14  
+> **Güncellenme:** 2026-09-13 10:18  
 > **Toplam maç:** 21  |  **Canlı:** 0  |  **Yaklaşan:** 21
 
 ## ⏰ YAKLAŞAN
@@ -109,8 +109,8 @@
 - **A SPOR** — `7/24` <https://fixbettv84.com/channel.html?id=as>
 
 ### Eurosport
-- **EUROSPORT 1** — `7/24` <https://fixbettv84.com/channel.html?id=eu1>
-- **EUROSPORT 2** — `7/24` <https://fixbettv84.com/channel.html?id=eu2>
+- **EURO SPORT 1** — `7/24` <https://fixbettv84.com/channel.html?id=eu1>
+- **EURO SPORT 2** — `7/24` <https://fixbettv84.com/channel.html?id=eu2>
 
 ### Tabii Spor
 - **TABII SPOR** — `7/24` <https://fixbettv84.com/channel.html?id=ex7>
