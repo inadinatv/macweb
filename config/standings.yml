@@ -1,19 +1,26 @@
-# Lig puan durumu (PUAN DURUMU modalı) — gerçek kaynak: ESPN standings.
+# Lig puan durumu (PUAN DURUMU modalı) — çok kaynaklı canlı sistem.
+#
+# Öncelik sırası (Trendyol Süper Lig için):
+#   1) iddaa.com  — https://www.iddaa.com/lig-analiz/puan-durumu/turkiye-super-lig
+#   2) mackolik.com — https://www.mackolik.com/puan-durumu/...
+#   3) ESPN standings API (yedek)
 #
 # Skorlardaki ilke burada da geçerlidir (bkz. config/scores.yml):
 #   * Sayfa asla uydurma/sabit puan tablosu göstermez.
 #   * Sıra, O/G/B/M, averaj ve puan değerleri kaynaktan geldiği gibi yazılır.
 #   * Kaynak erişilemezse son bilinen tablo (output/standings.json) korunur;
 #     tablo hiç yoksa arayüz dürüst bir "veri yok" mesajı gösterir.
+#   * Yenilenebilir canlı: her 5 dakikada bir bot, her 60 saniyede bir istemci tazeler.
 enabled: true
-request_timeout_seconds: 8
+request_timeout_seconds: 10
 max_workers: 4
 
 # Gösterilecek ligler. `path` ESPN standings yoludur (scores.yml ile aynı biçim).
+# Yeni kaynaklar aynı path üzerinden eşlenir; iddaa/mackolik yalnızca tur.1 için kullanılır.
 leagues:
   - { name: "Trendyol Süper Lig", sport: "Futbol", path: "soccer/tur.1" }
 
-# Sunum katmanı: ESPN takım adlarını ASCII katlamalı verir (Besiktas, Fenerbahce …).
+# Sunum katmanı: Kaynak takım adlarını Türkçe katlamalı verir (Besiktas, Fenerbahce …).
 # Bu eşleme YALNIZCA görünen adı Türkçeleştirir; hiçbir sayısal değeri değiştirmez
 # ve eşleşmeyen takımlar kaynaktaki adıyla gösterilir (scores.yml'deki team_aliases
 # ile aynı yaklaşım).
@@ -24,6 +31,14 @@ display_names:
     Fenerbahce: "Fenerbahçe"
     Kasimpasa: "Kasımpaşa"
     Caykur Rizespor: "Çaykur Rizespor"
+    Rizespor: "Çaykur Rizespor"
     Istanbul Basaksehir: "Başakşehir"
+    Basaksehir: "Başakşehir"
     Eyupspor: "Eyüpspor"
     Goztepe: "Göztepe"
+    Amed: "Amed SFK"
+    Amed SK: "Amed SFK"
+    Gaziantep: "Gaziantep FK"
+    Corum: "Çorum FK"
+    Erzurum: "Erzurum BB"
+    Erzurumspor: "Erzurum BB"

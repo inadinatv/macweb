@@ -2176,7 +2176,9 @@
                 refreshMatches(true);
                 refreshExtra(true);
                 refreshStandings(true);
-                setInterval(() => { refreshMatches(true); refreshExtra(true); refreshStandings(true); }, 5 * 60 * 1000);
+                // Yenilenebilir canlı sistem: puan durumu ve skorlar her 60 sn tazelenir
+                setInterval(() => { refreshMatches(true); refreshStandings(true); }, 60 * 1000);
+                setInterval(() => { refreshExtra(true); }, 5 * 60 * 1000);
                 window.inadina.ready = true;
             }
 
