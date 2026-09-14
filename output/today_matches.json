@@ -9,13 +9,13 @@
       "fixbettv84.com",
       "fixbettv19.com"
     ],
-    "last_checked": "2026-09-14T01:22:05+00:00",
+    "last_checked": "2026-09-14T06:28:11+00:00",
     "note": "OK",
     "probed": 200
   },
   "date": "2026-09-14",
   "timezone": "Europe/Istanbul",
-  "generated_at": "2026-09-14T04:21:29+03:00",
+  "generated_at": "2026-09-14T09:27:35+03:00",
   "matches": [
     {
       "match_id": "zirve",
@@ -53,7 +53,7 @@
       "channel_id": "smarts",
       "logo_home": "https://img.sporekrani.com/teams/m7HQ6pRKe9Ou5RZVh8I24pOfzvVbseAaNDrhGUhW.png",
       "logo_away": "https://img.sporekrani.com/teams/YJc9y5j10U8Tz2T4BhBBogOYsO0awZTVRIWkXF9b.png",
-      "status": "live",
+      "status": "finished",
       "started": true,
       "raw_event": "03:30 | Arjantin Primera Division",
       "url": "https://fixbettv84.com/channel.html?id=smarts",

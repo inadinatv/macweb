@@ -9,35 +9,9 @@
       "fixbettv84.com",
       "fixbettv19.com"
     ],
-    "last_checked": "2026-09-14T01:22:05+00:00",
+    "last_checked": "2026-09-14T06:28:11+00:00",
     "note": "OK",
     "probed": 200
   },
-  "live": [
-    {
-      "match_id": "smarts",
-      "home": "CA Huracan",
-      "away": "Racing Club",
-      "league": "Arjantin Primera Division",
-      "time": "03:30",
-      "sport": "Futbol",
-      "is_match_of_day": false,
-      "channel_id": "smarts",
-      "logo_home": "https://img.sporekrani.com/teams/m7HQ6pRKe9Ou5RZVh8I24pOfzvVbseAaNDrhGUhW.png",
-      "logo_away": "https://img.sporekrani.com/teams/YJc9y5j10U8Tz2T4BhBBogOYsO0awZTVRIWkXF9b.png",
-      "status": "live",
-      "started": true,
-      "raw_event": "03:30 | Arjantin Primera Division",
-      "url": "https://fixbettv84.com/channel.html?id=smarts",
-      "fetched_at": "",
-      "status_source": "schedule",
-      "raw_status": "",
-      "score_home": null,
-      "score_away": null,
-      "score_source": "",
-      "score_updated_at": "",
-      "event_id": "",
-      "starts_at": "2026-09-14T03:30:00+03:00"
-    }
-  ]
+  "live": []
 }
