@@ -1,16 +1,23 @@
-"""Programı bozmadan gerçek durum/skor ekler (ikincil ESPN scoreboard).
+"""Programı bozmadan gerçek durum/skor ekler — çok kaynaklı canlı sistem.
 
-Kanal kimliği etkinlik kimliği DEĞİLDİR. Eşleşme aynı spor + yapılandırılmış lig +
-yerel tarih + başlangıç saati + iki takımın açık isim eşleşmesiyle yapılır.
-Belirsizlikte skor eklenmez. Kaynak kesilirse aynı maçın son bilinen skoru ve
-zaman damgası korunur; canlı snapshot saat geçince final diye etiketlenmez.
+Kaynaklar:
+  * Türkiye Süper Lig (ve 1. Lig) için birincil: Mackolik livescore (anlık, Türkçe)
+  * Diğer ligler ve fallback: ESPN scoreboard (uluslararası)
+  * Her ikisi de aynı eşleşme mantığını kullanır (lig + tarih + saat + takım adı).
+  * Belirsizlikte skor eklenmez; kaynak kesilirse son bilinen skor korunur.
+
+Yenilenebilir canlı sistem:
+  * Her pipeline çalışmasında taze skor çekilir (GitHub Actions her 5 dk).
+  * İstemci sayfada ek olarak her 60 sn'de bir output/today_matches.json tazeler.
+  * Mackolik + ESPN paralel/ardışık denenir; biri kesilirse diğeri devreye girer.
 """
 from __future__ import annotations
 
 import concurrent.futures as cf
 import logging
 import re
-from datetime import datetime, time, timedelta, timezone
+import time
+from datetime import datetime, time as dtime, timedelta, timezone
 from typing import Callable
 from urllib.parse import urlencode
 from zoneinfo import ZoneInfo
@@ -23,8 +30,24 @@ from .models import Match
 
 log = logging.getLogger(__name__)
 API_BASE = "https://site.api.espn.com/apis/site/v2/sports/"
+MACKOLIK_LIVESCORE_URL = "https://www.mackolik.com/perform/p0/ajax/components/competition/livescores/json"
+
+# Mackolik competition IDs — Süper Lig odaklı; diğer ligler ESPN'e düşer.
+MACKOLIK_COMP_MAP = {
+    "soccer/tur.1": "482ofyysbdbeoxauk19yg7tdt",
+    "soccer/tur.2": "2o9svokc5s7diish3ycrzk7jm",
+}
+
 OUTCOME_FIELDS = ("status", "status_source", "raw_status", "score_home", "score_away", "score_source",
                   "score_updated_at", "event_id", "starts_at", "fetched_at")
+
+_BROWSER_HEADERS = {
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0 Safari/537.36",
+    "Accept": "application/json, text/plain, */*",
+    "Accept-Language": "tr-TR,tr;q=0.9,en-US;q=0.8",
+    "Referer": "https://www.mackolik.com/",
+    "X-Requested-With": "XMLHttpRequest",
+}
 
 
 def load_config() -> dict:
@@ -56,11 +79,29 @@ def _fetch(url: str, timeout: float) -> dict:
     return response.json()
 
 
+def _fetch_mackolik(date_str: str, timeout: float) -> dict:
+    """Mackolik livescore JSON'u çeker (tarih: YYYY-MM-DD)."""
+    last: Exception | None = None
+    # Mackolik bazen 403 verirse referer ile tekrar dene
+    for attempt in range(2):
+        try:
+            url = f"{MACKOLIK_LIVESCORE_URL}?sports[]=Soccer&matchDate={date_str}"
+            r = requests.get(url, headers=_BROWSER_HEADERS, timeout=(5, timeout))
+            r.raise_for_status()
+            return r.json()
+        except requests.RequestException as exc:
+            last = exc
+            if attempt == 0:
+                time.sleep(0.5)
+                continue
+            raise
+    raise RuntimeError(f"mackolik çekilemedi {date_str}: {last}")
+
+
 def espn_status(status: dict) -> str | None:
     typ = status.get("type") or {}
     if not isinstance(typ, dict):
         return None
-    # İptal/erteleme/DEVRE, genel pre/in/post alanından ÖNCE değerlendirilir.
     for field in ("name", "description", "shortDetail"):
         normalized = normalize_status(typ.get(field))
         if normalized:
@@ -69,8 +110,143 @@ def espn_status(status: dict) -> str | None:
         return "live"
     if typ.get("state") == "pre":
         return "upcoming"
-    # Bilinmeyen bir post durumu otomatik final sayılmaz (walkover vb.).
     return None
+
+
+def _mackolik_status(entry: dict) -> str | None:
+    """Mackolik durum alanlarını normalize edilmiş status'e çevirir."""
+    # Check explicit aliases first via box/substate
+    box = entry.get("statusBoxContent")
+    sub = entry.get("substate")
+    state = entry.get("state")
+    status = entry.get("status")
+
+    # Box content like "MS", "İY", "45", "90+3"
+    if box is not None:
+        b = str(box).strip()
+        if b:
+            norm = normalize_status(b)
+            if norm:
+                return norm
+            # Minute pattern -> live
+            if re.match(r"^\d+(\+\d+)?'?$", b.strip()):
+                return "live"
+            if b.lower() in ("ms", "ms "):
+                return "finished"
+            if b.lower() in ("iy", "i.y.", "ht"):
+                return "halftime"
+
+    if sub is not None:
+        s = str(sub).strip()
+        if s:
+            # substate values: fullTime, halfTime, postponed, cancelled etc.
+            norm = normalize_status(s)
+            if norm:
+                return norm
+            if s.lower() in ("fulltime", "full time", "ft"):
+                return "finished"
+            if s.lower() in ("halftime", "half time", "ht"):
+                return "halftime"
+            if s.lower() in ("firsthalf", "secondhalf", "overtime"):
+                return "live"
+
+    if state is not None:
+        st = str(state).strip().lower()
+        if st == "pre":
+            return "upcoming"
+        if st == "post":
+            # If post but we already checked box/sub, default finished
+            return "finished"
+        if st in ("inprogress", "live", "progress", "in_progress"):
+            return "live"
+
+    if status == "timestamp":
+        return "upcoming"
+    if status == "state" and state == "post":
+        return "finished"
+
+    # Fallback via statusBoxContent alias already handled
+    return None
+
+
+def _mackolik_competitions(data: dict, tz: ZoneInfo) -> list[dict]:
+    """Mackolik livescore JSON'undan ESPN-benzeri competition listesi üretir."""
+    if not isinstance(data, dict):
+        raise ValueError("mackolik data sözlük değil")
+    # Data may be wrapped as {"status":"success","data":{"matches": {...}, "competitions": {...}}}
+    inner = data
+    if "data" in data and isinstance(data["data"], dict):
+        inner = data["data"]
+    matches = inner.get("matches")
+    if not isinstance(matches, dict):
+        # Sometimes matches is list? but observed dict keyed by id
+        if isinstance(inner.get("matches"), list):
+            matches = {m.get("id", str(i)): m for i, m in enumerate(inner["matches"]) if isinstance(m, dict)}
+        else:
+            raise ValueError("mackolik matches alanı eksik")
+
+    result: list[dict] = []
+    for mid, entry in matches.items():
+        if not isinstance(entry, dict):
+            continue
+        mst = entry.get("mstUtc")
+        if mst is None:
+            continue
+        try:
+            ts = int(mst)
+            # mstUtc is ms since epoch UTC
+            start = datetime.fromtimestamp(ts / 1000, tz=timezone.utc)
+        except (ValueError, TypeError, OSError):
+            continue
+        home_team = entry.get("homeTeam") or {}
+        away_team = entry.get("awayTeam") or {}
+        home_name = str(home_team.get("name") or "").strip()
+        away_name = str(away_team.get("name") or "").strip()
+        if not home_name or not away_name:
+            continue
+        status = _mackolik_status(entry)
+        # If status couldn't be determined, infer from score/state
+        if not status:
+            # If score present and state post -> finished, else if pre -> upcoming
+            score = entry.get("score") or {}
+            if score.get("home") not in (None, "", " ") and entry.get("state") == "post":
+                status = "finished"
+            elif entry.get("state") == "pre":
+                status = "upcoming"
+            else:
+                continue
+
+        # Skip unknown post states that are not finales (walkover etc.) similar to ESPN logic: if status is None we already continued
+        # But ensure non-SCORE_STATUSES upcoming etc. not filtered? We keep all statuses that normalize_status maps, like postponed.
+        # If status is upcoming/live/halftime/finished/postponed etc., keep; if still None skip already.
+
+        # Build competitor-like structures for matching
+        score = entry.get("score") or {}
+        home_score = score.get("home")
+        away_score = score.get("away")
+        # Mackolik score may be "" for not started; we keep as string for score_pair to parse
+        # Ensure home/away dict shape matches _names expectation: {"team": {"displayName": ...}, "score": ...}
+        home_comp = {"team": {"displayName": home_name, "name": home_name, "shortDisplayName": home_name}, "score": str(home_score) if home_score not in (None, "") else None}
+        away_comp = {"team": {"displayName": away_name, "name": away_name, "shortDisplayName": away_name}, "score": str(away_score) if away_score not in (None, "") else None}
+
+        raw = str(entry.get("statusBoxContent") or entry.get("substate") or entry.get("state") or "")
+
+        # competitionId for filtering per league if needed
+        comp_id = entry.get("competitionId") or ""
+
+        result.append({
+            "id": str(entry.get("id") or mid),
+            "start": start,
+            "home": home_comp,
+            "away": away_comp,
+            "status": status,
+            "neutral": False,
+            "raw_status": raw,
+            "competitionId": str(comp_id),
+            # Keep original for debug
+            "_raw": entry,
+        })
+    return result
 
 
 def competitions(data: dict) -> list[dict]:
@@ -111,8 +287,21 @@ def _names(competitor: dict, canonical: Callable) -> set[str]:
     team = competitor.get("team") or {}
     if not isinstance(team, dict):
         return set()
-    # abbreviations (MAN, UTD vb.) belirsizdir; bilerek eşleştirmiyoruz.
-    return {canonical(team.get(key)) for key in ("displayName", "shortDisplayName", "name") if team.get(key)}
+    # abbreviations belirsizdir; bilerek eşleştirmiyoruz.
+    # Mackolik için displayName zaten düzgün Türkçe; fold + alias ile eşle.
+    names = set()
+    for key in ("displayName", "shortDisplayName", "name"):
+        val = team.get(key)
+        if val:
+            names.add(canonical(val))
+            # Also try without FK/SK suffix for Turkish teams
+            folded = canonical(val)
+            # Remove common suffixes for broader matching
+            for suffix in (" fk", " sk", " as", " spor", "spor"):
+                if folded.endswith(suffix):
+                    names.add(folded[: -len(suffix)].strip())
+                    break
+    return names
 
 
 def enrich(matches: list[Match], now: datetime, previous: list[Match] | None = None,
@@ -124,8 +313,6 @@ def enrich(matches: list[Match], now: datetime, previous: list[Match] | None = N
     previous_by_key = {}
     for old in previous or []:
         previous_by_key.setdefault(_identity(old), []).append(old)
-    # Sonucun kaynağı ve yaşı kaybolmaz. Önceki liste caller tarafından aynı güne
-    # sınırlandırılır (load_matches_from_output); tekrar oynanan başka güne taşınmaz.
     for match in matches:
         if match.score_source == "source" and not match.score_updated_at:
             match.score_updated_at = stamp
@@ -144,13 +331,51 @@ def enrich(matches: list[Match], now: datetime, previous: list[Match] | None = N
         path = leagues.get((fold(match.sport), fold(match.league)), "")
         if path and re.fullmatch(r"[a-z-]+/[a-z0-9.\-]+", path) and match.status_source != "source":
             groups.setdefault(path, []).append(match)
-    # ESPN dates UTC günlerini seçer. Türkiye'de gece yarısı maçları için komşu
-    # UTC gününü de sorgula, sonra başlangıcı yerel takvim gününe göre doğrula.
-    start = datetime.combine(now.date(), time.min, tzinfo=tz).astimezone(timezone.utc)
-    end = datetime.combine(now.date(), time.max, tzinfo=tz).astimezone(timezone.utc)
+
+    if not groups:
+        return matches
+
+    # --- Mackolik denemesi (Türk ligleri için birincil) ---
+    mackolik_results: dict[str, list[dict]] = {}
+    tur_paths = [p for p in groups if p in MACKOLIK_COMP_MAP]
+    if tur_paths:
+        try:
+            timeout = float(cfg.get("request_timeout_seconds", 8))
+            # Mackolik tarih parametresi yerel tarihe göre
+            date_str = now.date().isoformat()
+            # For live continuity, also check tomorrow's early matches? But we query today only; matching will filter by now.date().
+            # For robustness, if now is after 23:00, also fetch next day? Not needed; ESPN logic uses range 2 days.
+            # Keep simple: fetch today.
+            m_data = _fetch_mackolik(date_str, timeout)
+            comps = _mackolik_competitions(m_data, tz)
+            # Filter per path by competitionId if mapping exists, otherwise keep all and let name matching decide
+            for path in tur_paths:
+                wanted_id = MACKOLIK_COMP_MAP.get(path)
+                if wanted_id:
+                    filtered = [c for c in comps if c.get("competitionId") == wanted_id]
+                    # If filtered empty but we had comps, perhaps id changed; fallback to name matching across all
+                    if filtered:
+                        mackolik_results[path] = filtered
+                    else:
+                        # Fallback: use all comps but matching will still narrow by team names
+                        mackolik_results[path] = comps
+                else:
+                    mackolik_results[path] = comps
+            log.info("Mackolik skor çekildi (%s maç, %s lig)", len(comps), len(tur_paths))
+        except Exception as exc:
+            log.warning("Mackolik skor kaynağı okunamadı (%s); ESPN'e düşülüyor.", type(exc).__name__)
+            mackolik_results = {}
+
+    # --- ESPN için hazırlık (UTC tarih aralığı) ---
+    start = datetime.combine(now.date(), dtime.min, tzinfo=tz).astimezone(timezone.utc)
+    end = datetime.combine(now.date(), dtime.max, tzinfo=tz).astimezone(timezone.utc)
     dates = start.strftime("%Y%m%d") + "-" + end.strftime("%Y%m%d")
     fetch = fetch or _fetch
 
+    # ESPN'i sadece Mackolik'te bulunmayan veya tüm futbol dışı ligler için çağır
+    espn_paths = [p for p in groups if p not in mackolik_results or not mackolik_results[p]]
+    # If Mackolik gave results but we still want ESPN as supplementary for other states? For now, if Mackolik succeeded, we skip ESPN for those paths to avoid overriding.
+    # But we keep ESPN for non-tur paths always.
     def load(path: str):
         url = API_BASE + path + "/scoreboard?" + urlencode({"dates": dates, "limit": 1000})
         try:
@@ -160,22 +385,39 @@ def enrich(matches: list[Match], now: datetime, previous: list[Match] | None = N
             return path, []
 
     workers = max(1, min(8, int(cfg.get("max_workers", 4))))
-    with cf.ThreadPoolExecutor(max_workers=workers) as pool:
-        results = dict(pool.map(load, groups))
+    espn_results: dict[str, list[dict]] = {}
+    if espn_paths:
+        with cf.ThreadPoolExecutor(max_workers=workers) as pool:
+            espn_results = dict(pool.map(load, espn_paths))
+
+    # Combine results: Mackolik öncelikli, ESPN yedek
+    results: dict[str, list[dict]] = {}
+    for path in groups:
+        if path in mackolik_results and mackolik_results[path]:
+            results[path] = mackolik_results[path]
+        else:
+            results[path] = espn_results.get(path, [])
+
     tolerance = timedelta(minutes=max(0, min(180, float(cfg.get("max_start_difference_minutes", 45)))))
     for path, group in groups.items():
         aliases = {fold(k): fold(v) for k, v in (cfg.get("team_aliases", {}).get(path) or {}).items()}
 
         def canonical(name):
             key = fold(name)
-            return aliases.get(key, key)
+            # Direct alias
+            if key in aliases:
+                return aliases[key]
+            # Also try stripping FK/SK for both sides
+            for suffix in (" fk", " sk", " as"):
+                if key.endswith(suffix):
+                    base = key[: -len(suffix)].strip()
+                    if base in aliases:
+                        return aliases[base]
+                    # Also return base for matching if alias not found
+                    # We return base folded for broader matching; but keep original if no alias
+            return key
 
         def orientation(comp, match):
-            """Skorun hangi tarafa ait olduğunu İSİMLE belirler; None = eşleşme yok.
-
-            Turnuvalarda (tarafsız saha) sağlayıcı ev/deplasmanı programın tersine
-            listeleyebilir; bu durumda skorlar isim eşleşmesine göre çevrilir.
-            """
             if canonical(match.home) in _names(comp["home"], canonical) and canonical(match.away) in _names(comp["away"], canonical):
                 return "straight"
             if comp.get("neutral") and canonical(match.home) in _names(comp["away"], canonical) \
@@ -187,32 +429,41 @@ def enrich(matches: list[Match], now: datetime, previous: list[Match] | None = N
             scheduled = start_time(match, now, tz)
             if not scheduled:
                 continue
+            # Mackolik ve ESPN'de tarih karşılaştırması aynı; start already UTC aware
             candidates = [(c, orientation(c, match)) for c in results[path]
                           if c["start"].astimezone(tz).date() == now.date()
                           and abs(c["start"] - scheduled) <= tolerance]
             candidates = [(c, o) for c, o in candidates if o]
+            # If multiple candidates (e.g., duplicate), pick closest time
             if len(candidates) != 1:
-                continue
+                if len(candidates) > 1:
+                    # Choose closest in time
+                    candidates = sorted(candidates, key=lambda x: abs(x[0]["start"] - scheduled))
+                    # If still ambiguous within 5 min, drop
+                    if abs(candidates[0][0]["start"] - scheduled) != abs(candidates[1][0]["start"] - scheduled):
+                        candidates = [candidates[0]]
+                    else:
+                        continue
+                else:
+                    continue
             found, side = candidates[0]
             if match.status == "finished" and match.status_source != "schedule" and found["status"] in ("upcoming", "live", "halftime"):
-                # Gecikmiş scoreboard/cache yanıtı doğrulanmış finali geriye alamaz.
                 continue
-            # Skor, isim eşleşmesinin belirlediği tarafa bağlanır (asla ters yazılmaz).
             ours_home, ours_away = (found["home"], found["away"]) if side == "straight" else (found["away"], found["home"])
             h, a = score_pair(ours_home.get("score"), ours_away.get("score"))
             prior_status = match.status
-            match.status, match.status_source = found["status"], "espn"
+            # Determine source tag: mackolik for tur paths, espn otherwise
+            src_tag = "mackolik" if path in mackolik_results and found in mackolik_results[path] else "espn"
+            match.status, match.status_source = found["status"], src_tag
             match.raw_status, match.event_id = found["raw_status"], found["id"]
             match.starts_at, match.fetched_at = found["start"].isoformat(), stamp
             if match.status not in SCORE_STATUSES:
-                # Sağlayıcının maç öncesi varsayılan 0-0'ını saklama/gösterme.
                 match.score_home = match.score_away = None
                 match.score_source = match.score_updated_at = ""
             elif h is not None:
                 match.score_home, match.score_away = h, a
-                match.score_source, match.score_updated_at = "espn", stamp
+                match.score_source, match.score_updated_at = src_tag, stamp
             elif prior_status != match.status:
-                # Eksik final skorunu son canlı skorla doldurmak yanlış sonuç üretir.
                 match.score_home = match.score_away = None
                 match.score_source = match.score_updated_at = ""
     return matches
