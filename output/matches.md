@@ -1,24 +1,19 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-09-14 15:22  
-> **Toplam maç:** 15  |  **Canlı:** 3  |  **Yaklaşan:** 11
+> **Güncellenme:** 2026-09-14 18:35  
+> **Toplam maç:** 10  |  **Canlı:** 5  |  **Yaklaşan:** 4
 
 ## 🔴 CANLI
 
-- 🔴 **Neftchi Fargona vs Al Quwa Al Jawiya** — CANLI · `16:45` | AFC Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=smarts>
-- 🔴 **Almanya vs İsviçre** — CANLI · `17:00` | CEV Erkekler Avrupa Şampiyonası <https://fixbettv84.com/channel.html?id=trtspor>
-- 🔴 **Shakhtar Donetsk vs Odesa** — CANLI · `18:00` | Ukrayna Premier Ligi <https://fixbettv84.com/channel.html?id=t1>
+- 🔴 **Gaziantep FK 0 - 0 Fenerbahçe** — CANLI · `20:00` | Trendyol Süper Lig ★ **Günün Maçı** <https://fixbettv84.com/channel.html?id=zirve>
+- 🔴 **Kayserispor 3 - 0 İstanbulspor** — CANLI · `20:00` | Trendyol 1. Lig <https://fixbettv84.com/channel.html?id=trtspor>
+- 🔴 **Romanya vs Türkiye** — CANLI · `20:00` | CEV Erkekler Avrupa Şampiyonası <https://fixbettv84.com/channel.html?id=trtspor2>
+- 🔴 **Al Ahli vs Pakhtakor** — CANLI · `21:15` | AFC Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=smarts>
+- 🔴 **Al Qadsiah vs Al Wasl** — CANLI · `21:15` | AFC Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=sms2>
 
 ## ⏰ YAKLAŞAN
 
-- ⏰ **Al Ahli Dubai vs Tractor Sazi** — YAKLAŞAN · `19:00` | AFC Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=sms2>
-- ⏰ **Torino vs Roma** — YAKLAŞAN · `19:30` | İtalya Serie A <https://fixbettv84.com/channel.html?id=ss2>
-- ⏰ **Gaziantep FK vs Fenerbahçe** — YAKLAŞAN · `20:00` | Trendyol Süper Lig ★ **Günün Maçı** <https://fixbettv84.com/channel.html?id=zirve>
-- ⏰ **Kayserispor vs İstanbulspor** — YAKLAŞAN · `20:00` | Trendyol 1. Lig <https://fixbettv84.com/channel.html?id=trtspor>
-- ⏰ **Romanya vs Türkiye** — YAKLAŞAN · `20:00` | CEV Erkekler Avrupa Şampiyonası <https://fixbettv84.com/channel.html?id=trtspor2>
-- ⏰ **Al Ahli vs Pakhtakor** — YAKLAŞAN · `21:15` | AFC Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=smarts>
-- ⏰ **Al Qadsiah vs Al Wasl** — YAKLAŞAN · `21:15` | AFC Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=sms2>
 - ⏰ **Inter vs Udinese** — YAKLAŞAN · `21:45` | İtalya Serie A <https://fixbettv84.com/channel.html?id=ss2>
 - ⏰ **Red Star vs Metz** — YAKLAŞAN · `21:45` | Fransa Ligue 2 <https://fixbettv84.com/channel.html?id=b4>
 - ⏰ **Leeds United vs Newcastle** — YAKLAŞAN · `22:00` | İngiltere Premier Lig <https://fixbettv84.com/channel.html?id=b3>
@@ -26,39 +21,30 @@
 
 ## ✅ BİTTİ
 
-- ✅ **CA Huracan vs Racing Club** — MS · `03:30` | Arjantin Primera Division <https://fixbettv84.com/channel.html?id=smarts>
+- ✅ **Torino vs Roma** — MS · `19:30` | İtalya Serie A <https://fixbettv84.com/channel.html?id=ss2>
 
 ## ⭐ GÜNÜN MAÇI
 
-- ⏰ **Gaziantep FK vs Fenerbahçe** — YAKLAŞAN · `20:00` | Trendyol Süper Lig ★ **Günün Maçı** <https://fixbettv84.com/channel.html?id=zirve>
+- 🔴 **Gaziantep FK 0 - 0 Fenerbahçe** — CANLI · `20:00` | Trendyol Süper Lig ★ **Günün Maçı** <https://fixbettv84.com/channel.html?id=zirve>
 
 ---
 ## 🏆 Lig Bazlı
 
 ### AFC Şampiyonlar Ligi
-- 🔴 Neftchi Fargona vs Al Quwa Al Jawiya — 16:45
-- ⏰ Al Ahli Dubai vs Tractor Sazi — 19:00
-- ⏰ Al Ahli vs Pakhtakor — 21:15
-- ⏰ Al Qadsiah vs Al Wasl — 21:15
-
-### Arjantin Primera Division
-- ⏰ CA Huracan vs Racing Club — 03:30
+- 🔴 Al Ahli vs Pakhtakor — 21:15
+- 🔴 Al Qadsiah vs Al Wasl — 21:15
 
 ### CEV Erkekler Avrupa Şampiyonası
-- 🔴 Almanya vs İsviçre — 17:00
-- ⏰ Romanya vs Türkiye — 20:00
+- 🔴 Romanya vs Türkiye — 20:00
 
 ### Fransa Ligue 2
 - ⏰ Red Star vs Metz — 21:45
 
 ### Trendyol 1. Lig
-- ⏰ Kayserispor vs İstanbulspor — 20:00
+- 🔴 Kayserispor vs İstanbulspor — 20:00
 
 ### Trendyol Süper Lig
-- ⏰ Gaziantep FK vs Fenerbahçe — 20:00
-
-### Ukrayna Premier Ligi
-- 🔴 Shakhtar Donetsk vs Odesa — 18:00
+- 🔴 Gaziantep FK vs Fenerbahçe — 20:00
 
 ### İngiltere Premier Lig
 - ⏰ Leeds United vs Newcastle — 22:00
@@ -131,7 +117,7 @@
 - 🟢 **BEIN SPORTS 3** <https://ladyboy.taylandpattaya.cfd//bein3/tracks-v1a1/mono.m3u8>
 - 🟢 **BEIN SPORTS 4** <https://ladyboy.taylandpattaya.cfd//bein4/tracks-v1a1/mono.m3u8>
 - 🟢 **BEIN SPORTS 5** <https://ladyboy.taylandpattaya.cfd//bein5/tracks-v1a1/mono.m3u8>
-- 🟡 **S SPORT** <https://ladyboy.taylandpattaya.cfd//s-sport/tracks-v1a1/mono.m3u8>
+- 🟢 **S SPORT** <https://ladyboy.taylandpattaya.cfd//s-sport/tracks-v1a1/mono.m3u8>
 - 🟢 **S SPORT 2** <https://ladyboy.taylandpattaya.cfd//s-sport2/tracks-v1a1/mono.m3u8>
 - ⚪ **S SPORT PLUS** <https://tv.atomspor.workers.dev/?ID=ssport-plus>
 - ⚪ **TIVIBU SPOR 1** <https://tv.atomspor.workers.dev/?ID=tivibu-spor-1>
