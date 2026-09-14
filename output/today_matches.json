@@ -9,13 +9,13 @@
       "fixbettv84.com",
       "fixbettv19.com"
     ],
-    "last_checked": "2026-09-14T06:28:11+00:00",
+    "last_checked": "2026-09-14T10:00:51+00:00",
     "note": "OK",
     "probed": 200
   },
   "date": "2026-09-14",
   "timezone": "Europe/Istanbul",
-  "generated_at": "2026-09-14T09:27:35+03:00",
+  "generated_at": "2026-09-14T13:00:15+03:00",
   "matches": [
     {
       "match_id": "zirve",
@@ -32,15 +32,15 @@
       "started": false,
       "raw_event": "20:00 | Trendyol Süper Lig [Günün Maçı]",
       "url": "https://fixbettv84.com/channel.html?id=zirve",
-      "fetched_at": "",
-      "status_source": "schedule",
-      "raw_status": "",
+      "fetched_at": "2026-09-14T13:00:15+03:00",
+      "status_source": "mackolik",
+      "raw_status": "none",
       "score_home": null,
       "score_away": null,
       "score_source": "",
       "score_updated_at": "",
-      "event_id": "",
-      "starts_at": "2026-09-14T20:00:00+03:00"
+      "event_id": "cewptr1hkj7a8t3cpnokapvkk",
+      "starts_at": "2026-09-14T17:00:00+00:00"
     },
     {
       "match_id": "smarts",
@@ -207,15 +207,15 @@
       "started": false,
       "raw_event": "20:00 | Trendyol 1. Lig",
       "url": "https://fixbettv84.com/channel.html?id=trtspor",
-      "fetched_at": "",
-      "status_source": "schedule",
-      "raw_status": "",
+      "fetched_at": "2026-09-14T13:00:15+03:00",
+      "status_source": "mackolik",
+      "raw_status": "none",
       "score_home": null,
       "score_away": null,
       "score_source": "",
       "score_updated_at": "",
-      "event_id": "",
-      "starts_at": "2026-09-14T20:00:00+03:00"
+      "event_id": "cjozjszp50njmo5wb20nmov84",
+      "starts_at": "2026-09-14T17:00:00+00:00"
     },
     {
       "match_id": "trtspor2",
