@@ -1,50 +1,47 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-09-14 18:35  
-> **Toplam maç:** 10  |  **Canlı:** 5  |  **Yaklaşan:** 4
-
-## 🔴 CANLI
-
-- 🔴 **Gaziantep FK 0 - 0 Fenerbahçe** — CANLI · `20:00` | Trendyol Süper Lig ★ **Günün Maçı** <https://fixbettv84.com/channel.html?id=zirve>
-- 🔴 **Kayserispor 3 - 0 İstanbulspor** — CANLI · `20:00` | Trendyol 1. Lig <https://fixbettv84.com/channel.html?id=trtspor>
-- 🔴 **Romanya vs Türkiye** — CANLI · `20:00` | CEV Erkekler Avrupa Şampiyonası <https://fixbettv84.com/channel.html?id=trtspor2>
-- 🔴 **Al Ahli vs Pakhtakor** — CANLI · `21:15` | AFC Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=smarts>
-- 🔴 **Al Qadsiah vs Al Wasl** — CANLI · `21:15` | AFC Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=sms2>
+> **Güncellenme:** 2026-09-14 21:09  
+> **Toplam maç:** 10  |  **Canlı:** 0  |  **Yaklaşan:** 4
 
 ## ⏰ YAKLAŞAN
 
-- ⏰ **Inter vs Udinese** — YAKLAŞAN · `21:45` | İtalya Serie A <https://fixbettv84.com/channel.html?id=ss2>
-- ⏰ **Red Star vs Metz** — YAKLAŞAN · `21:45` | Fransa Ligue 2 <https://fixbettv84.com/channel.html?id=b4>
-- ⏰ **Leeds United vs Newcastle** — YAKLAŞAN · `22:00` | İngiltere Premier Lig <https://fixbettv84.com/channel.html?id=b3>
-- ⏰ **Villarreal vs Real Betis** — YAKLAŞAN · `22:00` | İspanya La Liga <https://fixbettv84.com/channel.html?id=ss>
+- ⏰ **Torino vs Roma** — YAKLAŞAN · `19:30` | İtalya Serie A <https://fixbettv84.com/channel.html?id=ss2>
+- ⏰ **Gaziantep FK vs Fenerbahçe** — YAKLAŞAN · `20:00` | Trendyol Süper Lig ★ **Günün Maçı** <https://fixbettv84.com/channel.html?id=zirve>
+- ⏰ **Kayserispor vs İstanbulspor** — YAKLAŞAN · `20:00` | Trendyol 1. Lig <https://fixbettv84.com/channel.html?id=trtspor>
+- ⏰ **Romanya vs Türkiye** — YAKLAŞAN · `20:00` | CEV Erkekler Avrupa Şampiyonası <https://fixbettv84.com/channel.html?id=trtspor2>
 
 ## ✅ BİTTİ
 
-- ✅ **Torino vs Roma** — MS · `19:30` | İtalya Serie A <https://fixbettv84.com/channel.html?id=ss2>
+- ✅ **Al Ahli vs Pakhtakor** — MS · `21:15` | AFC Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=smarts>
+- ✅ **Al Qadsiah vs Al Wasl** — MS · `21:15` | AFC Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=sms2>
+- ✅ **Inter vs Udinese** — MS · `21:45` | İtalya Serie A <https://fixbettv84.com/channel.html?id=ss2>
+- ✅ **Red Star vs Metz** — MS · `21:45` | Fransa Ligue 2 <https://fixbettv84.com/channel.html?id=b4>
+- ✅ **Leeds United vs Newcastle** — MS · `22:00` | İngiltere Premier Lig <https://fixbettv84.com/channel.html?id=b3>
+- ✅ **Villarreal vs Real Betis** — MS · `22:00` | İspanya La Liga <https://fixbettv84.com/channel.html?id=ss>
 
 ## ⭐ GÜNÜN MAÇI
 
-- 🔴 **Gaziantep FK 0 - 0 Fenerbahçe** — CANLI · `20:00` | Trendyol Süper Lig ★ **Günün Maçı** <https://fixbettv84.com/channel.html?id=zirve>
+- ⏰ **Gaziantep FK vs Fenerbahçe** — YAKLAŞAN · `20:00` | Trendyol Süper Lig ★ **Günün Maçı** <https://fixbettv84.com/channel.html?id=zirve>
 
 ---
 ## 🏆 Lig Bazlı
 
 ### AFC Şampiyonlar Ligi
-- 🔴 Al Ahli vs Pakhtakor — 21:15
-- 🔴 Al Qadsiah vs Al Wasl — 21:15
+- ⏰ Al Ahli vs Pakhtakor — 21:15
+- ⏰ Al Qadsiah vs Al Wasl — 21:15
 
 ### CEV Erkekler Avrupa Şampiyonası
-- 🔴 Romanya vs Türkiye — 20:00
+- ⏰ Romanya vs Türkiye — 20:00
 
 ### Fransa Ligue 2
 - ⏰ Red Star vs Metz — 21:45
 
 ### Trendyol 1. Lig
-- 🔴 Kayserispor vs İstanbulspor — 20:00
+- ⏰ Kayserispor vs İstanbulspor — 20:00
 
 ### Trendyol Süper Lig
-- 🔴 Gaziantep FK vs Fenerbahçe — 20:00
+- ⏰ Gaziantep FK vs Fenerbahçe — 20:00
 
 ### İngiltere Premier Lig
 - ⏰ Leeds United vs Newcastle — 22:00

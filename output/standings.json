@@ -1,13 +1,13 @@
 {
  "source": "mackolik",
- "generated_at": "2026-09-14T21:34:22+03:00",
+ "generated_at": "2026-09-15T00:08:44+03:00",
  "leagues": [
   {
    "id": "soccer/tur.1",
    "name": "Trendyol Süper Lig",
    "sport": "Futbol",
    "season": "2026-27 Turkish Super Lig",
-   "updated_at": "2026-09-14T21:34:22+03:00",
+   "updated_at": "2026-09-15T00:08:44+03:00",
    "teams": 18,
    "rows": [
     {
@@ -120,6 +120,24 @@
     },
     {
      "rank": 7,
+     "team": "Gaziantep FK",
+     "sourceTeam": "Gaziantep FK",
+     "abbr": "",
+     "logo": "https://file.mackolikfeeds.com/teams/2agzb2h4ppg7lfz9hn7eg1rqo",
+     "played": 5,
+     "wins": 2,
+     "draws": 2,
+     "losses": 1,
+     "goalsFor": 7,
+     "goalsAgainst": 5,
+     "diff": 2,
+     "points": 8,
+     "note": "",
+     "zone": "",
+     "zoneLabel": ""
+    },
+    {
+     "rank": 8,
      "team": "Alanyaspor",
      "sourceTeam": "Alanyaspor",
      "abbr": "",
@@ -137,7 +155,7 @@
      "zoneLabel": ""
     },
     {
-     "rank": 8,
+     "rank": 9,
      "team": "Trabzonspor",
      "sourceTeam": "Trabzonspor",
      "abbr": "",
@@ -155,7 +173,7 @@
      "zoneLabel": ""
     },
     {
-     "rank": 9,
+     "rank": 10,
      "team": "Çorum FK",
      "sourceTeam": "Çorum FK",
      "abbr": "",
@@ -173,17 +191,17 @@
      "zoneLabel": ""
     },
     {
-     "rank": 10,
-     "team": "Gaziantep FK",
-     "sourceTeam": "Gaziantep FK",
+     "rank": 11,
+     "team": "Fenerbahçe",
+     "sourceTeam": "Fenerbahçe",
      "abbr": "",
-     "logo": "https://file.mackolikfeeds.com/teams/2agzb2h4ppg7lfz9hn7eg1rqo",
-     "played": 4,
+     "logo": "https://file.mackolikfeeds.com/teams/8lroq0cbhdxj8124qtxwrhvmm",
+     "played": 5,
      "wins": 2,
      "draws": 1,
-     "losses": 1,
-     "goalsFor": 7,
-     "goalsAgainst": 5,
+     "losses": 2,
+     "goalsFor": 8,
+     "goalsAgainst": 6,
      "diff": 2,
      "points": 7,
      "note": "",
@@ -191,7 +209,7 @@
      "zoneLabel": ""
     },
     {
-     "rank": 11,
+     "rank": 12,
      "team": "Gençlerbirliği",
      "sourceTeam": "Gençlerbirliği",
      "abbr": "",
@@ -204,24 +222,6 @@
      "goalsAgainst": 9,
      "diff": -4,
      "points": 7,
-     "note": "",
-     "zone": "",
-     "zoneLabel": ""
-    },
-    {
-     "rank": 12,
-     "team": "Fenerbahçe",
-     "sourceTeam": "Fenerbahçe",
-     "abbr": "",
-     "logo": "https://file.mackolikfeeds.com/teams/8lroq0cbhdxj8124qtxwrhvmm",
-     "played": 4,
-     "wins": 2,
-     "draws": 0,
-     "losses": 2,
-     "goalsFor": 8,
-     "goalsAgainst": 6,
-     "diff": 2,
-     "points": 6,
      "note": "",
      "zone": "",
      "zoneLabel": ""
