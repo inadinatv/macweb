@@ -11,6 +11,15 @@ dosyasını ve index.html'e gömülen kopyayı gösterir.
   * Yalnızca kaynak averaj alanını hiç vermediğinde (attığı - yediği) farkı
     hesaplanır; puan eksikse G*3+B kuralı uygulanır.
 
+Sunum katmanı (sayısal verilere dokunmaz):
+  * **Takım adı tekilleştirme**: iddaa/mackolik adı aynı hücrede iki kez basar
+    (masaüstü + mobil görünüm); ``dedupe_team_name`` yapışık tekrarı çözer, yoksa
+    ``"GalatasarayGalatasaray"`` gibi bozuk adlar sayfaya basılır.
+  * **Sıra bölgeleri**: ``config/standings.yml → zones`` (yoksa ``DEFAULT_ZONES``)
+    üst sıraları (Şampiyonlar Ligi / Avrupa hattı) ve alt sıraları (küme düşme
+    hattı) işaretler; her satıra ``zone`` + ``zoneLabel`` yazılır ve arayüz bu
+    satırları renkli şerit/rozet + açıklamalı gösterir.
+
 Canlı yenilenebilir sistem:
   * Türkiye Süper Lig için **birincil kaynak iddaa.com**, ikincil mackolik.com,
     üçüncül ESPN'dir. Diğer ligler için ESPN kullanılır.
@@ -121,6 +130,129 @@ def _parse_int_cell(text: str) -> int | None:
         return None
 
 
+# ---------------------------------------------------------------------------
+# Takım adı temizliği
+# ---------------------------------------------------------------------------
+# iddaa/mackolik takım adını aynı hücrede iki kez basar (masaüstü + mobil görünüm):
+#   <a><span class="d-sm-block">Galatasaray</span><span class="d-none">Galatasaray</span></a>
+# BeautifulSoup `get_text()` bu iki kopyayı ayraçsız yapıştırır ve tabloda
+# "GalatasarayGalatasaray" görünür. Aşağıdaki yardımcı YALNIZCA metni tekilleştirir;
+# hiçbir sayısal alana (O/G/B/M/AV/P) uygulanmaz.
+
+def dedupe_team_name(text: Any) -> str:
+    """Yapışık/ardışık tekrar eden takım adını tek kopyaya indirger.
+
+    ``"GalatasarayGalatasaray" -> "Galatasaray"``, ``"Amed SK Amed SK" -> "Amed SK"``.
+    Tekrar yoksa metin (yalnızca boşlukları düzeltilmiş olarak) aynen döner.
+    """
+    raw = str(text if text is not None else "")
+    t = re.sub(r"\s+", " ", raw).strip()
+    if not t:
+        return ""
+
+    # 1) Kelime düzeyinde tekrar: "Amed SK Amed SK" -> "Amed SK"
+    tokens = t.split(" ")
+    total = len(tokens)
+    for size in range(1, total // 2 + 1):
+        if total % size:
+            continue
+        unit = tokens[:size]
+        if all(tokens[i * size:(i + 1) * size] == unit for i in range(1, total // size)):
+            return " ".join(unit)
+
+    # 2) Ayraçsız (yapışık) tekrar: "GalatasarayGalatasaray" -> "Galatasaray"
+    length = len(t)
+    for size in range(2, length // 2 + 1):          # tek harfli takım adı olmaz
+        if length % size:
+            continue
+        unit = t[:size]
+        if unit.strip() and unit * (length // size) == t:
+            return unit.strip()
+
+    return t
+
+
+# ---------------------------------------------------------------------------
+# Sıra bölgeleri (zone): Avrupa hattı / küme düşme hattı
+# ---------------------------------------------------------------------------
+# Sunum katmanıdır: kaynak sıra sayısını vermezse işaret BASILMAZ ve hiçbir
+# sayısal değer (O/G/B/M/AV/P) bu yüzden değiştirilmez.
+
+DEFAULT_ZONES: dict[str, Any] = {
+    "top": [
+        {"count": 1, "kind": "champions", "label": "Şampiyonlar Ligi"},
+        {"count": 2, "kind": "europa", "label": "Avrupa kupaları"},
+    ],
+    "bottom": [
+        {"count": 3, "kind": "relegation", "label": "Küme düşme hattı"},
+    ],
+}
+# Çok kısa tablolarda (ör. tek maçlık grup) üst/alt bölge anlamsız olur.
+MIN_ROWS_FOR_ZONES = 8
+
+
+def zone_rules(cfg: dict | None, path: str) -> dict:
+    """Lig için bölge kuralları: ``zones.<path>`` yoksa ``default_zones``/varsayılan."""
+    cfg = cfg if isinstance(cfg, dict) else {}
+    table = cfg.get("zones")
+    rules = table.get(path) if isinstance(table, dict) else None
+    if rules is None:
+        rules = cfg.get("default_zones")
+    if rules is None:
+        rules = DEFAULT_ZONES
+    return rules if isinstance(rules, dict) else {}
+
+
+def _zone_entries(raw: Any, fallback_kind: str, fallback_label: str) -> list[dict]:
+    entries: list[dict] = []
+    for item in raw if isinstance(raw, list) else []:
+        if isinstance(item, dict):
+            count, kind, label = item.get("count"), item.get("kind"), item.get("label")
+        else:                                   # kısayol: yalnızca sıra sayısı (ör. `- 3`)
+            count, kind, label = item, None, None
+        count = _int(count)
+        if not count or count < 1:
+            continue
+        entries.append({"kind": str(kind or fallback_kind),
+                        "label": str(label or fallback_label)})
+        entries[-1]["count"] = count
+    return entries
+
+
+def zone_rank_map(rules: Any, total: int) -> dict[int, dict]:
+    """``sıra -> {kind, label}`` eşlemesi; ``top`` 1'den, ``bottom`` son sıradan başlar."""
+    if not isinstance(rules, dict) or total < MIN_ROWS_FOR_ZONES:
+        return {}
+    zones: dict[int, dict] = {}
+    rank = 1
+    for entry in _zone_entries(rules.get("top"), "europa", "Avrupa kupaları"):
+        for _ in range(entry["count"]):
+            if rank > total:
+                break
+            zones[rank] = entry
+            rank += 1
+    rank = total
+    for entry in _zone_entries(rules.get("bottom"), "relegation", "Küme düşme hattı"):
+        for _ in range(entry["count"]):
+            if rank < 1:
+                break
+            zones.setdefault(rank, entry)       # üst bölge önceliklidir
+            rank -= 1
+    return zones
+
+
+def apply_zones(rows: list[dict], rules: Any) -> list[dict]:
+    """Satırlara ``zone``/``zoneLabel`` alanlarını yazar (renk/rozet bu alanları kullanır)."""
+    zones = zone_rank_map(rules, len(rows or []))
+    for row in rows or []:
+        if not isinstance(row, dict):
+            continue
+        info = zones.get(row.get("rank")) if isinstance(row.get("rank"), int) else None
+        row["zone"] = str(info["kind"]) if info else ""
+        row["zoneLabel"] = str(info["label"]) if info else ""
+    return rows
+
+
 def stat_map(stats: Any) -> dict[str, int | None]:
     raw: dict[str, Any] = {}
     for item in stats or []:
@@ -145,6 +277,7 @@ def parse_entry(entry: dict, display: Callable[[str], str]) -> dict | None:
                  if team.get(k)), "")
     if not name:
         return None
+    clean_name = dedupe_team_name(name) or name
     row = stat_map(entry.get("stats"))
     if row["played"] is None:
         return None
@@ -163,8 +296,8 @@ def parse_entry(entry: dict, display: Callable[[str], str]) -> dict | None:
     logo = next((l.get("href") for l in logos if isinstance(l, dict) and l.get("href")), "")
     return {
         "rank": row["rank"],
-        "team": display(name),
-        "sourceTeam": name,
+        "team": display(clean_name),
+        "sourceTeam": clean_name,
         "abbr": str(team.get("abbreviation") or ""),
         "logo": str(logo or ""),
         "played": row["played"],
@@ -231,6 +364,7 @@ def league_payload(data: Any, league: dict, cfg: dict, fetched_at: str) -> dict:
         if None not in (played, w, d, l) and w + d + l != played:
             log.warning("Puan tablosu tutarsız (%s): G+B+M=%s ama O=%s — kaynak değerleri korunuyor.",
                         row["team"], w + d + l, played)
+    apply_zones(rows, zone_rules(cfg, path))
     return {
         "id": path,
         "name": str(league.get("name") or path),
@@ -326,22 +460,25 @@ def _extract_rows_from_table(table, display: Callable[[str], str]) -> list[dict]
         # Eğer takım hücresinde link varsa, takım adını oradan al
         # Takım adını belirle: hücrelerden birinde en uzun metin ve harf içeren
         # Daha robust: takım adını <a> içinde ara
+        # NOT: kaynak adı iki kez basar (masaüstü+mobil); dedupe_team_name tekilleştirir.
         team_name = ""
         team_cell_idx = -1
         for idx, c in enumerate(tds):
             a = c.find("a")
-            if a and a.get_text(strip=True):
-                txt = a.get_text(strip=True)
-                # Takım adları genellikle 3+ harf ve boşluk içerebilir; form hücreleri tek harfli G/B/M olur, onları ele
-                if len(txt) >= 2 and not re.fullmatch(r"[GBM ]+", txt, flags=re.I):
-                    # Exclude if txt is just number or rank
-                    if not txt.isdigit():
-                        team_name = txt
-                        team_cell_idx = idx
-                        break
+            if a is None:
+                continue
+            txt = dedupe_team_name(a.get_text(" ", strip=True))
+            # Takım adları genellikle 3+ harf ve boşluk içerebilir; form hücreleri tek harfli G/B/M olur, onları ele
+            if len(txt) >= 2 and not re.fullmatch(r"[GBM ]+", txt, flags=re.I):
+                # Exclude if txt is just number or rank
+                if not txt.isdigit():
+                    team_name = txt
+                    team_cell_idx = idx
+                    break
         if not team_name:
             # Fallback: text-based detection
             for idx, txt in enumerate(cells_text):
+                txt = dedupe_team_name(txt)
                 if len(txt) >= 3 and re.search(r"[A-Za-zÇçĞğİıÖöŞşÜü]", txt):
                     # Check if this txt looks like team not header
                     if txt.lower() not in ("poz", "takım", "takim", "form"):
@@ -352,18 +489,21 @@ def _extract_rows_from_table(table, display: Callable[[str], str]) -> list[dict]
             if not team_name:
                 continue
 
-        # Logo çıkar
+        # Logo çıkar (img alt'ı temiz takım adı da verebilir)
         logo = ""
         if team_cell_idx >= 0:
             img = tds[team_cell_idx].find("img")
-            if img and img.get("src"):
-                src = str(img.get("src")).strip()
-                if src.startswith("//"):
-                    src = "https:" + src
-                elif src.startswith("/"):
-                    # Relative
-                    src = "https://www.mackolik.com" + src if "mackolik" in str(table) else src
-                logo = src
+            if img:
+                if not team_name:
+                    team_name = dedupe_team_name(img.get("alt") or "")
+                if img.get("src"):
+                    src = str(img.get("src")).strip()
+                    if src.startswith("//"):
+                        src = "https:" + src
+                    elif src.startswith("/"):
+                        # Relative
+                        src = "https://www.mackolik.com" + src if "mackolik" in str(table) else src
+                    logo = src
 
         # Şimdi hücreleri header'lara eşle
         # Eğer headers varsa, cells_text ile headers aynı uzunlukta olmalı; logo boş kolon yüzünden kayma olabilir.
@@ -477,7 +617,7 @@ def _extract_rows_from_table(table, display: Callable[[str], str]) -> list[dict]
                     continue
 
         # Now build row dict from mapping
-        raw_team = team_name.strip()
+        raw_team = dedupe_team_name(team_name)
         if not raw_team:
             continue
         # Resolve display name
@@ -645,6 +785,7 @@ def _rows_to_payload(rows: list[dict], league: dict, cfg: dict, fetched_at: str,
             season = f"{yr}-{str(yr+1)[2:]} Turkish Super Lig"
         except Exception:
             season = ""
+    apply_zones(rows, zone_rules(cfg, str(league.get("path") or "")))
     return {
         "id": str(league.get("path") or ""),
         "name": str(league.get("name") or ""),
@@ -655,6 +796,44 @@ def _rows_to_payload(rows: list[dict], league: dict, cfg: dict, fetched_at: str,
         "rows": rows,
         "_source": source,
     }
+
+
+def sanitize_league(league: dict, cfg: dict | None = None) -> dict:
+    """Kayıtlı/yeni bir lig tablosunu sunum için temizler.
+
+    İki iş yapar, ikisi de **sunum katmanıdır**:
+      1. Yapışık tekrar eden takım adlarını tekilleştirir
+         (``"GalatasarayGalatasaray" -> "Galatasaray"``); temizlenen ad artık
+         ``display_names`` ile eşleşebiliyorsa Türkçe görünen ad uygulanır.
+      2. Sıra bölgelerini (Avrupa hattı / küme düşme hattı) ``zone``/``zoneLabel``
+         alanlarıyla işaretler.
+
+    O/G/B/M, averaj, puan ve sıra değerlerine **dokunulmaz**.
+    """
+    if not isinstance(league, dict):
+        return league
+    cfg = cfg if isinstance(cfg, dict) else {}
+    path = str(league.get("id") or "")
+    names = {str(k): str(v) for k, v in (cfg.get("display_names", {}).get(path) or {}).items()}
+    rows = league.get("rows")
+    if not isinstance(rows, list):
+        return league
+    for row in rows:
+        if not isinstance(row, dict):
+            continue
+        team = str(row.get("team") or "")
+        clean = dedupe_team_name(team)
+        if clean and clean != team:
+            row["team"] = clean
+        source_team = str(row.get("sourceTeam") or "")
+        clean_source = dedupe_team_name(source_team)
+        if clean_source and clean_source != source_team:
+            row["sourceTeam"] = clean_source
+        mapped = names.get(str(row.get("team") or "")) or names.get(str(row.get("sourceTeam") or ""))
+        if mapped:
+            row["team"] = mapped
+    apply_zones(rows, zone_rules(cfg, path))
+    return league
 
 
 def _valid_path(path: str) -> bool:
@@ -688,7 +867,7 @@ def refresh(now: datetime | None = None, fetch: Fetcher | None = None,
     prev_by_id = {l.get("id"): l for l in previous.get("leagues", []) if isinstance(l, dict)}
 
     leagues_out: list[dict] = []
-    source_used = "espn"
+    sources_used: list[str] = []
 
     if cfg.get("enabled", False):
         fetch = fetch or _fetch
@@ -744,34 +923,28 @@ def refresh(now: datetime | None = None, fetch: Fetcher | None = None,
             results = list(pool.map(load, wanted))
             for league, payload, src in results:
                 if payload:
-                    # internal _source strip before output? Keep source tracking separately
-                    # Ensure output does not expose internal _source key in rows but we use it for top-level source field.
+                    # Gerçekten okunan kaynak etiketi için izlenir (_source alanı çıktıya sızmaz).
                     if src != "none":
-                        source_used = src if source_used == "espn" or src in ("iddaa", "mackolik") else source_used
-                    # Remove internal _source from payload before output (keep updated_at etc.)
+                        sources_used.append(src)
                     payload.pop("_source", None)
                     leagues_out.append(payload)
                 elif prev_by_id.get(league["path"]):
-                    leagues_out.append(prev_by_id[league["path"]])
-                    if prev_by_id[league["path"]].get("updated_at"):
-                        # keep previous source indication
-                        pass
+                    # Son bilinen tablo korunur; ad tekrarı/bölge işaretleri tazelenir.
+                    leagues_out.append(sanitize_league(prev_by_id[league["path"]], cfg))
     else:
-        leagues_out = list(previous.get("leagues", []))
-        source_used = previous.get("source", "espn")
+        leagues_out = [sanitize_league(lg, cfg) for lg in previous.get("leagues", [])
+                       if isinstance(lg, dict)]
 
-    # Determine top-level source: if any league used iddaa/mackolik, mark accordingly
-    # For backwards compatibility, if only ESPN used, source remains espn
-    # If mixed, mark as mixed; if iddaa, mark iddaa
-    # Find actual sources used by checking updated_at vs stamp? Simpler: if we successfully fetched via iddaa, mark iddaa
-    # We already tracked source_used as last successful; for now choose iddaa if any succeeded via iddaa path.
-    # More accurate: if any payload came from iddaa path (we logged), set source to iddaa
-    # Let's infer: if any league_out updated_at == stamp and we had iddaa success, source = iddaa
-    # For test stability, keep source as espn when using ESPN path; but for iddaa success set iddaa
-    # We can detect by checking if leagues_out has rows and we used iddaa earlier (source_used variable)
-    final_source = source_used if leagues_out else previous.get("source", "espn")
-    # If original previous source was mixed, keep mixed; else use detected
-    # Ensure source is one of expected values for frontend
+    # Üst düzey "source" etiketi dürüst olmalı: yalnızca GERÇEKTEN okunan kaynaklar
+    # yazılır. Hiçbir kaynak okunamadıysa (son bilinen tablo korunuyorsa) o tablonun
+    # kendi kaynağı korunur; birden fazla kaynak kullanıldıysa "mixed" olur.
+    distinct = list(dict.fromkeys(src for src in sources_used if src))
+    if not distinct:
+        final_source = str(previous.get("source") or "espn")
+    elif len(distinct) > 1:
+        final_source = "mixed"
+    else:
+        final_source = distinct[0]
     if final_source not in ("iddaa", "mackolik", "espn", "mixed"):
         final_source = "espn"
 
@@ -784,8 +957,21 @@ def refresh(now: datetime | None = None, fetch: Fetcher | None = None,
 
 
 def load_or_build(now: datetime | None = None) -> dict:
+    """Son bilinen tabloyu yükler (çevrimdışı index üretimi için).
+
+    Kayıtlı tablo eski bir sürümden geliyorsa burada da temizlenir: yapışık takım
+    adı tekrarları tekilleştirilir, sıra bölgeleri işaretlenir (sayılar aynı kalır).
+    """
     data = _previous(now)
-    return data or {"source": "espn", "generated_at": "", "leagues": []}
+    if not data:
+        return {"source": "espn", "generated_at": "", "leagues": []}
+    try:
+        cfg = load_config()
+    except Exception:  # noqa: BLE001 - yapılandırma okunamazsa tablo yine de gösterilir
+        cfg = {}
+    for league in data.get("leagues", []):
+        sanitize_league(league, cfg)
+    return data
 
 
 def summary(data: dict | None) -> str:

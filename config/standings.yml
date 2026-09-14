@@ -42,3 +42,28 @@ display_names:
     Corum: "Çorum FK"
     Erzurum: "Erzurum BB"
     Erzurumspor: "Erzurum BB"
+    # mackolik yazımları (aynı ilke: yalnızca görünen ad)
+    Ç. Rizespor: "Çaykur Rizespor"
+    Erzurumspor FK: "Erzurum BB"
+
+# ---------------------------------------------------------------------------
+# Sıra bölgeleri (PUAN DURUMU tablosundaki renkli şeritler)
+# ---------------------------------------------------------------------------
+# Sunum katmanıdır: tablonun üst sıraları "Avrupa hattı" (yükseliş), alt sıraları
+# "küme düşme hattı" olarak işaretlenir. Bu ayar YALNIZCA renk/rozet/etiket üretir;
+# sıra, O/G/B/M, averaj ve puan değerleri her zaman kaynaktan geldiği gibi yazılır.
+#
+#   top    -> 1. sıradan aşağı doğru uygulanır
+#   bottom -> son sıradan yukarı doğru uygulanır
+#   count  -> kaç sırayı kapsar · kind -> renk sınıfı · label -> tabloda görünen açıklama
+#
+# Lig özelinde yazılmayan yollar `default_zones` (o da yoksa koddaki varsayılan:
+# 1 Şampiyonlar Ligi + 2 Avrupa + son 3 küme düşme) kullanır. Bir ligi işaretsiz
+# bırakmak için `zones.<path>: {}` yazmak yeterlidir.
+zones:
+  soccer/tur.1:
+    top:
+      - { count: 1, kind: "champions",  label: "Şampiyonlar Ligi" }
+      - { count: 2, kind: "europa",     label: "Avrupa kupaları" }
+    bottom:
+      - { count: 3, kind: "relegation", label: "Küme düşme hattı" }

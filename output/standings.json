@@ -1,6 +1,6 @@
 {
  "source": "mackolik",
- "generated_at": "2026-09-14T13:04:38+03:00",
+ "generated_at": "2026-09-14T13:30:48+03:00",
  "leagues": [
   {
    "id": "soccer/tur.1",
@@ -12,8 +12,8 @@
    "rows": [
     {
      "rank": 1,
-     "team": "GalatasarayGalatasaray",
-     "sourceTeam": "GalatasarayGalatasaray",
+     "team": "Galatasaray",
+     "sourceTeam": "Galatasaray",
      "abbr": "",
      "logo": "https://file.mackolikfeeds.com/teams/esa748l653sss1wurz5ps3228",
      "played": 5,
@@ -24,12 +24,14 @@
      "goalsAgainst": 6,
      "diff": 7,
      "points": 13,
-     "note": ""
+     "note": "",
+     "zone": "champions",
+     "zoneLabel": "Şampiyonlar Ligi"
     },
     {
      "rank": 2,
-     "team": "BeşiktaşBeşiktaş",
-     "sourceTeam": "BeşiktaşBeşiktaş",
+     "team": "Beşiktaş",
+     "sourceTeam": "Beşiktaş",
      "abbr": "",
      "logo": "https://file.mackolikfeeds.com/teams/2ez9cvam9lp9jyhng3eh3znb4",
      "played": 5,
@@ -40,12 +42,14 @@
      "goalsAgainst": 4,
      "diff": 8,
      "points": 12,
-     "note": ""
+     "note": "",
+     "zone": "europa",
+     "zoneLabel": "Avrupa kupaları"
     },
     {
      "rank": 3,
-     "team": "Amed SKAmed SK",
-     "sourceTeam": "Amed SKAmed SK",
+     "team": "Amed SFK",
+     "sourceTeam": "Amed SK",
      "abbr": "",
      "logo": "https://file.mackolikfeeds.com/teams/2154uhyeun0lm781iiiijqhwo",
      "played": 5,
@@ -56,12 +60,14 @@
      "goalsAgainst": 5,
      "diff": 7,
      "points": 10,
-     "note": ""
+     "note": "",
+     "zone": "europa",
+     "zoneLabel": "Avrupa kupaları"
     },
     {
      "rank": 4,
-     "team": "KasımpaşaKasımpaşa",
-     "sourceTeam": "KasımpaşaKasımpaşa",
+     "team": "Kasımpaşa",
+     "sourceTeam": "Kasımpaşa",
      "abbr": "",
      "logo": "https://file.mackolikfeeds.com/teams/4idg23egrrvtrbgrg7p5x7bwf",
      "played": 5,
@@ -72,12 +78,14 @@
      "goalsAgainst": 5,
      "diff": 2,
      "points": 9,
-     "note": ""
+     "note": "",
+     "zone": "",
+     "zoneLabel": ""
     },
     {
      "rank": 5,
-     "team": "Ç. RizesporÇ. Rizespor",
-     "sourceTeam": "Ç. RizesporÇ. Rizespor",
+     "team": "Çaykur Rizespor",
+     "sourceTeam": "Ç. Rizespor",
      "abbr": "",
      "logo": "https://file.mackolikfeeds.com/teams/1lbrlj3uu8wi2h9j79snuoae4",
      "played": 5,
@@ -88,12 +96,14 @@
      "goalsAgainst": 4,
      "diff": 1,
      "points": 9,
-     "note": ""
+     "note": "",
+     "zone": "",
+     "zoneLabel": ""
     },
     {
      "rank": 6,
-     "team": "KocaelisporKocaelispor",
-     "sourceTeam": "KocaelisporKocaelispor",
+     "team": "Kocaelispor",
+     "sourceTeam": "Kocaelispor",
      "abbr": "",
      "logo": "https://file.mackolikfeeds.com/teams/b703zecenioz21dnj3p63v3f7",
      "played": 5,
@@ -104,12 +114,14 @@
      "goalsAgainst": 4,
      "diff": 1,
      "points": 9,
-     "note": ""
+     "note": "",
+     "zone": "",
+     "zoneLabel": ""
     },
     {
      "rank": 7,
-     "team": "AlanyasporAlanyaspor",
-     "sourceTeam": "AlanyasporAlanyaspor",
+     "team": "Alanyaspor",
+     "sourceTeam": "Alanyaspor",
      "abbr": "",
      "logo": "https://file.mackolikfeeds.com/teams/84fpe0iynjdghwysyo5tizdkk",
      "played": 5,
@@ -120,12 +132,14 @@
      "goalsAgainst": 5,
      "diff": 1,
      "points": 8,
-     "note": ""
+     "note": "",
+     "zone": "",
+     "zoneLabel": ""
     },
     {
      "rank": 8,
-     "team": "TrabzonsporTrabzonspor",
-     "sourceTeam": "TrabzonsporTrabzonspor",
+     "team": "Trabzonspor",
+     "sourceTeam": "Trabzonspor",
      "abbr": "",
      "logo": "https://file.mackolikfeeds.com/teams/2yab38jdfl0gk2tei1mq40o06",
      "played": 5,
@@ -136,12 +150,14 @@
      "goalsAgainst": 5,
      "diff": 4,
      "points": 7,
-     "note": ""
+     "note": "",
+     "zone": "",
+     "zoneLabel": ""
     },
     {
      "rank": 9,
-     "team": "Çorum FKÇorum FK",
-     "sourceTeam": "Çorum FKÇorum FK",
+     "team": "Çorum FK",
+     "sourceTeam": "Çorum FK",
      "abbr": "",
      "logo": "https://file.mackolikfeeds.com/teams/eg0cqg1u8zz85ma9nzk0cijv",
      "played": 5,
@@ -152,12 +168,14 @@
      "goalsAgainst": 10,
      "diff": 2,
      "points": 7,
-     "note": ""
+     "note": "",
+     "zone": "",
+     "zoneLabel": ""
     },
     {
      "rank": 10,
-     "team": "Gaziantep FKGaziantep FK",
-     "sourceTeam": "Gaziantep FKGaziantep FK",
+     "team": "Gaziantep FK",
+     "sourceTeam": "Gaziantep FK",
      "abbr": "",
      "logo": "https://file.mackolikfeeds.com/teams/2agzb2h4ppg7lfz9hn7eg1rqo",
      "played": 4,
@@ -168,12 +186,14 @@
      "goalsAgainst": 5,
      "diff": 2,
      "points": 7,
-     "note": ""
+     "note": "",
+     "zone": "",
+     "zoneLabel": ""
     },
     {
      "rank": 11,
-     "team": "GençlerbirliğiGençlerbirliği",
-     "sourceTeam": "GençlerbirliğiGençlerbirliği",
+     "team": "Gençlerbirliği",
+     "sourceTeam": "Gençlerbirliği",
      "abbr": "",
      "logo": "https://file.mackolikfeeds.com/teams/embqktr41hfzczc8uav1scmcn",
      "played": 5,
@@ -184,12 +204,14 @@
      "goalsAgainst": 9,
      "diff": -4,
      "points": 7,
-     "note": ""
+     "note": "",
+     "zone": "",
+     "zoneLabel": ""
     },
     {
      "rank": 12,
-     "team": "FenerbahçeFenerbahçe",
-     "sourceTeam": "FenerbahçeFenerbahçe",
+     "team": "Fenerbahçe",
+     "sourceTeam": "Fenerbahçe",
      "abbr": "",
      "logo": "https://file.mackolikfeeds.com/teams/8lroq0cbhdxj8124qtxwrhvmm",
      "played": 4,
@@ -200,12 +222,14 @@
      "goalsAgainst": 6,
      "diff": 2,
      "points": 6,
-     "note": ""
+     "note": "",
+     "zone": "",
+     "zoneLabel": ""
     },
     {
      "rank": 13,
-     "team": "BaşakşehirBaşakşehir",
-     "sourceTeam": "BaşakşehirBaşakşehir",
+     "team": "Başakşehir",
+     "sourceTeam": "Başakşehir",
      "abbr": "",
      "logo": "https://file.mackolikfeeds.com/teams/47njg6cmlx5q3fvdsupd2n6qu",
      "played": 5,
@@ -216,12 +240,14 @@
      "goalsAgainst": 11,
      "diff": -5,
      "points": 4,
-     "note": ""
+     "note": "",
+     "zone": "",
+     "zoneLabel": ""
     },
     {
      "rank": 14,
-     "team": "SamsunsporSamsunspor",
-     "sourceTeam": "SamsunsporSamsunspor",
+     "team": "Samsunspor",
+     "sourceTeam": "Samsunspor",
      "abbr": "",
      "logo": "https://file.mackolikfeeds.com/teams/dpsnqu7pd2b0shfzjyn5j1znf",
      "played": 5,
@@ -232,12 +258,14 @@
      "goalsAgainst": 11,
      "diff": -5,
      "points": 4,
-     "note": ""
+     "note": "",
+     "zone": "",
+     "zoneLabel": ""
     },
     {
      "rank": 15,
-     "team": "Erzurumspor FKErzurumspor FK",
-     "sourceTeam": "Erzurumspor FKErzurumspor FK",
+     "team": "Erzurum BB",
+     "sourceTeam": "Erzurumspor FK",
      "abbr": "",
      "logo": "https://file.mackolikfeeds.com/teams/ea2gyhkv6vwmxbxevdb4u3796",
      "played": 5,
@@ -248,12 +276,14 @@
      "goalsAgainst": 11,
      "diff": -9,
      "points": 4,
-     "note": ""
+     "note": "",
+     "zone": "",
+     "zoneLabel": ""
     },
     {
      "rank": 16,
-     "team": "KonyasporKonyaspor",
-     "sourceTeam": "KonyasporKonyaspor",
+     "team": "Konyaspor",
+     "sourceTeam": "Konyaspor",
      "abbr": "",
      "logo": "https://file.mackolikfeeds.com/teams/cw4lbdzlqqdvbkdkz00c9ye49",
      "played": 5,
@@ -264,12 +294,14 @@
      "goalsAgainst": 8,
      "diff": -4,
      "points": 3,
-     "note": ""
+     "note": "",
+     "zone": "relegation",
+     "zoneLabel": "Küme düşme hattı"
     },
     {
      "rank": 17,
-     "team": "EyüpsporEyüpspor",
-     "sourceTeam": "EyüpsporEyüpspor",
+     "team": "Eyüpspor",
+     "sourceTeam": "Eyüpspor",
      "abbr": "",
      "logo": "https://file.mackolikfeeds.com/teams/bmgtxgipsznlb1j20zwjti3xh",
      "played": 5,
@@ -280,12 +312,14 @@
      "goalsAgainst": 8,
      "diff": -6,
      "points": 3,
-     "note": ""
+     "note": "",
+     "zone": "relegation",
+     "zoneLabel": "Küme düşme hattı"
     },
     {
      "rank": 18,
-     "team": "GöztepeGöztepe",
-     "sourceTeam": "GöztepeGöztepe",
+     "team": "Göztepe",
+     "sourceTeam": "Göztepe",
      "abbr": "",
      "logo": "https://file.mackolikfeeds.com/teams/cjbaf8s09qoa1n11r33gc560x",
      "played": 5,
@@ -296,7 +330,9 @@
      "goalsAgainst": 13,
      "diff": -4,
      "points": 2,
-     "note": ""
+     "note": "",
+     "zone": "relegation",
+     "zoneLabel": "Küme düşme hattı"
     }
    ]
   }

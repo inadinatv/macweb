@@ -539,6 +539,32 @@
             border-bottom: 1px solid rgba(255,255,255,0.16);
         }
         .standings-table tbody tr:nth-child(even) { background: rgba(255,255,255,0.03); }
+        /* Sıra bölgeleri: ilk sıralar Avrupa hattı (altın/yeşil), son sıralar küme düşme hattı (kırmızı).
+           Renkler config/standings.yml → zones'tan gelen zone alanından gelir; sayılar değişmez. */
+        .standings-table tbody tr.zone-champions { background: linear-gradient(90deg, rgba(255,204,51,0.20), rgba(255,204,51,0.04) 46%, rgba(255,255,255,0.02)); }
+        .standings-table tbody tr.zone-europa { background: linear-gradient(90deg, rgba(0,255,136,0.17), rgba(0,255,136,0.03) 46%, rgba(255,255,255,0.02)); }
+        .standings-table tbody tr.zone-relegation { background: linear-gradient(90deg, rgba(255,45,122,0.22), rgba(255,45,122,0.04) 46%, rgba(255,255,255,0.02)); }
+        /* Sol kenarda 3px renkli şerit: hangi hattın içinde olduğu bir bakışta okunur */
+        .standings-table tbody tr.zone-champions td:first-child { box-shadow: inset 3px 0 0 var(--neon-gold); }
+        .standings-table tbody tr.zone-europa td:first-child { box-shadow: inset 3px 0 0 #00ff88; }
+        .standings-table tbody tr.zone-relegation td:first-child { box-shadow: inset 3px 0 0 var(--neon-pink); }
+        .standings-table tbody tr.zone-champions .cell-team { color: #ffe9a8; }
+        .standings-table tbody tr.zone-europa .cell-team { color: #d6ffe9; }
+        .standings-table tbody tr.zone-relegation .cell-team { color: #ffd9e0; }
+        /* ▲ yükseliş (Avrupa) hattı, ▼ küme düşme hattı — takım adının hemen yanında */
+        .standings-table tbody tr.zone-champions .cell-team::after,
+        .standings-table tbody tr.zone-europa .cell-team::after,
+        .standings-table tbody tr.zone-relegation .cell-team::after {
+            font-size: .68em; margin-left: 6px; vertical-align: 2px; font-weight: 900;
+        }
+        .standings-table tbody tr.zone-champions .cell-team::after { content: "▲"; color: var(--neon-gold); text-shadow: 0 0 9px rgba(255,204,51,0.65); }
+        .standings-table tbody tr.zone-europa .cell-team::after { content: "▲"; color: #00ff88; text-shadow: 0 0 9px rgba(0,255,136,0.6); }
+        .standings-table tbody tr.zone-relegation .cell-team::after { content: "▼"; color: var(--neon-pink); text-shadow: 0 0 9px rgba(255,45,122,0.65); }
+        .standings-table tbody tr.zone-relegation .cell-rank .rk { animation: relegatePulse 2.6s ease-in-out infinite; }
+        @keyframes relegatePulse {
+            0%, 100% { box-shadow: 0 0 0 rgba(255,45,122,0); }
+            50% { box-shadow: 0 0 10px rgba(255,45,122,0.55); }
+        }
         .standings-table tbody tr:last-child td { border-bottom: none; }
         .standings-table tbody tr { transition: background .2s ease; }
         .standings-table tbody tr:hover { background: rgba(255,45,122,0.07); }
@@ -547,14 +573,32 @@
         .standings-table .cell-team .t-logo { width: 20px; height: 20px; margin-right: 8px; vertical-align: -4px; object-fit: contain; }
         .standings-table .cell-points { color: var(--neon-gold); font-weight: 800; font-size: 1.08rem; text-shadow: 0 0 10px rgba(255,204,51,0.35); }
         .standings-table .cell-pos { color: #8fd8ff; font-weight: 700; }
-        /* Sıra rozetleri: Avrupa hattı / düşme hattı (kaynak notundan gelir) */
+        /* Sıra rozetleri: Şampiyonlar Ligi / Avrupa hattı / küme düşme hattı
+           (zone alanından; kaynak notu varsa o da aynı renklere eşlenir) */
         .standings-table .cell-rank .rk {
             display: inline-flex; align-items: center; justify-content: center;
             min-width: 22px; height: 22px; padding: 0 5px; border-radius: 7px;
             background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.10); font-size: 0.78rem;
         }
-        .standings-table .cell-rank .rk.qualify { color: #7dffc0; border-color: rgba(0,255,136,0.45); background: rgba(0,255,136,0.10); }
-        .standings-table .cell-rank .rk.relegate { color: #ff9ba7; border-color: rgba(255,45,122,0.5); background: rgba(255,45,122,0.12); }
+        .standings-table .cell-rank .rk.champions { color: #ffe08a; border-color: rgba(255,204,51,0.55); background: rgba(255,204,51,0.14); text-shadow: 0 0 8px rgba(255,204,51,0.45); }
+        .standings-table .cell-rank .rk.europa, .standings-table .cell-rank .rk.qualify { color: #7dffc0; border-color: rgba(0,255,136,0.45); background: rgba(0,255,136,0.10); }
+        .standings-table .cell-rank .rk.relegation, .standings-table .cell-rank .rk.relegate { color: #ff9ba7; border-color: rgba(255,45,122,0.5); background: rgba(255,45,122,0.12); }
+        /* Bölge açıklaması (lejant): hangi sıralar ne anlama geliyor */
+        .standings-legend {
+            display: flex; flex-wrap: wrap; gap: 6px 14px; justify-content: center; align-items: center;
+            margin-top: 11px; padding: 9px 10px; border-radius: 12px;
+            background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.07);
+            font-size: 0.72rem; color: var(--text-muted); letter-spacing: .2px;
+        }
+        .standings-legend .zl-item { display: inline-flex; align-items: center; gap: 6px; }
+        .standings-legend .zl-sw { width: 10px; height: 10px; border-radius: 3px; flex: 0 0 auto; display: inline-block; }
+        .standings-legend .zl-ranks { font-weight: 800; font-variant-numeric: tabular-nums; }
+        .standings-legend .zl-item.champions .zl-sw { background: var(--neon-gold); box-shadow: 0 0 8px rgba(255,204,51,0.6); }
+        .standings-legend .zl-item.champions .zl-ranks { color: #ffe08a; }
+        .standings-legend .zl-item.europa .zl-sw { background: #00ff88; box-shadow: 0 0 8px rgba(0,255,136,0.55); }
+        .standings-legend .zl-item.europa .zl-ranks { color: #7dffc0; }
+        .standings-legend .zl-item.relegation .zl-sw { background: var(--neon-pink); box-shadow: 0 0 8px rgba(255,45,122,0.6); }
+        .standings-legend .zl-item.relegation .zl-ranks { color: #ff9ba7; }
         .standings-note {
             display: flex; align-items: center; gap: 12px; flex-wrap: wrap; justify-content: center;
             margin-top: 12px; padding-top: 10px; border-top: 1px solid rgba(255,255,255,0.06);
@@ -615,6 +659,7 @@
             .standings-table tbody td { padding: 9px 4px; }
             .standings-table .cell-team { font-size: 0.95rem; }
             .standings-table .cell-team .t-logo { display: none; }
+            .standings-legend { font-size: 0.66rem; gap: 4px 10px; padding: 8px; }
         }
         @media (prefers-reduced-motion: reduce) {
             * { animation: none !important; transition: none !important; }
@@ -795,10 +840,12 @@
                     <tbody id="standingsBody"></tbody>
                 </table>
                 <div class="standings-empty" id="standingsEmpty" hidden></div>
+                <!-- Bölge açıklaması: ilk sıralar Avrupa hattı, son sıralar küme düşme hattı -->
+                <div class="standings-legend" id="standingsLegend" hidden></div>
                 <div class="standings-note" id="standingsNote"></div>
             </div>
             <div class="modal-foot">
-                <span><b>O</b> oynanan · <b>G</b> galibiyet · <b>B</b> beraberlik · <b>M</b> mağlubiyet · <b>AV</b> averaj · <b>P</b> puan</span>
+                <span><b>O</b> oynanan · <b>G</b> galibiyet · <b>B</b> beraberlik · <b>M</b> mağlubiyet · <b>AV</b> averaj · <b>P</b> puan · renkli sıralar Avrupa / küme düşme hattı</span>
                 <button type="button" class="mini-btn" id="standingsRefreshBtn" title="Puan durumunu yeniden yükle">🔄 Yenile</button>
             </div>
         </div>
@@ -900,6 +947,7 @@
                 standingsTable: $("standingsTable"),
                 standingsBody: $("standingsBody"),
                 standingsEmpty: $("standingsEmpty"),
+                standingsLegend: $("standingsLegend"),
                 standingsNote: $("standingsNote")
             };
 
@@ -1903,6 +1951,28 @@
             const statNumber = (v) => (/^-?[0-9]{1,4}$/.test(String(v == null ? "" : v).trim()) ? Number(String(v).trim()) : null);
             /** Takım logosu yalnızca https adresiyle gömülür. */
             const safeLogo = (u) => (/^https:\/\/[^\s"'<>]+$/i.test(String(u || "")) ? String(u) : "");
+            /** Kaynak adı aynı hücrede iki kez basarsa yapışık tekrarı tekilleştirir:
+             *  ("Galatasaray" + "Galatasaray" → "Galatasaray"); tekrar yoksa ad aynen kalır. */
+            function dedupeTeamName(value) {
+                const t = String(value == null ? "" : value).replace(/\s+/g, " ").trim();
+                if (!t) return "";
+                const tokens = t.split(" ");
+                for (let size = 1; size * 2 <= tokens.length; size++) {
+                    if (tokens.length % size) continue;
+                    const unit = tokens.slice(0, size).join(" ");
+                    let same = true;
+                    for (let i = 1; i * size < tokens.length; i++) {
+                        if (tokens.slice(i * size, (i + 1) * size).join(" ") !== unit) { same = false; break; }
+                    }
+                    if (same) return unit;
+                }
+                for (let size = 2; size * 2 <= t.length; size++) {
+                    if (t.length % size) continue;
+                    const unit = t.slice(0, size);
+                    if (unit.trim() && unit.repeat(t.length / size) === t) return unit.trim();
+                }
+                return t;
+            }
 
             /** Gömülü/uzak puan durumunu doğrular; satırı olmayan lig listelenmez. */
             function normalizeStandings(json) {
@@ -1914,13 +1984,17 @@
                     lg.rows.forEach((r) => {
                         if (!r || !r.team) return;
                         rows.push({
-                            rank: statNumber(r.rank), team: String(r.team),
+                            rank: statNumber(r.rank), team: dedupeTeamName(r.team),
                             abbr: r.abbr ? String(r.abbr) : "", logo: safeLogo(r.logo),
                             played: statNumber(r.played), wins: statNumber(r.wins),
                             draws: statNumber(r.draws), losses: statNumber(r.losses),
                             goalsFor: statNumber(r.goalsFor), goalsAgainst: statNumber(r.goalsAgainst),
                             diff: statNumber(r.diff), points: statNumber(r.points),
-                            note: r.note ? String(r.note) : ""
+                            note: r.note ? String(r.note) : "",
+                            // Bölge (Avrupa/küme düşme hattı) kaynaktan gelir; kaynak yalnızca
+                            // not verdiyse (ESPN) nottan türetilir. Hiçbiri yoksa boş kalır.
+                            zone: canonicalZone(r.zone) || zoneFromNote(r.note),
+                            zoneLabel: r.zoneLabel ? String(r.zoneLabel) : ""
                         });
                     });
                     if (rows.length) leagues.push({
@@ -1931,12 +2005,53 @@
                 return { source: String(json.source || ""), generatedAt: String(json.generated_at || ""), leagues: leagues };
             }
 
-            /** Kaynak notundan rozet sınıfı: Avrupa hattı / düşme hattı. */
-            function rankBadgeClass(note) {
+            /* ---- Sıra bölgeleri: ilk sıralar Avrupa hattı, son sıralar küme düşme hattı ---- */
+            const ZONE_LABELS = {
+                champions: "Şampiyonlar Ligi",
+                europa: "Avrupa kupaları",
+                relegation: "Küme düşme hattı"
+            };
+            const ZONE_ALIASES = {
+                champions: "champions", champion: "champions", ucl: "champions",
+                europa: "europa", european: "europa", qualify: "europa", conference: "europa",
+                relegation: "relegation", relegate: "relegation", relegated: "relegation", drop: "relegation"
+            };
+            /** Serbest bölge metnini üç ana renkten birine indirger (bilinmeyen değer işaretsiz kalır). */
+            function canonicalZone(value) {
+                return ZONE_ALIASES[norm(value).trim()] || "";
+            }
+            /** Kaynak bölge vermediyse not metninden okur (ESPN "Champions League" / "Relegated"). */
+            function zoneFromNote(note) {
                 const n = norm(note);
-                if (/relegat|kume|küme|drop/.test(n)) return "relegate";
-                if (/champions|europa|conference|qualify|libertadores/.test(n)) return "qualify";
+                if (!n) return "";
+                if (/relegat|kume|dusme|drop/.test(n)) return "relegation";
+                if (/champions|sampiyonlar/.test(n)) return "champions";
+                if (/europa|conference|uefa|libertadores|qualify|avrupa/.test(n)) return "europa";
                 return "";
+            }
+            const zoneOfRow = (r) => (r && (r.zone || zoneFromNote(r.note))) || "";
+            const zoneLabelOf = (r) => (r && (r.zoneLabel || ZONE_LABELS[zoneOfRow(r)])) || "";
+            /** Ardışık aynı bölgeleri birleştirir: "2-3 · Avrupa kupaları" gibi açıklama satırları. */
+            function zoneGroups(rows) {
+                const groups = [];
+                (rows || []).forEach((r) => {
+                    const zone = zoneOfRow(r);
+                    if (!zone) return;
+                    const label = zoneLabelOf(r);
+                    const last = groups.length ? groups[groups.length - 1] : null;
+                    if (last && last.zone === zone && last.label === label) {
+                        if (r.rank != null) last.to = r.rank;
+                        return;
+                    }
+                    groups.push({ zone: zone, label: label, from: r.rank, to: r.rank });
+                });
+                return groups.map((g) => ({
+                    zone: g.zone,
+                    label: g.label,
+                    ranks: (g.from != null && g.to != null && g.from !== g.to)
+                        ? g.from + "-" + g.to
+                        : String(g.from == null ? "-" : g.from)
+                }));
             }
 
             function formatStamp(iso) {
@@ -1956,6 +2071,7 @@
                     // Tablo yoksa uydurma satır BASILMAZ; dürüst boş durum gösterilir.
                     els.standingsTable.hidden = true;
                     els.standingsEmpty.hidden = false;
+                    if (els.standingsLegend) { els.standingsLegend.hidden = true; els.standingsLegend.innerHTML = ""; }
                     els.standingsEmpty.innerHTML =
                         "📊 Puan durumu verisi henüz yok.<br>" +
                         "<small style=\"opacity:.75\">Tablo botun <b>output/standings.json</b> çıktısından gelir; " +
@@ -1970,12 +2086,19 @@
                 els.standingsTable.hidden = false;
                 els.standingsEmpty.hidden = true;
                 els.standingsBody.innerHTML = rows.map((r) => {
-                    const badge = rankBadgeClass(r.note);
+                    // Bölge: üst sıralar Avrupa hattı (champions/europa), alt sıralar küme düşme hattı.
+                    const zone = zoneOfRow(r);
+                    const zoneLabel = zoneLabelOf(r);
+                    const zoneTip = zoneLabel ? ' title="' + esc(zoneLabel) + '"' : "";
                     const av = r.diff == null ? "–" : (r.diff > 0 ? "+" + r.diff : String(r.diff));
                     const logo = r.logo ? '<img class="t-logo" src="' + esc(r.logo) + '" alt="" loading="lazy" />' : "";
-                    return "<tr>" +
-                        '<td class="cell-rank"><span class="rk' + (badge ? " " + badge : "") + '">' + esc(dash(r.rank)) + "</span></td>" +
-                        '<td class="cell-team" title="' + esc(r.team) + '">' + logo + esc(r.team) + "</td>" +
+                    // zone adı beyaz listeden gelir (canonicalZone/zoneFromNote) — sınıfa ham veri sızmaz
+                    const rowClass = zone ? ' class="zone-' + zone + '"' : "";
+                    return "<tr" + rowClass + zoneTip + ">" +
+                        '<td class="cell-rank"><span class="rk' + (zone ? " " + zone : "") + '"' + zoneTip + ">" +
+                        esc(dash(r.rank)) + "</span></td>" +
+                        '<td class="cell-team" title="' + esc(r.team) + (zoneLabel ? " — " + esc(zoneLabel) : "") + '">' +
+                        logo + esc(r.team) + "</td>" +
                         "<td>" + esc(dash(r.played)) + "</td>" +
                         "<td>" + esc(dash(r.wins)) + "</td>" +
                         "<td>" + esc(dash(r.draws)) + "</td>" +
@@ -1984,6 +2107,15 @@
                         '<td class="cell-points">' + esc(dash(r.points)) + "</td>" +
                         "</tr>";
                 }).join("");
+
+                // Lejant: hangi sıraların hangi hatta olduğu (renkler tabloyla birebir aynı)
+                const groups = zoneGroups(rows);
+                if (els.standingsLegend) {
+                    els.standingsLegend.hidden = !groups.length;
+                    els.standingsLegend.innerHTML = groups.map((g) =>
+                        '<span class="zl-item ' + esc(g.zone) + '"><i class="zl-sw"></i>' +
+                        '<b class="zl-ranks">' + esc(g.ranks) + "</b> " + esc(g.label) + "</span>").join("");
+                }
 
                 els.leagueModalSub.textContent = [league.name, league.season].filter(Boolean).join(" · ");
                 const stamp = formatStamp(league.updatedAt);
@@ -2202,6 +2334,9 @@
                 refreshMatches: refreshMatches,
                 refreshExtra: refreshExtra,
                 normalizeStandings: normalizeStandings,
+                dedupeTeamName: dedupeTeamName,
+                zoneFromNote: zoneFromNote,
+                zoneGroups: zoneGroups,
                 renderStandings: renderStandings,
                 refreshStandings: refreshStandings,
                 openLeagueModal: openLeagueModal,
