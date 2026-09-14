@@ -235,7 +235,7 @@ def standings_payload(data: dict[str, Any] | None) -> dict[str, Any]:
     geldiği gibi aktarılır (hiçbir değer burada hesaplanmaz/uydurulmaz).
     """
     keep = ("rank", "team", "abbr", "logo", "played", "wins", "draws", "losses",
-            "goalsFor", "goalsAgainst", "diff", "points", "note")
+            "goalsFor", "goalsAgainst", "diff", "points", "note", "zone", "zoneLabel")
     leagues = []
     for lg in (data or {}).get("leagues", []):
         rows = [{k: r.get(k) for k in keep} for r in lg.get("rows", []) if isinstance(r, dict) and r.get("team")]
@@ -248,21 +248,100 @@ def standings_payload(data: dict[str, Any] | None) -> dict[str, Any]:
             "leagues": leagues}
 
 
+# Sıra bölgesi renkleri (noscript tablosu + açıklama satırı) — arayüzdeki CSS ile aynı tonlar.
+_ZONE_COLORS = {
+    "champions": ("#ffcc33", "rgba(255,204,51,0.14)"),
+    "europa": ("#7dffc0", "rgba(0,255,136,0.12)"),
+    "qualify": ("#7dffc0", "rgba(0,255,136,0.12)"),
+    "relegation": ("#ff9ba7", "rgba(255,45,122,0.14)"),
+    "relegate": ("#ff9ba7", "rgba(255,45,122,0.14)"),
+}
+_ZONE_FALLBACK_LABELS = {"champions": "Şampiyonlar Ligi", "europa": "Avrupa kupaları",
+                         "qualify": "Avrupa kupaları", "relegation": "Küme düşme hattı",
+                         "relegate": "Küme düşme hattı"}
+
+
+def zone_legend(rows: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    """Ardışık aynı bölgeleri birleştirip ``(kind, aralık, etiket)`` listesi üretir.
+
+    Örnek: 1 → Şampiyonlar Ligi, 2-3 → Avrupa kupaları, 16-18 → Küme düşme hattı.
+    Bölgesiz satırlar atlanır; hiçbir sayısal değer üretilmez.
+    """
+    groups: list[dict[str, Any]] = []
+    for r in rows:
+        zone = str(r.get("zone") or "").strip()
+        if not zone:
+            continue
+        rank = r.get("rank")
+        label = str(r.get("zoneLabel") or _ZONE_FALLBACK_LABELS.get(zone, ""))
+        if groups and groups[-1]["zone"] == zone and groups[-1]["label"] == label:
+            groups[-1]["to"] = rank if isinstance(rank, int) else groups[-1]["to"]
+            continue
+        groups.append({"zone": zone, "label": label,
+                       "from": rank if isinstance(rank, int) else None,
+                       "to": rank if isinstance(rank, int) else None})
+    return groups
+
+
+def _zone_range_text(group: dict[str, Any]) -> str:
+    first, last = group.get("from"), group.get("to")
+    if isinstance(first, int) and isinstance(last, int) and first != last:
+        return f"{first}-{last}"
+    return str(first if first is not None else "-")
+
+
+def _zone_legend_html(rows: list[dict[str, Any]]) -> str:
+    """Bölge açıklaması: hangi sıralar Avrupa hattı, hangi sıralar küme düşme hattı."""
+    groups = zone_legend(rows)
+    if not groups:
+        return ""
+    items = "".join(
+        f'<span style="display:inline-flex;align-items:center;gap:5px;margin:0 10px 4px 0;">'
+        f'<i style="width:10px;height:10px;border-radius:3px;display:inline-block;'
+        f'background:{_ZONE_COLORS.get(g["zone"], ("#fff", "#fff"))[0]};"></i>'
+        f'<b style="color:{_ZONE_COLORS.get(g["zone"], ("#ece7f8", "#fff"))[0]};">{escape(_zone_range_text(g))}</b>'
+        f'<span style="opacity:.8;">{escape(g["label"])}</span></span>'
+        for g in groups)
+    return (f'<p style="margin:6px 0 0;font-size:12px;color:#c9c0de;display:flex;flex-wrap:wrap;">{items}</p>')
+
+
+def _noscript_standings_row(r: dict[str, Any]) -> str:
+    """Tek satır: bölge varsa sıra hücresi renkli şerit + satır zemini ile işaretlenir."""
+    zone = str(r.get("zone") or "").strip()
+    color, tint = _ZONE_COLORS.get(zone, ("", ""))
+    label = str(r.get("zoneLabel") or _ZONE_FALLBACK_LABELS.get(zone, ""))
+    cell = "padding:4px 6px;border-bottom:1px solid rgba(255,255,255,0.07);"
+    rank_style = cell + (f"color:{color};font-weight:800;box-shadow:inset 3px 0 0 {color};" if color else "")
+    row_style = f' style="background:{tint};"' if tint else ""
+    team_title = f' title="{escape(label)}"' if label else ""
+
+    def num(key: str) -> str:
+        value = r.get(key)
+        return escape(str(value if value is not None else "-"))
+
+    # ▲ yükseliş (Avrupa) hattı, ▼ küme düşme hattı — arayüzdeki CSS ::after ile aynı işaret
+    arrow = {"champions": "▲", "europa": "▲", "qualify": "▲",
+             "relegation": "▼", "relegate": "▼"}.get(zone, "")
+    arrow_html = f' <span style="color:{color};">{arrow}</span>' if arrow and color else ""
+    return (
+        f'<tr{row_style}>'
+        f'<td style="{rank_style}">{escape(str(r.get("rank") or "-"))}</td>'
+        f'<td style="{cell}"{team_title}>{escape(str(r.get("team") or ""))}{arrow_html}</td>'
+        f'<td style="{cell}text-align:right;">{num("played")}</td>'
+        f'<td style="{cell}text-align:right;">{num("wins")}</td>'
+        f'<td style="{cell}text-align:right;">{num("draws")}</td>'
+        f'<td style="{cell}text-align:right;">{num("losses")}</td>'
+        f'<td style="{cell}text-align:right;">{num("diff")}</td>'
+        f'<td style="{cell}text-align:right;"><b>{num("points")}</b></td>'
+        f'</tr>')
+
+
 def _standings_groups_html(data: dict[str, Any] | None) -> str:
     """Puan durumunu JS'siz ortam (noscript) için okunur HTML tablosuna çevirir."""
     payload = standings_payload(data)
     blocks: list[str] = []
     for lg in payload["leagues"]:
-        rows = "".join(
-            f'<tr><td style="padding:4px 6px;border-bottom:1px solid rgba(255,255,255,0.07);">{escape(str(r.get("rank") or "-"))}</td>'
-            f'<td style="padding:4px 6px;border-bottom:1px solid rgba(255,255,255,0.07);">{escape(str(r.get("team") or ""))}</td>'
-            f'<td style="padding:4px 6px;text-align:right;border-bottom:1px solid rgba(255,255,255,0.07);">{escape(str(r.get("played") if r.get("played") is not None else "-"))}</td>'
-            f'<td style="padding:4px 6px;text-align:right;border-bottom:1px solid rgba(255,255,255,0.07);">{escape(str(r.get("wins") if r.get("wins") is not None else "-"))}</td>'
-            f'<td style="padding:4px 6px;text-align:right;border-bottom:1px solid rgba(255,255,255,0.07);">{escape(str(r.get("draws") if r.get("draws") is not None else "-"))}</td>'
-            f'<td style="padding:4px 6px;text-align:right;border-bottom:1px solid rgba(255,255,255,0.07);">{escape(str(r.get("losses") if r.get("losses") is not None else "-"))}</td>'
-            f'<td style="padding:4px 6px;text-align:right;border-bottom:1px solid rgba(255,255,255,0.07);">{escape(str(r.get("diff") if r.get("diff") is not None else "-"))}</td>'
-            f'<td style="padding:4px 6px;text-align:right;border-bottom:1px solid rgba(255,255,255,0.07);"><b>{escape(str(r.get("points") if r.get("points") is not None else "-"))}</b></td></tr>'
-            for r in lg["rows"])
+        rows = "".join(_noscript_standings_row(r) for r in lg["rows"])
         blocks.append(
             f'<h3 style="margin:14px 0 6px;">🏆 {escape(lg["name"])} — PUAN DURUMU</h3>'
             '<table style="border-collapse:collapse;width:100%;font-size:13px;color:#f4efff;">'
@@ -270,7 +349,7 @@ def _standings_groups_html(data: dict[str, Any] | None) -> str:
             + "".join(f'<th style="padding:4px 6px;text-align:{align};border-bottom:1px solid rgba(255,255,255,0.12);">{h}</th>'
                       for h, align in (("SIRA", "left"), ("TAKIM", "left"), ("O", "right"), ("G", "right"),
                                        ("B", "right"), ("M", "right"), ("AV", "right"), ("P", "right")))
-            + f'</tr></thead><tbody>{rows}</tbody></table>')
+            + f'</tr></thead><tbody>{rows}</tbody></table>' + _zone_legend_html(lg["rows"]))
     if not blocks:
         return ('<h3 style="margin:14px 0 6px;">🏆 PUAN DURUMU</h3>'
                 '<p class="empty-msg">Puan durumu verisi henüz alınamadı.</p>')

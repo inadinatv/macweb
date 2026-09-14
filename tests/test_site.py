@@ -244,16 +244,60 @@ def test_generated_index_embeds_real_standings():
             site.INDEX_OUT = original
     assert "{{" not in html
     assert 'const standingsSource = "output/standings.json"' in html
-    assert '"source": "espn"' in html or '"source":"espn"' in html
-    # output/standings.json doluysa lider tabloya gömülmüş olmalı
+    # kaynak etiketi gerçek kaynaktan gelir (iddaa/mackolik/espn/mixed) — sabit "espn" beklenmez
     from fixbet import standings
+    seeded_source = (standings.load_or_build() or {}).get("source") or "espn"
+    assert f'"source": "{seeded_source}"' in html or f'"source":"{seeded_source}"' in html, \
+        f"sayfaya gömülen kaynak etiketi {seeded_source} değil"
+    # output/standings.json doluysa lider tabloya gömülmüş olmalı
     seeded = standings.load_or_build()
     if seeded.get("leagues"):
-        leader = seeded["leagues"][0]["rows"][0]["team"]
+        rows = seeded["leagues"][0]["rows"]
+        leader = rows[0]["team"]
         assert leader in html, f"lider ({leader}) sayfaya gömülmedi"
+        # takım adları tekilleştirilmiş olmalı (kaynak adı iki kez basıyordu)
+        for r in rows:
+            assert r["team"] == standings.dedupe_team_name(r["team"]), f"tekrarlı ad gömüldü: {r['team']}"
+            assert r["team"] * 2 not in html, f"sayfada yapışık tekrar kaldı: {r['team']}"
         noscript = html[html.index("<noscript>"):html.index("</noscript>")]
         assert "PUAN DURUMU" in noscript and leader in noscript, "noscript puan tablosu yok"
+        # ilk 3 sıra Avrupa hattı, son 3 sıra küme düşme hattı: renk şeridi + lejant
+        assert rows[0]["zone"] == "champions" and rows[1]["zone"] == rows[2]["zone"] == "europa"
+        assert [r["zone"] for r in rows[-3:]] == ["relegation"] * 3
+        assert "box-shadow:inset 3px 0 0" in noscript, "noscript bölge şeridi yok"
+        assert "Küme düşme hattı" in noscript and "Şampiyonlar Ligi" in noscript, "noscript bölge lejantı yok"
+        assert 'id="standingsLegend"' in html and "zone-champions" in html, "arayüz bölge sınıfları yok"
     print("OK: generated_index_embeds_real_standings")
+
+
+def test_zone_legend_groups_consecutive_ranks():
+    """Bölge lejantı ardışık sıraları aralığa toplar; bölge yoksa lejant basılmaz."""
+    rows = [{"rank": 1, "zone": "champions", "zoneLabel": "Şampiyonlar Ligi"},
+            {"rank": 2, "zone": "europa", "zoneLabel": "Avrupa kupaları"},
+            {"rank": 3, "zone": "europa", "zoneLabel": "Avrupa kupaları"},
+            {"rank": 4, "zone": "", "zoneLabel": ""},
+            {"rank": 17, "zone": "relegation", "zoneLabel": "Küme düşme hattı"},
+            {"rank": 18, "zone": "relegation", "zoneLabel": "Küme düşme hattı"}]
+    assert [(g["zone"], site._zone_range_text(g), g["label"]) for g in site.zone_legend(rows)] == [
+        ("champions", "1", "Şampiyonlar Ligi"),
+        ("europa", "2-3", "Avrupa kupaları"),
+        ("relegation", "17-18", "Küme düşme hattı")]
+    assert site.zone_legend([{"rank": 5, "zone": "", "zoneLabel": ""}]) == []
+    assert site._zone_legend_html([{"rank": 5, "zone": "", "zoneLabel": ""}]) == ""
+
+    html = site._zone_legend_html(rows)
+    assert "2-3" in html and "Avrupa kupaları" in html and "17-18" in html
+    assert "#ffcc33" in html and "#00ff88" in html or "#7dffc0" in html
+
+    # bölge bilgisi sayfaya gömülen sade JSON'da korunur
+    data = {"source": "mackolik", "generated_at": "", "leagues": [{
+        "id": "soccer/tur.1", "name": "L", "rows": [dict(rows[0], team="Galatasaray", played=1, wins=0,
+                                                         draws=1, losses=0, goalsFor=1, goalsAgainst=1,
+                                                         diff=0, points=1, note="")]}]}
+    payload_row = site.standings_payload(data)["leagues"][0]["rows"][0]
+    assert payload_row["zone"] == "champions" and payload_row["zoneLabel"] == "Şampiyonlar Ligi"
+    assert "sourceTeam" not in payload_row
+    print("OK: zone_legend_groups_consecutive_ranks")
 
 
 if __name__ == "__main__":
@@ -270,4 +314,5 @@ if __name__ == "__main__":
     test_league_standings_button_and_modal()
     test_standings_payload_and_noscript_table()
     test_generated_index_embeds_real_standings()
+    test_zone_legend_groups_consecutive_ranks()
     print("\nSİTE TESTLERİ GEÇTİ ✅")

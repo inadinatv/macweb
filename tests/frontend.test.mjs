@@ -811,19 +811,25 @@ test("modal başlangıçta kapalı; LİG PUANI'na tıklayınca açılıyor ve ta
   assert.equal(window.document.activeElement, window.document.getElementById("leagueModalClose"),
     "odak kapatma butonuna gitmedi");
 
+  // Beklenen değerler gerçek veriden (output/standings.json) türetilir: tablo bot
+  // tarafından yenilendikçe test bayatlamaz, ama DOM ile kaynak birebir uyuşmak zorunda.
+  const source = STANDINGS_JSON.leagues[0];
   const rows = bodyRows(window);
-  assert.equal(rows.length, 18, "18 takım bekleniyor");
-  const cells = [...rows[0].querySelectorAll("td")].map((td) => td.textContent.trim());
+  assert.equal(rows.length, source.rows.length, "satır sayısı kaynak tabloyla uyuşmuyor");
+  assert.ok(rows.length >= 18, "Süper Lig 18 takımla gömülmeli: " + rows.length);
+  const cellTexts = (tr) => [...tr.querySelectorAll("td")].map((td) => td.textContent.trim());
+  const av = (v) => (v == null ? "–" : v > 0 ? "+" + v : String(v));
+  const expected = (r) => [String(r.rank), r.team, String(r.played), String(r.wins), String(r.draws),
+    String(r.losses), av(r.diff), String(r.points)];
+
+  const cells = cellTexts(rows[0]);
   assert.equal(cells.length, 8, "8 sütun olmalı");
-  assert.equal(cells[0], "1");
-  assert.ok(cells[1].includes("Galatasaray"), "lider Galatasaray olmalı: " + cells[1]);
-  assert.deepEqual(cells.slice(2), ["4", "3", "1", "0", "+6", "10"], "O/G/B/M/AV/P değerleri yanlış");
+  assert.deepEqual(cells, expected(source.rows[0]), "lider satırı kaynak verisiyle uyuşmuyor");
   // son sıradaki takım
-  const last = [...rows[17].querySelectorAll("td")].map((td) => td.textContent.trim());
-  assert.equal(last[0], "18");
-  assert.ok(last[1].includes("Konyaspor"), "son sıra Konyaspor olmalı: " + last[1]);
-  assert.equal(last[7], "0");
-  assert.ok(window.document.getElementById("leagueModalSub").textContent.includes("Trendyol Süper Lig"));
+  const lastIdx = source.rows.length - 1;
+  assert.deepEqual(cellTexts(rows[lastIdx]), expected(source.rows[lastIdx]),
+    "son sıra kaynak verisiyle uyuşmuyor");
+  assert.ok(window.document.getElementById("leagueModalSub").textContent.includes(source.name));
   dom.window.close();
 });
 
@@ -923,10 +929,135 @@ test("uzak puan durumu tazelenir; boş yanıt son bilinen tabloyu silmez", async
 
 test("üretilen index.html gerçek puan durumu verisini gömüyor", () => {
   assert.ok(HTML.includes('"Trendyol Süper Lig"'), "lig adı gömülmedi");
-  assert.ok(HTML.includes('"source": "espn"') || HTML.includes('"source":"espn"'), "kaynak belirtilmedi");
+  // kaynak etiketi gerçek kaynaktan gelir (iddaa/mackolik/espn/mixed)
+  const realSource = STANDINGS_JSON.source;
+  assert.ok(["iddaa", "mackolik", "espn", "mixed"].includes(realSource), "beklenmeyen kaynak: " + realSource);
+  assert.ok(HTML.includes(`"source": "${realSource}"`) || HTML.includes(`"source":"${realSource}"`),
+    "kaynak belirtilmedi");
   assert.ok(HTML.includes('const standingsSource = "output/standings.json"'), "canlı tazeleme yolu yok");
   // JS'siz ortam için noscript tablosu
   const noscript = HTML.slice(HTML.indexOf("<noscript>"), HTML.indexOf("</noscript>"));
   assert.ok(/PUAN DURUMU/.test(noscript) && /Galatasaray/.test(noscript), "noscript puan tablosu yok");
   assert.ok(!/Sunucu/i.test(HTML), "'Sunucu' yazısı olmamalı");
+});
+
+/* ---------------- Takım adı tekrarı + sıra bölgeleri (Avrupa / küme düşme hattı) ---------------- */
+const ZONES = ["champions", "europa", "relegation"];
+const rowZone = (tr) => ZONES.find((z) => tr.classList.contains("zone-" + z)) || "";
+const DOUBLED = /^(.{2,}?)\1$/;
+
+test("takım adları tabloda tek kez yazılıyor (yapışık tekrar temizleniyor)", async () => {
+  const sourceRows = STANDINGS_JSON.leagues[0].rows;
+  sourceRows.forEach((r) => assert.ok(!DOUBLED.test(r.team), "kaynak dosyada tekrarlı ad: " + r.team));
+
+  const { window, dom } = await loadPage();
+  window.inadina.openLeagueModal();
+  [...bodyRows(window)].forEach((tr, i) => {
+    const name = tr.querySelectorAll("td")[1].textContent.trim();
+    assert.ok(!DOUBLED.test(name), "tabloda tekrarlı takım adı: " + name);
+    assert.equal(name, sourceRows[i].team, `${i + 1}. sıra adı kaynakla uyuşmuyor`);
+  });
+
+  // istemci tarafı güvenlik ağı: bayat/bozuk veri gelse bile ad tekilleştirilir
+  assert.equal(window.inadina.dedupeTeamName("GalatasarayGalatasaray"), "Galatasaray");
+  assert.equal(window.inadina.dedupeTeamName("Amed SK Amed SK"), "Amed SK");
+  assert.equal(window.inadina.dedupeTeamName("Ç. RizesporÇ. Rizespor"), "Ç. Rizespor");
+  assert.equal(window.inadina.dedupeTeamName("Fenerbahçe"), "Fenerbahçe", "tekrarsız ad değişmemeli");
+  assert.equal(window.inadina.dedupeTeamName("Kocaelispor"), "Kocaelispor");
+  dom.window.close();
+});
+
+test("ilk 3 sıra yükseliş (Avrupa) hattı, son 3 sıra küme düşme hattı olarak işaretli", async () => {
+  const { window, dom } = await loadPage();
+  window.inadina.openLeagueModal();
+  const rows = [...bodyRows(window)];
+  const total = rows.length;
+  assert.ok(total >= 18, "18 takımlık tablo bekleniyor: " + total);
+
+  assert.equal(rowZone(rows[0]), "champions", "lider Şampiyonlar Ligi hattında olmalı");
+  assert.equal(rowZone(rows[1]), "europa", "2. sıra Avrupa hattında olmalı");
+  assert.equal(rowZone(rows[2]), "europa", "3. sıra Avrupa hattında olmalı");
+  for (let i = 3; i < total - 3; i++) {
+    assert.equal(rowZone(rows[i]), "", `${i + 1}. sıra işaretsiz olmalı`);
+  }
+  for (let i = total - 3; i < total; i++) {
+    assert.equal(rowZone(rows[i]), "relegation", `${i + 1}. sıra küme düşme hattında olmalı`);
+  }
+
+  // sıra rozeti + açıklama (tooltip) aynı bölgeyi taşır
+  assert.ok(rows[0].querySelector(".cell-rank .rk.champions"), "lider rozeti renksiz");
+  assert.ok(rows[2].querySelector(".cell-rank .rk.europa"), "3. sıra rozeti renksiz");
+  assert.ok(rows[total - 1].querySelector(".cell-rank .rk.relegation"), "son sıra rozeti renksiz");
+  assert.match(rows[0].getAttribute("title") || "", /Şampiyonlar Ligi/, "lider açıklaması yok");
+  assert.match(rows[total - 1].getAttribute("title") || "", /Küme düşme/, "düşme hattı açıklaması yok");
+  assert.ok(!rows[4].getAttribute("title"), "işaretsiz sıraya bölge açıklaması yazılmamalı");
+  dom.window.close();
+});
+
+test("bölge renkleri CSS'te tanımlı ve lejant sıra aralıklarını gösteriyor", async () => {
+  // şerit + zemin + rozet renkleri (yalnızca bölge sınıfları üzerinden)
+  assert.ok(/\.standings-table tbody tr\.zone-champions \{/.test(HTML), "champions zemin rengi yok");
+  assert.ok(/\.standings-table tbody tr\.zone-europa \{/.test(HTML), "europa zemin rengi yok");
+  assert.ok(/\.standings-table tbody tr\.zone-relegation \{/.test(HTML), "relegation zemin rengi yok");
+  assert.ok(/tr\.zone-relegation td:first-child \{ box-shadow: inset 3px 0 0/.test(HTML), "sol renkli şerit yok");
+  assert.ok(/\.cell-rank \.rk\.champions \{/.test(HTML), "champions rozeti yok");
+  assert.ok(/\.rk\.relegation, \.standings-table \.cell-rank \.rk\.relegate \{/.test(HTML), "relegation rozeti yok");
+  // ▲ yükseliş hattı / ▼ küme düşme hattı okları (pseudo-element: hücre metnini kirletmez)
+  assert.ok(/tr\.zone-europa \.cell-team::after \{ content: "▲"/.test(HTML), "yükseliş oku (▲) yok");
+  assert.ok(/tr\.zone-relegation \.cell-team::after \{ content: "▼"/.test(HTML), "düşme oku (▼) yok");
+  assert.ok(/<span style="color:#ff9ba7;">▼<\/span>/.test(HTML), "noscript tabloda düşme oku yok");
+  assert.ok(/<span style="color:#7dffc0;">▲<\/span>/.test(HTML), "noscript tabloda yükseliş oku yok");
+
+  const { window, dom } = await loadPage();
+  window.inadina.openLeagueModal();
+  const legend = window.document.getElementById("standingsLegend");
+  assert.equal(legend.hidden, false, "bölge lejantı görünmeli");
+  const text = legend.textContent.replace(/\s+/g, " ").trim();
+  const total = STANDINGS_JSON.leagues[0].rows.length;
+  assert.ok(text.includes("Şampiyonlar Ligi"), "lejantta Şampiyonlar Ligi yok: " + text);
+  assert.ok(text.includes("2-3") && text.includes("Avrupa kupaları"), "lejantta Avrupa hattı yok: " + text);
+  assert.ok(text.includes(`${total - 2}-${total}`) && text.includes("Küme düşme hattı"),
+    "lejantta küme düşme hattı yok: " + text);
+  assert.equal(legend.querySelectorAll(".zl-item").length, 3, "üç bölge açıklanmalı");
+  assert.ok(legend.querySelector(".zl-item.champions .zl-sw"), "lejant renk kutusu yok");
+  dom.window.close();
+});
+
+test("kaynak bölge vermezse not metninden okunur, bilinmeyen bölge işaretsiz kalır", async () => {
+  const { window, dom } = await loadPage();
+  assert.equal(window.inadina.zoneFromNote("Relegated"), "relegation");
+  assert.equal(window.inadina.zoneFromNote("Champions League"), "champions");
+  assert.equal(window.inadina.zoneFromNote("UEFA Europa League"), "europa");
+  assert.equal(window.inadina.zoneFromNote(""), "", "not yoksa bölge uydurulmaz");
+
+  const norm = window.inadina.normalizeStandings({ leagues: [{ rows: [
+    { team: "Konyaspor", rank: 18, note: "Relegated" },
+    { team: "Galatasaray", rank: 1, zone: "champions", zoneLabel: "Şampiyonlar Ligi" },
+    { team: "Bozuk Bölge", rank: 5, zone: '"><script>alert(1)</script>' },
+    { team: "Ara Sıra", rank: 9 },
+  ] }] });
+  const rows = norm.leagues[0].rows;
+  assert.equal(rows[0].zone, "relegation", "ESPN notu bölgeye dönüşmeli");
+  assert.equal(rows[1].zoneLabel, "Şampiyonlar Ligi", "kaynak etiketi korunmalı");
+  assert.equal(rows[2].zone, "", "bilinmeyen bölge değeri sınıfa sızmamalı");
+  assert.equal(rows[3].zone, "", "notu olmayan sıra işaretsiz kalmalı");
+  // lejant ardışık sıraları aralığa toplar
+  assert.equal(window.inadina.zoneGroups([
+    { rank: 1, zone: "champions", zoneLabel: "Şampiyonlar Ligi" },
+    { rank: 2, zone: "europa", zoneLabel: "Avrupa kupaları" },
+    { rank: 3, zone: "europa", zoneLabel: "Avrupa kupaları" },
+    { rank: 4, zone: "", zoneLabel: "" },
+  ]).map((g) => g.ranks + " " + g.label).join(" | "), "1 Şampiyonlar Ligi | 2-3 Avrupa kupaları");
+  dom.window.close();
+});
+
+test("noscript puan tablosu da bölgeleri ve lejantı basıyor", () => {
+  const noscript = HTML.slice(HTML.indexOf("<noscript>"), HTML.indexOf("</noscript>"));
+  assert.ok(/box-shadow:inset 3px 0 0 #ffcc33/.test(noscript), "noscript lider şeridi yok");
+  assert.ok(/box-shadow:inset 3px 0 0 #ff9ba7/.test(noscript), "noscript düşme hattı şeridi yok");
+  assert.ok(/Küme düşme hattı/.test(noscript) && /Şampiyonlar Ligi/.test(noscript), "noscript lejantı yok");
+  // sayfaya gömülen takım adları tekrarsız olmalı (kaynak adı iki kez basıyordu)
+  const teams = [...HTML.matchAll(/"team": "([^"]+)"/g)].map((m) => m[1]);
+  assert.ok(teams.length >= 18, "gömülü takım adları okunamadı: " + teams.length);
+  teams.forEach((t) => assert.ok(!DOUBLED.test(t), "sayfada tekrarlı takım adı kaldı: " + t));
 });

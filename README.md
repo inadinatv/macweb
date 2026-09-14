@@ -117,7 +117,20 @@ raporlar üreten gelişmiş otomasyon botu.
      Modalın dış kenarları neon pembe, sağ üstünde kapatma (X) butonu vardır; **Esc**,
      X veya karartılmış alana tıklama ile kapanır.
    - Tablo sütunları: **SIRA · TAKIM · O · G · B · M · AV · P**, satır aralarında ince ayraç çizgileri.
-     Kaynak notundan gelen Avrupa/düşme hattı rozetleri sıra hücresinde renklendirilir.
+   - **Sıra bölgeleri (renkli şeritler):** ilk sıralar *yükseliş/Avrupa hattı*, son sıralar *küme düşme
+     hattı* olarak işaretlenir — satır zemininde soldan sağa sönen renk, sol kenarda 3px şerit, sıra
+     rozetinde renk (🟡 1 → Şampiyonlar Ligi, 🟢 2-3 → Avrupa kupaları, 🔴 16-18 → küme düşme hattı) ve
+     tablonun altında **lejant** (`1 · Şampiyonlar Ligi  2-3 · Avrupa kupaları  16-18 · Küme düşme hattı`).
+     Satırın üstüne gelince açıklama tooltip'te de görünür. Bölgeler `config/standings.yml → zones`
+     ile lig bazında ayarlanır (yazılmayan ligler `default_zones`/koddaki varsayılanı kullanır,
+     `zones.<path>: {}` ile kapatılabilir). Kaynak kendi notunu veriyorsa (ESPN "Relegated" gibi) o not
+     da aynı renklere eşlenir; bölge **yalnızca renk/etiket üretir**, hiçbir sayıyı değiştirmez.
+     JS kapalıysa `<noscript>` tablosu aynı şeritleri ve lejantı düz HTML olarak basar.
+   - **Takım adı tekilleştirme:** iddaa/mackolik adı aynı hücrede iki kez basar (masaüstü + mobil
+     görünüm) ve `get_text()` bunları yapıştırır; `standings.dedupe_team_name()` (istemcide
+     `dedupeTeamName()`) `"Galatasaray" + "Galatasaray"` gibi yapışık tekrarları tek ada indirger.
+     Tekrar yoksa ad aynen kalır, sayısal alanlara asla uygulanmaz. Kayıtlı `output/standings.json`
+     da her yüklemede bu temizlikten geçer, yani bayat tablo da düzeltilmiş adlarla gösterilir.
    - **Veri gerçek kaynaktan gelir** (ESPN `standings` ucu, `config/standings.yml → leagues`).
      Skorlardaki ilke burada da geçerlidir: **sayfa asla uydurma puan tablosu göstermez.**
      Sıra/O/G/B/M/averaj/puan kaynaktan geldiği gibi yazılır; yalnızca kaynak averajı hiç
@@ -186,7 +199,8 @@ python tests/test_pipeline.py     # maç ayrıştırma + canlı/yaklaşan/bitti 
 python tests/test_channels.py     # 7/24 kanal listesi + marka grupları
 python tests/test_site.py         # index.html üretimi (şablon + gerçek veri)
 python tests/test_extras.py       # EXTRA paneller: m3u8 çıkarma, ayna taraması, yedek kaynaklar (ağsız)
-python tests/test_standings.py    # puan durumu ayrıştırma, uydurma satır üretilmemesi, yedek tablo (ağsız)
+python tests/test_standings.py    # puan durumu ayrıştırma, uydurma satır üretilmemesi, yedek tablo,
+                                  # yapışık takım adı tekrarının temizlenmesi, sıra bölgeleri (ağsız)
 
 npm install && npm test           # sayfanın kendi JS'i jsdom içinde çalıştırılır
 python tests/test_frontend.py     # aynı arayüz testlerinin pytest/sade-python sarmalayıcısı
@@ -199,7 +213,8 @@ kartlarının çizilmesi, ızgara/liste geçişi, karta tıklayınca yayının a
 kaydırılması, günün maçlarının gerçek veriden gelmesi, arama/filtre ve canlı tazeleme,
 EXTRA sekmesi ve HLS oynatıcı (hls.js / yerel HLS, kaynak değiştirme, hata katmanı, derin bağlantı),
 **LİG PUANI / PUAN DURUMU modalı** (açma-kapama, sütun sırası, gerçek tablonun çizilmesi,
-tabloda veri yokken uydurma satır basılmaması).
+tabloda veri yokken uydurma satır basılmaması, takım adlarının **tek kez** yazılması, ilk 3 sıranın
+Avrupa hattı ve son 3 sıranın küme düşme hattı olarak renklendirilmesi + lejant, `<noscript>` tablosu).
 Gerçek Chromium testleri ayrıca sentetik TS/fMP4/AES/byte-range medyayı oynatır;
 header gerektiren key/segmentlerin gerçek backend üzerinden erişildiğini doğrular.
 `workflow-tests-example.yml` dosyasını `.github/workflows/tests.yml` olarak kopyalarsanız
@@ -230,7 +245,7 @@ fixbet-bot/
 ├── config/
 │   ├── settings.yml          # bot/kaynak/izleme/kategori + HLS hizmeti ayarları
 │   ├── scores.yml            # ikincil skor kaynağı, lig ve açık takım adı eşlemeleri
-│   ├── standings.yml         # 🏆 lig puan durumu (PUAN DURUMU modalı) ligleri + görünen ad eşlemesi
+│   ├── standings.yml         # 🏆 lig puan durumu (PUAN DURUMU modalı) ligleri + görünen ad eşlemesi + zones (Avrupa/küme düşme hattı)
 │   ├── mirrors.yml           # güncel adres arayan kalıplar
 │   ├── channels.yml          # bilinen kanal kimlikleri
 │   ├── extra_channels.yml    # ⚡ EXTRA PANELLER (Atom + Selçuk + Taraftarium, yeni paneller buraya)
@@ -243,7 +258,7 @@ fixbet-bot/
 │   ├── categorizer.py        # durum/lig/spor/gün kategorileri
 │   ├── match_state.py        # paylaşılan status sözlüğü ve skor doğrulama
 │   ├── scores.py             # kesin etkinlik eşleşmesiyle gerçek skor zenginleştirmesi
-│   ├── standings.py          # 🏆 lig puan durumu (ESPN standings -> output/standings.json)
+│   ├── standings.py          # 🏆 lig puan durumu (iddaa/mackolik/ESPN -> output/standings.json, ad tekilleştirme + bölge işaretleri)
 │   ├── stream_proxy.py       # izin listeli HLS playlist/segment/key taşıması
 │   ├── http_transport.py     # public-IP soket kontrolü; TLS/SNI doğrulaması
 │   ├── web.py                # isteğe bağlı HTTP hizmeti (TLS proxy arkasında)

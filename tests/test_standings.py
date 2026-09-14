@@ -226,3 +226,186 @@ def test_seeded_output_is_real_and_internally_consistent():
     assert [r["rank"] for r in rows] == list(range(1, len(rows) + 1)), "sıra 1..N olmalı"
     points = [r["points"] for r in rows]
     assert points == sorted(points, reverse=True), "tablo puana göre azalmalı"
+
+
+# ---------------------------------------------------------------------------
+# Takım adı tekrarı + sıra bölgeleri (Avrupa hattı / küme düşme hattı)
+# ---------------------------------------------------------------------------
+
+SUPERLIG = [
+    # (takım, O, G, B, M, A, Y, P) — hepsi kendi içinde tutarlı gerçek biçim
+    ("Galatasaray", 5, 4, 1, 0, 13, 6, 13),
+    ("Beşiktaş", 5, 4, 0, 1, 12, 4, 12),
+    ("Amed SK", 5, 3, 1, 1, 12, 5, 10),
+    ("Kasımpaşa", 5, 2, 3, 0, 7, 5, 9),
+    ("Ç. Rizespor", 5, 3, 0, 2, 5, 4, 9),
+    ("Kocaelispor", 5, 3, 0, 2, 5, 4, 9),
+    ("Alanyaspor", 5, 2, 2, 1, 6, 5, 8),
+    ("Trabzonspor", 5, 2, 1, 2, 9, 5, 7),
+    ("Çorum FK", 5, 2, 1, 2, 12, 10, 7),
+    ("Gaziantep FK", 4, 2, 1, 1, 7, 5, 7),
+    ("Gençlerbirliği", 5, 2, 1, 2, 5, 9, 7),
+    ("Fenerbahçe", 4, 2, 0, 2, 8, 6, 6),
+    ("Başakşehir", 5, 1, 1, 3, 6, 11, 4),
+    ("Samsunspor", 5, 1, 1, 3, 6, 11, 4),
+    ("Erzurumspor FK", 5, 1, 1, 3, 2, 11, 4),
+    ("Konyaspor", 5, 1, 0, 4, 4, 8, 3),
+    ("Eyüpspor", 5, 1, 0, 4, 2, 8, 3),
+    ("Göztepe", 5, 0, 2, 3, 9, 13, 2),
+]
+
+
+def standings_html(teams=SUPERLIG):
+    """iddaa/mackolik biçiminde tablo: takım adı hücrede İKİ kez basılır.
+
+    Kaynak, masaüstü ve mobil görünüm için adı yan yana yazar; ``get_text()``
+    bunları ayraçsız yapıştırır ("GalatasarayGalatasaray"). Test bu bozuk
+    biçimi birebir üretir.
+    """
+    head = "".join(f"<th>{h}</th>" for h in ("#", "Takım", "O", "G", "B", "M", "A", "Y", "Av", "P"))
+    body = ""
+    for i, (name, played, wins, draws, losses, gf, ga, points) in enumerate(teams, start=1):
+        body += (
+            "<tr>"
+            f"<td>{i}</td>"
+            '<td class="team-cell"><a href="/takim/ornek">'
+            f'<img src="//file.mackolikfeeds.com/teams/ornek{i}" alt="{name}" />'
+            f'<span class="d-none d-sm-inline">{name}</span><span class="d-sm-none">{name}</span>'
+            "</a></td>"
+            f"<td>{played}</td><td>{wins}</td><td>{draws}</td><td>{losses}</td>"
+            f"<td>{gf}</td><td>{ga}</td><td>{gf - ga}</td><td>{points}</td>"
+            "</tr>")
+    return f"<html><body><table class='standings'><thead><tr>{head}</tr></thead><tbody>{body}</tbody></table></body></html>"
+
+
+def refresh_html(html, monkeypatch, tmp_path, cfg=None):
+    """Ağsız: HTML kaynağı sabitlenir, iddaa/mackolik ayrıştırıcısı çalışır."""
+    monkeypatch.setattr(standings, "STANDINGS_OUTPUT", tmp_path / "standings.json")
+    monkeypatch.setattr(standings, "_fetch_html", lambda url, timeout: html)
+    settings = dict(CFG)
+    settings.update(cfg or {})
+    return standings.refresh(now=NOW, write=False, settings=settings)
+
+
+def test_dedupe_team_name_collapses_repetition_without_touching_other_text():
+    assert standings.dedupe_team_name("GalatasarayGalatasaray") == "Galatasaray"
+    assert standings.dedupe_team_name("Amed SKAmed SK") == "Amed SK"
+    assert standings.dedupe_team_name("Amed SK Amed SK") == "Amed SK"
+    assert standings.dedupe_team_name("Ç. RizesporÇ. Rizespor") == "Ç. Rizespor"
+    # Tekrar yoksa ad aynen kalır (kısaltılmaz/uydurulmaz)
+    for name in ("Fenerbahçe", "Beşiktaş", "Kocaelispor", "Erzurumspor FK", "İstanbul Başakşehir"):
+        assert standings.dedupe_team_name(name) == name
+    assert standings.dedupe_team_name("") == ""
+    assert standings.dedupe_team_name(None) == ""
+
+
+def test_duplicated_team_cell_is_written_once_and_localized(monkeypatch, tmp_path):
+    # depo yapılandırmasındaki görünen ad eşlemesiyle uçtan uca: tekrar temizlenir,
+    # sonra Türkçe ad uygulanır (Amed SK → Amed SFK).
+    repo_names = standings.load_config().get("display_names")
+    out = refresh_html(standings_html(), monkeypatch, tmp_path, {"display_names": repo_names})
+    rows = rows_of(out)
+    assert len(rows) == 18, "18 takımın hepsi okunmalı"
+    names = [r["team"] for r in rows]
+    assert names[0] == "Galatasaray", "yapışık tekrar temizlenmeli: " + names[0]
+    assert not any(n != standings.dedupe_team_name(n) for n in names), "tekrarlı ad kaldı"
+    assert "Amed SFK" in names, "temizlenen ad display_names ile eşleşmeli"
+    assert "Çaykur Rizespor" in names and "Erzurum BB" in names
+    # sayılar kaynaktan geldiği gibi kalır (ad temizliği değeri değiştirmez)
+    top = rows[0]
+    assert (top["played"], top["wins"], top["draws"], top["losses"]) == (5, 4, 1, 0)
+    assert (top["goalsFor"], top["goalsAgainst"], top["diff"], top["points"]) == (13, 6, 7, 13)
+    assert top["logo"] == "https://file.mackolikfeeds.com/teams/ornek1", "logo https'e tamamlanmalı"
+
+
+def test_top_three_and_bottom_three_are_marked_as_zones(monkeypatch, tmp_path):
+    rows = rows_of(refresh_html(standings_html(), monkeypatch, tmp_path))
+    zones = {r["rank"]: (r["zone"], r["zoneLabel"]) for r in rows}
+    assert zones[1] == ("champions", "Şampiyonlar Ligi"), "lider Avrupa'nın bir üst hattında olmalı"
+    assert zones[2] == ("europa", "Avrupa kupaları")
+    assert zones[3] == ("europa", "Avrupa kupaları")
+    assert zones[16] == zones[17] == zones[18] == ("relegation", "Küme düşme hattı")
+    for rank in range(4, 16):
+        assert zones[rank] == ("", ""), f"{rank}. sıra işaretsiz olmalı"
+
+
+def test_zone_rules_come_from_config_and_can_be_disabled(monkeypatch, tmp_path):
+    custom = {"zones": {"soccer/tur.1": {"top": [{"count": 4, "kind": "europa", "label": "Avrupa"}],
+                                         "bottom": [{"count": 2, "kind": "relegation", "label": "Düşme"}]}}}
+    rows = {r["rank"]: r["zone"] for r in rows_of(refresh_html(standings_html(), monkeypatch, tmp_path, custom))}
+    assert [rows[i] for i in range(1, 6)] == ["europa"] * 4 + [""], "yapılandırma 4 sıra istedi"
+    assert rows[17] == rows[18] == "relegation" and rows[16] == ""
+
+    disabled = {"zones": {"soccer/tur.1": {}}}
+    rows = rows_of(refresh_html(standings_html(), monkeypatch, tmp_path, disabled))
+    assert all(r["zone"] == "" and r["zoneLabel"] == "" for r in rows), "bölge kapatılınca işaret basılmamalı"
+
+
+def test_zones_are_not_marked_on_short_tables():
+    rules = standings.DEFAULT_ZONES
+    assert standings.zone_rank_map(rules, 18)[1]["kind"] == "champions"
+    assert standings.zone_rank_map(rules, 6) == {}, "6 takımlık tabloda bölge anlamsız"
+    # alt bölge üst bölgenin üzerine yazmaz
+    tight = standings.zone_rank_map(rules, 8)
+    assert tight[1]["kind"] == "champions" and tight[8]["kind"] == "relegation"
+    assert 4 not in tight and 5 not in tight
+
+
+def test_espn_notes_also_produce_zones():
+    out = refresh(payload(
+        entry("Galatasaray", "GAL", 4, 3, 1, 0, 12, 6, 6, 10, 1, "Champions League"),
+        entry("Besiktas", "BES", 4, 3, 0, 1, 9, 4, 5, 9, 2, "UEFA Europa League"),
+        *[entry(f"T{i}", f"T{i}", 4, 1, 1, 2, 4, 5, -1, 4, i) for i in range(3, 18)],
+        entry("Konyaspor", "KNY", 4, 0, 0, 4, 3, 8, -5, 0, 18, "Relegated")))
+    rows = {r["rank"]: r for r in rows_of(out)}
+    assert rows[1]["zone"] == "champions" and rows[1]["note"] == "Champions League", "kaynak notu korunmalı"
+    assert rows[2]["zone"] == "europa"
+    assert rows[18]["zone"] == "relegation" and rows[18]["note"] == "Relegated"
+    assert rows[10]["zone"] == ""
+
+
+def test_kept_previous_table_is_cleaned_and_keeps_its_real_source(monkeypatch, tmp_path):
+    """Kaynak kesilince son tablo korunur; adı/bölgeleri tazelenir, kaynak etiketi bozulmaz."""
+    monkeypatch.setattr(standings, "STANDINGS_OUTPUT", tmp_path / "standings.json")
+    standings.STANDINGS_OUTPUT.write_text(json.dumps(
+        {"source": "mackolik", "generated_at": "2026-09-13T22:00:00+03:00",
+         "leagues": [{"id": "soccer/tur.1", "name": "Trendyol Süper Lig", "sport": "Futbol",
+                      "season": "2026-27", "updated_at": "2026-09-13T22:00:00+03:00", "teams": 18,
+                      "rows": [{"rank": i + 1,
+                                "team": name + name, "sourceTeam": name + name, "abbr": "", "logo": "",
+                                "played": 5, "wins": 2, "draws": 1, "losses": 2, "goalsFor": 6,
+                                "goalsAgainst": 6, "diff": 0, "points": 7, "note": ""}
+                               for i, name in enumerate(n for n, *_ in SUPERLIG)]}]},
+        ensure_ascii=False), encoding="utf-8")
+    import requests
+    out = refresh(exc=requests.ConnectionError("kapalı"))
+    rows = rows_of(out)
+    assert out["source"] == "mackolik", "okunamayan turda kaynak etiketi uydurulmamalı"
+    assert rows[0]["team"] == "Galatasaray", "korunan tabloda tekrarlı ad temizlenmeli"
+    assert rows[0]["zone"] == "champions" and rows[17]["zone"] == "relegation"
+    assert rows[0]["points"] == 7 and rows[0]["played"] == 5, "sayılar değişmemeli"
+    assert rows_of(standings.load_or_build(NOW))[0]["team"] == "Galatasaray"
+
+
+def test_repo_config_declares_superlig_zones():
+    cfg = standings.load_config()
+    rules = standings.zone_rules(cfg, "soccer/tur.1")
+    assert rules, "config/standings.yml bölge tanımlamalı"
+    top = standings.zone_rank_map(rules, 18)
+    assert sorted(k for k, v in top.items() if v["kind"] == "relegation") == [16, 17, 18]
+    assert sorted(k for k, v in top.items() if v["kind"] != "relegation") == [1, 2, 3]
+
+
+def test_seeded_output_has_clean_names_and_zones():
+    """output/standings.json: ad tekrarı yok, ilk 3 ve son 3 sıra işaretli."""
+    data = standings.load_or_build(NOW)
+    leagues = data.get("leagues") or []
+    if not leagues or not leagues[0].get("rows"):
+        pytest.skip("output/standings.json henüz üretilmedi")
+    rows = leagues[0]["rows"]
+    for r in rows:
+        assert r["team"] == standings.dedupe_team_name(r["team"]), "tekrarlı takım adı: " + r["team"]
+        assert "zone" in r and "zoneLabel" in r
+    assert [r["zone"] for r in rows[:3]] == ["champions", "europa", "europa"]
+    assert [r["zone"] for r in rows[-3:]] == ["relegation"] * 3
+    assert all(r["zone"] == "" for r in rows[3:-3])
