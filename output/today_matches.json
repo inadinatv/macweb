@@ -9,13 +9,13 @@
       "fixbettv84.com",
       "fixbettv19.com"
     ],
-    "last_checked": "2026-09-15T13:57:17+00:00",
+    "last_checked": "2026-09-15T14:30:47+00:00",
     "note": "OK",
     "probed": 200
   },
   "date": "2026-09-15",
   "timezone": "Europe/Istanbul",
-  "generated_at": "2026-09-15T16:56:40+03:00",
+  "generated_at": "2026-09-15T17:30:10+03:00",
   "matches": [
     {
       "match_id": "bm1",
@@ -78,8 +78,8 @@
       "channel_id": "as",
       "logo_home": "https://img.sporekrani.com/teams/8bac90be-19cd-429a-a2cd-5ef434351c54.png",
       "logo_away": "https://www.urgupspor.com/img/logo.svg",
-      "status": "upcoming",
-      "started": false,
+      "status": "live",
+      "started": true,
       "raw_event": "17:00 | Ziraat Türkiye Kupası",
       "url": "https://fixbettv84.com/channel.html?id=as",
       "fetched_at": "",
@@ -103,8 +103,8 @@
       "channel_id": "trtspor2",
       "logo_home": "https://img.sporekrani.com/teams/QX1gvhkHqCqLdkC3fiOZXUbjRNha6dd5Xljh8XDf.png",
       "logo_away": "https://img.sporekrani.com/teams/bHVWJCWnyFUACW9svQynrNW6qe4edtdhAK22SH1K.png",
-      "status": "upcoming",
-      "started": false,
+      "status": "live",
+      "started": true,
       "raw_event": "17:00 | CEV Erkekler Avrupa Şampiyonası",
       "url": "https://fixbettv84.com/channel.html?id=trtspor2",
       "fetched_at": "",

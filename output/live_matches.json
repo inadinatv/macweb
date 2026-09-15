@@ -9,9 +9,60 @@
       "fixbettv84.com",
       "fixbettv19.com"
     ],
-    "last_checked": "2026-09-15T13:57:17+00:00",
+    "last_checked": "2026-09-15T14:30:47+00:00",
     "note": "OK",
     "probed": 200
   },
-  "live": []
+  "live": [
+    {
+      "match_id": "as",
+      "home": "Afyonkarahisarspor",
+      "away": "Ürgüp Spor",
+      "league": "Ziraat Türkiye Kupası",
+      "time": "17:00",
+      "sport": "Futbol",
+      "is_match_of_day": false,
+      "channel_id": "as",
+      "logo_home": "https://img.sporekrani.com/teams/8bac90be-19cd-429a-a2cd-5ef434351c54.png",
+      "logo_away": "https://www.urgupspor.com/img/logo.svg",
+      "status": "live",
+      "started": true,
+      "raw_event": "17:00 | Ziraat Türkiye Kupası",
+      "url": "https://fixbettv84.com/channel.html?id=as",
+      "fetched_at": "",
+      "status_source": "schedule",
+      "raw_status": "",
+      "score_home": null,
+      "score_away": null,
+      "score_source": "",
+      "score_updated_at": "",
+      "event_id": "",
+      "starts_at": "2026-09-15T17:00:00+03:00"
+    },
+    {
+      "match_id": "trtspor2",
+      "home": "Letonya",
+      "away": "İsviçre",
+      "league": "CEV Erkekler Avrupa Şampiyonası",
+      "time": "17:00",
+      "sport": "Voleybol",
+      "is_match_of_day": false,
+      "channel_id": "trtspor2",
+      "logo_home": "https://img.sporekrani.com/teams/QX1gvhkHqCqLdkC3fiOZXUbjRNha6dd5Xljh8XDf.png",
+      "logo_away": "https://img.sporekrani.com/teams/bHVWJCWnyFUACW9svQynrNW6qe4edtdhAK22SH1K.png",
+      "status": "live",
+      "started": true,
+      "raw_event": "17:00 | CEV Erkekler Avrupa Şampiyonası",
+      "url": "https://fixbettv84.com/channel.html?id=trtspor2",
+      "fetched_at": "",
+      "status_source": "schedule",
+      "raw_status": "",
+      "score_home": null,
+      "score_away": null,
+      "score_source": "",
+      "score_updated_at": "",
+      "event_id": "",
+      "starts_at": "2026-09-15T17:00:00+03:00"
+    }
+  ]
 }

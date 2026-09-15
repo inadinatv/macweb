@@ -1,13 +1,16 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-09-15 13:57  
-> **Toplam maç:** 10  |  **Canlı:** 0  |  **Yaklaşan:** 8
+> **Güncellenme:** 2026-09-15 14:31  
+> **Toplam maç:** 10  |  **Canlı:** 2  |  **Yaklaşan:** 6
+
+## 🔴 CANLI
+
+- 🔴 **Afyonkarahisarspor vs Ürgüp Spor** — CANLI · `17:00` | Ziraat Türkiye Kupası <https://fixbettv84.com/channel.html?id=as>
+- 🔴 **Letonya vs İsviçre** — CANLI · `17:00` | CEV Erkekler Avrupa Şampiyonası <https://fixbettv84.com/channel.html?id=trtspor2>
 
 ## ⏰ YAKLAŞAN
 
-- ⏰ **Afyonkarahisarspor vs Ürgüp Spor** — YAKLAŞAN · `17:00` | Ziraat Türkiye Kupası <https://fixbettv84.com/channel.html?id=as>
-- ⏰ **Letonya vs İsviçre** — YAKLAŞAN · `17:00` | CEV Erkekler Avrupa Şampiyonası <https://fixbettv84.com/channel.html?id=trtspor2>
 - ⏰ **Altay vs Sökespor** — YAKLAŞAN · `20:00` | Ziraat Türkiye Kupası <https://fixbettv84.com/channel.html?id=as>
 - ⏰ **Rayo Vallecano vs Espanyol** — YAKLAŞAN · `20:00` | İspanya La Liga <https://fixbettv84.com/channel.html?id=ss>
 - ⏰ **Fransa vs Almanya** — YAKLAŞAN · `20:00` | CEV Erkekler Avrupa Şampiyonası <https://fixbettv84.com/channel.html?id=trtspor2>
@@ -27,14 +30,14 @@
 - ⏰ Instituto AC vs Estudiantes — 03:15
 
 ### CEV Erkekler Avrupa Şampiyonası
-- ⏰ Letonya vs İsviçre — 17:00
+- 🔴 Letonya vs İsviçre — 17:00
 - ⏰ Fransa vs Almanya — 20:00
 
 ### WTA Guadalajara
 - ⏰ Zeynep Sönmez vs I.Shymanovich — 02:00
 
 ### Ziraat Türkiye Kupası
-- ⏰ Afyonkarahisarspor vs Ürgüp Spor — 17:00
+- 🔴 Afyonkarahisarspor vs Ürgüp Spor — 17:00
 - ⏰ Altay vs Sökespor — 20:00
 
 ### İspanya La Liga
