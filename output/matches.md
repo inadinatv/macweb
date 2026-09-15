@@ -1,13 +1,8 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-09-15 01:04  
-> **Toplam maç:** 10  |  **Canlı:** 2  |  **Yaklaşan:** 8
-
-## 🔴 CANLI
-
-- 🔴 **Zeynep Sönmez vs I.Shymanovich** — CANLI · `02:00` | WTA Guadalajara <https://fixbettv84.com/channel.html?id=bm1>
-- 🔴 **Instituto AC vs Estudiantes** — CANLI · `03:15` | Arjantin Primera Division <https://fixbettv84.com/channel.html?id=smarts>
+> **Güncellenme:** 2026-09-15 05:01  
+> **Toplam maç:** 10  |  **Canlı:** 0  |  **Yaklaşan:** 8
 
 ## ⏰ YAKLAŞAN
 
@@ -20,18 +15,23 @@
 - ⏰ **Fiorentina vs Pisa** — YAKLAŞAN · `22:00` | İtalya Kupası <https://fixbettv84.com/channel.html?id=trtspor>
 - ⏰ **Elche vs Real Madrid** — YAKLAŞAN · `22:30` | İspanya La Liga <https://fixbettv84.com/channel.html?id=ss>
 
+## ✅ BİTTİ
+
+- ✅ **Zeynep Sönmez vs I.Shymanovich** — MS · `02:00` | WTA Guadalajara <https://fixbettv84.com/channel.html?id=bm1>
+- ✅ **Instituto AC vs Estudiantes** — MS · `03:15` | Arjantin Primera Division <https://fixbettv84.com/channel.html?id=smarts>
+
 ---
 ## 🏆 Lig Bazlı
 
 ### Arjantin Primera Division
-- 🔴 Instituto AC vs Estudiantes — 03:15
+- ⏰ Instituto AC vs Estudiantes — 03:15
 
 ### CEV Erkekler Avrupa Şampiyonası
 - ⏰ Letonya vs İsviçre — 17:00
 - ⏰ Fransa vs Almanya — 20:00
 
 ### WTA Guadalajara
-- 🔴 Zeynep Sönmez vs I.Shymanovich — 02:00
+- ⏰ Zeynep Sönmez vs I.Shymanovich — 02:00
 
 ### Ziraat Türkiye Kupası
 - ⏰ Afyonkarahisarspor vs Ürgüp Spor — 17:00
@@ -105,7 +105,7 @@
 - 🟢 **BEIN SPORTS 2** <https://ladyboy.taylandpattaya.cfd//bein2/tracks-v1a1/mono.m3u8>
 - 🟢 **BEIN SPORTS 3** <https://ladyboy.taylandpattaya.cfd//bein3/tracks-v1a1/mono.m3u8>
 - 🟢 **BEIN SPORTS 4** <https://ladyboy.taylandpattaya.cfd//bein4/tracks-v1a1/mono.m3u8>
-- 🟡 **BEIN SPORTS 5** <https://ladyboy.taylandpattaya.cfd//bein5/tracks-v1a1/mono.m3u8>
+- 🟢 **BEIN SPORTS 5** <https://ladyboy.taylandpattaya.cfd//bein5/tracks-v1a1/mono.m3u8>
 - 🟢 **S SPORT** <https://ladyboy.taylandpattaya.cfd//s-sport/tracks-v1a1/mono.m3u8>
 - 🟢 **S SPORT 2** <https://ladyboy.taylandpattaya.cfd//s-sport2/tracks-v1a1/mono.m3u8>
 - ⚪ **S SPORT PLUS** <https://tv.atomspor.workers.dev/?ID=ssport-plus>

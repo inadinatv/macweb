@@ -9,60 +9,9 @@
       "fixbettv84.com",
       "fixbettv19.com"
     ],
-    "last_checked": "2026-09-15T01:03:48+00:00",
+    "last_checked": "2026-09-15T05:01:38+00:00",
     "note": "OK",
     "probed": 200
   },
-  "live": [
-    {
-      "match_id": "bm1",
-      "home": "Zeynep Sönmez",
-      "away": "I.Shymanovich",
-      "league": "WTA Guadalajara",
-      "time": "02:00",
-      "sport": "Tenis",
-      "is_match_of_day": false,
-      "channel_id": "bm1",
-      "logo_home": "https://static.flashscore.com/res/image/data/veGMmQeM-MBgfwjOH.png",
-      "logo_away": "https://static.flashscore.com/res/image/data/EBVSbLjl-nHa9SBeg.png",
-      "status": "live",
-      "started": true,
-      "raw_event": "02:00 | WTA Guadalajara",
-      "url": "https://fixbettv84.com/channel.html?id=bm1",
-      "fetched_at": "",
-      "status_source": "schedule",
-      "raw_status": "",
-      "score_home": null,
-      "score_away": null,
-      "score_source": "",
-      "score_updated_at": "",
-      "event_id": "",
-      "starts_at": "2026-09-15T02:00:00+03:00"
-    },
-    {
-      "match_id": "smarts",
-      "home": "Instituto AC",
-      "away": "Estudiantes",
-      "league": "Arjantin Primera Division",
-      "time": "03:15",
-      "sport": "Futbol",
-      "is_match_of_day": false,
-      "channel_id": "smarts",
-      "logo_home": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6d/Escudo_Instituto_Atletico_Central_Cordoba.png/330px-Escudo_Instituto_Atletico_Central_Cordoba.png",
-      "logo_away": "https://img.sporekrani.com/teams/7fz16ODpfj6UdmhxBmLfNSZQyZLqN6nwaIC5eOMK.png",
-      "status": "live",
-      "started": true,
-      "raw_event": "03:15 | Arjantin Primera Division",
-      "url": "https://fixbettv84.com/channel.html?id=smarts",
-      "fetched_at": "",
-      "status_source": "schedule",
-      "raw_status": "",
-      "score_home": null,
-      "score_away": null,
-      "score_source": "",
-      "score_updated_at": "",
-      "event_id": "",
-      "starts_at": "2026-09-15T03:15:00+03:00"
-    }
-  ]
+  "live": []
 }

@@ -9,13 +9,13 @@
       "fixbettv84.com",
       "fixbettv19.com"
     ],
-    "last_checked": "2026-09-15T01:03:48+00:00",
+    "last_checked": "2026-09-15T05:01:38+00:00",
     "note": "OK",
     "probed": 200
   },
   "date": "2026-09-15",
   "timezone": "Europe/Istanbul",
-  "generated_at": "2026-09-15T04:03:11+03:00",
+  "generated_at": "2026-09-15T08:01:01+03:00",
   "matches": [
     {
       "match_id": "bm1",
@@ -28,7 +28,7 @@
       "channel_id": "bm1",
       "logo_home": "https://static.flashscore.com/res/image/data/veGMmQeM-MBgfwjOH.png",
       "logo_away": "https://static.flashscore.com/res/image/data/EBVSbLjl-nHa9SBeg.png",
-      "status": "live",
+      "status": "finished",
       "started": true,
       "raw_event": "02:00 | WTA Guadalajara",
       "url": "https://fixbettv84.com/channel.html?id=bm1",
@@ -53,7 +53,7 @@
       "channel_id": "smarts",
       "logo_home": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6d/Escudo_Instituto_Atletico_Central_Cordoba.png/330px-Escudo_Instituto_Atletico_Central_Cordoba.png",
       "logo_away": "https://img.sporekrani.com/teams/7fz16ODpfj6UdmhxBmLfNSZQyZLqN6nwaIC5eOMK.png",
-      "status": "live",
+      "status": "finished",
       "started": true,
       "raw_event": "03:15 | Arjantin Primera Division",
       "url": "https://fixbettv84.com/channel.html?id=smarts",
