@@ -9,60 +9,9 @@
       "fixbettv84.com",
       "fixbettv19.com"
     ],
-    "last_checked": "2026-09-15T20:35:36+00:00",
+    "last_checked": "2026-09-15T21:31:58+00:00",
     "note": "OK",
     "probed": 200
   },
-  "live": [
-    {
-      "match_id": "trtspor",
-      "home": "Fiorentina",
-      "away": "Pisa",
-      "league": "İtalya Kupası",
-      "time": "22:00",
-      "sport": "Futbol",
-      "is_match_of_day": false,
-      "channel_id": "trtspor",
-      "logo_home": "https://img.sporekrani.com/teams/4YnawjObsS3ds0V0O46Xr8a5A5h1nXLelqyKgqOe.png",
-      "logo_away": "https://img.sporekrani.com/teams/8ad8fc0d-1f1d-4794-86ac-832ad9294c63.png",
-      "status": "live",
-      "started": true,
-      "raw_event": "22:00 | İtalya Kupası",
-      "url": "https://fixbettv84.com/channel.html?id=trtspor",
-      "fetched_at": "",
-      "status_source": "schedule",
-      "raw_status": "",
-      "score_home": null,
-      "score_away": null,
-      "score_source": "",
-      "score_updated_at": "",
-      "event_id": "",
-      "starts_at": "2026-09-15T22:00:00+03:00"
-    },
-    {
-      "match_id": "ss",
-      "home": "Elche",
-      "away": "Real Madrid",
-      "league": "İspanya La Liga",
-      "time": "22:30",
-      "sport": "Futbol",
-      "is_match_of_day": false,
-      "channel_id": "ss",
-      "logo_home": "https://img.sporekrani.com/teams/1GTqbFOWAge3rRRmcirtfqnvp2ivJLQPl9M8Eoz1.png",
-      "logo_away": "https://img.sporekrani.com/teams/Clc4LOfTBSjPOeXnGfF4ot90t40BMgo2YiuAluuI.png",
-      "status": "live",
-      "started": true,
-      "raw_event": "22:30 | İspanya La Liga",
-      "url": "https://fixbettv84.com/channel.html?id=ss",
-      "fetched_at": "",
-      "status_source": "schedule",
-      "raw_status": "",
-      "score_home": null,
-      "score_away": null,
-      "score_source": "",
-      "score_updated_at": "",
-      "event_id": "",
-      "starts_at": "2026-09-15T22:30:00+03:00"
-    }
-  ]
+  "live": []
 }

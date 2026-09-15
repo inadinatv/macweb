@@ -9,13 +9,13 @@
       "fixbettv84.com",
       "fixbettv19.com"
     ],
-    "last_checked": "2026-09-15T20:35:36+00:00",
+    "last_checked": "2026-09-15T21:31:58+00:00",
     "note": "OK",
     "probed": 200
   },
-  "date": "2026-09-15",
+  "date": "2026-09-16",
   "timezone": "Europe/Istanbul",
-  "generated_at": "2026-09-15T23:35:00+03:00",
+  "generated_at": "2026-09-16T00:31:22+03:00",
   "matches": [
     {
       "match_id": "bm1",
@@ -28,8 +28,8 @@
       "channel_id": "bm1",
       "logo_home": "https://static.flashscore.com/res/image/data/veGMmQeM-MBgfwjOH.png",
       "logo_away": "https://static.flashscore.com/res/image/data/EBVSbLjl-nHa9SBeg.png",
-      "status": "finished",
-      "started": true,
+      "status": "upcoming",
+      "started": false,
       "raw_event": "02:00 | WTA Guadalajara",
       "url": "https://fixbettv84.com/channel.html?id=bm1",
       "fetched_at": "",
@@ -40,7 +40,7 @@
       "score_source": "",
       "score_updated_at": "",
       "event_id": "",
-      "starts_at": "2026-09-15T02:00:00+03:00"
+      "starts_at": "2026-09-16T02:00:00+03:00"
     },
     {
       "match_id": "smarts",
@@ -53,8 +53,8 @@
       "channel_id": "smarts",
       "logo_home": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6d/Escudo_Instituto_Atletico_Central_Cordoba.png/330px-Escudo_Instituto_Atletico_Central_Cordoba.png",
       "logo_away": "https://img.sporekrani.com/teams/7fz16ODpfj6UdmhxBmLfNSZQyZLqN6nwaIC5eOMK.png",
-      "status": "finished",
-      "started": true,
+      "status": "upcoming",
+      "started": false,
       "raw_event": "03:15 | Arjantin Primera Division",
       "url": "https://fixbettv84.com/channel.html?id=smarts",
       "fetched_at": "",
@@ -65,7 +65,7 @@
       "score_source": "",
       "score_updated_at": "",
       "event_id": "",
-      "starts_at": "2026-09-15T03:15:00+03:00"
+      "starts_at": "2026-09-16T03:15:00+03:00"
     },
     {
       "match_id": "as",
@@ -78,8 +78,8 @@
       "channel_id": "as",
       "logo_home": "https://img.sporekrani.com/teams/8bac90be-19cd-429a-a2cd-5ef434351c54.png",
       "logo_away": "https://www.urgupspor.com/img/logo.svg",
-      "status": "finished",
-      "started": true,
+      "status": "upcoming",
+      "started": false,
       "raw_event": "17:00 | Ziraat Türkiye Kupası",
       "url": "https://fixbettv84.com/channel.html?id=as",
       "fetched_at": "",
@@ -90,7 +90,7 @@
       "score_source": "",
       "score_updated_at": "",
       "event_id": "",
-      "starts_at": "2026-09-15T17:00:00+03:00"
+      "starts_at": "2026-09-16T17:00:00+03:00"
     },
     {
       "match_id": "trtspor2",
@@ -103,8 +103,8 @@
       "channel_id": "trtspor2",
       "logo_home": "https://img.sporekrani.com/teams/QX1gvhkHqCqLdkC3fiOZXUbjRNha6dd5Xljh8XDf.png",
       "logo_away": "https://img.sporekrani.com/teams/bHVWJCWnyFUACW9svQynrNW6qe4edtdhAK22SH1K.png",
-      "status": "finished",
-      "started": true,
+      "status": "upcoming",
+      "started": false,
       "raw_event": "17:00 | CEV Erkekler Avrupa Şampiyonası",
       "url": "https://fixbettv84.com/channel.html?id=trtspor2",
       "fetched_at": "",
@@ -115,7 +115,7 @@
       "score_source": "",
       "score_updated_at": "",
       "event_id": "",
-      "starts_at": "2026-09-15T17:00:00+03:00"
+      "starts_at": "2026-09-16T17:00:00+03:00"
     },
     {
       "match_id": "as",
@@ -128,8 +128,8 @@
       "channel_id": "as",
       "logo_home": "https://img.sporekrani.com/teams/vvqMOTV67kjL3GA6kSke03rX9SJE1n17NhOMBo5I.png",
       "logo_away": "https://upload.wikimedia.org/wikipedia/tr/d/d6/S%C3%B6kespor.png",
-      "status": "finished",
-      "started": true,
+      "status": "upcoming",
+      "started": false,
       "raw_event": "20:00 | Ziraat Türkiye Kupası",
       "url": "https://fixbettv84.com/channel.html?id=as",
       "fetched_at": "",
@@ -140,7 +140,7 @@
       "score_source": "",
       "score_updated_at": "",
       "event_id": "",
-      "starts_at": "2026-09-15T20:00:00+03:00"
+      "starts_at": "2026-09-16T20:00:00+03:00"
     },
     {
       "match_id": "ss",
@@ -153,8 +153,8 @@
       "channel_id": "ss",
       "logo_home": "https://img.sporekrani.com/teams/g8Lz07qcq3NX7HYmZ94igiZCYon351d73L3f0NhB.png",
       "logo_away": "https://img.sporekrani.com/teams/Rvc3hxlSnQ2qg0017vM16AcGJ9fSNFnvlr6DaFjd.png",
-      "status": "finished",
-      "started": true,
+      "status": "upcoming",
+      "started": false,
       "raw_event": "20:00 | İspanya La Liga",
       "url": "https://fixbettv84.com/channel.html?id=ss",
       "fetched_at": "",
@@ -165,7 +165,7 @@
       "score_source": "",
       "score_updated_at": "",
       "event_id": "",
-      "starts_at": "2026-09-15T20:00:00+03:00"
+      "starts_at": "2026-09-16T20:00:00+03:00"
     },
     {
       "match_id": "trtspor2",
@@ -178,8 +178,8 @@
       "channel_id": "trtspor2",
       "logo_home": "https://img.sporekrani.com/teams/PGpIi4a5PfJBTEBqMIlqMDlJ8uEocR9IEm3nnDsS.png",
       "logo_away": "https://img.sporekrani.com/teams/wZP72Xweh4SNrjXOf3hoSFrAMRq99PmVMbSNZFby.png",
-      "status": "finished",
-      "started": true,
+      "status": "upcoming",
+      "started": false,
       "raw_event": "20:00 | CEV Erkekler Avrupa Şampiyonası",
       "url": "https://fixbettv84.com/channel.html?id=trtspor2",
       "fetched_at": "",
@@ -190,7 +190,7 @@
       "score_source": "",
       "score_updated_at": "",
       "event_id": "",
-      "starts_at": "2026-09-15T20:00:00+03:00"
+      "starts_at": "2026-09-16T20:00:00+03:00"
     },
     {
       "match_id": "ss2",
@@ -228,7 +228,7 @@
       "channel_id": "trtspor",
       "logo_home": "https://img.sporekrani.com/teams/4YnawjObsS3ds0V0O46Xr8a5A5h1nXLelqyKgqOe.png",
       "logo_away": "https://img.sporekrani.com/teams/8ad8fc0d-1f1d-4794-86ac-832ad9294c63.png",
-      "status": "live",
+      "status": "finished",
       "started": true,
       "raw_event": "22:00 | İtalya Kupası",
       "url": "https://fixbettv84.com/channel.html?id=trtspor",
@@ -253,7 +253,7 @@
       "channel_id": "ss",
       "logo_home": "https://img.sporekrani.com/teams/1GTqbFOWAge3rRRmcirtfqnvp2ivJLQPl9M8Eoz1.png",
       "logo_away": "https://img.sporekrani.com/teams/Clc4LOfTBSjPOeXnGfF4ot90t40BMgo2YiuAluuI.png",
-      "status": "live",
+      "status": "finished",
       "started": true,
       "raw_event": "22:30 | İspanya La Liga",
       "url": "https://fixbettv84.com/channel.html?id=ss",
