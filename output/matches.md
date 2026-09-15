@@ -1,20 +1,13 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-09-15 18:24  
-> **Toplam maç:** 10  |  **Canlı:** 4  |  **Yaklaşan:** 2
+> **Güncellenme:** 2026-09-15 20:36  
+> **Toplam maç:** 10  |  **Canlı:** 2  |  **Yaklaşan:** 0
 
 ## 🔴 CANLI
 
-- 🔴 **Altay vs Sökespor** — CANLI · `20:00` | Ziraat Türkiye Kupası <https://fixbettv84.com/channel.html?id=as>
-- 🔴 **Rayo Vallecano vs Espanyol** — CANLI · `20:00` | İspanya La Liga <https://fixbettv84.com/channel.html?id=ss>
-- 🔴 **Fransa vs Almanya** — CANLI · `20:00` | CEV Erkekler Avrupa Şampiyonası <https://fixbettv84.com/channel.html?id=trtspor2>
-- 🔴 **Alaves vs Valencia** — CANLI · `21:00` | İspanya La Liga <https://fixbettv84.com/channel.html?id=ss2>
-
-## ⏰ YAKLAŞAN
-
-- ⏰ **Fiorentina vs Pisa** — YAKLAŞAN · `22:00` | İtalya Kupası <https://fixbettv84.com/channel.html?id=trtspor>
-- ⏰ **Elche vs Real Madrid** — YAKLAŞAN · `22:30` | İspanya La Liga <https://fixbettv84.com/channel.html?id=ss>
+- 🔴 **Fiorentina vs Pisa** — CANLI · `22:00` | İtalya Kupası <https://fixbettv84.com/channel.html?id=trtspor>
+- 🔴 **Elche vs Real Madrid** — CANLI · `22:30` | İspanya La Liga <https://fixbettv84.com/channel.html?id=ss>
 
 ## ✅ BİTTİ
 
@@ -22,6 +15,10 @@
 - ✅ **Instituto AC vs Estudiantes** — MS · `03:15` | Arjantin Primera Division <https://fixbettv84.com/channel.html?id=smarts>
 - ✅ **Afyonkarahisarspor vs Ürgüp Spor** — MS · `17:00` | Ziraat Türkiye Kupası <https://fixbettv84.com/channel.html?id=as>
 - ✅ **Letonya vs İsviçre** — MS · `17:00` | CEV Erkekler Avrupa Şampiyonası <https://fixbettv84.com/channel.html?id=trtspor2>
+- ✅ **Altay vs Sökespor** — MS · `20:00` | Ziraat Türkiye Kupası <https://fixbettv84.com/channel.html?id=as>
+- ✅ **Rayo Vallecano vs Espanyol** — MS · `20:00` | İspanya La Liga <https://fixbettv84.com/channel.html?id=ss>
+- ✅ **Fransa vs Almanya** — MS · `20:00` | CEV Erkekler Avrupa Şampiyonası <https://fixbettv84.com/channel.html?id=trtspor2>
+- ✅ **Alaves vs Valencia** — MS · `21:00` | İspanya La Liga <https://fixbettv84.com/channel.html?id=ss2>
 
 ---
 ## 🏆 Lig Bazlı
@@ -31,22 +28,22 @@
 
 ### CEV Erkekler Avrupa Şampiyonası
 - ⏰ Letonya vs İsviçre — 17:00
-- 🔴 Fransa vs Almanya — 20:00
+- ⏰ Fransa vs Almanya — 20:00
 
 ### WTA Guadalajara
 - ⏰ Zeynep Sönmez vs I.Shymanovich — 02:00
 
 ### Ziraat Türkiye Kupası
 - ⏰ Afyonkarahisarspor vs Ürgüp Spor — 17:00
-- 🔴 Altay vs Sökespor — 20:00
+- ⏰ Altay vs Sökespor — 20:00
 
 ### İspanya La Liga
-- 🔴 Rayo Vallecano vs Espanyol — 20:00
-- 🔴 Alaves vs Valencia — 21:00
-- ⏰ Elche vs Real Madrid — 22:30
+- ⏰ Rayo Vallecano vs Espanyol — 20:00
+- ⏰ Alaves vs Valencia — 21:00
+- 🔴 Elche vs Real Madrid — 22:30
 
 ### İtalya Kupası
-- ⏰ Fiorentina vs Pisa — 22:00
+- 🔴 Fiorentina vs Pisa — 22:00
 
 ---
 ## 📺 7/24 KANALLAR (31)
