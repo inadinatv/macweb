@@ -1,8 +1,8 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-09-15 23:38  
-> **Toplam maç:** 17  |  **Canlı:** 0  |  **Yaklaşan:** 10
+> **Güncellenme:** 2026-09-16 00:54  
+> **Toplam maç:** 17  |  **Canlı:** 0  |  **Yaklaşan:** 17
 
 ## ⏰ YAKLAŞAN
 
@@ -16,16 +16,13 @@
 - ⏰ **Mersin İY vs Bucak Belediye** — YAKLAŞAN · `20:00` | Ziraat Türkiye Kupası <https://fixbettv84.com/channel.html?id=as>
 - ⏰ **Deportivo vs Sevilla** — YAKLAŞAN · `20:00` | İspanya La Liga <https://fixbettv84.com/channel.html?id=ss2>
 - ⏰ **Atletico Madrid vs Osasuna** — YAKLAŞAN · `20:00` | İspanya La Liga <https://fixbettv84.com/channel.html?id=ss>
-
-## ✅ BİTTİ
-
-- ✅ **Sunderland vs AZ Alkmaar** — MS · `22:00` | UEFA Avrupa Ligi <https://fixbettv84.com/channel.html?id=ex3>
-- ✅ **Sturm Graz vs Rennes** — MS · `22:00` | UEFA Avrupa Ligi <https://fixbettv84.com/channel.html?id=ex4>
-- ✅ **Bayer Leverkusen vs NK Celje** — MS · `22:00` | UEFA Avrupa Ligi <https://fixbettv84.com/channel.html?id=ex1>
-- ✅ **Anderlecht vs Lyon** — MS · `22:00` | UEFA Avrupa Ligi <https://fixbettv84.com/channel.html?id=ex2>
-- ✅ **Milan vs Benfica** — MS · `22:00` | UEFA Avrupa Ligi <https://fixbettv84.com/channel.html?id=ex7>
-- ✅ **Barcelona vs Racing Santander** — MS · `22:30` | İspanya La Liga <https://fixbettv84.com/channel.html?id=ss>
-- ✅ **Levante vs Athletic Bilbao** — MS · `22:30` | İspanya La Liga <https://fixbettv84.com/channel.html?id=ss2>
+- ⏰ **Sunderland vs AZ Alkmaar** — YAKLAŞAN · `22:00` | UEFA Avrupa Ligi <https://fixbettv84.com/channel.html?id=ex3>
+- ⏰ **Sturm Graz vs Rennes** — YAKLAŞAN · `22:00` | UEFA Avrupa Ligi <https://fixbettv84.com/channel.html?id=ex4>
+- ⏰ **Bayer Leverkusen vs NK Celje** — YAKLAŞAN · `22:00` | UEFA Avrupa Ligi <https://fixbettv84.com/channel.html?id=ex1>
+- ⏰ **Anderlecht vs Lyon** — YAKLAŞAN · `22:00` | UEFA Avrupa Ligi <https://fixbettv84.com/channel.html?id=ex2>
+- ⏰ **Milan vs Benfica** — YAKLAŞAN · `22:00` | UEFA Avrupa Ligi <https://fixbettv84.com/channel.html?id=ex7>
+- ⏰ **Barcelona vs Racing Santander** — YAKLAŞAN · `22:30` | İspanya La Liga <https://fixbettv84.com/channel.html?id=ss>
+- ⏰ **Levante vs Athletic Bilbao** — YAKLAŞAN · `22:30` | İspanya La Liga <https://fixbettv84.com/channel.html?id=ss2>
 
 ---
 ## 🏆 Lig Bazlı
