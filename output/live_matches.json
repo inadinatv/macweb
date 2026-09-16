@@ -9,9 +9,35 @@
       "fixbettv84.com",
       "fixbettv19.com"
     ],
-    "last_checked": "2026-09-16T06:41:26+00:00",
+    "last_checked": "2026-09-16T12:02:07+00:00",
     "note": "OK",
     "probed": 200
   },
-  "live": []
+  "live": [
+    {
+      "match_id": "as",
+      "home": "Sinopspor",
+      "away": "Arit Kayadibi",
+      "league": "Ziraat Türkiye Kupası",
+      "time": "14:00",
+      "sport": "Futbol",
+      "is_match_of_day": false,
+      "channel_id": "as",
+      "logo_home": "https://upload.wikimedia.org/wikipedia/tr/e/e4/Sinopspor.png",
+      "logo_away": "https://i.hizliresim.com/ro7l2kfg.png",
+      "status": "live",
+      "started": true,
+      "raw_event": "14:00 | Ziraat Türkiye Kupası",
+      "url": "https://fixbettv84.com/channel.html?id=as",
+      "fetched_at": "",
+      "status_source": "schedule",
+      "raw_status": "",
+      "score_home": null,
+      "score_away": null,
+      "score_source": "",
+      "score_updated_at": "",
+      "event_id": "",
+      "starts_at": "2026-09-16T14:00:00+03:00"
+    }
+  ]
 }

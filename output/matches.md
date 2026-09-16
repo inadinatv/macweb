@@ -1,13 +1,15 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-09-16 06:41  
-> **Toplam maç:** 17  |  **Canlı:** 0  |  **Yaklaşan:** 17
+> **Güncellenme:** 2026-09-16 12:02  
+> **Toplam maç:** 17  |  **Canlı:** 1  |  **Yaklaşan:** 15
+
+## 🔴 CANLI
+
+- 🔴 **Sinopspor vs Arit Kayadibi** — CANLI · `14:00` | Ziraat Türkiye Kupası <https://fixbettv84.com/channel.html?id=as>
 
 ## ⏰ YAKLAŞAN
 
-- ⏰ **Jeonbuk vs Kashiwa Reysol** — YAKLAŞAN · `13:00` | AFC Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=smarts>
-- ⏰ **Sinopspor vs Arit Kayadibi** — YAKLAŞAN · `14:00` | Ziraat Türkiye Kupası <https://fixbettv84.com/channel.html?id=as>
 - ⏰ **Port FC vs Vissel Kobe** — YAKLAŞAN · `15:15` | AFC Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=smarts>
 - ⏰ **Türkiye vs Letonya** — YAKLAŞAN · `17:00` | CEV Erkekler Avrupa Şampiyonası <https://fixbettv84.com/channel.html?id=trtspor>
 - ⏰ **Bucaspor vs Gaziemirspor** — YAKLAŞAN · `17:00` | Ziraat Türkiye Kupası <https://fixbettv84.com/channel.html?id=as>
@@ -23,6 +25,10 @@
 - ⏰ **Milan vs Benfica** — YAKLAŞAN · `22:00` | UEFA Avrupa Ligi <https://fixbettv84.com/channel.html?id=ex7>
 - ⏰ **Barcelona vs Racing Santander** — YAKLAŞAN · `22:30` | İspanya La Liga <https://fixbettv84.com/channel.html?id=ss>
 - ⏰ **Levante vs Athletic Bilbao** — YAKLAŞAN · `22:30` | İspanya La Liga <https://fixbettv84.com/channel.html?id=ss2>
+
+## ✅ BİTTİ
+
+- ✅ **Jeonbuk vs Kashiwa Reysol** — MS · `13:00` | AFC Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=smarts>
 
 ---
 ## 🏆 Lig Bazlı
@@ -44,7 +50,7 @@
 - ⏰ Milan vs Benfica — 22:00
 
 ### Ziraat Türkiye Kupası
-- ⏰ Sinopspor vs Arit Kayadibi — 14:00
+- 🔴 Sinopspor vs Arit Kayadibi — 14:00
 - ⏰ Bucaspor vs Gaziemirspor — 17:00
 - ⏰ Mersin İY vs Bucak Belediye — 20:00
 
@@ -114,7 +120,7 @@
 - 🟢 **BEIN SPORTS 2** <https://ladyboy.taylandpattaya.cfd//bein2/tracks-v1a1/mono.m3u8>
 - 🟢 **BEIN SPORTS 3** <https://ladyboy.taylandpattaya.cfd//bein3/tracks-v1a1/mono.m3u8>
 - 🟢 **BEIN SPORTS 4** <https://ladyboy.taylandpattaya.cfd//bein4/tracks-v1a1/mono.m3u8>
-- 🟡 **BEIN SPORTS 5** <https://ladyboy.taylandpattaya.cfd//bein5/tracks-v1a1/mono.m3u8>
+- 🟢 **BEIN SPORTS 5** <https://ladyboy.taylandpattaya.cfd//bein5/tracks-v1a1/mono.m3u8>
 - 🟢 **S SPORT** <https://ladyboy.taylandpattaya.cfd//s-sport/tracks-v1a1/mono.m3u8>
 - 🟢 **S SPORT 2** <https://ladyboy.taylandpattaya.cfd//s-sport2/tracks-v1a1/mono.m3u8>
 - ⚪ **S SPORT PLUS** <https://tv.atomspor.workers.dev/?ID=ssport-plus>

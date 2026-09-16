@@ -9,13 +9,13 @@
       "fixbettv84.com",
       "fixbettv19.com"
     ],
-    "last_checked": "2026-09-16T06:41:26+00:00",
+    "last_checked": "2026-09-16T12:02:07+00:00",
     "note": "OK",
     "probed": 200
   },
   "date": "2026-09-16",
   "timezone": "Europe/Istanbul",
-  "generated_at": "2026-09-16T09:40:44+03:00",
+  "generated_at": "2026-09-16T15:01:30+03:00",
   "matches": [
     {
       "match_id": "smarts",
@@ -28,8 +28,8 @@
       "channel_id": "smarts",
       "logo_home": "https://img.sporekrani.com/teams/eRzbRpMTHmKSBfZ7ZMUWFfqEBczw28VhN4w4EwbM.png",
       "logo_away": "https://thumb.wikimedia.org/wikipedia/en/thumb/9/99/Kashiwa_Reysol_logo.svg/500px-Kashiwa_Reysol_logo.svg.png",
-      "status": "upcoming",
-      "started": false,
+      "status": "finished",
+      "started": true,
       "raw_event": "13:00 | AFC Şampiyonlar Ligi",
       "url": "https://fixbettv84.com/channel.html?id=smarts",
       "fetched_at": "",
@@ -53,8 +53,8 @@
       "channel_id": "as",
       "logo_home": "https://upload.wikimedia.org/wikipedia/tr/e/e4/Sinopspor.png",
       "logo_away": "https://i.hizliresim.com/ro7l2kfg.png",
-      "status": "upcoming",
-      "started": false,
+      "status": "live",
+      "started": true,
       "raw_event": "14:00 | Ziraat Türkiye Kupası",
       "url": "https://fixbettv84.com/channel.html?id=as",
       "fetched_at": "",
