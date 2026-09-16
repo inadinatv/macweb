@@ -9,26 +9,26 @@
       "fixbettv84.com",
       "fixbettv19.com"
     ],
-    "last_checked": "2026-09-16T12:02:07+00:00",
+    "last_checked": "2026-09-16T13:50:34+00:00",
     "note": "OK",
     "probed": 200
   },
   "live": [
     {
-      "match_id": "as",
-      "home": "Sinopspor",
-      "away": "Arit Kayadibi",
-      "league": "Ziraat Türkiye Kupası",
-      "time": "14:00",
+      "match_id": "smarts",
+      "home": "Port FC",
+      "away": "Vissel Kobe",
+      "league": "AFC Şampiyonlar Ligi",
+      "time": "15:15",
       "sport": "Futbol",
       "is_match_of_day": false,
-      "channel_id": "as",
-      "logo_home": "https://upload.wikimedia.org/wikipedia/tr/e/e4/Sinopspor.png",
-      "logo_away": "https://i.hizliresim.com/ro7l2kfg.png",
+      "channel_id": "smarts",
+      "logo_home": "https://thumb.wikimedia.org/wikipedia/en/thumb/f/fc/Port_FC_logo.svg/500px-Port_FC_logo.svg.png",
+      "logo_away": "https://img.sporekrani.com/teams/SuPszgOUa4mYnZXK5W95Okguz5ajA6AtnDsJihgN.png",
       "status": "live",
       "started": true,
-      "raw_event": "14:00 | Ziraat Türkiye Kupası",
-      "url": "https://fixbettv84.com/channel.html?id=as",
+      "raw_event": "15:15 | AFC Şampiyonlar Ligi",
+      "url": "https://fixbettv84.com/channel.html?id=smarts",
       "fetched_at": "",
       "status_source": "schedule",
       "raw_status": "",
@@ -37,7 +37,7 @@
       "score_source": "",
       "score_updated_at": "",
       "event_id": "",
-      "starts_at": "2026-09-16T14:00:00+03:00"
+      "starts_at": "2026-09-16T15:15:00+03:00"
     }
   ]
 }

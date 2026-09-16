@@ -1,16 +1,15 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-09-16 12:02  
-> **Toplam maç:** 17  |  **Canlı:** 1  |  **Yaklaşan:** 15
+> **Güncellenme:** 2026-09-16 13:50  
+> **Toplam maç:** 17  |  **Canlı:** 1  |  **Yaklaşan:** 14
 
 ## 🔴 CANLI
 
-- 🔴 **Sinopspor vs Arit Kayadibi** — CANLI · `14:00` | Ziraat Türkiye Kupası <https://fixbettv84.com/channel.html?id=as>
+- 🔴 **Port FC vs Vissel Kobe** — CANLI · `15:15` | AFC Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=smarts>
 
 ## ⏰ YAKLAŞAN
 
-- ⏰ **Port FC vs Vissel Kobe** — YAKLAŞAN · `15:15` | AFC Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=smarts>
 - ⏰ **Türkiye vs Letonya** — YAKLAŞAN · `17:00` | CEV Erkekler Avrupa Şampiyonası <https://fixbettv84.com/channel.html?id=trtspor>
 - ⏰ **Bucaspor vs Gaziemirspor** — YAKLAŞAN · `17:00` | Ziraat Türkiye Kupası <https://fixbettv84.com/channel.html?id=as>
 - ⏰ **Ararat vs Sparta Prag** — YAKLAŞAN · `19:45` | UEFA Avrupa Ligi <https://fixbettv84.com/channel.html?id=ex1>
@@ -29,13 +28,14 @@
 ## ✅ BİTTİ
 
 - ✅ **Jeonbuk vs Kashiwa Reysol** — MS · `13:00` | AFC Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=smarts>
+- ✅ **Sinopspor vs Arit Kayadibi** — MS · `14:00` | Ziraat Türkiye Kupası <https://fixbettv84.com/channel.html?id=as>
 
 ---
 ## 🏆 Lig Bazlı
 
 ### AFC Şampiyonlar Ligi
 - ⏰ Jeonbuk vs Kashiwa Reysol — 13:00
-- ⏰ Port FC vs Vissel Kobe — 15:15
+- 🔴 Port FC vs Vissel Kobe — 15:15
 
 ### CEV Erkekler Avrupa Şampiyonası
 - ⏰ Türkiye vs Letonya — 17:00
@@ -50,7 +50,7 @@
 - ⏰ Milan vs Benfica — 22:00
 
 ### Ziraat Türkiye Kupası
-- 🔴 Sinopspor vs Arit Kayadibi — 14:00
+- ⏰ Sinopspor vs Arit Kayadibi — 14:00
 - ⏰ Bucaspor vs Gaziemirspor — 17:00
 - ⏰ Mersin İY vs Bucak Belediye — 20:00
 
