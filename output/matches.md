@@ -1,17 +1,11 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-09-16 13:50  
-> **Toplam maç:** 17  |  **Canlı:** 1  |  **Yaklaşan:** 14
-
-## 🔴 CANLI
-
-- 🔴 **Port FC vs Vissel Kobe** — CANLI · `15:15` | AFC Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=smarts>
+> **Güncellenme:** 2026-09-16 16:35  
+> **Toplam maç:** 17  |  **Canlı:** 0  |  **Yaklaşan:** 12
 
 ## ⏰ YAKLAŞAN
 
-- ⏰ **Türkiye vs Letonya** — YAKLAŞAN · `17:00` | CEV Erkekler Avrupa Şampiyonası <https://fixbettv84.com/channel.html?id=trtspor>
-- ⏰ **Bucaspor vs Gaziemirspor** — YAKLAŞAN · `17:00` | Ziraat Türkiye Kupası <https://fixbettv84.com/channel.html?id=as>
 - ⏰ **Ararat vs Sparta Prag** — YAKLAŞAN · `19:45` | UEFA Avrupa Ligi <https://fixbettv84.com/channel.html?id=ex1>
 - ⏰ **Omonia vs Celta Vigo** — YAKLAŞAN · `19:45` | UEFA Avrupa Ligi <https://fixbettv84.com/channel.html?id=ex7>
 - ⏰ **Mersin İY vs Bucak Belediye** — YAKLAŞAN · `20:00` | Ziraat Türkiye Kupası <https://fixbettv84.com/channel.html?id=as>
@@ -29,13 +23,16 @@
 
 - ✅ **Jeonbuk vs Kashiwa Reysol** — MS · `13:00` | AFC Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=smarts>
 - ✅ **Sinopspor vs Arit Kayadibi** — MS · `14:00` | Ziraat Türkiye Kupası <https://fixbettv84.com/channel.html?id=as>
+- ✅ **Port FC vs Vissel Kobe** — MS · `15:15` | AFC Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=smarts>
+- ✅ **Türkiye vs Letonya** — MS · `17:00` | CEV Erkekler Avrupa Şampiyonası <https://fixbettv84.com/channel.html?id=trtspor>
+- ✅ **Bucaspor vs Gaziemirspor** — MS · `17:00` | Ziraat Türkiye Kupası <https://fixbettv84.com/channel.html?id=as>
 
 ---
 ## 🏆 Lig Bazlı
 
 ### AFC Şampiyonlar Ligi
 - ⏰ Jeonbuk vs Kashiwa Reysol — 13:00
-- 🔴 Port FC vs Vissel Kobe — 15:15
+- ⏰ Port FC vs Vissel Kobe — 15:15
 
 ### CEV Erkekler Avrupa Şampiyonası
 - ⏰ Türkiye vs Letonya — 17:00
@@ -116,7 +113,7 @@
 ## ⚡ EKSTRA PANELLER — m3u8 (79)
 
 ### ⚛️ ATOM SPOR ✅ `https://www.atomsportv514.top`
-- 🟢 **BEIN SPORTS 1** <https://ladyboy.taylandpattaya.cfd//beintv/tracks-v1a1/mono.m3u8>
+- 🟡 **BEIN SPORTS 1** <https://ladyboy.taylandpattaya.cfd//beintv/tracks-v1a1/mono.m3u8>
 - 🟢 **BEIN SPORTS 2** <https://ladyboy.taylandpattaya.cfd//bein2/tracks-v1a1/mono.m3u8>
 - 🟢 **BEIN SPORTS 3** <https://ladyboy.taylandpattaya.cfd//bein3/tracks-v1a1/mono.m3u8>
 - 🟢 **BEIN SPORTS 4** <https://ladyboy.taylandpattaya.cfd//bein4/tracks-v1a1/mono.m3u8>
