@@ -1,51 +1,53 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-09-17 21:43  
-> **Toplam maç:** 12  |  **Canlı:** 0  |  **Yaklaşan:** 4
+> **Güncellenme:** 2026-09-17 23:42  
+> **Toplam maç:** 10  |  **Canlı:** 0  |  **Yaklaşan:** 5
 
 ## ⏰ YAKLAŞAN
 
-- ⏰ **Orduspor vs Torul Gençlik** — YAKLAŞAN · `19:00` | Ziraat Türkiye Kupası <https://fixbettv84.com/channel.html?id=as>
-- ⏰ **OFI Crete vs Hoffenheim** — YAKLAŞAN · `19:45` | UEFA Avrupa Ligi <https://fixbettv84.com/channel.html?id=ex7>
-- ⏰ **Levski Sofya vs Salzburg** — YAKLAŞAN · `19:45` | UEFA Avrupa Ligi <https://fixbettv84.com/channel.html?id=ex1>
-- ⏰ **Real Betis vs Getafe** — YAKLAŞAN · `20:00` | İspanya La Liga <https://fixbettv84.com/channel.html?id=ss>
+- ⏰ **Bandırmaspor vs Ümraniyespor** — YAKLAŞAN · `16:00` | Trendyol 1. Lig <https://fixbettv84.com/channel.html?id=trtspor>
+- ⏰ **Fenerbahçe Tarfin vs Olympiakos** — YAKLAŞAN · `17:00` | Euroleague Süper Kupa <https://fixbettv84.com/channel.html?id=ss>
+- ⏰ **Muğlaspor vs Iğdırspor** — YAKLAŞAN · `20:00` | Trendyol 1. Lig <https://fixbettv84.com/channel.html?id=trtspor>
+- ⏰ **Dubai Basket vs Real Madrid** — YAKLAŞAN · `20:00` | Euroleague Süper Kupa <https://fixbettv84.com/channel.html?id=ss>
+- ⏰ **Kasımpaşa vs Konyaspor** — YAKLAŞAN · `20:00` | Trendyol Süper Lig <https://fixbettv84.com/channel.html?id=zirve>
 
 ## ✅ BİTTİ
 
-- ✅ **Beşiktaş vs Marsilya** — MS · `22:00` | UEFA Avrupa Ligi ★ **Günün Maçı** <https://fixbettv84.com/channel.html?id=trt1>
-- ✅ **Juventus vs NEC Nijmegen** — MS · `22:00` | UEFA Avrupa Ligi <https://fixbettv84.com/channel.html?id=ex7>
-- ✅ **Real Sociedad vs Bournemouth** — MS · `22:00` | UEFA Avrupa Ligi <https://fixbettv84.com/channel.html?id=ex3>
-- ✅ **Viktoria Plzen vs St.Gilloise** — MS · `22:00` | UEFA Avrupa Ligi <https://fixbettv84.com/channel.html?id=ex4>
-- ✅ **Lilleström vs Torreense** — MS · `22:00` | UEFA Avrupa Ligi <https://fixbettv84.com/channel.html?id=ex5>
-- ✅ **Crystal Palace vs Lech Poznan** — MS · `22:00` | UEFA Avrupa Ligi <https://fixbettv84.com/channel.html?id=ex2>
-- ✅ **Celtic vs Ferencvaros** — MS · `22:00` | UEFA Avrupa Ligi <https://fixbettv84.com/channel.html?id=ex1>
-- ✅ **Malaga vs Villarreal** — MS · `22:30` | İspanya La Liga <https://fixbettv84.com/channel.html?id=ss>
-
-## ⭐ GÜNÜN MAÇI
-
-- ✅ **Beşiktaş vs Marsilya** — MS · `22:00` | UEFA Avrupa Ligi ★ **Günün Maçı** <https://fixbettv84.com/channel.html?id=trt1>
+- ✅ **Reims vs Montpellier** — MS · `21:00` | Fransa Ligue 2 <https://fixbettv84.com/channel.html?id=bm1>
+- ✅ **Monza vs Sassuolo** — MS · `21:45` | İtalya Serie A <https://fixbettv84.com/channel.html?id=ss2>
+- ✅ **Monaco vs Lens** — MS · `21:45` | Fransa Ligue 1 <https://fixbettv84.com/channel.html?id=b4>
+- ✅ **Espanyol vs Elche** — MS · `22:00` | İspanya La Liga <https://fixbettv84.com/channel.html?id=ss>
+- ✅ **Brentford vs Chelsea** — MS · `22:00` | İngiltere Premier Lig <https://fixbettv84.com/channel.html?id=b3>
 
 ---
 ## 🏆 Lig Bazlı
 
-### UEFA Avrupa Ligi
-- ⏰ OFI Crete vs Hoffenheim — 19:45
-- ⏰ Levski Sofya vs Salzburg — 19:45
-- ⏰ Beşiktaş vs Marsilya — 22:00
-- ⏰ Juventus vs NEC Nijmegen — 22:00
-- ⏰ Real Sociedad vs Bournemouth — 22:00
-- ⏰ Viktoria Plzen vs St.Gilloise — 22:00
-- ⏰ Lilleström vs Torreense — 22:00
-- ⏰ Crystal Palace vs Lech Poznan — 22:00
-- ⏰ Celtic vs Ferencvaros — 22:00
+### Euroleague Süper Kupa
+- ⏰ Fenerbahçe Tarfin vs Olympiakos — 17:00
+- ⏰ Dubai Basket vs Real Madrid — 20:00
 
-### Ziraat Türkiye Kupası
-- ⏰ Orduspor vs Torul Gençlik — 19:00
+### Fransa Ligue 1
+- ⏰ Monaco vs Lens — 21:45
+
+### Fransa Ligue 2
+- ⏰ Reims vs Montpellier — 21:00
+
+### Trendyol 1. Lig
+- ⏰ Bandırmaspor vs Ümraniyespor — 16:00
+- ⏰ Muğlaspor vs Iğdırspor — 20:00
+
+### Trendyol Süper Lig
+- ⏰ Kasımpaşa vs Konyaspor — 20:00
+
+### İngiltere Premier Lig
+- ⏰ Brentford vs Chelsea — 22:00
 
 ### İspanya La Liga
-- ⏰ Real Betis vs Getafe — 20:00
-- ⏰ Malaga vs Villarreal — 22:30
+- ⏰ Espanyol vs Elche — 22:00
+
+### İtalya Serie A
+- ⏰ Monza vs Sassuolo — 21:45
 
 ---
 ## 📺 7/24 KANALLAR (31)
@@ -104,7 +106,7 @@
 
 ### ⚛️ ATOM SPOR ✅ `https://www.atomsportv514.top`
 - 🟢 **BEIN SPORTS 1** <https://ladyboy.taylandpattaya.cfd//beintv/tracks-v1a1/mono.m3u8>
-- 🟢 **BEIN SPORTS 2** <https://ladyboy.taylandpattaya.cfd//bein2/tracks-v1a1/mono.m3u8>
+- 🟡 **BEIN SPORTS 2** <https://ladyboy.taylandpattaya.cfd//bein2/tracks-v1a1/mono.m3u8>
 - 🟢 **BEIN SPORTS 3** <https://ladyboy.taylandpattaya.cfd//bein3/tracks-v1a1/mono.m3u8>
 - 🟢 **BEIN SPORTS 4** <https://ladyboy.taylandpattaya.cfd//bein4/tracks-v1a1/mono.m3u8>
 - 🟢 **BEIN SPORTS 5** <https://ladyboy.taylandpattaya.cfd//bein5/tracks-v1a1/mono.m3u8>
