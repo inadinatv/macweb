@@ -1,61 +1,50 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-09-16 22:19  
-> **Toplam maç:** 17  |  **Canlı:** 0  |  **Yaklaşan:** 10
+> **Güncellenme:** 2026-09-17 00:37  
+> **Toplam maç:** 13  |  **Canlı:** 0  |  **Yaklaşan:** 13
 
 ## ⏰ YAKLAŞAN
 
-- ⏰ **Jeonbuk vs Kashiwa Reysol** — YAKLAŞAN · `13:00` | AFC Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=smarts>
-- ⏰ **Sinopspor vs Arit Kayadibi** — YAKLAŞAN · `14:00` | Ziraat Türkiye Kupası <https://fixbettv84.com/channel.html?id=as>
-- ⏰ **Port FC vs Vissel Kobe** — YAKLAŞAN · `15:15` | AFC Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=smarts>
-- ⏰ **Türkiye vs Letonya** — YAKLAŞAN · `17:00` | CEV Erkekler Avrupa Şampiyonası <https://fixbettv84.com/channel.html?id=trtspor>
-- ⏰ **Bucaspor vs Gaziemirspor** — YAKLAŞAN · `17:00` | Ziraat Türkiye Kupası <https://fixbettv84.com/channel.html?id=as>
-- ⏰ **Ararat vs Sparta Prag** — YAKLAŞAN · `19:45` | UEFA Avrupa Ligi <https://fixbettv84.com/channel.html?id=ex1>
-- ⏰ **Omonia vs Celta Vigo** — YAKLAŞAN · `19:45` | UEFA Avrupa Ligi <https://fixbettv84.com/channel.html?id=ex7>
-- ⏰ **Mersin İY vs Bucak Belediye** — YAKLAŞAN · `20:00` | Ziraat Türkiye Kupası <https://fixbettv84.com/channel.html?id=as>
-- ⏰ **Deportivo vs Sevilla** — YAKLAŞAN · `20:00` | İspanya La Liga <https://fixbettv84.com/channel.html?id=ss2>
-- ⏰ **Atletico Madrid vs Osasuna** — YAKLAŞAN · `20:00` | İspanya La Liga <https://fixbettv84.com/channel.html?id=ss>
+- ⏰ **Y.Amasyaspor vs Çankırıgücü** — YAKLAŞAN · `14:30` | Ziraat Türkiye Kupası <https://fixbettv84.com/channel.html?id=as>
+- ⏰ **Orduspor vs Torul Gençlik** — YAKLAŞAN · `19:00` | Ziraat Türkiye Kupası <https://fixbettv84.com/channel.html?id=as>
+- ⏰ **OFI Crete vs Hoffenheim** — YAKLAŞAN · `19:45` | UEFA Avrupa Ligi <https://fixbettv84.com/channel.html?id=ex7>
+- ⏰ **Levski Sofya vs Salzburg** — YAKLAŞAN · `19:45` | UEFA Avrupa Ligi <https://fixbettv84.com/channel.html?id=ex1>
+- ⏰ **Real Betis vs Getafe** — YAKLAŞAN · `20:00` | İspanya La Liga <https://fixbettv84.com/channel.html?id=ss>
+- ⏰ **Beşiktaş vs Marsilya** — YAKLAŞAN · `22:00` | UEFA Avrupa Ligi ★ **Günün Maçı** <https://fixbettv84.com/channel.html?id=trt1>
+- ⏰ **Juventus vs NEC Nijmegen** — YAKLAŞAN · `22:00` | UEFA Avrupa Ligi <https://fixbettv84.com/channel.html?id=ex7>
+- ⏰ **Real Sociedad vs Bournemouth** — YAKLAŞAN · `22:00` | UEFA Avrupa Ligi <https://fixbettv84.com/channel.html?id=ex3>
+- ⏰ **Viktoria Plzen vs St.Gilloise** — YAKLAŞAN · `22:00` | UEFA Avrupa Ligi <https://fixbettv84.com/channel.html?id=ex4>
+- ⏰ **Lilleström vs Torreense** — YAKLAŞAN · `22:00` | UEFA Avrupa Ligi <https://fixbettv84.com/channel.html?id=ex5>
+- ⏰ **Crystal Palace vs Lech Poznan** — YAKLAŞAN · `22:00` | UEFA Avrupa Ligi <https://fixbettv84.com/channel.html?id=ex2>
+- ⏰ **Celtic vs Ferencvaros** — YAKLAŞAN · `22:00` | UEFA Avrupa Ligi <https://fixbettv84.com/channel.html?id=ex1>
+- ⏰ **Malaga vs Villarreal** — YAKLAŞAN · `22:30` | İspanya La Liga <https://fixbettv84.com/channel.html?id=ss>
 
-## ✅ BİTTİ
+## ⭐ GÜNÜN MAÇI
 
-- ✅ **Sunderland vs AZ Alkmaar** — MS · `22:00` | UEFA Avrupa Ligi <https://fixbettv84.com/channel.html?id=ex3>
-- ✅ **Sturm Graz vs Rennes** — MS · `22:00` | UEFA Avrupa Ligi <https://fixbettv84.com/channel.html?id=ex4>
-- ✅ **Bayer Leverkusen vs NK Celje** — MS · `22:00` | UEFA Avrupa Ligi <https://fixbettv84.com/channel.html?id=ex1>
-- ✅ **Anderlecht vs Lyon** — MS · `22:00` | UEFA Avrupa Ligi <https://fixbettv84.com/channel.html?id=ex2>
-- ✅ **Milan vs Benfica** — MS · `22:00` | UEFA Avrupa Ligi <https://fixbettv84.com/channel.html?id=ex7>
-- ✅ **Barcelona vs Racing Santander** — MS · `22:30` | İspanya La Liga <https://fixbettv84.com/channel.html?id=ss>
-- ✅ **Levante vs Athletic Bilbao** — MS · `22:30` | İspanya La Liga <https://fixbettv84.com/channel.html?id=ss2>
+- ⏰ **Beşiktaş vs Marsilya** — YAKLAŞAN · `22:00` | UEFA Avrupa Ligi ★ **Günün Maçı** <https://fixbettv84.com/channel.html?id=trt1>
 
 ---
 ## 🏆 Lig Bazlı
 
-### AFC Şampiyonlar Ligi
-- ⏰ Jeonbuk vs Kashiwa Reysol — 13:00
-- ⏰ Port FC vs Vissel Kobe — 15:15
-
-### CEV Erkekler Avrupa Şampiyonası
-- ⏰ Türkiye vs Letonya — 17:00
-
 ### UEFA Avrupa Ligi
-- ⏰ Ararat vs Sparta Prag — 19:45
-- ⏰ Omonia vs Celta Vigo — 19:45
-- ⏰ Sunderland vs AZ Alkmaar — 22:00
-- ⏰ Sturm Graz vs Rennes — 22:00
-- ⏰ Bayer Leverkusen vs NK Celje — 22:00
-- ⏰ Anderlecht vs Lyon — 22:00
-- ⏰ Milan vs Benfica — 22:00
+- ⏰ OFI Crete vs Hoffenheim — 19:45
+- ⏰ Levski Sofya vs Salzburg — 19:45
+- ⏰ Beşiktaş vs Marsilya — 22:00
+- ⏰ Juventus vs NEC Nijmegen — 22:00
+- ⏰ Real Sociedad vs Bournemouth — 22:00
+- ⏰ Viktoria Plzen vs St.Gilloise — 22:00
+- ⏰ Lilleström vs Torreense — 22:00
+- ⏰ Crystal Palace vs Lech Poznan — 22:00
+- ⏰ Celtic vs Ferencvaros — 22:00
 
 ### Ziraat Türkiye Kupası
-- ⏰ Sinopspor vs Arit Kayadibi — 14:00
-- ⏰ Bucaspor vs Gaziemirspor — 17:00
-- ⏰ Mersin İY vs Bucak Belediye — 20:00
+- ⏰ Y.Amasyaspor vs Çankırıgücü — 14:30
+- ⏰ Orduspor vs Torul Gençlik — 19:00
 
 ### İspanya La Liga
-- ⏰ Deportivo vs Sevilla — 20:00
-- ⏰ Atletico Madrid vs Osasuna — 20:00
-- ⏰ Barcelona vs Racing Santander — 22:30
-- ⏰ Levante vs Athletic Bilbao — 22:30
+- ⏰ Real Betis vs Getafe — 20:00
+- ⏰ Malaga vs Villarreal — 22:30
 
 ---
 ## 📺 7/24 KANALLAR (31)
