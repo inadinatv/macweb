@@ -1,15 +1,17 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-09-17 14:51  
-> **Toplam maç:** 12  |  **Canlı:** 0  |  **Yaklaşan:** 12
+> **Güncellenme:** 2026-09-17 18:37  
+> **Toplam maç:** 12  |  **Canlı:** 3  |  **Yaklaşan:** 8
+
+## 🔴 CANLI
+
+- 🔴 **OFI Crete vs Hoffenheim** — CANLI · `19:45` | UEFA Avrupa Ligi <https://fixbettv84.com/channel.html?id=ex7>
+- 🔴 **Levski Sofya vs Salzburg** — CANLI · `19:45` | UEFA Avrupa Ligi <https://fixbettv84.com/channel.html?id=ex1>
+- 🔴 **Real Betis vs Getafe** — CANLI · `20:00` | İspanya La Liga <https://fixbettv84.com/channel.html?id=ss>
 
 ## ⏰ YAKLAŞAN
 
-- ⏰ **Orduspor vs Torul Gençlik** — YAKLAŞAN · `19:00` | Ziraat Türkiye Kupası <https://fixbettv84.com/channel.html?id=as>
-- ⏰ **OFI Crete vs Hoffenheim** — YAKLAŞAN · `19:45` | UEFA Avrupa Ligi <https://fixbettv84.com/channel.html?id=ex7>
-- ⏰ **Levski Sofya vs Salzburg** — YAKLAŞAN · `19:45` | UEFA Avrupa Ligi <https://fixbettv84.com/channel.html?id=ex1>
-- ⏰ **Real Betis vs Getafe** — YAKLAŞAN · `20:00` | İspanya La Liga <https://fixbettv84.com/channel.html?id=ss>
 - ⏰ **Beşiktaş vs Marsilya** — YAKLAŞAN · `22:00` | UEFA Avrupa Ligi ★ **Günün Maçı** <https://fixbettv84.com/channel.html?id=trt1>
 - ⏰ **Juventus vs NEC Nijmegen** — YAKLAŞAN · `22:00` | UEFA Avrupa Ligi <https://fixbettv84.com/channel.html?id=ex7>
 - ⏰ **Real Sociedad vs Bournemouth** — YAKLAŞAN · `22:00` | UEFA Avrupa Ligi <https://fixbettv84.com/channel.html?id=ex3>
@@ -19,6 +21,10 @@
 - ⏰ **Celtic vs Ferencvaros** — YAKLAŞAN · `22:00` | UEFA Avrupa Ligi <https://fixbettv84.com/channel.html?id=ex1>
 - ⏰ **Malaga vs Villarreal** — YAKLAŞAN · `22:30` | İspanya La Liga <https://fixbettv84.com/channel.html?id=ss>
 
+## ✅ BİTTİ
+
+- ✅ **Orduspor vs Torul Gençlik** — MS · `19:00` | Ziraat Türkiye Kupası <https://fixbettv84.com/channel.html?id=as>
+
 ## ⭐ GÜNÜN MAÇI
 
 - ⏰ **Beşiktaş vs Marsilya** — YAKLAŞAN · `22:00` | UEFA Avrupa Ligi ★ **Günün Maçı** <https://fixbettv84.com/channel.html?id=trt1>
@@ -27,8 +33,8 @@
 ## 🏆 Lig Bazlı
 
 ### UEFA Avrupa Ligi
-- ⏰ OFI Crete vs Hoffenheim — 19:45
-- ⏰ Levski Sofya vs Salzburg — 19:45
+- 🔴 OFI Crete vs Hoffenheim — 19:45
+- 🔴 Levski Sofya vs Salzburg — 19:45
 - ⏰ Beşiktaş vs Marsilya — 22:00
 - ⏰ Juventus vs NEC Nijmegen — 22:00
 - ⏰ Real Sociedad vs Bournemouth — 22:00
@@ -41,7 +47,7 @@
 - ⏰ Orduspor vs Torul Gençlik — 19:00
 
 ### İspanya La Liga
-- ⏰ Real Betis vs Getafe — 20:00
+- 🔴 Real Betis vs Getafe — 20:00
 - ⏰ Malaga vs Villarreal — 22:30
 
 ---
@@ -101,10 +107,10 @@
 
 ### ⚛️ ATOM SPOR ✅ `https://www.atomsportv514.top`
 - 🟢 **BEIN SPORTS 1** <https://ladyboy.taylandpattaya.cfd//beintv/tracks-v1a1/mono.m3u8>
-- 🟢 **BEIN SPORTS 2** <https://ladyboy.taylandpattaya.cfd//bein2/tracks-v1a1/mono.m3u8>
+- 🟡 **BEIN SPORTS 2** <https://ladyboy.taylandpattaya.cfd//bein2/tracks-v1a1/mono.m3u8>
 - 🟢 **BEIN SPORTS 3** <https://ladyboy.taylandpattaya.cfd//bein3/tracks-v1a1/mono.m3u8>
 - 🟢 **BEIN SPORTS 4** <https://ladyboy.taylandpattaya.cfd//bein4/tracks-v1a1/mono.m3u8>
-- 🟢 **BEIN SPORTS 5** <https://ladyboy.taylandpattaya.cfd//bein5/tracks-v1a1/mono.m3u8>
+- 🟡 **BEIN SPORTS 5** <https://ladyboy.taylandpattaya.cfd//bein5/tracks-v1a1/mono.m3u8>
 - 🟢 **S SPORT** <https://ladyboy.taylandpattaya.cfd//s-sport/tracks-v1a1/mono.m3u8>
 - 🟢 **S SPORT 2** <https://ladyboy.taylandpattaya.cfd//s-sport2/tracks-v1a1/mono.m3u8>
 - ⚪ **S SPORT PLUS** <https://tv.atomspor.workers.dev/?ID=ssport-plus>
