@@ -1,8 +1,8 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-09-17 13:54  
-> **Toplam maç:** 13  |  **Canlı:** 0  |  **Yaklaşan:** 12
+> **Güncellenme:** 2026-09-17 14:51  
+> **Toplam maç:** 12  |  **Canlı:** 0  |  **Yaklaşan:** 12
 
 ## ⏰ YAKLAŞAN
 
@@ -18,10 +18,6 @@
 - ⏰ **Crystal Palace vs Lech Poznan** — YAKLAŞAN · `22:00` | UEFA Avrupa Ligi <https://fixbettv84.com/channel.html?id=ex2>
 - ⏰ **Celtic vs Ferencvaros** — YAKLAŞAN · `22:00` | UEFA Avrupa Ligi <https://fixbettv84.com/channel.html?id=ex1>
 - ⏰ **Malaga vs Villarreal** — YAKLAŞAN · `22:30` | İspanya La Liga <https://fixbettv84.com/channel.html?id=ss>
-
-## ✅ BİTTİ
-
-- ✅ **Y.Amasyaspor vs Çankırıgücü** — MS · `14:30` | Ziraat Türkiye Kupası <https://fixbettv84.com/channel.html?id=as>
 
 ## ⭐ GÜNÜN MAÇI
 
@@ -42,7 +38,6 @@
 - ⏰ Celtic vs Ferencvaros — 22:00
 
 ### Ziraat Türkiye Kupası
-- ⏰ Y.Amasyaspor vs Çankırıgücü — 14:30
 - ⏰ Orduspor vs Torul Gençlik — 19:00
 
 ### İspanya La Liga

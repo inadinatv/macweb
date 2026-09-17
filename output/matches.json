@@ -9,21 +9,21 @@
       "fixbettv84.com",
       "fixbettv19.com"
     ],
-    "last_checked": "2026-09-17T13:53:52+00:00",
+    "last_checked": "2026-09-17T14:50:59+00:00",
     "note": "OK",
     "probed": 200
   },
   "categories": {
     "meta": {
-      "generated_at": "2026-09-17T16:53:16+03:00",
+      "generated_at": "2026-09-17T17:50:22+03:00",
       "date": "2026-09-17",
-      "total_matches": 13
+      "total_matches": 12
     },
     "counts": {
-      "total": 13,
+      "total": 12,
       "live": 0,
       "upcoming": 12,
-      "finished": 1,
+      "finished": 0,
       "match_of_day": 1,
       "postponed": 0,
       "cancelled": 0,
@@ -337,33 +337,7 @@
         "starts_at": "2026-09-17T22:30:00+03:00"
       }
     ],
-    "finished": [
-      {
-        "match_id": "as",
-        "home": "Y.Amasyaspor",
-        "away": "Çankırıgücü",
-        "league": "Ziraat Türkiye Kupası",
-        "time": "14:30",
-        "sport": "Futbol",
-        "is_match_of_day": false,
-        "channel_id": "as",
-        "logo_home": "https://img.sporekrani.com/teams/nfM3NKAec4cywf4WYG2H8qA2dEDis00vqxP1HvNz.png",
-        "logo_away": "https://www.thesportsdb.com/images/media/team/badge/h6nqsw1788303968.png",
-        "status": "finished",
-        "started": true,
-        "raw_event": "14:30 | Ziraat Türkiye Kupası",
-        "url": "https://fixbettv84.com/channel.html?id=as",
-        "fetched_at": "",
-        "status_source": "schedule",
-        "raw_status": "",
-        "score_home": null,
-        "score_away": null,
-        "score_source": "",
-        "score_updated_at": "",
-        "event_id": "",
-        "starts_at": "2026-09-17T14:30:00+03:00"
-      }
-    ],
+    "finished": [],
     "match_of_the_day": [
       {
         "match_id": "trt1",
@@ -622,31 +596,6 @@
       "Ziraat Türkiye Kupası": [
         {
           "match_id": "as",
-          "home": "Y.Amasyaspor",
-          "away": "Çankırıgücü",
-          "league": "Ziraat Türkiye Kupası",
-          "time": "14:30",
-          "sport": "Futbol",
-          "is_match_of_day": false,
-          "channel_id": "as",
-          "logo_home": "https://img.sporekrani.com/teams/nfM3NKAec4cywf4WYG2H8qA2dEDis00vqxP1HvNz.png",
-          "logo_away": "https://www.thesportsdb.com/images/media/team/badge/h6nqsw1788303968.png",
-          "status": "finished",
-          "started": true,
-          "raw_event": "14:30 | Ziraat Türkiye Kupası",
-          "url": "https://fixbettv84.com/channel.html?id=as",
-          "fetched_at": "",
-          "status_source": "schedule",
-          "raw_status": "",
-          "score_home": null,
-          "score_away": null,
-          "score_source": "",
-          "score_updated_at": "",
-          "event_id": "",
-          "starts_at": "2026-09-17T14:30:00+03:00"
-        },
-        {
-          "match_id": "as",
           "home": "Orduspor",
           "away": "Torul Gençlik",
           "league": "Ziraat Türkiye Kupası",
@@ -726,31 +675,6 @@
     },
     "by_sport": {
       "Futbol": [
-        {
-          "match_id": "as",
-          "home": "Y.Amasyaspor",
-          "away": "Çankırıgücü",
-          "league": "Ziraat Türkiye Kupası",
-          "time": "14:30",
-          "sport": "Futbol",
-          "is_match_of_day": false,
-          "channel_id": "as",
-          "logo_home": "https://img.sporekrani.com/teams/nfM3NKAec4cywf4WYG2H8qA2dEDis00vqxP1HvNz.png",
-          "logo_away": "https://www.thesportsdb.com/images/media/team/badge/h6nqsw1788303968.png",
-          "status": "finished",
-          "started": true,
-          "raw_event": "14:30 | Ziraat Türkiye Kupası",
-          "url": "https://fixbettv84.com/channel.html?id=as",
-          "fetched_at": "",
-          "status_source": "schedule",
-          "raw_status": "",
-          "score_home": null,
-          "score_away": null,
-          "score_source": "",
-          "score_updated_at": "",
-          "event_id": "",
-          "starts_at": "2026-09-17T14:30:00+03:00"
-        },
         {
           "match_id": "as",
           "home": "Orduspor",
@@ -1079,31 +1003,6 @@
       "score_updated_at": "",
       "event_id": "",
       "starts_at": "2026-09-17T22:00:00+03:00"
-    },
-    {
-      "match_id": "as",
-      "home": "Y.Amasyaspor",
-      "away": "Çankırıgücü",
-      "league": "Ziraat Türkiye Kupası",
-      "time": "14:30",
-      "sport": "Futbol",
-      "is_match_of_day": false,
-      "channel_id": "as",
-      "logo_home": "https://img.sporekrani.com/teams/nfM3NKAec4cywf4WYG2H8qA2dEDis00vqxP1HvNz.png",
-      "logo_away": "https://www.thesportsdb.com/images/media/team/badge/h6nqsw1788303968.png",
-      "status": "finished",
-      "started": true,
-      "raw_event": "14:30 | Ziraat Türkiye Kupası",
-      "url": "https://fixbettv84.com/channel.html?id=as",
-      "fetched_at": "",
-      "status_source": "schedule",
-      "raw_status": "",
-      "score_home": null,
-      "score_away": null,
-      "score_source": "",
-      "score_updated_at": "",
-      "event_id": "",
-      "starts_at": "2026-09-17T14:30:00+03:00"
     },
     {
       "match_id": "as",
