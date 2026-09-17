@@ -9,13 +9,13 @@
       "fixbettv84.com",
       "fixbettv19.com"
     ],
-    "last_checked": "2026-09-17T10:03:08+00:00",
+    "last_checked": "2026-09-17T13:53:52+00:00",
     "note": "OK",
     "probed": 200
   },
   "date": "2026-09-17",
   "timezone": "Europe/Istanbul",
-  "generated_at": "2026-09-17T13:02:32+03:00",
+  "generated_at": "2026-09-17T16:53:16+03:00",
   "matches": [
     {
       "match_id": "trt1",
@@ -53,8 +53,8 @@
       "channel_id": "as",
       "logo_home": "https://img.sporekrani.com/teams/nfM3NKAec4cywf4WYG2H8qA2dEDis00vqxP1HvNz.png",
       "logo_away": "https://www.thesportsdb.com/images/media/team/badge/h6nqsw1788303968.png",
-      "status": "upcoming",
-      "started": false,
+      "status": "finished",
+      "started": true,
       "raw_event": "14:30 | Ziraat Türkiye Kupası",
       "url": "https://fixbettv84.com/channel.html?id=as",
       "fetched_at": "",

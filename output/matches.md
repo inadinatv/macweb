@@ -1,12 +1,11 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-09-17 10:03  
-> **Toplam maç:** 13  |  **Canlı:** 0  |  **Yaklaşan:** 13
+> **Güncellenme:** 2026-09-17 13:54  
+> **Toplam maç:** 13  |  **Canlı:** 0  |  **Yaklaşan:** 12
 
 ## ⏰ YAKLAŞAN
 
-- ⏰ **Y.Amasyaspor vs Çankırıgücü** — YAKLAŞAN · `14:30` | Ziraat Türkiye Kupası <https://fixbettv84.com/channel.html?id=as>
 - ⏰ **Orduspor vs Torul Gençlik** — YAKLAŞAN · `19:00` | Ziraat Türkiye Kupası <https://fixbettv84.com/channel.html?id=as>
 - ⏰ **OFI Crete vs Hoffenheim** — YAKLAŞAN · `19:45` | UEFA Avrupa Ligi <https://fixbettv84.com/channel.html?id=ex7>
 - ⏰ **Levski Sofya vs Salzburg** — YAKLAŞAN · `19:45` | UEFA Avrupa Ligi <https://fixbettv84.com/channel.html?id=ex1>
@@ -19,6 +18,10 @@
 - ⏰ **Crystal Palace vs Lech Poznan** — YAKLAŞAN · `22:00` | UEFA Avrupa Ligi <https://fixbettv84.com/channel.html?id=ex2>
 - ⏰ **Celtic vs Ferencvaros** — YAKLAŞAN · `22:00` | UEFA Avrupa Ligi <https://fixbettv84.com/channel.html?id=ex1>
 - ⏰ **Malaga vs Villarreal** — YAKLAŞAN · `22:30` | İspanya La Liga <https://fixbettv84.com/channel.html?id=ss>
+
+## ✅ BİTTİ
+
+- ✅ **Y.Amasyaspor vs Çankırıgücü** — MS · `14:30` | Ziraat Türkiye Kupası <https://fixbettv84.com/channel.html?id=as>
 
 ## ⭐ GÜNÜN MAÇI
 
@@ -103,7 +106,7 @@
 
 ### ⚛️ ATOM SPOR ✅ `https://www.atomsportv514.top`
 - 🟢 **BEIN SPORTS 1** <https://ladyboy.taylandpattaya.cfd//beintv/tracks-v1a1/mono.m3u8>
-- 🟡 **BEIN SPORTS 2** <https://ladyboy.taylandpattaya.cfd//bein2/tracks-v1a1/mono.m3u8>
+- 🟢 **BEIN SPORTS 2** <https://ladyboy.taylandpattaya.cfd//bein2/tracks-v1a1/mono.m3u8>
 - 🟢 **BEIN SPORTS 3** <https://ladyboy.taylandpattaya.cfd//bein3/tracks-v1a1/mono.m3u8>
 - 🟢 **BEIN SPORTS 4** <https://ladyboy.taylandpattaya.cfd//bein4/tracks-v1a1/mono.m3u8>
 - 🟢 **BEIN SPORTS 5** <https://ladyboy.taylandpattaya.cfd//bein5/tracks-v1a1/mono.m3u8>
