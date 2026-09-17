@@ -9,13 +9,13 @@
       "fixbettv84.com",
       "fixbettv19.com"
     ],
-    "last_checked": "2026-09-17T20:42:12+00:00",
+    "last_checked": "2026-09-17T21:43:04+00:00",
     "note": "OK",
     "probed": 200
   },
-  "date": "2026-09-17",
+  "date": "2026-09-18",
   "timezone": "Europe/Istanbul",
-  "generated_at": "2026-09-17T23:41:36+03:00",
+  "generated_at": "2026-09-18T00:42:27+03:00",
   "matches": [
     {
       "match_id": "trt1",
@@ -28,7 +28,7 @@
       "channel_id": "trt1",
       "logo_home": "https://img.sporekrani.com/teams/CFvwmLuUD6H974wec5ga09WZXmTeWdI3RneaRBkc.png",
       "logo_away": "https://img.sporekrani.com/teams/44iDo4u0c4isz06F25UBz1IpLjYNIWQgTQRwrw1H.png",
-      "status": "live",
+      "status": "finished",
       "started": true,
       "raw_event": "22:00 | UEFA Avrupa Ligi [Günün Maçı]",
       "url": "https://fixbettv84.com/channel.html?id=trt1",
@@ -53,8 +53,8 @@
       "channel_id": "as",
       "logo_home": "https://img.sporekrani.com/teams/D8tehX73aAcp94X6GEuXHgqC3NfZFVtn1hDfxMd3.png",
       "logo_away": "https://www.futbollogo.com/resimler/logolar/torulbeled%C4%B1yegencl%C4%B1kspor.png",
-      "status": "finished",
-      "started": true,
+      "status": "upcoming",
+      "started": false,
       "raw_event": "19:00 | Ziraat Türkiye Kupası",
       "url": "https://fixbettv84.com/channel.html?id=as",
       "fetched_at": "",
@@ -65,7 +65,7 @@
       "score_source": "",
       "score_updated_at": "",
       "event_id": "",
-      "starts_at": "2026-09-17T19:00:00+03:00"
+      "starts_at": "2026-09-18T19:00:00+03:00"
     },
     {
       "match_id": "ex7",
@@ -78,8 +78,8 @@
       "channel_id": "ex7",
       "logo_home": "https://img.sporekrani.com/teams/d5lks4V1P2aiPN21ePcd2P9UpEmxkxyajk3rPM16.png",
       "logo_away": "https://img.sporekrani.com/teams/Cb8tXJXl2tpCjfRN19GU5LRruRpzstfRehuxUmWV.png",
-      "status": "finished",
-      "started": true,
+      "status": "upcoming",
+      "started": false,
       "raw_event": "19:45 | UEFA Avrupa Ligi",
       "url": "https://fixbettv84.com/channel.html?id=ex7",
       "fetched_at": "",
@@ -90,7 +90,7 @@
       "score_source": "",
       "score_updated_at": "",
       "event_id": "",
-      "starts_at": "2026-09-17T19:45:00+03:00"
+      "starts_at": "2026-09-18T19:45:00+03:00"
     },
     {
       "match_id": "ex1",
@@ -103,8 +103,8 @@
       "channel_id": "ex1",
       "logo_home": "https://upload.wikimedia.org/wikipedia/commons/4/40/Levski_L_Logo_big.png",
       "logo_away": "https://img.sporekrani.com/teams/j81eC22c6jiwvIswgGaE7H5IxNX7ighm0b93iOSs.png",
-      "status": "finished",
-      "started": true,
+      "status": "upcoming",
+      "started": false,
       "raw_event": "19:45 | UEFA Avrupa Ligi",
       "url": "https://fixbettv84.com/channel.html?id=ex1",
       "fetched_at": "",
@@ -115,7 +115,7 @@
       "score_source": "",
       "score_updated_at": "",
       "event_id": "",
-      "starts_at": "2026-09-17T19:45:00+03:00"
+      "starts_at": "2026-09-18T19:45:00+03:00"
     },
     {
       "match_id": "ss",
@@ -128,8 +128,8 @@
       "channel_id": "ss",
       "logo_home": "https://img.sporekrani.com/teams/AaogJhN63KSgYMLUAY4RLcEi4oSGQSLLQS6Qc0wm.png",
       "logo_away": "https://img.sporekrani.com/teams/eMsffXpPWfncl08wz8FCUgDIGia6rPTpOySTMpe4.png",
-      "status": "finished",
-      "started": true,
+      "status": "upcoming",
+      "started": false,
       "raw_event": "20:00 | İspanya La Liga",
       "url": "https://fixbettv84.com/channel.html?id=ss",
       "fetched_at": "",
@@ -140,7 +140,7 @@
       "score_source": "",
       "score_updated_at": "",
       "event_id": "",
-      "starts_at": "2026-09-17T20:00:00+03:00"
+      "starts_at": "2026-09-18T20:00:00+03:00"
     },
     {
       "match_id": "ex7",
@@ -153,7 +153,7 @@
       "channel_id": "ex7",
       "logo_home": "https://img.sporekrani.com/teams/vO6cd2q3gTvdTPyowsHljArWR9GOZUMm7O1jfuGv.png",
       "logo_away": "https://img.sporekrani.com/teams/YNCj79h9CMmiNLzxISzXLrlhyuTCGgyUmeyXWLF6.png",
-      "status": "live",
+      "status": "finished",
       "started": true,
       "raw_event": "22:00 | UEFA Avrupa Ligi",
       "url": "https://fixbettv84.com/channel.html?id=ex7",
@@ -178,7 +178,7 @@
       "channel_id": "ex3",
       "logo_home": "https://img.sporekrani.com/teams/RbiXIxSInZpo96JB1zjL7hIdTAKqU4k9fGpXJx5c.png",
       "logo_away": "https://img.sporekrani.com/teams/d9yjGvnYyT8UdVOb95YTlFYiOSHraxBhEwil3eox.png",
-      "status": "live",
+      "status": "finished",
       "started": true,
       "raw_event": "22:00 | UEFA Avrupa Ligi",
       "url": "https://fixbettv84.com/channel.html?id=ex3",
@@ -203,7 +203,7 @@
       "channel_id": "ex4",
       "logo_home": "https://img.sporekrani.com/teams/1b6957kezurto19QReXRIrdgQRmoFX6yBjTr726T.png",
       "logo_away": "https://img.sporekrani.com/teams/EA28mgSjmqV72ItKVK6UTzyFLv3GCUT7QAuFzEWZ.png",
-      "status": "live",
+      "status": "finished",
       "started": true,
       "raw_event": "22:00 | UEFA Avrupa Ligi",
       "url": "https://fixbettv84.com/channel.html?id=ex4",
@@ -228,7 +228,7 @@
       "channel_id": "ex5",
       "logo_home": "https://upload.wikimedia.org/wikipedia/commons/1/1f/Lillestr%C3%B8m_SK.png",
       "logo_away": "https://thumb.wikimedia.org/wikipedia/en/thumb/d/dc/S.C.U._Torreense_logo.svg/500px-S.C.U._Torreense_logo.svg.png",
-      "status": "live",
+      "status": "finished",
       "started": true,
       "raw_event": "22:00 | UEFA Avrupa Ligi",
       "url": "https://fixbettv84.com/channel.html?id=ex5",
@@ -253,7 +253,7 @@
       "channel_id": "ex2",
       "logo_home": "https://img.sporekrani.com/teams/hs3JxodxlrAGFufonoXjSbvjbtr3GcLibZxxcax7.png",
       "logo_away": "https://img.sporekrani.com/teams/oCrwtP778CZ6UnLFLyiOX0YjPtT4GkDqpbxkr0yf.png",
-      "status": "live",
+      "status": "finished",
       "started": true,
       "raw_event": "22:00 | UEFA Avrupa Ligi",
       "url": "https://fixbettv84.com/channel.html?id=ex2",
@@ -278,7 +278,7 @@
       "channel_id": "ex1",
       "logo_home": "https://img.sporekrani.com/teams/FfznoO3Yw5s80GjcLNIoN14mOSVtiDO8tDnjbs91.png",
       "logo_away": "https://img.sporekrani.com/teams/TPzUsiZl9wH1IucHmjAPb3KvunyV0Endcar62sHw.png",
-      "status": "live",
+      "status": "finished",
       "started": true,
       "raw_event": "22:00 | UEFA Avrupa Ligi",
       "url": "https://fixbettv84.com/channel.html?id=ex1",
@@ -303,7 +303,7 @@
       "channel_id": "ss",
       "logo_home": "https://img.sporekrani.com/teams/IrnXBQQda9uQUSDvpbyrCTTiFRfpN1heosUWM7Ug.png",
       "logo_away": "https://img.sporekrani.com/teams/72c8e6b4-1dd6-4dcf-9bc0-b88c01d3a624.png",
-      "status": "live",
+      "status": "finished",
       "started": true,
       "raw_event": "22:30 | İspanya La Liga",
       "url": "https://fixbettv84.com/channel.html?id=ss",
