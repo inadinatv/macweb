@@ -9,60 +9,9 @@
       "fixbettv84.com",
       "fixbettv19.com"
     ],
-    "last_checked": "2026-09-18T20:57:13+00:00",
+    "last_checked": "2026-09-18T22:56:27+00:00",
     "note": "OK",
     "probed": 200
   },
-  "live": [
-    {
-      "match_id": "ss",
-      "home": "Espanyol",
-      "away": "Elche",
-      "league": "İspanya La Liga",
-      "time": "22:00",
-      "sport": "Futbol",
-      "is_match_of_day": false,
-      "channel_id": "ss",
-      "logo_home": "https://img.sporekrani.com/teams/Rvc3hxlSnQ2qg0017vM16AcGJ9fSNFnvlr6DaFjd.png",
-      "logo_away": "https://img.sporekrani.com/teams/1GTqbFOWAge3rRRmcirtfqnvp2ivJLQPl9M8Eoz1.png",
-      "status": "live",
-      "started": true,
-      "raw_event": "22:00 | İspanya La Liga",
-      "url": "https://fixbettv84.com/channel.html?id=ss",
-      "fetched_at": "",
-      "status_source": "schedule",
-      "raw_status": "",
-      "score_home": null,
-      "score_away": null,
-      "score_source": "",
-      "score_updated_at": "",
-      "event_id": "",
-      "starts_at": "2026-09-18T22:00:00+03:00"
-    },
-    {
-      "match_id": "b3",
-      "home": "Brentford",
-      "away": "Chelsea",
-      "league": "İngiltere Premier Lig",
-      "time": "22:00",
-      "sport": "Futbol",
-      "is_match_of_day": false,
-      "channel_id": "b3",
-      "logo_home": "https://img.sporekrani.com/teams/Mf2S5KCKG1PMFpXDHFV63vVBevWNntNXDUPohW00.png",
-      "logo_away": "https://img.sporekrani.com/teams/HEaOoDOTOZxr47Y7oapYCUYyrX7oXF1kObvuta1I.png",
-      "status": "live",
-      "started": true,
-      "raw_event": "22:00 | İngiltere Premier Lig",
-      "url": "https://fixbettv84.com/channel.html?id=b3",
-      "fetched_at": "",
-      "status_source": "schedule",
-      "raw_status": "",
-      "score_home": null,
-      "score_away": null,
-      "score_source": "",
-      "score_updated_at": "",
-      "event_id": "",
-      "starts_at": "2026-09-18T22:00:00+03:00"
-    }
-  ]
+  "live": []
 }
