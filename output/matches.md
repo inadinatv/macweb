@@ -1,16 +1,15 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-09-18 13:15  
-> **Toplam maç:** 10  |  **Canlı:** 1  |  **Yaklaşan:** 9
+> **Güncellenme:** 2026-09-18 15:03  
+> **Toplam maç:** 10  |  **Canlı:** 1  |  **Yaklaşan:** 8
 
 ## 🔴 CANLI
 
-- 🔴 **Bandırmaspor 0 - 0 Ümraniyespor** — CANLI · `16:00` | Trendyol 1. Lig <https://fixbettv84.com/channel.html?id=trtspor>
+- 🔴 **Fenerbahçe Tarfin vs Olympiakos** — CANLI · `17:00` | Euroleague Süper Kupa <https://fixbettv84.com/channel.html?id=ss>
 
 ## ⏰ YAKLAŞAN
 
-- ⏰ **Fenerbahçe Tarfin vs Olympiakos** — YAKLAŞAN · `17:00` | Euroleague Süper Kupa <https://fixbettv84.com/channel.html?id=ss>
 - ⏰ **Muğlaspor vs Iğdırspor** — YAKLAŞAN · `20:00` | Trendyol 1. Lig <https://fixbettv84.com/channel.html?id=trtspor>
 - ⏰ **Dubai Basket vs Real Madrid** — YAKLAŞAN · `20:00` | Euroleague Süper Kupa <https://fixbettv84.com/channel.html?id=ss>
 - ⏰ **Kasımpaşa vs Konyaspor** — YAKLAŞAN · `20:00` | Trendyol Süper Lig <https://fixbettv84.com/channel.html?id=zirve>
@@ -20,11 +19,15 @@
 - ⏰ **Espanyol vs Elche** — YAKLAŞAN · `22:00` | İspanya La Liga <https://fixbettv84.com/channel.html?id=ss>
 - ⏰ **Brentford vs Chelsea** — YAKLAŞAN · `22:00` | İngiltere Premier Lig <https://fixbettv84.com/channel.html?id=b3>
 
+## ✅ BİTTİ
+
+- ✅ **Bandırmaspor 0 - 1 Ümraniyespor** — MS · `16:00` | Trendyol 1. Lig <https://fixbettv84.com/channel.html?id=trtspor>
+
 ---
 ## 🏆 Lig Bazlı
 
 ### Euroleague Süper Kupa
-- ⏰ Fenerbahçe Tarfin vs Olympiakos — 17:00
+- 🔴 Fenerbahçe Tarfin vs Olympiakos — 17:00
 - ⏰ Dubai Basket vs Real Madrid — 20:00
 
 ### Fransa Ligue 1
@@ -34,7 +37,7 @@
 - ⏰ Reims vs Montpellier — 21:00
 
 ### Trendyol 1. Lig
-- 🔴 Bandırmaspor vs Ümraniyespor — 16:00
+- ⏰ Bandırmaspor vs Ümraniyespor — 16:00
 - ⏰ Muğlaspor vs Iğdırspor — 20:00
 
 ### Trendyol Süper Lig
