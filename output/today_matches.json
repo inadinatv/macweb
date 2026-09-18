@@ -9,13 +9,13 @@
       "fixbettv84.com",
       "fixbettv19.com"
     ],
-    "last_checked": "2026-09-18T01:28:45+00:00",
+    "last_checked": "2026-09-18T06:17:03+00:00",
     "note": "OK",
     "probed": 200
   },
   "date": "2026-09-18",
   "timezone": "Europe/Istanbul",
-  "generated_at": "2026-09-18T04:28:08+03:00",
+  "generated_at": "2026-09-18T09:16:26+03:00",
   "matches": [
     {
       "match_id": "trtspor",
@@ -32,7 +32,7 @@
       "started": false,
       "raw_event": "16:00 | Trendyol 1. Lig",
       "url": "https://fixbettv84.com/channel.html?id=trtspor",
-      "fetched_at": "2026-09-18T04:28:08+03:00",
+      "fetched_at": "2026-09-18T09:16:26+03:00",
       "status_source": "mackolik",
       "raw_status": "none",
       "score_home": null,
@@ -132,7 +132,7 @@
       "started": false,
       "raw_event": "20:00 | Trendyol Süper Lig",
       "url": "https://fixbettv84.com/channel.html?id=zirve",
-      "fetched_at": "2026-09-18T04:28:08+03:00",
+      "fetched_at": "2026-09-18T09:16:26+03:00",
       "status_source": "mackolik",
       "raw_status": "none",
       "score_home": null,
