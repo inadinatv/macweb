@@ -110,3 +110,11 @@ def test_outcome_serializes_and_roundtrips_without_field_loss(tmp_path, monkeypa
     assert "Ev Takımı 2 - 1 Deplasman" in site._match_groups_html([m])
     m.status = "upcoming"
     assert "2 - 1" not in site._match_groups_html([m])
+
+
+def test_score_normalization_handles_dicts_and_objects():
+    assert score_value({"value": 3, "displayValue": "3"}) == 3
+    assert score_value({"displayValue": "0"}) == 0
+    assert score_value({"score": 2}) == 2
+    assert score_value({"current": "1"}) == 1
+    assert score_value({"value": None}) is None
