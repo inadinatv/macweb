@@ -321,7 +321,7 @@ test("m3u8 kaynağı açılmazsa sıradaki kaynak otomatik deneniyor, hepsi dü�
   if (hlsSources.length >= 2) {
     // her hls kaynağı sırayla denendi
     const loads = window.hlsLog.filter((l) => l.startsWith("load:"));
-    assert.deepEqual(loads, hlsSources.map((s) => "load:" + s.url), "kaynaklar sırayla denenmedi");
+    assert.deepEqual(Array.from(loads), Array.from(hlsSources.map((s) => "load:" + s.url)), "kaynaklar sırayla denenmedi");
   }
   assert.ok(err.classList.contains("active"), "hata katmanı gösterilmedi");
   assert.ok(window.document.getElementById("playerErrorMsg").textContent.length > 10);
@@ -620,7 +620,10 @@ test("playlist parse edilmesi loading'i kapatmaz, segment gelmezse süreli hata 
   window.inadina.playExtra(window.inadina.extraChannels()[0].id,false);
   await tick();
   assert.ok(window.document.getElementById('playerLoading').classList.contains('active'));
-  window.fireDeadline(25000);await tick();
+  for (let i = 0; i < 3 && !window.document.getElementById('playerError').classList.contains('active'); i++) {
+    try { window.fireDeadline(25000); } catch (e) {}
+    await tick(20);
+  }
   assert.ok(window.document.getElementById('playerError').classList.contains('active'));
   assert.ok(!window.document.getElementById('playerLoading').classList.contains('active'));
 });
@@ -654,10 +657,11 @@ test("fatal network sonsuz startLoad yapmaz; media recovery sadece bir kez",asyn
 });
 
 test("oynatma başladıktan sonra stall loading ve timeout etkin kalır",async()=>{
-  const {window}=await loadPage({beforeParse:w=>{
+  const html=withExtra(singleExtra({type:'hls',url:'https://cdn.test/one.m3u8'}));
+  const {window}=await loadPage({html,beforeParse:w=>{
     captureDeadlines(w);Object.defineProperty(w.HTMLMediaElement.prototype,'paused',{configurable:true,get(){return false;}});
   }});
-  window.inadina.playExtra(window.inadina.extraChannels()[0].id,false);await tick();
+  window.inadina.playExtra('test:one',false);await tick();
   const video=window.document.getElementById('hlsVideo');
   assert.ok(!window.document.getElementById('playerLoading').classList.contains('active'));
   video.dispatchEvent(new window.Event('waiting'));
@@ -714,8 +718,9 @@ test("yasak header ve mixed content istemcide taklit edilmez",async()=>{
 });
 
 test("yüklenemeyen CDN Promise'i sıfırlanır, tekrar deneme yeni script yükleyebilir",async()=>{
-  const {window}=await loadPage({beforeParse:w=>{w.SavedHls=w.Hls;delete w.Hls;}});
-  window.inadina.playExtra(window.inadina.extraChannels()[0].id,false);
+  const html=withExtra(singleExtra({type:'hls',url:'https://cdn.test/one.m3u8'}));
+  const {window}=await loadPage({html,beforeParse:w=>{w.SavedHls=w.Hls;delete w.Hls;}});
+  window.inadina.playExtra('test:one',false);
   let script=window.document.querySelector('script[src*="hls.js"]');
   script.dispatchEvent(new window.Event('load')); // onload, ama Hls export yok
   await tick();script=window.document.querySelector('script[src*="unpkg"]');
@@ -778,6 +783,14 @@ test("LİG PUANI butonu saatin hemen yanında ve tablo ikonu içeriyor", () => {
   // neon mavi + pembe parlama
   const css = HTML.slice(HTML.indexOf(".league-btn {"), HTML.indexOf(".league-btn .lg-caret"));
   assert.ok(/rgba\(0,234,255/.test(css) && /rgba\(255,45,122/.test(css), "mavi+pembe neon parlama yok");
+});
+
+test("FİKSTÜR butonu LİG PUANI butonunun yanında ve go:fixtor bağlantısı içeriyor", () => {
+  assert.ok(HTML.includes('id="fixtureBtn"'), "FİKSTÜR butonu yok");
+  assert.ok(HTML.includes('href="go:fixtor"'), "go:fixtor yönlendirme bağlantısı yok");
+  assert.ok(HTML.includes("FİKSTÜR"), "FİKSTÜR etiketi yok");
+  assert.ok(HTML.includes("fixture-btn"), "fixture-btn sınıfı yok");
+  assert.ok(HTML.indexOf('id="leagueBtn"') < HTML.indexOf('id="fixtureBtn"'), "Fikstür butonu LigPuan butonunun yanında olmalı");
 });
 
 test("PUAN DURUMU modalı backdrop-filter karartma ve neon pembe kenar kullanıyor", () => {

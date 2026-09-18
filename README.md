@@ -111,11 +111,13 @@ raporlar üreten gelişmiş otomasyon botu.
    - Yeni bir extra panel eklemek için `config/extra_channels.yml` → `panels` altına yeni blok
      eklemek yeterlidir; sayfa/bot tarafında kod değişikliği gerekmez.
 
-7. **🏆 Lig puan durumu — LİG PUANI butonu** (`src/fixbet/standings.py` + `config/standings.yml`)
+7. **🏆 Lig puan durumu — LİG PUANI & FİKSTÜR butonları** (`src/fixbet/standings.py` + `config/standings.yml`)
    - Saatin hemen yanındaki **LİG PUANI** butonu (neon mavi/pembe kenar, solda tablo ikonu)
      ekranın ortasında karartılmış (`backdrop-filter`) bir **PUAN DURUMU** modalı açar.
      Modalın dış kenarları neon pembe, sağ üstünde kapatma (X) butonu vardır; **Esc**,
      X veya karartılmış alana tıklama ile kapanır.
+   - LİG PUANI butonunun hemen yanında bulunan **FİKSTÜR** butonu (`<a href="go:fixtor">`), fikstür
+     yönlendirme bağlantısına (`go:fixtor`) gider.
    - Tablo sütunları: **SIRA · TAKIM · O · G · B · M · AV · P**, satır aralarında ince ayraç çizgileri.
    - **Sıra bölgeleri (renkli şeritler):** ilk sıralar *yükseliş/Avrupa hattı*, son sıralar *küme düşme
      hattı* olarak işaretlenir — satır zemininde soldan sağa sönen renk, sol kenarda 3px şerit, sıra

@@ -87,12 +87,12 @@
             color: var(--neon-gold); font-size: 1rem;
         }
 
-        /* ---------- LİG PUANI butonu (saatin hemen yanı) ---------- */
+        /* ---------- LİG PUANI ve FİKSTÜR butonları (saatin hemen yanı) ---------- */
         .league-btn {
             position: relative; display: inline-flex; align-items: center; gap: 8px;
             padding: 6px 15px 6px 12px; border-radius: 20px; cursor: pointer;
             font-family: 'Barlow Condensed', sans-serif; font-weight: 700; letter-spacing: 1.6px;
-            font-size: 0.95rem; color: #eaf7ff; text-transform: uppercase;
+            font-size: 0.95rem; color: #eaf7ff; text-transform: uppercase; text-decoration: none;
             /* Kenarlar: neon mavi → pembe degrade (padding-box/border-box tekniği) */
             background:
                 linear-gradient(#0f0c22, #14102c) padding-box,
@@ -108,6 +108,8 @@
             box-shadow:
                 0 0 16px rgba(0,234,255,0.55), 0 0 34px rgba(255,45,122,0.45),
                 inset 0 0 16px rgba(255,45,122,0.14);
+            color: #fff;
+            text-decoration: none;
         }
         .league-btn:active { transform: translateY(0); }
         .league-btn:focus-visible { outline: 2px solid var(--neon-cyan); outline-offset: 2px; }
@@ -683,6 +685,10 @@
                     <span class="lg-text">LİG PUANI</span>
                     <span class="lg-caret" aria-hidden="true">▾</span>
                 </button>
+                <a href="go:fixtor" class="league-btn fixture-btn" id="fixtureBtn" title="Fikstür">
+                    <span class="lg-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg></span>
+                    <span class="lg-text">FİKSTÜR</span>
+                </a>
                 <div class="search-box">
                     <span class="search-icon">🔍</span>
                     <input type="text" id="searchInput" class="search-input" placeholder="Kanal veya maç ara..." aria-label="Kanal veya maç ara" />
@@ -957,8 +963,15 @@
             const normalizeStatus = (s) => matchStatusConfig.aliases[foldStatus(s)] || null;
             const isActiveMatch = (status) => status === "live" || status === "halftime";
             function scoreNumber(value) {
-                if (value == null || typeof value === "boolean" || !/^[0-9]{1,3}$/.test(String(value).trim())) return null;
-                return Number(value);
+                if (value == null || typeof value === "boolean") return null;
+                if (typeof value === "object") {
+                    const val = value.displayValue ?? value.value ?? value.score ?? value.current;
+                    if (val != null && typeof val !== "object") return scoreNumber(val);
+                    return null;
+                }
+                const s = String(value).trim();
+                if (!/^[0-9]{1,3}$/.test(s)) return null;
+                return Number(s);
             }
 
             function scheduleStart(date, time, zone) {
@@ -1029,9 +1042,11 @@
             function decoratedMatches(now) {
                 return matchesData.map((m) => {
                     const st = computeState(m, now);
-                    const h = scoreNumber(m.scoreHome), a = scoreNumber(m.scoreAway);
-                    const hasScore = (isActiveMatch(st.status) || st.status === "finished") && h !== null && a !== null;
-                    const stamp = new Date(m.scoreUpdatedAt || "");
+                    const h = scoreNumber(m.scoreHome !== undefined ? m.scoreHome : m.score_home);
+                    const a = scoreNumber(m.scoreAway !== undefined ? m.scoreAway : m.score_away);
+                    const isFinished = st.status === "finished" || normalizeStatus(m.rawStatus || m.raw_status) === "finished" || normalizeStatus(m.status) === "finished";
+                    const hasScore = (isActiveMatch(st.status) || isFinished) && h !== null && a !== null;
+                    const stamp = new Date(m.scoreUpdatedAt || m.score_updated_at || "");
                     return Object.assign({}, m, {
                         _status: st.status, _estimated: st.estimated,
                         _score: hasScore ? [h, a] : null,
@@ -1897,23 +1912,28 @@
             function normalizeRemote(json) {
                 const rows = json && Array.isArray(json.matches) ? json.matches : [];
                 return rows.filter((r) => r && typeof r === "object").map((r) => {
-                    const status = normalizeStatus(r.raw_status) || normalizeStatus(r.status) || "upcoming";
+                    const rawSt = r.raw_status || r.rawStatus || "";
+                    const stVal = r.status !== undefined ? r.status : "upcoming";
+                    const status = normalizeStatus(rawSt) || normalizeStatus(stVal) || "upcoming";
                     // Eski output JSON'daki live/upcoming/finished saat tahminiydi.
                     // Bu ayrım kaybolursa eski dosya bir anda gerçek sonuç gibi görünür.
-                    const source = r.status_source || (normalizeStatus(r.raw_status) || !["upcoming", "live", "finished", undefined].includes(r.status) ? "source" : "schedule");
+                    const source = r.status_source || r.statusSource || (normalizeStatus(rawSt) || !["upcoming", "live", "finished", undefined].includes(stVal) ? "source" : "schedule");
+                    const sh = scoreNumber(r.score_home !== undefined ? r.score_home : r.scoreHome);
+                    const sa = scoreNumber(r.score_away !== undefined ? r.score_away : r.scoreAway);
                     return {
-                        id: r.match_id || (r.home + "-" + r.away),
+                        id: r.match_id || r.id || (r.home + "-" + r.away),
                         home: r.home || "", away: r.away || "",
                         league: r.league || "", time: r.time || "", sport: r.sport || "Spor",
-                        status: status, statusSource: source, rawStatus: r.raw_status || "",
-                        scoreHome: scoreNumber(r.score_home), scoreAway: scoreNumber(r.score_away),
-                        scoreSource: r.score_source || "", scoreUpdatedAt: r.score_updated_at || "",
-                        eventId: r.event_id || "", startsAt: r.starts_at || "",
-                        isMod: !!r.is_match_of_day,
-                        channelId: r.channel_id || r.match_id || "",
-                        channelName: channelNameFor(r.channel_id || r.match_id),
-                        streamUrl: r.url || "",
-                        logoHome: r.logo_home || "", logoAway: r.logo_away || "",
+                        status: status, statusSource: source, rawStatus: rawSt,
+                        scoreHome: sh, scoreAway: sa,
+                        scoreSource: r.score_source || r.scoreSource || (sh !== null ? source : ""),
+                        scoreUpdatedAt: r.score_updated_at || r.scoreUpdatedAt || "",
+                        eventId: r.event_id || r.eventId || "", startsAt: r.starts_at || r.startsAt || "",
+                        isMod: !!(r.is_match_of_day !== undefined ? r.is_match_of_day : r.isMod),
+                        channelId: r.channel_id || r.channelId || r.match_id || r.id || "",
+                        channelName: channelNameFor(r.channel_id || r.channelId || r.match_id || r.id),
+                        streamUrl: r.url || r.streamUrl || "",
+                        logoHome: r.logo_home || r.logoHome || "", logoAway: r.logo_away || r.logoAway || "",
                         date: json.date || "", timezone: json.timezone || matchTimezone
                     };
                 }).filter((r) => r.home && r.away);

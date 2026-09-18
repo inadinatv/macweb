@@ -15,7 +15,9 @@ STATUS_ALIASES = {
              "status in progress", "status first half", "status second half", "status overtime", "status shootout"),
     "halftime": ("halftime", "half time", "ht", "devre", "devre arasi", "iy", "status halftime"),
     "finished": ("finished", "ended", "full time", "fulltime", "final", "ft", "aet", "pen", "ms", "bitti", "mac sonu",
-                 "status final", "status full time", "status final aet", "status final pen", "status end of extra time"),
+                 "status final", "status full time", "status final aet", "status final pen", "status end of extra time",
+                 "status ended", "status finished", "status post", "post", "m.s.", "ms.", "bit", "full_time",
+                 "status_full_time", "status_final", "completed"),
     "postponed": ("postponed", "ppd", "pst", "ertelendi", "ertelenen", "status postponed"),
     "cancelled": ("cancelled", "canceled", "canc", "iptal", "iptal edildi", "status canceled", "status cancelled"),
     "suspended": ("suspended", "interrupted", "int", "susp", "durduruldu", "ara verildi", "status suspended", "status delayed"),
@@ -44,8 +46,15 @@ def normalize_status(value: Any) -> str | None:
 
 def score_value(value: Any) -> int | None:
     """0 geçerlidir; None, boş, bool, negatif, kesir veya belirsiz metin değildir."""
-    if isinstance(value, bool) or value is None:
+    if isinstance(value, bool) or value is None or isinstance(value, float):
         return None
+    if isinstance(value, dict):
+        val = value.get("displayValue") or value.get("value") or value.get("score") or value.get("current")
+        if val is not None and not isinstance(val, (dict, list)):
+            return score_value(val)
+        return None
+    if isinstance(value, int):
+        return value if 0 <= value <= 999 else None
     text = str(value).strip()
     return int(text) if re.fullmatch(r"[0-9]{1,3}", text) else None
 

@@ -124,7 +124,7 @@
       "league": "Trendyol Süper Lig",
       "time": "20:00",
       "sport": "Futbol",
-      "is_match_of_day": false,
+      "is_match_of_day": true,
       "channel_id": "zirve",
       "logo_home": "https://img.sporekrani.com/teams/V8j30a2ng4nlBmArptHawOVHFk5ArigAyuoxEMW4.png",
       "logo_away": "https://img.sporekrani.com/teams/rrtsbcfkWv3ZkcOrUqjBySbDKkOgnZ4ntn0PfJeh.png",

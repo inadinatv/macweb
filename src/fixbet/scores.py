@@ -102,7 +102,7 @@ def espn_status(status: dict) -> str | None:
     typ = status.get("type") or {}
     if not isinstance(typ, dict):
         return None
-    for field in ("name", "description", "shortDetail"):
+    for field in ("name", "description", "shortDetail", "detail"):
         normalized = normalize_status(typ.get(field))
         if normalized:
             return normalized
@@ -154,15 +154,14 @@ def _mackolik_status(entry: dict) -> str | None:
         st = str(state).strip().lower()
         if st == "pre":
             return "upcoming"
-        if st == "post":
-            # If post but we already checked box/sub, default finished
+        if st in ("post", "ended", "completed", "final"):
             return "finished"
         if st in ("inprogress", "live", "progress", "in_progress"):
             return "live"
 
     if status == "timestamp":
         return "upcoming"
-    if status == "state" and state == "post":
+    if status == "state" and state in ("post", "ended", "completed", "final"):
         return "finished"
 
     # Fallback via statusBoxContent alias already handled
@@ -221,11 +220,21 @@ def _mackolik_competitions(data: dict, tz: ZoneInfo) -> list[dict]:
         # If status is upcoming/live/halftime/finished/postponed etc., keep; if still None skip already.
 
         # Build competitor-like structures for matching
-        score = entry.get("score") or {}
-        home_score = score.get("home")
-        away_score = score.get("away")
-        # Mackolik score may be "" for not started; we keep as string for score_pair to parse
-        # Ensure home/away dict shape matches _names expectation: {"team": {"displayName": ...}, "score": ...}
+        score_obj = entry.get("score") or entry.get("scores") or {}
+        if isinstance(score_obj, dict):
+            home_score = score_obj.get("home") if score_obj.get("home") is not None else score_obj.get("currentHome")
+            away_score = score_obj.get("away") if score_obj.get("away") is not None else score_obj.get("currentAway")
+        elif isinstance(score_obj, str) and "-" in score_obj:
+            parts = score_obj.split("-")
+            home_score, away_score = parts[0].strip(), parts[1].strip()
+        else:
+            home_score = away_score = None
+
+        if home_score is None:
+            home_score = entry.get("homeScore") if entry.get("homeScore") is not None else entry.get("scoreHome")
+        if away_score is None:
+            away_score = entry.get("awayScore") if entry.get("awayScore") is not None else entry.get("scoreAway")
+
         home_comp = {"team": {"displayName": home_name, "name": home_name, "shortDisplayName": home_name}, "score": str(home_score) if home_score not in (None, "") else None}
         away_comp = {"team": {"displayName": away_name, "name": away_name, "shortDisplayName": away_name}, "score": str(away_score) if away_score not in (None, "") else None}
 

@@ -20,8 +20,16 @@ leagues:
   - { name: "Brezilya Serie A", sport: "Futbol", path: "soccer/bra.1" }
   - { name: "Arjantin Primera Division", sport: "Futbol", path: "soccer/arg.1" }
   - { name: "Fransa Ligue 2", sport: "Futbol", path: "soccer/fra.2" }
+  - { name: "UEFA Şampiyonlar Ligi", sport: "Futbol", path: "soccer/uefa.champions" }
+  - { name: "UEFA Avrupa Ligi", sport: "Futbol", path: "soccer/uefa.europa" }
+  - { name: "UEFA Konferans Ligi", sport: "Futbol", path: "soccer/uefa.europa.conf" }
+  - { name: "Türkiye Kupası", sport: "Futbol", path: "soccer/tur.cup" }
+  - { name: "Ziraat Türkiye Kupası", sport: "Futbol", path: "soccer/tur.cup" }
   - { name: "NBA", sport: "Basketbol", path: "basketball/nba" }
   - { name: "WNBA", sport: "Basketbol", path: "basketball/wnba" }
+  - { name: "Euroleague", sport: "Basketbol", path: "basketball/euroleague" }
+  - { name: "Euroleague Süper Kupa", sport: "Basketbol", path: "basketball/euroleague" }
+  - { name: "Türkiye Basketbol Süper Ligi", sport: "Basketbol", path: "basketball/tur.1" }
   - { name: "FIBA Kadınlar Dünya Kupası", sport: "Basketbol", path: "basketball/fiba" }
   - { name: "FIBA Dünya Kupası", sport: "Basketbol", path: "basketball/fiba" }
 
@@ -54,6 +62,15 @@ team_aliases:
     Göztepe: "Goztepe"
     Gaziantep: "Gaziantep FK"
     Gaziantep FK: "Gaziantep FK"
+    Konyaspor: "Konyaspor"
+    Bandırmaspor: "Bandirmaspor"
+    Bandirmaspor: "Bandirmaspor"
+    Ümraniyespor: "Umraniyespor"
+    Umraniyespor: "Umraniyespor"
+    Muğlaspor: "Muglaspor"
+    Muglaspor: "Muglaspor"
+    Iğdırspor: "Igdir FK"
+    Igdirspor: "Igdir FK"
   soccer/tur.2:
     # 1. Lig için aynı normalizasyon
     Ç.Rizespor: "Caykur Rizespor"
@@ -62,6 +79,24 @@ team_aliases:
     Kayserispor: "Kayserispor"
     Pendikspor: "Pendikspor"
     Bodrum FK: "Bodrum FK"
+    Bandırmaspor: "Bandirmaspor"
+    Bandirmaspor: "Bandirmaspor"
+    Ümraniyespor: "Umraniyespor"
+    Umraniyespor: "Umraniyespor"
+    Muğlaspor: "Muglaspor"
+    Muglaspor: "Muglaspor"
+    Iğdırspor: "Igdir FK"
+    Igdirspor: "Igdir FK"
+    Iğdır FK: "Igdir FK"
+    Igdir FK: "Igdir FK"
+  basketball/euroleague:
+    Fenerbahçe Beko: "Fenerbahce"
+    Fenerbahce: "Fenerbahce"
+    Fenerbahçe Tarfin: "Fenerbahce"
+    Olympiacos: "Olympiakos"
+    Olympiakos: "Olympiakos"
+    Real Madrid: "Real Madrid"
+    Dubai Basket: "Dubai"
   soccer/arg.1:
     I. Rivadavia: "Independiente Rivadavia"
   basketball/fiba:
