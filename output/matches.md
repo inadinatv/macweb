@@ -1,12 +1,15 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-09-18 11:21  
-> **Toplam maç:** 10  |  **Canlı:** 0  |  **Yaklaşan:** 10
+> **Güncellenme:** 2026-09-18 13:15  
+> **Toplam maç:** 10  |  **Canlı:** 1  |  **Yaklaşan:** 9
+
+## 🔴 CANLI
+
+- 🔴 **Bandırmaspor 0 - 0 Ümraniyespor** — CANLI · `16:00` | Trendyol 1. Lig <https://fixbettv84.com/channel.html?id=trtspor>
 
 ## ⏰ YAKLAŞAN
 
-- ⏰ **Bandırmaspor vs Ümraniyespor** — YAKLAŞAN · `16:00` | Trendyol 1. Lig <https://fixbettv84.com/channel.html?id=trtspor>
 - ⏰ **Fenerbahçe Tarfin vs Olympiakos** — YAKLAŞAN · `17:00` | Euroleague Süper Kupa <https://fixbettv84.com/channel.html?id=ss>
 - ⏰ **Muğlaspor vs Iğdırspor** — YAKLAŞAN · `20:00` | Trendyol 1. Lig <https://fixbettv84.com/channel.html?id=trtspor>
 - ⏰ **Dubai Basket vs Real Madrid** — YAKLAŞAN · `20:00` | Euroleague Süper Kupa <https://fixbettv84.com/channel.html?id=ss>
@@ -31,7 +34,7 @@
 - ⏰ Reims vs Montpellier — 21:00
 
 ### Trendyol 1. Lig
-- ⏰ Bandırmaspor vs Ümraniyespor — 16:00
+- 🔴 Bandırmaspor vs Ümraniyespor — 16:00
 - ⏰ Muğlaspor vs Iğdırspor — 20:00
 
 ### Trendyol Süper Lig
@@ -102,8 +105,8 @@
 ## ⚡ EKSTRA PANELLER — m3u8 (79)
 
 ### ⚛️ ATOM SPOR ✅ `https://www.atomsportv514.top`
-- 🟡 **BEIN SPORTS 1** <https://ladyboy.taylandpattaya.cfd//beintv/tracks-v1a1/mono.m3u8>
-- ⚪ **BEIN SPORTS 2** <https://tv.atomspor.workers.dev/?ID=bein-sports-2>
+- 🟢 **BEIN SPORTS 1** <https://ladyboy.taylandpattaya.cfd//beintv/tracks-v1a1/mono.m3u8>
+- 🟢 **BEIN SPORTS 2** <https://ladyboy.taylandpattaya.cfd//bein2/tracks-v1a1/mono.m3u8>
 - 🟢 **BEIN SPORTS 3** <https://ladyboy.taylandpattaya.cfd//bein3/tracks-v1a1/mono.m3u8>
 - 🟢 **BEIN SPORTS 4** <https://ladyboy.taylandpattaya.cfd//bein4/tracks-v1a1/mono.m3u8>
 - 🟢 **BEIN SPORTS 5** <https://ladyboy.taylandpattaya.cfd//bein5/tracks-v1a1/mono.m3u8>
