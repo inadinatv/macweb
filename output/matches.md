@@ -1,8 +1,8 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-09-17 23:42  
-> **Toplam maç:** 10  |  **Canlı:** 0  |  **Yaklaşan:** 5
+> **Güncellenme:** 2026-09-18 00:54  
+> **Toplam maç:** 10  |  **Canlı:** 0  |  **Yaklaşan:** 10
 
 ## ⏰ YAKLAŞAN
 
@@ -11,14 +11,11 @@
 - ⏰ **Muğlaspor vs Iğdırspor** — YAKLAŞAN · `20:00` | Trendyol 1. Lig <https://fixbettv84.com/channel.html?id=trtspor>
 - ⏰ **Dubai Basket vs Real Madrid** — YAKLAŞAN · `20:00` | Euroleague Süper Kupa <https://fixbettv84.com/channel.html?id=ss>
 - ⏰ **Kasımpaşa vs Konyaspor** — YAKLAŞAN · `20:00` | Trendyol Süper Lig <https://fixbettv84.com/channel.html?id=zirve>
-
-## ✅ BİTTİ
-
-- ✅ **Reims vs Montpellier** — MS · `21:00` | Fransa Ligue 2 <https://fixbettv84.com/channel.html?id=bm1>
-- ✅ **Monza vs Sassuolo** — MS · `21:45` | İtalya Serie A <https://fixbettv84.com/channel.html?id=ss2>
-- ✅ **Monaco vs Lens** — MS · `21:45` | Fransa Ligue 1 <https://fixbettv84.com/channel.html?id=b4>
-- ✅ **Espanyol vs Elche** — MS · `22:00` | İspanya La Liga <https://fixbettv84.com/channel.html?id=ss>
-- ✅ **Brentford vs Chelsea** — MS · `22:00` | İngiltere Premier Lig <https://fixbettv84.com/channel.html?id=b3>
+- ⏰ **Reims vs Montpellier** — YAKLAŞAN · `21:00` | Fransa Ligue 2 <https://fixbettv84.com/channel.html?id=bm1>
+- ⏰ **Monza vs Sassuolo** — YAKLAŞAN · `21:45` | İtalya Serie A <https://fixbettv84.com/channel.html?id=ss2>
+- ⏰ **Monaco vs Lens** — YAKLAŞAN · `21:45` | Fransa Ligue 1 <https://fixbettv84.com/channel.html?id=b4>
+- ⏰ **Espanyol vs Elche** — YAKLAŞAN · `22:00` | İspanya La Liga <https://fixbettv84.com/channel.html?id=ss>
+- ⏰ **Brentford vs Chelsea** — YAKLAŞAN · `22:00` | İngiltere Premier Lig <https://fixbettv84.com/channel.html?id=b3>
 
 ---
 ## 🏆 Lig Bazlı
@@ -106,7 +103,7 @@
 
 ### ⚛️ ATOM SPOR ✅ `https://www.atomsportv514.top`
 - 🟢 **BEIN SPORTS 1** <https://ladyboy.taylandpattaya.cfd//beintv/tracks-v1a1/mono.m3u8>
-- 🟡 **BEIN SPORTS 2** <https://ladyboy.taylandpattaya.cfd//bein2/tracks-v1a1/mono.m3u8>
+- 🟢 **BEIN SPORTS 2** <https://ladyboy.taylandpattaya.cfd//bein2/tracks-v1a1/mono.m3u8>
 - 🟢 **BEIN SPORTS 3** <https://ladyboy.taylandpattaya.cfd//bein3/tracks-v1a1/mono.m3u8>
 - 🟢 **BEIN SPORTS 4** <https://ladyboy.taylandpattaya.cfd//bein4/tracks-v1a1/mono.m3u8>
 - 🟢 **BEIN SPORTS 5** <https://ladyboy.taylandpattaya.cfd//bein5/tracks-v1a1/mono.m3u8>
