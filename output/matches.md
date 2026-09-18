@@ -1,19 +1,18 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-09-18 15:03  
-> **Toplam maç:** 10  |  **Canlı:** 1  |  **Yaklaşan:** 8
+> **Güncellenme:** 2026-09-18 18:17  
+> **Toplam maç:** 10  |  **Canlı:** 4  |  **Yaklaşan:** 4
 
 ## 🔴 CANLI
 
-- 🔴 **Fenerbahçe Tarfin vs Olympiakos** — CANLI · `17:00` | Euroleague Süper Kupa <https://fixbettv84.com/channel.html?id=ss>
+- 🔴 **Muğlaspor 1 - 1 Iğdırspor** — CANLI · `20:00` | Trendyol 1. Lig <https://fixbettv84.com/channel.html?id=trtspor>
+- 🔴 **Dubai Basket vs Real Madrid** — CANLI · `20:00` | Euroleague Süper Kupa <https://fixbettv84.com/channel.html?id=ss>
+- 🔴 **Kasımpaşa 0 - 0 Konyaspor** — CANLI · `20:00` | Trendyol Süper Lig <https://fixbettv84.com/channel.html?id=zirve>
+- 🔴 **Reims vs Montpellier** — CANLI · `21:00` | Fransa Ligue 2 <https://fixbettv84.com/channel.html?id=bm1>
 
 ## ⏰ YAKLAŞAN
 
-- ⏰ **Muğlaspor vs Iğdırspor** — YAKLAŞAN · `20:00` | Trendyol 1. Lig <https://fixbettv84.com/channel.html?id=trtspor>
-- ⏰ **Dubai Basket vs Real Madrid** — YAKLAŞAN · `20:00` | Euroleague Süper Kupa <https://fixbettv84.com/channel.html?id=ss>
-- ⏰ **Kasımpaşa vs Konyaspor** — YAKLAŞAN · `20:00` | Trendyol Süper Lig <https://fixbettv84.com/channel.html?id=zirve>
-- ⏰ **Reims vs Montpellier** — YAKLAŞAN · `21:00` | Fransa Ligue 2 <https://fixbettv84.com/channel.html?id=bm1>
 - ⏰ **Monza vs Sassuolo** — YAKLAŞAN · `21:45` | İtalya Serie A <https://fixbettv84.com/channel.html?id=ss2>
 - ⏰ **Monaco vs Lens** — YAKLAŞAN · `21:45` | Fransa Ligue 1 <https://fixbettv84.com/channel.html?id=b4>
 - ⏰ **Espanyol vs Elche** — YAKLAŞAN · `22:00` | İspanya La Liga <https://fixbettv84.com/channel.html?id=ss>
@@ -22,26 +21,27 @@
 ## ✅ BİTTİ
 
 - ✅ **Bandırmaspor 0 - 1 Ümraniyespor** — MS · `16:00` | Trendyol 1. Lig <https://fixbettv84.com/channel.html?id=trtspor>
+- ✅ **Fenerbahçe Tarfin vs Olympiakos** — MS · `17:00` | Euroleague Süper Kupa <https://fixbettv84.com/channel.html?id=ss>
 
 ---
 ## 🏆 Lig Bazlı
 
 ### Euroleague Süper Kupa
-- 🔴 Fenerbahçe Tarfin vs Olympiakos — 17:00
-- ⏰ Dubai Basket vs Real Madrid — 20:00
+- ⏰ Fenerbahçe Tarfin vs Olympiakos — 17:00
+- 🔴 Dubai Basket vs Real Madrid — 20:00
 
 ### Fransa Ligue 1
 - ⏰ Monaco vs Lens — 21:45
 
 ### Fransa Ligue 2
-- ⏰ Reims vs Montpellier — 21:00
+- 🔴 Reims vs Montpellier — 21:00
 
 ### Trendyol 1. Lig
 - ⏰ Bandırmaspor vs Ümraniyespor — 16:00
-- ⏰ Muğlaspor vs Iğdırspor — 20:00
+- 🔴 Muğlaspor vs Iğdırspor — 20:00
 
 ### Trendyol Süper Lig
-- ⏰ Kasımpaşa vs Konyaspor — 20:00
+- 🔴 Kasımpaşa vs Konyaspor — 20:00
 
 ### İngiltere Premier Lig
 - ⏰ Brentford vs Chelsea — 22:00
