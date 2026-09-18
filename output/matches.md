@@ -1,13 +1,11 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-09-18 20:07  
-> **Toplam maç:** 10  |  **Canlı:** 4  |  **Yaklaşan:** 0
+> **Güncellenme:** 2026-09-18 20:57  
+> **Toplam maç:** 10  |  **Canlı:** 2  |  **Yaklaşan:** 0
 
 ## 🔴 CANLI
 
-- 🔴 **Monza vs Sassuolo** — CANLI · `21:45` | İtalya Serie A <https://fixbettv84.com/channel.html?id=ss2>
-- 🔴 **Monaco vs Lens** — CANLI · `21:45` | Fransa Ligue 1 <https://fixbettv84.com/channel.html?id=b4>
 - 🔴 **Espanyol vs Elche** — CANLI · `22:00` | İspanya La Liga <https://fixbettv84.com/channel.html?id=ss>
 - 🔴 **Brentford vs Chelsea** — CANLI · `22:00` | İngiltere Premier Lig <https://fixbettv84.com/channel.html?id=b3>
 
@@ -19,6 +17,8 @@
 - ✅ **Dubai Basket vs Real Madrid** — MS · `20:00` | Euroleague Süper Kupa <https://fixbettv84.com/channel.html?id=ss>
 - ✅ **Kasımpaşa 0 - 0 Konyaspor** — MS · `20:00` | Trendyol Süper Lig <https://fixbettv84.com/channel.html?id=zirve>
 - ✅ **Reims vs Montpellier** — MS · `21:00` | Fransa Ligue 2 <https://fixbettv84.com/channel.html?id=bm1>
+- ✅ **Monza vs Sassuolo** — MS · `21:45` | İtalya Serie A <https://fixbettv84.com/channel.html?id=ss2>
+- ✅ **Monaco vs Lens** — MS · `21:45` | Fransa Ligue 1 <https://fixbettv84.com/channel.html?id=b4>
 
 ---
 ## 🏆 Lig Bazlı
@@ -28,7 +28,7 @@
 - ⏰ Dubai Basket vs Real Madrid — 20:00
 
 ### Fransa Ligue 1
-- 🔴 Monaco vs Lens — 21:45
+- ⏰ Monaco vs Lens — 21:45
 
 ### Fransa Ligue 2
 - ⏰ Reims vs Montpellier — 21:00
@@ -47,7 +47,7 @@
 - 🔴 Espanyol vs Elche — 22:00
 
 ### İtalya Serie A
-- 🔴 Monza vs Sassuolo — 21:45
+- ⏰ Monza vs Sassuolo — 21:45
 
 ---
 ## 📺 7/24 KANALLAR (31)
@@ -137,45 +137,45 @@
 - 🟢 **EUROSPORT 1** <https://dga1op10s1u3lea.82250d06d39d38.click/live/selcukeurosport1/playlist.m3u8>
 
 ### 🌴 MAHSUN SPORTS ✅ `https://mahsunsports80.xyz`
-- 🟢 **BEIN SPORTS 1** <https://andro.evrenesoglu105.click/checklist/androstreamlivebs1.m3u8>
-- 🟢 **BEIN SPORTS 2** <https://andro.evrenesoglu105.click/checklist/androstreamlivebs2.m3u8>
-- 🟢 **BEIN SPORTS 3** <https://andro.evrenesoglu105.click/checklist/androstreamlivebs3.m3u8>
-- 🟢 **BEIN SPORTS 4** <https://andro.evrenesoglu105.click/checklist/androstreamlivebs4.m3u8>
-- 🟢 **BEIN SPORTS 5** <https://andro.evrenesoglu105.click/checklist/androstreamlivebs5.m3u8>
-- 🟢 **BEIN SPORTS MAX 1** <https://andro.evrenesoglu105.click/checklist/androstreamlivebsm1.m3u8>
-- 🟢 **BEIN SPORTS MAX 2** <https://andro.evrenesoglu105.click/checklist/androstreamlivebsm2.m3u8>
-- 🟢 **S SPORT 1** <https://andro.evrenesoglu105.click/checklist/androstreamlivess1.m3u8>
-- 🟢 **S SPORT 2** <https://andro.evrenesoglu105.click/checklist/androstreamlivess2.m3u8>
-- 🟢 **S SPORT PLUS** <https://andro.evrenesoglu105.click/checklist/androstreamlivessplus1.m3u8>
-- 🟢 **TIVIBU SPOR** <https://andro.evrenesoglu105.click/checklist/androstreamlivets.m3u8>
-- 🟢 **TIVIBU SPOR 1** <https://andro.evrenesoglu105.click/checklist/androstreamlivets1.m3u8>
-- 🟢 **TIVIBU SPOR 2** <https://andro.evrenesoglu105.click/checklist/androstreamlivets2.m3u8>
-- 🟢 **TIVIBU SPOR 3** <https://andro.evrenesoglu105.click/checklist/androstreamlivets3.m3u8>
-- 🟢 **TIVIBU SPOR 4** <https://andro.evrenesoglu105.click/checklist/androstreamlivets4.m3u8>
-- 🟢 **SMARTSPOR** <https://andro.evrenesoglu105.click/checklist/androstreamlivesm1.m3u8>
-- 🟢 **SMARTSPOR 2** <https://andro.evrenesoglu105.click/checklist/androstreamlivesm2.m3u8>
-- 🟢 **EUROSPORT 1** <https://andro.evrenesoglu105.click/checklist/androstreamlivees1.m3u8>
-- 🟢 **EUROSPORT 2** <https://andro.evrenesoglu105.click/checklist/androstreamlivees2.m3u8>
-- 🟢 **TABII SPOR** <https://andro.evrenesoglu105.click/checklist/androstreamlivetb.m3u8>
-- 🟢 **TABII SPOR 1** <https://andro.evrenesoglu105.click/checklist/androstreamlivetb1.m3u8>
-- 🟢 **TABII SPOR 2** <https://andro.evrenesoglu105.click/checklist/androstreamlivetb2.m3u8>
-- 🟢 **TABII SPOR 3** <https://andro.evrenesoglu105.click/checklist/androstreamlivetb3.m3u8>
-- 🟢 **TABII SPOR 4** <https://andro.evrenesoglu105.click/checklist/androstreamlivetb4.m3u8>
-- 🟢 **TABII SPOR 5** <https://andro.evrenesoglu105.click/checklist/androstreamlivetb5.m3u8>
-- 🟢 **TABII SPOR 6** <https://andro.evrenesoglu105.click/checklist/androstreamlivetb6.m3u8>
-- 🟢 **TABII SPOR 7** <https://andro.evrenesoglu105.click/checklist/androstreamlivetb7.m3u8>
-- 🟢 **TABII SPOR 8** <https://andro.evrenesoglu105.click/checklist/androstreamlivetb8.m3u8>
-- 🟢 **EXXEN SPOR** <https://andro.evrenesoglu105.click/checklist/androstreamliveexn.m3u8>
-- 🟢 **EXXEN SPOR 1** <https://andro.evrenesoglu105.click/checklist/androstreamliveexn1.m3u8>
-- 🟢 **EXXEN SPOR 2** <https://andro.evrenesoglu105.click/checklist/androstreamliveexn2.m3u8>
-- 🟢 **EXXEN SPOR 3** <https://andro.evrenesoglu105.click/checklist/androstreamliveexn3.m3u8>
-- 🟢 **EXXEN SPOR 4** <https://andro.evrenesoglu105.click/checklist/androstreamliveexn4.m3u8>
-- 🟢 **EXXEN SPOR 5** <https://andro.evrenesoglu105.click/checklist/androstreamliveexn5.m3u8>
-- 🟢 **EXXEN SPOR 6** <https://andro.evrenesoglu105.click/checklist/androstreamliveexn6.m3u8>
-- 🟢 **EXXEN SPOR 7** <https://andro.evrenesoglu105.click/checklist/androstreamliveexn7.m3u8>
-- 🟢 **EXXEN SPOR 8** <https://andro.evrenesoglu105.click/checklist/androstreamliveexn8.m3u8>
-- 🟢 **IDMAN TV** <https://andro.evrenesoglu105.click/checklist/androstreamliveidm.m3u8>
-- 🟢 **CBC SPORT** <https://andro.evrenesoglu105.click/checklist/androstreamlivecbcs.m3u8>
+- 🟢 **BEIN SPORTS 1** <https://andro.evrenesoglu107.click/checklist/androstreamlivebs1.m3u8>
+- 🟢 **BEIN SPORTS 2** <https://andro.evrenesoglu107.click/checklist/androstreamlivebs2.m3u8>
+- 🟢 **BEIN SPORTS 3** <https://andro.evrenesoglu107.click/checklist/androstreamlivebs3.m3u8>
+- 🟢 **BEIN SPORTS 4** <https://andro.evrenesoglu107.click/checklist/androstreamlivebs4.m3u8>
+- 🟢 **BEIN SPORTS 5** <https://andro.evrenesoglu107.click/checklist/androstreamlivebs5.m3u8>
+- 🟢 **BEIN SPORTS MAX 1** <https://andro.evrenesoglu107.click/checklist/androstreamlivebsm1.m3u8>
+- 🟢 **BEIN SPORTS MAX 2** <https://andro.evrenesoglu107.click/checklist/androstreamlivebsm2.m3u8>
+- 🟢 **S SPORT 1** <https://andro.evrenesoglu107.click/checklist/androstreamlivess1.m3u8>
+- 🟢 **S SPORT 2** <https://andro.evrenesoglu107.click/checklist/androstreamlivess2.m3u8>
+- 🟢 **S SPORT PLUS** <https://andro.evrenesoglu107.click/checklist/androstreamlivessplus1.m3u8>
+- 🟢 **TIVIBU SPOR** <https://andro.evrenesoglu107.click/checklist/androstreamlivets.m3u8>
+- 🟢 **TIVIBU SPOR 1** <https://andro.evrenesoglu107.click/checklist/androstreamlivets1.m3u8>
+- 🟢 **TIVIBU SPOR 2** <https://andro.evrenesoglu107.click/checklist/androstreamlivets2.m3u8>
+- 🟢 **TIVIBU SPOR 3** <https://andro.evrenesoglu107.click/checklist/androstreamlivets3.m3u8>
+- 🟢 **TIVIBU SPOR 4** <https://andro.evrenesoglu107.click/checklist/androstreamlivets4.m3u8>
+- 🟢 **SMARTSPOR** <https://andro.evrenesoglu107.click/checklist/androstreamlivesm1.m3u8>
+- 🟢 **SMARTSPOR 2** <https://andro.evrenesoglu107.click/checklist/androstreamlivesm2.m3u8>
+- 🟢 **EUROSPORT 1** <https://andro.evrenesoglu107.click/checklist/androstreamlivees1.m3u8>
+- 🟢 **EUROSPORT 2** <https://andro.evrenesoglu107.click/checklist/androstreamlivees2.m3u8>
+- 🟢 **TABII SPOR** <https://andro.evrenesoglu107.click/checklist/androstreamlivetb.m3u8>
+- 🟢 **TABII SPOR 1** <https://andro.evrenesoglu107.click/checklist/androstreamlivetb1.m3u8>
+- 🟢 **TABII SPOR 2** <https://andro.evrenesoglu107.click/checklist/androstreamlivetb2.m3u8>
+- 🟢 **TABII SPOR 3** <https://andro.evrenesoglu107.click/checklist/androstreamlivetb3.m3u8>
+- 🟢 **TABII SPOR 4** <https://andro.evrenesoglu107.click/checklist/androstreamlivetb4.m3u8>
+- 🟢 **TABII SPOR 5** <https://andro.evrenesoglu107.click/checklist/androstreamlivetb5.m3u8>
+- 🟢 **TABII SPOR 6** <https://andro.evrenesoglu107.click/checklist/androstreamlivetb6.m3u8>
+- 🟢 **TABII SPOR 7** <https://andro.evrenesoglu107.click/checklist/androstreamlivetb7.m3u8>
+- 🟢 **TABII SPOR 8** <https://andro.evrenesoglu107.click/checklist/androstreamlivetb8.m3u8>
+- 🟢 **EXXEN SPOR** <https://andro.evrenesoglu107.click/checklist/androstreamliveexn.m3u8>
+- 🟢 **EXXEN SPOR 1** <https://andro.evrenesoglu107.click/checklist/androstreamliveexn1.m3u8>
+- 🟢 **EXXEN SPOR 2** <https://andro.evrenesoglu107.click/checklist/androstreamliveexn2.m3u8>
+- 🟢 **EXXEN SPOR 3** <https://andro.evrenesoglu107.click/checklist/androstreamliveexn3.m3u8>
+- 🟢 **EXXEN SPOR 4** <https://andro.evrenesoglu107.click/checklist/androstreamliveexn4.m3u8>
+- 🟢 **EXXEN SPOR 5** <https://andro.evrenesoglu107.click/checklist/androstreamliveexn5.m3u8>
+- 🟢 **EXXEN SPOR 6** <https://andro.evrenesoglu107.click/checklist/androstreamliveexn6.m3u8>
+- 🟢 **EXXEN SPOR 7** <https://andro.evrenesoglu107.click/checklist/androstreamliveexn7.m3u8>
+- 🟢 **EXXEN SPOR 8** <https://andro.evrenesoglu107.click/checklist/androstreamliveexn8.m3u8>
+- 🟢 **IDMAN TV** <https://andro.evrenesoglu107.click/checklist/androstreamliveidm.m3u8>
+- 🟢 **CBC SPORT** <https://andro.evrenesoglu107.click/checklist/androstreamlivecbcs.m3u8>
 
 ### 📺 TARAFTARIUM24 ✅ `https://taraftarium24bedava.com`
 - ⚪ **BEIN SPORTS 1**
