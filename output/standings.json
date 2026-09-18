@@ -1,13 +1,13 @@
 {
  "source": "mackolik",
- "generated_at": "2026-09-18T21:16:49+03:00",
+ "generated_at": "2026-09-18T23:06:15+03:00",
  "leagues": [
   {
    "id": "soccer/tur.1",
    "name": "Trendyol Süper Lig",
    "sport": "Futbol",
    "season": "2026-27 Turkish Super Lig",
-   "updated_at": "2026-09-18T21:16:49+03:00",
+   "updated_at": "2026-09-18T23:06:15+03:00",
    "teams": 18,
    "rows": [
     {
@@ -70,14 +70,14 @@
      "sourceTeam": "Kasımpaşa",
      "abbr": "",
      "logo": "https://file.mackolikfeeds.com/teams/4idg23egrrvtrbgrg7p5x7bwf",
-     "played": 5,
+     "played": 6,
      "wins": 2,
-     "draws": 3,
+     "draws": 4,
      "losses": 0,
      "goalsFor": 7,
      "goalsAgainst": 5,
      "diff": 2,
-     "points": 9,
+     "points": 10,
      "note": "",
      "zone": "",
      "zoneLabel": ""
@@ -228,6 +228,24 @@
     },
     {
      "rank": 13,
+     "team": "Konyaspor",
+     "sourceTeam": "Konyaspor",
+     "abbr": "",
+     "logo": "https://file.mackolikfeeds.com/teams/cw4lbdzlqqdvbkdkz00c9ye49",
+     "played": 6,
+     "wins": 1,
+     "draws": 1,
+     "losses": 4,
+     "goalsFor": 4,
+     "goalsAgainst": 8,
+     "diff": -4,
+     "points": 4,
+     "note": "",
+     "zone": "",
+     "zoneLabel": ""
+    },
+    {
+     "rank": 14,
      "team": "Başakşehir",
      "sourceTeam": "Başakşehir",
      "abbr": "",
@@ -245,7 +263,7 @@
      "zoneLabel": ""
     },
     {
-     "rank": 14,
+     "rank": 15,
      "team": "Samsunspor",
      "sourceTeam": "Samsunspor",
      "abbr": "",
@@ -263,7 +281,7 @@
      "zoneLabel": ""
     },
     {
-     "rank": 15,
+     "rank": 16,
      "team": "Erzurum BB",
      "sourceTeam": "Erzurumspor FK",
      "abbr": "",
@@ -276,24 +294,6 @@
      "goalsAgainst": 11,
      "diff": -9,
      "points": 4,
-     "note": "",
-     "zone": "",
-     "zoneLabel": ""
-    },
-    {
-     "rank": 16,
-     "team": "Konyaspor",
-     "sourceTeam": "Konyaspor",
-     "abbr": "",
-     "logo": "https://file.mackolikfeeds.com/teams/cw4lbdzlqqdvbkdkz00c9ye49",
-     "played": 5,
-     "wins": 1,
-     "draws": 0,
-     "losses": 4,
-     "goalsFor": 4,
-     "goalsAgainst": 8,
-     "diff": -4,
-     "points": 3,
      "note": "",
      "zone": "relegation",
      "zoneLabel": "Küme düşme hattı"
