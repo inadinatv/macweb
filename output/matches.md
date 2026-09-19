@@ -1,12 +1,8 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-09-19 00:48  
-> **Toplam maç:** 23  |  **Canlı:** 1  |  **Yaklaşan:** 22
-
-## 🔴 CANLI
-
-- 🔴 **Racing Club vs CA Sarmiento** — CANLI · `03:15` | Arjantin Primera Division <https://fixbettv84.com/channel.html?id=smarts>
+> **Güncellenme:** 2026-09-19 05:10  
+> **Toplam maç:** 23  |  **Canlı:** 0  |  **Yaklaşan:** 22
 
 ## ⏰ YAKLAŞAN
 
@@ -33,6 +29,10 @@
 - ⏰ **Sevilla vs Barcelona** — YAKLAŞAN · `22:00` | İspanya La Liga <https://fixbettv84.com/channel.html?id=ss>
 - ⏰ **Sporting Lisbon vs Arouca** — YAKLAŞAN · `22:30` | Portekiz Liga NOS <https://fixbettv84.com/channel.html?id=b2>
 
+## ✅ BİTTİ
+
+- ✅ **Racing Club vs CA Sarmiento** — MS · `03:15` | Arjantin Primera Division <https://fixbettv84.com/channel.html?id=smarts>
+
 ## ⭐ GÜNÜN MAÇI
 
 - ⏰ **Trabzonspor vs Galatasaray** — YAKLAŞAN · `20:00` | Trendyol Süper Lig ★ **Günün Maçı** <https://fixbettv84.com/channel.html?id=zirve>
@@ -41,7 +41,7 @@
 ## 🏆 Lig Bazlı
 
 ### Arjantin Primera Division
-- 🔴 Racing Club vs CA Sarmiento — 03:15
+- ⏰ Racing Club vs CA Sarmiento — 03:15
 
 ### Fransa Ligue 1
 - ⏰ Angers vs Troyes — 21:45
