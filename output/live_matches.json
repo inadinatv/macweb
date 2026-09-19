@@ -10,35 +10,9 @@
       "fixbettv19.com",
       "golvar549.sbs"
     ],
-    "last_checked": "2026-09-19T21:03:48+00:00",
+    "last_checked": "2026-09-19T22:53:23+00:00",
     "note": "OK",
     "probed": 200
   },
-  "live": [
-    {
-      "match_id": "b2",
-      "home": "Sporting Lisbon",
-      "away": "Arouca",
-      "league": "Portekiz Liga NOS",
-      "time": "22:30",
-      "sport": "Futbol",
-      "is_match_of_day": false,
-      "channel_id": "b2",
-      "logo_home": "https://img.sporekrani.com/teams/wmkMpVv7deEV46KqRI9Evc7cCPEqzIIZoGNt6t1j.png",
-      "logo_away": "https://img.sporekrani.com/teams/uyjnc7Eb6I6bbo8ciyRk1z6fP7BU6Wb5wl8LQBn5.png",
-      "status": "live",
-      "started": true,
-      "raw_event": "22:30 | Portekiz Liga NOS",
-      "url": "https://fixbettv84.com/channel.html?id=b2",
-      "fetched_at": "",
-      "status_source": "schedule",
-      "raw_status": "",
-      "score_home": null,
-      "score_away": null,
-      "score_source": "",
-      "score_updated_at": "",
-      "event_id": "",
-      "starts_at": "2026-09-19T22:30:00+03:00"
-    }
-  ]
+  "live": []
 }

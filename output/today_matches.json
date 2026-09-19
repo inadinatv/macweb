@@ -10,13 +10,13 @@
       "fixbettv19.com",
       "golvar549.sbs"
     ],
-    "last_checked": "2026-09-19T21:03:48+00:00",
+    "last_checked": "2026-09-19T22:53:23+00:00",
     "note": "OK",
     "probed": 200
   },
   "date": "2026-09-20",
   "timezone": "Europe/Istanbul",
-  "generated_at": "2026-09-20T00:03:12+03:00",
+  "generated_at": "2026-09-20T01:52:47+03:00",
   "matches": [
     {
       "match_id": "zirve",
@@ -579,7 +579,7 @@
       "channel_id": "b2",
       "logo_home": "https://img.sporekrani.com/teams/wmkMpVv7deEV46KqRI9Evc7cCPEqzIIZoGNt6t1j.png",
       "logo_away": "https://img.sporekrani.com/teams/uyjnc7Eb6I6bbo8ciyRk1z6fP7BU6Wb5wl8LQBn5.png",
-      "status": "live",
+      "status": "finished",
       "started": true,
       "raw_event": "22:30 | Portekiz Liga NOS",
       "url": "https://fixbettv84.com/channel.html?id=b2",

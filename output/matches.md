@@ -1,12 +1,8 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-09-19 21:04  
-> **Toplam maç:** 23  |  **Canlı:** 1  |  **Yaklaşan:** 17
-
-## 🔴 CANLI
-
-- 🔴 **Sporting Lisbon vs Arouca** — CANLI · `22:30` | Portekiz Liga NOS <https://fixbettv84.com/channel.html?id=b2>
+> **Güncellenme:** 2026-09-19 22:53  
+> **Toplam maç:** 23  |  **Canlı:** 0  |  **Yaklaşan:** 17
 
 ## ⏰ YAKLAŞAN
 
@@ -35,6 +31,7 @@
 - ✅ **Lyon vs Rennes** — MS · `21:45` | Fransa Ligue 1 <https://fixbettv84.com/channel.html?id=b3>
 - ✅ **Toulouse vs Le Havre** — MS · `21:45` | Fransa Ligue 1 <https://fixbettv84.com/channel.html?id=b4>
 - ✅ **Sevilla vs Barcelona** — MS · `22:00` | İspanya La Liga <https://fixbettv84.com/channel.html?id=ss>
+- ✅ **Sporting Lisbon vs Arouca** — MS · `22:30` | Portekiz Liga NOS <https://fixbettv84.com/channel.html?id=b2>
 
 ## ⭐ GÜNÜN MAÇI
 
@@ -52,7 +49,7 @@
 - ⏰ Toulouse vs Le Havre — 21:45
 
 ### Portekiz Liga NOS
-- 🔴 Sporting Lisbon vs Arouca — 22:30
+- ⏰ Sporting Lisbon vs Arouca — 22:30
 
 ### Trendyol 1. Lig
 - ⏰ Keçiörengücü vs Sivasspor — 17:00
@@ -141,7 +138,7 @@
 - 🟢 **BEIN SPORTS 1** <https://ladyboy.yedektv.cfd//beintv/tracks-v1a1/mono.m3u8>
 - 🟢 **BEIN SPORTS 2** <https://ladyboy.yedektv.cfd//bein2/tracks-v1a1/mono.m3u8>
 - 🟢 **BEIN SPORTS 3** <https://ladyboy.yedektv.cfd//bein3/tracks-v1a1/mono.m3u8>
-- 🟢 **BEIN SPORTS 4** <https://ladyboy.yedektv.cfd//bein4/tracks-v1a1/mono.m3u8>
+- 🟡 **BEIN SPORTS 4** <https://ladyboy.yedektv.cfd//bein4/tracks-v1a1/mono.m3u8>
 - 🟢 **BEIN SPORTS 5** <https://ladyboy.yedektv.cfd//bein5/tracks-v1a1/mono.m3u8>
 - 🟢 **S SPORT** <https://ladyboy.yedektv.cfd//s-sport/tracks-v1a1/mono.m3u8>
 - 🟢 **S SPORT 2** <https://ladyboy.yedektv.cfd//s-sport2/tracks-v1a1/mono.m3u8>
