@@ -1,12 +1,15 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-09-18 22:56  
-> **Toplam maç:** 23  |  **Canlı:** 0  |  **Yaklaşan:** 17
+> **Güncellenme:** 2026-09-19 00:46  
+> **Toplam maç:** 23  |  **Canlı:** 1  |  **Yaklaşan:** 22
+
+## 🔴 CANLI
+
+- 🔴 **Racing Club vs CA Sarmiento** — CANLI · `03:15` | Arjantin Primera Division <https://fixbettv84.com/channel.html?id=smarts>
 
 ## ⏰ YAKLAŞAN
 
-- ⏰ **Racing Club vs CA Sarmiento** — YAKLAŞAN · `03:15` | Arjantin Primera Division <https://fixbettv84.com/channel.html?id=smarts>
 - ⏰ **Tottenham vs Aston Villa** — YAKLAŞAN · `14:30` | İngiltere Premier Lig <https://fixbettv84.com/channel.html?id=b3>
 - ⏰ **Osasuna vs Rayo Vallecano** — YAKLAŞAN · `15:00` | İspanya La Liga <https://fixbettv84.com/channel.html?id=ss>
 - ⏰ **Bologna vs Torino** — YAKLAŞAN · `16:00` | İtalya Serie A <https://fixbettv84.com/channel.html?id=ss2>
@@ -23,15 +26,12 @@
 - ⏰ **Esenler Erokspor vs Karagümrük** — YAKLAŞAN · `20:00` | Trendyol 1. Lig <https://fixbettv84.com/channel.html?id=bm2>
 - ⏰ **Batman Petrol vs Bursaspor** — YAKLAŞAN · `20:00` | Trendyol 1. Lig <https://fixbettv84.com/channel.html?id=trtspor>
 - ⏰ **İstanbul Başakşehir vs Gençlerbirliği** — YAKLAŞAN · `20:00` | Trendyol Süper Lig <https://fixbettv84.com/channel.html?id=b2>
-
-## ✅ BİTTİ
-
-- ✅ **Venezia vs Lazio** — MS · `21:45` | İtalya Serie A <https://fixbettv84.com/channel.html?id=ss2>
-- ✅ **Angers vs Troyes** — MS · `21:45` | Fransa Ligue 1 <https://fixbettv84.com/channel.html?id=b5>
-- ✅ **Lyon vs Rennes** — MS · `21:45` | Fransa Ligue 1 <https://fixbettv84.com/channel.html?id=b3>
-- ✅ **Toulouse vs Le Havre** — MS · `21:45` | Fransa Ligue 1 <https://fixbettv84.com/channel.html?id=b4>
-- ✅ **Sevilla vs Barcelona** — MS · `22:00` | İspanya La Liga <https://fixbettv84.com/channel.html?id=ss>
-- ✅ **Sporting Lisbon vs Arouca** — MS · `22:30` | Portekiz Liga NOS <https://fixbettv84.com/channel.html?id=b2>
+- ⏰ **Venezia vs Lazio** — YAKLAŞAN · `21:45` | İtalya Serie A <https://fixbettv84.com/channel.html?id=ss2>
+- ⏰ **Angers vs Troyes** — YAKLAŞAN · `21:45` | Fransa Ligue 1 <https://fixbettv84.com/channel.html?id=b5>
+- ⏰ **Lyon vs Rennes** — YAKLAŞAN · `21:45` | Fransa Ligue 1 <https://fixbettv84.com/channel.html?id=b3>
+- ⏰ **Toulouse vs Le Havre** — YAKLAŞAN · `21:45` | Fransa Ligue 1 <https://fixbettv84.com/channel.html?id=b4>
+- ⏰ **Sevilla vs Barcelona** — YAKLAŞAN · `22:00` | İspanya La Liga <https://fixbettv84.com/channel.html?id=ss>
+- ⏰ **Sporting Lisbon vs Arouca** — YAKLAŞAN · `22:30` | Portekiz Liga NOS <https://fixbettv84.com/channel.html?id=b2>
 
 ## ⭐ GÜNÜN MAÇI
 
@@ -41,7 +41,7 @@
 ## 🏆 Lig Bazlı
 
 ### Arjantin Primera Division
-- ⏰ Racing Club vs CA Sarmiento — 03:15
+- 🔴 Racing Club vs CA Sarmiento — 03:15
 
 ### Fransa Ligue 1
 - ⏰ Angers vs Troyes — 21:45
