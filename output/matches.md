@@ -1,20 +1,18 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-09-19 16:31  
-> **Toplam maç:** 23  |  **Canlı:** 2  |  **Yaklaşan:** 10
+> **Güncellenme:** 2026-09-19 18:45  
+> **Toplam maç:** 23  |  **Canlı:** 4  |  **Yaklaşan:** 6
 
 ## 🔴 CANLI
 
-- 🔴 **Roma vs Inter** — CANLI · `19:00` | İtalya Serie A <https://fixbettv84.com/channel.html?id=ss2>
-- 🔴 **Nottingham Forest vs Coventry** — CANLI · `19:30` | İngiltere Premier Lig <https://fixbettv84.com/channel.html?id=b3>
+- 🔴 **Trabzonspor 4 - 0 Galatasaray** — CANLI · `20:00` | Trendyol Süper Lig ★ **Günün Maçı** <https://fixbettv84.com/channel.html?id=zirve>
+- 🔴 **Esenler Erokspor vs Karagümrük** — CANLI · `20:00` | Trendyol 1. Lig <https://fixbettv84.com/channel.html?id=bm2>
+- 🔴 **Batman Petrol 1 - 1 Bursaspor** — CANLI · `20:00` | Trendyol 1. Lig <https://fixbettv84.com/channel.html?id=trtspor>
+- 🔴 **İstanbul Başakşehir 4 - 0 Gençlerbirliği** — CANLI · `20:00` | Trendyol Süper Lig <https://fixbettv84.com/channel.html?id=b2>
 
 ## ⏰ YAKLAŞAN
 
-- ⏰ **Trabzonspor vs Galatasaray** — YAKLAŞAN · `20:00` | Trendyol Süper Lig ★ **Günün Maçı** <https://fixbettv84.com/channel.html?id=zirve>
-- ⏰ **Esenler Erokspor vs Karagümrük** — YAKLAŞAN · `20:00` | Trendyol 1. Lig <https://fixbettv84.com/channel.html?id=bm2>
-- ⏰ **Batman Petrol vs Bursaspor** — YAKLAŞAN · `20:00` | Trendyol 1. Lig <https://fixbettv84.com/channel.html?id=trtspor>
-- ⏰ **İstanbul Başakşehir vs Gençlerbirliği** — YAKLAŞAN · `20:00` | Trendyol Süper Lig <https://fixbettv84.com/channel.html?id=b2>
 - ⏰ **Venezia vs Lazio** — YAKLAŞAN · `21:45` | İtalya Serie A <https://fixbettv84.com/channel.html?id=ss2>
 - ⏰ **Angers vs Troyes** — YAKLAŞAN · `21:45` | Fransa Ligue 1 <https://fixbettv84.com/channel.html?id=b5>
 - ⏰ **Lyon vs Rennes** — YAKLAŞAN · `21:45` | Fransa Ligue 1 <https://fixbettv84.com/channel.html?id=b3>
@@ -35,10 +33,12 @@
 - ✅ **Newcastle vs Hull City** — MS · `17:00` | İngiltere Premier Lig <https://fixbettv84.com/channel.html?id=b4>
 - ✅ **Çorum FK 1 - 2 Alanyaspor** — MS · `17:00` | Trendyol Süper Lig <https://fixbettv84.com/channel.html?id=bm1>
 - ✅ **Kocaelispor 2 - 0 Gaziantep FK** — MS · `17:00` | Trendyol Süper Lig <https://fixbettv84.com/channel.html?id=b2>
+- ✅ **Roma vs Inter** — MS · `19:00` | İtalya Serie A <https://fixbettv84.com/channel.html?id=ss2>
+- ✅ **Nottingham Forest vs Coventry** — MS · `19:30` | İngiltere Premier Lig <https://fixbettv84.com/channel.html?id=b3>
 
 ## ⭐ GÜNÜN MAÇI
 
-- ⏰ **Trabzonspor vs Galatasaray** — YAKLAŞAN · `20:00` | Trendyol Süper Lig ★ **Günün Maçı** <https://fixbettv84.com/channel.html?id=zirve>
+- 🔴 **Trabzonspor 4 - 0 Galatasaray** — CANLI · `20:00` | Trendyol Süper Lig ★ **Günün Maçı** <https://fixbettv84.com/channel.html?id=zirve>
 
 ---
 ## 🏆 Lig Bazlı
@@ -57,21 +57,21 @@
 ### Trendyol 1. Lig
 - ⏰ Keçiörengücü vs Sivasspor — 17:00
 - ⏰ Sarıyer vs Boluspor — 17:00
-- ⏰ Esenler Erokspor vs Karagümrük — 20:00
-- ⏰ Batman Petrol vs Bursaspor — 20:00
+- 🔴 Esenler Erokspor vs Karagümrük — 20:00
+- 🔴 Batman Petrol vs Bursaspor — 20:00
 
 ### Trendyol Süper Lig
 - ⏰ Çorum FK vs Alanyaspor — 17:00
 - ⏰ Kocaelispor vs Gaziantep FK — 17:00
-- ⏰ Trabzonspor vs Galatasaray — 20:00
-- ⏰ İstanbul Başakşehir vs Gençlerbirliği — 20:00
+- 🔴 Trabzonspor vs Galatasaray — 20:00
+- 🔴 İstanbul Başakşehir vs Gençlerbirliği — 20:00
 
 ### İngiltere Premier Lig
 - ⏰ Tottenham vs Aston Villa — 14:30
 - ⏰ Brighton vs Arsenal — 17:00
 - ⏰ Everton vs Ipswich Town — 17:00
 - ⏰ Newcastle vs Hull City — 17:00
-- 🔴 Nottingham Forest vs Coventry — 19:30
+- ⏰ Nottingham Forest vs Coventry — 19:30
 
 ### İspanya La Liga
 - ⏰ Osasuna vs Rayo Vallecano — 15:00
@@ -79,7 +79,7 @@
 
 ### İtalya Serie A
 - ⏰ Bologna vs Torino — 16:00
-- 🔴 Roma vs Inter — 19:00
+- ⏰ Roma vs Inter — 19:00
 - ⏰ Venezia vs Lazio — 21:45
 
 ---
@@ -210,7 +210,7 @@
 - 🟢 **IDMAN TV** <https://andro.evrenesoglu107.click/checklist/androstreamliveidm.m3u8>
 - 🟢 **CBC SPORT** <https://andro.evrenesoglu107.click/checklist/androstreamlivecbcs.m3u8>
 
-### 📺 TARAFTARIUM24 ✅ `https://taraftarium24bedava.com`
+### 📺 TARAFTARIUM24 ✅ `https://taraftarium24bedava.tv`
 - ⚪ **BEIN SPORTS 1**
 - ⚪ **BEIN SPORTS 2**
 - ⚪ **BEIN SPORTS 3**
