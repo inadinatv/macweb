@@ -9,7 +9,7 @@
       "fixbettv84.com",
       "fixbettv19.com"
     ],
-    "last_checked": "2026-09-19T12:46:03+00:00",
+    "last_checked": "2026-09-19T13:15:41+00:00",
     "note": "OK",
     "probed": 200
   },
@@ -63,6 +63,31 @@
       "score_updated_at": "",
       "event_id": "",
       "starts_at": "2026-09-19T15:00:00+03:00"
+    },
+    {
+      "match_id": "ss2",
+      "home": "Bologna",
+      "away": "Torino",
+      "league": "İtalya Serie A",
+      "time": "16:00",
+      "sport": "Futbol",
+      "is_match_of_day": false,
+      "channel_id": "ss2",
+      "logo_home": "https://img.sporekrani.com/teams/yvJcdDez3AGTCvvt7oV2cMOiPa59Ai7yJEoNJ4fb.png",
+      "logo_away": "https://img.sporekrani.com/teams/WdK7UxzEd8bWfDStVcTk7PTgrQ8xT5qhmyAmSo1t.png",
+      "status": "live",
+      "started": true,
+      "raw_event": "16:00 | İtalya Serie A",
+      "url": "https://fixbettv84.com/channel.html?id=ss2",
+      "fetched_at": "",
+      "status_source": "schedule",
+      "raw_status": "",
+      "score_home": null,
+      "score_away": null,
+      "score_source": "",
+      "score_updated_at": "",
+      "event_id": "",
+      "starts_at": "2026-09-19T16:00:00+03:00"
     }
   ]
 }
