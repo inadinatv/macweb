@@ -1,13 +1,16 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-09-19 09:27  
-> **Toplam maç:** 23  |  **Canlı:** 0  |  **Yaklaşan:** 22
+> **Güncellenme:** 2026-09-19 12:46  
+> **Toplam maç:** 23  |  **Canlı:** 2  |  **Yaklaşan:** 20
+
+## 🔴 CANLI
+
+- 🔴 **Tottenham vs Aston Villa** — CANLI · `14:30` | İngiltere Premier Lig <https://fixbettv84.com/channel.html?id=b3>
+- 🔴 **Osasuna vs Rayo Vallecano** — CANLI · `15:00` | İspanya La Liga <https://fixbettv84.com/channel.html?id=ss>
 
 ## ⏰ YAKLAŞAN
 
-- ⏰ **Tottenham vs Aston Villa** — YAKLAŞAN · `14:30` | İngiltere Premier Lig <https://fixbettv84.com/channel.html?id=b3>
-- ⏰ **Osasuna vs Rayo Vallecano** — YAKLAŞAN · `15:00` | İspanya La Liga <https://fixbettv84.com/channel.html?id=ss>
 - ⏰ **Bologna vs Torino** — YAKLAŞAN · `16:00` | İtalya Serie A <https://fixbettv84.com/channel.html?id=ss2>
 - ⏰ **Keçiörengücü vs Sivasspor** — YAKLAŞAN · `17:00` | Trendyol 1. Lig <https://fixbettv84.com/channel.html?id=trtspor>
 - ⏰ **Sarıyer vs Boluspor** — YAKLAŞAN · `17:00` | Trendyol 1. Lig <https://fixbettv84.com/channel.html?id=bm2>
@@ -64,14 +67,14 @@
 - ⏰ İstanbul Başakşehir vs Gençlerbirliği — 20:00
 
 ### İngiltere Premier Lig
-- ⏰ Tottenham vs Aston Villa — 14:30
+- 🔴 Tottenham vs Aston Villa — 14:30
 - ⏰ Brighton vs Arsenal — 17:00
 - ⏰ Everton vs Ipswich Town — 17:00
 - ⏰ Newcastle vs Hull City — 17:00
 - ⏰ Nottingham Forest vs Coventry — 19:30
 
 ### İspanya La Liga
-- ⏰ Osasuna vs Rayo Vallecano — 15:00
+- 🔴 Osasuna vs Rayo Vallecano — 15:00
 - ⏰ Sevilla vs Barcelona — 22:00
 
 ### İtalya Serie A
@@ -135,7 +138,7 @@
 ## ⚡ EKSTRA PANELLER — m3u8 (79)
 
 ### ⚛️ ATOM SPOR ✅ `https://www.atomsportv514.top`
-- 🟢 **BEIN SPORTS 1** <https://ladyboy.taylandpattaya.cfd//beintv/tracks-v1a1/mono.m3u8>
+- 🟡 **BEIN SPORTS 1** <https://ladyboy.taylandpattaya.cfd//beintv/tracks-v1a1/mono.m3u8>
 - 🟢 **BEIN SPORTS 2** <https://ladyboy.taylandpattaya.cfd//bein2/tracks-v1a1/mono.m3u8>
 - 🟢 **BEIN SPORTS 3** <https://ladyboy.taylandpattaya.cfd//bein3/tracks-v1a1/mono.m3u8>
 - 🟢 **BEIN SPORTS 4** <https://ladyboy.taylandpattaya.cfd//bein4/tracks-v1a1/mono.m3u8>
