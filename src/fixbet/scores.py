@@ -25,7 +25,7 @@ from zoneinfo import ZoneInfo
 import requests
 
 from . import config
-from .match_state import SCORE_STATUSES, fold, normalize_status, score_pair
+from .match_state import ACTIVE_STATUSES, SCORE_STATUSES, fold, normalize_status, score_pair
 from .models import Match
 
 log = logging.getLogger(__name__)
@@ -38,7 +38,7 @@ MACKOLIK_COMP_MAP = {
     "soccer/tur.2": "2o9svokc5s7diish3ycrzk7jm",
 }
 
-OUTCOME_FIELDS = ("status", "status_source", "raw_status", "score_home", "score_away", "score_source",
+OUTCOME_FIELDS = ("status", "status_source", "raw_status", "status_clock", "score_home", "score_away", "score_source",
                   "score_updated_at", "event_id", "starts_at", "fetched_at")
 
 _BROWSER_HEADERS = {
@@ -251,6 +251,7 @@ def _mackolik_competitions(data: dict, tz: ZoneInfo) -> list[dict]:
             "status": status,
             "neutral": False,
             "raw_status": raw,
+            "clock": _mackolik_clock(entry),
             "competitionId": str(comp_id),
             # Keep original for debug
             "_raw": entry,

@@ -29,6 +29,7 @@ class Match:
     score_updated_at: str = ""
     event_id: str = ""                 # gerçek etkinlik kimliği; match_id bir KANAL kimliğidir
     starts_at: str = ""                # saat dilimli ISO başlangıcı (varsa sağlayıcıdan)
+    status_clock: str = ""             # sağlayıcının canlı süresi (ör. "63'", "İY", "Q3 8:12")
 
     def to_dict(self) -> dict:
         return asdict(self)

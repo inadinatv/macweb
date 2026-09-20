@@ -66,8 +66,10 @@ Desteklenmeyen playlist değişken URI'leri (`{$...}`) sessizce bozulmak yerine 
 
 - `status_source`: `schedule` (tahmin), `source` (asıl HTML), `espn` (ikincil kaynak).
 - `raw_status`: sağlayıcının özgün kodu; `match_state.py` sözlüğü **aynı şekilde JS'e gömülür**.
+- `status_clock`: canlı sürenin kendisi (ör. `63'`, `90+2'`, `İY`, `Q3 8:12`); yalnızca
+  canlı/devre durumlarında anlamlıdır. Karttaki CANLI rozetinde dakika olarak görünür.
 - `score_home`, `score_away`: integer veya `null`; sıfır geçerlidir, eksik skor asla sıfır yapılmaz.
-- `score_source`, `score_updated_at`: kaynağı/yaşı saklar. Canlı skor 15 dk'dan eskiyse kartta “son skor” notu vardır. Snapshot'ın saati geçti diye canlı skor final yapılmaz.
+- `score_source`, `score_updated_at`: kaynağı/yaşı saklar. Canlı skor 10 dk'dan eskiyse kartta “son skor” notu vardır. Snapshot'ın saati geçti diye canlı skor final yapılmaz.
 - `event_id`: sağlayıcının gerçek etkinlik ID'si. `match_id` / `channel_id` eski kanal oynatma işlevinde kalır.
 - `starts_at`: saat dilimli ISO başlangıcı; tarayıcının yerel dilimi maç durumunu değiştirmez. Eski JSON da Türkiye / yapılandırılmış program saat dilimiyle okunur.
 

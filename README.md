@@ -60,11 +60,17 @@ raporlar üreten gelişmiş otomasyon botu.
    - **Yedek durum hesabı:** Gerçek durum gelmediğinde başlangıç saati + spora göre yayın penceresi
      (`settings.yml → categorize.live_window_by_sport`) → 🔴 Canlı / ⏰ Yaklaşan /
      ✅ Bitti. Aynı tablo sayfaya da gömülür, yani bot ile site aynı şeyi söyler.
-     Sayaçlar ("1 sa 20 dk kaldı", "≈ 63'") 30 sn'de bir tazelenir; programın saat
+     Sayaçlar ("1 sa 20 dk kaldı", "≈ 63'") 15 sn'de bir tazelenir; programın saat
      dilimi korunur. Gerçek kaynak durumu saatten gelen tahminle ezilmez.
+   - **Kaynak gecikirse sayfa devreye girer:** Snapshot'ta "yaklaşan" görünen maçın
+     başlama saati 2+ dk geçtiyse kart, gerçek durum doğrulanana kadar **CANLI (tahmin)**
+     olarak gösterilir — "maç başladı ama sayfa bekliyor" tuzağı yaşanmaz. Canlı
+     penceresi dışındaki bayat kayıtlar ve ertelendi/iptal durumları olduğu gibi kalır.
    - **Skor:** Tamamlanan maçta MS + final skor; canlı/devrede varsa güncel skor.
-     Eksik, ertelenen, iptal veya başlamayan maçta skor yok. Canlı skor snapshot'ı
-     eskirse “son skor” notu gösterilir. Küçük skor rozeti uzun takım isimlerinde
+     Canlı kartta sağlayıcının gerçek dakikası (`63'`, `İY`, `Q3 8:12`) rozet olarak
+     görünür; skor değişince kartta kısa bir "gol!" animasyonu oynar. Eksik,
+     ertelenen, iptal veya başlamayan maçta skor yok. Canlı skor 10 dk'dan eskiyse
+     "son skor" notu gösterilir. Küçük skor rozeti uzun takım isimlerinde
      ve mobil görünümde düzeni bozmaz.
    - **Kanala tıkla → yayın player'de:** Alttaki kanal kartına (veya maç
      kartındaki ▶ İZLE'ye) tıklayınca yayın doğrudan oynatıcıda açılır ve sayfa
