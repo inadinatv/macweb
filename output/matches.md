@@ -1,16 +1,18 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-09-20 09:45  
-> **Toplam maç:** 27  |  **Canlı:** 0  |  **Yaklaşan:** 27
+> **Güncellenme:** 2026-09-20 13:17  
+> **Toplam maç:** 27  |  **Canlı:** 4  |  **Yaklaşan:** 22
+
+## 🔴 CANLI
+
+- 🔴 **Frosinone vs Como** — CANLI · `16:00` | İtalya Serie A <https://fixbettv84.com/channel.html?id=ss2>
+- 🔴 **Bournemouth vs Liverpool** — CANLI · `16:00` | İngiltere Premier Lig <https://fixbettv84.com/channel.html?id=b4>
+- 🔴 **Leeds United vs Crystal Palace** — CANLI · `16:00` | İngiltere Premier Lig <https://fixbettv84.com/channel.html?id=b5>
+- 🔴 **Manchester City vs Sunderland** — CANLI · `16:00` | İngiltere Premier Lig <https://fixbettv84.com/channel.html?id=b3>
 
 ## ⏰ YAKLAŞAN
 
-- ⏰ **Fiorentina vs Napoli** — YAKLAŞAN · `13:30` | İtalya Serie A <https://fixbettv84.com/channel.html?id=ss2>
-- ⏰ **Frosinone vs Como** — YAKLAŞAN · `16:00` | İtalya Serie A <https://fixbettv84.com/channel.html?id=ss2>
-- ⏰ **Bournemouth vs Liverpool** — YAKLAŞAN · `16:00` | İngiltere Premier Lig <https://fixbettv84.com/channel.html?id=b4>
-- ⏰ **Leeds United vs Crystal Palace** — YAKLAŞAN · `16:00` | İngiltere Premier Lig <https://fixbettv84.com/channel.html?id=b5>
-- ⏰ **Manchester City vs Sunderland** — YAKLAŞAN · `16:00` | İngiltere Premier Lig <https://fixbettv84.com/channel.html?id=b3>
 - ⏰ **Fenerbahçe vs Eyüpspor** — YAKLAŞAN · `17:00` | Trendyol Süper Lig ★ **Günün Maçı** <https://fixbettv84.com/channel.html?id=zirve>
 - ⏰ **Pendikspor vs Bodrumspor** — YAKLAŞAN · `17:00` | Trendyol 1. Lig <https://fixbettv84.com/channel.html?id=bm1>
 - ⏰ **Manisa FK vs İstanbulspor** — YAKLAŞAN · `17:00` | Trendyol 1. Lig <https://fixbettv84.com/channel.html?id=trtspor>
@@ -33,6 +35,10 @@
 - ⏰ **Marsilya vs PSG** — YAKLAŞAN · `21:45` | Fransa Ligue 1 <https://fixbettv84.com/channel.html?id=b3>
 - ⏰ **Valencia vs Real Sociedad** — YAKLAŞAN · `22:00` | İspanya La Liga <https://fixbettv84.com/channel.html?id=ss>
 - ⏰ **Porto vs Benfica** — YAKLAŞAN · `22:30` | Portekiz Liga NOS <https://fixbettv84.com/channel.html?id=b4>
+
+## ✅ BİTTİ
+
+- ✅ **Fiorentina vs Napoli** — MS · `13:30` | İtalya Serie A <https://fixbettv84.com/channel.html?id=ss2>
 
 ## ⭐ GÜNÜN MAÇI
 
@@ -72,9 +78,9 @@
 - ⏰ Shakhtar Donetsk vs LNZ Cherkasy — 18:00
 
 ### İngiltere Premier Lig
-- ⏰ Bournemouth vs Liverpool — 16:00
-- ⏰ Leeds United vs Crystal Palace — 16:00
-- ⏰ Manchester City vs Sunderland — 16:00
+- 🔴 Bournemouth vs Liverpool — 16:00
+- 🔴 Leeds United vs Crystal Palace — 16:00
+- 🔴 Manchester City vs Sunderland — 16:00
 - ⏰ Fulham vs Manchester Utd — 18:30
 
 ### İspanya Basketbol Süper Kupa
@@ -87,7 +93,7 @@
 
 ### İtalya Serie A
 - ⏰ Fiorentina vs Napoli — 13:30
-- ⏰ Frosinone vs Como — 16:00
+- 🔴 Frosinone vs Como — 16:00
 - ⏰ Juventus vs Atalanta — 19:00
 - ⏰ Milan vs Lecce — 21:45
 
