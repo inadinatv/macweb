@@ -17,7 +17,7 @@ from html import escape
 from typing import Any
 from zoneinfo import ZoneInfo
 
-from . import channels, config, extras, scraper, standings
+from . import channels, config, extras, scraper, standings, scores
 from .models import Match
 from .match_state import STATUS_LABELS, STATUS_LOOKUP, display_score, score_pair
 
@@ -107,6 +107,29 @@ def live_window(settings: dict[str, Any] | None = None) -> dict[str, int]:
     return table
 
 
+def score_sync_payload() -> dict[str, Any]:
+    """İstemci tarafı canlı skor senkronizasyonu için yapılandırma.
+
+    Sayfa, botun 5 dakikalık snapshot'ını beklemeden ESPN'in herkese açık
+    scoreboard API'sini doğrudan okuyarak skorları ~45 saniyede bir tazeler.
+    Burada yalnızca scores.yml'deki gerçek lig/takım eşleşme tablosu gömülür;
+    sayfa kendi başına hiçbir skor UYDURMAZ, sadece kaynaktan okur.
+    """
+    try:
+        cfg = scores.load_config()
+    except Exception:  # noqa: BLE001 - yapılandırma okunamazsa senkron kapalı kalır
+        return {"enabled": False, "leagues": [], "aliases": {}, "toleranceMinutes": 45}
+    leagues = [{"name": l.get("name") or "", "league": l.get("name") or "",
+                "sport": l.get("sport") or "", "path": l.get("path") or ""}
+               for l in cfg.get("leagues", []) if l.get("path")]
+    return {
+        "enabled": bool(cfg.get("enabled", False)) and bool(leagues),
+        "leagues": leagues,
+        "aliases": cfg.get("team_aliases", {}) or {},
+        "toleranceMinutes": int(cfg.get("max_start_difference_minutes", 45)),
+    }
+
+
 def matches_payload(matches: list[Match], channel_list: list[dict[str, Any]],
                     date: str) -> list[dict[str, Any]]:
     """Maçları sayfanın kullandığı sade JSON biçimine çevirir (gerçek veri)."""
@@ -138,6 +161,7 @@ def matches_payload(matches: list[Match], channel_list: list[dict[str, Any]],
             "status": m.status,
             "statusSource": m.status_source,
             "rawStatus": m.raw_status,
+            "statusClock": m.status_clock or "",
             "scoreHome": home_score,
             "scoreAway": away_score,
             "scoreSource": m.score_source,
@@ -386,6 +410,7 @@ def build_index_html(matches: list[Match], channels_data: dict[str, Any] | None 
         "{{CHANNEL_ICONS}}": _js(payload["icons"]),
         "{{CHANNEL_STATUSES}}": _js(payload["statuses"]),
         "{{LIVE_WINDOW_JSON}}": _js(live_window()),
+        "{{SCORE_SYNC_JSON}}": _js(score_sync_payload()),
         "{{MATCH_STATUS_JSON}}": _js({"aliases": STATUS_LOOKUP, "labels": STATUS_LABELS,
                                       "graceMinutes": int(config.load_settings().get("categorize", {}).get("live_grace_minutes", 0))}),
         "{{MATCH_TIMEZONE_JSON}}": _js(config.load_settings().get("bot", {}).get("timezone", "Europe/Istanbul")),

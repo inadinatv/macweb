@@ -169,7 +169,8 @@ test("günün maçları gerçek programdan geliyor", async () => {
   const text = window.document.getElementById("matchesGrid").textContent;
   for (const m of TODAY.matches) assert.ok(text.includes(m.home) && text.includes(m.away), "gerçek maç eksik: " + m.home);
   assert.ok(text.includes("⭐ Günün Maçı"), "günün maçı rozeti yok");
-  assert.equal(window.document.querySelectorAll(".match-card.is-mod").length, 1, "tek günün maçı olmalı");
+  // Kaynak aynı gün birden fazla maçı "Günün Maçı" işaretleyebilir; en az biri görünmeli.
+  assert.ok(window.document.querySelectorAll(".match-card.is-mod").length >= 1, "günün maçı rozeti kartta yok");
   assert.equal(window.document.getElementById("badgeMatches").textContent, String(TODAY.matches.length));
   dom.window.close();
 });
@@ -1073,4 +1074,75 @@ test("noscript puan tablosu da bölgeleri ve lejantı basıyor", () => {
   const teams = [...HTML.matchAll(/"team": "([^"]+)"/g)].map((m) => m[1]);
   assert.ok(teams.length >= 18, "gömülü takım adları okunamadı: " + teams.length);
   teams.forEach((t) => assert.ok(!DOUBLED.test(t), "sayfada tekrarlı takım adı kaldı: " + t));
+});
+
+/* ---------------- Canlı akış: kaynak gecikmesi + canlı skor senkronu ---------------- */
+
+test("kaynak gecikirse maç başlama saatine göre CANLI'ya yükseltilir", async () => {
+  const { window, dom } = await loadPage();
+  const cs = window.inadina.computeState;
+  const m = { time: "20:00", date: "2026-09-06", sport: "Futbol", status: "upcoming", statusSource: "mackolik", startsAt: "2026-09-06T20:00:00+03:00" };
+  // Başladıktan 20 dk sonra kaynak hâlâ "başlamadı" diyorsa sayfa CANLI varsayar
+  const st = cs(m, new Date("2026-09-06T20:20:00+03:00"));
+  assert.equal(st.status, "live");
+  assert.equal(st.estimated, true, "yükseltme tahmin olarak işaretlenmeli");
+  assert.equal(st.waitingSource, true, "kaynak gecikmesi işaretlenmeli");
+  // Canlı penceresi dışına düşen bayat kayıt (ertesi gün) yükseltilmez
+  assert.equal(cs(m, new Date("2026-09-07T23:00:00+03:00")).status, "upcoming");
+  // Gerçek kaynak durumu aynen korunur
+  assert.equal(cs({ ...m, status: "live" }, new Date("2026-09-06T20:20:00+03:00")).status, "live");
+  assert.equal(cs({ ...m, status: "postponed" }, new Date("2026-09-06T20:20:00+03:00")).status, "postponed");
+  dom.window.close();
+});
+
+test("ESPN scoreboard ayrıştırıcısı durum, skor ve dakika çıkarır", async () => {
+  const { window, dom } = await loadPage();
+  const comps = window.inadina.parseEspnScoreboard({
+    events: [{ id: "401", date: "2026-09-06T17:00:00Z", competitions: [{
+      id: "c1", date: "2026-09-06T17:00:00Z", neutralSite: false,
+      competitors: [{ homeAway: "home", score: "1", team: { displayName: "Kasimpasa" } },
+                    { homeAway: "away", score: "0", team: { displayName: "Goztepe" } }],
+      status: { displayClock: "63'", type: { name: "STATUS_IN_PROGRESS", shortDetail: "63'", state: "in" } },
+    }] }] });
+  assert.equal(comps.length, 1);
+  assert.equal(comps[0].status, "live");
+  assert.equal(comps[0].clock, "63'");
+  assert.equal(comps[0].homeScore, 1);
+  assert.equal(comps[0].awayScore, 0);
+  dom.window.close();
+});
+
+test("canlı skor senkronu kesin eşleşmeye skor, dakika ve gol animasyonu işler", async () => {
+  const row = remoteRow("b4", "NS", [null, null], { home: "Bournemouth", away: "Liverpool",
+    league: "İngiltere Premier Lig", sport: "Futbol", starts_at: "2026-09-06T20:00:00+03:00" });
+  const json = { date: "2026-09-06", matches: [row] };
+  const { window } = await loadPage({ fetchImpl: async (url) => ({ ok: true, json: async () => String(url).includes("extra_channels") ? EXTRA : json }) });
+  await window.inadina.refreshMatches();
+  const comps = [{ id: "ev1", start: new Date("2026-09-06T20:00:00+03:00"), homeName: "Bournemouth", awayName: "Liverpool",
+    homeScore: 1, awayScore: 0, status: "live", clock: "34'", neutral: false }];
+  const changes = window.inadina.applyLiveSync("soccer/eng.1", comps);
+  assert.equal(changes, 1, "eşleşen maça dokunulmalıydı");
+  window.inadina.renderMatches();
+  const card = byEvent(window, "b4");
+  assert.equal(card.dataset.status, "live");
+  assert.equal(card.querySelector('[data-score-side="home"]').textContent, "1");
+  assert.ok(card.textContent.includes("34'"), "canlı dakika rozeti yok");
+  assert.ok(card.querySelector(".match-score").classList.contains("bump"), "gol animasyonu yok");
+  // Belirsiz (çift aday) eşleşme: hiçbir veri eklenmez
+  const before = byEvent(window, "b4").querySelector('[data-score-side="home"]').textContent;
+  window.inadina.applyLiveSync("soccer/eng.1", [comps[0], { ...comps[0], id: "ev2" }]);
+  window.inadina.renderMatches();
+  assert.equal(byEvent(window, "b4").querySelector('[data-score-side="home"]').textContent, before);
+});
+
+test("canlı skor senkronu gerçek MS sonucunu canlıya çevirmez", async () => {
+  const row = remoteRow("ftx", "FT", [2, 1], { home: "Bournemouth", away: "Liverpool",
+    league: "İngiltere Premier Lig", sport: "Futbol", starts_at: "2026-09-06T20:00:00+03:00" });
+  const json = { date: "2026-09-06", matches: [row] };
+  const { window } = await loadPage({ fetchImpl: async (url) => ({ ok: true, json: async () => String(url).includes("extra_channels") ? EXTRA : json }) });
+  await window.inadina.refreshMatches();
+  const comps = [{ id: "ev1", start: new Date("2026-09-06T20:00:00+03:00"), homeName: "Bournemouth", awayName: "Liverpool",
+    homeScore: 2, awayScore: 2, status: "live", clock: "88'", neutral: false }];
+  assert.equal(window.inadina.applyLiveSync("soccer/eng.1", comps), 0, "MS maça dokunulmamalı");
+  assert.equal(byEvent(window, "ftx").dataset.status, "finished");
 });
