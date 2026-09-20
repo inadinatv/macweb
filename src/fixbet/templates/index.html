@@ -1895,7 +1895,6 @@
                     const tagClass = active ? (m._status === "halftime" ? " halftime" : "") : (m._status === "upcoming" ? " upcoming" : " finished");
                     let tagLabel = esc(matchStatusConfig.labels[m._status] || "YAKLAŞAN");
                     if (m._status === "live") tagLabel = '<span class="live-dot"></span> CANLI' + (m._clock ? minChip(m._clock) : (m._countdown ? minChip(m._countdown) : ""));
-                    if (m._status === "halftime" && m._clock) tagLabel += minChip(m._clock);
                     if (m._status === "finished" && m._estimated) tagLabel = "Bitti";
                     if (m._status === "upcoming") tagLabel = "⏰ " + esc(m.time || "--:--") + (m._countdown ? " · " + esc(m._countdown) : "");
                     const statusTitle = m._estimated
