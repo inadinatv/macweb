@@ -10,35 +10,9 @@
       "fixbettv19.com",
       "golvar549.sbs"
     ],
-    "last_checked": "2026-09-20T00:30:14+00:00",
+    "last_checked": "2026-09-20T05:07:29+00:00",
     "note": "OK",
     "probed": 200
   },
-  "live": [
-    {
-      "match_id": "smarts",
-      "home": "Racing Club",
-      "away": "CA Sarmiento",
-      "league": "Arjantin Primera Division",
-      "time": "03:15",
-      "sport": "Futbol",
-      "is_match_of_day": false,
-      "channel_id": "smarts",
-      "logo_home": "https://img.sporekrani.com/teams/YJc9y5j10U8Tz2T4BhBBogOYsO0awZTVRIWkXF9b.png",
-      "logo_away": "https://img.sporekrani.com/teams/7lteHntdQu1mwL1bURdsgSLQ8Iygwjz6gCzluFAp.png",
-      "status": "live",
-      "started": true,
-      "raw_event": "03:15 | Arjantin Primera Division",
-      "url": "https://fixbettv84.com/channel.html?id=smarts",
-      "fetched_at": "",
-      "status_source": "schedule",
-      "raw_status": "",
-      "score_home": null,
-      "score_away": null,
-      "score_source": "",
-      "score_updated_at": "",
-      "event_id": "",
-      "starts_at": "2026-09-20T03:15:00+03:00"
-    }
-  ]
+  "live": []
 }
