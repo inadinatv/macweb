@@ -1,22 +1,21 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-09-20 19:15  
-> **Toplam maç:** 16  |  **Canlı:** 4  |  **Yaklaşan:** 4
+> **Güncellenme:** 2026-09-20 19:56  
+> **Toplam maç:** 16  |  **Canlı:** 4  |  **Yaklaşan:** 3
 
 ## 🔴 CANLI
 
-- 🔴 **Joventut Badalona vs Barcelona** — CANLI · `20:00` | İspanya Basketbol Süper Kupa <https://fixbettv84.com/channel.html?id=sms2>
 - 🔴 **Milan vs Lecce** — CANLI · `21:45` | İtalya Serie A <https://fixbettv84.com/channel.html?id=ss2>
 - 🔴 **Marsilya vs PSG** — CANLI · `21:45` | Fransa Ligue 1 <https://fixbettv84.com/channel.html?id=b3>
 - 🔴 **Valencia vs Real Sociedad** — CANLI · `22:00` | İspanya La Liga <https://fixbettv84.com/channel.html?id=ss>
+- 🔴 **Porto vs Benfica** — CANLI · `22:30` | Portekiz Liga NOS <https://fixbettv84.com/channel.html?id=b4>
 
 ## ⏰ YAKLAŞAN
 
 - ⏰ **Antalyaspor vs Vanspor** — YAKLAŞAN · `20:00` | Trendyol 1. Lig <https://fixbettv84.com/channel.html?id=bm2>
 - ⏰ **Mardin 1969 vs Kayserispor** — YAKLAŞAN · `20:00` | Trendyol 1. Lig <https://fixbettv84.com/channel.html?id=trtspor>
 - ⏰ **Göztepe vs Ç.Rizespor** — YAKLAŞAN · `20:00` | Trendyol Süper Lig <https://fixbettv84.com/channel.html?id=b2>
-- ⏰ **Porto vs Benfica** — YAKLAŞAN · `22:30` | Portekiz Liga NOS <https://fixbettv84.com/channel.html?id=b4>
 
 ## ✅ BİTTİ
 
@@ -28,6 +27,7 @@
 - ✅ **Villarreal vs Levante** — MS · `19:30` | İspanya La Liga <https://fixbettv84.com/channel.html?id=ss>
 - ✅ **Amedspor vs Beşiktaş** — MS · `20:00` | Trendyol Süper Lig ★ **Günün Maçı** <https://fixbettv84.com/channel.html?id=zirve>
 - ✅ **Santa Clara vs Braga** — MS · `20:00` | Portekiz Liga NOS <https://fixbettv84.com/channel.html?id=b5>
+- ✅ **Joventut Badalona vs Barcelona** — MS · `20:00` | İspanya Basketbol Süper Kupa <https://fixbettv84.com/channel.html?id=sms2>
 
 ## ⭐ GÜNÜN MAÇI
 
@@ -42,7 +42,7 @@
 
 ### Portekiz Liga NOS
 - ⏰ Santa Clara vs Braga — 20:00
-- ⏰ Porto vs Benfica — 22:30
+- 🔴 Porto vs Benfica — 22:30
 
 ### Trendyol 1. Lig
 - ⏰ Antalyaspor vs Vanspor — 20:00
@@ -59,7 +59,7 @@
 - ⏰ Fulham vs Manchester Utd — 18:30
 
 ### İspanya Basketbol Süper Kupa
-- 🔴 Joventut Badalona vs Barcelona — 20:00
+- ⏰ Joventut Badalona vs Barcelona — 20:00
 
 ### İspanya La Liga
 - ⏰ Atletico Madrid vs Real Madrid — 17:15

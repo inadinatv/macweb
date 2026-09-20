@@ -10,13 +10,13 @@
       "fixbettv19.com",
       "golvar549.sbs"
     ],
-    "last_checked": "2026-09-20T19:15:35+00:00",
+    "last_checked": "2026-09-20T19:55:58+00:00",
     "note": "OK",
     "probed": 200
   },
   "date": "2026-09-20",
   "timezone": "Europe/Istanbul",
-  "generated_at": "2026-09-20T22:14:58+03:00",
+  "generated_at": "2026-09-20T22:55:22+03:00",
   "matches": [
     {
       "match_id": "zirve",
@@ -315,7 +315,7 @@
       "channel_id": "sms2",
       "logo_home": "https://img.sporekrani.com/teams/1lT4iKQuAdOAsaP5QB93QPDvPAGvEJwAPsi3TC93.png",
       "logo_away": "https://img.sporekrani.com/teams/gMmimeahKcq4SB7F0XluPo2EgJGWX62genaw5MDa.png",
-      "status": "live",
+      "status": "finished",
       "started": true,
       "raw_event": "20:00 | İspanya Basketbol Süper Kupa",
       "url": "https://fixbettv84.com/channel.html?id=sms2",
@@ -419,8 +419,8 @@
       "channel_id": "b4",
       "logo_home": "https://img.sporekrani.com/teams/FuhOHSTAIC2W19jf0gv1FOphCoHuAUMIvADFJy26.png",
       "logo_away": "https://img.sporekrani.com/teams/vbMUfXpHkIEJvLPbUz4UG5qwvnetsinIuUhbtiex.png",
-      "status": "upcoming",
-      "started": false,
+      "status": "live",
+      "started": true,
       "raw_event": "22:30 | Portekiz Liga NOS",
       "url": "https://fixbettv84.com/channel.html?id=b4",
       "fetched_at": "",
