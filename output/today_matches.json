@@ -10,13 +10,13 @@
       "fixbettv19.com",
       "golvar549.sbs"
     ],
-    "last_checked": "2026-09-20T21:35:13+00:00",
+    "last_checked": "2026-09-20T23:27:59+00:00",
     "note": "OK",
     "probed": 200
   },
   "date": "2026-09-21",
   "timezone": "Europe/Istanbul",
-  "generated_at": "2026-09-21T00:34:36+03:00",
+  "generated_at": "2026-09-21T02:27:23+03:00",
   "matches": [
     {
       "match_id": "smarts",
@@ -29,8 +29,8 @@
       "channel_id": "smarts",
       "logo_home": "https://img.sporekrani.com/teams/H9aYPnq90ldLKYEQufhyDYUHA9bklXFDjKZWmxB8.png",
       "logo_away": "https://img.sporekrani.com/teams/nKBU9PaqyPXvjUs3FoGQf7FH9mFEcjc9Ue40j0Y8.png",
-      "status": "upcoming",
-      "started": false,
+      "status": "live",
+      "started": true,
       "raw_event": "01:30 | Brezilya Serie A",
       "url": "https://fixbettv84.com/channel.html?id=smarts",
       "fetched_at": "",

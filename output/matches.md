@@ -1,18 +1,18 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-09-20 21:35  
-> **Toplam maç:** 1  |  **Canlı:** 0  |  **Yaklaşan:** 1
+> **Güncellenme:** 2026-09-20 23:28  
+> **Toplam maç:** 1  |  **Canlı:** 1  |  **Yaklaşan:** 0
 
-## ⏰ YAKLAŞAN
+## 🔴 CANLI
 
-- ⏰ **Atletico PR vs Bahia** — YAKLAŞAN · `01:30` | Brezilya Serie A <https://fixbettv84.com/channel.html?id=smarts>
+- 🔴 **Atletico PR vs Bahia** — CANLI · `01:30` | Brezilya Serie A <https://fixbettv84.com/channel.html?id=smarts>
 
 ---
 ## 🏆 Lig Bazlı
 
 ### Brezilya Serie A
-- ⏰ Atletico PR vs Bahia — 01:30
+- 🔴 Atletico PR vs Bahia — 01:30
 
 ---
 ## 📺 7/24 KANALLAR (31)
