@@ -1,74 +1,18 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-09-20 19:56  
-> **Toplam maç:** 16  |  **Canlı:** 4  |  **Yaklaşan:** 3
-
-## 🔴 CANLI
-
-- 🔴 **Milan vs Lecce** — CANLI · `21:45` | İtalya Serie A <https://fixbettv84.com/channel.html?id=ss2>
-- 🔴 **Marsilya vs PSG** — CANLI · `21:45` | Fransa Ligue 1 <https://fixbettv84.com/channel.html?id=b3>
-- 🔴 **Valencia vs Real Sociedad** — CANLI · `22:00` | İspanya La Liga <https://fixbettv84.com/channel.html?id=ss>
-- 🔴 **Porto vs Benfica** — CANLI · `22:30` | Portekiz Liga NOS <https://fixbettv84.com/channel.html?id=b4>
+> **Güncellenme:** 2026-09-20 21:35  
+> **Toplam maç:** 1  |  **Canlı:** 0  |  **Yaklaşan:** 1
 
 ## ⏰ YAKLAŞAN
 
-- ⏰ **Antalyaspor vs Vanspor** — YAKLAŞAN · `20:00` | Trendyol 1. Lig <https://fixbettv84.com/channel.html?id=bm2>
-- ⏰ **Mardin 1969 vs Kayserispor** — YAKLAŞAN · `20:00` | Trendyol 1. Lig <https://fixbettv84.com/channel.html?id=trtspor>
-- ⏰ **Göztepe vs Ç.Rizespor** — YAKLAŞAN · `20:00` | Trendyol Süper Lig <https://fixbettv84.com/channel.html?id=b2>
-
-## ✅ BİTTİ
-
-- ✅ **Atletico Madrid vs Real Madrid** — MS · `17:15` | İspanya La Liga <https://fixbettv84.com/channel.html?id=ss>
-- ✅ **Shakhtar Donetsk vs LNZ Cherkasy** — MS · `18:00` | Ukrayna Premier Ligi <https://fixbettv84.com/channel.html?id=t1>
-- ✅ **Nice vs Lille** — MS · `18:15` | Fransa Ligue 1 <https://fixbettv84.com/channel.html?id=b4>
-- ✅ **Fulham vs Manchester Utd** — MS · `18:30` | İngiltere Premier Lig <https://fixbettv84.com/channel.html?id=b3>
-- ✅ **Juventus vs Atalanta** — MS · `19:00` | İtalya Serie A <https://fixbettv84.com/channel.html?id=ss2>
-- ✅ **Villarreal vs Levante** — MS · `19:30` | İspanya La Liga <https://fixbettv84.com/channel.html?id=ss>
-- ✅ **Amedspor vs Beşiktaş** — MS · `20:00` | Trendyol Süper Lig ★ **Günün Maçı** <https://fixbettv84.com/channel.html?id=zirve>
-- ✅ **Santa Clara vs Braga** — MS · `20:00` | Portekiz Liga NOS <https://fixbettv84.com/channel.html?id=b5>
-- ✅ **Joventut Badalona vs Barcelona** — MS · `20:00` | İspanya Basketbol Süper Kupa <https://fixbettv84.com/channel.html?id=sms2>
-
-## ⭐ GÜNÜN MAÇI
-
-- ✅ **Amedspor vs Beşiktaş** — MS · `20:00` | Trendyol Süper Lig ★ **Günün Maçı** <https://fixbettv84.com/channel.html?id=zirve>
+- ⏰ **Atletico PR vs Bahia** — YAKLAŞAN · `01:30` | Brezilya Serie A <https://fixbettv84.com/channel.html?id=smarts>
 
 ---
 ## 🏆 Lig Bazlı
 
-### Fransa Ligue 1
-- ⏰ Nice vs Lille — 18:15
-- 🔴 Marsilya vs PSG — 21:45
-
-### Portekiz Liga NOS
-- ⏰ Santa Clara vs Braga — 20:00
-- 🔴 Porto vs Benfica — 22:30
-
-### Trendyol 1. Lig
-- ⏰ Antalyaspor vs Vanspor — 20:00
-- ⏰ Mardin 1969 vs Kayserispor — 20:00
-
-### Trendyol Süper Lig
-- ⏰ Amedspor vs Beşiktaş — 20:00
-- ⏰ Göztepe vs Ç.Rizespor — 20:00
-
-### Ukrayna Premier Ligi
-- ⏰ Shakhtar Donetsk vs LNZ Cherkasy — 18:00
-
-### İngiltere Premier Lig
-- ⏰ Fulham vs Manchester Utd — 18:30
-
-### İspanya Basketbol Süper Kupa
-- ⏰ Joventut Badalona vs Barcelona — 20:00
-
-### İspanya La Liga
-- ⏰ Atletico Madrid vs Real Madrid — 17:15
-- ⏰ Villarreal vs Levante — 19:30
-- 🔴 Valencia vs Real Sociedad — 22:00
-
-### İtalya Serie A
-- ⏰ Juventus vs Atalanta — 19:00
-- 🔴 Milan vs Lecce — 21:45
+### Brezilya Serie A
+- ⏰ Atletico PR vs Bahia — 01:30
 
 ---
 ## 📺 7/24 KANALLAR (31)
