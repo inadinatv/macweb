@@ -1,0 +1,53 @@
+name: Canlı Skor (2dk)
+
+# Maç saatlerinde anlık gol + final skoru GitHub'a yazılsın diye hafif bir iş:
+# sadece skor API'lerini çağırır, tam site taraması yapmaz.
+# İstemci sayfası ayrıca 20 sn'de bir doğrudan ESPN'den tazeler; bot buna ek olarak
+# ~2 dk'da bir output/today_matches.json + index.html yeniler.
+
+on:
+  schedule:
+    - cron: "*/2 * * * *"        # her 2 dakikada — tam maç saatlerinde gol gecikmesin
+  workflow_dispatch: {}          # manuel tetikleme
+
+concurrency:
+  group: fixbet-live-scores
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  live:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Depot kodunu al
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref || 'main' }}
+
+      - name: Python kur
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Bağımlılıkları kur
+        run: pip install -r requirements.txt
+
+      - name: Sadece skorları tazele (hızlı)
+        run: python fixbet.py live-scores
+
+      - name: Değişiklikleri gönder (varsa)
+        run: |
+          git config user.name "fixbet-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "Skor değişmedi — push yok."
+          else
+            git commit -m "[bot] canlı skor ($(date -u +%Y-%m-%dT%H:%M:%SZ))"
+            git push origin HEAD:${{ github.head_ref || 'main' }}
+            echo "Canlı skorlar güncellendi."
+          fi
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
