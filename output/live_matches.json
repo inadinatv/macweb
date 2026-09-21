@@ -10,36 +10,9 @@
       "fixbettv19.com",
       "golvar549.sbs"
     ],
-    "last_checked": "2026-09-20T23:27:59+00:00",
+    "last_checked": "2026-09-21T00:37:53+00:00",
     "note": "OK",
     "probed": 200
   },
-  "live": [
-    {
-      "match_id": "smarts",
-      "home": "Atletico PR",
-      "away": "Bahia",
-      "league": "Brezilya Serie A",
-      "time": "01:30",
-      "sport": "Futbol",
-      "is_match_of_day": false,
-      "channel_id": "smarts",
-      "logo_home": "https://img.sporekrani.com/teams/H9aYPnq90ldLKYEQufhyDYUHA9bklXFDjKZWmxB8.png",
-      "logo_away": "https://img.sporekrani.com/teams/nKBU9PaqyPXvjUs3FoGQf7FH9mFEcjc9Ue40j0Y8.png",
-      "status": "live",
-      "started": true,
-      "raw_event": "01:30 | Brezilya Serie A",
-      "url": "https://fixbettv84.com/channel.html?id=smarts",
-      "fetched_at": "",
-      "status_source": "schedule",
-      "raw_status": "",
-      "score_home": null,
-      "score_away": null,
-      "score_source": "",
-      "score_updated_at": "",
-      "event_id": "",
-      "starts_at": "2026-09-21T01:30:00+03:00",
-      "status_clock": ""
-    }
-  ]
+  "live": []
 }

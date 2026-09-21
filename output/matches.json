@@ -10,21 +10,21 @@
       "fixbettv19.com",
       "golvar549.sbs"
     ],
-    "last_checked": "2026-09-20T23:27:59+00:00",
+    "last_checked": "2026-09-21T00:37:53+00:00",
     "note": "OK",
     "probed": 200
   },
   "categories": {
     "meta": {
-      "generated_at": "2026-09-21T02:27:23+03:00",
+      "generated_at": "2026-09-21T03:37:17+03:00",
       "date": "2026-09-21",
       "total_matches": 1
     },
     "counts": {
       "total": 1,
-      "live": 1,
+      "live": 0,
       "upcoming": 0,
-      "finished": 0,
+      "finished": 1,
       "match_of_day": 0,
       "postponed": 0,
       "cancelled": 0,
@@ -35,7 +35,9 @@
     "cancelled": [],
     "suspended": [],
     "abandoned": [],
-    "live": [
+    "live": [],
+    "upcoming": [],
+    "finished": [
       {
         "match_id": "smarts",
         "home": "Atletico PR",
@@ -47,7 +49,7 @@
         "channel_id": "smarts",
         "logo_home": "https://img.sporekrani.com/teams/H9aYPnq90ldLKYEQufhyDYUHA9bklXFDjKZWmxB8.png",
         "logo_away": "https://img.sporekrani.com/teams/nKBU9PaqyPXvjUs3FoGQf7FH9mFEcjc9Ue40j0Y8.png",
-        "status": "live",
+        "status": "finished",
         "started": true,
         "raw_event": "01:30 | Brezilya Serie A",
         "url": "https://fixbettv84.com/channel.html?id=smarts",
@@ -63,8 +65,6 @@
         "status_clock": ""
       }
     ],
-    "upcoming": [],
-    "finished": [],
     "match_of_the_day": [],
     "by_league": {
       "Brezilya Serie A": [
@@ -79,7 +79,7 @@
           "channel_id": "smarts",
           "logo_home": "https://img.sporekrani.com/teams/H9aYPnq90ldLKYEQufhyDYUHA9bklXFDjKZWmxB8.png",
           "logo_away": "https://img.sporekrani.com/teams/nKBU9PaqyPXvjUs3FoGQf7FH9mFEcjc9Ue40j0Y8.png",
-          "status": "live",
+          "status": "finished",
           "started": true,
           "raw_event": "01:30 | Brezilya Serie A",
           "url": "https://fixbettv84.com/channel.html?id=smarts",
@@ -109,7 +109,7 @@
           "channel_id": "smarts",
           "logo_home": "https://img.sporekrani.com/teams/H9aYPnq90ldLKYEQufhyDYUHA9bklXFDjKZWmxB8.png",
           "logo_away": "https://img.sporekrani.com/teams/nKBU9PaqyPXvjUs3FoGQf7FH9mFEcjc9Ue40j0Y8.png",
-          "status": "live",
+          "status": "finished",
           "started": true,
           "raw_event": "01:30 | Brezilya Serie A",
           "url": "https://fixbettv84.com/channel.html?id=smarts",
@@ -139,7 +139,7 @@
       "channel_id": "smarts",
       "logo_home": "https://img.sporekrani.com/teams/H9aYPnq90ldLKYEQufhyDYUHA9bklXFDjKZWmxB8.png",
       "logo_away": "https://img.sporekrani.com/teams/nKBU9PaqyPXvjUs3FoGQf7FH9mFEcjc9Ue40j0Y8.png",
-      "status": "live",
+      "status": "finished",
       "started": true,
       "raw_event": "01:30 | Brezilya Serie A",
       "url": "https://fixbettv84.com/channel.html?id=smarts",

@@ -1,18 +1,18 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-09-20 23:28  
-> **Toplam maç:** 1  |  **Canlı:** 1  |  **Yaklaşan:** 0
+> **Güncellenme:** 2026-09-21 00:38  
+> **Toplam maç:** 1  |  **Canlı:** 0  |  **Yaklaşan:** 0
 
-## 🔴 CANLI
+## ✅ BİTTİ
 
-- 🔴 **Atletico PR vs Bahia** — CANLI · `01:30` | Brezilya Serie A <https://fixbettv84.com/channel.html?id=smarts>
+- ✅ **Atletico PR vs Bahia** — MS · `01:30` | Brezilya Serie A <https://fixbettv84.com/channel.html?id=smarts>
 
 ---
 ## 🏆 Lig Bazlı
 
 ### Brezilya Serie A
-- 🔴 Atletico PR vs Bahia — 01:30
+- ⏰ Atletico PR vs Bahia — 01:30
 
 ---
 ## 📺 7/24 KANALLAR (31)
@@ -74,7 +74,7 @@
 - 🟢 **BEIN SPORTS 2** <https://ladyboy.yedektv.cfd//bein2/tracks-v1a1/mono.m3u8>
 - 🟢 **BEIN SPORTS 3** <https://ladyboy.yedektv.cfd//bein3/tracks-v1a1/mono.m3u8>
 - 🟢 **BEIN SPORTS 4** <https://ladyboy.yedektv.cfd//bein4/tracks-v1a1/mono.m3u8>
-- 🟢 **BEIN SPORTS 5** <https://ladyboy.yedektv.cfd//bein5/tracks-v1a1/mono.m3u8>
+- 🟡 **BEIN SPORTS 5** <https://ladyboy.yedektv.cfd//bein5/tracks-v1a1/mono.m3u8>
 - 🟢 **S SPORT** <https://ladyboy.yedektv.cfd//s-sport/tracks-v1a1/mono.m3u8>
 - 🟢 **S SPORT 2** <https://ladyboy.yedektv.cfd//s-sport2/tracks-v1a1/mono.m3u8>
 - ⚪ **S SPORT PLUS** <https://tv.atomspor.workers.dev/?ID=ssport-plus>
