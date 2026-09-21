@@ -1,8 +1,8 @@
-name: Sürekli Güncelleme (5dk)
+name: Sürekli Güncelleme (3dk)
 
 on:
   schedule:
-    - cron: "*/5 * * * *"        # her 5 dakikada bir
+    - cron: "*/3 * * * *"        # her 3 dakikada bir — futbol 90dk pencere + canlı skorlar için
   workflow_dispatch: {}          # manuel tetikleme
 
 # Aynı anda tek iş çalışsın
