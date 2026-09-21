@@ -10,20 +10,20 @@
       "fixbettv19.com",
       "golvar549.sbs"
     ],
-    "last_checked": "2026-09-21T18:19:50+00:00",
+    "last_checked": "2026-09-21T21:20:41+00:00",
     "note": "OK",
     "probed": 200
   },
   "categories": {
     "meta": {
-      "generated_at": "2026-09-21T21:19:14+03:00",
-      "date": "2026-09-21",
+      "generated_at": "2026-09-22T00:20:05+03:00",
+      "date": "2026-09-22",
       "total_matches": 1
     },
     "counts": {
       "total": 1,
-      "live": 0,
-      "upcoming": 1,
+      "live": 1,
+      "upcoming": 0,
       "finished": 0,
       "match_of_day": 0,
       "postponed": 0,
@@ -35,8 +35,7 @@
     "cancelled": [],
     "suspended": [],
     "abandoned": [],
-    "live": [],
-    "upcoming": [
+    "live": [
       {
         "match_id": "trtspor2",
         "home": "Slovenya",
@@ -48,8 +47,8 @@
         "channel_id": "trtspor2",
         "logo_home": "https://img.sporekrani.com/tr_w_72,h_72,c_limit/teams/RLRco3F2egdPFk5jLfnXdKUy51oRafmdve9DOqoC.png",
         "logo_away": "https://img.sporekrani.com/tr_w_72,h_72,c_limit/teams/ZdApja4aqnArphcY8Vkkmm7f0lD5zRWv8MiySHsz.png",
-        "status": "upcoming",
-        "started": false,
+        "status": "live",
+        "started": true,
         "raw_event": "22:00 | CEV Erkekler Avrupa Şampiyonası",
         "url": "https://fixbettv84.com/channel.html?id=trtspor2",
         "fetched_at": "",
@@ -64,6 +63,7 @@
         "status_clock": ""
       }
     ],
+    "upcoming": [],
     "finished": [],
     "match_of_the_day": [],
     "by_league": {
@@ -79,8 +79,8 @@
           "channel_id": "trtspor2",
           "logo_home": "https://img.sporekrani.com/tr_w_72,h_72,c_limit/teams/RLRco3F2egdPFk5jLfnXdKUy51oRafmdve9DOqoC.png",
           "logo_away": "https://img.sporekrani.com/tr_w_72,h_72,c_limit/teams/ZdApja4aqnArphcY8Vkkmm7f0lD5zRWv8MiySHsz.png",
-          "status": "upcoming",
-          "started": false,
+          "status": "live",
+          "started": true,
           "raw_event": "22:00 | CEV Erkekler Avrupa Şampiyonası",
           "url": "https://fixbettv84.com/channel.html?id=trtspor2",
           "fetched_at": "",
@@ -109,8 +109,8 @@
           "channel_id": "trtspor2",
           "logo_home": "https://img.sporekrani.com/tr_w_72,h_72,c_limit/teams/RLRco3F2egdPFk5jLfnXdKUy51oRafmdve9DOqoC.png",
           "logo_away": "https://img.sporekrani.com/tr_w_72,h_72,c_limit/teams/ZdApja4aqnArphcY8Vkkmm7f0lD5zRWv8MiySHsz.png",
-          "status": "upcoming",
-          "started": false,
+          "status": "live",
+          "started": true,
           "raw_event": "22:00 | CEV Erkekler Avrupa Şampiyonası",
           "url": "https://fixbettv84.com/channel.html?id=trtspor2",
           "fetched_at": "",
@@ -139,8 +139,8 @@
       "channel_id": "trtspor2",
       "logo_home": "https://img.sporekrani.com/tr_w_72,h_72,c_limit/teams/RLRco3F2egdPFk5jLfnXdKUy51oRafmdve9DOqoC.png",
       "logo_away": "https://img.sporekrani.com/tr_w_72,h_72,c_limit/teams/ZdApja4aqnArphcY8Vkkmm7f0lD5zRWv8MiySHsz.png",
-      "status": "upcoming",
-      "started": false,
+      "status": "live",
+      "started": true,
       "raw_event": "22:00 | CEV Erkekler Avrupa Şampiyonası",
       "url": "https://fixbettv84.com/channel.html?id=trtspor2",
       "fetched_at": "",

@@ -10,13 +10,13 @@
       "fixbettv19.com",
       "golvar549.sbs"
     ],
-    "last_checked": "2026-09-21T18:19:50+00:00",
+    "last_checked": "2026-09-21T21:20:41+00:00",
     "note": "OK",
     "probed": 200
   },
-  "date": "2026-09-21",
+  "date": "2026-09-22",
   "timezone": "Europe/Istanbul",
-  "generated_at": "2026-09-21T21:19:14+03:00",
+  "generated_at": "2026-09-22T00:20:05+03:00",
   "matches": [
     {
       "match_id": "trtspor2",
@@ -29,8 +29,8 @@
       "channel_id": "trtspor2",
       "logo_home": "https://img.sporekrani.com/tr_w_72,h_72,c_limit/teams/RLRco3F2egdPFk5jLfnXdKUy51oRafmdve9DOqoC.png",
       "logo_away": "https://img.sporekrani.com/tr_w_72,h_72,c_limit/teams/ZdApja4aqnArphcY8Vkkmm7f0lD5zRWv8MiySHsz.png",
-      "status": "upcoming",
-      "started": false,
+      "status": "live",
+      "started": true,
       "raw_event": "22:00 | CEV Erkekler Avrupa Şampiyonası",
       "url": "https://fixbettv84.com/channel.html?id=trtspor2",
       "fetched_at": "",
