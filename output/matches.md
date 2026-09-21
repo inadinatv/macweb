@@ -1,18 +1,18 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-09-21 21:21  
-> **Toplam maç:** 1  |  **Canlı:** 1  |  **Yaklaşan:** 0
+> **Güncellenme:** 2026-09-21 22:04  
+> **Toplam maç:** 1  |  **Canlı:** 0  |  **Yaklaşan:** 0
 
-## 🔴 CANLI
+## ✅ BİTTİ
 
-- 🔴 **Slovenya vs Sırbistan** — CANLI · `22:00` | CEV Erkekler Avrupa Şampiyonası <https://fixbettv84.com/channel.html?id=trtspor2>
+- ✅ **Slovenya vs Sırbistan** — MS · `22:00` | CEV Erkekler Avrupa Şampiyonası <https://fixbettv84.com/channel.html?id=trtspor2>
 
 ---
 ## 🏆 Lig Bazlı
 
 ### CEV Erkekler Avrupa Şampiyonası
-- 🔴 Slovenya vs Sırbistan — 22:00
+- ⏰ Slovenya vs Sırbistan — 22:00
 
 ---
 ## 📺 7/24 KANALLAR (31)
