@@ -49,7 +49,7 @@ categorize:
   # hesabı da aynı tabloyu kullanır, böylece bot ile site aynı şeyi söyler.
   live_window_minutes: 120
   live_window_by_sport:
-    Futbol: 120
+    Futbol: 105
     Basketbol: 135
     Voleybol: 150
     Tenis: 180

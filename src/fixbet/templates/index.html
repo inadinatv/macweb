@@ -2052,7 +2052,7 @@
                 Object.keys(row).forEach((k) => { mapped[foldStatus(k)] = foldStatus(row[k]); });
                 if (Object.keys(mapped).length) syncAliases[path] = mapped;
             });
-            const SYNC_TTL = 45 * 1000, SYNC_MAX_PARALLEL = 3;
+            const SYNC_TTL = 20 * 1000, SYNC_MAX_PARALLEL = 3;
             const syncCache = {}, syncInflight = new Set();
             let syncFailures = 0;
 
@@ -2565,11 +2565,11 @@
                 refreshMatches(true);
                 refreshExtra(true);
                 refreshStandings(true);
-                // Yenilenebilir canlı sistem: snapshot 60 sn'de bir, canlı skor ~45 sn'de bir
-                setInterval(() => { refreshMatches(true); refreshStandings(true); }, 60 * 1000);
+                // Yenilenebilir canlı sistem: snapshot 30 sn'de bir, canlı skor ~20 sn'de bir
+                setInterval(() => { refreshMatches(true); refreshStandings(true); }, 30 * 1000);
                 setInterval(() => { refreshExtra(true); }, 5 * 60 * 1000);
                 setTimeout(liveSyncTick, 2000);
-                setInterval(liveSyncTick, 45 * 1000);
+                setInterval(liveSyncTick, 20 * 1000);
                 // Sekmeye geri dönünce hemen tazele: arka planda bekleyen sayfa bayat kalmasın
                 document.addEventListener("visibilitychange", () => {
                     if (!document.hidden) { tickClock(); refreshMatches(true); liveSyncTick(); }

@@ -117,6 +117,61 @@ def refresh_standings(now: datetime | None = None) -> dict:
         return standings.load_or_build(now)
 
 
+def live_scores_update() -> int:
+    """Hızlı canlı skor güncellemesi: sadece skorları tazeler, index'i yeniden kurar.
+
+    Maç saatlerinde ~20 sn istemci senkronuna ek olarak botun da dakikalar
+    içinde gol/biten skorunu GitHub'a yazması için kullanılır. Ağ/ek
+    tarama yapılmaz, sadece skor API'leri çağrılır.
+    """
+    import json as _json
+
+    now = _now()
+    matches = load_matches_from_output(now)
+    if not matches:
+        try:
+            raw = scraper.fetch_matches_html()
+            matches = parser.parse(raw)
+            matches = categorizer.enrich(matches)
+        except Exception as exc:  # noqa: BLE001
+            print(f"[!] Canlı skor için maç listesi alınamadı: {exc}")
+            return 1
+        if not matches:
+            print("[!] Canlı skor: maç listesi boş, atlandı.")
+            return 0
+    # Sadece skor kaynağını tazele — kategori penceresi 105 dk (Futbol) dar,
+    # gol sonrası skor anında BİTEN'e düşmesi için sınıflandırma yeniden yapılır.
+    matches = refresh_scores(matches, now)
+    matches = categorizer.classify(matches, now)
+    categorized = categorizer.categorize(matches, now)
+
+    ch_path = config.OUTPUT_DIR / "channels.json"
+    channels_data: dict = {}
+    if ch_path.exists():
+        try:
+            channels_data = _json.loads(ch_path.read_text(encoding="utf-8")).get("channels", {})
+        except Exception:
+            channels_data = {}
+
+    # Ekstra/puan tablosu ağa gitmeden son bilinen çıktıdan alınır — hızlı döner.
+    extra_data = extras.load_or_build(now)
+    standings_data = standings.load_or_build(now)
+
+    site.build_index_html(matches, channels_data, now, extra_data=extra_data, standings_data=standings_data)
+    reports.write_json_data(matches, categorized, config.load_current_site(), channels_data)
+    reports.write_markdown(categorized, config.load_current_site(), channels_data)
+    reports.write_html(categorized, config.load_current_site(), channels_data)
+    from . import publisher
+
+    try:
+        publisher.autorelease()
+    except Exception as exc:  # noqa: BLE001
+        print(f"[!] yayınlama adımı hatası: {exc}")
+    live = sum(1 for m in matches if m.status == "live")
+    print(f"[live-scores] {len(matches)} maç ({live} canlı) — skorlar tazelendi.")
+    return 0
+
+
 def load_matches_from_output(now: datetime | None = None) -> list[Match]:
     """output/today_matches.json içindeki son gerçek maç listesini Match olarak yükler.
 
@@ -208,6 +263,7 @@ def main(argv: list[str] | None = None) -> int:
     sub.add_parser("extras", help="Sadece ekstra panelleri (m3u8/panel kanalları) çözümle ve sayfayı güncelle")
     sub.add_parser("standings", help="Sadece lig puan durumunu çek ve sayfayı güncelle")
     sub.add_parser("matches", help="Maçları çek ve kategorize et")
+    sub.add_parser("live-scores", help="Sadece skorları tazele (maç saatlerinde hızlı)")
     sub.add_parser("cat", help="Özeti konsola bas")
     web_parser = sub.add_parser("web", help="Sayfa + isteğe bağlı HLS proxy hizmeti (HTTPS reverse proxy arkasında)")
     web_parser.add_argument("--host", default="0.0.0.0")
@@ -283,6 +339,8 @@ def main(argv: list[str] | None = None) -> int:
         reports.write_json_data(matches, categorized, config.load_current_site(), channels_data)
         _print_summary({"categorized": categorized, "site": config.load_current_site()})
         return 0
+    if args.cmd == "live-scores":
+        return live_scores_update()
     if args.cmd == "cat":
         now = _now()
         raw = scraper.fetch_matches_html()
