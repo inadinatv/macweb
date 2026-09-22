@@ -14,9 +14,9 @@
     "note": "OK",
     "probed": 200
   },
-  "date": "2026-09-22",
+  "date": "2026-09-23",
   "timezone": "Europe/Istanbul",
-  "generated_at": "2026-09-22T23:37:09+03:00",
+  "generated_at": "2026-09-23T00:42:11+03:00",
   "matches": [
     {
       "match_id": "trtspor2",
@@ -29,8 +29,8 @@
       "channel_id": "trtspor2",
       "logo_home": "https://img.sporekrani.com/teams/PGpIi4a5PfJBTEBqMIlqMDlJ8uEocR9IEm3nnDsS.png",
       "logo_away": "https://img.sporekrani.com/teams/THVEkpAz6sC75uePfdbcoZXZ7JQG5a41tejQEFUS.png",
-      "status": "finished",
-      "started": true,
+      "status": "upcoming",
+      "started": false,
       "raw_event": "16:00 | CEV Erkekler Avrupa Şampiyonası",
       "url": "https://fixbettv84.com/channel.html?id=trtspor2",
       "fetched_at": "",
@@ -41,7 +41,7 @@
       "score_source": "",
       "score_updated_at": "",
       "event_id": "",
-      "starts_at": "2026-09-22T16:00:00+03:00",
+      "starts_at": "2026-09-23T16:00:00+03:00",
       "status_clock": ""
     },
     {
@@ -55,8 +55,8 @@
       "channel_id": "trtspor",
       "logo_home": "https://img.sporekrani.com/teams/iHA5ctCowOiHSLg237tlf8tVf4cCR5vi8ifbPF9A.png",
       "logo_away": "https://img.sporekrani.com/teams/wZP72Xweh4SNrjXOf3hoSFrAMRq99PmVMbSNZFby.png",
-      "status": "finished",
-      "started": true,
+      "status": "upcoming",
+      "started": false,
       "raw_event": "19:00 | CEV Erkekler Avrupa Şampiyonası",
       "url": "https://fixbettv84.com/channel.html?id=trtspor",
       "fetched_at": "",
@@ -67,7 +67,7 @@
       "score_source": "",
       "score_updated_at": "",
       "event_id": "",
-      "starts_at": "2026-09-22T19:00:00+03:00",
+      "starts_at": "2026-09-23T19:00:00+03:00",
       "status_clock": ""
     },
     {
@@ -81,8 +81,8 @@
       "channel_id": "trt1",
       "logo_home": "https://img.sporekrani.com/teams/6fad4a16-b5bd-4727-8443-ddac90b0d13c.png",
       "logo_away": "https://img.sporekrani.com/teams/ATPU6MJ3X6MzjgMpm80O8O25sU6yBMmWetDKdzAH.png",
-      "status": "finished",
-      "started": true,
+      "status": "upcoming",
+      "started": false,
       "raw_event": "20:00 | Cumhurbaşkanlığı Kupası",
       "url": "https://fixbettv84.com/channel.html?id=trt1",
       "fetched_at": "",
@@ -93,7 +93,7 @@
       "score_source": "",
       "score_updated_at": "",
       "event_id": "",
-      "starts_at": "2026-09-22T20:00:00+03:00",
+      "starts_at": "2026-09-23T20:00:00+03:00",
       "status_clock": ""
     }
   ]
