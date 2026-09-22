@@ -1,12 +1,15 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-09-22 10:17  
-> **Toplam maç:** 3  |  **Canlı:** 0  |  **Yaklaşan:** 3
+> **Güncellenme:** 2026-09-22 13:46  
+> **Toplam maç:** 3  |  **Canlı:** 1  |  **Yaklaşan:** 2
+
+## 🔴 CANLI
+
+- 🔴 **Fransa vs Romanya** — CANLI · `16:00` | CEV Erkekler Avrupa Şampiyonası <https://fixbettv84.com/channel.html?id=trtspor2>
 
 ## ⏰ YAKLAŞAN
 
-- ⏰ **Fransa vs Romanya** — YAKLAŞAN · `16:00` | CEV Erkekler Avrupa Şampiyonası <https://fixbettv84.com/channel.html?id=trtspor2>
 - ⏰ **Polonya vs Almanya** — YAKLAŞAN · `19:00` | CEV Erkekler Avrupa Şampiyonası <https://fixbettv84.com/channel.html?id=trtspor>
 - ⏰ **Fenerbahçe Tarfin vs Beşiktaş** — YAKLAŞAN · `20:00` | Cumhurbaşkanlığı Kupası <https://fixbettv84.com/channel.html?id=trt1>
 
@@ -14,7 +17,7 @@
 ## 🏆 Lig Bazlı
 
 ### CEV Erkekler Avrupa Şampiyonası
-- ⏰ Fransa vs Romanya — 16:00
+- 🔴 Fransa vs Romanya — 16:00
 - ⏰ Polonya vs Almanya — 19:00
 
 ### Cumhurbaşkanlığı Kupası
@@ -148,7 +151,7 @@
 - 🟢 **IDMAN TV** <https://andro.evrenesoglu121.click/checklist/androstreamliveidm.m3u8>
 - 🟢 **CBC SPORT** <https://andro.evrenesoglu121.click/checklist/androstreamlivecbcs.m3u8>
 
-### 📺 TARAFTARIUM24 ✅ `https://taraftarium24bedava.tv`
+### 📺 TARAFTARIUM24 ✅ `https://taraftarium60.com`
 - ⚪ **BEIN SPORTS 1**
 - ⚪ **BEIN SPORTS 2**
 - ⚪ **BEIN SPORTS 3**
