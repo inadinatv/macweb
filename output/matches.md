@@ -1,17 +1,14 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-09-22 18:48  
-> **Toplam maç:** 3  |  **Canlı:** 1  |  **Yaklaşan:** 0
-
-## 🔴 CANLI
-
-- 🔴 **Fenerbahçe Tarfin vs Beşiktaş** — CANLI · `20:00` | Cumhurbaşkanlığı Kupası <https://fixbettv84.com/channel.html?id=trt1>
+> **Güncellenme:** 2026-09-22 20:38  
+> **Toplam maç:** 3  |  **Canlı:** 0  |  **Yaklaşan:** 0
 
 ## ✅ BİTTİ
 
 - ✅ **Fransa vs Romanya** — MS · `16:00` | CEV Erkekler Avrupa Şampiyonası <https://fixbettv84.com/channel.html?id=trtspor2>
 - ✅ **Polonya vs Almanya** — MS · `19:00` | CEV Erkekler Avrupa Şampiyonası <https://fixbettv84.com/channel.html?id=trtspor>
+- ✅ **Fenerbahçe Tarfin vs Beşiktaş** — MS · `20:00` | Cumhurbaşkanlığı Kupası <https://fixbettv84.com/channel.html?id=trt1>
 
 ---
 ## 🏆 Lig Bazlı
@@ -21,7 +18,7 @@
 - ⏰ Polonya vs Almanya — 19:00
 
 ### Cumhurbaşkanlığı Kupası
-- 🔴 Fenerbahçe Tarfin vs Beşiktaş — 20:00
+- ⏰ Fenerbahçe Tarfin vs Beşiktaş — 20:00
 
 ---
 ## 📺 7/24 KANALLAR (31)

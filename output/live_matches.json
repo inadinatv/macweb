@@ -10,36 +10,9 @@
       "fixbettv19.com",
       "golvar559.sbs"
     ],
-    "last_checked": "2026-09-22T18:48:12+00:00",
+    "last_checked": "2026-09-22T20:37:46+00:00",
     "note": "OK",
     "probed": 200
   },
-  "live": [
-    {
-      "match_id": "trt1",
-      "home": "Fenerbahçe Tarfin",
-      "away": "Beşiktaş",
-      "league": "Cumhurbaşkanlığı Kupası",
-      "time": "20:00",
-      "sport": "Basketbol",
-      "is_match_of_day": false,
-      "channel_id": "trt1",
-      "logo_home": "https://img.sporekrani.com/teams/6fad4a16-b5bd-4727-8443-ddac90b0d13c.png",
-      "logo_away": "https://img.sporekrani.com/teams/ATPU6MJ3X6MzjgMpm80O8O25sU6yBMmWetDKdzAH.png",
-      "status": "live",
-      "started": true,
-      "raw_event": "20:00 | Cumhurbaşkanlığı Kupası",
-      "url": "https://fixbettv84.com/channel.html?id=trt1",
-      "fetched_at": "",
-      "status_source": "schedule",
-      "raw_status": "",
-      "score_home": null,
-      "score_away": null,
-      "score_source": "",
-      "score_updated_at": "",
-      "event_id": "",
-      "starts_at": "2026-09-22T20:00:00+03:00",
-      "status_clock": ""
-    }
-  ]
+  "live": []
 }
