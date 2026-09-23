@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-23T13:56:43+00:00",
+  "updated_at": "2026-09-23T19:30:50+00:00",
   "source": "output/extra_channels.json",
   "total": 79,
   "panels": [
@@ -7,7 +7,7 @@
       "id": "atom",
       "name": "ATOM SPOR",
       "icon": "⚛️",
-      "base_url": "https://atomsportv514.top",
+      "base_url": "https://www.atomsportv515.top",
       "player_base": "",
       "stream_base": "",
       "healthy": true,
@@ -23,8 +23,8 @@
           "panel_name": "ATOM SPOR",
           "icon": "⚽",
           "logo": "https://hizliresim.com/gm50rk9b",
-          "page_url": "https://atomsportv514.top/matches?id=bein-sports-1",
-          "referrer": "https://atomsportv514.top/",
+          "page_url": "https://www.atomsportv515.top/matches?id=bein-sports-1",
+          "referrer": "https://www.atomsportv515.top/",
           "sources": [
             {
               "type": "hls",
@@ -40,14 +40,14 @@
             },
             {
               "type": "embed",
-              "url": "https://atomsportv514.top/matches?id=bein-sports-1",
+              "url": "https://www.atomsportv515.top/matches?id=bein-sports-1",
               "label": "Site"
             }
           ],
           "resolved": true,
           "fresh": true,
           "resolved_url": "https://ladyboy.yedektv.cfd//beintv/tracks-v1a1/mono.m3u8",
-          "resolved_at": "2026-09-23T13:56:43+00:00",
+          "resolved_at": "2026-09-23T19:30:50+00:00",
           "stale": false
         },
         {
@@ -58,8 +58,8 @@
           "panel_name": "ATOM SPOR",
           "icon": "⚽",
           "logo": "https://hizliresim.com/gm50rk9b",
-          "page_url": "https://atomsportv514.top/matches?id=bein-sports-2",
-          "referrer": "https://atomsportv514.top/",
+          "page_url": "https://www.atomsportv515.top/matches?id=bein-sports-2",
+          "referrer": "https://www.atomsportv515.top/",
           "sources": [
             {
               "type": "hls",
@@ -75,14 +75,14 @@
             },
             {
               "type": "embed",
-              "url": "https://atomsportv514.top/matches?id=bein-sports-2",
+              "url": "https://www.atomsportv515.top/matches?id=bein-sports-2",
               "label": "Site"
             }
           ],
           "resolved": true,
           "fresh": true,
           "resolved_url": "https://ladyboy.yedektv.cfd//bein2/tracks-v1a1/mono.m3u8",
-          "resolved_at": "2026-09-23T13:56:43+00:00",
+          "resolved_at": "2026-09-23T19:30:50+00:00",
           "stale": false
         },
         {
@@ -93,8 +93,8 @@
           "panel_name": "ATOM SPOR",
           "icon": "⚽",
           "logo": "https://hizliresim.com/gm50rk9b",
-          "page_url": "https://atomsportv514.top/matches?id=bein-sports-3",
-          "referrer": "https://atomsportv514.top/",
+          "page_url": "https://www.atomsportv515.top/matches?id=bein-sports-3",
+          "referrer": "https://www.atomsportv515.top/",
           "sources": [
             {
               "type": "hls",
@@ -110,14 +110,14 @@
             },
             {
               "type": "embed",
-              "url": "https://atomsportv514.top/matches?id=bein-sports-3",
+              "url": "https://www.atomsportv515.top/matches?id=bein-sports-3",
               "label": "Site"
             }
           ],
           "resolved": true,
           "fresh": true,
           "resolved_url": "https://ladyboy.yedektv.cfd//bein3/tracks-v1a1/mono.m3u8",
-          "resolved_at": "2026-09-23T13:56:43+00:00",
+          "resolved_at": "2026-09-23T19:30:50+00:00",
           "stale": false
         },
         {
@@ -128,8 +128,8 @@
           "panel_name": "ATOM SPOR",
           "icon": "⚽",
           "logo": "https://hizliresim.com/gm50rk9b",
-          "page_url": "https://atomsportv514.top/matches?id=bein-sports-4",
-          "referrer": "https://atomsportv514.top/",
+          "page_url": "https://www.atomsportv515.top/matches?id=bein-sports-4",
+          "referrer": "https://www.atomsportv515.top/",
           "sources": [
             {
               "type": "hls",
@@ -145,14 +145,14 @@
             },
             {
               "type": "embed",
-              "url": "https://atomsportv514.top/matches?id=bein-sports-4",
+              "url": "https://www.atomsportv515.top/matches?id=bein-sports-4",
               "label": "Site"
             }
           ],
           "resolved": true,
           "fresh": true,
           "resolved_url": "https://ladyboy.yedektv.cfd//bein4/tracks-v1a1/mono.m3u8",
-          "resolved_at": "2026-09-23T13:56:43+00:00",
+          "resolved_at": "2026-09-23T19:30:50+00:00",
           "stale": false
         },
         {
@@ -163,8 +163,8 @@
           "panel_name": "ATOM SPOR",
           "icon": "⚽",
           "logo": "https://hizliresim.com/gm50rk9b",
-          "page_url": "https://atomsportv514.top/matches?id=bein-sports-5",
-          "referrer": "https://atomsportv514.top/",
+          "page_url": "https://www.atomsportv515.top/matches?id=bein-sports-5",
+          "referrer": "https://www.atomsportv515.top/",
           "sources": [
             {
               "type": "hls",
@@ -174,7 +174,7 @@
             },
             {
               "type": "embed",
-              "url": "https://atomsportv514.top/matches?id=bein-sports-5",
+              "url": "https://www.atomsportv515.top/matches?id=bein-sports-5",
               "label": "Site"
             }
           ],
@@ -192,8 +192,8 @@
           "panel_name": "ATOM SPOR",
           "icon": "🏀",
           "logo": "https://hizliresim.com/gm50rk9b",
-          "page_url": "https://atomsportv514.top/matches?id=s-sport",
-          "referrer": "https://atomsportv514.top/",
+          "page_url": "https://www.atomsportv515.top/matches?id=s-sport",
+          "referrer": "https://www.atomsportv515.top/",
           "sources": [
             {
               "type": "hls",
@@ -209,14 +209,14 @@
             },
             {
               "type": "embed",
-              "url": "https://atomsportv514.top/matches?id=s-sport",
+              "url": "https://www.atomsportv515.top/matches?id=s-sport",
               "label": "Site"
             }
           ],
           "resolved": true,
           "fresh": true,
           "resolved_url": "https://ladyboy.yedektv.cfd//s-sport/tracks-v1a1/mono.m3u8",
-          "resolved_at": "2026-09-23T13:56:43+00:00",
+          "resolved_at": "2026-09-23T19:30:50+00:00",
           "stale": false
         },
         {
@@ -227,8 +227,8 @@
           "panel_name": "ATOM SPOR",
           "icon": "🏀",
           "logo": "https://hizliresim.com/gm50rk9b",
-          "page_url": "https://atomsportv514.top/matches?id=s-sport-2",
-          "referrer": "https://atomsportv514.top/",
+          "page_url": "https://www.atomsportv515.top/matches?id=s-sport-2",
+          "referrer": "https://www.atomsportv515.top/",
           "sources": [
             {
               "type": "hls",
@@ -244,14 +244,14 @@
             },
             {
               "type": "embed",
-              "url": "https://atomsportv514.top/matches?id=s-sport-2",
+              "url": "https://www.atomsportv515.top/matches?id=s-sport-2",
               "label": "Site"
             }
           ],
           "resolved": true,
           "fresh": true,
           "resolved_url": "https://ladyboy.yedektv.cfd//s-sport2/tracks-v1a1/mono.m3u8",
-          "resolved_at": "2026-09-23T13:56:43+00:00",
+          "resolved_at": "2026-09-23T19:30:50+00:00",
           "stale": false
         },
         {
@@ -262,8 +262,8 @@
           "panel_name": "ATOM SPOR",
           "icon": "🏀",
           "logo": "https://hizliresim.com/gm50rk9b",
-          "page_url": "https://atomsportv514.top/matches?id=ssport-plus",
-          "referrer": "https://atomsportv514.top/",
+          "page_url": "https://www.atomsportv515.top/matches?id=ssport-plus",
+          "referrer": "https://www.atomsportv515.top/",
           "sources": [
             {
               "type": "hls",
@@ -273,7 +273,7 @@
             },
             {
               "type": "embed",
-              "url": "https://atomsportv514.top/matches?id=ssport-plus",
+              "url": "https://www.atomsportv515.top/matches?id=ssport-plus",
               "label": "Site"
             }
           ],
@@ -291,8 +291,8 @@
           "panel_name": "ATOM SPOR",
           "icon": "📺",
           "logo": "https://hizliresim.com/gm50rk9b",
-          "page_url": "https://atomsportv514.top/matches?id=tivibu-spor-1",
-          "referrer": "https://atomsportv514.top/",
+          "page_url": "https://www.atomsportv515.top/matches?id=tivibu-spor-1",
+          "referrer": "https://www.atomsportv515.top/",
           "sources": [
             {
               "type": "hls",
@@ -302,7 +302,7 @@
             },
             {
               "type": "embed",
-              "url": "https://atomsportv514.top/matches?id=tivibu-spor-1",
+              "url": "https://www.atomsportv515.top/matches?id=tivibu-spor-1",
               "label": "Site"
             }
           ],
@@ -320,8 +320,8 @@
           "panel_name": "ATOM SPOR",
           "icon": "📺",
           "logo": "https://hizliresim.com/gm50rk9b",
-          "page_url": "https://atomsportv514.top/matches?id=tivibu-spor-2",
-          "referrer": "https://atomsportv514.top/",
+          "page_url": "https://www.atomsportv515.top/matches?id=tivibu-spor-2",
+          "referrer": "https://www.atomsportv515.top/",
           "sources": [
             {
               "type": "hls",
@@ -331,7 +331,7 @@
             },
             {
               "type": "embed",
-              "url": "https://atomsportv514.top/matches?id=tivibu-spor-2",
+              "url": "https://www.atomsportv515.top/matches?id=tivibu-spor-2",
               "label": "Site"
             }
           ],
@@ -349,8 +349,8 @@
           "panel_name": "ATOM SPOR",
           "icon": "📺",
           "logo": "https://hizliresim.com/gm50rk9b",
-          "page_url": "https://atomsportv514.top/matches?id=tivibu-spor-3",
-          "referrer": "https://atomsportv514.top/",
+          "page_url": "https://www.atomsportv515.top/matches?id=tivibu-spor-3",
+          "referrer": "https://www.atomsportv515.top/",
           "sources": [
             {
               "type": "hls",
@@ -360,7 +360,7 @@
             },
             {
               "type": "embed",
-              "url": "https://atomsportv514.top/matches?id=tivibu-spor-3",
+              "url": "https://www.atomsportv515.top/matches?id=tivibu-spor-3",
               "label": "Site"
             }
           ],
@@ -378,8 +378,8 @@
           "panel_name": "ATOM SPOR",
           "icon": "🏟️",
           "logo": "https://hizliresim.com/gm50rk9b",
-          "page_url": "https://atomsportv514.top/matches?id=smart-spor",
-          "referrer": "https://atomsportv514.top/",
+          "page_url": "https://www.atomsportv515.top/matches?id=smart-spor",
+          "referrer": "https://www.atomsportv515.top/",
           "sources": [
             {
               "type": "hls",
@@ -389,7 +389,7 @@
             },
             {
               "type": "embed",
-              "url": "https://atomsportv514.top/matches?id=smart-spor",
+              "url": "https://www.atomsportv515.top/matches?id=smart-spor",
               "label": "Site"
             }
           ],
@@ -407,8 +407,8 @@
           "panel_name": "ATOM SPOR",
           "icon": "📺",
           "logo": "https://hizliresim.com/gm50rk9b",
-          "page_url": "https://atomsportv514.top/matches?id=tv-8-5",
-          "referrer": "https://atomsportv514.top/",
+          "page_url": "https://www.atomsportv515.top/matches?id=tv-8-5",
+          "referrer": "https://www.atomsportv515.top/",
           "sources": [
             {
               "type": "hls",
@@ -418,7 +418,7 @@
             },
             {
               "type": "embed",
-              "url": "https://atomsportv514.top/matches?id=tv-8-5",
+              "url": "https://www.atomsportv515.top/matches?id=tv-8-5",
               "label": "Site"
             }
           ],
@@ -436,8 +436,8 @@
           "panel_name": "ATOM SPOR",
           "icon": "⚽",
           "logo": "https://hizliresim.com/gm50rk9b",
-          "page_url": "https://atomsportv514.top/matches?id=bein-sports-haber",
-          "referrer": "https://atomsportv514.top/",
+          "page_url": "https://www.atomsportv515.top/matches?id=bein-sports-haber",
+          "referrer": "https://www.atomsportv515.top/",
           "sources": [
             {
               "type": "hls",
@@ -447,7 +447,7 @@
             },
             {
               "type": "embed",
-              "url": "https://atomsportv514.top/matches?id=bein-sports-haber",
+              "url": "https://www.atomsportv515.top/matches?id=bein-sports-haber",
               "label": "Site"
             }
           ],
@@ -497,7 +497,7 @@
           "resolved": true,
           "fresh": true,
           "resolved_url": "https://dga1op10s1u3lea.82250d06d39d38.click/live/selcukbeinsports1/playlist.m3u8",
-          "resolved_at": "2026-09-23T13:56:43+00:00",
+          "resolved_at": "2026-09-23T19:30:50+00:00",
           "stale": false
         },
         {
@@ -526,7 +526,7 @@
           "resolved": true,
           "fresh": true,
           "resolved_url": "https://dga1op10s1u3lea.82250d06d39d38.click/live/selcukbeinsports2/playlist.m3u8",
-          "resolved_at": "2026-09-23T13:56:43+00:00",
+          "resolved_at": "2026-09-23T19:30:50+00:00",
           "stale": false
         },
         {
@@ -555,7 +555,7 @@
           "resolved": true,
           "fresh": true,
           "resolved_url": "https://dga1op10s1u3lea.82250d06d39d38.click/live/selcukbeinsports3/playlist.m3u8",
-          "resolved_at": "2026-09-23T13:56:43+00:00",
+          "resolved_at": "2026-09-23T19:30:50+00:00",
           "stale": false
         },
         {
@@ -584,7 +584,7 @@
           "resolved": true,
           "fresh": true,
           "resolved_url": "https://dga1op10s1u3lea.82250d06d39d38.click/live/selcukbeinsports4/playlist.m3u8",
-          "resolved_at": "2026-09-23T13:56:43+00:00",
+          "resolved_at": "2026-09-23T19:30:50+00:00",
           "stale": false
         },
         {
@@ -613,7 +613,7 @@
           "resolved": true,
           "fresh": true,
           "resolved_url": "https://dga1op10s1u3lea.82250d06d39d38.click/live/selcukbeinsports5/playlist.m3u8",
-          "resolved_at": "2026-09-23T13:56:43+00:00",
+          "resolved_at": "2026-09-23T19:30:50+00:00",
           "stale": false
         },
         {
@@ -642,7 +642,7 @@
           "resolved": true,
           "fresh": true,
           "resolved_url": "https://dga1op10s1u3lea.82250d06d39d38.click/live/selcukbeinsportsmax1/playlist.m3u8",
-          "resolved_at": "2026-09-23T13:56:43+00:00",
+          "resolved_at": "2026-09-23T19:30:50+00:00",
           "stale": false
         },
         {
@@ -671,7 +671,7 @@
           "resolved": true,
           "fresh": true,
           "resolved_url": "https://dga1op10s1u3lea.82250d06d39d38.click/live/selcukbeinsportsmax2/playlist.m3u8",
-          "resolved_at": "2026-09-23T13:56:43+00:00",
+          "resolved_at": "2026-09-23T19:30:50+00:00",
           "stale": false
         },
         {
@@ -700,7 +700,7 @@
           "resolved": true,
           "fresh": true,
           "resolved_url": "https://dga1op10s1u3lea.82250d06d39d38.click/live/selcukssport/playlist.m3u8",
-          "resolved_at": "2026-09-23T13:56:43+00:00",
+          "resolved_at": "2026-09-23T19:30:50+00:00",
           "stale": false
         },
         {
@@ -729,7 +729,7 @@
           "resolved": true,
           "fresh": true,
           "resolved_url": "https://dga1op10s1u3lea.82250d06d39d38.click/live/selcukssport2/playlist.m3u8",
-          "resolved_at": "2026-09-23T13:56:43+00:00",
+          "resolved_at": "2026-09-23T19:30:50+00:00",
           "stale": false
         },
         {
@@ -758,7 +758,7 @@
           "resolved": true,
           "fresh": true,
           "resolved_url": "https://dga1op10s1u3lea.82250d06d39d38.click/live/selcuktivibuspor1/playlist.m3u8",
-          "resolved_at": "2026-09-23T13:56:43+00:00",
+          "resolved_at": "2026-09-23T19:30:50+00:00",
           "stale": false
         },
         {
@@ -787,7 +787,7 @@
           "resolved": true,
           "fresh": true,
           "resolved_url": "https://dga1op10s1u3lea.82250d06d39d38.click/live/selcuktivibuspor2/playlist.m3u8",
-          "resolved_at": "2026-09-23T13:56:43+00:00",
+          "resolved_at": "2026-09-23T19:30:50+00:00",
           "stale": false
         },
         {
@@ -816,7 +816,7 @@
           "resolved": true,
           "fresh": true,
           "resolved_url": "https://dga1op10s1u3lea.82250d06d39d38.click/live/selcuksmartspor/playlist.m3u8",
-          "resolved_at": "2026-09-23T13:56:43+00:00",
+          "resolved_at": "2026-09-23T19:30:50+00:00",
           "stale": false
         },
         {
@@ -845,7 +845,7 @@
           "resolved": true,
           "fresh": true,
           "resolved_url": "https://dga1op10s1u3lea.82250d06d39d38.click/live/selcukaspor/playlist.m3u8",
-          "resolved_at": "2026-09-23T13:56:43+00:00",
+          "resolved_at": "2026-09-23T19:30:50+00:00",
           "stale": false
         },
         {
@@ -874,7 +874,7 @@
           "resolved": true,
           "fresh": true,
           "resolved_url": "https://dga1op10s1u3lea.82250d06d39d38.click/live/selcukeurosport1/playlist.m3u8",
-          "resolved_at": "2026-09-23T13:56:43+00:00",
+          "resolved_at": "2026-09-23T19:30:50+00:00",
           "stale": false
         }
       ]
@@ -917,7 +917,7 @@
           "resolved": true,
           "fresh": true,
           "resolved_url": "https://andro.evrenesoglu121.click/checklist/androstreamlivebs1.m3u8",
-          "resolved_at": "2026-09-23T13:56:43+00:00",
+          "resolved_at": "2026-09-23T19:30:50+00:00",
           "stale": false
         },
         {
@@ -946,7 +946,7 @@
           "resolved": true,
           "fresh": true,
           "resolved_url": "https://andro.evrenesoglu121.click/checklist/androstreamlivebs2.m3u8",
-          "resolved_at": "2026-09-23T13:56:43+00:00",
+          "resolved_at": "2026-09-23T19:30:50+00:00",
           "stale": false
         },
         {
@@ -975,7 +975,7 @@
           "resolved": true,
           "fresh": true,
           "resolved_url": "https://andro.evrenesoglu121.click/checklist/androstreamlivebs3.m3u8",
-          "resolved_at": "2026-09-23T13:56:43+00:00",
+          "resolved_at": "2026-09-23T19:30:50+00:00",
           "stale": false
         },
         {
@@ -1004,7 +1004,7 @@
           "resolved": true,
           "fresh": true,
           "resolved_url": "https://andro.evrenesoglu121.click/checklist/androstreamlivebs4.m3u8",
-          "resolved_at": "2026-09-23T13:56:43+00:00",
+          "resolved_at": "2026-09-23T19:30:50+00:00",
           "stale": false
         },
         {
@@ -1033,7 +1033,7 @@
           "resolved": true,
           "fresh": true,
           "resolved_url": "https://andro.evrenesoglu121.click/checklist/androstreamlivebs5.m3u8",
-          "resolved_at": "2026-09-23T13:56:43+00:00",
+          "resolved_at": "2026-09-23T19:30:50+00:00",
           "stale": false
         },
         {
@@ -1062,7 +1062,7 @@
           "resolved": true,
           "fresh": true,
           "resolved_url": "https://andro.evrenesoglu121.click/checklist/androstreamlivebsm1.m3u8",
-          "resolved_at": "2026-09-23T13:56:43+00:00",
+          "resolved_at": "2026-09-23T19:30:50+00:00",
           "stale": false
         },
         {
@@ -1091,7 +1091,7 @@
           "resolved": true,
           "fresh": true,
           "resolved_url": "https://andro.evrenesoglu121.click/checklist/androstreamlivebsm2.m3u8",
-          "resolved_at": "2026-09-23T13:56:43+00:00",
+          "resolved_at": "2026-09-23T19:30:50+00:00",
           "stale": false
         },
         {
@@ -1120,7 +1120,7 @@
           "resolved": true,
           "fresh": true,
           "resolved_url": "https://andro.evrenesoglu121.click/checklist/androstreamlivess1.m3u8",
-          "resolved_at": "2026-09-23T13:56:43+00:00",
+          "resolved_at": "2026-09-23T19:30:50+00:00",
           "stale": false
         },
         {
@@ -1149,7 +1149,7 @@
           "resolved": true,
           "fresh": true,
           "resolved_url": "https://andro.evrenesoglu121.click/checklist/androstreamlivess2.m3u8",
-          "resolved_at": "2026-09-23T13:56:43+00:00",
+          "resolved_at": "2026-09-23T19:30:50+00:00",
           "stale": false
         },
         {
@@ -1178,7 +1178,7 @@
           "resolved": true,
           "fresh": true,
           "resolved_url": "https://andro.evrenesoglu121.click/checklist/androstreamlivessplus1.m3u8",
-          "resolved_at": "2026-09-23T13:56:43+00:00",
+          "resolved_at": "2026-09-23T19:30:50+00:00",
           "stale": false
         },
         {
@@ -1207,7 +1207,7 @@
           "resolved": true,
           "fresh": true,
           "resolved_url": "https://andro.evrenesoglu121.click/checklist/androstreamlivets.m3u8",
-          "resolved_at": "2026-09-23T13:56:43+00:00",
+          "resolved_at": "2026-09-23T19:30:50+00:00",
           "stale": false
         },
         {
@@ -1236,7 +1236,7 @@
           "resolved": true,
           "fresh": true,
           "resolved_url": "https://andro.evrenesoglu121.click/checklist/androstreamlivets1.m3u8",
-          "resolved_at": "2026-09-23T13:56:43+00:00",
+          "resolved_at": "2026-09-23T19:30:50+00:00",
           "stale": false
         },
         {
@@ -1265,7 +1265,7 @@
           "resolved": true,
           "fresh": true,
           "resolved_url": "https://andro.evrenesoglu121.click/checklist/androstreamlivets2.m3u8",
-          "resolved_at": "2026-09-23T13:56:43+00:00",
+          "resolved_at": "2026-09-23T19:30:50+00:00",
           "stale": false
         },
         {
@@ -1294,7 +1294,7 @@
           "resolved": true,
           "fresh": true,
           "resolved_url": "https://andro.evrenesoglu121.click/checklist/androstreamlivets3.m3u8",
-          "resolved_at": "2026-09-23T13:56:43+00:00",
+          "resolved_at": "2026-09-23T19:30:50+00:00",
           "stale": false
         },
         {
@@ -1323,7 +1323,7 @@
           "resolved": true,
           "fresh": true,
           "resolved_url": "https://andro.evrenesoglu121.click/checklist/androstreamlivets4.m3u8",
-          "resolved_at": "2026-09-23T13:56:43+00:00",
+          "resolved_at": "2026-09-23T19:30:50+00:00",
           "stale": false
         },
         {
@@ -1352,7 +1352,7 @@
           "resolved": true,
           "fresh": true,
           "resolved_url": "https://andro.evrenesoglu121.click/checklist/androstreamlivesm1.m3u8",
-          "resolved_at": "2026-09-23T13:56:43+00:00",
+          "resolved_at": "2026-09-23T19:30:50+00:00",
           "stale": false
         },
         {
@@ -1381,7 +1381,7 @@
           "resolved": true,
           "fresh": true,
           "resolved_url": "https://andro.evrenesoglu121.click/checklist/androstreamlivesm2.m3u8",
-          "resolved_at": "2026-09-23T13:56:43+00:00",
+          "resolved_at": "2026-09-23T19:30:50+00:00",
           "stale": false
         },
         {
@@ -1410,7 +1410,7 @@
           "resolved": true,
           "fresh": true,
           "resolved_url": "https://andro.evrenesoglu121.click/checklist/androstreamlivees1.m3u8",
-          "resolved_at": "2026-09-23T13:56:43+00:00",
+          "resolved_at": "2026-09-23T19:30:50+00:00",
           "stale": false
         },
         {
@@ -1439,7 +1439,7 @@
           "resolved": true,
           "fresh": true,
           "resolved_url": "https://andro.evrenesoglu121.click/checklist/androstreamlivees2.m3u8",
-          "resolved_at": "2026-09-23T13:56:43+00:00",
+          "resolved_at": "2026-09-23T19:30:50+00:00",
           "stale": false
         },
         {
@@ -1468,7 +1468,7 @@
           "resolved": true,
           "fresh": true,
           "resolved_url": "https://andro.evrenesoglu121.click/checklist/androstreamlivetb.m3u8",
-          "resolved_at": "2026-09-23T13:56:43+00:00",
+          "resolved_at": "2026-09-23T19:30:50+00:00",
           "stale": false
         },
         {
@@ -1497,7 +1497,7 @@
           "resolved": true,
           "fresh": true,
           "resolved_url": "https://andro.evrenesoglu121.click/checklist/androstreamlivetb1.m3u8",
-          "resolved_at": "2026-09-23T13:56:43+00:00",
+          "resolved_at": "2026-09-23T19:30:50+00:00",
           "stale": false
         },
         {
@@ -1526,7 +1526,7 @@
           "resolved": true,
           "fresh": true,
           "resolved_url": "https://andro.evrenesoglu121.click/checklist/androstreamlivetb2.m3u8",
-          "resolved_at": "2026-09-23T13:56:43+00:00",
+          "resolved_at": "2026-09-23T19:30:50+00:00",
           "stale": false
         },
         {
@@ -1555,7 +1555,7 @@
           "resolved": true,
           "fresh": true,
           "resolved_url": "https://andro.evrenesoglu121.click/checklist/androstreamlivetb3.m3u8",
-          "resolved_at": "2026-09-23T13:56:43+00:00",
+          "resolved_at": "2026-09-23T19:30:50+00:00",
           "stale": false
         },
         {
@@ -1584,7 +1584,7 @@
           "resolved": true,
           "fresh": true,
           "resolved_url": "https://andro.evrenesoglu121.click/checklist/androstreamlivetb4.m3u8",
-          "resolved_at": "2026-09-23T13:56:43+00:00",
+          "resolved_at": "2026-09-23T19:30:50+00:00",
           "stale": false
         },
         {
@@ -1613,7 +1613,7 @@
           "resolved": true,
           "fresh": true,
           "resolved_url": "https://andro.evrenesoglu121.click/checklist/androstreamlivetb5.m3u8",
-          "resolved_at": "2026-09-23T13:56:43+00:00",
+          "resolved_at": "2026-09-23T19:30:50+00:00",
           "stale": false
         },
         {
@@ -1642,7 +1642,7 @@
           "resolved": true,
           "fresh": true,
           "resolved_url": "https://andro.evrenesoglu121.click/checklist/androstreamlivetb6.m3u8",
-          "resolved_at": "2026-09-23T13:56:43+00:00",
+          "resolved_at": "2026-09-23T19:30:50+00:00",
           "stale": false
         },
         {
@@ -1671,7 +1671,7 @@
           "resolved": true,
           "fresh": true,
           "resolved_url": "https://andro.evrenesoglu121.click/checklist/androstreamlivetb7.m3u8",
-          "resolved_at": "2026-09-23T13:56:43+00:00",
+          "resolved_at": "2026-09-23T19:30:50+00:00",
           "stale": false
         },
         {
@@ -1700,7 +1700,7 @@
           "resolved": true,
           "fresh": true,
           "resolved_url": "https://andro.evrenesoglu121.click/checklist/androstreamlivetb8.m3u8",
-          "resolved_at": "2026-09-23T13:56:43+00:00",
+          "resolved_at": "2026-09-23T19:30:50+00:00",
           "stale": false
         },
         {
@@ -1729,7 +1729,7 @@
           "resolved": true,
           "fresh": true,
           "resolved_url": "https://andro.evrenesoglu121.click/checklist/androstreamliveexn.m3u8",
-          "resolved_at": "2026-09-23T13:56:43+00:00",
+          "resolved_at": "2026-09-23T19:30:50+00:00",
           "stale": false
         },
         {
@@ -1758,7 +1758,7 @@
           "resolved": true,
           "fresh": true,
           "resolved_url": "https://andro.evrenesoglu121.click/checklist/androstreamliveexn1.m3u8",
-          "resolved_at": "2026-09-23T13:56:43+00:00",
+          "resolved_at": "2026-09-23T19:30:50+00:00",
           "stale": false
         },
         {
@@ -1787,7 +1787,7 @@
           "resolved": true,
           "fresh": true,
           "resolved_url": "https://andro.evrenesoglu121.click/checklist/androstreamliveexn2.m3u8",
-          "resolved_at": "2026-09-23T13:56:43+00:00",
+          "resolved_at": "2026-09-23T19:30:50+00:00",
           "stale": false
         },
         {
@@ -1816,7 +1816,7 @@
           "resolved": true,
           "fresh": true,
           "resolved_url": "https://andro.evrenesoglu121.click/checklist/androstreamliveexn3.m3u8",
-          "resolved_at": "2026-09-23T13:56:43+00:00",
+          "resolved_at": "2026-09-23T19:30:50+00:00",
           "stale": false
         },
         {
@@ -1845,7 +1845,7 @@
           "resolved": true,
           "fresh": true,
           "resolved_url": "https://andro.evrenesoglu121.click/checklist/androstreamliveexn4.m3u8",
-          "resolved_at": "2026-09-23T13:56:43+00:00",
+          "resolved_at": "2026-09-23T19:30:50+00:00",
           "stale": false
         },
         {
@@ -1874,7 +1874,7 @@
           "resolved": true,
           "fresh": true,
           "resolved_url": "https://andro.evrenesoglu121.click/checklist/androstreamliveexn5.m3u8",
-          "resolved_at": "2026-09-23T13:56:43+00:00",
+          "resolved_at": "2026-09-23T19:30:50+00:00",
           "stale": false
         },
         {
@@ -1903,7 +1903,7 @@
           "resolved": true,
           "fresh": true,
           "resolved_url": "https://andro.evrenesoglu121.click/checklist/androstreamliveexn6.m3u8",
-          "resolved_at": "2026-09-23T13:56:43+00:00",
+          "resolved_at": "2026-09-23T19:30:50+00:00",
           "stale": false
         },
         {
@@ -1932,7 +1932,7 @@
           "resolved": true,
           "fresh": true,
           "resolved_url": "https://andro.evrenesoglu121.click/checklist/androstreamliveexn7.m3u8",
-          "resolved_at": "2026-09-23T13:56:43+00:00",
+          "resolved_at": "2026-09-23T19:30:50+00:00",
           "stale": false
         },
         {
@@ -1961,7 +1961,7 @@
           "resolved": true,
           "fresh": true,
           "resolved_url": "https://andro.evrenesoglu121.click/checklist/androstreamliveexn8.m3u8",
-          "resolved_at": "2026-09-23T13:56:43+00:00",
+          "resolved_at": "2026-09-23T19:30:50+00:00",
           "stale": false
         },
         {
@@ -1990,7 +1990,7 @@
           "resolved": true,
           "fresh": true,
           "resolved_url": "https://andro.evrenesoglu121.click/checklist/androstreamliveidm.m3u8",
-          "resolved_at": "2026-09-23T13:56:43+00:00",
+          "resolved_at": "2026-09-23T19:30:50+00:00",
           "stale": false
         },
         {
@@ -2019,7 +2019,7 @@
           "resolved": true,
           "fresh": true,
           "resolved_url": "https://andro.evrenesoglu121.click/checklist/androstreamlivecbcs.m3u8",
-          "resolved_at": "2026-09-23T13:56:43+00:00",
+          "resolved_at": "2026-09-23T19:30:50+00:00",
           "stale": false
         }
       ]
