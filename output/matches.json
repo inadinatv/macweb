@@ -7,23 +7,22 @@
     "state": "OK",
     "active_mirrors": [
       "fixbettv84.com",
-      "fixbettv19.com",
-      "golvar559.sbs"
+      "fixbettv19.com"
     ],
-    "last_checked": "2026-09-23T07:57:02+00:00",
+    "last_checked": "2026-09-23T13:29:11+00:00",
     "note": "OK",
     "probed": 200
   },
   "categories": {
     "meta": {
-      "generated_at": "2026-09-23T11:30:23+03:00",
+      "generated_at": "2026-09-23T16:28:34+03:00",
       "date": "2026-09-23",
       "total_matches": 4
     },
     "counts": {
       "total": 4,
-      "live": 0,
-      "upcoming": 4,
+      "live": 1,
+      "upcoming": 3,
       "finished": 0,
       "match_of_day": 0,
       "postponed": 0,
@@ -35,8 +34,7 @@
     "cancelled": [],
     "suspended": [],
     "abandoned": [],
-    "live": [],
-    "upcoming": [
+    "live": [
       {
         "match_id": "bm1",
         "home": "M.Andreeva",
@@ -48,8 +46,8 @@
         "channel_id": "bm1",
         "logo_home": "https://static.flashscore.com/res/image/data/ncDnFmzB-xE40e4KN.png",
         "logo_away": "https://static.flashscore.com/res/image/data/h0HDCwxS-WG9mEH7U.png",
-        "status": "upcoming",
-        "started": false,
+        "status": "live",
+        "started": true,
         "raw_event": "13:30 | WTA Singapur",
         "url": "https://fixbettv84.com/channel.html?id=bm1",
         "fetched_at": "",
@@ -62,7 +60,9 @@
         "event_id": "",
         "starts_at": "2026-09-23T13:30:00+03:00",
         "status_clock": ""
-      },
+      }
+    ],
+    "upcoming": [
       {
         "match_id": "trtspor",
         "home": "Belçika",
@@ -239,8 +239,8 @@
           "channel_id": "bm1",
           "logo_home": "https://static.flashscore.com/res/image/data/ncDnFmzB-xE40e4KN.png",
           "logo_away": "https://static.flashscore.com/res/image/data/h0HDCwxS-WG9mEH7U.png",
-          "status": "upcoming",
-          "started": false,
+          "status": "live",
+          "started": true,
           "raw_event": "13:30 | WTA Singapur",
           "url": "https://fixbettv84.com/channel.html?id=bm1",
           "fetched_at": "",
@@ -297,8 +297,8 @@
           "channel_id": "bm1",
           "logo_home": "https://static.flashscore.com/res/image/data/ncDnFmzB-xE40e4KN.png",
           "logo_away": "https://static.flashscore.com/res/image/data/h0HDCwxS-WG9mEH7U.png",
-          "status": "upcoming",
-          "started": false,
+          "status": "live",
+          "started": true,
           "raw_event": "13:30 | WTA Singapur",
           "url": "https://fixbettv84.com/channel.html?id=bm1",
           "fetched_at": "",
@@ -381,8 +381,8 @@
       "channel_id": "bm1",
       "logo_home": "https://static.flashscore.com/res/image/data/ncDnFmzB-xE40e4KN.png",
       "logo_away": "https://static.flashscore.com/res/image/data/h0HDCwxS-WG9mEH7U.png",
-      "status": "upcoming",
-      "started": false,
+      "status": "live",
+      "started": true,
       "raw_event": "13:30 | WTA Singapur",
       "url": "https://fixbettv84.com/channel.html?id=bm1",
       "fetched_at": "",

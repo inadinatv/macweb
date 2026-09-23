@@ -1,12 +1,15 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-09-23 08:30  
-> **Toplam maç:** 4  |  **Canlı:** 0  |  **Yaklaşan:** 4
+> **Güncellenme:** 2026-09-23 13:29  
+> **Toplam maç:** 4  |  **Canlı:** 1  |  **Yaklaşan:** 3
+
+## 🔴 CANLI
+
+- 🔴 **M.Andreeva vs A.Sasnovich** — CANLI · `13:30` | WTA Singapur <https://fixbettv84.com/channel.html?id=bm1>
 
 ## ⏰ YAKLAŞAN
 
-- ⏰ **M.Andreeva vs A.Sasnovich** — YAKLAŞAN · `13:30` | WTA Singapur <https://fixbettv84.com/channel.html?id=bm1>
 - ⏰ **Belçika vs Slovenya** — YAKLAŞAN · `17:00` | CEV Erkekler Avrupa Şampiyonası <https://fixbettv84.com/channel.html?id=trtspor>
 - ⏰ **Barcelona vs Paris FC** — YAKLAŞAN · `22:00` | UEFA Kadınlar Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=trtspor>
 - ⏰ **İtalya vs Finlandiya** — YAKLAŞAN · `22:05` | CEV Erkekler Avrupa Şampiyonası <https://fixbettv84.com/channel.html?id=trtspor2>
@@ -22,7 +25,7 @@
 - ⏰ Barcelona vs Paris FC — 22:00
 
 ### WTA Singapur
-- ⏰ M.Andreeva vs A.Sasnovich — 13:30
+- 🔴 M.Andreeva vs A.Sasnovich — 13:30
 
 ---
 ## 📺 7/24 KANALLAR (31)

@@ -7,16 +7,15 @@
     "state": "OK",
     "active_mirrors": [
       "fixbettv84.com",
-      "fixbettv19.com",
-      "golvar559.sbs"
+      "fixbettv19.com"
     ],
-    "last_checked": "2026-09-23T07:57:02+00:00",
+    "last_checked": "2026-09-23T13:29:11+00:00",
     "note": "OK",
     "probed": 200
   },
   "date": "2026-09-23",
   "timezone": "Europe/Istanbul",
-  "generated_at": "2026-09-23T11:30:23+03:00",
+  "generated_at": "2026-09-23T16:28:34+03:00",
   "matches": [
     {
       "match_id": "bm1",
@@ -29,8 +28,8 @@
       "channel_id": "bm1",
       "logo_home": "https://static.flashscore.com/res/image/data/ncDnFmzB-xE40e4KN.png",
       "logo_away": "https://static.flashscore.com/res/image/data/h0HDCwxS-WG9mEH7U.png",
-      "status": "upcoming",
-      "started": false,
+      "status": "live",
+      "started": true,
       "raw_event": "13:30 | WTA Singapur",
       "url": "https://fixbettv84.com/channel.html?id=bm1",
       "fetched_at": "",
