@@ -1,7 +1,7 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-09-23 19:31  
+> **Güncellenme:** 2026-09-23 20:48  
 > **Toplam maç:** 4  |  **Canlı:** 1  |  **Yaklaşan:** 1
 
 ## 🔴 CANLI
@@ -87,7 +87,7 @@
 
 ### ⚛️ ATOM SPOR ✅ `https://www.atomsportv515.top`
 - 🟢 **BEIN SPORTS 1** <https://ladyboy.yedektv.cfd//beintv/tracks-v1a1/mono.m3u8>
-- 🟢 **BEIN SPORTS 2** <https://ladyboy.yedektv.cfd//bein2/tracks-v1a1/mono.m3u8>
+- 🟡 **BEIN SPORTS 2** <https://ladyboy.yedektv.cfd//bein2/tracks-v1a1/mono.m3u8>
 - 🟢 **BEIN SPORTS 3** <https://ladyboy.yedektv.cfd//bein3/tracks-v1a1/mono.m3u8>
 - 🟢 **BEIN SPORTS 4** <https://ladyboy.yedektv.cfd//bein4/tracks-v1a1/mono.m3u8>
 - ⚪ **BEIN SPORTS 5** <https://tv.atomspor.workers.dev/?ID=bein-sports-5>
@@ -117,7 +117,7 @@
 - 🟢 **A SPOR** <https://dga1op10s1u3lea.82250d06d39d38.click/live/selcukaspor/playlist.m3u8>
 - 🟢 **EUROSPORT 1** <https://dga1op10s1u3lea.82250d06d39d38.click/live/selcukeurosport1/playlist.m3u8>
 
-### 🌴 MAHSUN SPORTS ✅ `https://mahsunsports80.xyz`
+### 🌴 MAHSUN SPORTS ✅ `https://mahsunsports.xyz`
 - 🟢 **BEIN SPORTS 1** <https://andro.evrenesoglu121.click/checklist/androstreamlivebs1.m3u8>
 - 🟢 **BEIN SPORTS 2** <https://andro.evrenesoglu121.click/checklist/androstreamlivebs2.m3u8>
 - 🟢 **BEIN SPORTS 3** <https://andro.evrenesoglu121.click/checklist/androstreamlivebs3.m3u8>
