@@ -6,7 +6,7 @@ on:
   workflow_dispatch: {}
 
 concurrency:
-  group: fixbet-cron
+  group: fixbet-writer
   cancel-in-progress: false
 
 permissions:
@@ -15,9 +15,12 @@ permissions:
 jobs:
   daily:
     runs-on: ubuntu-latest
+    timeout-minutes: 15
     steps:
       - name: Depot kodunu al
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Python kur
         uses: actions/setup-python@v5
@@ -41,7 +44,8 @@ jobs:
             echo "Değişiklik yok."
           else
             git commit -m "[bot] günlük toplu güncelleme ($(date -u +%Y-%m-%dT%H:%M:%SZ))"
-            git push origin HEAD:${GITHUB_HEAD_REF:-main}
+            git pull --rebase origin "${GITHUB_HEAD_REF:-main}"
+            git push origin "HEAD:${GITHUB_HEAD_REF:-main}"
           fi
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -1,17 +1,19 @@
-name: Canlı Skor (2dk)
+name: Canlı Skor (5dk)
 
 # Maç saatlerinde anlık gol + final skoru GitHub'a yazılsın diye hafif bir iş:
 # sadece skor API'lerini çağırır, tam site taraması yapmaz.
-# İstemci sayfası ayrıca 20 sn'de bir doğrudan ESPN'den tazeler; bot buna ek olarak
-# ~2 dk'da bir output/today_matches.json + index.html yeniler.
+# İstemci sayfası ayrıca 10 sn'de bir doğrudan ESPN'den tazeler; bot buna ek olarak
+# GitHub'ın desteklediği en kısa aralıkla kalıcı snapshot'ı yeniler.
 
 on:
   schedule:
-    - cron: "*/2 * * * *"        # her 2 dakikada — tam maç saatlerinde gol gecikmesin
+    - cron: "*/5 * * * *"        # GitHub Actions resmi minimum zamanlama aralığı
   workflow_dispatch: {}          # manuel tetikleme
 
 concurrency:
-  group: fixbet-live-scores
+  # Bütün çıktı-yazan workflow'lar aynı kilidi kullanır; push yarışları canlı
+  # snapshot'ı non-fast-forward hatasıyla durdurmasın.
+  group: fixbet-writer
   cancel-in-progress: false
 
 permissions:
@@ -20,11 +22,13 @@ permissions:
 jobs:
   live:
     runs-on: ubuntu-latest
+    timeout-minutes: 5
     steps:
       - name: Depot kodunu al
         uses: actions/checkout@v4
         with:
           ref: ${{ github.head_ref || 'main' }}
+          fetch-depth: 0
 
       - name: Python kur
         uses: actions/setup-python@v5
@@ -46,7 +50,8 @@ jobs:
             echo "Skor değişmedi — push yok."
           else
             git commit -m "[bot] canlı skor ($(date -u +%Y-%m-%dT%H:%M:%SZ))"
-            git push origin HEAD:${{ github.head_ref || 'main' }}
+            git pull --rebase origin "${{ github.head_ref || 'main' }}"
+            git push origin "HEAD:${{ github.head_ref || 'main' }}"
             echo "Canlı skorlar güncellendi."
           fi
         env:

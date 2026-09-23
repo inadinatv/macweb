@@ -7,9 +7,9 @@ Kaynaklar:
   * Belirsizlikte skor eklenmez; kaynak kesilirse son bilinen skor korunur.
 
 Yenilenebilir canlı sistem:
-  * Her pipeline çalışmasında taze skor çekilir (GitHub Actions her 5 dk).
-  * İstemci sayfada ek olarak her 60 sn'de bir output/today_matches.json tazeler.
-  * Mackolik + ESPN paralel/ardışık denenir; biri kesilirse diğeri devreye girer.
+  * Her pipeline çalışmasında taze skor çekilir.
+  * İstemci sayfada ayrıca yayımlanmış snapshot'ı ve canlı scoreboard'u tazeler.
+  * Mackolik + ESPN birlikte okunur; yedek seçimi lig değil maç bazında yapılır.
 """
 from __future__ import annotations
 
@@ -17,20 +17,28 @@ import concurrent.futures as cf
 import logging
 import re
 import time
-from datetime import datetime, time as dtime, timedelta, timezone
-from typing import Callable
+from collections.abc import Callable
+from datetime import datetime, timedelta, timezone
+from datetime import time as dtime
 from urllib.parse import urlencode
 from zoneinfo import ZoneInfo
 
 import requests
 
 from . import config
-from .match_state import ACTIVE_STATUSES, SCORE_STATUSES, fold, normalize_status, score_pair
+from .match_state import (
+    ACTIVE_STATUSES,
+    SCORE_STATUSES,
+    fold,
+    normalize_status,
+    score_pair,
+)
 from .models import Match
 
 log = logging.getLogger(__name__)
 API_BASE = "https://site.api.espn.com/apis/site/v2/sports/"
 MACKOLIK_LIVESCORE_URL = "https://www.mackolik.com/perform/p0/ajax/components/competition/livescores/json"
+MACKOLIK_FOOTBALL_FALLBACK = "mackolik/all-football"
 
 # Mackolik competition IDs — Süper Lig odaklı; diğer ligler ESPN'e düşer.
 MACKOLIK_COMP_MAP = {
@@ -96,6 +104,51 @@ def _fetch_mackolik(date_str: str, timeout: float) -> dict:
                 continue
             raise
     raise RuntimeError(f"mackolik çekilemedi {date_str}: {last}")
+
+
+def _epoch_ms(value) -> int | None:
+    """Sağlayıcının milisaniye epoch alanını güvenli biçimde okur."""
+    try:
+        stamp = int(value)
+    except (TypeError, ValueError):
+        return None
+    return stamp if stamp > 0 else None
+
+
+def _mackolik_clock(entry: dict) -> str:
+    """Mackolik canlı futbol saatini ``63'`` / ``İY`` biçimine getirir.
+
+    ``status=minutes`` yanıtında ekranda gösterilecek dakika ayrı bir alan olarak
+    gelmez. Sağlayıcının kendi ``lastUpdated`` ve devre başlangıcı
+    ``periodStart`` damgaları kullanılır; böylece çalıştıran makinenin saati
+    skor dakikasını ileri/geri oynatmaz.
+    """
+    state = _mackolik_status(entry)
+    if state == "halftime":
+        return "İY"
+    if state != "live":
+        return ""
+
+    box = str(entry.get("statusBoxContent") or "").strip().rstrip("'")
+    if re.fullmatch(r"\d{1,3}(?:\+\d{1,2})?", box):
+        return f"{box}'"
+
+    started = _epoch_ms(entry.get("periodStart"))
+    updated = _epoch_ms(entry.get("lastUpdated"))
+    if started is None or updated is None or updated < started:
+        return ""
+    try:
+        period = int(entry.get("periodId"))
+    except (TypeError, ValueError):
+        period = 1
+
+    # Mackolik futbolunda 1=ilk yarı, 2=ikinci yarı. Uzatma dönemleri görülürse
+    # bilinen tabanlardan devam eder; bilinmeyen bir dönem yanlış dakika üretmez.
+    base = {1: 0, 2: 45, 3: 90, 4: 105}.get(period)
+    if base is None:
+        return ""
+    minute = base + int((updated - started) // 60_000) + 1
+    return f"{min(130, max(1, minute))}'"
 
 
 def espn_status(status: dict) -> str | None:
@@ -286,10 +339,16 @@ def competitions(data: dict) -> list[dict]:
             state = espn_status(status)
             if not state:
                 continue
+            typ = status.get("type") or {}
+            clock = str(status.get("displayClock") or typ.get("shortDetail") or "").strip()
+            if state == "halftime":
+                clock = "İY"
+            elif state not in ACTIVE_STATUSES:
+                clock = ""
             result.append({"id": str(comp.get("id") or event.get("id") or ""), "start": date,
                            "home": home[0], "away": away[0], "status": state,
                            "neutral": bool(comp.get("neutralSite")),
-                           "raw_status": str((status.get("type") or {}).get("name") or "")})
+                           "raw_status": str(typ.get("name") or ""), "clock": clock})
     return result
 
 
@@ -339,6 +398,8 @@ def enrich(matches: list[Match], now: datetime, previous: list[Match] | None = N
     groups: dict[str, list[Match]] = {}
     for match in matches:
         path = leagues.get((fold(match.sport), fold(match.league)), "")
+        if not path and cfg.get("mackolik_all_football", True) and fold(match.sport) == "futbol":
+            path = MACKOLIK_FOOTBALL_FALLBACK
         if path and re.fullmatch(r"[a-z-]+/[a-z0-9.\-]+", path) and match.status_source != "source":
             groups.setdefault(path, []).append(match)
 
@@ -347,8 +408,8 @@ def enrich(matches: list[Match], now: datetime, previous: list[Match] | None = N
 
     # --- Mackolik denemesi (Türk ligleri için birincil) ---
     mackolik_results: dict[str, list[dict]] = {}
-    tur_paths = [p for p in groups if p in MACKOLIK_COMP_MAP]
-    if tur_paths:
+    football_paths = [p for p in groups if p in MACKOLIK_COMP_MAP or p == MACKOLIK_FOOTBALL_FALLBACK]
+    if football_paths:
         try:
             timeout = float(cfg.get("request_timeout_seconds", 8))
             # Mackolik tarih parametresi yerel tarihe göre
@@ -359,7 +420,7 @@ def enrich(matches: list[Match], now: datetime, previous: list[Match] | None = N
             m_data = _fetch_mackolik(date_str, timeout)
             comps = _mackolik_competitions(m_data, tz)
             # Filter per path by competitionId if mapping exists, otherwise keep all and let name matching decide
-            for path in tur_paths:
+            for path in football_paths:
                 wanted_id = MACKOLIK_COMP_MAP.get(path)
                 if wanted_id:
                     filtered = [c for c in comps if c.get("competitionId") == wanted_id]
@@ -371,7 +432,7 @@ def enrich(matches: list[Match], now: datetime, previous: list[Match] | None = N
                         mackolik_results[path] = comps
                 else:
                     mackolik_results[path] = comps
-            log.info("Mackolik skor çekildi (%s maç, %s lig)", len(comps), len(tur_paths))
+            log.info("Mackolik skor çekildi (%s maç, %s lig)", len(comps), len(football_paths))
         except Exception as exc:
             log.warning("Mackolik skor kaynağı okunamadı (%s); ESPN'e düşülüyor.", type(exc).__name__)
             mackolik_results = {}
@@ -382,31 +443,33 @@ def enrich(matches: list[Match], now: datetime, previous: list[Match] | None = N
     dates = start.strftime("%Y%m%d") + "-" + end.strftime("%Y%m%d")
     fetch = fetch or _fetch
 
-    # ESPN'i sadece Mackolik'te bulunmayan veya tüm futbol dışı ligler için çağır
-    espn_paths = [p for p in groups if p not in mackolik_results or not mackolik_results[p]]
-    # If Mackolik gave results but we still want ESPN as supplementary for other states? For now, if Mackolik succeeded, we skip ESPN for those paths to avoid overriding.
-    # But we keep ESPN for non-tur paths always.
+    # ESPN her yapılandırılmış lig için okunur. Mackolik'in bir ligde herhangi bir
+    # maç döndürmüş olması, aynı ligdeki başka bir karşılaşmanın ESPN yedeğini
+    # kapatmamalıdır; sağlayıcı seçimi aşağıda maç başına yapılır.
+    espn_paths = [path for path in groups if path != MACKOLIK_FOOTBALL_FALLBACK]
     def load(path: str):
-        url = API_BASE + path + "/scoreboard?" + urlencode({"dates": dates, "limit": 1000})
-        try:
-            return path, competitions(fetch(url, float(cfg.get("request_timeout_seconds", 8))))
-        except (requests.RequestException, ValueError, TypeError, KeyError) as exc:
-            log.warning("Skor kaynağı okunamadı (%s, %s); son bilinen veri korunuyor.", path, type(exc).__name__)
-            return path, []
+        # Bazı ESPN ligleri UTC gün aralığını kabul ederken bazı turnuvalar (örn.
+        # UEFA Kadınlar Şampiyonlar Ligi) sadece tek YYYYMMDD kabul ediyor.
+        query_days = [dates]
+        local_day = now.strftime("%Y%m%d")
+        if local_day not in query_days:
+            query_days.append(local_day)
+        last: Exception | None = None
+        for query_day in query_days:
+            url = API_BASE + path + "/scoreboard?" + urlencode({"dates": query_day, "limit": 1000})
+            try:
+                return path, competitions(fetch(url, float(cfg.get("request_timeout_seconds", 8))))
+            except (requests.RequestException, ValueError, TypeError, KeyError) as exc:
+                last = exc
+        log.warning("Skor kaynağı okunamadı (%s, %s); son bilinen veri korunuyor.",
+                    path, type(last).__name__ if last else "unknown")
+        return path, []
 
     workers = max(1, min(8, int(cfg.get("max_workers", 4))))
     espn_results: dict[str, list[dict]] = {}
     if espn_paths:
         with cf.ThreadPoolExecutor(max_workers=workers) as pool:
             espn_results = dict(pool.map(load, espn_paths))
-
-    # Combine results: Mackolik öncelikli, ESPN yedek
-    results: dict[str, list[dict]] = {}
-    for path in groups:
-        if path in mackolik_results and mackolik_results[path]:
-            results[path] = mackolik_results[path]
-        else:
-            results[path] = espn_results.get(path, [])
 
     tolerance = timedelta(minutes=max(0, min(180, float(cfg.get("max_start_difference_minutes", 45)))))
     for path, group in groups.items():
@@ -439,34 +502,39 @@ def enrich(matches: list[Match], now: datetime, previous: list[Match] | None = N
             scheduled = start_time(match, now, tz)
             if not scheduled:
                 continue
-            # Mackolik ve ESPN'de tarih karşılaştırması aynı; start already UTC aware
-            candidates = [(c, orientation(c, match)) for c in results[path]
-                          if c["start"].astimezone(tz).date() == now.date()
-                          and abs(c["start"] - scheduled) <= tolerance]
-            candidates = [(c, o) for c, o in candidates if o]
-            # If multiple candidates (e.g., duplicate), pick closest time
-            if len(candidates) != 1:
+            # İki sağlayıcı da okunur. Belirsizlik bir sağlayıcıda skor üretmez;
+            # diğeri yine kesin eşleşme bulabilir. Durumlar çelişirse final veya
+            # oynanmayacak durum, gecikmiş canlı/başlamadı kaydından üstündür.
+            provider_picks: list[tuple[dict, str, str]] = []
+            providers = (("mackolik", mackolik_results.get(path, [])),
+                         ("espn", espn_results.get(path, [])))
+            for src_tag, provider_rows in providers:
+                candidates = [(c, orientation(c, match)) for c in provider_rows
+                              if c["start"].astimezone(tz).date() == now.date()
+                              and abs(c["start"] - scheduled) <= tolerance]
+                candidates = [(c, o) for c, o in candidates if o]
                 if len(candidates) > 1:
-                    # Choose closest in time
-                    candidates = sorted(candidates, key=lambda x: abs(x[0]["start"] - scheduled))
-                    # If still ambiguous within 5 min, drop
-                    if abs(candidates[0][0]["start"] - scheduled) != abs(candidates[1][0]["start"] - scheduled):
-                        candidates = [candidates[0]]
-                    else:
-                        continue
-                else:
-                    continue
-            found, side = candidates[0]
+                    candidates.sort(key=lambda x: abs(x[0]["start"] - scheduled))
+                    first = abs(candidates[0][0]["start"] - scheduled)
+                    second = abs(candidates[1][0]["start"] - scheduled)
+                    candidates = [candidates[0]] if first != second else []
+                if len(candidates) == 1:
+                    provider_picks.append((candidates[0][0], candidates[0][1], src_tag))
+            if not provider_picks:
+                continue
+            status_rank = {"finished": 4, "postponed": 4, "cancelled": 4, "abandoned": 4,
+                           "suspended": 4, "live": 3, "halftime": 3, "upcoming": 1}
+            picked = max(provider_picks, key=lambda row: status_rank.get(row[0]["status"], 0))
+            found, side, src_tag = picked
             if match.status == "finished" and match.status_source != "schedule" and found["status"] in ("upcoming", "live", "halftime"):
                 continue
             ours_home, ours_away = (found["home"], found["away"]) if side == "straight" else (found["away"], found["home"])
             h, a = score_pair(ours_home.get("score"), ours_away.get("score"))
             prior_status = match.status
-            # Determine source tag: mackolik for tur paths, espn otherwise
-            src_tag = "mackolik" if path in mackolik_results and found in mackolik_results[path] else "espn"
             match.status, match.status_source = found["status"], src_tag
             match.raw_status, match.event_id = found["raw_status"], found["id"]
             match.starts_at, match.fetched_at = found["start"].isoformat(), stamp
+            match.status_clock = found.get("clock", "") if match.status in ACTIVE_STATUSES else ""
             if match.status not in SCORE_STATUSES:
                 match.score_home = match.score_away = None
                 match.score_source = match.score_updated_at = ""
