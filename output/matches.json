@@ -15,15 +15,15 @@
   },
   "categories": {
     "meta": {
-      "generated_at": "2026-09-23T16:28:34+03:00",
+      "generated_at": "2026-09-23T16:49:39+03:00",
       "date": "2026-09-23",
       "total_matches": 4
     },
     "counts": {
       "total": 4,
-      "live": 1,
+      "live": 0,
       "upcoming": 3,
-      "finished": 0,
+      "finished": 1,
       "match_of_day": 0,
       "postponed": 0,
       "cancelled": 0,
@@ -34,34 +34,7 @@
     "cancelled": [],
     "suspended": [],
     "abandoned": [],
-    "live": [
-      {
-        "match_id": "bm1",
-        "home": "M.Andreeva",
-        "away": "A.Sasnovich",
-        "league": "WTA Singapur",
-        "time": "13:30",
-        "sport": "Tenis",
-        "is_match_of_day": false,
-        "channel_id": "bm1",
-        "logo_home": "https://static.flashscore.com/res/image/data/ncDnFmzB-xE40e4KN.png",
-        "logo_away": "https://static.flashscore.com/res/image/data/h0HDCwxS-WG9mEH7U.png",
-        "status": "live",
-        "started": true,
-        "raw_event": "13:30 | WTA Singapur",
-        "url": "https://fixbettv84.com/channel.html?id=bm1",
-        "fetched_at": "",
-        "status_source": "schedule",
-        "raw_status": "",
-        "score_home": null,
-        "score_away": null,
-        "score_source": "",
-        "score_updated_at": "",
-        "event_id": "",
-        "starts_at": "2026-09-23T13:30:00+03:00",
-        "status_clock": ""
-      }
-    ],
+    "live": [],
     "upcoming": [
       {
         "match_id": "trtspor",
@@ -142,7 +115,34 @@
         "status_clock": ""
       }
     ],
-    "finished": [],
+    "finished": [
+      {
+        "match_id": "bm1",
+        "home": "M.Andreeva",
+        "away": "A.Sasnovich",
+        "league": "WTA Singapur",
+        "time": "13:30",
+        "sport": "Tenis",
+        "is_match_of_day": false,
+        "channel_id": "bm1",
+        "logo_home": "https://static.flashscore.com/res/image/data/ncDnFmzB-xE40e4KN.png",
+        "logo_away": "https://static.flashscore.com/res/image/data/h0HDCwxS-WG9mEH7U.png",
+        "status": "finished",
+        "started": true,
+        "raw_event": "13:30 | WTA Singapur",
+        "url": "https://fixbettv84.com/channel.html?id=bm1",
+        "fetched_at": "",
+        "status_source": "schedule",
+        "raw_status": "",
+        "score_home": null,
+        "score_away": null,
+        "score_source": "",
+        "score_updated_at": "",
+        "event_id": "",
+        "starts_at": "2026-09-23T13:30:00+03:00",
+        "status_clock": ""
+      }
+    ],
     "match_of_the_day": [],
     "by_league": {
       "CEV Erkekler Avrupa Şampiyonası": [
@@ -239,7 +239,7 @@
           "channel_id": "bm1",
           "logo_home": "https://static.flashscore.com/res/image/data/ncDnFmzB-xE40e4KN.png",
           "logo_away": "https://static.flashscore.com/res/image/data/h0HDCwxS-WG9mEH7U.png",
-          "status": "live",
+          "status": "finished",
           "started": true,
           "raw_event": "13:30 | WTA Singapur",
           "url": "https://fixbettv84.com/channel.html?id=bm1",
@@ -297,7 +297,7 @@
           "channel_id": "bm1",
           "logo_home": "https://static.flashscore.com/res/image/data/ncDnFmzB-xE40e4KN.png",
           "logo_away": "https://static.flashscore.com/res/image/data/h0HDCwxS-WG9mEH7U.png",
-          "status": "live",
+          "status": "finished",
           "started": true,
           "raw_event": "13:30 | WTA Singapur",
           "url": "https://fixbettv84.com/channel.html?id=bm1",
@@ -381,7 +381,7 @@
       "channel_id": "bm1",
       "logo_home": "https://static.flashscore.com/res/image/data/ncDnFmzB-xE40e4KN.png",
       "logo_away": "https://static.flashscore.com/res/image/data/h0HDCwxS-WG9mEH7U.png",
-      "status": "live",
+      "status": "finished",
       "started": true,
       "raw_event": "13:30 | WTA Singapur",
       "url": "https://fixbettv84.com/channel.html?id=bm1",
