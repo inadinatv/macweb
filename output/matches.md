@@ -1,24 +1,28 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-09-22 23:52  
-> **Toplam maç:** 3  |  **Canlı:** 0  |  **Yaklaşan:** 3
+> **Güncellenme:** 2026-09-23 01:02  
+> **Toplam maç:** 4  |  **Canlı:** 0  |  **Yaklaşan:** 4
 
 ## ⏰ YAKLAŞAN
 
-- ⏰ **Fransa vs Romanya** — YAKLAŞAN · `16:00` | CEV Erkekler Avrupa Şampiyonası <https://fixbettv84.com/channel.html?id=trtspor2>
-- ⏰ **Polonya vs Almanya** — YAKLAŞAN · `19:00` | CEV Erkekler Avrupa Şampiyonası <https://fixbettv84.com/channel.html?id=trtspor>
-- ⏰ **Fenerbahçe Tarfin vs Beşiktaş** — YAKLAŞAN · `20:00` | Cumhurbaşkanlığı Kupası <https://fixbettv84.com/channel.html?id=trt1>
+- ⏰ **M.Andreeva vs A.Sasnovich** — YAKLAŞAN · `13:30` | WTA Singapur <https://fixbettv84.com/channel.html?id=bm1>
+- ⏰ **Belçika vs Slovenya** — YAKLAŞAN · `17:00` | CEV Erkekler Avrupa Şampiyonası <https://fixbettv84.com/channel.html?id=trtspor>
+- ⏰ **Barcelona vs Paris FC** — YAKLAŞAN · `22:00` | UEFA Kadınlar Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=trtspor>
+- ⏰ **İtalya vs Finlandiya** — YAKLAŞAN · `22:05` | CEV Erkekler Avrupa Şampiyonası <https://fixbettv84.com/channel.html?id=trtspor2>
 
 ---
 ## 🏆 Lig Bazlı
 
 ### CEV Erkekler Avrupa Şampiyonası
-- ⏰ Fransa vs Romanya — 16:00
-- ⏰ Polonya vs Almanya — 19:00
+- ⏰ Belçika vs Slovenya — 17:00
+- ⏰ İtalya vs Finlandiya — 22:05
 
-### Cumhurbaşkanlığı Kupası
-- ⏰ Fenerbahçe Tarfin vs Beşiktaş — 20:00
+### UEFA Kadınlar Şampiyonlar Ligi
+- ⏰ Barcelona vs Paris FC — 22:00
+
+### WTA Singapur
+- ⏰ M.Andreeva vs A.Sasnovich — 13:30
 
 ---
 ## 📺 7/24 KANALLAR (31)
