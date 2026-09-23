@@ -1,28 +1,25 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-09-23 20:48  
-> **Toplam maç:** 4  |  **Canlı:** 1  |  **Yaklaşan:** 1
-
-## 🔴 CANLI
-
-- 🔴 **İtalya vs Finlandiya** — CANLI · `22:05` | CEV Erkekler Avrupa Şampiyonası <https://fixbettv84.com/channel.html?id=trtspor2>
+> **Güncellenme:** 2026-09-23 22:24  
+> **Toplam maç:** 4  |  **Canlı:** 0  |  **Yaklaşan:** 2
 
 ## ⏰ YAKLAŞAN
 
-- ⏰ **Barcelona vs Paris FC** — YAKLAŞAN · `22:00` | UEFA Kadınlar Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=trtspor>
+- ⏰ **M.Andreeva vs A.Sasnovich** — YAKLAŞAN · `13:30` | WTA Singapur <https://fixbettv84.com/channel.html?id=bm1>
+- ⏰ **Belçika vs Slovenya** — YAKLAŞAN · `17:00` | CEV Erkekler Avrupa Şampiyonası <https://fixbettv84.com/channel.html?id=trtspor>
 
 ## ✅ BİTTİ
 
-- ✅ **M.Andreeva vs A.Sasnovich** — MS · `13:30` | WTA Singapur <https://fixbettv84.com/channel.html?id=bm1>
-- ✅ **Belçika vs Slovenya** — MS · `17:00` | CEV Erkekler Avrupa Şampiyonası <https://fixbettv84.com/channel.html?id=trtspor>
+- ✅ **Barcelona vs Paris FC** — MS · `22:00` | UEFA Kadınlar Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=trtspor>
+- ✅ **İtalya vs Finlandiya** — MS · `22:05` | CEV Erkekler Avrupa Şampiyonası <https://fixbettv84.com/channel.html?id=trtspor2>
 
 ---
 ## 🏆 Lig Bazlı
 
 ### CEV Erkekler Avrupa Şampiyonası
 - ⏰ Belçika vs Slovenya — 17:00
-- 🔴 İtalya vs Finlandiya — 22:05
+- ⏰ İtalya vs Finlandiya — 22:05
 
 ### UEFA Kadınlar Şampiyonlar Ligi
 - ⏰ Barcelona vs Paris FC — 22:00

@@ -13,32 +13,5 @@
     "note": "OK",
     "probed": 200
   },
-  "live": [
-    {
-      "match_id": "trtspor2",
-      "home": "İtalya",
-      "away": "Finlandiya",
-      "league": "CEV Erkekler Avrupa Şampiyonası",
-      "time": "22:05",
-      "sport": "Voleybol",
-      "is_match_of_day": false,
-      "channel_id": "trtspor2",
-      "logo_home": "https://img.sporekrani.com/teams/Jn8E47NtsziihDvFal2OsbQQmHk6sR7DthoHUE4D.png",
-      "logo_away": "https://img.sporekrani.com/teams/e6u9T6YKfq0VuGxyJNRlNVNH2cuyYXs2CYMLKx3w.png",
-      "status": "live",
-      "started": true,
-      "raw_event": "22:05 | CEV Erkekler Avrupa Şampiyonası",
-      "url": "https://fixbettv84.com/channel.html?id=trtspor2",
-      "fetched_at": "",
-      "status_source": "schedule",
-      "raw_status": "",
-      "score_home": null,
-      "score_away": null,
-      "score_source": "",
-      "score_updated_at": "",
-      "event_id": "",
-      "starts_at": "2026-09-23T22:05:00+03:00",
-      "status_clock": ""
-    }
-  ]
+  "live": []
 }
