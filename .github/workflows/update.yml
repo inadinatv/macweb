@@ -1,13 +1,13 @@
-name: Sürekli Güncelleme (3dk)
+name: Sürekli Güncelleme (15dk)
 
 on:
   schedule:
-    - cron: "*/3 * * * *"        # her 3 dakikada bir — futbol 90dk pencere + canlı skorlar için
+    - cron: "2,17,32,47 * * * *"  # ağır tarama; canlı skor ayrı 5 dk işinde
   workflow_dispatch: {}          # manuel tetikleme
 
-# Aynı anda tek iş çalışsın
+# Bütün repo-çıktı yazarları aynı anda tek iş çalıştırsın.
 concurrency:
-  group: fixbet-update
+  group: fixbet-writer
   cancel-in-progress: false
 
 permissions:
@@ -16,11 +16,13 @@ permissions:
 jobs:
   update:
     runs-on: ubuntu-latest
+    timeout-minutes: 12
     steps:
       - name: Depot kodunu al
         uses: actions/checkout@v4
         with:
           ref: ${{ github.head_ref || 'main' }}
+          fetch-depth: 0
 
       - name: Python kur
         uses: actions/setup-python@v5
@@ -42,7 +44,8 @@ jobs:
             echo "Değişiklik yok — push yapılmadı."
           else
             git commit -m "[bot] güncel site + maç raporları ($(date -u +%Y-%m-%dT%H:%M:%SZ))"
-            git push origin HEAD:${{ github.head_ref || 'main' }}
+            git pull --rebase origin "${{ github.head_ref || 'main' }}"
+            git push origin "HEAD:${{ github.head_ref || 'main' }}"
             echo "Güncel adres ve maçlar yüklendi."
           fi
         env:

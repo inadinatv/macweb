@@ -110,8 +110,8 @@ def live_window(settings: dict[str, Any] | None = None) -> dict[str, int]:
 def score_sync_payload() -> dict[str, Any]:
     """İstemci tarafı canlı skor senkronizasyonu için yapılandırma.
 
-    Sayfa, botun 5 dakikalık snapshot'ını beklemeden ESPN'in herkese açık
-    scoreboard API'sini doğrudan okuyarak skorları ~45 saniyede bir tazeler.
+    Sayfa, botun kalıcı snapshot'ını beklemeden ESPN'in herkese açık
+    scoreboard API'sini doğrudan okuyarak aktif maçları ~10 saniyede bir tazeler.
     Burada yalnızca scores.yml'deki gerçek lig/takım eşleşme tablosu gömülür;
     sayfa kendi başına hiçbir skor UYDURMAZ, sadece kaynaktan okur.
     """

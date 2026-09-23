@@ -137,7 +137,7 @@ def test_live_window_table():
     """Bot ile sayfa aynı canlı yayın penceresini kullanır."""
     table = site.live_window()
     assert table["default"] == 120
-    assert table["futbol"] == 120
+    assert table["futbol"] == 105
     assert table["voleybol"] == 150
     assert table["buz hokeyi"] == 130
     # sınıflandırma da aynı pencereyi kullanıyor (now = 20:08)

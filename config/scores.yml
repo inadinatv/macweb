@@ -6,6 +6,9 @@ enabled: true
 request_timeout_seconds: 8
 max_workers: 4
 max_start_difference_minutes: 45
+# ESPN yolu tanımlı olmayan futbol liglerinde de Mackolik'in günlük listesinden
+# yalnızca iki takım + tarih + başlangıç saati kesin eşleşirse durum/skor eklenir.
+mackolik_all_football: true
 
 # Lig + spor ayrımı zorunlu: aynı isimli kadın/erkek, genç veya farklı spor
 # takımları birbiriyle eşleşmez. Yeni ligler açıkça eklenmelidir.
@@ -21,8 +24,11 @@ leagues:
   - { name: "Arjantin Primera Division", sport: "Futbol", path: "soccer/arg.1" }
   - { name: "Fransa Ligue 2", sport: "Futbol", path: "soccer/fra.2" }
   - { name: "UEFA Şampiyonlar Ligi", sport: "Futbol", path: "soccer/uefa.champions" }
+  - { name: "UEFA Kadınlar Şampiyonlar Ligi", sport: "Futbol", path: "soccer/uefa.wchampions" }
   - { name: "UEFA Avrupa Ligi", sport: "Futbol", path: "soccer/uefa.europa" }
   - { name: "UEFA Konferans Ligi", sport: "Futbol", path: "soccer/uefa.europa.conf" }
+  - { name: "AFC Şampiyonlar Ligi", sport: "Futbol", path: "soccer/afc.champions" }
+  - { name: "Portekiz Liga NOS", sport: "Futbol", path: "soccer/por.1" }
   - { name: "Türkiye Kupası", sport: "Futbol", path: "soccer/tur.cup" }
   - { name: "Ziraat Türkiye Kupası", sport: "Futbol", path: "soccer/tur.cup" }
   - { name: "NBA", sport: "Basketbol", path: "basketball/nba" }

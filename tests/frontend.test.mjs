@@ -168,9 +168,10 @@ test("günün maçları gerçek programdan geliyor", async () => {
 
   const text = window.document.getElementById("matchesGrid").textContent;
   for (const m of TODAY.matches) assert.ok(text.includes(m.home) && text.includes(m.away), "gerçek maç eksik: " + m.home);
-  assert.ok(text.includes("⭐ Günün Maçı"), "günün maçı rozeti yok");
-  // Kaynak aynı gün birden fazla maçı "Günün Maçı" işaretleyebilir; en az biri görünmeli.
-  assert.ok(window.document.querySelectorAll(".match-card.is-mod").length >= 1, "günün maçı rozeti kartta yok");
+  const modCount = TODAY.matches.filter((m) => m.is_match_of_day).length;
+  assert.equal(window.document.querySelectorAll(".match-card.is-mod").length, modCount,
+    "günün maçı rozetleri gerçek veriyle uyuşmuyor");
+  if (modCount) assert.ok(text.includes("⭐ Günün Maçı"), "günün maçı rozeti yok");
   assert.equal(window.document.getElementById("badgeMatches").textContent, String(TODAY.matches.length));
   dom.window.close();
 });
@@ -196,7 +197,8 @@ test("durum hesabı gerçek saate göre yapılıyor", async () => {
   const m = { time: "20:00", date: "2026-09-05", sport: "Futbol" };
   assert.equal(cs(m, new Date("2026-09-05T19:30:00+03:00")).status, "upcoming");
   assert.equal(cs(m, new Date("2026-09-05T20:05:00+03:00")).status, "live");
-  assert.equal(cs(m, new Date("2026-09-05T21:59:00+03:00")).status, "live");
+  assert.equal(cs(m, new Date("2026-09-05T21:44:00+03:00")).status, "live");
+  assert.equal(cs(m, new Date("2026-09-05T21:46:00+03:00")).status, "finished");
   assert.equal(cs(m, new Date("2026-09-05T22:30:00+03:00")).status, "finished");
   // voleybol için pencere daha uzun (150 dk)
   const v = { time: "20:00", date: "2026-09-05", sport: "Voleybol" };
@@ -550,6 +552,24 @@ test("skorlar canlı yenilemede güncellenir; biten maç saat hesabıyla tekrar 
   const normalized=window.inadina.normalizeRemote(json)[0];
   assert.equal(window.inadina.computeState(normalized,new Date('2026-09-06T20:30:00+03:00')).status,'finished');
   assert.equal(byEvent(window,'event').querySelector('[data-score-side="home"]').textContent,'2');
+});
+
+test("snapshot gerçek dakikayı taşır ve daha taze doğrudan canlı skoru geriye götürmez", async () => {
+  let json = {date:'2026-09-06', matches:[remoteRow('fresh','NS',[null,null],{
+    home:'Bournemouth',away:'Liverpool',league:'İngiltere Premier Lig',starts_at:'2026-09-06T20:00:00+03:00',
+    score_updated_at:'2020-01-01T00:00:00Z',status_clock:'12\''
+  })]};
+  const {window}=await loadPage({fetchImpl:async url=>({ok:true,json:async()=>String(url).includes('extra_channels')?EXTRA:json})});
+  await window.inadina.refreshMatches();
+  assert.equal(window.inadina.normalizeRemote(json)[0].statusClock,"12'");
+  window.inadina.applyLiveSync('soccer/eng.1',[{id:'ev',start:new Date('2026-09-06T20:00:00+03:00'),
+    homeName:'Bournemouth',awayName:'Liverpool',homeScore:1,awayScore:0,status:'live',clock:"34'",neutral:false}]);
+  window.inadina.renderMatches();
+  assert.ok(byEvent(window,'fresh').textContent.includes("34'"));
+  await window.inadina.refreshMatches();
+  assert.equal(byEvent(window,'fresh').dataset.status,'live','eski snapshot canlı durumu geriletmemeli');
+  assert.equal(byEvent(window,'fresh').querySelector('[data-score-side="home"]').textContent,'1');
+  assert.ok(byEvent(window,'fresh').textContent.includes("34'"),'eski snapshot dakikayı geriletmemeli');
 });
 
 test("gömülü ve uzaktan alınan durum/skor verisi eşdeğer, eski saat tahmini korunur", async () => {
@@ -1128,6 +1148,17 @@ test("canlı skor senkronu kesin eşleşmeye skor, dakika ve gol animasyonu işl
   assert.equal(card.querySelector('[data-score-side="home"]').textContent, "1");
   assert.ok(card.textContent.includes("34'"), "canlı dakika rozeti yok");
   assert.ok(card.querySelector(".match-score").classList.contains("bump"), "gol animasyonu yok");
+  const clockOnly = window.inadina.applyLiveSync("soccer/eng.1", [{ ...comps[0], clock: "35'" }]);
+  assert.equal(clockOnly, 1, "skor değişmese de dakika değişimi render tetiklemeli");
+  window.inadina.renderMatches();
+  assert.ok(byEvent(window, "b4").textContent.includes("35'"));
+  const finalChange = window.inadina.applyLiveSync("soccer/eng.1", [{ ...comps[0],
+    homeScore: 2, awayScore: 1, status: "finished", clock: "90'" }]);
+  assert.equal(finalChange, 1, "final durumu anında işlenmeli");
+  window.inadina.renderMatches();
+  assert.equal(byEvent(window, "b4").dataset.status, "finished");
+  assert.equal(byEvent(window, "b4").querySelector('[data-score-side="home"]').textContent, "2");
+  assert.equal(byEvent(window, "b4").querySelector('.match-status-tag').textContent, "MS");
   // Belirsiz (çift aday) eşleşme: hiçbir veri eklenmez
   const before = byEvent(window, "b4").querySelector('[data-score-side="home"]').textContent;
   window.inadina.applyLiveSync("soccer/eng.1", [comps[0], { ...comps[0], id: "ev2" }]);
@@ -1145,4 +1176,11 @@ test("canlı skor senkronu gerçek MS sonucunu canlıya çevirmez", async () => 
     homeScore: 2, awayScore: 2, status: "live", clock: "88'", neutral: false }];
   assert.equal(window.inadina.applyLiveSync("soccer/eng.1", comps), 0, "MS maça dokunulmamalı");
   assert.equal(byEvent(window, "ftx").dataset.status, "finished");
+});
+
+test("canlı senkron 10 saniyelik cache-buster ve maç tarihiyle sağlayıcıyı çağırır", () => {
+  assert.match(HTML, /const SYNC_TTL = 10 \* 1000/);
+  assert.ok(HTML.includes('"&dates=" + encodeURIComponent(day)'), "scoreboard isteğinde maç tarihi yok");
+  assert.ok(HTML.includes('"&_ts=" + Math.floor(Date.now() / SYNC_TTL)'), "CDN cache-buster yok");
+  assert.ok(HTML.includes("(liveWindowFor(m) + 90) * 60000"), "final yakalama penceresi maç sonuna uzatılmamış");
 });

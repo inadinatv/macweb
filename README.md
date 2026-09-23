@@ -13,7 +13,7 @@ raporlar üreten gelişmiş otomasyon botu.
 - Gerçek oynatma/loading, sınırlı retry/kurtarma, stall kontrolü, açıklayıcı loglar;
   Chromium MSE/hls.js ve Apple native HLS ayrımı.
 - Günün maçlarında **CANLI / DEVRE / MS + küçük skor**, ertelendi/iptal durumları.
-  Asıl kaynak skor vermediğinde tanımlı ligler için ESPN'den kesin eşleşmeyle alınır;
+  Asıl kaynak skor vermediğinde Mackolik ve tanımlı liglerde ESPN'den kesin eşleşmeyle alınır;
   eksik skor tahmin edilmez veya 0–0 yapılmaz.
 - Header/CORS isteyen kaynaklar için isteğe bağlı, izin listeli HLS hizmeti.
   **GitHub Pages backend çalıştırmaz:** gerekli hizmet ayrıca HTTPS ile deploy
@@ -38,8 +38,10 @@ raporlar üreten gelişmiş otomasyon botu.
 
 3. **Durum ve skor** (`src/fixbet/match_state.py`, `scores.py`, `categorizer.py`)
    - Önce kaynağın gerçek durumu kullanılır: **CANLI / DEVRE / MS / Ertelendi / İptal**.
-   - Kaynak skor/durum vermiyorsa `config/scores.yml` içindeki ligler ESPN scoreboard
-     ile zenginleştirilir (spor/lig/tarih/saat ve iki takımın kesin eşleşmesi).
+   - Kaynak skor/durum vermiyorsa Mackolik ve `config/scores.yml` içindeki ESPN scoreboard
+     ligleriyle zenginleştirilir (spor/lig/tarih/saat ve iki takımın kesin eşleşmesi).
+     ESPN yolu olmayan futbol liglerinde Mackolik yalnızca iki takım + tarih + saat kesin
+     eşleşirse kullanılır; belirsiz kayıtta skor üretilmez.
    - Hiç gerçek durum yoksa eski saat tabanlı canlı/yaklaşan/bitti tahmini korunur;
      bu tahminden skor üretilmez.
    - `[Günün Maçı]` etiketiyle **⭐ Günün Maçı** kategorisi oluşturulur.
@@ -81,9 +83,9 @@ raporlar üreten gelişmiş otomasyon botu.
      **arama**, durum/spor filtreleri, canlı saat, takım logoları, ⭐ Günün Maçı rozeti,
      klavye kısayolları (`←`/`→` kanal, `G`/`L` görünüm, `1`/`2` sekme), `#kanal=...` derin bağlantısı,
      JS kapalıysa çalışan `<noscript>` maç listesi.
-   - **Canlı tazeleme:** Sayfa açılışta ve 5 dakikada bir `output/today_matches.json`
-     dosyasını okumayı dener (bot bu dosyayı 5 dakikada bir günceller); erişilemezse
-     gömülü gerçek veriyle sorunsuz çalışmaya devam eder.
+   - **Canlı tazeleme:** Sayfa yayımlanmış `output/today_matches.json` snapshot'ını 30 saniyede
+     bir, aktif maçların ESPN skorunu 10 saniyede bir okur. Daha eski snapshot, daha taze
+     skor/dakikayı geriye götürmez. Erişilemezse son gerçek veriyle çalışmaya devam eder.
 
 6. **⚡ EXTRA PANELLER — doğrudan m3u8 / panel kanalları** (`src/fixbet/extras.py` + `config/extra_channels.yml`)
    - Ana siteden bağımsız ek kaynaklar:
@@ -233,8 +235,13 @@ yetkisi olmadığı için dosya kökte örnek olarak duruyor).
 
 ## 🤖 GitHub Actions ile Otomatik Güncelleme
 
-- **`.github/workflows/update.yml`** → her 5 dakikada bir botu çalıştırır ve raporları GitHub'a kendi başına **push** eder (README üstteki rozet güncel adresi gösterir).
+- **`.github/workflows/live_scores.yml`** → GitHub'ın desteklediği en kısa aralık olan 5 dakikada bir kalıcı skor snapshot'ını yazar.
+- **`.github/workflows/update.yml`** → her 15 dakikada bir tam site/kanal boru hattını çalıştırır ve raporları **push** eder.
 - **`.github/workflows/cron.yml`** → her gün belirli saatte uzun süreli izleme + toplu güncelleme çalıştırır.
+
+Üç workflow aynı yazma kilidini kullanır ve push öncesi rebase eder; böylece eşzamanlı bot
+commit'lerinin canlı güncellemeyi `non-fast-forward` hatasıyla durdurması önlenir. Anlık ekran
+güncellemesi Actions cron'una değil, tarayıcıdaki 10 saniyelik canlı senkrona dayanır.
 
 > Not: Push işleminin çalışması için repoya `GITHUB_TOKEN` yetkisi yeterlidir (Actions için varsayılan).
 > Başarılı push yalnızca `settings.yml` içindeki `dry_run: true` değilken gerçekleşir.

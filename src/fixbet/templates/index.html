@@ -1995,6 +1995,7 @@
                         home: r.home || "", away: r.away || "",
                         league: r.league || "", time: r.time || "", sport: r.sport || "Spor",
                         status: status, statusSource: source, rawStatus: rawSt,
+                        statusClock: r.status_clock || r.statusClock || "",
                         scoreHome: sh, scoreAway: sa,
                         scoreSource: r.score_source || r.scoreSource || (sh !== null ? source : ""),
                         scoreUpdatedAt: r.score_updated_at || r.scoreUpdatedAt || "",
@@ -2016,6 +2017,35 @@
                 return i >= 0 ? channelNames[i] : (id ? String(id).toUpperCase() : "");
             }
 
+            function matchIdentity(m) {
+                return [norm(m.sport), norm(m.league), foldStatus(m.home), foldStatus(m.away), String(m.time || "")].join("|");
+            }
+
+            /** Yayımlanmış snapshot doğrudan canlı API'den daha eskiyse ekrandaki
+             *  skor/dakikayı geriye götürme. Kaynaktan doğrulanmış final ve daha
+             *  yeni snapshot ise her zaman kazanır. */
+            function mergeRemoteMatches(rows) {
+                const current = new Map(matchesData.map((m) => [matchIdentity(m), m]));
+                return rows.map((next) => {
+                    const old = current.get(matchIdentity(next));
+                    if (!old) return next;
+                    const nextReal = next.statusSource !== "schedule" ? normalizeStatus(next.rawStatus || next.status) : null;
+                    if (nextReal === "finished" || NON_LIVE_STATUS[nextReal]) return next;
+                    const oldReal = old.statusSource !== "schedule" ? normalizeStatus(old.rawStatus || old.status) : null;
+                    const oldStamp = new Date(old.scoreUpdatedAt || 0).getTime();
+                    const nextStamp = new Date(next.scoreUpdatedAt || 0).getTime();
+                    const oldAuthoritative = old.statusSource !== "schedule";
+                    const stateRegressed = (isActiveMatch(oldReal) || oldReal === "finished") && nextReal === "upcoming";
+                    if (!oldAuthoritative || (!stateRegressed && next.statusSource !== "schedule" && nextStamp >= oldStamp)) return next;
+                    return Object.assign({}, next, {
+                        status: old.status, statusSource: old.statusSource, rawStatus: old.rawStatus,
+                        statusClock: old.statusClock, scoreHome: old.scoreHome, scoreAway: old.scoreAway,
+                        scoreSource: old.scoreSource, scoreUpdatedAt: old.scoreUpdatedAt,
+                        eventId: old.eventId || next.eventId, startsAt: old.startsAt || next.startsAt
+                    });
+                });
+            }
+
             function refreshMatches(silent) {
                 if (!matchesSource || typeof fetch !== "function") return Promise.resolve(false);
                 const request = ++matchesRefreshToken;
@@ -2027,7 +2057,7 @@
                         if (request !== matchesRefreshToken) return false;
                         const rows = normalizeRemote(json);
                         if (!rows.length) throw new Error("boş liste");
-                        matchesData = rows;
+                        matchesData = mergeRemoteMatches(rows);
                         renderMatchFilters(new Date());
                         renderMatches();
                         if (json.date) els.updatedAt.textContent = json.date + " (canlı veri)";
@@ -2052,7 +2082,7 @@
                 Object.keys(row).forEach((k) => { mapped[foldStatus(k)] = foldStatus(row[k]); });
                 if (Object.keys(mapped).length) syncAliases[path] = mapped;
             });
-            const SYNC_TTL = 20 * 1000, SYNC_MAX_PARALLEL = 3;
+            const SYNC_TTL = 10 * 1000, SYNC_MAX_PARALLEL = 4;
             const syncCache = {}, syncInflight = new Set();
             let syncFailures = 0;
 
@@ -2124,19 +2154,26 @@
                     // Gerçek "MS" sonucu asla canlıya dönmez; saat tahmini "Bitti" dönebilir.
                     const mReal = normalizeStatus(m.rawStatus || m.raw_status) || (m.statusSource !== "schedule" ? m.status : null);
                     if (mReal === "finished" && c.status !== "finished") return;
-                    const hasScore = c.homeScore != null && c.awayScore != null;
-                    if ((hasScore && (m.scoreHome !== c.homeScore || m.scoreAway !== c.awayScore)) || m.status !== c.status) changes++;
+                    const scoreAllowed = isActiveMatch(c.status) || c.status === "finished";
+                    const hasScore = scoreAllowed && c.homeScore != null && c.awayScore != null;
+                    const nextClock = isActiveMatch(c.status) ? (c.clock || "") : "";
+                    if ((hasScore && (m.scoreHome !== c.homeScore || m.scoreAway !== c.awayScore))
+                        || m.status !== c.status || String(m.statusClock || "") !== nextClock) changes++;
                     if (hasScore) {
                         m.scoreHome = c.homeScore; m.scoreAway = c.awayScore;
                         m.scoreSource = "espn"; m.scoreUpdatedAt = stamp;
+                    } else if (c.status === "finished" || NON_LIVE_STATUS[c.status]) {
+                        m.scoreHome = null; m.scoreAway = null;
+                        m.scoreSource = ""; m.scoreUpdatedAt = "";
                     }
                     if (mReal !== "finished") {
                         m.status = c.status;
                         m.statusSource = "espn";
                         m.rawStatus = String(typ0(c) || "");
-                        m.statusClock = isActiveMatch(c.status) ? (c.clock || "") : "";
+                        m.statusClock = nextClock;
                     }
                     if (c.id && !m.eventId) m.eventId = c.id;
+                    if (c.start && !isNaN(c.start.getTime())) m.startsAt = c.start.toISOString();
                 });
                 return changes;
             }
@@ -2157,7 +2194,7 @@
                     if (!st.start) return;
                     const diff = now.getTime() - st.start.getTime();
                     if ((st.status === "upcoming" && diff > -90 * 60000 && diff < 5 * 60000)
-                        || (st.status === "finished" && diff < 90 * 60000)) wanted.add(path);
+                        || (st.status === "finished" && diff >= 0 && diff < (liveWindowFor(m) + 90) * 60000)) wanted.add(path);
                 });
                 return Array.from(wanted);
             }
@@ -2183,7 +2220,10 @@
                     syncInflight.add(path); launched++;
                     const controller = new AbortController();
                     const timer = setTimeout(() => controller.abort(), 8000);
-                    fetch("https://site.api.espn.com/apis/site/v2/sports/" + path + "/scoreboard?limit=400",
+                    const day = String((matchesData.find((m) => syncPathFor(m) === path) || {}).date || "").replace(/-/g, "");
+                    const query = "?limit=400" + (day ? "&dates=" + encodeURIComponent(day) : "")
+                        + "&_ts=" + Math.floor(Date.now() / SYNC_TTL);
+                    fetch("https://site.api.espn.com/apis/site/v2/sports/" + path + "/scoreboard" + query,
                           { cache: "no-store", signal: controller.signal })
                         .then((r) => { if (!r.ok) throw new Error("HTTP " + r.status); return r.json(); })
                         .then((json) => {
@@ -2565,11 +2605,11 @@
                 refreshMatches(true);
                 refreshExtra(true);
                 refreshStandings(true);
-                // Yenilenebilir canlı sistem: snapshot 30 sn'de bir, canlı skor ~20 sn'de bir
+                // Snapshot 30 sn'de bir; aktif maçlarda sağlayıcı skoru ~10 sn'de bir.
                 setInterval(() => { refreshMatches(true); refreshStandings(true); }, 30 * 1000);
                 setInterval(() => { refreshExtra(true); }, 5 * 60 * 1000);
                 setTimeout(liveSyncTick, 2000);
-                setInterval(liveSyncTick, 20 * 1000);
+                setInterval(liveSyncTick, SYNC_TTL);
                 // Sekmeye geri dönünce hemen tazele: arka planda bekleyen sayfa bayat kalmasın
                 document.addEventListener("visibilitychange", () => {
                     if (!document.hidden) { tickClock(); refreshMatches(true); liveSyncTick(); }
@@ -2594,6 +2634,7 @@
                 setTab: setTab,
                 computeState: computeState,
                 normalizeRemote: normalizeRemote,
+                mergeRemoteMatches: mergeRemoteMatches,
                 refreshMatches: refreshMatches,
                 liveSyncTick: liveSyncTick,
                 applyLiveSync: applyLiveSync,

@@ -64,7 +64,7 @@ Desteklenmeyen playlist değişken URI'leri (`{$...}`) sessizce bozulmak yerine 
 | `cancelled` | İptal | Yok |
 | `suspended` / `abandoned` | Durduruldu / Oynanmadı | Yok |
 
-- `status_source`: `schedule` (tahmin), `source` (asıl HTML), `espn` (ikincil kaynak).
+- `status_source`: `schedule` (tahmin), `source` (asıl HTML), `mackolik` / `espn` (canlı kaynaklar).
 - `raw_status`: sağlayıcının özgün kodu; `match_state.py` sözlüğü **aynı şekilde JS'e gömülür**.
 - `status_clock`: canlı sürenin kendisi (ör. `63'`, `90+2'`, `İY`, `Q3 8:12`); yalnızca
   canlı/devre durumlarında anlamlıdır. Karttaki CANLI rozetinde dakika olarak görünür.
@@ -73,11 +73,11 @@ Desteklenmeyen playlist değişken URI'leri (`{$...}`) sessizce bozulmak yerine 
 - `event_id`: sağlayıcının gerçek etkinlik ID'si. `match_id` / `channel_id` eski kanal oynatma işlevinde kalır.
 - `starts_at`: saat dilimli ISO başlangıcı; tarayıcının yerel dilimi maç durumunu değiştirmez. Eski JSON da Türkiye / yapılandırılmış program saat dilimiyle okunur.
 
-`config/scores.yml` varsayılan olarak ESPN zenginleştirmesini açar. Tanımlı başlıca futbol ligleri ile NBA/WNBA desteklenir; **her lig/spor kapsanmıyor**. Lig + spor + yerel takvim günü + en fazla 45 dk başlangıç farkı + iki takımın açık isim eşleşmesi gerekir. Ev/deplasman `homeAway` alanından seçilir, array sırasından değil. Türkçe/aksan normalizasyonu ve lig bazlı açık isim alias'ları vardır; fuzzy eşleşme yok. Birden fazla adayda veya eksik/yanlış eşleşmede skor yok.
+`config/scores.yml` varsayılan olarak Mackolik + ESPN zenginleştirmesini açar. Tanımlı başlıca futbol ligleri ile NBA/WNBA desteklenir; **her lig/spor kapsanmıyor**. ESPN yolu olmayan futbol liglerinde Mackolik'in günlük listesi yalnızca kesin iki takım + tarih + saat eşleşmesiyle yedektir. Lig + spor + yerel takvim günü + en fazla 45 dk başlangıç farkı + iki takımın açık isim eşleşmesi gerekir. Ev/deplasman `homeAway` alanından seçilir, array sırasından değil. Türkçe/aksan normalizasyonu ve lig bazlı açık isim alias'ları vardır; fuzzy eşleşme yok. Birden fazla adayda veya eksik/yanlış eşleşmede skor yok. Mackolik'in canlı dakikası sağlayıcının `periodStart` ve `lastUpdated` alanlarından hesaplanır; makine saatinden tahmin edilmez.
 
 ESPN'nin herkese açık scoreboard uç noktası bağımsız bir hizmettir; resmi bir SLA'ya güvenilmez. Kapatılabilir/değiştirilebilir; desteklenmeyen liglerde mevcut program korunur. Asıl kaynak gerçek status veriyorsa önceliklidir. Hata veya boş/malformed ikincil cevap mevcut programı silmez; aynı gün/aynı karşılaşmanın son doğrulanmış sonucu korunur. Skoru gelmeyen bir final, eski canlı skordan doldurulmaz.
 
-Botun normal `run` / `matches` akışı skorları JSON'a ve index'e taşır. Sayfa açılışta ve **5 dakikada bir** bu yayımlanmış JSON'u yeniler; bu saniyelik bir canlı skor servisi değildir. `build-index` çevrimdışıdır, dışarıdan yeni skor çektiğini iddia etmez. İnceleme sırasında gerçek skorlar elle output dosyalarına yazılmadı.
+Botun normal `run` / `matches` akışı skorları JSON'a ve index'e taşır. Sayfa yayımlanmış JSON'u **30 saniyede bir**, aktif ESPN scoreboard verisini yaklaşık **10 saniyede bir** yeniler. CDN önbelleğini kıran zaman dilimli sorgu kullanılır; daha eski snapshot daha taze doğrudan skoru/dakikayı geriye götürmez. `build-index` çevrimdışıdır, dışarıdan yeni skor çektiğini iddia etmez. GitHub Actions kalıcı snapshot için 5 dakikalık yedektir; saniyelik servis olarak kullanılmaz.
 
 ## Tanılama
 

@@ -13,5 +13,32 @@
     "note": "OK",
     "probed": 200
   },
-  "live": []
+  "live": [
+    {
+      "match_id": "trtspor",
+      "home": "Belçika",
+      "away": "Slovenya",
+      "league": "CEV Erkekler Avrupa Şampiyonası",
+      "time": "17:00",
+      "sport": "Voleybol",
+      "is_match_of_day": false,
+      "channel_id": "trtspor",
+      "logo_home": "https://img.sporekrani.com/teams/7oKFiq53Bw5VHLYldUbvdXev32WmjsF8wmv1Zgzy.png",
+      "logo_away": "https://img.sporekrani.com/teams/RLRco3F2egdPFk5jLfnXdKUy51oRafmdve9DOqoC.png",
+      "status": "live",
+      "started": true,
+      "raw_event": "17:00 | CEV Erkekler Avrupa Şampiyonası",
+      "url": "https://fixbettv84.com/channel.html?id=trtspor",
+      "fetched_at": "",
+      "status_source": "schedule",
+      "raw_status": "",
+      "score_home": null,
+      "score_away": null,
+      "score_source": "",
+      "score_updated_at": "",
+      "event_id": "",
+      "starts_at": "2026-09-23T17:00:00+03:00",
+      "status_clock": ""
+    }
+  ]
 }
