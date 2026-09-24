@@ -1,19 +1,22 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-09-24 20:54  
-> **Toplam maç:** 8  |  **Canlı:** 0  |  **Yaklaşan:** 0
+> **Güncellenme:** 2026-09-24 22:40  
+> **Toplam maç:** 8  |  **Canlı:** 0  |  **Yaklaşan:** 3
+
+## ⏰ YAKLAŞAN
+
+- ⏰ **T.Prozorova vs A.Eala** — YAKLAŞAN · `13:30` | WTA Singapur <https://fixbettv84.com/channel.html?id=bm1>
+- ⏰ **Dubai Basket vs Real Madrid** — YAKLAŞAN · `19:00` | Euroleague <https://fixbettv84.com/channel.html?id=ss>
+- ⏰ **Hapoel Tel Aviv vs Bayern Münih** — YAKLAŞAN · `19:00` | Euroleague <https://fixbettv84.com/channel.html?id=ss2>
 
 ## ✅ BİTTİ
 
-- ✅ **T.Prozorova vs A.Eala** — MS · `13:30` | WTA Singapur <https://fixbettv84.com/channel.html?id=bm1>
-- ✅ **Dubai Basket vs Real Madrid** — MS · `19:00` | Euroleague <https://fixbettv84.com/channel.html?id=ss>
-- ✅ **Hapoel Tel Aviv vs Bayern Münih** — MS · `19:00` | Euroleague <https://fixbettv84.com/channel.html?id=ss2>
 - ✅ **Panathinaikos vs Paris** — MS · `21:15` | Euroleague <https://fixbettv84.com/channel.html?id=ss2>
 - ✅ **Barcelona vs Anadolu Efes** — MS · `21:30` | Euroleague <https://fixbettv84.com/channel.html?id=ss>
-- ✅ **Hollanda 1 - 1 Almanya** — MS · `21:45` | UEFA Uluslar Ligi <https://fixbettv84.com/channel.html?id=as>
-- ✅ **Portekiz 1 - 0 Galler** — MS · `21:45` | UEFA Uluslar Ligi <https://fixbettv84.com/channel.html?id=ex2>
-- ✅ **Norveç 3 - 2 Danimarka** — MS · `21:45` | UEFA Uluslar Ligi <https://fixbettv84.com/channel.html?id=ex1>
+- ✅ **Hollanda vs Almanya** — MS · `21:45` | UEFA Uluslar Ligi <https://fixbettv84.com/channel.html?id=as>
+- ✅ **Portekiz vs Galler** — MS · `21:45` | UEFA Uluslar Ligi <https://fixbettv84.com/channel.html?id=ex2>
+- ✅ **Norveç vs Danimarka** — MS · `21:45` | UEFA Uluslar Ligi <https://fixbettv84.com/channel.html?id=ex1>
 
 ---
 ## 🏆 Lig Bazlı
