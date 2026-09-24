@@ -1,31 +1,36 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-09-24 00:43  
-> **Toplam maç:** 4  |  **Canlı:** 0  |  **Yaklaşan:** 2
+> **Güncellenme:** 2026-09-24 00:45  
+> **Toplam maç:** 8  |  **Canlı:** 0  |  **Yaklaşan:** 8
 
 ## ⏰ YAKLAŞAN
 
-- ⏰ **M.Andreeva vs A.Sasnovich** — YAKLAŞAN · `13:30` | WTA Singapur <https://fixbettv84.com/channel.html?id=bm1>
-- ⏰ **Belçika vs Slovenya** — YAKLAŞAN · `17:00` | CEV Erkekler Avrupa Şampiyonası <https://fixbettv84.com/channel.html?id=trtspor>
-
-## ✅ BİTTİ
-
-- ✅ **Barcelona vs Paris FC** — MS · `22:00` | UEFA Kadınlar Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=trtspor>
-- ✅ **İtalya vs Finlandiya** — MS · `22:05` | CEV Erkekler Avrupa Şampiyonası <https://fixbettv84.com/channel.html?id=trtspor2>
+- ⏰ **T.Prozorova vs A.Eala** — YAKLAŞAN · `13:30` | WTA Singapur <https://fixbettv84.com/channel.html?id=bm1>
+- ⏰ **Dubai Basket vs Real Madrid** — YAKLAŞAN · `19:00` | Euroleague <https://fixbettv84.com/channel.html?id=ss>
+- ⏰ **Hapoel Tel Aviv vs Bayern Münih** — YAKLAŞAN · `19:00` | Euroleague <https://fixbettv84.com/channel.html?id=ss2>
+- ⏰ **Panathinaikos vs Paris** — YAKLAŞAN · `21:15` | Euroleague <https://fixbettv84.com/channel.html?id=ss2>
+- ⏰ **Barcelona vs Anadolu Efes** — YAKLAŞAN · `21:30` | Euroleague <https://fixbettv84.com/channel.html?id=ss>
+- ⏰ **Hollanda vs Almanya** — YAKLAŞAN · `21:45` | UEFA Uluslar Ligi <https://fixbettv84.com/channel.html?id=as>
+- ⏰ **Portekiz vs Galler** — YAKLAŞAN · `21:45` | UEFA Uluslar Ligi <https://fixbettv84.com/channel.html?id=ex2>
+- ⏰ **Norveç vs Danimarka** — YAKLAŞAN · `21:45` | UEFA Uluslar Ligi <https://fixbettv84.com/channel.html?id=ex1>
 
 ---
 ## 🏆 Lig Bazlı
 
-### CEV Erkekler Avrupa Şampiyonası
-- ⏰ Belçika vs Slovenya — 17:00
-- ⏰ İtalya vs Finlandiya — 22:05
+### Euroleague
+- ⏰ Dubai Basket vs Real Madrid — 19:00
+- ⏰ Hapoel Tel Aviv vs Bayern Münih — 19:00
+- ⏰ Panathinaikos vs Paris — 21:15
+- ⏰ Barcelona vs Anadolu Efes — 21:30
 
-### UEFA Kadınlar Şampiyonlar Ligi
-- ⏰ Barcelona vs Paris FC — 22:00
+### UEFA Uluslar Ligi
+- ⏰ Hollanda vs Almanya — 21:45
+- ⏰ Portekiz vs Galler — 21:45
+- ⏰ Norveç vs Danimarka — 21:45
 
 ### WTA Singapur
-- ⏰ M.Andreeva vs A.Sasnovich — 13:30
+- ⏰ T.Prozorova vs A.Eala — 13:30
 
 ---
 ## 📺 7/24 KANALLAR (31)
