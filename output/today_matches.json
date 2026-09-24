@@ -15,7 +15,7 @@
   },
   "date": "2026-09-24",
   "timezone": "Europe/Istanbul",
-  "generated_at": "2026-09-24T22:25:03+03:00",
+  "generated_at": "2026-09-24T22:27:34+03:00",
   "matches": [
     {
       "match_id": "bm1",
@@ -162,16 +162,16 @@
       "started": true,
       "raw_event": "21:45 | UEFA Uluslar Ligi",
       "url": "https://fixbettv84.com/channel.html?id=as",
-      "fetched_at": "2026-09-24T22:25:03+03:00",
+      "fetched_at": "2026-09-24T22:27:34+03:00",
       "status_source": "mackolik",
       "raw_status": "none",
       "score_home": 0,
       "score_away": 1,
       "score_source": "mackolik",
-      "score_updated_at": "2026-09-24T22:25:03+03:00",
+      "score_updated_at": "2026-09-24T22:27:34+03:00",
       "event_id": "6rxvxtpbtvthvexj3g0r33mz8",
       "starts_at": "2026-09-24T18:45:00+00:00",
-      "status_clock": "38'"
+      "status_clock": "40'"
     },
     {
       "match_id": "ex2",
@@ -188,16 +188,16 @@
       "started": true,
       "raw_event": "21:45 | UEFA Uluslar Ligi",
       "url": "https://fixbettv84.com/channel.html?id=ex2",
-      "fetched_at": "2026-09-24T22:25:03+03:00",
+      "fetched_at": "2026-09-24T22:27:34+03:00",
       "status_source": "mackolik",
       "raw_status": "none",
       "score_home": 1,
       "score_away": 0,
       "score_source": "mackolik",
-      "score_updated_at": "2026-09-24T22:25:03+03:00",
+      "score_updated_at": "2026-09-24T22:27:34+03:00",
       "event_id": "6ugqh1u9tn5s6syg5acinhlhw",
       "starts_at": "2026-09-24T18:45:00+00:00",
-      "status_clock": "39'"
+      "status_clock": "41'"
     },
     {
       "match_id": "ex1",
@@ -214,16 +214,16 @@
       "started": true,
       "raw_event": "21:45 | UEFA Uluslar Ligi",
       "url": "https://fixbettv84.com/channel.html?id=ex1",
-      "fetched_at": "2026-09-24T22:25:03+03:00",
+      "fetched_at": "2026-09-24T22:27:34+03:00",
       "status_source": "mackolik",
       "raw_status": "none",
       "score_home": 2,
       "score_away": 1,
       "score_source": "mackolik",
-      "score_updated_at": "2026-09-24T22:25:03+03:00",
+      "score_updated_at": "2026-09-24T22:27:34+03:00",
       "event_id": "6tpz7jt971y5eha5scct99j4k",
       "starts_at": "2026-09-24T18:45:00+00:00",
-      "status_clock": "40'"
+      "status_clock": "42'"
     }
   ]
 }
