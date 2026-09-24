@@ -1,12 +1,11 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-09-24 10:28  
-> **Toplam maç:** 8  |  **Canlı:** 0  |  **Yaklaşan:** 8
+> **Güncellenme:** 2026-09-24 13:54  
+> **Toplam maç:** 8  |  **Canlı:** 0  |  **Yaklaşan:** 7
 
 ## ⏰ YAKLAŞAN
 
-- ⏰ **T.Prozorova vs A.Eala** — YAKLAŞAN · `13:30` | WTA Singapur <https://fixbettv84.com/channel.html?id=bm1>
 - ⏰ **Dubai Basket vs Real Madrid** — YAKLAŞAN · `19:00` | Euroleague <https://fixbettv84.com/channel.html?id=ss>
 - ⏰ **Hapoel Tel Aviv vs Bayern Münih** — YAKLAŞAN · `19:00` | Euroleague <https://fixbettv84.com/channel.html?id=ss2>
 - ⏰ **Panathinaikos vs Paris** — YAKLAŞAN · `21:15` | Euroleague <https://fixbettv84.com/channel.html?id=ss2>
@@ -14,6 +13,10 @@
 - ⏰ **Hollanda vs Almanya** — YAKLAŞAN · `21:45` | UEFA Uluslar Ligi <https://fixbettv84.com/channel.html?id=as>
 - ⏰ **Portekiz vs Galler** — YAKLAŞAN · `21:45` | UEFA Uluslar Ligi <https://fixbettv84.com/channel.html?id=ex2>
 - ⏰ **Norveç vs Danimarka** — YAKLAŞAN · `21:45` | UEFA Uluslar Ligi <https://fixbettv84.com/channel.html?id=ex1>
+
+## ✅ BİTTİ
+
+- ✅ **T.Prozorova vs A.Eala** — MS · `13:30` | WTA Singapur <https://fixbettv84.com/channel.html?id=bm1>
 
 ---
 ## 🏆 Lig Bazlı
