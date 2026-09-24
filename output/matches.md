@@ -1,22 +1,22 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-09-24 15:27  
-> **Toplam maç:** 8  |  **Canlı:** 0  |  **Yaklaşan:** 7
+> **Güncellenme:** 2026-09-24 19:26  
+> **Toplam maç:** 8  |  **Canlı:** 5  |  **Yaklaşan:** 0
 
-## ⏰ YAKLAŞAN
+## 🔴 CANLI
 
-- ⏰ **Dubai Basket vs Real Madrid** — YAKLAŞAN · `19:00` | Euroleague <https://fixbettv84.com/channel.html?id=ss>
-- ⏰ **Hapoel Tel Aviv vs Bayern Münih** — YAKLAŞAN · `19:00` | Euroleague <https://fixbettv84.com/channel.html?id=ss2>
-- ⏰ **Panathinaikos vs Paris** — YAKLAŞAN · `21:15` | Euroleague <https://fixbettv84.com/channel.html?id=ss2>
-- ⏰ **Barcelona vs Anadolu Efes** — YAKLAŞAN · `21:30` | Euroleague <https://fixbettv84.com/channel.html?id=ss>
-- ⏰ **Hollanda vs Almanya** — YAKLAŞAN · `21:45` | UEFA Uluslar Ligi <https://fixbettv84.com/channel.html?id=as>
-- ⏰ **Portekiz vs Galler** — YAKLAŞAN · `21:45` | UEFA Uluslar Ligi <https://fixbettv84.com/channel.html?id=ex2>
-- ⏰ **Norveç vs Danimarka** — YAKLAŞAN · `21:45` | UEFA Uluslar Ligi <https://fixbettv84.com/channel.html?id=ex1>
+- 🔴 **Panathinaikos vs Paris** — CANLI · `21:15` | Euroleague <https://fixbettv84.com/channel.html?id=ss2>
+- 🔴 **Barcelona vs Anadolu Efes** — CANLI · `21:30` | Euroleague <https://fixbettv84.com/channel.html?id=ss>
+- 🔴 **Hollanda 0 - 1 Almanya** — CANLI · `21:45` | UEFA Uluslar Ligi <https://fixbettv84.com/channel.html?id=as>
+- 🔴 **Portekiz 1 - 0 Galler** — CANLI · `21:45` | UEFA Uluslar Ligi <https://fixbettv84.com/channel.html?id=ex2>
+- 🔴 **Norveç 2 - 1 Danimarka** — CANLI · `21:45` | UEFA Uluslar Ligi <https://fixbettv84.com/channel.html?id=ex1>
 
 ## ✅ BİTTİ
 
 - ✅ **T.Prozorova vs A.Eala** — MS · `13:30` | WTA Singapur <https://fixbettv84.com/channel.html?id=bm1>
+- ✅ **Dubai Basket vs Real Madrid** — MS · `19:00` | Euroleague <https://fixbettv84.com/channel.html?id=ss>
+- ✅ **Hapoel Tel Aviv vs Bayern Münih** — MS · `19:00` | Euroleague <https://fixbettv84.com/channel.html?id=ss2>
 
 ---
 ## 🏆 Lig Bazlı
@@ -24,13 +24,13 @@
 ### Euroleague
 - ⏰ Dubai Basket vs Real Madrid — 19:00
 - ⏰ Hapoel Tel Aviv vs Bayern Münih — 19:00
-- ⏰ Panathinaikos vs Paris — 21:15
-- ⏰ Barcelona vs Anadolu Efes — 21:30
+- 🔴 Panathinaikos vs Paris — 21:15
+- 🔴 Barcelona vs Anadolu Efes — 21:30
 
 ### UEFA Uluslar Ligi
-- ⏰ Hollanda vs Almanya — 21:45
-- ⏰ Portekiz vs Galler — 21:45
-- ⏰ Norveç vs Danimarka — 21:45
+- 🔴 Hollanda vs Almanya — 21:45
+- 🔴 Portekiz vs Galler — 21:45
+- 🔴 Norveç vs Danimarka — 21:45
 
 ### WTA Singapur
 - ⏰ T.Prozorova vs A.Eala — 13:30
