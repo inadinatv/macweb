@@ -9,13 +9,13 @@
       "fixbettv84.com",
       "fixbettv19.com"
     ],
-    "last_checked": "2026-09-24T05:30:17+00:00",
+    "last_checked": "2026-09-24T10:26:51+00:00",
     "note": "OK",
     "probed": 200
   },
   "date": "2026-09-24",
   "timezone": "Europe/Istanbul",
-  "generated_at": "2026-09-24T08:30:47+03:00",
+  "generated_at": "2026-09-24T13:26:15+03:00",
   "matches": [
     {
       "match_id": "bm1",
@@ -162,7 +162,7 @@
       "started": false,
       "raw_event": "21:45 | UEFA Uluslar Ligi",
       "url": "https://fixbettv84.com/channel.html?id=as",
-      "fetched_at": "2026-09-24T08:30:47+03:00",
+      "fetched_at": "2026-09-24T13:26:15+03:00",
       "status_source": "mackolik",
       "raw_status": "none",
       "score_home": null,
@@ -188,7 +188,7 @@
       "started": false,
       "raw_event": "21:45 | UEFA Uluslar Ligi",
       "url": "https://fixbettv84.com/channel.html?id=ex2",
-      "fetched_at": "2026-09-24T08:30:47+03:00",
+      "fetched_at": "2026-09-24T13:26:15+03:00",
       "status_source": "mackolik",
       "raw_status": "none",
       "score_home": null,
@@ -214,7 +214,7 @@
       "started": false,
       "raw_event": "21:45 | UEFA Uluslar Ligi",
       "url": "https://fixbettv84.com/channel.html?id=ex1",
-      "fetched_at": "2026-09-24T08:30:47+03:00",
+      "fetched_at": "2026-09-24T13:26:15+03:00",
       "status_source": "mackolik",
       "raw_status": "none",
       "score_home": null,
