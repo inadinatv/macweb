@@ -1,7 +1,7 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-09-25 15:32  
+> **Güncellenme:** 2026-09-25 15:54  
 > **Toplam maç:** 9  |  **Canlı:** 1  |  **Yaklaşan:** 8
 
 ## 🔴 CANLI
@@ -139,7 +139,7 @@
 - 🟢 **S SPORT PLUS** <https://andro.evrenesoglu121.click/checklist/androstreamlivessplus1.m3u8>
 - 🟢 **TIVIBU SPOR** <https://andro.evrenesoglu121.click/checklist/androstreamlivets.m3u8>
 - 🟢 **TIVIBU SPOR 1** <https://andro.evrenesoglu121.click/checklist/androstreamlivets1.m3u8>
-- 🟡 **TIVIBU SPOR 2** <https://andro.evrenesoglu121.click/checklist/androstreamlivets2.m3u8>
+- 🟢 **TIVIBU SPOR 2** <https://andro.evrenesoglu121.click/checklist/androstreamlivets2.m3u8>
 - 🟢 **TIVIBU SPOR 3** <https://andro.evrenesoglu121.click/checklist/androstreamlivets3.m3u8>
 - 🟢 **TIVIBU SPOR 4** <https://andro.evrenesoglu121.click/checklist/androstreamlivets4.m3u8>
 - 🟢 **SMARTSPOR** <https://andro.evrenesoglu121.click/checklist/androstreamlivesm1.m3u8>
@@ -149,7 +149,7 @@
 - 🟢 **TABII SPOR** <https://andro.evrenesoglu121.click/checklist/androstreamlivetb.m3u8>
 - 🟢 **TABII SPOR 1** <https://andro.evrenesoglu121.click/checklist/androstreamlivetb1.m3u8>
 - 🟢 **TABII SPOR 2** <https://andro.evrenesoglu121.click/checklist/androstreamlivetb2.m3u8>
-- 🟡 **TABII SPOR 3** <https://andro.evrenesoglu121.click/checklist/androstreamlivetb3.m3u8>
+- 🟢 **TABII SPOR 3** <https://andro.evrenesoglu121.click/checklist/androstreamlivetb3.m3u8>
 - 🟢 **TABII SPOR 4** <https://andro.evrenesoglu121.click/checklist/androstreamlivetb4.m3u8>
 - 🟢 **TABII SPOR 5** <https://andro.evrenesoglu121.click/checklist/androstreamlivetb5.m3u8>
 - 🟢 **TABII SPOR 6** <https://andro.evrenesoglu121.click/checklist/androstreamlivetb6.m3u8>
