@@ -33,6 +33,7 @@ import {
   Activity,
   BarChart3,
   Download,
+  FileSpreadsheet,
   Filter,
   RefreshCw,
   SlidersHorizontal,
@@ -53,6 +54,7 @@ import {
   YAxis,
 } from "recharts";
 import { toast } from "sonner";
+import * as XLSX from "xlsx";
 
 type Topic = {
   id: number;
@@ -372,6 +374,28 @@ function BadgeShowcase() {
   return <section className="special-page"><div className="eyebrow"><Trophy size={15} />KATILIMI GÖRÜNÜR KIL</div><h1>Rozet koleksiyonun</h1><p className="special-lead">Topluluğa kattığın değer, kazandığın rozetlerle görünür.</p><div className="badge-hero"><div className="badge-hero-orb"><Crown size={42} /></div><div><span className="eyebrow">MEVCUT SEVİYE</span><h2>Gezgin <span>· 248 XP</span></h2><p>Bir sonraki seviyeye 252 XP kaldı. Konu açmaya devam et.</p><div className="progress-track"><span style={{ width: "49.6%" }} /></div></div></div><div className="badge-grid">{badgeList.map(({ icon: Icon, name, detail, tone }) => <div className={`badge-large ${tone}`} key={name}><div className="badge-large-icon"><Icon size={27} /></div><h3>{name}</h3><p>{detail}</p><span className="earned"><CheckCircle2 size={14} />Kazanıldı</span></div>)}</div></section>;
 }
 
+function downloadCsv(filename: string, rows: Record<string, unknown>[]) {
+  if (!rows.length) {
+    toast("Dışa aktarılacak veri bulunamadı.");
+    return;
+  }
+  const columns = Object.keys(rows[0]);
+  const escapeCsv = (value: unknown) => {
+    const normalized = value === null || value === undefined ? "" : String(value);
+    return /[",\n\r]/.test(normalized) ? `"${normalized.replace(/"/g, '""')}"` : normalized;
+  };
+  const csv = [columns, ...rows.map((row) => columns.map((column) => escapeCsv(row[column])))]
+    .map((line) => line.join(","))
+    .join("\r\n");
+  const blob = new Blob(["\uFEFF" + csv], { type: "text/csv;charset=utf-8" });
+  const url = URL.createObjectURL(blob);
+  const link = document.createElement("a");
+  link.href = url;
+  link.download = filename;
+  link.click();
+  URL.revokeObjectURL(url);
+}
+
 function AdminPanel() {
   const [period, setPeriod] = useState<"7" | "30" | "90">("30");
   const [metric, setMetric] = useState<"members" | "activity" | "content">("activity");
@@ -379,6 +403,7 @@ function AdminPanel() {
   const [userStatus, setUserStatus] = useState("Tüm durumlar");
   const [memberQuery, setMemberQuery] = useState("");
   const [showFilters, setShowFilters] = useState(true);
+  const [isExporting, setIsExporting] = useState(false);
 
   const chartData = useMemo(() => {
     const channelWeight = channel === "Tümü" ? 1 : channel === "Maç sohbeti" ? 1.12 : channel === "Transfer merkezi" ? .88 : .74;
@@ -400,6 +425,69 @@ function AdminPanel() {
   }), [memberQuery, userStatus]);
   const totalSegments = userSegments.reduce((sum, segment) => sum + segment.value, 0);
 
+  const exportMemberRows = filteredMembers.map((member) => ({
+    Kullanıcı: member.name,
+    Rol: member.role,
+    Durum: member.status,
+    Konu: member.topics,
+    Yanıt: member.replies,
+    SonAktivite: member.lastActive,
+  }));
+  const exportActivityRows = chartData.map((point) => ({
+    Dönem: point.day,
+    AktifKullanıcı: point.users,
+    Yanıt: point.replies,
+    YeniKonu: point.topics,
+    Görüntülenme: point.views,
+  }));
+  const exportChannelRows = channelActivity.map((item) => ({
+    Kanal: item.name,
+    Konu: item.topics,
+    Yanıt: item.replies,
+  }));
+  const exportSegmentRows = userSegments.map((segment) => ({
+    Segment: segment.name,
+    Kullanıcı: segment.value,
+    Oran: `${Math.round(segment.value / totalSegments * 100)}%`,
+  }));
+  const exportSuffix = `${period}gun-${new Date().toISOString().slice(0, 10)}`;
+  const handleCsvExport = () => {
+    downloadCsv(`macweb-kullanicilar-${exportSuffix}.csv`, exportMemberRows);
+    toast(`${exportMemberRows.length} kullanıcı CSV olarak indirildi.`);
+  };
+  const handleExcelExport = () => {
+    setIsExporting(true);
+    try {
+      const workbook = XLSX.utils.book_new();
+      const summaryRows = [
+        { Alan: "Rapor tarihi", Değer: new Date().toLocaleString("tr-TR") },
+        { Alan: "Dönem", Değer: `${period} gün` },
+        { Alan: "Kanal filtresi", Değer: channel },
+        { Alan: "Kullanıcı durumu", Değer: userStatus },
+        { Alan: "Üye araması", Değer: memberQuery || "Yok" },
+        { Alan: "Aktif üye", Değer: 2841 },
+        { Alan: "Toplam konu", Değer: 4892 },
+        { Alan: "Filtrelenmiş kullanıcı", Değer: exportMemberRows.length },
+      ];
+      const sheets = [
+        ["Özet", summaryRows],
+        ["Kullanıcılar", exportMemberRows],
+        ["Aktivite", exportActivityRows],
+        ["Kanallar", exportChannelRows],
+        ["Segmentler", exportSegmentRows],
+      ] as const;
+      sheets.forEach(([name, rows]) => {
+        const sheet = XLSX.utils.json_to_sheet(rows);
+        sheet["!cols"] = Object.keys(rows[0] || {}).map(() => ({ wch: 20 }));
+        XLSX.utils.book_append_sheet(workbook, sheet, name);
+      });
+      XLSX.writeFile(workbook, `macweb-admin-raporu-${exportSuffix}.xlsx`);
+      toast("Excel raporu 5 çalışma sayfasıyla indirildi.");
+    } finally {
+      setIsExporting(false);
+    }
+  };
+
   return <section className="special-page admin-page">
     <div className="admin-header"><div><div className="eyebrow"><ShieldCheck size={15} />YÖNETİM MERKEZİ</div><h1>Topluluğu yönet</h1><p className="special-lead">Moderasyon, üyeler ve içerik sağlığı tek ekranda.</p></div><span className="admin-status"><span className="status-dot" /> Sistemler normal</span></div>
 
@@ -407,7 +495,7 @@ function AdminPanel() {
 
     <div className="analytics-toolbar">
       <div><div className="eyebrow"><BarChart3 size={14} />ANALİTİK ÖZET</div><strong>Topluluk performansı</strong><span>Filtrelere göre canlı güncellenir</span></div>
-      <div className="analytics-toolbar-actions"><button className={showFilters ? "active" : ""} onClick={() => setShowFilters((value) => !value)}><SlidersHorizontal size={15} />Filtreler</button><button onClick={() => toast("CSV dışa aktarma hazırlanıyor.")}><Download size={15} />Dışa aktar</button><button onClick={() => toast("Veriler yenilendi.")} aria-label="Yenile"><RefreshCw size={15} /></button></div>
+      <div className="analytics-toolbar-actions"><button className={showFilters ? "active" : ""} onClick={() => setShowFilters((value) => !value)}><SlidersHorizontal size={15} />Filtreler</button><button onClick={handleCsvExport} disabled={isExporting}><Download size={15} />CSV</button><button onClick={handleExcelExport} disabled={isExporting}><FileSpreadsheet size={15} />{isExporting ? "Hazırlanıyor" : "Excel"}</button><button onClick={() => toast("Veriler yenilendi.")} aria-label="Yenile"><RefreshCw size={15} /></button></div>
     </div>
 
     {showFilters && <div className="advanced-filters"><div className="filter-control"><label>Dönem</label><div className="segmented-control">{([["7", "7 gün"], ["30", "30 gün"], ["90", "90 gün"]] as const).map(([value, label]) => <button key={value} className={period === value ? "selected" : ""} onClick={() => setPeriod(value)}>{label}</button>)}</div></div><div className="filter-control"><label>Grafik metriği</label><select value={metric} onChange={(event) => setMetric(event.target.value as typeof metric)}><option value="activity">Yanıt aktivitesi</option><option value="members">Aktif kullanıcı</option><option value="content">Yeni konular</option></select></div><div className="filter-control"><label>Kanal</label><select value={channel} onChange={(event) => setChannel(event.target.value)}><option>Tümü</option>{channelActivity.map((item) => <option key={item.name}>{item.name}</option>)}</select></div><div className="filter-control"><label>Kullanıcı durumu</label><select value={userStatus} onChange={(event) => setUserStatus(event.target.value)}><option>Tüm durumlar</option><option>Aktif</option><option>Uzakta</option></select></div></div>}

@@ -12,6 +12,7 @@ App Crypto 24 içine WebView, iframe veya doğrudan bağlantı olarak eklenebile
 - Moderasyon kuyruğu, topluluk istatistikleri ve hızlı admin işlemleri görünümü
 - Recharts tabanlı aktivite trendi, kanal etkileşimi, kullanıcı dağılımı ve en aktif üyeler grafik/dashboards
 - Dönem, grafik metriği, kanal, kullanıcı durumu ve üye araması için gelişmiş admin filtreleri
+- Filtrelenmiş kullanıcı listesini UTF-8 CSV olarak indirme ve özet, kullanıcılar, aktivite, kanallar, segmentler sayfalarından oluşan Excel raporu
 - Mobil alt navigasyon ve Vercel SPA rewrite ayarı
 
 ## Vercel yayınlama
