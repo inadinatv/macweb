@@ -9,13 +9,13 @@
       "fixbettv84.com",
       "fixbettv19.com"
     ],
-    "last_checked": "2026-09-25T01:01:10+00:00",
+    "last_checked": "2026-09-25T05:55:45+00:00",
     "note": "OK",
     "probed": 200
   },
   "date": "2026-09-25",
   "timezone": "Europe/Istanbul",
-  "generated_at": "2026-09-25T08:44:42+03:00",
+  "generated_at": "2026-09-25T08:55:08+03:00",
   "matches": [
     {
       "match_id": "trtspor2",
@@ -136,7 +136,7 @@
       "started": false,
       "raw_event": "21:45 | UEFA Uluslar Ligi",
       "url": "https://fixbettv84.com/channel.html?id=atv",
-      "fetched_at": "2026-09-25T08:44:42+03:00",
+      "fetched_at": "2026-09-25T08:55:08+03:00",
       "status_source": "mackolik",
       "raw_status": "none",
       "score_home": null,
@@ -162,7 +162,7 @@
       "started": false,
       "raw_event": "21:45 | UEFA Uluslar Ligi",
       "url": "https://fixbettv84.com/channel.html?id=as",
-      "fetched_at": "2026-09-25T08:44:42+03:00",
+      "fetched_at": "2026-09-25T08:55:08+03:00",
       "status_source": "mackolik",
       "raw_status": "none",
       "score_home": null,
@@ -188,7 +188,7 @@
       "started": false,
       "raw_event": "21:45 | UEFA Uluslar Ligi",
       "url": "https://fixbettv84.com/channel.html?id=ex2",
-      "fetched_at": "2026-09-25T08:44:42+03:00",
+      "fetched_at": "2026-09-25T08:55:08+03:00",
       "status_source": "mackolik",
       "raw_status": "none",
       "score_home": null,
