@@ -1,12 +1,15 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-09-25 14:17  
-> **Toplam maç:** 9  |  **Canlı:** 0  |  **Yaklaşan:** 9
+> **Güncellenme:** 2026-09-25 15:32  
+> **Toplam maç:** 9  |  **Canlı:** 1  |  **Yaklaşan:** 8
+
+## 🔴 CANLI
+
+- 🔴 **Slovenya vs Polonya** — CANLI · `18:00` | CEV Erkekler Avrupa Şampiyonası <https://fixbettv84.com/channel.html?id=trtspor2>
 
 ## ⏰ YAKLAŞAN
 
-- ⏰ **Slovenya vs Polonya** — YAKLAŞAN · `18:00` | CEV Erkekler Avrupa Şampiyonası <https://fixbettv84.com/channel.html?id=trtspor2>
 - ⏰ **Tofaş vs Bandırma Bordo** — YAKLAŞAN · `19:00` | Basketbol Süper Ligi <https://fixbettv84.com/channel.html?id=b5>
 - ⏰ **Beşiktaş vs Valencia Basket** — YAKLAŞAN · `20:00` | Euroleague <https://fixbettv84.com/channel.html?id=ss2>
 - ⏰ **Fenerbahçe Tarfin vs Virtus Bologna** — YAKLAŞAN · `20:45` | Euroleague <https://fixbettv84.com/channel.html?id=ss>
@@ -23,7 +26,7 @@
 - ⏰ Tofaş vs Bandırma Bordo — 19:00
 
 ### CEV Erkekler Avrupa Şampiyonası
-- ⏰ Slovenya vs Polonya — 18:00
+- 🔴 Slovenya vs Polonya — 18:00
 - ⏰ Finlandiya vs Fransa — 22:00
 
 ### Euroleague

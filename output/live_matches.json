@@ -13,5 +13,32 @@
     "note": "OK",
     "probed": 200
   },
-  "live": []
+  "live": [
+    {
+      "match_id": "trtspor2",
+      "home": "Slovenya",
+      "away": "Polonya",
+      "league": "CEV Erkekler Avrupa Şampiyonası",
+      "time": "18:00",
+      "sport": "Voleybol",
+      "is_match_of_day": false,
+      "channel_id": "trtspor2",
+      "logo_home": "https://img.sporekrani.com/teams/RLRco3F2egdPFk5jLfnXdKUy51oRafmdve9DOqoC.png",
+      "logo_away": "https://img.sporekrani.com/teams/ToGT9pt0x6o6TNiBstPhlRYCmL0j0tAko7wd2uMg.png",
+      "status": "live",
+      "started": true,
+      "raw_event": "18:00 | CEV Erkekler Avrupa Şampiyonası",
+      "url": "https://fixbettv84.com/channel.html?id=trtspor2",
+      "fetched_at": "",
+      "status_source": "schedule",
+      "raw_status": "",
+      "score_home": null,
+      "score_away": null,
+      "score_source": "",
+      "score_updated_at": "",
+      "event_id": "",
+      "starts_at": "2026-09-25T18:00:00+03:00",
+      "status_clock": ""
+    }
+  ]
 }
