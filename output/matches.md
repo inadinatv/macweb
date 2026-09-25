@@ -1,15 +1,11 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-09-25 19:54  
-> **Toplam maç:** 9  |  **Canlı:** 6  |  **Yaklaşan:** 0
+> **Güncellenme:** 2026-09-25 20:51  
+> **Toplam maç:** 9  |  **Canlı:** 2  |  **Yaklaşan:** 0
 
 ## 🔴 CANLI
 
-- 🔴 **Fenerbahçe Tarfin vs Virtus Bologna** — CANLI · `20:45` | Euroleague <https://fixbettv84.com/channel.html?id=ss>
-- 🔴 **Türkiye 0 - 0 Fransa** — CANLI · `21:45` | UEFA Uluslar Ligi <https://fixbettv84.com/channel.html?id=atv>
-- 🔴 **İsveç 2 - 1 Romanya** — CANLI · `21:45` | UEFA Uluslar Ligi <https://fixbettv84.com/channel.html?id=as>
-- 🔴 **İtalya 0 - 1 Belçika** — CANLI · `21:45` | UEFA Uluslar Ligi <https://fixbettv84.com/channel.html?id=ex2>
 - 🔴 **Partizan vs Olimpia Milano** — CANLI · `21:45` | Euroleague <https://fixbettv84.com/channel.html?id=ss>
 - 🔴 **Finlandiya vs Fransa** — CANLI · `22:00` | CEV Erkekler Avrupa Şampiyonası <https://fixbettv84.com/channel.html?id=trtspor>
 
@@ -18,6 +14,10 @@
 - ✅ **Slovenya vs Polonya** — MS · `18:00` | CEV Erkekler Avrupa Şampiyonası <https://fixbettv84.com/channel.html?id=trtspor2>
 - ✅ **Tofaş vs Bandırma Bordo** — MS · `19:00` | Basketbol Süper Ligi <https://fixbettv84.com/channel.html?id=b5>
 - ✅ **Beşiktaş vs Valencia Basket** — MS · `20:00` | Euroleague <https://fixbettv84.com/channel.html?id=ss2>
+- ✅ **Fenerbahçe Tarfin vs Virtus Bologna** — MS · `20:45` | Euroleague <https://fixbettv84.com/channel.html?id=ss>
+- ✅ **Türkiye 0 - 1 Fransa** — MS · `21:45` | UEFA Uluslar Ligi <https://fixbettv84.com/channel.html?id=atv>
+- ✅ **İsveç 2 - 1 Romanya** — MS · `21:45` | UEFA Uluslar Ligi <https://fixbettv84.com/channel.html?id=as>
+- ✅ **İtalya 0 - 2 Belçika** — MS · `21:45` | UEFA Uluslar Ligi <https://fixbettv84.com/channel.html?id=ex2>
 
 ---
 ## 🏆 Lig Bazlı
@@ -31,13 +31,13 @@
 
 ### Euroleague
 - ⏰ Beşiktaş vs Valencia Basket — 20:00
-- 🔴 Fenerbahçe Tarfin vs Virtus Bologna — 20:45
+- ⏰ Fenerbahçe Tarfin vs Virtus Bologna — 20:45
 - 🔴 Partizan vs Olimpia Milano — 21:45
 
 ### UEFA Uluslar Ligi
-- 🔴 Türkiye vs Fransa — 21:45
-- 🔴 İsveç vs Romanya — 21:45
-- 🔴 İtalya vs Belçika — 21:45
+- ⏰ Türkiye vs Fransa — 21:45
+- ⏰ İsveç vs Romanya — 21:45
+- ⏰ İtalya vs Belçika — 21:45
 
 ---
 ## 📺 7/24 KANALLAR (31)
@@ -96,8 +96,8 @@
 
 ### ⚛️ ATOM SPOR ✅ `https://www.atomsportv515.top`
 - 🟢 **BEIN SPORTS 1** <https://ladyboy.yedektv.cfd//beintv/tracks-v1a1/mono.m3u8>
-- 🟢 **BEIN SPORTS 2** <https://ladyboy.yedektv.cfd//bein2/tracks-v1a1/mono.m3u8>
-- 🟢 **BEIN SPORTS 3** <https://ladyboy.yedektv.cfd//bein3/tracks-v1a1/mono.m3u8>
+- 🟡 **BEIN SPORTS 2** <https://ladyboy.yedektv.cfd//bein2/tracks-v1a1/mono.m3u8>
+- 🟡 **BEIN SPORTS 3** <https://ladyboy.yedektv.cfd//bein3/tracks-v1a1/mono.m3u8>
 - 🟢 **BEIN SPORTS 4** <https://ladyboy.yedektv.cfd//bein4/tracks-v1a1/mono.m3u8>
 - ⚪ **BEIN SPORTS 5** <https://tv.atomspor.workers.dev/?ID=bein-sports-5>
 - 🟢 **S SPORT** <https://ladyboy.yedektv.cfd//s-sport/tracks-v1a1/mono.m3u8>
