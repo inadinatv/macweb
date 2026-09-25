@@ -1,39 +1,40 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-09-24 22:41  
-> **Toplam maç:** 8  |  **Canlı:** 0  |  **Yaklaşan:** 3
+> **Güncellenme:** 2026-09-25 00:53  
+> **Toplam maç:** 9  |  **Canlı:** 0  |  **Yaklaşan:** 9
 
 ## ⏰ YAKLAŞAN
 
-- ⏰ **T.Prozorova vs A.Eala** — YAKLAŞAN · `13:30` | WTA Singapur <https://fixbettv84.com/channel.html?id=bm1>
-- ⏰ **Dubai Basket vs Real Madrid** — YAKLAŞAN · `19:00` | Euroleague <https://fixbettv84.com/channel.html?id=ss>
-- ⏰ **Hapoel Tel Aviv vs Bayern Münih** — YAKLAŞAN · `19:00` | Euroleague <https://fixbettv84.com/channel.html?id=ss2>
-
-## ✅ BİTTİ
-
-- ✅ **Panathinaikos vs Paris** — MS · `21:15` | Euroleague <https://fixbettv84.com/channel.html?id=ss2>
-- ✅ **Barcelona vs Anadolu Efes** — MS · `21:30` | Euroleague <https://fixbettv84.com/channel.html?id=ss>
-- ✅ **Hollanda vs Almanya** — MS · `21:45` | UEFA Uluslar Ligi <https://fixbettv84.com/channel.html?id=as>
-- ✅ **Portekiz vs Galler** — MS · `21:45` | UEFA Uluslar Ligi <https://fixbettv84.com/channel.html?id=ex2>
-- ✅ **Norveç vs Danimarka** — MS · `21:45` | UEFA Uluslar Ligi <https://fixbettv84.com/channel.html?id=ex1>
+- ⏰ **Slovenya vs Polonya** — YAKLAŞAN · `18:00` | CEV Erkekler Avrupa Şampiyonası <https://fixbettv84.com/channel.html?id=trtspor2>
+- ⏰ **Tofaş vs Bandırma Bordo** — YAKLAŞAN · `19:00` | Basketbol Süper Ligi <https://fixbettv84.com/channel.html?id=b5>
+- ⏰ **Beşiktaş vs Valencia Basket** — YAKLAŞAN · `20:00` | Euroleague <https://fixbettv84.com/channel.html?id=ss2>
+- ⏰ **Fenerbahçe Tarfin vs Virtus Bologna** — YAKLAŞAN · `20:45` | Euroleague <https://fixbettv84.com/channel.html?id=ss>
+- ⏰ **Türkiye vs Fransa** — YAKLAŞAN · `21:45` | UEFA Uluslar Ligi <https://fixbettv84.com/channel.html?id=atv>
+- ⏰ **İsveç vs Romanya** — YAKLAŞAN · `21:45` | UEFA Uluslar Ligi <https://fixbettv84.com/channel.html?id=as>
+- ⏰ **İtalya vs Belçika** — YAKLAŞAN · `21:45` | UEFA Uluslar Ligi <https://fixbettv84.com/channel.html?id=ex2>
+- ⏰ **Partizan vs Olimpia Milano** — YAKLAŞAN · `21:45` | Euroleague <https://fixbettv84.com/channel.html?id=ss>
+- ⏰ **Finlandiya vs Fransa** — YAKLAŞAN · `22:00` | CEV Erkekler Avrupa Şampiyonası <https://fixbettv84.com/channel.html?id=trtspor>
 
 ---
 ## 🏆 Lig Bazlı
 
+### Basketbol Süper Ligi
+- ⏰ Tofaş vs Bandırma Bordo — 19:00
+
+### CEV Erkekler Avrupa Şampiyonası
+- ⏰ Slovenya vs Polonya — 18:00
+- ⏰ Finlandiya vs Fransa — 22:00
+
 ### Euroleague
-- ⏰ Dubai Basket vs Real Madrid — 19:00
-- ⏰ Hapoel Tel Aviv vs Bayern Münih — 19:00
-- ⏰ Panathinaikos vs Paris — 21:15
-- ⏰ Barcelona vs Anadolu Efes — 21:30
+- ⏰ Beşiktaş vs Valencia Basket — 20:00
+- ⏰ Fenerbahçe Tarfin vs Virtus Bologna — 20:45
+- ⏰ Partizan vs Olimpia Milano — 21:45
 
 ### UEFA Uluslar Ligi
-- ⏰ Hollanda vs Almanya — 21:45
-- ⏰ Portekiz vs Galler — 21:45
-- ⏰ Norveç vs Danimarka — 21:45
-
-### WTA Singapur
-- ⏰ T.Prozorova vs A.Eala — 13:30
+- ⏰ Türkiye vs Fransa — 21:45
+- ⏰ İsveç vs Romanya — 21:45
+- ⏰ İtalya vs Belçika — 21:45
 
 ---
 ## 📺 7/24 KANALLAR (31)
