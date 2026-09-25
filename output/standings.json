@@ -1,13 +1,13 @@
 {
  "source": "mackolik",
- "generated_at": "2026-09-25T14:21:34+03:00",
+ "generated_at": "2026-09-25T17:16:07+03:00",
  "leagues": [
   {
    "id": "soccer/tur.1",
    "name": "Trendyol Süper Lig",
    "sport": "Futbol",
    "season": "2026-27 Turkish Super Lig",
-   "updated_at": "2026-09-25T14:21:34+03:00",
+   "updated_at": "2026-09-25T17:16:07+03:00",
    "teams": 18,
    "rows": [
     {
