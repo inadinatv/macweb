@@ -30,7 +30,28 @@ import {
   Users,
   X,
   Zap,
+  Activity,
+  BarChart3,
+  Download,
+  Filter,
+  RefreshCw,
+  SlidersHorizontal,
+  UsersRound,
 } from "lucide-react";
+import {
+  Area,
+  AreaChart,
+  Bar,
+  BarChart,
+  CartesianGrid,
+  Cell,
+  Pie,
+  PieChart,
+  ResponsiveContainer,
+  Tooltip as ChartTooltip,
+  XAxis,
+  YAxis,
+} from "recharts";
 import { toast } from "sonner";
 
 type Topic = {
@@ -154,6 +175,45 @@ const badgeList = [
   { icon: Trophy, name: "İlk 10", detail: "Haftanın en aktifleri", tone: "gold" },
   { icon: MessageCircle, name: "Sohbet ustası", detail: "100 yanıt gönderdi", tone: "blue" },
   { icon: Sparkles, name: "Erken destekçi", detail: "Topluluk kurucularından", tone: "mint" },
+];
+
+const activityData = {
+  "7": [
+    { day: "Pzt", users: 92, replies: 138, topics: 18, views: 420 }, { day: "Sal", users: 114, replies: 176, topics: 23, views: 548 },
+    { day: "Çar", users: 128, replies: 201, topics: 27, views: 622 }, { day: "Per", users: 121, replies: 184, topics: 25, views: 591 },
+    { day: "Cum", users: 156, replies: 247, topics: 31, views: 741 }, { day: "Cmt", users: 181, replies: 296, topics: 38, views: 904 },
+    { day: "Paz", users: 148, replies: 224, topics: 29, views: 682 },
+  ],
+  "30": [
+    { day: "1. hf", users: 612, replies: 804, topics: 108, views: 2630 }, { day: "2. hf", users: 754, replies: 1038, topics: 136, views: 3280 },
+    { day: "3. hf", users: 891, replies: 1291, topics: 171, views: 4110 }, { day: "4. hf", users: 1042, replies: 1484, topics: 206, views: 4980 },
+  ],
+  "90": [
+    { day: "Oca", users: 1840, replies: 2920, topics: 384, views: 10600 }, { day: "Şub", users: 2210, replies: 3440, topics: 462, views: 12400 },
+    { day: "Mar", users: 2580, replies: 4010, topics: 541, views: 14100 }, { day: "Nis", users: 2841, replies: 4660, topics: 628, views: 16300 },
+  ],
+} as const;
+
+const memberRows = [
+  { name: "Mert Yılmaz", initials: "MY", role: "Topluluk elçisi", status: "Aktif", topics: 84, replies: 312, lastActive: "2 dk önce", color: "#7c5cff" },
+  { name: "Ece Kaya", initials: "EK", role: "Analist", status: "Aktif", topics: 61, replies: 184, lastActive: "8 dk önce", color: "#ef6b8a" },
+  { name: "Alp Demir", initials: "AD", role: "Uzman üye", status: "Aktif", topics: 47, replies: 156, lastActive: "21 dk önce", color: "#33c9a5" },
+  { name: "Bora Çetin", initials: "BÇ", role: "Aktif üye", status: "Uzakta", topics: 39, replies: 142, lastActive: "1 sa önce", color: "#4e9bff" },
+  { name: "Selin Aydın", initials: "SA", role: "Kurucu ekip", status: "Aktif", topics: 32, replies: 98, lastActive: "2 sa önce", color: "#f1a94b" },
+];
+
+const channelActivity = [
+  { name: "Maç sohbeti", topics: 86, replies: 624, color: "#8d72ff" },
+  { name: "Transfer merkezi", topics: 54, replies: 418, color: "#ef6b8a" },
+  { name: "Crypto & Web3", topics: 42, replies: 302, color: "#33c9a5" },
+  { name: "App Crypto 24", topics: 37, replies: 276, color: "#f1bd61" },
+  { name: "Off-topic", topics: 29, replies: 188, color: "#4e9bff" },
+];
+
+const userSegments = [
+  { name: "Aktif", value: 128, color: "#8d72ff" },
+  { name: "Uzakta", value: 74, color: "#54d7d0" },
+  { name: "Yeni", value: 38, color: "#f1bd61" },
 ];
 
 function Avatar({ initials, color, small = false }: { initials: string; color: string; small?: boolean }) {
@@ -313,5 +373,49 @@ function BadgeShowcase() {
 }
 
 function AdminPanel() {
-  return <section className="special-page admin-page"><div className="admin-header"><div><div className="eyebrow"><ShieldCheck size={15} />YÖNETİM MERKEZİ</div><h1>Topluluğu yönet</h1><p className="special-lead">Moderasyon, üyeler ve içerik sağlığı tek ekranda.</p></div><span className="admin-status"><span className="status-dot" /> Sistemler normal</span></div><div className="admin-stats"><div><span>İncelenecek rapor</span><strong>08</strong><small>son 24 saatte +2</small></div><div><span>Aktif üye</span><strong>2.841</strong><small className="positive">+12.4% bu hafta</small></div><div><span>Toplam konu</span><strong>4.892</strong><small className="positive">+46 bugün</small></div><div><span>Yanıt süresi</span><strong>6 dk</strong><small className="positive">hedef içinde</small></div></div><div className="admin-grid"><div className="admin-card"><div className="rail-heading"><h3>Moderasyon kuyruğu</h3><button onClick={() => toast("Tüm raporlar açıldı.")}>Tümünü gör</button></div>{["Spam bağlantı bildirimi", "Uygunsuz dil bildirimi", "Tekrarlanan konu"].map((item, i) => <div className="moderation-row" key={item}><div className={`moderation-icon ${i === 1 ? "warning" : ""}`}><Flag size={16} /></div><span><strong>{item}</strong><small>{i + 1} yeni rapor · {i + 4} dk önce</small></span><button onClick={() => toast("Rapor incelemeye alındı.")}><ChevronRight size={17} /></button></div>)}</div><div className="admin-card"><div className="rail-heading"><h3>Hızlı işlemler</h3></div><div className="quick-actions"><button onClick={() => toast("Yeni kanal sihirbazı açıldı.")}><Plus size={18} /><span>Yeni kanal oluştur</span><ChevronRight size={16} /></button><button onClick={() => toast("Rozet düzenleyici açıldı.")}><Trophy size={18} /><span>Rozetleri düzenle</span><ChevronRight size={16} /></button><button onClick={() => toast("Duyuru editörü açıldı.")}><Bell size={18} /><span>Duyuru yayınla</span><ChevronRight size={16} /></button></div></div></div></section>;
+  const [period, setPeriod] = useState<"7" | "30" | "90">("30");
+  const [metric, setMetric] = useState<"members" | "activity" | "content">("activity");
+  const [channel, setChannel] = useState("Tümü");
+  const [userStatus, setUserStatus] = useState("Tüm durumlar");
+  const [memberQuery, setMemberQuery] = useState("");
+  const [showFilters, setShowFilters] = useState(true);
+
+  const chartData = useMemo(() => {
+    const channelWeight = channel === "Tümü" ? 1 : channel === "Maç sohbeti" ? 1.12 : channel === "Transfer merkezi" ? .88 : .74;
+    return activityData[period].map((point) => ({
+      ...point,
+      replies: Math.round(point.replies * channelWeight),
+      topics: Math.round(point.topics * channelWeight),
+      users: Math.round(point.users * (channel === "Tümü" ? 1 : .72)),
+    }));
+  }, [channel, period]);
+
+  const metricKey = metric === "members" ? "users" : metric === "content" ? "topics" : "replies";
+  const metricLabel = metric === "members" ? "aktif kullanıcı" : metric === "content" ? "yeni konu" : "yanıt";
+  const metricColor = metric === "members" ? "#54d7d0" : metric === "content" ? "#f1bd61" : "#8d72ff";
+  const filteredMembers = useMemo(() => memberRows.filter((member) => {
+    const queryMatch = !memberQuery || `${member.name} ${member.role}`.toLocaleLowerCase("tr-TR").includes(memberQuery.toLocaleLowerCase("tr-TR"));
+    const statusMatch = userStatus === "Tüm durumlar" || member.status === userStatus;
+    return queryMatch && statusMatch;
+  }), [memberQuery, userStatus]);
+  const totalSegments = userSegments.reduce((sum, segment) => sum + segment.value, 0);
+
+  return <section className="special-page admin-page">
+    <div className="admin-header"><div><div className="eyebrow"><ShieldCheck size={15} />YÖNETİM MERKEZİ</div><h1>Topluluğu yönet</h1><p className="special-lead">Moderasyon, üyeler ve içerik sağlığı tek ekranda.</p></div><span className="admin-status"><span className="status-dot" /> Sistemler normal</span></div>
+
+    <div className="admin-stats"><div><span>İncelenecek rapor</span><strong>08</strong><small>son 24 saatte +2</small></div><div><span>Aktif üye</span><strong>2.841</strong><small className="positive">+12.4% bu hafta</small></div><div><span>Toplam konu</span><strong>4.892</strong><small className="positive">+46 bugün</small></div><div><span>Yanıt süresi</span><strong>6 dk</strong><small className="positive">hedef içinde</small></div></div>
+
+    <div className="analytics-toolbar">
+      <div><div className="eyebrow"><BarChart3 size={14} />ANALİTİK ÖZET</div><strong>Topluluk performansı</strong><span>Filtrelere göre canlı güncellenir</span></div>
+      <div className="analytics-toolbar-actions"><button className={showFilters ? "active" : ""} onClick={() => setShowFilters((value) => !value)}><SlidersHorizontal size={15} />Filtreler</button><button onClick={() => toast("CSV dışa aktarma hazırlanıyor.")}><Download size={15} />Dışa aktar</button><button onClick={() => toast("Veriler yenilendi.")} aria-label="Yenile"><RefreshCw size={15} /></button></div>
+    </div>
+
+    {showFilters && <div className="advanced-filters"><div className="filter-control"><label>Dönem</label><div className="segmented-control">{([["7", "7 gün"], ["30", "30 gün"], ["90", "90 gün"]] as const).map(([value, label]) => <button key={value} className={period === value ? "selected" : ""} onClick={() => setPeriod(value)}>{label}</button>)}</div></div><div className="filter-control"><label>Grafik metriği</label><select value={metric} onChange={(event) => setMetric(event.target.value as typeof metric)}><option value="activity">Yanıt aktivitesi</option><option value="members">Aktif kullanıcı</option><option value="content">Yeni konular</option></select></div><div className="filter-control"><label>Kanal</label><select value={channel} onChange={(event) => setChannel(event.target.value)}><option>Tümü</option>{channelActivity.map((item) => <option key={item.name}>{item.name}</option>)}</select></div><div className="filter-control"><label>Kullanıcı durumu</label><select value={userStatus} onChange={(event) => setUserStatus(event.target.value)}><option>Tüm durumlar</option><option>Aktif</option><option>Uzakta</option></select></div></div>}
+
+    <div className="analytics-grid"><div className="analytics-card activity-chart-card"><div className="analytics-card-heading"><div><h3><Activity size={16} /> Aktivite trendi</h3><p>{channel === "Tümü" ? "Tüm kanallar" : channel} · son {period} gün</p></div><span className="chart-highlight" style={{ color: metricColor }}><strong>{chartData.reduce((sum, point) => sum + point[metricKey], 0).toLocaleString("tr-TR")}</strong> {metricLabel}</span></div><div className="chart-wrap"><ResponsiveContainer width="100%" height={255}><AreaChart data={chartData} margin={{ top: 8, right: 5, left: -22, bottom: 0 }}><defs><linearGradient id="activityGradient" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stopColor={metricColor} stopOpacity={.38} /><stop offset="100%" stopColor={metricColor} stopOpacity={0} /></linearGradient></defs><CartesianGrid stroke="rgba(170,177,232,.1)" vertical={false} /><XAxis dataKey="day" axisLine={false} tickLine={false} tick={{ fill: "#747b98", fontSize: 10 }} /><YAxis axisLine={false} tickLine={false} tick={{ fill: "#747b98", fontSize: 10 }} /><ChartTooltip contentStyle={{ background: "#171a2e", border: "1px solid rgba(141,114,255,.32)", borderRadius: 9, color: "#eef0ff", fontSize: 11 }} labelStyle={{ color: "#aaa0e9" }} /><Area type="monotone" dataKey={metricKey} stroke={metricColor} fill="url(#activityGradient)" strokeWidth={2.5} dot={{ fill: metricColor, strokeWidth: 0, r: 3 }} activeDot={{ r: 5, stroke: "#fff", strokeWidth: 2 }} /></AreaChart></ResponsiveContainer></div><div className="chart-legend"><span><i style={{ background: metricColor }} />{metricLabel}</span><span><i style={{ background: "#3a3f5b" }} />Önceki dönem ile karşılaştırmalı</span></div></div><div className="analytics-card segment-card"><div className="analytics-card-heading"><div><h3><UsersRound size={16} /> Kullanıcı dağılımı</h3><p>Seçili dönemdeki görünüm</p></div><span className="segment-total">{totalSegments} kişi</span></div><div className="donut-wrap"><ResponsiveContainer width="100%" height={155}><PieChart><Pie data={userSegments} dataKey="value" nameKey="name" innerRadius={48} outerRadius={68} paddingAngle={4} stroke="none">{userSegments.map((segment) => <Cell key={segment.name} fill={segment.color} />)}</Pie><ChartTooltip contentStyle={{ background: "#171a2e", border: "1px solid rgba(141,114,255,.32)", borderRadius: 9, color: "#eef0ff", fontSize: 11 }} /></PieChart></ResponsiveContainer><div className="donut-center"><strong>240</strong><span>üye</span></div></div><div className="segment-list">{userSegments.map((segment) => <div key={segment.name}><span><i style={{ background: segment.color }} />{segment.name}</span><strong>{segment.value}<small>{Math.round(segment.value / totalSegments * 100)}%</small></strong></div>)}</div></div></div>
+
+    <div className="analytics-grid lower-analytics"><div className="analytics-card channel-chart-card"><div className="analytics-card-heading"><div><h3><Hash size={16} /> Kanal etkileşimi</h3><p>Konu ve yanıt yoğunluğu</p></div><span className="chart-highlight"><strong>{channelActivity.reduce((sum, item) => sum + item.replies, 0).toLocaleString("tr-TR")}</strong> yanıt</span></div><div className="chart-wrap"><ResponsiveContainer width="100%" height={210}><BarChart data={channelActivity} layout="vertical" margin={{ top: 2, right: 7, left: 12, bottom: 0 }}><CartesianGrid stroke="rgba(170,177,232,.1)" horizontal={false} /><XAxis type="number" axisLine={false} tickLine={false} tick={{ fill: "#747b98", fontSize: 10 }} /><YAxis type="category" dataKey="name" width={105} axisLine={false} tickLine={false} tick={{ fill: "#9ca3bd", fontSize: 10 }} /><ChartTooltip cursor={{ fill: "rgba(141,114,255,.08)" }} contentStyle={{ background: "#171a2e", border: "1px solid rgba(141,114,255,.32)", borderRadius: 9, color: "#eef0ff", fontSize: 11 }} /><Bar dataKey="replies" fill="#8d72ff" radius={[0, 5, 5, 0]} barSize={13} /></BarChart></ResponsiveContainer></div></div><div className="analytics-card member-table-card"><div className="analytics-card-heading"><div><h3><Users size={16} /> En aktif üyeler</h3><p>{filteredMembers.length} kullanıcı listeleniyor</p></div><button className="text-action" onClick={() => toast("Üye yönetimi açıldı.")}>Yönet</button></div><div className="member-table">{filteredMembers.map((member) => <div className="member-row" key={member.name}><Avatar initials={member.initials} color={member.color} small /><span className="member-name"><strong>{member.name}</strong><small>{member.role}</small></span><span className="member-activity"><strong>{member.replies}</strong><small>yanıt</small></span><span className={`member-status ${member.status === "Aktif" ? "online" : "away"}`}><i />{member.status}</span></div>)}{filteredMembers.length === 0 && <div className="member-empty">Filtreye uygun üye bulunamadı.</div>}</div></div></div>
+
+    <div className="admin-grid"><div className="admin-card"><div className="rail-heading"><h3>Moderasyon kuyruğu</h3><button onClick={() => toast("Tüm raporlar açıldı.")}>Tümünü gör</button></div>{["Spam bağlantı bildirimi", "Uygunsuz dil bildirimi", "Tekrarlanan konu"].map((item, i) => <div className="moderation-row" key={item}><div className={`moderation-icon ${i === 1 ? "warning" : ""}`}><Flag size={16} /></div><span><strong>{item}</strong><small>{i + 1} yeni rapor · {i + 4} dk önce</small></span><button onClick={() => toast("Rapor incelemeye alındı.")}><ChevronRight size={17} /></button></div>)}</div><div className="admin-card"><div className="rail-heading"><h3>Hızlı işlemler</h3></div><div className="quick-actions"><button onClick={() => toast("Yeni kanal sihirbazı açıldı.")}><Plus size={18} /><span>Yeni kanal oluştur</span><ChevronRight size={16} /></button><button onClick={() => toast("Rozet düzenleyici açıldı.")}><Trophy size={18} /><span>Rozetleri düzenle</span><ChevronRight size={16} /></button><button onClick={() => toast("Duyuru editörü açıldı.")}><Bell size={18} /><span>Duyuru yayınla</span><ChevronRight size={16} /></button></div></div></div>
+  </section>;
 }
