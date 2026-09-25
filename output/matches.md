@@ -1,23 +1,23 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-09-25 20:51  
-> **Toplam maç:** 9  |  **Canlı:** 2  |  **Yaklaşan:** 0
+> **Güncellenme:** 2026-09-25 22:45  
+> **Toplam maç:** 9  |  **Canlı:** 0  |  **Yaklaşan:** 3
 
-## 🔴 CANLI
+## ⏰ YAKLAŞAN
 
-- 🔴 **Partizan vs Olimpia Milano** — CANLI · `21:45` | Euroleague <https://fixbettv84.com/channel.html?id=ss>
-- 🔴 **Finlandiya vs Fransa** — CANLI · `22:00` | CEV Erkekler Avrupa Şampiyonası <https://fixbettv84.com/channel.html?id=trtspor>
+- ⏰ **Slovenya vs Polonya** — YAKLAŞAN · `18:00` | CEV Erkekler Avrupa Şampiyonası <https://fixbettv84.com/channel.html?id=trtspor2>
+- ⏰ **Tofaş vs Bandırma Bordo** — YAKLAŞAN · `19:00` | Basketbol Süper Ligi <https://fixbettv84.com/channel.html?id=b5>
+- ⏰ **Beşiktaş vs Valencia Basket** — YAKLAŞAN · `20:00` | Euroleague <https://fixbettv84.com/channel.html?id=ss2>
 
 ## ✅ BİTTİ
 
-- ✅ **Slovenya vs Polonya** — MS · `18:00` | CEV Erkekler Avrupa Şampiyonası <https://fixbettv84.com/channel.html?id=trtspor2>
-- ✅ **Tofaş vs Bandırma Bordo** — MS · `19:00` | Basketbol Süper Ligi <https://fixbettv84.com/channel.html?id=b5>
-- ✅ **Beşiktaş vs Valencia Basket** — MS · `20:00` | Euroleague <https://fixbettv84.com/channel.html?id=ss2>
 - ✅ **Fenerbahçe Tarfin vs Virtus Bologna** — MS · `20:45` | Euroleague <https://fixbettv84.com/channel.html?id=ss>
-- ✅ **Türkiye 0 - 1 Fransa** — MS · `21:45` | UEFA Uluslar Ligi <https://fixbettv84.com/channel.html?id=atv>
-- ✅ **İsveç 2 - 1 Romanya** — MS · `21:45` | UEFA Uluslar Ligi <https://fixbettv84.com/channel.html?id=as>
-- ✅ **İtalya 0 - 2 Belçika** — MS · `21:45` | UEFA Uluslar Ligi <https://fixbettv84.com/channel.html?id=ex2>
+- ✅ **Türkiye vs Fransa** — MS · `21:45` | UEFA Uluslar Ligi <https://fixbettv84.com/channel.html?id=atv>
+- ✅ **İsveç vs Romanya** — MS · `21:45` | UEFA Uluslar Ligi <https://fixbettv84.com/channel.html?id=as>
+- ✅ **İtalya vs Belçika** — MS · `21:45` | UEFA Uluslar Ligi <https://fixbettv84.com/channel.html?id=ex2>
+- ✅ **Partizan vs Olimpia Milano** — MS · `21:45` | Euroleague <https://fixbettv84.com/channel.html?id=ss>
+- ✅ **Finlandiya vs Fransa** — MS · `22:00` | CEV Erkekler Avrupa Şampiyonası <https://fixbettv84.com/channel.html?id=trtspor>
 
 ---
 ## 🏆 Lig Bazlı
@@ -27,12 +27,12 @@
 
 ### CEV Erkekler Avrupa Şampiyonası
 - ⏰ Slovenya vs Polonya — 18:00
-- 🔴 Finlandiya vs Fransa — 22:00
+- ⏰ Finlandiya vs Fransa — 22:00
 
 ### Euroleague
 - ⏰ Beşiktaş vs Valencia Basket — 20:00
 - ⏰ Fenerbahçe Tarfin vs Virtus Bologna — 20:45
-- 🔴 Partizan vs Olimpia Milano — 21:45
+- ⏰ Partizan vs Olimpia Milano — 21:45
 
 ### UEFA Uluslar Ligi
 - ⏰ Türkiye vs Fransa — 21:45
