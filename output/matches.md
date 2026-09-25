@@ -1,7 +1,7 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-09-25 00:53  
+> **Güncellenme:** 2026-09-25 01:01  
 > **Toplam maç:** 9  |  **Canlı:** 0  |  **Yaklaşan:** 9
 
 ## ⏰ YAKLAŞAN
@@ -98,7 +98,7 @@
 - 🟢 **BEIN SPORTS 4** <https://ladyboy.yedektv.cfd//bein4/tracks-v1a1/mono.m3u8>
 - ⚪ **BEIN SPORTS 5** <https://tv.atomspor.workers.dev/?ID=bein-sports-5>
 - 🟢 **S SPORT** <https://ladyboy.yedektv.cfd//s-sport/tracks-v1a1/mono.m3u8>
-- 🟢 **S SPORT 2** <https://ladyboy.yedektv.cfd//s-sport2/tracks-v1a1/mono.m3u8>
+- 🟡 **S SPORT 2** <https://ladyboy.yedektv.cfd//s-sport2/tracks-v1a1/mono.m3u8>
 - ⚪ **S SPORT PLUS** <https://tv.atomspor.workers.dev/?ID=ssport-plus>
 - ⚪ **TIVIBU SPOR 1** <https://tv.atomspor.workers.dev/?ID=tivibu-spor-1>
 - ⚪ **TIVIBU SPOR 2** <https://tv.atomspor.workers.dev/?ID=tivibu-spor-2>
