@@ -1,17 +1,16 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-09-26 11:50  
-> **Toplam maç:** 10  |  **Canlı:** 1  |  **Yaklaşan:** 9
+> **Güncellenme:** 2026-09-26 13:28  
+> **Toplam maç:** 10  |  **Canlı:** 2  |  **Yaklaşan:** 7
 
 ## 🔴 CANLI
 
-- 🔴 **Türk Telekom vs Karşıyaka** — CANLI · `13:00` | Basketbol Süper Ligi <https://fixbettv84.com/channel.html?id=b5>
+- 🔴 **Petkimspor vs Denizli Basket** — CANLI · `15:30` | Basketbol Süper Ligi <https://fixbettv84.com/channel.html?id=b5>
+- 🔴 **Slovenya 0 - 0 İskoçya** — CANLI · `16:00` | UEFA Uluslar Ligi <https://fixbettv84.com/channel.html?id=as>
 
 ## ⏰ YAKLAŞAN
 
-- ⏰ **Petkimspor vs Denizli Basket** — YAKLAŞAN · `15:30` | Basketbol Süper Ligi <https://fixbettv84.com/channel.html?id=b5>
-- ⏰ **Slovenya vs İskoçya** — YAKLAŞAN · `16:00` | UEFA Uluslar Ligi <https://fixbettv84.com/channel.html?id=as>
 - ⏰ **Galatasaray MCT vs Çayırova Bld.** — YAKLAŞAN · `18:00` | Basketbol Süper Ligi <https://fixbettv84.com/channel.html?id=b5>
 - ⏰ **Finlandiya vs Slovenya** — YAKLAŞAN · `18:00` | CEV Erkekler Avrupa Şampiyonası <https://fixbettv84.com/channel.html?id=trtspor2>
 - ⏰ **Bilbao Basket vs Manresa** — YAKLAŞAN · `19:00` | İspanya Basketbol Ligi <https://fixbettv84.com/channel.html?id=sms2>
@@ -20,12 +19,16 @@
 - ⏰ **Barcelona vs Leyma Coruna** — YAKLAŞAN · `22:00` | İspanya Basketbol Ligi <https://fixbettv84.com/channel.html?id=smarts>
 - ⏰ **Fransa vs Polonya** — YAKLAŞAN · `22:00` | CEV Erkekler Avrupa Şampiyonası <https://fixbettv84.com/channel.html?id=trtspor>
 
+## ✅ BİTTİ
+
+- ✅ **Türk Telekom vs Karşıyaka** — MS · `13:00` | Basketbol Süper Ligi <https://fixbettv84.com/channel.html?id=b5>
+
 ---
 ## 🏆 Lig Bazlı
 
 ### Basketbol Süper Ligi
-- 🔴 Türk Telekom vs Karşıyaka — 13:00
-- ⏰ Petkimspor vs Denizli Basket — 15:30
+- ⏰ Türk Telekom vs Karşıyaka — 13:00
+- 🔴 Petkimspor vs Denizli Basket — 15:30
 - ⏰ Galatasaray MCT vs Çayırova Bld. — 18:00
 
 ### CEV Erkekler Avrupa Şampiyonası
@@ -33,7 +36,7 @@
 - ⏰ Fransa vs Polonya — 22:00
 
 ### UEFA Uluslar Ligi
-- ⏰ Slovenya vs İskoçya — 16:00
+- 🔴 Slovenya vs İskoçya — 16:00
 - ⏰ Çekya vs Hırvatistan — 21:45
 - ⏰ İngiltere vs İspanya — 21:45
 
@@ -97,9 +100,9 @@
 ## ⚡ EKSTRA PANELLER — m3u8 (79)
 
 ### ⚛️ ATOM SPOR ✅ `https://www.atomsportv515.top`
-- 🟢 **BEIN SPORTS 1** <https://ladyboy.yedektv.cfd//beintv/tracks-v1a1/mono.m3u8>
+- 🟡 **BEIN SPORTS 1** <https://ladyboy.yedektv.cfd//beintv/tracks-v1a1/mono.m3u8>
 - 🟢 **BEIN SPORTS 2** <https://ladyboy.yedektv.cfd//bein2/tracks-v1a1/mono.m3u8>
-- 🟢 **BEIN SPORTS 3** <https://ladyboy.yedektv.cfd//bein3/tracks-v1a1/mono.m3u8>
+- 🟡 **BEIN SPORTS 3** <https://ladyboy.yedektv.cfd//bein3/tracks-v1a1/mono.m3u8>
 - 🟢 **BEIN SPORTS 4** <https://ladyboy.yedektv.cfd//bein4/tracks-v1a1/mono.m3u8>
 - ⚪ **BEIN SPORTS 5** <https://tv.atomspor.workers.dev/?ID=bein-sports-5>
 - 🟢 **S SPORT** <https://ladyboy.yedektv.cfd//s-sport/tracks-v1a1/mono.m3u8>
