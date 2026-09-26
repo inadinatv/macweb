@@ -1,13 +1,8 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-09-26 13:28  
-> **Toplam maç:** 10  |  **Canlı:** 2  |  **Yaklaşan:** 7
-
-## 🔴 CANLI
-
-- 🔴 **Petkimspor vs Denizli Basket** — CANLI · `15:30` | Basketbol Süper Ligi <https://fixbettv84.com/channel.html?id=b5>
-- 🔴 **Slovenya 0 - 0 İskoçya** — CANLI · `16:00` | UEFA Uluslar Ligi <https://fixbettv84.com/channel.html?id=as>
+> **Güncellenme:** 2026-09-26 15:00  
+> **Toplam maç:** 10  |  **Canlı:** 0  |  **Yaklaşan:** 7
 
 ## ⏰ YAKLAŞAN
 
@@ -22,13 +17,15 @@
 ## ✅ BİTTİ
 
 - ✅ **Türk Telekom vs Karşıyaka** — MS · `13:00` | Basketbol Süper Ligi <https://fixbettv84.com/channel.html?id=b5>
+- ✅ **Petkimspor vs Denizli Basket** — MS · `15:30` | Basketbol Süper Ligi <https://fixbettv84.com/channel.html?id=b5>
+- ✅ **Slovenya 0 - 0 İskoçya** — MS · `16:00` | UEFA Uluslar Ligi <https://fixbettv84.com/channel.html?id=as>
 
 ---
 ## 🏆 Lig Bazlı
 
 ### Basketbol Süper Ligi
 - ⏰ Türk Telekom vs Karşıyaka — 13:00
-- 🔴 Petkimspor vs Denizli Basket — 15:30
+- ⏰ Petkimspor vs Denizli Basket — 15:30
 - ⏰ Galatasaray MCT vs Çayırova Bld. — 18:00
 
 ### CEV Erkekler Avrupa Şampiyonası
@@ -36,7 +33,7 @@
 - ⏰ Fransa vs Polonya — 22:00
 
 ### UEFA Uluslar Ligi
-- 🔴 Slovenya vs İskoçya — 16:00
+- ⏰ Slovenya vs İskoçya — 16:00
 - ⏰ Çekya vs Hırvatistan — 21:45
 - ⏰ İngiltere vs İspanya — 21:45
 
