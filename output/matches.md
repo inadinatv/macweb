@@ -1,12 +1,15 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-09-26 06:39  
-> **Toplam maç:** 10  |  **Canlı:** 0  |  **Yaklaşan:** 10
+> **Güncellenme:** 2026-09-26 11:16  
+> **Toplam maç:** 10  |  **Canlı:** 1  |  **Yaklaşan:** 9
+
+## 🔴 CANLI
+
+- 🔴 **Türk Telekom vs Karşıyaka** — CANLI · `13:00` | Basketbol Süper Ligi <https://fixbettv84.com/channel.html?id=b5>
 
 ## ⏰ YAKLAŞAN
 
-- ⏰ **Türk Telekom vs Karşıyaka** — YAKLAŞAN · `13:00` | Basketbol Süper Ligi <https://fixbettv84.com/channel.html?id=b5>
 - ⏰ **Petkimspor vs Denizli Basket** — YAKLAŞAN · `15:30` | Basketbol Süper Ligi <https://fixbettv84.com/channel.html?id=b5>
 - ⏰ **Slovenya vs İskoçya** — YAKLAŞAN · `16:00` | UEFA Uluslar Ligi <https://fixbettv84.com/channel.html?id=as>
 - ⏰ **Galatasaray MCT vs Çayırova Bld.** — YAKLAŞAN · `18:00` | Basketbol Süper Ligi <https://fixbettv84.com/channel.html?id=b5>
@@ -21,7 +24,7 @@
 ## 🏆 Lig Bazlı
 
 ### Basketbol Süper Ligi
-- ⏰ Türk Telekom vs Karşıyaka — 13:00
+- 🔴 Türk Telekom vs Karşıyaka — 13:00
 - ⏰ Petkimspor vs Denizli Basket — 15:30
 - ⏰ Galatasaray MCT vs Çayırova Bld. — 18:00
 
