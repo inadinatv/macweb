@@ -1,24 +1,27 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-09-26 20:19  
-> **Toplam maç:** 10  |  **Canlı:** 4  |  **Yaklaşan:** 0
+> **Güncellenme:** 2026-09-26 21:28  
+> **Toplam maç:** 10  |  **Canlı:** 1  |  **Yaklaşan:** 6
 
 ## 🔴 CANLI
 
-- 🔴 **Çekya 1 - 1 Hırvatistan** — CANLI · `21:45` | UEFA Uluslar Ligi <https://fixbettv84.com/channel.html?id=as>
-- 🔴 **İngiltere 2 - 2 İspanya** — CANLI · `21:45` | UEFA Uluslar Ligi <https://fixbettv84.com/channel.html?id=ex2>
-- 🔴 **Barcelona vs Leyma Coruna** — CANLI · `22:00` | İspanya Basketbol Ligi <https://fixbettv84.com/channel.html?id=smarts>
 - 🔴 **Fransa vs Polonya** — CANLI · `22:00` | CEV Erkekler Avrupa Şampiyonası <https://fixbettv84.com/channel.html?id=trtspor>
+
+## ⏰ YAKLAŞAN
+
+- ⏰ **Türk Telekom vs Karşıyaka** — YAKLAŞAN · `13:00` | Basketbol Süper Ligi <https://fixbettv84.com/channel.html?id=b5>
+- ⏰ **Petkimspor vs Denizli Basket** — YAKLAŞAN · `15:30` | Basketbol Süper Ligi <https://fixbettv84.com/channel.html?id=b5>
+- ⏰ **Slovenya vs İskoçya** — YAKLAŞAN · `16:00` | UEFA Uluslar Ligi <https://fixbettv84.com/channel.html?id=as>
+- ⏰ **Galatasaray MCT vs Çayırova Bld.** — YAKLAŞAN · `18:00` | Basketbol Süper Ligi <https://fixbettv84.com/channel.html?id=b5>
+- ⏰ **Finlandiya vs Slovenya** — YAKLAŞAN · `18:00` | CEV Erkekler Avrupa Şampiyonası <https://fixbettv84.com/channel.html?id=trtspor2>
+- ⏰ **Bilbao Basket vs Manresa** — YAKLAŞAN · `19:00` | İspanya Basketbol Ligi <https://fixbettv84.com/channel.html?id=sms2>
 
 ## ✅ BİTTİ
 
-- ✅ **Türk Telekom vs Karşıyaka** — MS · `13:00` | Basketbol Süper Ligi <https://fixbettv84.com/channel.html?id=b5>
-- ✅ **Petkimspor vs Denizli Basket** — MS · `15:30` | Basketbol Süper Ligi <https://fixbettv84.com/channel.html?id=b5>
-- ✅ **Slovenya 0 - 0 İskoçya** — MS · `16:00` | UEFA Uluslar Ligi <https://fixbettv84.com/channel.html?id=as>
-- ✅ **Galatasaray MCT vs Çayırova Bld.** — MS · `18:00` | Basketbol Süper Ligi <https://fixbettv84.com/channel.html?id=b5>
-- ✅ **Finlandiya vs Slovenya** — MS · `18:00` | CEV Erkekler Avrupa Şampiyonası <https://fixbettv84.com/channel.html?id=trtspor2>
-- ✅ **Bilbao Basket vs Manresa** — MS · `19:00` | İspanya Basketbol Ligi <https://fixbettv84.com/channel.html?id=sms2>
+- ✅ **Çekya vs Hırvatistan** — MS · `21:45` | UEFA Uluslar Ligi <https://fixbettv84.com/channel.html?id=as>
+- ✅ **İngiltere vs İspanya** — MS · `21:45` | UEFA Uluslar Ligi <https://fixbettv84.com/channel.html?id=ex2>
+- ✅ **Barcelona vs Leyma Coruna** — MS · `22:00` | İspanya Basketbol Ligi <https://fixbettv84.com/channel.html?id=smarts>
 
 ---
 ## 🏆 Lig Bazlı
@@ -34,12 +37,12 @@
 
 ### UEFA Uluslar Ligi
 - ⏰ Slovenya vs İskoçya — 16:00
-- 🔴 Çekya vs Hırvatistan — 21:45
-- 🔴 İngiltere vs İspanya — 21:45
+- ⏰ Çekya vs Hırvatistan — 21:45
+- ⏰ İngiltere vs İspanya — 21:45
 
 ### İspanya Basketbol Ligi
 - ⏰ Bilbao Basket vs Manresa — 19:00
-- 🔴 Barcelona vs Leyma Coruna — 22:00
+- ⏰ Barcelona vs Leyma Coruna — 22:00
 
 ---
 ## 📺 7/24 KANALLAR (31)
