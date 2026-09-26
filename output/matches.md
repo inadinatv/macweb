@@ -1,13 +1,13 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-09-26 19:07  
+> **Güncellenme:** 2026-09-26 20:19  
 > **Toplam maç:** 10  |  **Canlı:** 4  |  **Yaklaşan:** 0
 
 ## 🔴 CANLI
 
-- 🔴 **Çekya 0 - 0 Hırvatistan** — CANLI · `21:45` | UEFA Uluslar Ligi <https://fixbettv84.com/channel.html?id=as>
-- 🔴 **İngiltere 0 - 1 İspanya** — CANLI · `21:45` | UEFA Uluslar Ligi <https://fixbettv84.com/channel.html?id=ex2>
+- 🔴 **Çekya 1 - 1 Hırvatistan** — CANLI · `21:45` | UEFA Uluslar Ligi <https://fixbettv84.com/channel.html?id=as>
+- 🔴 **İngiltere 2 - 2 İspanya** — CANLI · `21:45` | UEFA Uluslar Ligi <https://fixbettv84.com/channel.html?id=ex2>
 - 🔴 **Barcelona vs Leyma Coruna** — CANLI · `22:00` | İspanya Basketbol Ligi <https://fixbettv84.com/channel.html?id=smarts>
 - 🔴 **Fransa vs Polonya** — CANLI · `22:00` | CEV Erkekler Avrupa Şampiyonası <https://fixbettv84.com/channel.html?id=trtspor>
 
@@ -97,7 +97,7 @@
 ## ⚡ EKSTRA PANELLER — m3u8 (79)
 
 ### ⚛️ ATOM SPOR ✅ `https://www.atomsportv515.top`
-- ⚪ **BEIN SPORTS 1** <https://tv.atomspor.workers.dev/?ID=bein-sports-1>
+- 🟢 **BEIN SPORTS 1** <https://ladyboy.yedektv.cfd//beintv/tracks-v1a1/mono.m3u8>
 - 🟢 **BEIN SPORTS 2** <https://ladyboy.yedektv.cfd//bein2/tracks-v1a1/mono.m3u8>
 - 🟢 **BEIN SPORTS 3** <https://ladyboy.yedektv.cfd//bein3/tracks-v1a1/mono.m3u8>
 - 🟢 **BEIN SPORTS 4** <https://ladyboy.yedektv.cfd//bein4/tracks-v1a1/mono.m3u8>
