@@ -1,17 +1,11 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-09-26 15:58  
-> **Toplam maç:** 10  |  **Canlı:** 2  |  **Yaklaşan:** 5
-
-## 🔴 CANLI
-
-- 🔴 **Galatasaray MCT vs Çayırova Bld.** — CANLI · `18:00` | Basketbol Süper Ligi <https://fixbettv84.com/channel.html?id=b5>
-- 🔴 **Finlandiya vs Slovenya** — CANLI · `18:00` | CEV Erkekler Avrupa Şampiyonası <https://fixbettv84.com/channel.html?id=trtspor2>
+> **Güncellenme:** 2026-09-26 18:30  
+> **Toplam maç:** 10  |  **Canlı:** 0  |  **Yaklaşan:** 4
 
 ## ⏰ YAKLAŞAN
 
-- ⏰ **Bilbao Basket vs Manresa** — YAKLAŞAN · `19:00` | İspanya Basketbol Ligi <https://fixbettv84.com/channel.html?id=sms2>
 - ⏰ **Çekya vs Hırvatistan** — YAKLAŞAN · `21:45` | UEFA Uluslar Ligi <https://fixbettv84.com/channel.html?id=as>
 - ⏰ **İngiltere vs İspanya** — YAKLAŞAN · `21:45` | UEFA Uluslar Ligi <https://fixbettv84.com/channel.html?id=ex2>
 - ⏰ **Barcelona vs Leyma Coruna** — YAKLAŞAN · `22:00` | İspanya Basketbol Ligi <https://fixbettv84.com/channel.html?id=smarts>
@@ -22,6 +16,9 @@
 - ✅ **Türk Telekom vs Karşıyaka** — MS · `13:00` | Basketbol Süper Ligi <https://fixbettv84.com/channel.html?id=b5>
 - ✅ **Petkimspor vs Denizli Basket** — MS · `15:30` | Basketbol Süper Ligi <https://fixbettv84.com/channel.html?id=b5>
 - ✅ **Slovenya 0 - 0 İskoçya** — MS · `16:00` | UEFA Uluslar Ligi <https://fixbettv84.com/channel.html?id=as>
+- ✅ **Galatasaray MCT vs Çayırova Bld.** — MS · `18:00` | Basketbol Süper Ligi <https://fixbettv84.com/channel.html?id=b5>
+- ✅ **Finlandiya vs Slovenya** — MS · `18:00` | CEV Erkekler Avrupa Şampiyonası <https://fixbettv84.com/channel.html?id=trtspor2>
+- ✅ **Bilbao Basket vs Manresa** — MS · `19:00` | İspanya Basketbol Ligi <https://fixbettv84.com/channel.html?id=sms2>
 
 ---
 ## 🏆 Lig Bazlı
@@ -29,10 +26,10 @@
 ### Basketbol Süper Ligi
 - ⏰ Türk Telekom vs Karşıyaka — 13:00
 - ⏰ Petkimspor vs Denizli Basket — 15:30
-- 🔴 Galatasaray MCT vs Çayırova Bld. — 18:00
+- ⏰ Galatasaray MCT vs Çayırova Bld. — 18:00
 
 ### CEV Erkekler Avrupa Şampiyonası
-- 🔴 Finlandiya vs Slovenya — 18:00
+- ⏰ Finlandiya vs Slovenya — 18:00
 - ⏰ Fransa vs Polonya — 22:00
 
 ### UEFA Uluslar Ligi
