@@ -1,15 +1,15 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-09-26 18:30  
-> **Toplam maç:** 10  |  **Canlı:** 0  |  **Yaklaşan:** 4
+> **Güncellenme:** 2026-09-26 19:07  
+> **Toplam maç:** 10  |  **Canlı:** 4  |  **Yaklaşan:** 0
 
-## ⏰ YAKLAŞAN
+## 🔴 CANLI
 
-- ⏰ **Çekya vs Hırvatistan** — YAKLAŞAN · `21:45` | UEFA Uluslar Ligi <https://fixbettv84.com/channel.html?id=as>
-- ⏰ **İngiltere vs İspanya** — YAKLAŞAN · `21:45` | UEFA Uluslar Ligi <https://fixbettv84.com/channel.html?id=ex2>
-- ⏰ **Barcelona vs Leyma Coruna** — YAKLAŞAN · `22:00` | İspanya Basketbol Ligi <https://fixbettv84.com/channel.html?id=smarts>
-- ⏰ **Fransa vs Polonya** — YAKLAŞAN · `22:00` | CEV Erkekler Avrupa Şampiyonası <https://fixbettv84.com/channel.html?id=trtspor>
+- 🔴 **Çekya 0 - 0 Hırvatistan** — CANLI · `21:45` | UEFA Uluslar Ligi <https://fixbettv84.com/channel.html?id=as>
+- 🔴 **İngiltere 0 - 1 İspanya** — CANLI · `21:45` | UEFA Uluslar Ligi <https://fixbettv84.com/channel.html?id=ex2>
+- 🔴 **Barcelona vs Leyma Coruna** — CANLI · `22:00` | İspanya Basketbol Ligi <https://fixbettv84.com/channel.html?id=smarts>
+- 🔴 **Fransa vs Polonya** — CANLI · `22:00` | CEV Erkekler Avrupa Şampiyonası <https://fixbettv84.com/channel.html?id=trtspor>
 
 ## ✅ BİTTİ
 
@@ -30,16 +30,16 @@
 
 ### CEV Erkekler Avrupa Şampiyonası
 - ⏰ Finlandiya vs Slovenya — 18:00
-- ⏰ Fransa vs Polonya — 22:00
+- 🔴 Fransa vs Polonya — 22:00
 
 ### UEFA Uluslar Ligi
 - ⏰ Slovenya vs İskoçya — 16:00
-- ⏰ Çekya vs Hırvatistan — 21:45
-- ⏰ İngiltere vs İspanya — 21:45
+- 🔴 Çekya vs Hırvatistan — 21:45
+- 🔴 İngiltere vs İspanya — 21:45
 
 ### İspanya Basketbol Ligi
 - ⏰ Bilbao Basket vs Manresa — 19:00
-- ⏰ Barcelona vs Leyma Coruna — 22:00
+- 🔴 Barcelona vs Leyma Coruna — 22:00
 
 ---
 ## 📺 7/24 KANALLAR (31)
@@ -97,9 +97,9 @@
 ## ⚡ EKSTRA PANELLER — m3u8 (79)
 
 ### ⚛️ ATOM SPOR ✅ `https://www.atomsportv515.top`
-- 🟡 **BEIN SPORTS 1** <https://ladyboy.yedektv.cfd//beintv/tracks-v1a1/mono.m3u8>
+- ⚪ **BEIN SPORTS 1** <https://tv.atomspor.workers.dev/?ID=bein-sports-1>
 - 🟢 **BEIN SPORTS 2** <https://ladyboy.yedektv.cfd//bein2/tracks-v1a1/mono.m3u8>
-- 🟡 **BEIN SPORTS 3** <https://ladyboy.yedektv.cfd//bein3/tracks-v1a1/mono.m3u8>
+- 🟢 **BEIN SPORTS 3** <https://ladyboy.yedektv.cfd//bein3/tracks-v1a1/mono.m3u8>
 - 🟢 **BEIN SPORTS 4** <https://ladyboy.yedektv.cfd//bein4/tracks-v1a1/mono.m3u8>
 - ⚪ **BEIN SPORTS 5** <https://tv.atomspor.workers.dev/?ID=bein-sports-5>
 - 🟢 **S SPORT** <https://ladyboy.yedektv.cfd//s-sport/tracks-v1a1/mono.m3u8>
