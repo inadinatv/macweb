@@ -1,12 +1,8 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-09-26 21:28  
-> **Toplam maç:** 10  |  **Canlı:** 1  |  **Yaklaşan:** 6
-
-## 🔴 CANLI
-
-- 🔴 **Fransa vs Polonya** — CANLI · `22:00` | CEV Erkekler Avrupa Şampiyonası <https://fixbettv84.com/channel.html?id=trtspor>
+> **Güncellenme:** 2026-09-26 21:59  
+> **Toplam maç:** 10  |  **Canlı:** 0  |  **Yaklaşan:** 6
 
 ## ⏰ YAKLAŞAN
 
@@ -22,6 +18,7 @@
 - ✅ **Çekya vs Hırvatistan** — MS · `21:45` | UEFA Uluslar Ligi <https://fixbettv84.com/channel.html?id=as>
 - ✅ **İngiltere vs İspanya** — MS · `21:45` | UEFA Uluslar Ligi <https://fixbettv84.com/channel.html?id=ex2>
 - ✅ **Barcelona vs Leyma Coruna** — MS · `22:00` | İspanya Basketbol Ligi <https://fixbettv84.com/channel.html?id=smarts>
+- ✅ **Fransa vs Polonya** — MS · `22:00` | CEV Erkekler Avrupa Şampiyonası <https://fixbettv84.com/channel.html?id=trtspor>
 
 ---
 ## 🏆 Lig Bazlı
@@ -33,7 +30,7 @@
 
 ### CEV Erkekler Avrupa Şampiyonası
 - ⏰ Finlandiya vs Slovenya — 18:00
-- 🔴 Fransa vs Polonya — 22:00
+- ⏰ Fransa vs Polonya — 22:00
 
 ### UEFA Uluslar Ligi
 - ⏰ Slovenya vs İskoçya — 16:00
