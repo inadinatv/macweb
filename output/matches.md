@@ -1,43 +1,42 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-09-26 00:57  
-> **Toplam maç:** 9  |  **Canlı:** 0  |  **Yaklaşan:** 3
+> **Güncellenme:** 2026-09-26 01:03  
+> **Toplam maç:** 10  |  **Canlı:** 0  |  **Yaklaşan:** 10
 
 ## ⏰ YAKLAŞAN
 
-- ⏰ **Slovenya vs Polonya** — YAKLAŞAN · `18:00` | CEV Erkekler Avrupa Şampiyonası <https://fixbettv84.com/channel.html?id=trtspor2>
-- ⏰ **Tofaş vs Bandırma Bordo** — YAKLAŞAN · `19:00` | Basketbol Süper Ligi <https://fixbettv84.com/channel.html?id=b5>
-- ⏰ **Beşiktaş vs Valencia Basket** — YAKLAŞAN · `20:00` | Euroleague <https://fixbettv84.com/channel.html?id=ss2>
-
-## ✅ BİTTİ
-
-- ✅ **Fenerbahçe Tarfin vs Virtus Bologna** — MS · `20:45` | Euroleague <https://fixbettv84.com/channel.html?id=ss>
-- ✅ **Türkiye vs Fransa** — MS · `21:45` | UEFA Uluslar Ligi <https://fixbettv84.com/channel.html?id=atv>
-- ✅ **İsveç vs Romanya** — MS · `21:45` | UEFA Uluslar Ligi <https://fixbettv84.com/channel.html?id=as>
-- ✅ **İtalya vs Belçika** — MS · `21:45` | UEFA Uluslar Ligi <https://fixbettv84.com/channel.html?id=ex2>
-- ✅ **Partizan vs Olimpia Milano** — MS · `21:45` | Euroleague <https://fixbettv84.com/channel.html?id=ss>
-- ✅ **Finlandiya vs Fransa** — MS · `22:00` | CEV Erkekler Avrupa Şampiyonası <https://fixbettv84.com/channel.html?id=trtspor>
+- ⏰ **Türk Telekom vs Karşıyaka** — YAKLAŞAN · `13:00` | Basketbol Süper Ligi <https://fixbettv84.com/channel.html?id=b5>
+- ⏰ **Petkimspor vs Denizli Basket** — YAKLAŞAN · `15:30` | Basketbol Süper Ligi <https://fixbettv84.com/channel.html?id=b5>
+- ⏰ **Slovenya vs İskoçya** — YAKLAŞAN · `16:00` | UEFA Uluslar Ligi <https://fixbettv84.com/channel.html?id=as>
+- ⏰ **Galatasaray MCT vs Çayırova Bld.** — YAKLAŞAN · `18:00` | Basketbol Süper Ligi <https://fixbettv84.com/channel.html?id=b5>
+- ⏰ **Finlandiya vs Slovenya** — YAKLAŞAN · `18:00` | CEV Erkekler Avrupa Şampiyonası <https://fixbettv84.com/channel.html?id=trtspor2>
+- ⏰ **Bilbao Basket vs Manresa** — YAKLAŞAN · `19:00` | İspanya Basketbol Ligi <https://fixbettv84.com/channel.html?id=sms2>
+- ⏰ **Çekya vs Hırvatistan** — YAKLAŞAN · `21:45` | UEFA Uluslar Ligi <https://fixbettv84.com/channel.html?id=as>
+- ⏰ **İngiltere vs İspanya** — YAKLAŞAN · `21:45` | UEFA Uluslar Ligi <https://fixbettv84.com/channel.html?id=ex2>
+- ⏰ **Barcelona vs Leyma Coruna** — YAKLAŞAN · `22:00` | İspanya Basketbol Ligi <https://fixbettv84.com/channel.html?id=smarts>
+- ⏰ **Fransa vs Polonya** — YAKLAŞAN · `22:00` | CEV Erkekler Avrupa Şampiyonası <https://fixbettv84.com/channel.html?id=trtspor>
 
 ---
 ## 🏆 Lig Bazlı
 
 ### Basketbol Süper Ligi
-- ⏰ Tofaş vs Bandırma Bordo — 19:00
+- ⏰ Türk Telekom vs Karşıyaka — 13:00
+- ⏰ Petkimspor vs Denizli Basket — 15:30
+- ⏰ Galatasaray MCT vs Çayırova Bld. — 18:00
 
 ### CEV Erkekler Avrupa Şampiyonası
-- ⏰ Slovenya vs Polonya — 18:00
-- ⏰ Finlandiya vs Fransa — 22:00
-
-### Euroleague
-- ⏰ Beşiktaş vs Valencia Basket — 20:00
-- ⏰ Fenerbahçe Tarfin vs Virtus Bologna — 20:45
-- ⏰ Partizan vs Olimpia Milano — 21:45
+- ⏰ Finlandiya vs Slovenya — 18:00
+- ⏰ Fransa vs Polonya — 22:00
 
 ### UEFA Uluslar Ligi
-- ⏰ Türkiye vs Fransa — 21:45
-- ⏰ İsveç vs Romanya — 21:45
-- ⏰ İtalya vs Belçika — 21:45
+- ⏰ Slovenya vs İskoçya — 16:00
+- ⏰ Çekya vs Hırvatistan — 21:45
+- ⏰ İngiltere vs İspanya — 21:45
+
+### İspanya Basketbol Ligi
+- ⏰ Bilbao Basket vs Manresa — 19:00
+- ⏰ Barcelona vs Leyma Coruna — 22:00
 
 ---
 ## 📺 7/24 KANALLAR (31)
@@ -97,7 +96,7 @@
 ### ⚛️ ATOM SPOR ✅ `https://www.atomsportv515.top`
 - 🟢 **BEIN SPORTS 1** <https://ladyboy.yedektv.cfd//beintv/tracks-v1a1/mono.m3u8>
 - 🟢 **BEIN SPORTS 2** <https://ladyboy.yedektv.cfd//bein2/tracks-v1a1/mono.m3u8>
-- 🟢 **BEIN SPORTS 3** <https://ladyboy.yedektv.cfd//bein3/tracks-v1a1/mono.m3u8>
+- 🟡 **BEIN SPORTS 3** <https://ladyboy.yedektv.cfd//bein3/tracks-v1a1/mono.m3u8>
 - 🟢 **BEIN SPORTS 4** <https://ladyboy.yedektv.cfd//bein4/tracks-v1a1/mono.m3u8>
 - ⚪ **BEIN SPORTS 5** <https://tv.atomspor.workers.dev/?ID=bein-sports-5>
 - 🟢 **S SPORT** <https://ladyboy.yedektv.cfd//s-sport/tracks-v1a1/mono.m3u8>
