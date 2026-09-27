@@ -1,17 +1,15 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-09-27 14:24  
-> **Toplam maç:** 12  |  **Canlı:** 2  |  **Yaklaşan:** 9
+> **Güncellenme:** 2026-09-27 15:33  
+> **Toplam maç:** 12  |  **Canlı:** 1  |  **Yaklaşan:** 8
 
 ## 🔴 CANLI
 
-- 🔴 **Trabzonspor vs Bursaspor** — CANLI · `15:30` | Basketbol Süper Ligi <https://fixbettv84.com/channel.html?id=b5>
-- 🔴 **THY vs Kuzeyboru** — CANLI · `16:00` | TVF Kadınlar Kupa Voley <https://fixbettv84.com/channel.html?id=trtspor>
+- 🔴 **Bahçeşehir Klj vs Fenerbahçe Tarfin** — CANLI · `18:00` | Basketbol Süper Ligi <https://fixbettv84.com/channel.html?id=b5>
 
 ## ⏰ YAKLAŞAN
 
-- ⏰ **Bahçeşehir Klj vs Fenerbahçe Tarfin** — YAKLAŞAN · `18:00` | Basketbol Süper Ligi <https://fixbettv84.com/channel.html?id=b5>
 - ⏰ **Sırbistan vs Hollanda** — YAKLAŞAN · `19:00` | UEFA Uluslar Ligi <https://fixbettv84.com/channel.html?id=as>
 - ⏰ **Nilüfer Bld. vs Beşiktaş** — YAKLAŞAN · `19:00` | TVF Kadınlar Kupa Voley <https://fixbettv84.com/channel.html?id=trtspor>
 - ⏰ **Valencia Basket vs Lleida** — YAKLAŞAN · `19:00` | İspanya Basketbol Ligi <https://fixbettv84.com/channel.html?id=sms2>
@@ -24,17 +22,19 @@
 ## ✅ BİTTİ
 
 - ✅ **Iberostar Tenerife vs Zaragoza** — MS · `14:00` | İspanya Basketbol Ligi <https://fixbettv84.com/channel.html?id=sms2>
+- ✅ **Trabzonspor vs Bursaspor** — MS · `15:30` | Basketbol Süper Ligi <https://fixbettv84.com/channel.html?id=b5>
+- ✅ **THY vs Kuzeyboru** — MS · `16:00` | TVF Kadınlar Kupa Voley <https://fixbettv84.com/channel.html?id=trtspor>
 
 ---
 ## 🏆 Lig Bazlı
 
 ### Basketbol Süper Ligi
-- 🔴 Trabzonspor vs Bursaspor — 15:30
-- ⏰ Bahçeşehir Klj vs Fenerbahçe Tarfin — 18:00
+- ⏰ Trabzonspor vs Bursaspor — 15:30
+- 🔴 Bahçeşehir Klj vs Fenerbahçe Tarfin — 18:00
 - ⏰ Anadolu Efes vs Beşiktaş — 20:30
 
 ### TVF Kadınlar Kupa Voley
-- 🔴 THY vs Kuzeyboru — 16:00
+- ⏰ THY vs Kuzeyboru — 16:00
 - ⏰ Nilüfer Bld. vs Beşiktaş — 19:00
 
 ### UEFA Uluslar Ligi
