@@ -1,14 +1,16 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-09-27 10:48  
-> **Toplam maç:** 12  |  **Canlı:** 0  |  **Yaklaşan:** 12
+> **Güncellenme:** 2026-09-27 13:20  
+> **Toplam maç:** 12  |  **Canlı:** 2  |  **Yaklaşan:** 9
+
+## 🔴 CANLI
+
+- 🔴 **Trabzonspor vs Bursaspor** — CANLI · `15:30` | Basketbol Süper Ligi <https://fixbettv84.com/channel.html?id=b5>
+- 🔴 **THY vs Kuzeyboru** — CANLI · `16:00` | TVF Kadınlar Kupa Voley <https://fixbettv84.com/channel.html?id=trtspor>
 
 ## ⏰ YAKLAŞAN
 
-- ⏰ **Iberostar Tenerife vs Zaragoza** — YAKLAŞAN · `14:00` | İspanya Basketbol Ligi <https://fixbettv84.com/channel.html?id=sms2>
-- ⏰ **Trabzonspor vs Bursaspor** — YAKLAŞAN · `15:30` | Basketbol Süper Ligi <https://fixbettv84.com/channel.html?id=b5>
-- ⏰ **THY vs Kuzeyboru** — YAKLAŞAN · `16:00` | TVF Kadınlar Kupa Voley <https://fixbettv84.com/channel.html?id=trtspor>
 - ⏰ **Bahçeşehir Klj vs Fenerbahçe Tarfin** — YAKLAŞAN · `18:00` | Basketbol Süper Ligi <https://fixbettv84.com/channel.html?id=b5>
 - ⏰ **Sırbistan vs Hollanda** — YAKLAŞAN · `19:00` | UEFA Uluslar Ligi <https://fixbettv84.com/channel.html?id=as>
 - ⏰ **Nilüfer Bld. vs Beşiktaş** — YAKLAŞAN · `19:00` | TVF Kadınlar Kupa Voley <https://fixbettv84.com/channel.html?id=trtspor>
@@ -19,16 +21,20 @@
 - ⏰ **Norveç vs Portekiz** — YAKLAŞAN · `21:45` | UEFA Uluslar Ligi <https://fixbettv84.com/channel.html?id=as>
 - ⏰ **Real Oviedo vs Sporting Gijon** — YAKLAŞAN · `22:00` | İspanya La Liga 2 <https://fixbettv84.com/channel.html?id=ss>
 
+## ✅ BİTTİ
+
+- ✅ **Iberostar Tenerife vs Zaragoza** — MS · `14:00` | İspanya Basketbol Ligi <https://fixbettv84.com/channel.html?id=sms2>
+
 ---
 ## 🏆 Lig Bazlı
 
 ### Basketbol Süper Ligi
-- ⏰ Trabzonspor vs Bursaspor — 15:30
+- 🔴 Trabzonspor vs Bursaspor — 15:30
 - ⏰ Bahçeşehir Klj vs Fenerbahçe Tarfin — 18:00
 - ⏰ Anadolu Efes vs Beşiktaş — 20:30
 
 ### TVF Kadınlar Kupa Voley
-- ⏰ THY vs Kuzeyboru — 16:00
+- 🔴 THY vs Kuzeyboru — 16:00
 - ⏰ Nilüfer Bld. vs Beşiktaş — 19:00
 
 ### UEFA Uluslar Ligi
