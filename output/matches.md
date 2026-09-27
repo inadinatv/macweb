@@ -1,54 +1,45 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-09-27 17:51  
-> **Toplam maç:** 12  |  **Canlı:** 5  |  **Yaklaşan:** 3
+> **Güncellenme:** 2026-09-27 19:18  
+> **Toplam maç:** 9  |  **Canlı:** 4  |  **Yaklaşan:** 0
 
 ## 🔴 CANLI
 
-- 🔴 **Sırbistan 1 - 2 Hollanda** — CANLI · `19:00` | UEFA Uluslar Ligi <https://fixbettv84.com/channel.html?id=as>
-- 🔴 **Nilüfer Bld. vs Beşiktaş** — CANLI · `19:00` | TVF Kadınlar Kupa Voley <https://fixbettv84.com/channel.html?id=trtspor>
-- 🔴 **Valencia Basket vs Lleida** — CANLI · `19:00` | İspanya Basketbol Ligi <https://fixbettv84.com/channel.html?id=sms2>
-- 🔴 **Real Madrid vs Unicaja Malaga** — CANLI · `20:00` | İspanya Basketbol Ligi <https://fixbettv84.com/channel.html?id=smarts>
 - 🔴 **Anadolu Efes vs Beşiktaş** — CANLI · `20:30` | Basketbol Süper Ligi <https://fixbettv84.com/channel.html?id=b5>
-
-## ⏰ YAKLAŞAN
-
-- ⏰ **Almanya vs Yunanistan** — YAKLAŞAN · `21:45` | UEFA Uluslar Ligi <https://fixbettv84.com/channel.html?id=ex2>
-- ⏰ **Norveç vs Portekiz** — YAKLAŞAN · `21:45` | UEFA Uluslar Ligi <https://fixbettv84.com/channel.html?id=as>
-- ⏰ **Real Oviedo vs Sporting Gijon** — YAKLAŞAN · `22:00` | İspanya La Liga 2 <https://fixbettv84.com/channel.html?id=ss>
+- 🔴 **Almanya 0 - 0 Yunanistan** — CANLI · `21:45` | UEFA Uluslar Ligi <https://fixbettv84.com/channel.html?id=ex2>
+- 🔴 **Norveç 0 - 1 Portekiz** — CANLI · `21:45` | UEFA Uluslar Ligi <https://fixbettv84.com/channel.html?id=as>
+- 🔴 **Real Oviedo 1 - 0 Sporting Gijon** — CANLI · `22:00` | İspanya La Liga 2 <https://fixbettv84.com/channel.html?id=ss>
 
 ## ✅ BİTTİ
 
-- ✅ **Iberostar Tenerife vs Zaragoza** — MS · `14:00` | İspanya Basketbol Ligi <https://fixbettv84.com/channel.html?id=sms2>
-- ✅ **Trabzonspor vs Bursaspor** — MS · `15:30` | Basketbol Süper Ligi <https://fixbettv84.com/channel.html?id=b5>
-- ✅ **THY vs Kuzeyboru** — MS · `16:00` | TVF Kadınlar Kupa Voley <https://fixbettv84.com/channel.html?id=trtspor>
 - ✅ **Bahçeşehir Klj vs Fenerbahçe Tarfin** — MS · `18:00` | Basketbol Süper Ligi <https://fixbettv84.com/channel.html?id=b5>
+- ✅ **Sırbistan 1 - 2 Hollanda** — MS · `19:00` | UEFA Uluslar Ligi <https://fixbettv84.com/channel.html?id=as>
+- ✅ **Nilüfer Bld. vs Beşiktaş** — MS · `19:00` | TVF Kadınlar Kupa Voley <https://fixbettv84.com/channel.html?id=trtspor>
+- ✅ **Valencia Basket vs Lleida** — MS · `19:00` | İspanya Basketbol Ligi <https://fixbettv84.com/channel.html?id=sms2>
+- ✅ **Real Madrid vs Unicaja Malaga** — MS · `20:00` | İspanya Basketbol Ligi <https://fixbettv84.com/channel.html?id=smarts>
 
 ---
 ## 🏆 Lig Bazlı
 
 ### Basketbol Süper Ligi
-- ⏰ Trabzonspor vs Bursaspor — 15:30
 - ⏰ Bahçeşehir Klj vs Fenerbahçe Tarfin — 18:00
 - 🔴 Anadolu Efes vs Beşiktaş — 20:30
 
 ### TVF Kadınlar Kupa Voley
-- ⏰ THY vs Kuzeyboru — 16:00
-- 🔴 Nilüfer Bld. vs Beşiktaş — 19:00
+- ⏰ Nilüfer Bld. vs Beşiktaş — 19:00
 
 ### UEFA Uluslar Ligi
-- 🔴 Sırbistan vs Hollanda — 19:00
-- ⏰ Almanya vs Yunanistan — 21:45
-- ⏰ Norveç vs Portekiz — 21:45
+- ⏰ Sırbistan vs Hollanda — 19:00
+- 🔴 Almanya vs Yunanistan — 21:45
+- 🔴 Norveç vs Portekiz — 21:45
 
 ### İspanya Basketbol Ligi
-- ⏰ Iberostar Tenerife vs Zaragoza — 14:00
-- 🔴 Valencia Basket vs Lleida — 19:00
-- 🔴 Real Madrid vs Unicaja Malaga — 20:00
+- ⏰ Valencia Basket vs Lleida — 19:00
+- ⏰ Real Madrid vs Unicaja Malaga — 20:00
 
 ### İspanya La Liga 2
-- ⏰ Real Oviedo vs Sporting Gijon — 22:00
+- 🔴 Real Oviedo vs Sporting Gijon — 22:00
 
 ---
 ## 📺 7/24 KANALLAR (31)
