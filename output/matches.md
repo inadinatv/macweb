@@ -1,42 +1,48 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-09-27 01:55  
-> **Toplam maç:** 10  |  **Canlı:** 0  |  **Yaklaşan:** 10
+> **Güncellenme:** 2026-09-27 05:36  
+> **Toplam maç:** 12  |  **Canlı:** 0  |  **Yaklaşan:** 12
 
 ## ⏰ YAKLAŞAN
 
-- ⏰ **Türk Telekom vs Karşıyaka** — YAKLAŞAN · `13:00` | Basketbol Süper Ligi <https://fixbettv84.com/channel.html?id=b5>
-- ⏰ **Petkimspor vs Denizli Basket** — YAKLAŞAN · `15:30` | Basketbol Süper Ligi <https://fixbettv84.com/channel.html?id=b5>
-- ⏰ **Slovenya vs İskoçya** — YAKLAŞAN · `16:00` | UEFA Uluslar Ligi <https://fixbettv84.com/channel.html?id=as>
-- ⏰ **Galatasaray MCT vs Çayırova Bld.** — YAKLAŞAN · `18:00` | Basketbol Süper Ligi <https://fixbettv84.com/channel.html?id=b5>
-- ⏰ **Finlandiya vs Slovenya** — YAKLAŞAN · `18:00` | CEV Erkekler Avrupa Şampiyonası <https://fixbettv84.com/channel.html?id=trtspor2>
-- ⏰ **Bilbao Basket vs Manresa** — YAKLAŞAN · `19:00` | İspanya Basketbol Ligi <https://fixbettv84.com/channel.html?id=sms2>
-- ⏰ **Çekya vs Hırvatistan** — YAKLAŞAN · `21:45` | UEFA Uluslar Ligi <https://fixbettv84.com/channel.html?id=as>
-- ⏰ **İngiltere vs İspanya** — YAKLAŞAN · `21:45` | UEFA Uluslar Ligi <https://fixbettv84.com/channel.html?id=ex2>
-- ⏰ **Barcelona vs Leyma Coruna** — YAKLAŞAN · `22:00` | İspanya Basketbol Ligi <https://fixbettv84.com/channel.html?id=smarts>
-- ⏰ **Fransa vs Polonya** — YAKLAŞAN · `22:00` | CEV Erkekler Avrupa Şampiyonası <https://fixbettv84.com/channel.html?id=trtspor>
+- ⏰ **Iberostar Tenerife vs Zaragoza** — YAKLAŞAN · `14:00` | İspanya Basketbol Ligi <https://fixbettv84.com/channel.html?id=sms2>
+- ⏰ **Trabzonspor vs Bursaspor** — YAKLAŞAN · `15:30` | Basketbol Süper Ligi <https://fixbettv84.com/channel.html?id=b5>
+- ⏰ **THY vs Kuzeyboru** — YAKLAŞAN · `16:00` | TVF Kadınlar Kupa Voley <https://fixbettv84.com/channel.html?id=trtspor>
+- ⏰ **Bahçeşehir Klj vs Fenerbahçe Tarfin** — YAKLAŞAN · `18:00` | Basketbol Süper Ligi <https://fixbettv84.com/channel.html?id=b5>
+- ⏰ **Sırbistan vs Hollanda** — YAKLAŞAN · `19:00` | UEFA Uluslar Ligi <https://fixbettv84.com/channel.html?id=as>
+- ⏰ **Nilüfer Bld. vs Beşiktaş** — YAKLAŞAN · `19:00` | TVF Kadınlar Kupa Voley <https://fixbettv84.com/channel.html?id=trtspor>
+- ⏰ **Valencia Basket vs Lleida** — YAKLAŞAN · `19:00` | İspanya Basketbol Ligi <https://fixbettv84.com/channel.html?id=sms2>
+- ⏰ **Real Madrid vs Unicaja Malaga** — YAKLAŞAN · `20:00` | İspanya Basketbol Ligi <https://fixbettv84.com/channel.html?id=smarts>
+- ⏰ **Anadolu Efes vs Beşiktaş** — YAKLAŞAN · `20:30` | Basketbol Süper Ligi <https://fixbettv84.com/channel.html?id=b5>
+- ⏰ **Almanya vs Yunanistan** — YAKLAŞAN · `21:45` | UEFA Uluslar Ligi <https://fixbettv84.com/channel.html?id=ex2>
+- ⏰ **Norveç vs Portekiz** — YAKLAŞAN · `21:45` | UEFA Uluslar Ligi <https://fixbettv84.com/channel.html?id=as>
+- ⏰ **Real Oviedo vs Sporting Gijon** — YAKLAŞAN · `22:00` | İspanya La Liga 2 <https://fixbettv84.com/channel.html?id=ss>
 
 ---
 ## 🏆 Lig Bazlı
 
 ### Basketbol Süper Ligi
-- ⏰ Türk Telekom vs Karşıyaka — 13:00
-- ⏰ Petkimspor vs Denizli Basket — 15:30
-- ⏰ Galatasaray MCT vs Çayırova Bld. — 18:00
+- ⏰ Trabzonspor vs Bursaspor — 15:30
+- ⏰ Bahçeşehir Klj vs Fenerbahçe Tarfin — 18:00
+- ⏰ Anadolu Efes vs Beşiktaş — 20:30
 
-### CEV Erkekler Avrupa Şampiyonası
-- ⏰ Finlandiya vs Slovenya — 18:00
-- ⏰ Fransa vs Polonya — 22:00
+### TVF Kadınlar Kupa Voley
+- ⏰ THY vs Kuzeyboru — 16:00
+- ⏰ Nilüfer Bld. vs Beşiktaş — 19:00
 
 ### UEFA Uluslar Ligi
-- ⏰ Slovenya vs İskoçya — 16:00
-- ⏰ Çekya vs Hırvatistan — 21:45
-- ⏰ İngiltere vs İspanya — 21:45
+- ⏰ Sırbistan vs Hollanda — 19:00
+- ⏰ Almanya vs Yunanistan — 21:45
+- ⏰ Norveç vs Portekiz — 21:45
 
 ### İspanya Basketbol Ligi
-- ⏰ Bilbao Basket vs Manresa — 19:00
-- ⏰ Barcelona vs Leyma Coruna — 22:00
+- ⏰ Iberostar Tenerife vs Zaragoza — 14:00
+- ⏰ Valencia Basket vs Lleida — 19:00
+- ⏰ Real Madrid vs Unicaja Malaga — 20:00
+
+### İspanya La Liga 2
+- ⏰ Real Oviedo vs Sporting Gijon — 22:00
 
 ---
 ## 📺 7/24 KANALLAR (31)
