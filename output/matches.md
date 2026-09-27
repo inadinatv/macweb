@@ -1,14 +1,13 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-09-27 19:18  
-> **Toplam maç:** 9  |  **Canlı:** 4  |  **Yaklaşan:** 0
+> **Güncellenme:** 2026-09-27 20:34  
+> **Toplam maç:** 9  |  **Canlı:** 3  |  **Yaklaşan:** 0
 
 ## 🔴 CANLI
 
-- 🔴 **Anadolu Efes vs Beşiktaş** — CANLI · `20:30` | Basketbol Süper Ligi <https://fixbettv84.com/channel.html?id=b5>
-- 🔴 **Almanya 0 - 0 Yunanistan** — CANLI · `21:45` | UEFA Uluslar Ligi <https://fixbettv84.com/channel.html?id=ex2>
-- 🔴 **Norveç 0 - 1 Portekiz** — CANLI · `21:45` | UEFA Uluslar Ligi <https://fixbettv84.com/channel.html?id=as>
+- 🔴 **Almanya 0 - 1 Yunanistan** — CANLI · `21:45` | UEFA Uluslar Ligi <https://fixbettv84.com/channel.html?id=ex2>
+- 🔴 **Norveç 1 - 2 Portekiz** — CANLI · `21:45` | UEFA Uluslar Ligi <https://fixbettv84.com/channel.html?id=as>
 - 🔴 **Real Oviedo 1 - 0 Sporting Gijon** — CANLI · `22:00` | İspanya La Liga 2 <https://fixbettv84.com/channel.html?id=ss>
 
 ## ✅ BİTTİ
@@ -18,13 +17,14 @@
 - ✅ **Nilüfer Bld. vs Beşiktaş** — MS · `19:00` | TVF Kadınlar Kupa Voley <https://fixbettv84.com/channel.html?id=trtspor>
 - ✅ **Valencia Basket vs Lleida** — MS · `19:00` | İspanya Basketbol Ligi <https://fixbettv84.com/channel.html?id=sms2>
 - ✅ **Real Madrid vs Unicaja Malaga** — MS · `20:00` | İspanya Basketbol Ligi <https://fixbettv84.com/channel.html?id=smarts>
+- ✅ **Anadolu Efes vs Beşiktaş** — MS · `20:30` | Basketbol Süper Ligi <https://fixbettv84.com/channel.html?id=b5>
 
 ---
 ## 🏆 Lig Bazlı
 
 ### Basketbol Süper Ligi
 - ⏰ Bahçeşehir Klj vs Fenerbahçe Tarfin — 18:00
-- 🔴 Anadolu Efes vs Beşiktaş — 20:30
+- ⏰ Anadolu Efes vs Beşiktaş — 20:30
 
 ### TVF Kadınlar Kupa Voley
 - ⏰ Nilüfer Bld. vs Beşiktaş — 19:00

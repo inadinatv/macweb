@@ -9,37 +9,11 @@
       "fixbettv84.com",
       "fixbettv19.com"
     ],
-    "last_checked": "2026-09-27T19:18:09+00:00",
+    "last_checked": "2026-09-27T20:33:53+00:00",
     "note": "OK",
     "probed": 200
   },
   "live": [
-    {
-      "match_id": "b5",
-      "home": "Anadolu Efes",
-      "away": "Beşiktaş",
-      "league": "Basketbol Süper Ligi",
-      "time": "20:30",
-      "sport": "Basketbol",
-      "is_match_of_day": false,
-      "channel_id": "b5",
-      "logo_home": "https://img.sporekrani.com/teams/7NXfuFWZCNXytgMhlDQAXuZmXYmlv3kt5Vb3Ol5M.png",
-      "logo_away": "https://img.sporekrani.com/teams/ATPU6MJ3X6MzjgMpm80O8O25sU6yBMmWetDKdzAH.png",
-      "status": "live",
-      "started": true,
-      "raw_event": "20:30 | Basketbol Süper Ligi",
-      "url": "https://fixbettv84.com/channel.html?id=b5",
-      "fetched_at": "",
-      "status_source": "schedule",
-      "raw_status": "",
-      "score_home": null,
-      "score_away": null,
-      "score_source": "",
-      "score_updated_at": "",
-      "event_id": "",
-      "starts_at": "2026-09-27T20:30:00+03:00",
-      "status_clock": ""
-    },
     {
       "match_id": "ex2",
       "home": "Almanya",
@@ -55,16 +29,16 @@
       "started": true,
       "raw_event": "21:45 | UEFA Uluslar Ligi",
       "url": "https://fixbettv84.com/channel.html?id=ex2",
-      "fetched_at": "2026-09-27T22:17:33+03:00",
+      "fetched_at": "2026-09-27T23:33:17+03:00",
       "status_source": "mackolik",
       "raw_status": "none",
       "score_home": 0,
-      "score_away": 0,
+      "score_away": 1,
       "score_source": "mackolik",
-      "score_updated_at": "2026-09-27T22:17:33+03:00",
+      "score_updated_at": "2026-09-27T23:33:17+03:00",
       "event_id": "6zlyjthjd6hdz2ng3uie67lec",
       "starts_at": "2026-09-27T18:45:00+00:00",
-      "status_clock": "31'"
+      "status_clock": "89'"
     },
     {
       "match_id": "as",
@@ -81,16 +55,16 @@
       "started": true,
       "raw_event": "21:45 | UEFA Uluslar Ligi",
       "url": "https://fixbettv84.com/channel.html?id=as",
-      "fetched_at": "2026-09-27T22:17:33+03:00",
+      "fetched_at": "2026-09-27T23:33:17+03:00",
       "status_source": "mackolik",
       "raw_status": "none",
-      "score_home": 0,
-      "score_away": 1,
+      "score_home": 1,
+      "score_away": 2,
       "score_source": "mackolik",
-      "score_updated_at": "2026-09-27T22:17:33+03:00",
+      "score_updated_at": "2026-09-27T23:33:17+03:00",
       "event_id": "706jxoe5fnvb2aevmtzje3bbo",
       "starts_at": "2026-09-27T18:45:00+00:00",
-      "status_clock": "32'"
+      "status_clock": "87'"
     },
     {
       "match_id": "ss",
@@ -107,16 +81,16 @@
       "started": true,
       "raw_event": "22:00 | İspanya La Liga 2",
       "url": "https://fixbettv84.com/channel.html?id=ss",
-      "fetched_at": "2026-09-27T22:17:33+03:00",
+      "fetched_at": "2026-09-27T23:33:17+03:00",
       "status_source": "mackolik",
       "raw_status": "none",
       "score_home": 1,
       "score_away": 0,
       "score_source": "mackolik",
-      "score_updated_at": "2026-09-27T22:17:33+03:00",
+      "score_updated_at": "2026-09-27T23:33:17+03:00",
       "event_id": "3qxiq5jr51fb2z1z7rs9c6yvo",
       "starts_at": "2026-09-27T19:00:00+00:00",
-      "status_clock": "16'"
+      "status_clock": "69'"
     }
   ]
 }
