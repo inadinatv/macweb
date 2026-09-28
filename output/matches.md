@@ -1,12 +1,15 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-09-28 08:01  
-> **Toplam maç:** 7  |  **Canlı:** 0  |  **Yaklaşan:** 7
+> **Güncellenme:** 2026-09-28 15:02  
+> **Toplam maç:** 7  |  **Canlı:** 1  |  **Yaklaşan:** 6
+
+## 🔴 CANLI
+
+- 🔴 **Manisa BB vs THY** — CANLI · `16:00` | TVF Kadınlar Kupa Voley <https://fixbettv84.com/channel.html?id=trtspor2>
 
 ## ⏰ YAKLAŞAN
 
-- ⏰ **Manisa BB vs THY** — YAKLAŞAN · `16:00` | TVF Kadınlar Kupa Voley <https://fixbettv84.com/channel.html?id=trtspor2>
 - ⏰ **Gürcistan vs Ukrayna** — YAKLAŞAN · `19:00` | UEFA Uluslar Ligi <https://fixbettv84.com/channel.html?id=as>
 - ⏰ **Körfez Basket vs Esenler Erokspor** — YAKLAŞAN · `19:00` | Basketbol Süper Ligi <https://fixbettv84.com/channel.html?id=b5>
 - ⏰ **İlbank vs Aras Kargo** — YAKLAŞAN · `19:00` | TVF Kadınlar Kupa Voley <https://fixbettv84.com/channel.html?id=trtspor2>
@@ -25,7 +28,7 @@
 - ⏰ Körfez Basket vs Esenler Erokspor — 19:00
 
 ### TVF Kadınlar Kupa Voley
-- ⏰ Manisa BB vs THY — 16:00
+- 🔴 Manisa BB vs THY — 16:00
 - ⏰ İlbank vs Aras Kargo — 19:00
 
 ### UEFA Uluslar Ligi
@@ -97,7 +100,7 @@
 - 🟢 **BEIN SPORTS 3** <https://ladyboy.yedektv.cfd//bein3/tracks-v1a1/mono.m3u8>
 - 🟢 **BEIN SPORTS 4** <https://ladyboy.yedektv.cfd//bein4/tracks-v1a1/mono.m3u8>
 - ⚪ **BEIN SPORTS 5** <https://tv.atomspor.workers.dev/?ID=bein-sports-5>
-- 🟡 **S SPORT** <https://ladyboy.yedektv.cfd//s-sport/tracks-v1a1/mono.m3u8>
+- 🟢 **S SPORT** <https://ladyboy.yedektv.cfd//s-sport/tracks-v1a1/mono.m3u8>
 - 🟢 **S SPORT 2** <https://ladyboy.yedektv.cfd//s-sport2/tracks-v1a1/mono.m3u8>
 - ⚪ **S SPORT PLUS** <https://tv.atomspor.workers.dev/?ID=ssport-plus>
 - ⚪ **TIVIBU SPOR 1** <https://tv.atomspor.workers.dev/?ID=tivibu-spor-1>

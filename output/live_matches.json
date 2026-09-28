@@ -9,9 +9,36 @@
       "fixbettv84.com",
       "fixbettv19.com"
     ],
-    "last_checked": "2026-09-28T06:55:53+00:00",
+    "last_checked": "2026-09-28T15:02:01+00:00",
     "note": "OK",
     "probed": 200
   },
-  "live": []
+  "live": [
+    {
+      "match_id": "trtspor2",
+      "home": "Manisa BB",
+      "away": "THY",
+      "league": "TVF Kadınlar Kupa Voley",
+      "time": "16:00",
+      "sport": "Voleybol",
+      "is_match_of_day": false,
+      "channel_id": "trtspor2",
+      "logo_home": "https://img.sporekrani.com/teams/78b6fe10-0a92-46f4-be3d-8aae0d468885.png",
+      "logo_away": "https://img.sporekrani.com/teams/cGGEU8EHTXQhgEWGSCLQf2iQ2rVaeGXBCzo8znGB.png",
+      "status": "live",
+      "started": true,
+      "raw_event": "16:00 | TVF Kadınlar Kupa Voley",
+      "url": "https://fixbettv84.com/channel.html?id=trtspor2",
+      "fetched_at": "",
+      "status_source": "schedule",
+      "raw_status": "",
+      "score_home": null,
+      "score_away": null,
+      "score_source": "",
+      "score_updated_at": "",
+      "event_id": "",
+      "starts_at": "2026-09-28T16:00:00+03:00",
+      "status_clock": ""
+    }
+  ]
 }
