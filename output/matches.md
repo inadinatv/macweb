@@ -1,41 +1,38 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-09-28 17:09  
-> **Toplam maç:** 7  |  **Canlı:** 3  |  **Yaklaşan:** 3
-
-## 🔴 CANLI
-
-- 🔴 **Gürcistan 0 - 0 Ukrayna** — CANLI · `19:00` | UEFA Uluslar Ligi <https://fixbettv84.com/channel.html?id=as>
-- 🔴 **Körfez Basket vs Esenler Erokspor** — CANLI · `19:00` | Basketbol Süper Ligi <https://fixbettv84.com/channel.html?id=b5>
-- 🔴 **İlbank vs Aras Kargo** — CANLI · `19:00` | TVF Kadınlar Kupa Voley <https://fixbettv84.com/channel.html?id=trtspor2>
+> **Güncellenme:** 2026-09-28 21:12  
+> **Toplam maç:** 7  |  **Canlı:** 0  |  **Yaklaşan:** 4
 
 ## ⏰ YAKLAŞAN
 
-- ⏰ **Leganes vs Castellon** — YAKLAŞAN · `21:30` | İspanya La Liga 2 <https://fixbettv84.com/channel.html?id=ss>
-- ⏰ **Türkiye vs İtalya** — YAKLAŞAN · `21:45` | UEFA Uluslar Ligi ★ **Günün Maçı** <https://fixbettv84.com/channel.html?id=atv>
-- ⏰ **Belçika vs Fransa** — YAKLAŞAN · `21:45` | UEFA Uluslar Ligi <https://fixbettv84.com/channel.html?id=as>
+- ⏰ **Manisa BB vs THY** — YAKLAŞAN · `16:00` | TVF Kadınlar Kupa Voley <https://fixbettv84.com/channel.html?id=trtspor2>
+- ⏰ **Gürcistan vs Ukrayna** — YAKLAŞAN · `19:00` | UEFA Uluslar Ligi <https://fixbettv84.com/channel.html?id=as>
+- ⏰ **Körfez Basket vs Esenler Erokspor** — YAKLAŞAN · `19:00` | Basketbol Süper Ligi <https://fixbettv84.com/channel.html?id=b5>
+- ⏰ **İlbank vs Aras Kargo** — YAKLAŞAN · `19:00` | TVF Kadınlar Kupa Voley <https://fixbettv84.com/channel.html?id=trtspor2>
 
 ## ✅ BİTTİ
 
-- ✅ **Manisa BB vs THY** — MS · `16:00` | TVF Kadınlar Kupa Voley <https://fixbettv84.com/channel.html?id=trtspor2>
+- ✅ **Leganes vs Castellon** — MS · `21:30` | İspanya La Liga 2 <https://fixbettv84.com/channel.html?id=ss>
+- ✅ **Türkiye vs İtalya** — MS · `21:45` | UEFA Uluslar Ligi ★ **Günün Maçı** <https://fixbettv84.com/channel.html?id=atv>
+- ✅ **Belçika vs Fransa** — MS · `21:45` | UEFA Uluslar Ligi <https://fixbettv84.com/channel.html?id=as>
 
 ## ⭐ GÜNÜN MAÇI
 
-- ⏰ **Türkiye vs İtalya** — YAKLAŞAN · `21:45` | UEFA Uluslar Ligi ★ **Günün Maçı** <https://fixbettv84.com/channel.html?id=atv>
+- ✅ **Türkiye vs İtalya** — MS · `21:45` | UEFA Uluslar Ligi ★ **Günün Maçı** <https://fixbettv84.com/channel.html?id=atv>
 
 ---
 ## 🏆 Lig Bazlı
 
 ### Basketbol Süper Ligi
-- 🔴 Körfez Basket vs Esenler Erokspor — 19:00
+- ⏰ Körfez Basket vs Esenler Erokspor — 19:00
 
 ### TVF Kadınlar Kupa Voley
 - ⏰ Manisa BB vs THY — 16:00
-- 🔴 İlbank vs Aras Kargo — 19:00
+- ⏰ İlbank vs Aras Kargo — 19:00
 
 ### UEFA Uluslar Ligi
-- 🔴 Gürcistan vs Ukrayna — 19:00
+- ⏰ Gürcistan vs Ukrayna — 19:00
 - ⏰ Türkiye vs İtalya — 21:45
 - ⏰ Belçika vs Fransa — 21:45
 
@@ -98,13 +95,13 @@
 ## ⚡ EKSTRA PANELLER — m3u8 (79)
 
 ### ⚛️ ATOM SPOR ✅ `https://www.atomsportv515.top`
-- 🟡 **BEIN SPORTS 1** <https://ladyboy.yedektv.cfd//beintv/tracks-v1a1/mono.m3u8>
-- 🟡 **BEIN SPORTS 2** <https://ladyboy.yedektv.cfd//bein2/tracks-v1a1/mono.m3u8>
-- 🟡 **BEIN SPORTS 3** <https://ladyboy.yedektv.cfd//bein3/tracks-v1a1/mono.m3u8>
-- 🟡 **BEIN SPORTS 4** <https://ladyboy.yedektv.cfd//bein4/tracks-v1a1/mono.m3u8>
+- ⚪ **BEIN SPORTS 1** <https://tv.atomspor.workers.dev/?ID=bein-sports-1>
+- ⚪ **BEIN SPORTS 2** <https://tv.atomspor.workers.dev/?ID=bein-sports-2>
+- ⚪ **BEIN SPORTS 3** <https://tv.atomspor.workers.dev/?ID=bein-sports-3>
+- ⚪ **BEIN SPORTS 4** <https://tv.atomspor.workers.dev/?ID=bein-sports-4>
 - ⚪ **BEIN SPORTS 5** <https://tv.atomspor.workers.dev/?ID=bein-sports-5>
-- 🟡 **S SPORT** <https://ladyboy.yedektv.cfd//s-sport/tracks-v1a1/mono.m3u8>
-- 🟡 **S SPORT 2** <https://ladyboy.yedektv.cfd//s-sport2/tracks-v1a1/mono.m3u8>
+- ⚪ **S SPORT** <https://tv.atomspor.workers.dev/?ID=s-sport>
+- ⚪ **S SPORT 2** <https://tv.atomspor.workers.dev/?ID=s-sport-2>
 - ⚪ **S SPORT PLUS** <https://tv.atomspor.workers.dev/?ID=ssport-plus>
 - ⚪ **TIVIBU SPOR 1** <https://tv.atomspor.workers.dev/?ID=tivibu-spor-1>
 - ⚪ **TIVIBU SPOR 2** <https://tv.atomspor.workers.dev/?ID=tivibu-spor-2>
