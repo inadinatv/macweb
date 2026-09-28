@@ -1,21 +1,24 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-09-28 15:02  
-> **Toplam maç:** 7  |  **Canlı:** 1  |  **Yaklaşan:** 6
+> **Güncellenme:** 2026-09-28 16:43  
+> **Toplam maç:** 7  |  **Canlı:** 3  |  **Yaklaşan:** 3
 
 ## 🔴 CANLI
 
-- 🔴 **Manisa BB vs THY** — CANLI · `16:00` | TVF Kadınlar Kupa Voley <https://fixbettv84.com/channel.html?id=trtspor2>
+- 🔴 **Gürcistan 0 - 0 Ukrayna** — CANLI · `19:00` | UEFA Uluslar Ligi <https://fixbettv84.com/channel.html?id=as>
+- 🔴 **Körfez Basket vs Esenler Erokspor** — CANLI · `19:00` | Basketbol Süper Ligi <https://fixbettv84.com/channel.html?id=b5>
+- 🔴 **İlbank vs Aras Kargo** — CANLI · `19:00` | TVF Kadınlar Kupa Voley <https://fixbettv84.com/channel.html?id=trtspor2>
 
 ## ⏰ YAKLAŞAN
 
-- ⏰ **Gürcistan vs Ukrayna** — YAKLAŞAN · `19:00` | UEFA Uluslar Ligi <https://fixbettv84.com/channel.html?id=as>
-- ⏰ **Körfez Basket vs Esenler Erokspor** — YAKLAŞAN · `19:00` | Basketbol Süper Ligi <https://fixbettv84.com/channel.html?id=b5>
-- ⏰ **İlbank vs Aras Kargo** — YAKLAŞAN · `19:00` | TVF Kadınlar Kupa Voley <https://fixbettv84.com/channel.html?id=trtspor2>
 - ⏰ **Leganes vs Castellon** — YAKLAŞAN · `21:30` | İspanya La Liga 2 <https://fixbettv84.com/channel.html?id=ss>
 - ⏰ **Türkiye vs İtalya** — YAKLAŞAN · `21:45` | UEFA Uluslar Ligi ★ **Günün Maçı** <https://fixbettv84.com/channel.html?id=atv>
 - ⏰ **Belçika vs Fransa** — YAKLAŞAN · `21:45` | UEFA Uluslar Ligi <https://fixbettv84.com/channel.html?id=as>
+
+## ✅ BİTTİ
+
+- ✅ **Manisa BB vs THY** — MS · `16:00` | TVF Kadınlar Kupa Voley <https://fixbettv84.com/channel.html?id=trtspor2>
 
 ## ⭐ GÜNÜN MAÇI
 
@@ -25,14 +28,14 @@
 ## 🏆 Lig Bazlı
 
 ### Basketbol Süper Ligi
-- ⏰ Körfez Basket vs Esenler Erokspor — 19:00
+- 🔴 Körfez Basket vs Esenler Erokspor — 19:00
 
 ### TVF Kadınlar Kupa Voley
-- 🔴 Manisa BB vs THY — 16:00
-- ⏰ İlbank vs Aras Kargo — 19:00
+- ⏰ Manisa BB vs THY — 16:00
+- 🔴 İlbank vs Aras Kargo — 19:00
 
 ### UEFA Uluslar Ligi
-- ⏰ Gürcistan vs Ukrayna — 19:00
+- 🔴 Gürcistan vs Ukrayna — 19:00
 - ⏰ Türkiye vs İtalya — 21:45
 - ⏰ Belçika vs Fransa — 21:45
 
