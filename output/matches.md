@@ -1,29 +1,29 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-09-29 18:49  
-> **Toplam maç:** 6  |  **Canlı:** 4  |  **Yaklaşan:** 0
+> **Güncellenme:** 2026-09-29 19:55  
+> **Toplam maç:** 6  |  **Canlı:** 2  |  **Yaklaşan:** 0
 
 ## 🔴 CANLI
 
-- 🔴 **Anadolu Efes vs Real Madrid** — CANLI · `20:00` | Euroleague <https://fixbettv84.com/channel.html?id=ss>
-- 🔴 **Tofaş vs Chemnitz** — CANLI · `20:00` | Eurocup <https://fixbettv84.com/channel.html?id=trtspor>
 - 🔴 **Fenerbahçe Tarfin vs Bayern Münih** — CANLI · `20:45` | Euroleague <https://fixbettv84.com/channel.html?id=ss>
-- 🔴 **Çekya 0 - 0 İngiltere** — CANLI · `21:45` | UEFA Uluslar Ligi <https://fixbettv84.com/channel.html?id=as>
+- 🔴 **Çekya 0 - 1 İngiltere** — CANLI · `21:45` | UEFA Uluslar Ligi <https://fixbettv84.com/channel.html?id=as>
 
 ## ✅ BİTTİ
 
 - ✅ **Kuzeyboru vs Manisa BB** — MS · `16:00` | TVF Kadınlar Kupa Voley <https://fixbettv84.com/channel.html?id=trtspor2>
 - ✅ **Beşiktaş vs Afyon Bld.** — MS · `19:00` | TVF Kadınlar Kupa Voley <https://fixbettv84.com/channel.html?id=trtspor2>
+- ✅ **Anadolu Efes vs Real Madrid** — MS · `20:00` | Euroleague <https://fixbettv84.com/channel.html?id=ss>
+- ✅ **Tofaş vs Chemnitz** — MS · `20:00` | Eurocup <https://fixbettv84.com/channel.html?id=trtspor>
 
 ---
 ## 🏆 Lig Bazlı
 
 ### Eurocup
-- 🔴 Tofaş vs Chemnitz — 20:00
+- ⏰ Tofaş vs Chemnitz — 20:00
 
 ### Euroleague
-- 🔴 Anadolu Efes vs Real Madrid — 20:00
+- ⏰ Anadolu Efes vs Real Madrid — 20:00
 - 🔴 Fenerbahçe Tarfin vs Bayern Münih — 20:45
 
 ### TVF Kadınlar Kupa Voley
