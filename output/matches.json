@@ -9,13 +9,13 @@
       "fixbettv84.com",
       "fixbettv19.com"
     ],
-    "last_checked": "2026-09-29T01:00:42+00:00",
+    "last_checked": "2026-09-29T02:23:00+00:00",
     "note": "OK",
     "probed": 200
   },
   "categories": {
     "meta": {
-      "generated_at": "2026-09-29T05:05:13+03:00",
+      "generated_at": "2026-09-29T05:22:23+03:00",
       "date": "2026-09-29",
       "total_matches": 6
     },
@@ -181,7 +181,7 @@
         "started": false,
         "raw_event": "21:45 | UEFA Uluslar Ligi",
         "url": "https://fixbettv84.com/channel.html?id=as",
-        "fetched_at": "2026-09-29T05:05:13+03:00",
+        "fetched_at": "2026-09-29T05:22:23+03:00",
         "status_source": "mackolik",
         "raw_status": "none",
         "score_home": null,
@@ -348,7 +348,7 @@
           "started": false,
           "raw_event": "21:45 | UEFA Uluslar Ligi",
           "url": "https://fixbettv84.com/channel.html?id=as",
-          "fetched_at": "2026-09-29T05:05:13+03:00",
+          "fetched_at": "2026-09-29T05:22:23+03:00",
           "status_source": "mackolik",
           "raw_status": "none",
           "score_home": null,
@@ -458,7 +458,7 @@
           "started": false,
           "raw_event": "21:45 | UEFA Uluslar Ligi",
           "url": "https://fixbettv84.com/channel.html?id=as",
-          "fetched_at": "2026-09-29T05:05:13+03:00",
+          "fetched_at": "2026-09-29T05:22:23+03:00",
           "status_source": "mackolik",
           "raw_status": "none",
           "score_home": null,
@@ -672,7 +672,7 @@
       "started": false,
       "raw_event": "21:45 | UEFA Uluslar Ligi",
       "url": "https://fixbettv84.com/channel.html?id=as",
-      "fetched_at": "2026-09-29T05:05:13+03:00",
+      "fetched_at": "2026-09-29T05:22:23+03:00",
       "status_source": "mackolik",
       "raw_status": "none",
       "score_home": null,
