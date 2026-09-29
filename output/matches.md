@@ -1,20 +1,20 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-09-29 19:55  
-> **Toplam maç:** 6  |  **Canlı:** 2  |  **Yaklaşan:** 0
+> **Güncellenme:** 2026-09-29 21:37  
+> **Toplam maç:** 6  |  **Canlı:** 0  |  **Yaklaşan:** 4
 
-## 🔴 CANLI
+## ⏰ YAKLAŞAN
 
-- 🔴 **Fenerbahçe Tarfin vs Bayern Münih** — CANLI · `20:45` | Euroleague <https://fixbettv84.com/channel.html?id=ss>
-- 🔴 **Çekya 0 - 1 İngiltere** — CANLI · `21:45` | UEFA Uluslar Ligi <https://fixbettv84.com/channel.html?id=as>
+- ⏰ **Kuzeyboru vs Manisa BB** — YAKLAŞAN · `16:00` | TVF Kadınlar Kupa Voley <https://fixbettv84.com/channel.html?id=trtspor2>
+- ⏰ **Beşiktaş vs Afyon Bld.** — YAKLAŞAN · `19:00` | TVF Kadınlar Kupa Voley <https://fixbettv84.com/channel.html?id=trtspor2>
+- ⏰ **Anadolu Efes vs Real Madrid** — YAKLAŞAN · `20:00` | Euroleague <https://fixbettv84.com/channel.html?id=ss>
+- ⏰ **Tofaş vs Chemnitz** — YAKLAŞAN · `20:00` | Eurocup <https://fixbettv84.com/channel.html?id=trtspor>
 
 ## ✅ BİTTİ
 
-- ✅ **Kuzeyboru vs Manisa BB** — MS · `16:00` | TVF Kadınlar Kupa Voley <https://fixbettv84.com/channel.html?id=trtspor2>
-- ✅ **Beşiktaş vs Afyon Bld.** — MS · `19:00` | TVF Kadınlar Kupa Voley <https://fixbettv84.com/channel.html?id=trtspor2>
-- ✅ **Anadolu Efes vs Real Madrid** — MS · `20:00` | Euroleague <https://fixbettv84.com/channel.html?id=ss>
-- ✅ **Tofaş vs Chemnitz** — MS · `20:00` | Eurocup <https://fixbettv84.com/channel.html?id=trtspor>
+- ✅ **Fenerbahçe Tarfin vs Bayern Münih** — MS · `20:45` | Euroleague <https://fixbettv84.com/channel.html?id=ss>
+- ✅ **Çekya vs İngiltere** — MS · `21:45` | UEFA Uluslar Ligi <https://fixbettv84.com/channel.html?id=as>
 
 ---
 ## 🏆 Lig Bazlı
@@ -24,14 +24,14 @@
 
 ### Euroleague
 - ⏰ Anadolu Efes vs Real Madrid — 20:00
-- 🔴 Fenerbahçe Tarfin vs Bayern Münih — 20:45
+- ⏰ Fenerbahçe Tarfin vs Bayern Münih — 20:45
 
 ### TVF Kadınlar Kupa Voley
 - ⏰ Kuzeyboru vs Manisa BB — 16:00
 - ⏰ Beşiktaş vs Afyon Bld. — 19:00
 
 ### UEFA Uluslar Ligi
-- 🔴 Çekya vs İngiltere — 21:45
+- ⏰ Çekya vs İngiltere — 21:45
 
 ---
 ## 📺 7/24 KANALLAR (31)
@@ -91,7 +91,7 @@
 ### ⚛️ ATOM SPOR ✅ `https://www.atomsportv515.top`
 - 🟢 **BEIN SPORTS 1** <https://ladyboy.yedektv.cfd//s-sport/tracks-v1a1/mono.m3u8>
 - 🟢 **BEIN SPORTS 2** <https://ladyboy.yedektv.cfd//bein2/tracks-v1a1/mono.m3u8>
-- 🟢 **BEIN SPORTS 3** <https://ladyboy.yedektv.cfd//bein3/tracks-v1a1/mono.m3u8>
+- 🟡 **BEIN SPORTS 3** <https://ladyboy.yedektv.cfd//bein3/tracks-v1a1/mono.m3u8>
 - 🟢 **BEIN SPORTS 4** <https://ladyboy.yedektv.cfd//bein4/tracks-v1a1/mono.m3u8>
 - ⚪ **BEIN SPORTS 5** <https://tv.atomspor.workers.dev/?ID=bein-sports-5>
 - 🟢 **S SPORT** <https://ladyboy.yedektv.cfd//s-sport/tracks-v1a1/mono.m3u8>
