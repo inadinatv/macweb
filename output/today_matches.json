@@ -9,13 +9,13 @@
       "fixbettv84.com",
       "fixbettv19.com"
     ],
-    "last_checked": "2026-09-29T06:47:04+00:00",
+    "last_checked": "2026-09-29T13:23:48+00:00",
     "note": "OK",
     "probed": 200
   },
   "date": "2026-09-29",
   "timezone": "Europe/Istanbul",
-  "generated_at": "2026-09-29T11:23:50+03:00",
+  "generated_at": "2026-09-29T16:23:11+03:00",
   "matches": [
     {
       "match_id": "trtspor2",
@@ -28,8 +28,8 @@
       "channel_id": "trtspor2",
       "logo_home": "https://img.sporekrani.com/teams/fjX62B2SqKVXM47hZeJmtRiV90z37YTNq1rSpokx.png",
       "logo_away": "https://img.sporekrani.com/teams/78b6fe10-0a92-46f4-be3d-8aae0d468885.png",
-      "status": "upcoming",
-      "started": false,
+      "status": "live",
+      "started": true,
       "raw_event": "16:00 | TVF Kadınlar Kupa Voley",
       "url": "https://fixbettv84.com/channel.html?id=trtspor2",
       "fetched_at": "",
@@ -162,7 +162,7 @@
       "started": false,
       "raw_event": "21:45 | UEFA Uluslar Ligi",
       "url": "https://fixbettv84.com/channel.html?id=as",
-      "fetched_at": "2026-09-29T11:23:50+03:00",
+      "fetched_at": "2026-09-29T16:23:11+03:00",
       "status_source": "mackolik",
       "raw_status": "none",
       "score_home": null,
