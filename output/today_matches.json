@@ -14,7 +14,7 @@
   },
   "date": "2026-09-30",
   "timezone": "Europe/Istanbul",
-  "generated_at": "2026-09-30T22:52:18+03:00",
+  "generated_at": "2026-09-30T23:12:05+03:00",
   "matches": [
     {
       "match_id": "bm1",
@@ -83,13 +83,13 @@
       "started": true,
       "raw_event": "20:00 | Dostluk Maçı",
       "url": "https://fixbettv84.com/channel.html?id=trtspor",
-      "fetched_at": "2026-09-30T22:52:18+03:00",
+      "fetched_at": "2026-09-30T23:12:05+03:00",
       "status_source": "mackolik",
       "raw_status": "MS",
       "score_home": 2,
       "score_away": 2,
       "score_source": "mackolik",
-      "score_updated_at": "2026-09-30T22:52:18+03:00",
+      "score_updated_at": "2026-09-30T23:12:05+03:00",
       "event_id": "ct9xetn73a0upvy81jvwcwd1w",
       "starts_at": "2026-09-30T17:00:00+00:00",
       "status_clock": ""
