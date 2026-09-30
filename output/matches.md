@@ -1,37 +1,34 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-09-29 23:30  
-> **Toplam maç:** 6  |  **Canlı:** 0  |  **Yaklaşan:** 4
+> **Güncellenme:** 2026-09-30 01:44  
+> **Toplam maç:** 6  |  **Canlı:** 0  |  **Yaklaşan:** 6
 
 ## ⏰ YAKLAŞAN
 
-- ⏰ **Kuzeyboru vs Manisa BB** — YAKLAŞAN · `16:00` | TVF Kadınlar Kupa Voley <https://fixbettv84.com/channel.html?id=trtspor2>
-- ⏰ **Beşiktaş vs Afyon Bld.** — YAKLAŞAN · `19:00` | TVF Kadınlar Kupa Voley <https://fixbettv84.com/channel.html?id=trtspor2>
-- ⏰ **Anadolu Efes vs Real Madrid** — YAKLAŞAN · `20:00` | Euroleague <https://fixbettv84.com/channel.html?id=ss>
-- ⏰ **Tofaş vs Chemnitz** — YAKLAŞAN · `20:00` | Eurocup <https://fixbettv84.com/channel.html?id=trtspor>
-
-## ✅ BİTTİ
-
-- ✅ **Fenerbahçe Tarfin vs Bayern Münih** — MS · `20:45` | Euroleague <https://fixbettv84.com/channel.html?id=ss>
-- ✅ **Çekya vs İngiltere** — MS · `21:45` | UEFA Uluslar Ligi <https://fixbettv84.com/channel.html?id=as>
+- ⏰ **M.Inglis vs Zeynep Sönmez** — YAKLAŞAN · `09:00` | WTA Pekin <https://fixbettv84.com/channel.html?id=bm1>
+- ⏰ **Bahçeşehir Klj vs BC Roma** — YAKLAŞAN · `19:00` | Eurocup <https://fixbettv84.com/channel.html?id=trtspor2>
+- ⏰ **Konyaspor vs Filistin** — YAKLAŞAN · `20:00` | Dostluk Maçı <https://fixbettv84.com/channel.html?id=trtspor>
+- ⏰ **Maccabi Fox vs Beşiktaş** — YAKLAŞAN · `21:05` | Euroleague <https://fixbettv84.com/channel.html?id=ss>
+- ⏰ **Panathinaikos vs Asvel Villeurbanne** — YAKLAŞAN · `21:15` | Euroleague <https://fixbettv84.com/channel.html?id=ss2>
+- ⏰ **Iberostar Tenerife vs Türk Telekom** — YAKLAŞAN · `22:00` | Eurocup <https://fixbettv84.com/channel.html?id=trtspor2>
 
 ---
 ## 🏆 Lig Bazlı
 
+### Dostluk Maçı
+- ⏰ Konyaspor vs Filistin — 20:00
+
 ### Eurocup
-- ⏰ Tofaş vs Chemnitz — 20:00
+- ⏰ Bahçeşehir Klj vs BC Roma — 19:00
+- ⏰ Iberostar Tenerife vs Türk Telekom — 22:00
 
 ### Euroleague
-- ⏰ Anadolu Efes vs Real Madrid — 20:00
-- ⏰ Fenerbahçe Tarfin vs Bayern Münih — 20:45
+- ⏰ Maccabi Fox vs Beşiktaş — 21:05
+- ⏰ Panathinaikos vs Asvel Villeurbanne — 21:15
 
-### TVF Kadınlar Kupa Voley
-- ⏰ Kuzeyboru vs Manisa BB — 16:00
-- ⏰ Beşiktaş vs Afyon Bld. — 19:00
-
-### UEFA Uluslar Ligi
-- ⏰ Çekya vs İngiltere — 21:45
+### WTA Pekin
+- ⏰ M.Inglis vs Zeynep Sönmez — 09:00
 
 ---
 ## 📺 7/24 KANALLAR (31)
