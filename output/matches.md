@@ -1,37 +1,41 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-09-30 21:38  
-> **Toplam maç:** 6  |  **Canlı:** 0  |  **Yaklaşan:** 3
+> **Güncellenme:** 2026-09-30 23:32  
+> **Toplam maç:** 8  |  **Canlı:** 0  |  **Yaklaşan:** 5
 
 ## ⏰ YAKLAŞAN
 
-- ⏰ **M.Inglis vs Zeynep Sönmez** — YAKLAŞAN · `09:00` | WTA Pekin <https://fixbettv84.com/channel.html?id=bm1>
-- ⏰ **Bahçeşehir Klj vs BC Roma** — YAKLAŞAN · `19:00` | Eurocup <https://fixbettv84.com/channel.html?id=trtspor2>
-- ⏰ **Konyaspor vs Filistin** — YAKLAŞAN · `20:00` | Dostluk Maçı <https://fixbettv84.com/channel.html?id=trtspor>
+- ⏰ **Hapoel Tel Aviv vs Real Madrid** — YAKLAŞAN · `19:00` | Euroleague <https://fixbettv84.com/channel.html?id=ss>
+- ⏰ **Trabzonspor vs Drogheda** — YAKLAŞAN · `19:00` | Hazırlık Maçı <https://fixbettv84.com/channel.html?id=as>
+- ⏰ **Yunanistan vs Hollanda** — YAKLAŞAN · `21:45` | UEFA Uluslar Ligi <https://fixbettv84.com/channel.html?id=as>
+- ⏰ **Danimarka vs Portekiz** — YAKLAŞAN · `21:45` | UEFA Uluslar Ligi <https://fixbettv84.com/channel.html?id=ex1>
+- ⏰ **Almanya vs Sırbistan** — YAKLAŞAN · `21:45` | UEFA Uluslar Ligi <https://fixbettv84.com/channel.html?id=ex2>
 
 ## ✅ BİTTİ
 
-- ✅ **Maccabi Fox vs Beşiktaş** — MS · `21:05` | Euroleague <https://fixbettv84.com/channel.html?id=ss>
-- ✅ **Panathinaikos vs Asvel Villeurbanne** — MS · `21:15` | Euroleague <https://fixbettv84.com/channel.html?id=ss2>
-- ✅ **Iberostar Tenerife vs Türk Telekom** — MS · `22:00` | Eurocup <https://fixbettv84.com/channel.html?id=trtspor2>
+- ✅ **Kızılyıldız vs Anadolu Efes** — MS · `21:00` | Euroleague <https://fixbettv84.com/channel.html?id=ss2>
+- ✅ **Virtus Bologna vs Olympiakos** — MS · `21:30` | Euroleague <https://fixbettv84.com/channel.html?id=ss>
+- ✅ **Manchester City vs Real Madrid** — MS · `22:00` | UEFA Kadınlar Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=trtspor>
 
 ---
 ## 🏆 Lig Bazlı
 
-### Dostluk Maçı
-- ⏰ Konyaspor vs Filistin — 20:00
-
-### Eurocup
-- ⏰ Bahçeşehir Klj vs BC Roma — 19:00
-- ⏰ Iberostar Tenerife vs Türk Telekom — 22:00
-
 ### Euroleague
-- ⏰ Maccabi Fox vs Beşiktaş — 21:05
-- ⏰ Panathinaikos vs Asvel Villeurbanne — 21:15
+- ⏰ Hapoel Tel Aviv vs Real Madrid — 19:00
+- ⏰ Kızılyıldız vs Anadolu Efes — 21:00
+- ⏰ Virtus Bologna vs Olympiakos — 21:30
 
-### WTA Pekin
-- ⏰ M.Inglis vs Zeynep Sönmez — 09:00
+### Hazırlık Maçı
+- ⏰ Trabzonspor vs Drogheda — 19:00
+
+### UEFA Kadınlar Şampiyonlar Ligi
+- ⏰ Manchester City vs Real Madrid — 22:00
+
+### UEFA Uluslar Ligi
+- ⏰ Yunanistan vs Hollanda — 21:45
+- ⏰ Danimarka vs Portekiz — 21:45
+- ⏰ Almanya vs Sırbistan — 21:45
 
 ---
 ## 📺 7/24 KANALLAR (31)
