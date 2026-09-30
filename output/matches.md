@@ -1,20 +1,20 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-09-30 20:12  
-> **Toplam maç:** 6  |  **Canlı:** 3  |  **Yaklaşan:** 0
+> **Güncellenme:** 2026-09-30 21:38  
+> **Toplam maç:** 6  |  **Canlı:** 0  |  **Yaklaşan:** 3
 
-## 🔴 CANLI
+## ⏰ YAKLAŞAN
 
-- 🔴 **Maccabi Fox vs Beşiktaş** — CANLI · `21:05` | Euroleague <https://fixbettv84.com/channel.html?id=ss>
-- 🔴 **Panathinaikos vs Asvel Villeurbanne** — CANLI · `21:15` | Euroleague <https://fixbettv84.com/channel.html?id=ss2>
-- 🔴 **Iberostar Tenerife vs Türk Telekom** — CANLI · `22:00` | Eurocup <https://fixbettv84.com/channel.html?id=trtspor2>
+- ⏰ **M.Inglis vs Zeynep Sönmez** — YAKLAŞAN · `09:00` | WTA Pekin <https://fixbettv84.com/channel.html?id=bm1>
+- ⏰ **Bahçeşehir Klj vs BC Roma** — YAKLAŞAN · `19:00` | Eurocup <https://fixbettv84.com/channel.html?id=trtspor2>
+- ⏰ **Konyaspor vs Filistin** — YAKLAŞAN · `20:00` | Dostluk Maçı <https://fixbettv84.com/channel.html?id=trtspor>
 
 ## ✅ BİTTİ
 
-- ✅ **M.Inglis vs Zeynep Sönmez** — MS · `09:00` | WTA Pekin <https://fixbettv84.com/channel.html?id=bm1>
-- ✅ **Bahçeşehir Klj vs BC Roma** — MS · `19:00` | Eurocup <https://fixbettv84.com/channel.html?id=trtspor2>
-- ✅ **Konyaspor 2 - 2 Filistin** — MS · `20:00` | Dostluk Maçı <https://fixbettv84.com/channel.html?id=trtspor>
+- ✅ **Maccabi Fox vs Beşiktaş** — MS · `21:05` | Euroleague <https://fixbettv84.com/channel.html?id=ss>
+- ✅ **Panathinaikos vs Asvel Villeurbanne** — MS · `21:15` | Euroleague <https://fixbettv84.com/channel.html?id=ss2>
+- ✅ **Iberostar Tenerife vs Türk Telekom** — MS · `22:00` | Eurocup <https://fixbettv84.com/channel.html?id=trtspor2>
 
 ---
 ## 🏆 Lig Bazlı
@@ -24,11 +24,11 @@
 
 ### Eurocup
 - ⏰ Bahçeşehir Klj vs BC Roma — 19:00
-- 🔴 Iberostar Tenerife vs Türk Telekom — 22:00
+- ⏰ Iberostar Tenerife vs Türk Telekom — 22:00
 
 ### Euroleague
-- 🔴 Maccabi Fox vs Beşiktaş — 21:05
-- 🔴 Panathinaikos vs Asvel Villeurbanne — 21:15
+- ⏰ Maccabi Fox vs Beşiktaş — 21:05
+- ⏰ Panathinaikos vs Asvel Villeurbanne — 21:15
 
 ### WTA Pekin
 - ⏰ M.Inglis vs Zeynep Sönmez — 09:00
