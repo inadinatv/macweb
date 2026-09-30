@@ -9,13 +9,13 @@
       "fixbettv84.com",
       "fixbettv19.com"
     ],
-    "last_checked": "2026-09-30T01:44:34+00:00",
+    "last_checked": "2026-09-30T01:53:00+00:00",
     "note": "OK",
     "probed": 200
   },
   "categories": {
     "meta": {
-      "generated_at": "2026-09-30T04:43:58+03:00",
+      "generated_at": "2026-09-30T04:52:23+03:00",
       "date": "2026-09-30",
       "total_matches": 6
     },
@@ -103,7 +103,7 @@
         "started": false,
         "raw_event": "20:00 | Dostluk Maçı",
         "url": "https://fixbettv84.com/channel.html?id=trtspor",
-        "fetched_at": "2026-09-30T04:43:58+03:00",
+        "fetched_at": "2026-09-30T04:52:23+03:00",
         "status_source": "mackolik",
         "raw_status": "none",
         "score_home": null,
@@ -212,7 +212,7 @@
           "started": false,
           "raw_event": "20:00 | Dostluk Maçı",
           "url": "https://fixbettv84.com/channel.html?id=trtspor",
-          "fetched_at": "2026-09-30T04:43:58+03:00",
+          "fetched_at": "2026-09-30T04:52:23+03:00",
           "status_source": "mackolik",
           "raw_status": "none",
           "score_home": null,
@@ -484,7 +484,7 @@
           "started": false,
           "raw_event": "20:00 | Dostluk Maçı",
           "url": "https://fixbettv84.com/channel.html?id=trtspor",
-          "fetched_at": "2026-09-30T04:43:58+03:00",
+          "fetched_at": "2026-09-30T04:52:23+03:00",
           "status_source": "mackolik",
           "raw_status": "none",
           "score_home": null,
@@ -594,7 +594,7 @@
       "started": false,
       "raw_event": "20:00 | Dostluk Maçı",
       "url": "https://fixbettv84.com/channel.html?id=trtspor",
-      "fetched_at": "2026-09-30T04:43:58+03:00",
+      "fetched_at": "2026-09-30T04:52:23+03:00",
       "status_source": "mackolik",
       "raw_status": "none",
       "score_home": null,
