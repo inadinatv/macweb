@@ -1,12 +1,8 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-09-30 08:45  
-> **Toplam maç:** 6  |  **Canlı:** 1  |  **Yaklaşan:** 5
-
-## 🔴 CANLI
-
-- 🔴 **M.Inglis vs Zeynep Sönmez** — CANLI · `09:00` | WTA Pekin <https://fixbettv84.com/channel.html?id=bm1>
+> **Güncellenme:** 2026-09-30 14:56  
+> **Toplam maç:** 6  |  **Canlı:** 0  |  **Yaklaşan:** 5
 
 ## ⏰ YAKLAŞAN
 
@@ -15,6 +11,10 @@
 - ⏰ **Maccabi Fox vs Beşiktaş** — YAKLAŞAN · `21:05` | Euroleague <https://fixbettv84.com/channel.html?id=ss>
 - ⏰ **Panathinaikos vs Asvel Villeurbanne** — YAKLAŞAN · `21:15` | Euroleague <https://fixbettv84.com/channel.html?id=ss2>
 - ⏰ **Iberostar Tenerife vs Türk Telekom** — YAKLAŞAN · `22:00` | Eurocup <https://fixbettv84.com/channel.html?id=trtspor2>
+
+## ✅ BİTTİ
+
+- ✅ **M.Inglis vs Zeynep Sönmez** — MS · `09:00` | WTA Pekin <https://fixbettv84.com/channel.html?id=bm1>
 
 ---
 ## 🏆 Lig Bazlı
@@ -31,7 +31,7 @@
 - ⏰ Panathinaikos vs Asvel Villeurbanne — 21:15
 
 ### WTA Pekin
-- 🔴 M.Inglis vs Zeynep Sönmez — 09:00
+- ⏰ M.Inglis vs Zeynep Sönmez — 09:00
 
 ---
 ## 📺 7/24 KANALLAR (31)

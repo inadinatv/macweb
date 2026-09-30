@@ -6,39 +6,11 @@
     "mirror_now": "fixbettv84.com",
     "state": "OK",
     "active_mirrors": [
-      "fixbettv84.com",
-      "fixbettv19.com"
+      "fixbettv84.com"
     ],
-    "last_checked": "2026-09-30T08:08:31+00:00",
+    "last_checked": "2026-09-30T14:56:39+00:00",
     "note": "OK",
     "probed": 200
   },
-  "live": [
-    {
-      "match_id": "bm1",
-      "home": "M.Inglis",
-      "away": "Zeynep Sönmez",
-      "league": "WTA Pekin",
-      "time": "09:00",
-      "sport": "Tenis",
-      "is_match_of_day": false,
-      "channel_id": "bm1",
-      "logo_home": "https://static.flashscore.com/res/image/data/EgVSxWYg-QHqtum7I.png",
-      "logo_away": "https://static.flashscore.com/res/image/data/veGMmQeM-MBgfwjOH.png",
-      "status": "live",
-      "started": true,
-      "raw_event": "09:00 | WTA Pekin",
-      "url": "https://fixbettv84.com/channel.html?id=bm1",
-      "fetched_at": "",
-      "status_source": "schedule",
-      "raw_status": "",
-      "score_home": null,
-      "score_away": null,
-      "score_source": "",
-      "score_updated_at": "",
-      "event_id": "",
-      "starts_at": "2026-09-30T09:00:00+03:00",
-      "status_clock": ""
-    }
-  ]
+  "live": []
 }
