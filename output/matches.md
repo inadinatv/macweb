@@ -1,22 +1,19 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-09-30 23:53  
-> **Toplam maç:** 8  |  **Canlı:** 0  |  **Yaklaşan:** 5
+> **Güncellenme:** 2026-10-01 01:40  
+> **Toplam maç:** 8  |  **Canlı:** 0  |  **Yaklaşan:** 8
 
 ## ⏰ YAKLAŞAN
 
 - ⏰ **Hapoel Tel Aviv vs Real Madrid** — YAKLAŞAN · `19:00` | Euroleague <https://fixbettv84.com/channel.html?id=ss>
 - ⏰ **Trabzonspor vs Drogheda** — YAKLAŞAN · `19:00` | Hazırlık Maçı <https://fixbettv84.com/channel.html?id=as>
+- ⏰ **Kızılyıldız vs Anadolu Efes** — YAKLAŞAN · `21:00` | Euroleague <https://fixbettv84.com/channel.html?id=ss2>
+- ⏰ **Virtus Bologna vs Olympiakos** — YAKLAŞAN · `21:30` | Euroleague <https://fixbettv84.com/channel.html?id=ss>
 - ⏰ **Yunanistan vs Hollanda** — YAKLAŞAN · `21:45` | UEFA Uluslar Ligi <https://fixbettv84.com/channel.html?id=as>
 - ⏰ **Danimarka vs Portekiz** — YAKLAŞAN · `21:45` | UEFA Uluslar Ligi <https://fixbettv84.com/channel.html?id=ex1>
 - ⏰ **Almanya vs Sırbistan** — YAKLAŞAN · `21:45` | UEFA Uluslar Ligi <https://fixbettv84.com/channel.html?id=ex2>
-
-## ✅ BİTTİ
-
-- ✅ **Kızılyıldız vs Anadolu Efes** — MS · `21:00` | Euroleague <https://fixbettv84.com/channel.html?id=ss2>
-- ✅ **Virtus Bologna vs Olympiakos** — MS · `21:30` | Euroleague <https://fixbettv84.com/channel.html?id=ss>
-- ✅ **Manchester City vs Real Madrid** — MS · `22:00` | UEFA Kadınlar Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=trtspor>
+- ⏰ **Manchester City vs Real Madrid** — YAKLAŞAN · `22:00` | UEFA Kadınlar Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=trtspor>
 
 ---
 ## 🏆 Lig Bazlı

@@ -8,13 +8,13 @@
     "active_mirrors": [
       "fixbettv84.com"
     ],
-    "last_checked": "2026-09-30T23:32:25+00:00",
+    "last_checked": "2026-10-01T01:39:52+00:00",
     "note": "OK",
     "probed": 200
   },
   "date": "2026-10-01",
   "timezone": "Europe/Istanbul",
-  "generated_at": "2026-10-01T02:53:36+03:00",
+  "generated_at": "2026-10-01T04:39:16+03:00",
   "matches": [
     {
       "match_id": "ss",
@@ -57,7 +57,7 @@
       "started": false,
       "raw_event": "19:00 | Hazırlık Maçı",
       "url": "https://fixbettv84.com/channel.html?id=as",
-      "fetched_at": "2026-10-01T02:53:36+03:00",
+      "fetched_at": "2026-10-01T04:39:16+03:00",
       "status_source": "mackolik",
       "raw_status": "none",
       "score_home": null,
@@ -79,8 +79,8 @@
       "channel_id": "ss2",
       "logo_home": "https://img.sporekrani.com/teams/4c60CQ7vTN4HnUwf6j0bTgah2pGJdc1GjR0E6NAs.png",
       "logo_away": "https://img.sporekrani.com/teams/7NXfuFWZCNXytgMhlDQAXuZmXYmlv3kt5Vb3Ol5M.png",
-      "status": "finished",
-      "started": true,
+      "status": "upcoming",
+      "started": false,
       "raw_event": "21:00 | Euroleague",
       "url": "https://fixbettv84.com/channel.html?id=ss2",
       "fetched_at": "",
@@ -91,7 +91,7 @@
       "score_source": "",
       "score_updated_at": "",
       "event_id": "",
-      "starts_at": "2026-09-30T21:00:00+03:00",
+      "starts_at": "2026-10-01T21:00:00+03:00",
       "status_clock": ""
     },
     {
@@ -105,8 +105,8 @@
       "channel_id": "ss",
       "logo_home": "https://img.sporekrani.com/teams/OLhuCt1oDUvc4ba7g02hkFIv8Oc5gu045ynu3oLV.png",
       "logo_away": "https://img.sporekrani.com/teams/dliE3fU5Qwlmo3K2vYAbQfcUigAUDSKV62PbcuXa.png",
-      "status": "finished",
-      "started": true,
+      "status": "upcoming",
+      "started": false,
       "raw_event": "21:30 | Euroleague",
       "url": "https://fixbettv84.com/channel.html?id=ss",
       "fetched_at": "",
@@ -117,7 +117,7 @@
       "score_source": "",
       "score_updated_at": "",
       "event_id": "",
-      "starts_at": "2026-09-30T21:30:00+03:00",
+      "starts_at": "2026-10-01T21:30:00+03:00",
       "status_clock": ""
     },
     {
@@ -135,7 +135,7 @@
       "started": false,
       "raw_event": "21:45 | UEFA Uluslar Ligi",
       "url": "https://fixbettv84.com/channel.html?id=as",
-      "fetched_at": "2026-10-01T02:53:36+03:00",
+      "fetched_at": "2026-10-01T04:39:16+03:00",
       "status_source": "mackolik",
       "raw_status": "none",
       "score_home": null,
@@ -161,7 +161,7 @@
       "started": false,
       "raw_event": "21:45 | UEFA Uluslar Ligi",
       "url": "https://fixbettv84.com/channel.html?id=ex1",
-      "fetched_at": "2026-10-01T02:53:36+03:00",
+      "fetched_at": "2026-10-01T04:39:16+03:00",
       "status_source": "mackolik",
       "raw_status": "none",
       "score_home": null,
@@ -187,7 +187,7 @@
       "started": false,
       "raw_event": "21:45 | UEFA Uluslar Ligi",
       "url": "https://fixbettv84.com/channel.html?id=ex2",
-      "fetched_at": "2026-10-01T02:53:36+03:00",
+      "fetched_at": "2026-10-01T04:39:16+03:00",
       "status_source": "mackolik",
       "raw_status": "none",
       "score_home": null,
@@ -209,8 +209,8 @@
       "channel_id": "trtspor",
       "logo_home": "https://img.sporekrani.com/teams/3c6f5d5a-4f40-4819-9a16-dfc0127e3da7.png",
       "logo_away": "https://img.sporekrani.com/teams/cBa85Z6I0KcY2nCiaWz65BOAV88ryegMo7LGN20Y.png",
-      "status": "finished",
-      "started": true,
+      "status": "upcoming",
+      "started": false,
       "raw_event": "22:00 | UEFA Kadınlar Şampiyonlar Ligi",
       "url": "https://fixbettv84.com/channel.html?id=trtspor",
       "fetched_at": "",
@@ -221,7 +221,7 @@
       "score_source": "",
       "score_updated_at": "",
       "event_id": "",
-      "starts_at": "2026-09-30T22:00:00+03:00",
+      "starts_at": "2026-10-01T22:00:00+03:00",
       "status_clock": ""
     }
   ]
