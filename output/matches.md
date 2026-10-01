@@ -1,33 +1,33 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-10-01 17:17  
-> **Toplam maç:** 8  |  **Canlı:** 2  |  **Yaklaşan:** 6
-
-## 🔴 CANLI
-
-- 🔴 **Hapoel Tel Aviv vs Real Madrid** — CANLI · `19:00` | Euroleague <https://fixbettv84.com/channel.html?id=ss>
-- 🔴 **Trabzonspor 0 - 0 Drogheda** — CANLI · `19:00` | Hazırlık Maçı <https://fixbettv84.com/channel.html?id=as>
+> **Güncellenme:** 2026-10-01 21:24  
+> **Toplam maç:** 8  |  **Canlı:** 0  |  **Yaklaşan:** 2
 
 ## ⏰ YAKLAŞAN
 
-- ⏰ **Kızılyıldız vs Anadolu Efes** — YAKLAŞAN · `21:00` | Euroleague <https://fixbettv84.com/channel.html?id=ss2>
-- ⏰ **Virtus Bologna vs Olympiakos** — YAKLAŞAN · `21:30` | Euroleague <https://fixbettv84.com/channel.html?id=ss>
-- ⏰ **Yunanistan vs Hollanda** — YAKLAŞAN · `21:45` | UEFA Uluslar Ligi <https://fixbettv84.com/channel.html?id=as>
-- ⏰ **Danimarka vs Portekiz** — YAKLAŞAN · `21:45` | UEFA Uluslar Ligi <https://fixbettv84.com/channel.html?id=ex1>
-- ⏰ **Almanya vs Sırbistan** — YAKLAŞAN · `21:45` | UEFA Uluslar Ligi <https://fixbettv84.com/channel.html?id=ex2>
-- ⏰ **Manchester City vs Real Madrid** — YAKLAŞAN · `22:00` | UEFA Kadınlar Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=trtspor>
+- ⏰ **Hapoel Tel Aviv vs Real Madrid** — YAKLAŞAN · `19:00` | Euroleague <https://fixbettv84.com/channel.html?id=ss>
+- ⏰ **Trabzonspor vs Drogheda** — YAKLAŞAN · `19:00` | Hazırlık Maçı <https://fixbettv84.com/channel.html?id=as>
+
+## ✅ BİTTİ
+
+- ✅ **Kızılyıldız vs Anadolu Efes** — MS · `21:00` | Euroleague <https://fixbettv84.com/channel.html?id=ss2>
+- ✅ **Virtus Bologna vs Olympiakos** — MS · `21:30` | Euroleague <https://fixbettv84.com/channel.html?id=ss>
+- ✅ **Yunanistan vs Hollanda** — MS · `21:45` | UEFA Uluslar Ligi <https://fixbettv84.com/channel.html?id=as>
+- ✅ **Danimarka vs Portekiz** — MS · `21:45` | UEFA Uluslar Ligi <https://fixbettv84.com/channel.html?id=ex1>
+- ✅ **Almanya vs Sırbistan** — MS · `21:45` | UEFA Uluslar Ligi <https://fixbettv84.com/channel.html?id=ex2>
+- ✅ **Manchester City vs Real Madrid** — MS · `22:00` | UEFA Kadınlar Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=trtspor>
 
 ---
 ## 🏆 Lig Bazlı
 
 ### Euroleague
-- 🔴 Hapoel Tel Aviv vs Real Madrid — 19:00
+- ⏰ Hapoel Tel Aviv vs Real Madrid — 19:00
 - ⏰ Kızılyıldız vs Anadolu Efes — 21:00
 - ⏰ Virtus Bologna vs Olympiakos — 21:30
 
 ### Hazırlık Maçı
-- 🔴 Trabzonspor vs Drogheda — 19:00
+- ⏰ Trabzonspor vs Drogheda — 19:00
 
 ### UEFA Kadınlar Şampiyonlar Ligi
 - ⏰ Manchester City vs Real Madrid — 22:00
@@ -93,7 +93,7 @@
 ## ⚡ EKSTRA PANELLER — m3u8 (79)
 
 ### ⚛️ ATOM SPOR ✅ `https://www.atomsportv515.top`
-- 🟢 **BEIN SPORTS 1** <https://ladyboy.yedektv.cfd//s-sport/tracks-v1a1/mono.m3u8>
+- 🟢 **BEIN SPORTS 1** <https://ladyboy.yedektv.cfd//beintv/tracks-v1a1/mono.m3u8>
 - 🟢 **BEIN SPORTS 2** <https://ladyboy.yedektv.cfd//bein2/tracks-v1a1/mono.m3u8>
 - 🟢 **BEIN SPORTS 3** <https://ladyboy.yedektv.cfd//bein3/tracks-v1a1/mono.m3u8>
 - 🟢 **BEIN SPORTS 4** <https://ladyboy.yedektv.cfd//bein4/tracks-v1a1/mono.m3u8>
