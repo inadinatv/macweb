@@ -8,9 +8,62 @@
     "active_mirrors": [
       "fixbettv84.com"
     ],
-    "last_checked": "2026-10-01T15:48:40+00:00",
+    "last_checked": "2026-10-01T16:39:38+00:00",
     "note": "OK",
     "probed": 200
   },
-  "live": []
+  "live": [
+    {
+      "match_id": "ss",
+      "home": "Hapoel Tel Aviv",
+      "away": "Real Madrid",
+      "league": "Euroleague",
+      "time": "19:00",
+      "sport": "Basketbol",
+      "is_match_of_day": false,
+      "channel_id": "ss",
+      "logo_home": "https://img.sporekrani.com/teams/xxd5hkHBrBULSy2XnhV6WJymBqget2Lcro1wflPX.png",
+      "logo_away": "https://img.sporekrani.com/teams/cBa85Z6I0KcY2nCiaWz65BOAV88ryegMo7LGN20Y.png",
+      "status": "live",
+      "started": true,
+      "raw_event": "19:00 | Euroleague",
+      "url": "https://fixbettv84.com/channel.html?id=ss",
+      "fetched_at": "",
+      "status_source": "schedule",
+      "raw_status": "",
+      "score_home": null,
+      "score_away": null,
+      "score_source": "",
+      "score_updated_at": "",
+      "event_id": "",
+      "starts_at": "2026-10-01T19:00:00+03:00",
+      "status_clock": ""
+    },
+    {
+      "match_id": "as",
+      "home": "Trabzonspor",
+      "away": "Drogheda",
+      "league": "Hazırlık Maçı",
+      "time": "19:00",
+      "sport": "Futbol",
+      "is_match_of_day": false,
+      "channel_id": "as",
+      "logo_home": "https://img.sporekrani.com/teams/du8xrhC2p6tNr2lBt0EpxnnyUp94NYKETlbvtfqe.png",
+      "logo_away": "https://img.sporekrani.com/teams/cc7775c2-d5d6-4922-82e9-b7a4d58dc4ac.png",
+      "status": "live",
+      "started": true,
+      "raw_event": "19:00 | Hazırlık Maçı",
+      "url": "https://fixbettv84.com/channel.html?id=as",
+      "fetched_at": "2026-10-01T19:39:02+03:00",
+      "status_source": "mackolik",
+      "raw_status": "none",
+      "score_home": 0,
+      "score_away": 0,
+      "score_source": "mackolik",
+      "score_updated_at": "2026-10-01T19:39:02+03:00",
+      "event_id": "63aegxr7j2m9go3urrpl4lrf8",
+      "starts_at": "2026-10-01T16:00:00+00:00",
+      "status_clock": "41'"
+    }
+  ]
 }

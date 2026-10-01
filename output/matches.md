@@ -1,13 +1,16 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-10-01 15:49  
-> **Toplam maç:** 8  |  **Canlı:** 0  |  **Yaklaşan:** 8
+> **Güncellenme:** 2026-10-01 16:40  
+> **Toplam maç:** 8  |  **Canlı:** 2  |  **Yaklaşan:** 6
+
+## 🔴 CANLI
+
+- 🔴 **Hapoel Tel Aviv vs Real Madrid** — CANLI · `19:00` | Euroleague <https://fixbettv84.com/channel.html?id=ss>
+- 🔴 **Trabzonspor 0 - 0 Drogheda** — CANLI · `19:00` | Hazırlık Maçı <https://fixbettv84.com/channel.html?id=as>
 
 ## ⏰ YAKLAŞAN
 
-- ⏰ **Hapoel Tel Aviv vs Real Madrid** — YAKLAŞAN · `19:00` | Euroleague <https://fixbettv84.com/channel.html?id=ss>
-- ⏰ **Trabzonspor vs Drogheda** — YAKLAŞAN · `19:00` | Hazırlık Maçı <https://fixbettv84.com/channel.html?id=as>
 - ⏰ **Kızılyıldız vs Anadolu Efes** — YAKLAŞAN · `21:00` | Euroleague <https://fixbettv84.com/channel.html?id=ss2>
 - ⏰ **Virtus Bologna vs Olympiakos** — YAKLAŞAN · `21:30` | Euroleague <https://fixbettv84.com/channel.html?id=ss>
 - ⏰ **Yunanistan vs Hollanda** — YAKLAŞAN · `21:45` | UEFA Uluslar Ligi <https://fixbettv84.com/channel.html?id=as>
@@ -19,12 +22,12 @@
 ## 🏆 Lig Bazlı
 
 ### Euroleague
-- ⏰ Hapoel Tel Aviv vs Real Madrid — 19:00
+- 🔴 Hapoel Tel Aviv vs Real Madrid — 19:00
 - ⏰ Kızılyıldız vs Anadolu Efes — 21:00
 - ⏰ Virtus Bologna vs Olympiakos — 21:30
 
 ### Hazırlık Maçı
-- ⏰ Trabzonspor vs Drogheda — 19:00
+- 🔴 Trabzonspor vs Drogheda — 19:00
 
 ### UEFA Kadınlar Şampiyonlar Ligi
 - ⏰ Manchester City vs Real Madrid — 22:00
