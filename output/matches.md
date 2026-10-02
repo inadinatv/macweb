@@ -1,7 +1,7 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-10-02 07:04  
+> **Güncellenme:** 2026-10-02 13:39  
 > **Toplam maç:** 5  |  **Canlı:** 0  |  **Yaklaşan:** 5
 
 ## ⏰ YAKLAŞAN
