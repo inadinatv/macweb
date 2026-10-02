@@ -8,9 +8,62 @@
     "active_mirrors": [
       "fixbettv84.com"
     ],
-    "last_checked": "2026-10-02T15:09:52+00:00",
+    "last_checked": "2026-10-02T18:43:05+00:00",
     "note": "OK",
     "probed": 200
   },
-  "live": []
+  "live": [
+    {
+      "match_id": "ss2",
+      "home": "Beşiktaş",
+      "away": "Barcelona",
+      "league": "Euroleague",
+      "time": "20:00",
+      "sport": "Basketbol",
+      "is_match_of_day": false,
+      "channel_id": "ss2",
+      "logo_home": "https://img.sporekrani.com/teams/ATPU6MJ3X6MzjgMpm80O8O25sU6yBMmWetDKdzAH.png",
+      "logo_away": "https://img.sporekrani.com/teams/gMmimeahKcq4SB7F0XluPo2EgJGWX62genaw5MDa.png",
+      "status": "live",
+      "started": true,
+      "raw_event": "20:00 | Euroleague",
+      "url": "https://fixbettv84.com/channel.html?id=ss2",
+      "fetched_at": "",
+      "status_source": "schedule",
+      "raw_status": "",
+      "score_home": null,
+      "score_away": null,
+      "score_source": "",
+      "score_updated_at": "",
+      "event_id": "",
+      "starts_at": "2026-10-02T20:00:00+03:00",
+      "status_clock": ""
+    },
+    {
+      "match_id": "ss",
+      "home": "Fenerbahçe Tarfin",
+      "away": "Dubai Basket",
+      "league": "Euroleague",
+      "time": "20:45",
+      "sport": "Basketbol",
+      "is_match_of_day": false,
+      "channel_id": "ss",
+      "logo_home": "https://img.sporekrani.com/teams/6fad4a16-b5bd-4727-8443-ddac90b0d13c.png",
+      "logo_away": "https://img.sporekrani.com/teams/061afddf-f0b9-47a9-82d5-95662f36dd2f.png",
+      "status": "live",
+      "started": true,
+      "raw_event": "20:45 | Euroleague",
+      "url": "https://fixbettv84.com/channel.html?id=ss",
+      "fetched_at": "",
+      "status_source": "schedule",
+      "raw_status": "",
+      "score_home": null,
+      "score_away": null,
+      "score_source": "",
+      "score_updated_at": "",
+      "event_id": "",
+      "starts_at": "2026-10-02T20:45:00+03:00",
+      "status_clock": ""
+    }
+  ]
 }

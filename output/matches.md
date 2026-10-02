@@ -1,16 +1,22 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-10-02 15:10  
-> **Toplam maç:** 5  |  **Canlı:** 0  |  **Yaklaşan:** 5
+> **Güncellenme:** 2026-10-02 18:43  
+> **Toplam maç:** 5  |  **Canlı:** 2  |  **Yaklaşan:** 2
+
+## 🔴 CANLI
+
+- 🔴 **Beşiktaş vs Barcelona** — CANLI · `20:00` | Euroleague <https://fixbettv84.com/channel.html?id=ss2>
+- 🔴 **Fenerbahçe Tarfin vs Dubai Basket** — CANLI · `20:45` | Euroleague <https://fixbettv84.com/channel.html?id=ss>
 
 ## ⏰ YAKLAŞAN
 
-- ⏰ **Karşıyaka vs Galatasaray MCT** — YAKLAŞAN · `19:00` | Basketbol Süper Ligi <https://fixbettv84.com/channel.html?id=b5>
-- ⏰ **Beşiktaş vs Barcelona** — YAKLAŞAN · `20:00` | Euroleague <https://fixbettv84.com/channel.html?id=ss2>
-- ⏰ **Fenerbahçe Tarfin vs Dubai Basket** — YAKLAŞAN · `20:45` | Euroleague <https://fixbettv84.com/channel.html?id=ss>
 - ⏰ **Belçika vs Türkiye** — YAKLAŞAN · `21:45` | UEFA Uluslar Ligi <https://fixbettv84.com/channel.html?id=atv>
 - ⏰ **Fransa vs İtalya** — YAKLAŞAN · `21:45` | UEFA Uluslar Ligi <https://fixbettv84.com/channel.html?id=as>
+
+## ✅ BİTTİ
+
+- ✅ **Karşıyaka vs Galatasaray MCT** — MS · `19:00` | Basketbol Süper Ligi <https://fixbettv84.com/channel.html?id=b5>
 
 ---
 ## 🏆 Lig Bazlı
@@ -19,8 +25,8 @@
 - ⏰ Karşıyaka vs Galatasaray MCT — 19:00
 
 ### Euroleague
-- ⏰ Beşiktaş vs Barcelona — 20:00
-- ⏰ Fenerbahçe Tarfin vs Dubai Basket — 20:45
+- 🔴 Beşiktaş vs Barcelona — 20:00
+- 🔴 Fenerbahçe Tarfin vs Dubai Basket — 20:45
 
 ### UEFA Uluslar Ligi
 - ⏰ Belçika vs Türkiye — 21:45
@@ -81,7 +87,7 @@
 ---
 ## ⚡ EKSTRA PANELLER — m3u8 (79)
 
-### ⚛️ ATOM SPOR ✅ `https://www.atomsportv515.top`
+### ⚛️ ATOM SPOR ✅ `https://www.atomsportv516.top`
 - 🟢 **BEIN SPORTS 1** <https://ladyboy.yedektv.cfd//beintv/tracks-v1a1/mono.m3u8>
 - 🟢 **BEIN SPORTS 2** <https://ladyboy.yedektv.cfd//bein2/tracks-v1a1/mono.m3u8>
 - 🟢 **BEIN SPORTS 3** <https://ladyboy.yedektv.cfd//bein3/tracks-v1a1/mono.m3u8>
