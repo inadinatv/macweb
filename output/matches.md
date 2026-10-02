@@ -1,41 +1,30 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-10-01 22:07  
-> **Toplam maç:** 8  |  **Canlı:** 0  |  **Yaklaşan:** 2
+> **Güncellenme:** 2026-10-02 01:02  
+> **Toplam maç:** 5  |  **Canlı:** 0  |  **Yaklaşan:** 5
 
 ## ⏰ YAKLAŞAN
 
-- ⏰ **Hapoel Tel Aviv vs Real Madrid** — YAKLAŞAN · `19:00` | Euroleague <https://fixbettv84.com/channel.html?id=ss>
-- ⏰ **Trabzonspor vs Drogheda** — YAKLAŞAN · `19:00` | Hazırlık Maçı <https://fixbettv84.com/channel.html?id=as>
-
-## ✅ BİTTİ
-
-- ✅ **Kızılyıldız vs Anadolu Efes** — MS · `21:00` | Euroleague <https://fixbettv84.com/channel.html?id=ss2>
-- ✅ **Virtus Bologna vs Olympiakos** — MS · `21:30` | Euroleague <https://fixbettv84.com/channel.html?id=ss>
-- ✅ **Yunanistan vs Hollanda** — MS · `21:45` | UEFA Uluslar Ligi <https://fixbettv84.com/channel.html?id=as>
-- ✅ **Danimarka vs Portekiz** — MS · `21:45` | UEFA Uluslar Ligi <https://fixbettv84.com/channel.html?id=ex1>
-- ✅ **Almanya vs Sırbistan** — MS · `21:45` | UEFA Uluslar Ligi <https://fixbettv84.com/channel.html?id=ex2>
-- ✅ **Manchester City vs Real Madrid** — MS · `22:00` | UEFA Kadınlar Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=trtspor>
+- ⏰ **Karşıyaka vs Galatasaray MCT** — YAKLAŞAN · `19:00` | Basketbol Süper Ligi <https://fixbettv84.com/channel.html?id=b5>
+- ⏰ **Beşiktaş vs Barcelona** — YAKLAŞAN · `20:00` | Euroleague <https://fixbettv84.com/channel.html?id=ss2>
+- ⏰ **Fenerbahçe Tarfin vs Dubai Basket** — YAKLAŞAN · `20:45` | Euroleague <https://fixbettv84.com/channel.html?id=ss>
+- ⏰ **Belçika vs Türkiye** — YAKLAŞAN · `21:45` | UEFA Uluslar Ligi <https://fixbettv84.com/channel.html?id=atv>
+- ⏰ **Fransa vs İtalya** — YAKLAŞAN · `21:45` | UEFA Uluslar Ligi <https://fixbettv84.com/channel.html?id=as>
 
 ---
 ## 🏆 Lig Bazlı
 
+### Basketbol Süper Ligi
+- ⏰ Karşıyaka vs Galatasaray MCT — 19:00
+
 ### Euroleague
-- ⏰ Hapoel Tel Aviv vs Real Madrid — 19:00
-- ⏰ Kızılyıldız vs Anadolu Efes — 21:00
-- ⏰ Virtus Bologna vs Olympiakos — 21:30
-
-### Hazırlık Maçı
-- ⏰ Trabzonspor vs Drogheda — 19:00
-
-### UEFA Kadınlar Şampiyonlar Ligi
-- ⏰ Manchester City vs Real Madrid — 22:00
+- ⏰ Beşiktaş vs Barcelona — 20:00
+- ⏰ Fenerbahçe Tarfin vs Dubai Basket — 20:45
 
 ### UEFA Uluslar Ligi
-- ⏰ Yunanistan vs Hollanda — 21:45
-- ⏰ Danimarka vs Portekiz — 21:45
-- ⏰ Almanya vs Sırbistan — 21:45
+- ⏰ Belçika vs Türkiye — 21:45
+- ⏰ Fransa vs İtalya — 21:45
 
 ---
 ## 📺 7/24 KANALLAR (31)
