@@ -1,8 +1,8 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-10-03 16:30  
-> **Toplam maç:** 11  |  **Canlı:** 4  |  **Yaklaşan:** 3
+> **Güncellenme:** 2026-10-03 16:36  
+> **Toplam maç:** 11  |  **Canlı:** 5  |  **Yaklaşan:** 2
 
 ## 🔴 CANLI
 
@@ -10,10 +10,10 @@
 - 🔴 **Turan vs Fenerbahçe** — CANLI · `19:00` | Hazırlık Maçı <https://fixbettv84.com/channel.html?id=ex7>
 - 🔴 **Hırvatistan 0 - 2 İngiltere** — CANLI · `19:00` | UEFA Uluslar Ligi <https://fixbettv84.com/channel.html?id=as>
 - 🔴 **Gençlerbirliği 0 - 0 Keçiörengücü** — CANLI · `19:00` | TSYD Ankara Futbol Turnuvasi <https://fixbettv84.com/channel.html?id=trtspor>
+- 🔴 **Cadiz 0 - 0 Leganes** — CANLI · `19:30` | İspanya La Liga 2 <https://fixbettv84.com/channel.html?id=ss>
 
 ## ⏰ YAKLAŞAN
 
-- ⏰ **Cadiz vs Leganes** — YAKLAŞAN · `19:30` | İspanya La Liga 2 <https://fixbettv84.com/channel.html?id=ss>
 - ⏰ **İspanya vs Çekya** — YAKLAŞAN · `21:45` | UEFA Uluslar Ligi <https://fixbettv84.com/channel.html?id=ex2>
 - ⏰ **İsviçre vs Slovenya** — YAKLAŞAN · `21:45` | UEFA Uluslar Ligi <https://fixbettv84.com/channel.html?id=as>
 
@@ -48,7 +48,7 @@
 - ⏰ İsviçre vs Slovenya — 21:45
 
 ### İspanya La Liga 2
-- ⏰ Cadiz vs Leganes — 19:30
+- 🔴 Cadiz vs Leganes — 19:30
 
 ---
 ## 📺 7/24 KANALLAR (31)
