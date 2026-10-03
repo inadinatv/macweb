@@ -8,9 +8,36 @@
     "active_mirrors": [
       "fixbettv84.com"
     ],
-    "last_checked": "2026-10-03T06:56:50+00:00",
+    "last_checked": "2026-10-03T12:17:20+00:00",
     "note": "OK",
     "probed": 200
   },
-  "live": []
+  "live": [
+    {
+      "match_id": "trtspor",
+      "home": "Vakıfbank",
+      "away": "Beşiktaş",
+      "league": "TVF Sultanlar Ligi",
+      "time": "14:00",
+      "sport": "Voleybol",
+      "is_match_of_day": false,
+      "channel_id": "trtspor",
+      "logo_home": "https://img.sporekrani.com/teams/aT2LeHuyb2t80Uud0IlKmTIJcmECkPqWBna059Oy.png",
+      "logo_away": "https://img.sporekrani.com/teams/HBRVVQcfOaffQ7FJvsl4YyJV9I6XgA0ke6OM2Khi.png",
+      "status": "live",
+      "started": true,
+      "raw_event": "14:00 | TVF Sultanlar Ligi",
+      "url": "https://fixbettv84.com/channel.html?id=trtspor",
+      "fetched_at": "",
+      "status_source": "schedule",
+      "raw_status": "",
+      "score_home": null,
+      "score_away": null,
+      "score_source": "",
+      "score_updated_at": "",
+      "event_id": "",
+      "starts_at": "2026-10-03T14:00:00+03:00",
+      "status_clock": ""
+    }
+  ]
 }
