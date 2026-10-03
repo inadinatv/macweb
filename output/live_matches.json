@@ -28,16 +28,16 @@
       "started": true,
       "raw_event": "21:45 | UEFA Uluslar Ligi",
       "url": "https://fixbettv84.com/channel.html?id=ex2",
-      "fetched_at": "2026-10-03T22:21:05+03:00",
+      "fetched_at": "2026-10-03T22:23:53+03:00",
       "status_source": "mackolik",
       "raw_status": "none",
-      "score_home": 1,
+      "score_home": 2,
       "score_away": 0,
       "score_source": "mackolik",
-      "score_updated_at": "2026-10-03T22:21:05+03:00",
+      "score_updated_at": "2026-10-03T22:23:53+03:00",
       "event_id": "77bswkzcz3npf869k58t9kro4",
       "starts_at": "2026-10-03T18:45:00+00:00",
-      "status_clock": "35'"
+      "status_clock": "37'"
     },
     {
       "match_id": "as",
@@ -54,16 +54,16 @@
       "started": true,
       "raw_event": "21:45 | UEFA Uluslar Ligi",
       "url": "https://fixbettv84.com/channel.html?id=as",
-      "fetched_at": "2026-10-03T22:21:05+03:00",
+      "fetched_at": "2026-10-03T22:23:53+03:00",
       "status_source": "mackolik",
       "raw_status": "none",
       "score_home": 1,
       "score_away": 1,
       "score_source": "mackolik",
-      "score_updated_at": "2026-10-03T22:21:05+03:00",
+      "score_updated_at": "2026-10-03T22:23:53+03:00",
       "event_id": "ev55yrw9la9wqyk2vpueuhzx0",
       "starts_at": "2026-10-03T18:45:00+00:00",
-      "status_clock": "36'"
+      "status_clock": "38'"
     }
   ]
 }

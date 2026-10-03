@@ -1,12 +1,12 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-10-03 19:22  
+> **Güncellenme:** 2026-10-03 19:23  
 > **Toplam maç:** 11  |  **Canlı:** 2  |  **Yaklaşan:** 0
 
 ## 🔴 CANLI
 
-- 🔴 **İspanya 1 - 0 Çekya** — CANLI · `21:45` | UEFA Uluslar Ligi <https://fixbettv84.com/channel.html?id=ex2>
+- 🔴 **İspanya 2 - 0 Çekya** — CANLI · `21:45` | UEFA Uluslar Ligi <https://fixbettv84.com/channel.html?id=ex2>
 - 🔴 **İsviçre 1 - 1 Slovenya** — CANLI · `21:45` | UEFA Uluslar Ligi <https://fixbettv84.com/channel.html?id=as>
 
 ## ✅ BİTTİ
