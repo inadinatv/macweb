@@ -1,25 +1,25 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-10-03 20:19  
-> **Toplam maç:** 11  |  **Canlı:** 2  |  **Yaklaşan:** 0
+> **Güncellenme:** 2026-10-03 22:17  
+> **Toplam maç:** 11  |  **Canlı:** 0  |  **Yaklaşan:** 9
 
-## 🔴 CANLI
+## ⏰ YAKLAŞAN
 
-- 🔴 **İspanya 2 - 1 Çekya** — CANLI · `21:45` | UEFA Uluslar Ligi <https://fixbettv84.com/channel.html?id=ex2>
-- 🔴 **İsviçre 2 - 1 Slovenya** — CANLI · `21:45` | UEFA Uluslar Ligi <https://fixbettv84.com/channel.html?id=as>
+- ⏰ **Denizli Basket vs Tofaş** — YAKLAŞAN · `13:00` | Basketbol Süper Ligi <https://fixbettv84.com/channel.html?id=b5>
+- ⏰ **Vakıfbank vs Beşiktaş** — YAKLAŞAN · `14:00` | TVF Sultanlar Ligi <https://fixbettv84.com/channel.html?id=trtspor>
+- ⏰ **Bursaspor vs Türk Telekom** — YAKLAŞAN · `15:30` | Basketbol Süper Ligi <https://fixbettv84.com/channel.html?id=b5>
+- ⏰ **Finlandiya vs Arnavutluk** — YAKLAŞAN · `16:00` | UEFA Uluslar Ligi <https://fixbettv84.com/channel.html?id=ss>
+- ⏰ **Esenler Erokspor vs Petkimspor** — YAKLAŞAN · `18:00` | Basketbol Süper Ligi <https://fixbettv84.com/channel.html?id=b5>
+- ⏰ **Turan vs Fenerbahçe** — YAKLAŞAN · `19:00` | Hazırlık Maçı <https://fixbettv84.com/channel.html?id=ex7>
+- ⏰ **Hırvatistan vs İngiltere** — YAKLAŞAN · `19:00` | UEFA Uluslar Ligi <https://fixbettv84.com/channel.html?id=as>
+- ⏰ **Gençlerbirliği vs Keçiörengücü** — YAKLAŞAN · `19:00` | TSYD Ankara Futbol Turnuvasi <https://fixbettv84.com/channel.html?id=trtspor>
+- ⏰ **Cadiz vs Leganes** — YAKLAŞAN · `19:30` | İspanya La Liga 2 <https://fixbettv84.com/channel.html?id=ss>
 
 ## ✅ BİTTİ
 
-- ✅ **Denizli Basket vs Tofaş** — MS · `13:00` | Basketbol Süper Ligi <https://fixbettv84.com/channel.html?id=b5>
-- ✅ **Vakıfbank vs Beşiktaş** — MS · `14:00` | TVF Sultanlar Ligi <https://fixbettv84.com/channel.html?id=trtspor>
-- ✅ **Bursaspor vs Türk Telekom** — MS · `15:30` | Basketbol Süper Ligi <https://fixbettv84.com/channel.html?id=b5>
-- ✅ **Finlandiya 2 - 1 Arnavutluk** — MS · `16:00` | UEFA Uluslar Ligi <https://fixbettv84.com/channel.html?id=ss>
-- ✅ **Esenler Erokspor vs Petkimspor** — MS · `18:00` | Basketbol Süper Ligi <https://fixbettv84.com/channel.html?id=b5>
-- ✅ **Turan vs Fenerbahçe** — MS · `19:00` | Hazırlık Maçı <https://fixbettv84.com/channel.html?id=ex7>
-- ✅ **Hırvatistan 0 - 7 İngiltere** — MS · `19:00` | UEFA Uluslar Ligi <https://fixbettv84.com/channel.html?id=as>
-- ✅ **Gençlerbirliği 0 - 1 Keçiörengücü** — MS · `19:00` | TSYD Ankara Futbol Turnuvasi <https://fixbettv84.com/channel.html?id=trtspor>
-- ✅ **Cadiz 4 - 0 Leganes** — MS · `19:30` | İspanya La Liga 2 <https://fixbettv84.com/channel.html?id=ss>
+- ✅ **İspanya vs Çekya** — MS · `21:45` | UEFA Uluslar Ligi <https://fixbettv84.com/channel.html?id=ex2>
+- ✅ **İsviçre vs Slovenya** — MS · `21:45` | UEFA Uluslar Ligi <https://fixbettv84.com/channel.html?id=as>
 
 ---
 ## 🏆 Lig Bazlı
@@ -41,8 +41,8 @@
 ### UEFA Uluslar Ligi
 - ⏰ Finlandiya vs Arnavutluk — 16:00
 - ⏰ Hırvatistan vs İngiltere — 19:00
-- 🔴 İspanya vs Çekya — 21:45
-- 🔴 İsviçre vs Slovenya — 21:45
+- ⏰ İspanya vs Çekya — 21:45
+- ⏰ İsviçre vs Slovenya — 21:45
 
 ### İspanya La Liga 2
 - ⏰ Cadiz vs Leganes — 19:30
