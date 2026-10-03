@@ -1,17 +1,16 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-10-03 12:25  
-> **Toplam maç:** 11  |  **Canlı:** 1  |  **Yaklaşan:** 9
+> **Güncellenme:** 2026-10-03 14:05  
+> **Toplam maç:** 11  |  **Canlı:** 2  |  **Yaklaşan:** 7
 
 ## 🔴 CANLI
 
-- 🔴 **Vakıfbank vs Beşiktaş** — CANLI · `14:00` | TVF Sultanlar Ligi <https://fixbettv84.com/channel.html?id=trtspor>
+- 🔴 **Bursaspor vs Türk Telekom** — CANLI · `15:30` | Basketbol Süper Ligi <https://fixbettv84.com/channel.html?id=b5>
+- 🔴 **Finlandiya 1 - 1 Arnavutluk** — DEVRE · `16:00` | UEFA Uluslar Ligi <https://fixbettv84.com/channel.html?id=ss>
 
 ## ⏰ YAKLAŞAN
 
-- ⏰ **Bursaspor vs Türk Telekom** — YAKLAŞAN · `15:30` | Basketbol Süper Ligi <https://fixbettv84.com/channel.html?id=b5>
-- ⏰ **Finlandiya vs Arnavutluk** — YAKLAŞAN · `16:00` | UEFA Uluslar Ligi <https://fixbettv84.com/channel.html?id=ss>
 - ⏰ **Esenler Erokspor vs Petkimspor** — YAKLAŞAN · `18:00` | Basketbol Süper Ligi <https://fixbettv84.com/channel.html?id=b5>
 - ⏰ **Turan vs Fenerbahçe** — YAKLAŞAN · `19:00` | Hazırlık Maçı <https://fixbettv84.com/channel.html?id=ex7>
 - ⏰ **Hırvatistan vs İngiltere** — YAKLAŞAN · `19:00` | UEFA Uluslar Ligi <https://fixbettv84.com/channel.html?id=as>
@@ -23,13 +22,14 @@
 ## ✅ BİTTİ
 
 - ✅ **Denizli Basket vs Tofaş** — MS · `13:00` | Basketbol Süper Ligi <https://fixbettv84.com/channel.html?id=b5>
+- ✅ **Vakıfbank vs Beşiktaş** — MS · `14:00` | TVF Sultanlar Ligi <https://fixbettv84.com/channel.html?id=trtspor>
 
 ---
 ## 🏆 Lig Bazlı
 
 ### Basketbol Süper Ligi
 - ⏰ Denizli Basket vs Tofaş — 13:00
-- ⏰ Bursaspor vs Türk Telekom — 15:30
+- 🔴 Bursaspor vs Türk Telekom — 15:30
 - ⏰ Esenler Erokspor vs Petkimspor — 18:00
 
 ### Hazırlık Maçı
@@ -39,7 +39,7 @@
 - ⏰ Gençlerbirliği vs Keçiörengücü — 19:00
 
 ### TVF Sultanlar Ligi
-- 🔴 Vakıfbank vs Beşiktaş — 14:00
+- ⏰ Vakıfbank vs Beşiktaş — 14:00
 
 ### UEFA Uluslar Ligi
 - ⏰ Finlandiya vs Arnavutluk — 16:00
