@@ -1,20 +1,18 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-10-04 14:30  
-> **Toplam maç:** 11  |  **Canlı:** 1  |  **Yaklaşan:** 8
+> **Güncellenme:** 2026-10-04 17:44  
+> **Toplam maç:** 11  |  **Canlı:** 4  |  **Yaklaşan:** 3
 
 ## 🔴 CANLI
 
-- 🔴 **Fenerbahçe Tarfin vs Körfez Basket** — CANLI · `15:30` | Basketbol Süper Ligi <https://fixbettv84.com/channel.html?id=b5>
+- 🔴 **Kosova 1 - 1 Avusturya** — CANLI · `19:00` | UEFA Uluslar Ligi <https://fixbettv84.com/channel.html?id=as>
+- 🔴 **THY vs Galatasaray Daikin** — CANLI · `19:00` | TVF Sultanlar Ligi <https://fixbettv84.com/channel.html?id=trtspor>
+- 🔴 **Las Palmas vs Valladolid** — CANLI · `19:30` | İspanya La Liga 2 <https://fixbettv84.com/channel.html?id=ss>
+- 🔴 **Murcia vs Barcelona** — CANLI · `20:00` | İspanya Basketbol Ligi <https://fixbettv84.com/channel.html?id=smarts>
 
 ## ⏰ YAKLAŞAN
 
-- ⏰ **Bandırma Bordo vs Anadolu Efes** — YAKLAŞAN · `18:00` | Basketbol Süper Ligi <https://fixbettv84.com/channel.html?id=b5>
-- ⏰ **Kosova vs Avusturya** — YAKLAŞAN · `19:00` | UEFA Uluslar Ligi <https://fixbettv84.com/channel.html?id=as>
-- ⏰ **THY vs Galatasaray Daikin** — YAKLAŞAN · `19:00` | TVF Sultanlar Ligi <https://fixbettv84.com/channel.html?id=trtspor>
-- ⏰ **Las Palmas vs Valladolid** — YAKLAŞAN · `19:30` | İspanya La Liga 2 <https://fixbettv84.com/channel.html?id=ss>
-- ⏰ **Murcia vs Barcelona** — YAKLAŞAN · `20:00` | İspanya Basketbol Ligi <https://fixbettv84.com/channel.html?id=smarts>
 - ⏰ **Hollanda vs Sırbistan** — YAKLAŞAN · `21:45` | UEFA Uluslar Ligi <https://fixbettv84.com/channel.html?id=as>
 - ⏰ **Portekiz vs Norveç** — YAKLAŞAN · `21:45` | UEFA Uluslar Ligi <https://fixbettv84.com/channel.html?id=ex2>
 - ⏰ **Girona vs Mallorca** — YAKLAŞAN · `22:00` | İspanya La Liga 2 <https://fixbettv84.com/channel.html?id=ss>
@@ -23,29 +21,31 @@
 
 - ✅ **Çayırova Bld. vs Bahçeşehir Klj** — MS · `13:00` | Basketbol Süper Ligi <https://fixbettv84.com/channel.html?id=b5>
 - ✅ **Obradoiro CAB vs Real Madrid** — MS · `13:30` | İspanya Basketbol Ligi <https://fixbettv84.com/channel.html?id=smarts>
+- ✅ **Fenerbahçe Tarfin vs Körfez Basket** — MS · `15:30` | Basketbol Süper Ligi <https://fixbettv84.com/channel.html?id=b5>
+- ✅ **Bandırma Bordo vs Anadolu Efes** — MS · `18:00` | Basketbol Süper Ligi <https://fixbettv84.com/channel.html?id=b5>
 
 ---
 ## 🏆 Lig Bazlı
 
 ### Basketbol Süper Ligi
 - ⏰ Çayırova Bld. vs Bahçeşehir Klj — 13:00
-- 🔴 Fenerbahçe Tarfin vs Körfez Basket — 15:30
+- ⏰ Fenerbahçe Tarfin vs Körfez Basket — 15:30
 - ⏰ Bandırma Bordo vs Anadolu Efes — 18:00
 
 ### TVF Sultanlar Ligi
-- ⏰ THY vs Galatasaray Daikin — 19:00
+- 🔴 THY vs Galatasaray Daikin — 19:00
 
 ### UEFA Uluslar Ligi
-- ⏰ Kosova vs Avusturya — 19:00
+- 🔴 Kosova vs Avusturya — 19:00
 - ⏰ Hollanda vs Sırbistan — 21:45
 - ⏰ Portekiz vs Norveç — 21:45
 
 ### İspanya Basketbol Ligi
 - ⏰ Obradoiro CAB vs Real Madrid — 13:30
-- ⏰ Murcia vs Barcelona — 20:00
+- 🔴 Murcia vs Barcelona — 20:00
 
 ### İspanya La Liga 2
-- ⏰ Las Palmas vs Valladolid — 19:30
+- 🔴 Las Palmas vs Valladolid — 19:30
 - ⏰ Girona vs Mallorca — 22:00
 
 ---
