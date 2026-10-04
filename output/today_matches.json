@@ -8,13 +8,13 @@
     "active_mirrors": [
       "fixbettv84.com"
     ],
-    "last_checked": "2026-10-04T20:36:46+00:00",
+    "last_checked": "2026-10-04T20:58:35+00:00",
     "note": "OK",
     "probed": 200
   },
   "date": "2026-10-04",
   "timezone": "Europe/Istanbul",
-  "generated_at": "2026-10-04T23:36:11+03:00",
+  "generated_at": "2026-10-04T23:57:59+03:00",
   "matches": [
     {
       "match_id": "b5",
@@ -135,13 +135,13 @@
       "started": true,
       "raw_event": "19:00 | UEFA Uluslar Ligi",
       "url": "https://fixbettv84.com/channel.html?id=as",
-      "fetched_at": "2026-10-04T23:36:11+03:00",
+      "fetched_at": "2026-10-04T23:57:59+03:00",
       "status_source": "mackolik",
       "raw_status": "MS",
       "score_home": 1,
       "score_away": 1,
       "score_source": "mackolik",
-      "score_updated_at": "2026-10-04T23:36:11+03:00",
+      "score_updated_at": "2026-10-04T23:57:59+03:00",
       "event_id": "evq4c68buoi3sva8hv67uoaok",
       "starts_at": "2026-10-04T16:00:00+00:00",
       "status_clock": ""
@@ -235,20 +235,20 @@
       "channel_id": "as",
       "logo_home": "https://img.sporekrani.com/teams/mOYnP5p5ew1I7vp8Ur1sdstQxpYdMoPZkXDkvqoC.png",
       "logo_away": "https://img.sporekrani.com/teams/6d3eSWIYp7X8osFCYXKUDl0sbsTeRXdDnQttlbfP.png",
-      "status": "live",
+      "status": "finished",
       "started": true,
       "raw_event": "21:45 | UEFA Uluslar Ligi",
       "url": "https://fixbettv84.com/channel.html?id=as",
-      "fetched_at": "2026-10-04T23:36:11+03:00",
+      "fetched_at": "2026-10-04T23:57:59+03:00",
       "status_source": "mackolik",
-      "raw_status": "none",
+      "raw_status": "MS",
       "score_home": 2,
       "score_away": 1,
       "score_source": "mackolik",
-      "score_updated_at": "2026-10-04T23:36:11+03:00",
+      "score_updated_at": "2026-10-04T23:57:59+03:00",
       "event_id": "78i4i8qsh0otjt9w0yfjk0tn8",
       "starts_at": "2026-10-04T18:45:00+00:00",
-      "status_clock": "91'"
+      "status_clock": ""
     },
     {
       "match_id": "ex2",
@@ -261,20 +261,20 @@
       "channel_id": "ex2",
       "logo_home": "https://img.sporekrani.com/tr_w_72,h_72,c_limit/teams/pTXEUXjCx0iOTB7k2yAp0KIhgdyjRKM5GKhEGE0f.png",
       "logo_away": "https://img.sporekrani.com/tr_w_72,h_72,c_limit/teams/GaGdrcDlvz08HQDGMKTAob62ophtHDGwjnbiAX4o.png",
-      "status": "live",
+      "status": "finished",
       "started": true,
       "raw_event": "21:45 | UEFA Uluslar Ligi",
       "url": "https://fixbettv84.com/channel.html?id=ex2",
-      "fetched_at": "2026-10-04T23:36:11+03:00",
+      "fetched_at": "2026-10-04T23:57:59+03:00",
       "status_source": "mackolik",
-      "raw_status": "none",
+      "raw_status": "MS",
       "score_home": 2,
       "score_away": 1,
       "score_source": "mackolik",
-      "score_updated_at": "2026-10-04T23:36:11+03:00",
+      "score_updated_at": "2026-10-04T23:57:59+03:00",
       "event_id": "795y24v1fs9x19us4p8hyt5as",
       "starts_at": "2026-10-04T18:45:00+00:00",
-      "status_clock": "89'"
+      "status_clock": ""
     },
     {
       "match_id": "ss",
@@ -287,20 +287,20 @@
       "channel_id": "ss",
       "logo_home": "https://img.sporekrani.com/teams/nbmEUs0VNsH59nhZ5Yd23fociaN4msxUAGd6x4T1.png",
       "logo_away": "https://img.sporekrani.com/teams/1j3RSVeg953WPcfw8ePrzWdgH4pndoz4wlIvTFL8.png",
-      "status": "live",
+      "status": "finished",
       "started": true,
       "raw_event": "22:00 | İspanya La Liga 2",
       "url": "https://fixbettv84.com/channel.html?id=ss",
-      "fetched_at": "2026-10-04T23:36:11+03:00",
+      "fetched_at": "2026-10-04T23:57:59+03:00",
       "status_source": "mackolik",
-      "raw_status": "none",
+      "raw_status": "MS",
       "score_home": 0,
       "score_away": 0,
       "score_source": "mackolik",
-      "score_updated_at": "2026-10-04T23:36:11+03:00",
+      "score_updated_at": "2026-10-04T23:57:59+03:00",
       "event_id": "3tqqoljsp0opm76805a36ebys",
       "starts_at": "2026-10-04T19:00:00+00:00",
-      "status_clock": "78'"
+      "status_clock": ""
     }
   ]
 }

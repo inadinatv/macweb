@@ -1,14 +1,8 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-10-04 20:37  
-> **Toplam maç:** 11  |  **Canlı:** 3  |  **Yaklaşan:** 0
-
-## 🔴 CANLI
-
-- 🔴 **Hollanda 2 - 1 Sırbistan** — CANLI · `21:45` | UEFA Uluslar Ligi <https://fixbettv84.com/channel.html?id=as>
-- 🔴 **Portekiz 2 - 1 Norveç** — CANLI · `21:45` | UEFA Uluslar Ligi <https://fixbettv84.com/channel.html?id=ex2>
-- 🔴 **Girona 0 - 0 Mallorca** — CANLI · `22:00` | İspanya La Liga 2 <https://fixbettv84.com/channel.html?id=ss>
+> **Güncellenme:** 2026-10-04 20:58  
+> **Toplam maç:** 11  |  **Canlı:** 0  |  **Yaklaşan:** 0
 
 ## ✅ BİTTİ
 
@@ -20,6 +14,9 @@
 - ✅ **THY vs Galatasaray Daikin** — MS · `19:00` | TVF Sultanlar Ligi <https://fixbettv84.com/channel.html?id=trtspor>
 - ✅ **Las Palmas vs Valladolid** — MS · `19:30` | İspanya La Liga 2 <https://fixbettv84.com/channel.html?id=ss>
 - ✅ **Murcia vs Barcelona** — MS · `20:00` | İspanya Basketbol Ligi <https://fixbettv84.com/channel.html?id=smarts>
+- ✅ **Hollanda 2 - 1 Sırbistan** — MS · `21:45` | UEFA Uluslar Ligi <https://fixbettv84.com/channel.html?id=as>
+- ✅ **Portekiz 2 - 1 Norveç** — MS · `21:45` | UEFA Uluslar Ligi <https://fixbettv84.com/channel.html?id=ex2>
+- ✅ **Girona 0 - 0 Mallorca** — MS · `22:00` | İspanya La Liga 2 <https://fixbettv84.com/channel.html?id=ss>
 
 ---
 ## 🏆 Lig Bazlı
@@ -34,8 +31,8 @@
 
 ### UEFA Uluslar Ligi
 - ⏰ Kosova vs Avusturya — 19:00
-- 🔴 Hollanda vs Sırbistan — 21:45
-- 🔴 Portekiz vs Norveç — 21:45
+- ⏰ Hollanda vs Sırbistan — 21:45
+- ⏰ Portekiz vs Norveç — 21:45
 
 ### İspanya Basketbol Ligi
 - ⏰ Obradoiro CAB vs Real Madrid — 13:30
@@ -43,7 +40,7 @@
 
 ### İspanya La Liga 2
 - ⏰ Las Palmas vs Valladolid — 19:30
-- 🔴 Girona vs Mallorca — 22:00
+- ⏰ Girona vs Mallorca — 22:00
 
 ---
 ## 📺 7/24 KANALLAR (31)
