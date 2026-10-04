@@ -12,5 +12,32 @@
     "note": "OK",
     "probed": 200
   },
-  "live": []
+  "live": [
+    {
+      "match_id": "b5",
+      "home": "Fenerbahçe Tarfin",
+      "away": "Körfez Basket",
+      "league": "Basketbol Süper Ligi",
+      "time": "15:30",
+      "sport": "Basketbol",
+      "is_match_of_day": false,
+      "channel_id": "b5",
+      "logo_home": "https://img.sporekrani.com/teams/6fad4a16-b5bd-4727-8443-ddac90b0d13c.png",
+      "logo_away": "https://thumb.wikimedia.org/wikipedia/tr/thumb/e/e2/Manisa_B%C3%BCy%C3%BCk%C5%9Fehir_Belediyespor.png/330px-Manisa_B%C3%BCy%C3%BCk%C5%9Fehir_Belediyespor.png",
+      "status": "live",
+      "started": true,
+      "raw_event": "15:30 | Basketbol Süper Ligi",
+      "url": "https://fixbettv84.com/channel.html?id=b5",
+      "fetched_at": "",
+      "status_source": "schedule",
+      "raw_status": "",
+      "score_home": null,
+      "score_away": null,
+      "score_source": "",
+      "score_updated_at": "",
+      "event_id": "",
+      "starts_at": "2026-10-04T15:30:00+03:00",
+      "status_clock": ""
+    }
+  ]
 }
