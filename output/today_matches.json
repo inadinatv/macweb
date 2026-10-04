@@ -8,13 +8,13 @@
     "active_mirrors": [
       "fixbettv84.com"
     ],
-    "last_checked": "2026-10-04T13:46:33+00:00",
+    "last_checked": "2026-10-04T14:29:58+00:00",
     "note": "OK",
     "probed": 200
   },
   "date": "2026-10-04",
   "timezone": "Europe/Istanbul",
-  "generated_at": "2026-10-04T16:46:01+03:00",
+  "generated_at": "2026-10-04T17:29:22+03:00",
   "matches": [
     {
       "match_id": "b5",
@@ -135,7 +135,7 @@
       "started": false,
       "raw_event": "19:00 | UEFA Uluslar Ligi",
       "url": "https://fixbettv84.com/channel.html?id=as",
-      "fetched_at": "2026-10-04T16:46:01+03:00",
+      "fetched_at": "2026-10-04T17:29:22+03:00",
       "status_source": "mackolik",
       "raw_status": "none",
       "score_home": null,
@@ -239,7 +239,7 @@
       "started": false,
       "raw_event": "21:45 | UEFA Uluslar Ligi",
       "url": "https://fixbettv84.com/channel.html?id=as",
-      "fetched_at": "2026-10-04T16:46:01+03:00",
+      "fetched_at": "2026-10-04T17:29:22+03:00",
       "status_source": "mackolik",
       "raw_status": "none",
       "score_home": null,
@@ -265,7 +265,7 @@
       "started": false,
       "raw_event": "21:45 | UEFA Uluslar Ligi",
       "url": "https://fixbettv84.com/channel.html?id=ex2",
-      "fetched_at": "2026-10-04T16:46:01+03:00",
+      "fetched_at": "2026-10-04T17:29:22+03:00",
       "status_source": "mackolik",
       "raw_status": "none",
       "score_home": null,
@@ -291,7 +291,7 @@
       "started": false,
       "raw_event": "22:00 | İspanya La Liga 2",
       "url": "https://fixbettv84.com/channel.html?id=ss",
-      "fetched_at": "2026-10-04T16:46:01+03:00",
+      "fetched_at": "2026-10-04T17:29:22+03:00",
       "status_source": "mackolik",
       "raw_status": "none",
       "score_home": null,
