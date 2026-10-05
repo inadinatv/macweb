@@ -1,28 +1,34 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-10-05 11:52  
-> **Toplam maç:** 5  |  **Canlı:** 0  |  **Yaklaşan:** 5
+> **Güncellenme:** 2026-10-05 17:33  
+> **Toplam maç:** 5  |  **Canlı:** 2  |  **Yaklaşan:** 2
+
+## 🔴 CANLI
+
+- 🔴 **Beşiktaş vs Trabzonspor** — CANLI · `19:00` | Basketbol Süper Ligi <https://fixbettv84.com/channel.html?id=b5>
+- 🔴 **Şanlıurfaspor vs Gebzespor** — CANLI · `19:00` | TFF 2. Lig <https://fixbettv84.com/channel.html?id=t1>
 
 ## ⏰ YAKLAŞAN
 
-- ⏰ **Nilüfer Bld. vs İstanbul Gençlik** — YAKLAŞAN · `17:00` | Hentbol Erkekler Süper Ligi <https://fixbettv84.com/channel.html?id=trtspor2>
-- ⏰ **Beşiktaş vs Trabzonspor** — YAKLAŞAN · `19:00` | Basketbol Süper Ligi <https://fixbettv84.com/channel.html?id=b5>
-- ⏰ **Şanlıurfaspor vs Gebzespor** — YAKLAŞAN · `19:00` | TFF 2. Lig <https://fixbettv84.com/channel.html?id=t1>
 - ⏰ **Fransa vs Belçika** — YAKLAŞAN · `21:45` | UEFA Uluslar Ligi <https://fixbettv84.com/channel.html?id=as>
 - ⏰ **İtalya vs Türkiye** — YAKLAŞAN · `21:45` | UEFA Uluslar Ligi <https://fixbettv84.com/channel.html?id=atv>
+
+## ✅ BİTTİ
+
+- ✅ **Nilüfer Bld. vs İstanbul Gençlik** — MS · `17:00` | Hentbol Erkekler Süper Ligi <https://fixbettv84.com/channel.html?id=trtspor2>
 
 ---
 ## 🏆 Lig Bazlı
 
 ### Basketbol Süper Ligi
-- ⏰ Beşiktaş vs Trabzonspor — 19:00
+- 🔴 Beşiktaş vs Trabzonspor — 19:00
 
 ### Hentbol Erkekler Süper Ligi
 - ⏰ Nilüfer Bld. vs İstanbul Gençlik — 17:00
 
 ### TFF 2. Lig
-- ⏰ Şanlıurfaspor vs Gebzespor — 19:00
+- 🔴 Şanlıurfaspor vs Gebzespor — 19:00
 
 ### UEFA Uluslar Ligi
 - ⏰ Fransa vs Belçika — 21:45
