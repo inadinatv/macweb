@@ -281,16 +281,16 @@ panels:
 
   # --------------------------------------------------------------------------
   #  TRİBÜN TV — kullanıcı tarafından verilen kanal sayfaları
-  #    Kaynak site Cloudflare/403 döndürebildiği için doğrudan HLS keşfi
-  #    yapılmaz; kanal sayfaları panel oynatıcısı olarak açılır.
+  #    tribuntv.online bağlantıları Zeus kanal sayfasına yönlendiği için
+  #    yönlendirme atlanır ve kanal sayfaları doğrudan panel oynatıcısı olarak açılır.
   # --------------------------------------------------------------------------
   - id: tribun
     name: "TRİBÜN TV"
     icon: "🏟️"
     enabled: true
-    base_url: "https://tribuntv.online"
-    page_template: "{base_url}/channel?id={slug}"
-    embed_template: "{base_url}/channel?id={slug}"
+    base_url: "https://zeustv269.cfd"
+    page_template: "{base_url}/ch.html?id={slug}"
+    embed_template: "{base_url}/ch.html?id={slug}"
     embed_fallback: true
     referrer: "{base_url}/"
     channels:
