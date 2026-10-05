@@ -1,7 +1,7 @@
 {
   "updated_at": "2026-10-05T04:33:48+00:00",
   "source": "output/extra_channels.json",
-  "total": 91,
+  "total": 97,
   "panels": [
     {
       "id": "atom",
@@ -2321,192 +2321,31 @@
       ]
     },
     {
-      "id": "tribun",
-      "name": "TRİBÜN TV",
-      "icon": "🏟️",
-      "base_url": "https://zeustv269.cfd",
+      "id": "sultanbet",
+      "name": "SULTANBET TV",
+      "icon": "👑",
+      "base_url": "https://sultanbettv101.live",
       "player_base": "",
       "stream_base": "",
       "healthy": null,
       "resolved": 0,
       "fresh": 0,
-      "total": 12,
+      "total": 18,
       "channels": [
         {
-          "id": "tribun:s2",
-          "slug": "s2",
-          "name": "S SPORT 2",
-          "panel": "tribun",
-          "panel_name": "TRİBÜN TV",
-          "icon": "🏀",
-          "logo": "",
-          "page_url": "https://zeustv269.cfd/ch.html?id=s2",
-          "referrer": "https://zeustv269.cfd/",
-          "sources": [
-            {
-              "type": "embed",
-              "url": "https://zeustv269.cfd/ch.html?id=s2",
-              "label": "Site"
-            }
-          ],
-          "resolved": false,
-          "fresh": false,
-          "resolved_url": null,
-          "resolved_at": null,
-          "stale": false
-        },
-        {
-          "id": "tribun:b2max",
-          "slug": "b2max",
-          "name": "BEIN SPORTS MAX 2",
-          "panel": "tribun",
-          "panel_name": "TRİBÜN TV",
-          "icon": "⚽",
-          "logo": "",
-          "page_url": "https://zeustv269.cfd/ch.html?id=b2max",
-          "referrer": "https://zeustv269.cfd/",
-          "sources": [
-            {
-              "type": "embed",
-              "url": "https://zeustv269.cfd/ch.html?id=b2max",
-              "label": "Site"
-            }
-          ],
-          "resolved": false,
-          "fresh": false,
-          "resolved_url": null,
-          "resolved_at": null,
-          "stale": false
-        },
-        {
-          "id": "tribun:b1",
-          "slug": "b1",
-          "name": "BEIN SPORTS 1",
-          "panel": "tribun",
-          "panel_name": "TRİBÜN TV",
-          "icon": "⚽",
-          "logo": "",
-          "page_url": "https://zeustv269.cfd/ch.html?id=b1",
-          "referrer": "https://zeustv269.cfd/",
-          "sources": [
-            {
-              "type": "embed",
-              "url": "https://zeustv269.cfd/ch.html?id=b1",
-              "label": "Site"
-            }
-          ],
-          "resolved": false,
-          "fresh": false,
-          "resolved_url": null,
-          "resolved_at": null,
-          "stale": false
-        },
-        {
-          "id": "tribun:bein5",
-          "slug": "bein5",
-          "name": "BEIN SPORTS 5",
-          "panel": "tribun",
-          "panel_name": "TRİBÜN TV",
-          "icon": "⚽",
-          "logo": "",
-          "page_url": "https://zeustv269.cfd/ch.html?id=bein5",
-          "referrer": "https://zeustv269.cfd/",
-          "sources": [
-            {
-              "type": "embed",
-              "url": "https://zeustv269.cfd/ch.html?id=bein5",
-              "label": "Site"
-            }
-          ],
-          "resolved": false,
-          "fresh": false,
-          "resolved_url": null,
-          "resolved_at": null,
-          "stale": false
-        },
-        {
-          "id": "tribun:b1max",
-          "slug": "b1max",
-          "name": "BEIN SPORTS MAX 1",
-          "panel": "tribun",
-          "panel_name": "TRİBÜN TV",
-          "icon": "⚽",
-          "logo": "",
-          "page_url": "https://zeustv269.cfd/ch.html?id=b1max",
-          "referrer": "https://zeustv269.cfd/",
-          "sources": [
-            {
-              "type": "embed",
-              "url": "https://zeustv269.cfd/ch.html?id=b1max",
-              "label": "Site"
-            }
-          ],
-          "resolved": false,
-          "fresh": false,
-          "resolved_url": null,
-          "resolved_at": null,
-          "stale": false
-        },
-        {
-          "id": "tribun:xtrt1",
-          "slug": "xtrt1",
-          "name": "TRT 1",
-          "panel": "tribun",
-          "panel_name": "TRİBÜN TV",
-          "icon": "🇹🇷",
-          "logo": "",
-          "page_url": "https://zeustv269.cfd/ch.html?id=xtrt1",
-          "referrer": "https://zeustv269.cfd/",
-          "sources": [
-            {
-              "type": "embed",
-              "url": "https://zeustv269.cfd/ch.html?id=xtrt1",
-              "label": "Site"
-            }
-          ],
-          "resolved": false,
-          "fresh": false,
-          "resolved_url": null,
-          "resolved_at": null,
-          "stale": false
-        },
-        {
-          "id": "tribun:xtrtspor",
-          "slug": "xtrtspor",
-          "name": "TRT SPOR",
-          "panel": "tribun",
-          "panel_name": "TRİBÜN TV",
-          "icon": "🇹🇷",
-          "logo": "",
-          "page_url": "https://zeustv269.cfd/ch.html?id=xtrtspor",
-          "referrer": "https://zeustv269.cfd/",
-          "sources": [
-            {
-              "type": "embed",
-              "url": "https://zeustv269.cfd/ch.html?id=xtrtspor",
-              "label": "Site"
-            }
-          ],
-          "resolved": false,
-          "fresh": false,
-          "resolved_url": null,
-          "resolved_at": null,
-          "stale": false
-        },
-        {
-          "id": "tribun:b3",
+          "id": "sultanbet:b3",
           "slug": "b3",
           "name": "BEIN SPORTS 3",
-          "panel": "tribun",
-          "panel_name": "TRİBÜN TV",
+          "panel": "sultanbet",
+          "panel_name": "SULTANBET TV",
           "icon": "⚽",
           "logo": "",
-          "page_url": "https://zeustv269.cfd/ch.html?id=b3",
-          "referrer": "https://zeustv269.cfd/",
+          "page_url": "https://sultanbettv101.live/channel?id=b3",
+          "referrer": "https://sultanbettv101.live/",
           "sources": [
             {
               "type": "embed",
-              "url": "https://zeustv269.cfd/ch.html?id=b3",
+              "url": "https://sultanbettv101.live/channel?id=b3",
               "label": "Site"
             }
           ],
@@ -2517,65 +2356,19 @@
           "stale": false
         },
         {
-          "id": "tribun:b4",
-          "slug": "b4",
-          "name": "BEIN SPORTS 4",
-          "panel": "tribun",
-          "panel_name": "TRİBÜN TV",
-          "icon": "⚽",
-          "logo": "",
-          "page_url": "https://zeustv269.cfd/ch.html?id=b4",
-          "referrer": "https://zeustv269.cfd/",
-          "sources": [
-            {
-              "type": "embed",
-              "url": "https://zeustv269.cfd/ch.html?id=b4",
-              "label": "Site"
-            }
-          ],
-          "resolved": false,
-          "fresh": false,
-          "resolved_url": null,
-          "resolved_at": null,
-          "stale": false
-        },
-        {
-          "id": "tribun:xaspor",
-          "slug": "xaspor",
-          "name": "A SPOR",
-          "panel": "tribun",
-          "panel_name": "TRİBÜN TV",
-          "icon": "⚽",
-          "logo": "",
-          "page_url": "https://zeustv269.cfd/ch.html?id=xaspor",
-          "referrer": "https://zeustv269.cfd/",
-          "sources": [
-            {
-              "type": "embed",
-              "url": "https://zeustv269.cfd/ch.html?id=xaspor",
-              "label": "Site"
-            }
-          ],
-          "resolved": false,
-          "fresh": false,
-          "resolved_url": null,
-          "resolved_at": null,
-          "stale": false
-        },
-        {
-          "id": "tribun:b2",
+          "id": "sultanbet:b2",
           "slug": "b2",
           "name": "BEIN SPORTS 2",
-          "panel": "tribun",
-          "panel_name": "TRİBÜN TV",
+          "panel": "sultanbet",
+          "panel_name": "SULTANBET TV",
           "icon": "⚽",
           "logo": "",
-          "page_url": "https://zeustv269.cfd/ch.html?id=b2",
-          "referrer": "https://zeustv269.cfd/",
+          "page_url": "https://sultanbettv101.live/channel?id=b2",
+          "referrer": "https://sultanbettv101.live/",
           "sources": [
             {
               "type": "embed",
-              "url": "https://zeustv269.cfd/ch.html?id=b2",
+              "url": "https://sultanbettv101.live/channel?id=b2",
               "label": "Site"
             }
           ],
@@ -2586,19 +2379,364 @@
           "stale": false
         },
         {
-          "id": "tribun:s1",
-          "slug": "s1",
-          "name": "S SPORT",
-          "panel": "tribun",
-          "panel_name": "TRİBÜN TV",
-          "icon": "🏀",
+          "id": "sultanbet:smarts",
+          "slug": "smarts",
+          "name": "SMARTSPOR",
+          "panel": "sultanbet",
+          "panel_name": "SULTANBET TV",
+          "icon": "🏟️",
           "logo": "",
-          "page_url": "https://zeustv269.cfd/ch.html?id=s1",
-          "referrer": "https://zeustv269.cfd/",
+          "page_url": "https://sultanbettv101.live/channel?id=smarts",
+          "referrer": "https://sultanbettv101.live/",
           "sources": [
             {
               "type": "embed",
-              "url": "https://zeustv269.cfd/ch.html?id=s1",
+              "url": "https://sultanbettv101.live/channel?id=smarts",
+              "label": "Site"
+            }
+          ],
+          "resolved": false,
+          "fresh": false,
+          "resolved_url": null,
+          "resolved_at": null,
+          "stale": false
+        },
+        {
+          "id": "sultanbet:ex4",
+          "slug": "ex4",
+          "name": "TABII SPOR 4",
+          "panel": "sultanbet",
+          "panel_name": "SULTANBET TV",
+          "icon": "📡",
+          "logo": "",
+          "page_url": "https://sultanbettv101.live/channel?id=ex4",
+          "referrer": "https://sultanbettv101.live/",
+          "sources": [
+            {
+              "type": "embed",
+              "url": "https://sultanbettv101.live/channel?id=ex4",
+              "label": "Site"
+            }
+          ],
+          "resolved": false,
+          "fresh": false,
+          "resolved_url": null,
+          "resolved_at": null,
+          "stale": false
+        },
+        {
+          "id": "sultanbet:ex2",
+          "slug": "ex2",
+          "name": "TABII SPOR 2",
+          "panel": "sultanbet",
+          "panel_name": "SULTANBET TV",
+          "icon": "📡",
+          "logo": "",
+          "page_url": "https://sultanbettv101.live/channel?id=ex2",
+          "referrer": "https://sultanbettv101.live/",
+          "sources": [
+            {
+              "type": "embed",
+              "url": "https://sultanbettv101.live/channel?id=ex2",
+              "label": "Site"
+            }
+          ],
+          "resolved": false,
+          "fresh": false,
+          "resolved_url": null,
+          "resolved_at": null,
+          "stale": false
+        },
+        {
+          "id": "sultanbet:t4",
+          "slug": "t4",
+          "name": "TIVIBU SPOR 4",
+          "panel": "sultanbet",
+          "panel_name": "SULTANBET TV",
+          "icon": "📺",
+          "logo": "",
+          "page_url": "https://sultanbettv101.live/channel?id=t4",
+          "referrer": "https://sultanbettv101.live/",
+          "sources": [
+            {
+              "type": "embed",
+              "url": "https://sultanbettv101.live/channel?id=t4",
+              "label": "Site"
+            }
+          ],
+          "resolved": false,
+          "fresh": false,
+          "resolved_url": null,
+          "resolved_at": null,
+          "stale": false
+        },
+        {
+          "id": "sultanbet:ss2",
+          "slug": "ss2",
+          "name": "S SPORT 2",
+          "panel": "sultanbet",
+          "panel_name": "SULTANBET TV",
+          "icon": "🏀",
+          "logo": "",
+          "page_url": "https://sultanbettv101.live/channel?id=ss2",
+          "referrer": "https://sultanbettv101.live/",
+          "sources": [
+            {
+              "type": "embed",
+              "url": "https://sultanbettv101.live/channel?id=ss2",
+              "label": "Site"
+            }
+          ],
+          "resolved": false,
+          "fresh": false,
+          "resolved_url": null,
+          "resolved_at": null,
+          "stale": false
+        },
+        {
+          "id": "sultanbet:bm1",
+          "slug": "bm1",
+          "name": "BEIN SPORTS MAX 1",
+          "panel": "sultanbet",
+          "panel_name": "SULTANBET TV",
+          "icon": "⚽",
+          "logo": "",
+          "page_url": "https://sultanbettv101.live/channel?id=bm1",
+          "referrer": "https://sultanbettv101.live/",
+          "sources": [
+            {
+              "type": "embed",
+              "url": "https://sultanbettv101.live/channel?id=bm1",
+              "label": "Site"
+            }
+          ],
+          "resolved": false,
+          "fresh": false,
+          "resolved_url": null,
+          "resolved_at": null,
+          "stale": false
+        },
+        {
+          "id": "sultanbet:ex5",
+          "slug": "ex5",
+          "name": "TABII SPOR 5",
+          "panel": "sultanbet",
+          "panel_name": "SULTANBET TV",
+          "icon": "📡",
+          "logo": "",
+          "page_url": "https://sultanbettv101.live/channel?id=ex5",
+          "referrer": "https://sultanbettv101.live/",
+          "sources": [
+            {
+              "type": "embed",
+              "url": "https://sultanbettv101.live/channel?id=ex5",
+              "label": "Site"
+            }
+          ],
+          "resolved": false,
+          "fresh": false,
+          "resolved_url": null,
+          "resolved_at": null,
+          "stale": false
+        },
+        {
+          "id": "sultanbet:trtspor2",
+          "slug": "trtspor2",
+          "name": "TRT SPOR YILDIZ",
+          "panel": "sultanbet",
+          "panel_name": "SULTANBET TV",
+          "icon": "🇹🇷",
+          "logo": "",
+          "page_url": "https://sultanbettv101.live/channel?id=trtspor2",
+          "referrer": "https://sultanbettv101.live/",
+          "sources": [
+            {
+              "type": "embed",
+              "url": "https://sultanbettv101.live/channel?id=trtspor2",
+              "label": "Site"
+            }
+          ],
+          "resolved": false,
+          "fresh": false,
+          "resolved_url": null,
+          "resolved_at": null,
+          "stale": false
+        },
+        {
+          "id": "sultanbet:trtspor",
+          "slug": "trtspor",
+          "name": "TRT SPOR",
+          "panel": "sultanbet",
+          "panel_name": "SULTANBET TV",
+          "icon": "🇹🇷",
+          "logo": "",
+          "page_url": "https://sultanbettv101.live/channel?id=trtspor",
+          "referrer": "https://sultanbettv101.live/",
+          "sources": [
+            {
+              "type": "embed",
+              "url": "https://sultanbettv101.live/channel?id=trtspor",
+              "label": "Site"
+            }
+          ],
+          "resolved": false,
+          "fresh": false,
+          "resolved_url": null,
+          "resolved_at": null,
+          "stale": false
+        },
+        {
+          "id": "sultanbet:zirve",
+          "slug": "zirve",
+          "name": "BEIN SPORTS 1",
+          "panel": "sultanbet",
+          "panel_name": "SULTANBET TV",
+          "icon": "⚽",
+          "logo": "",
+          "page_url": "https://sultanbettv101.live/channel?id=zirve",
+          "referrer": "https://sultanbettv101.live/",
+          "sources": [
+            {
+              "type": "embed",
+              "url": "https://sultanbettv101.live/channel?id=zirve",
+              "label": "Site"
+            }
+          ],
+          "resolved": false,
+          "fresh": false,
+          "resolved_url": null,
+          "resolved_at": null,
+          "stale": false
+        },
+        {
+          "id": "sultanbet:ex1",
+          "slug": "ex1",
+          "name": "TABII SPOR 1",
+          "panel": "sultanbet",
+          "panel_name": "SULTANBET TV",
+          "icon": "📡",
+          "logo": "",
+          "page_url": "https://sultanbettv101.live/channel?id=ex1",
+          "referrer": "https://sultanbettv101.live/",
+          "sources": [
+            {
+              "type": "embed",
+              "url": "https://sultanbettv101.live/channel?id=ex1",
+              "label": "Site"
+            }
+          ],
+          "resolved": false,
+          "fresh": false,
+          "resolved_url": null,
+          "resolved_at": null,
+          "stale": false
+        },
+        {
+          "id": "sultanbet:eu2",
+          "slug": "eu2",
+          "name": "EUROSPORT 2",
+          "panel": "sultanbet",
+          "panel_name": "SULTANBET TV",
+          "icon": "🚴",
+          "logo": "",
+          "page_url": "https://sultanbettv101.live/channel?id=eu2",
+          "referrer": "https://sultanbettv101.live/",
+          "sources": [
+            {
+              "type": "embed",
+              "url": "https://sultanbettv101.live/channel?id=eu2",
+              "label": "Site"
+            }
+          ],
+          "resolved": false,
+          "fresh": false,
+          "resolved_url": null,
+          "resolved_at": null,
+          "stale": false
+        },
+        {
+          "id": "sultanbet:t2",
+          "slug": "t2",
+          "name": "TIVIBU SPOR 2",
+          "panel": "sultanbet",
+          "panel_name": "SULTANBET TV",
+          "icon": "📺",
+          "logo": "",
+          "page_url": "https://sultanbettv101.live/channel?id=t2",
+          "referrer": "https://sultanbettv101.live/",
+          "sources": [
+            {
+              "type": "embed",
+              "url": "https://sultanbettv101.live/channel?id=t2",
+              "label": "Site"
+            }
+          ],
+          "resolved": false,
+          "fresh": false,
+          "resolved_url": null,
+          "resolved_at": null,
+          "stale": false
+        },
+        {
+          "id": "sultanbet:tv8",
+          "slug": "tv8",
+          "name": "TV 8",
+          "panel": "sultanbet",
+          "panel_name": "SULTANBET TV",
+          "icon": "📺",
+          "logo": "",
+          "page_url": "https://sultanbettv101.live/channel?id=tv8",
+          "referrer": "https://sultanbettv101.live/",
+          "sources": [
+            {
+              "type": "embed",
+              "url": "https://sultanbettv101.live/channel?id=tv8",
+              "label": "Site"
+            }
+          ],
+          "resolved": false,
+          "fresh": false,
+          "resolved_url": null,
+          "resolved_at": null,
+          "stale": false
+        },
+        {
+          "id": "sultanbet:bm2",
+          "slug": "bm2",
+          "name": "BEIN SPORTS MAX 2",
+          "panel": "sultanbet",
+          "panel_name": "SULTANBET TV",
+          "icon": "⚽",
+          "logo": "",
+          "page_url": "https://sultanbettv101.live/channel?id=bm2",
+          "referrer": "https://sultanbettv101.live/",
+          "sources": [
+            {
+              "type": "embed",
+              "url": "https://sultanbettv101.live/channel?id=bm2",
+              "label": "Site"
+            }
+          ],
+          "resolved": false,
+          "fresh": false,
+          "resolved_url": null,
+          "resolved_at": null,
+          "stale": false
+        },
+        {
+          "id": "sultanbet:t1",
+          "slug": "t1",
+          "name": "TIVIBU SPOR 1",
+          "panel": "sultanbet",
+          "panel_name": "SULTANBET TV",
+          "icon": "📺",
+          "logo": "",
+          "page_url": "https://sultanbettv101.live/channel?id=t1",
+          "referrer": "https://sultanbettv101.live/",
+          "sources": [
+            {
+              "type": "embed",
+              "url": "https://sultanbettv101.live/channel?id=t1",
               "label": "Site"
             }
           ],

@@ -280,29 +280,44 @@ panels:
       - { slug: "a-spor",             name: "A SPOR" }
 
   # --------------------------------------------------------------------------
-  #  TRİBÜN TV — kullanıcı tarafından verilen kanal sayfaları
-  #    tribuntv.online bağlantıları Zeus kanal sayfasına yönlendiği için
-  #    yönlendirme atlanır ve kanal sayfaları doğrudan panel oynatıcısı olarak açılır.
+  #  SULTANBET TV — dinamik yayın kökü kullanan kanal paneli
+  #    Kanal sayfası kendi domain.php servisini okuyarak m3u8 kökünü günceller.
+  #    Ana domain değişirse entry_urls ve numaralı mirror taraması yeni adresi
+  #    bulup kanal sayfalarını otomatik olarak günceller.
   # --------------------------------------------------------------------------
-  - id: tribun
-    name: "TRİBÜN TV"
-    icon: "🏟️"
+  - id: sultanbet
+    name: "SULTANBET TV"
+    icon: "👑"
     enabled: true
-    base_url: "https://zeustv269.cfd"
-    page_template: "{base_url}/ch.html?id={slug}"
-    embed_template: "{base_url}/ch.html?id={slug}"
+    base_url: "https://sultanbettv101.live"
+    entry_urls:
+      - "https://sultanbettv101.live/"
+    mirror:
+      pattern: "sultanbettv{n}.live"
+      preferred_number: 101
+      scan_window: 20
+      must_contain_any: ["channel?id=", "Video Player"]
+    health_path: "/channel?id=b3"
+    page_template: "{base_url}/channel?id={slug}"
+    embed_template: "{base_url}/channel?id={slug}"
     embed_fallback: true
     referrer: "{base_url}/"
     channels:
-      - { slug: "s2",       name: "S SPORT 2" }
-      - { slug: "b2max",    name: "BEIN SPORTS MAX 2" }
-      - { slug: "b1",       name: "BEIN SPORTS 1" }
-      - { slug: "bein5",    name: "BEIN SPORTS 5" }
-      - { slug: "b1max",    name: "BEIN SPORTS MAX 1" }
-      - { slug: "xtrt1",    name: "TRT 1" }
-      - { slug: "xtrtspor", name: "TRT SPOR" }
       - { slug: "b3",       name: "BEIN SPORTS 3" }
-      - { slug: "b4",       name: "BEIN SPORTS 4" }
-      - { slug: "xaspor",   name: "A SPOR" }
       - { slug: "b2",       name: "BEIN SPORTS 2" }
-      - { slug: "s1",       name: "S SPORT" }
+      - { slug: "smarts",   name: "SMARTSPOR" }
+      - { slug: "ex4",      name: "TABII SPOR 4" }
+      - { slug: "ex2",      name: "TABII SPOR 2" }
+      - { slug: "t4",       name: "TIVIBU SPOR 4" }
+      - { slug: "ss2",      name: "S SPORT 2" }
+      - { slug: "bm1",      name: "BEIN SPORTS MAX 1" }
+      - { slug: "ex5",      name: "TABII SPOR 5" }
+      - { slug: "trtspor2", name: "TRT SPOR YILDIZ" }
+      - { slug: "trtspor",  name: "TRT SPOR" }
+      - { slug: "zirve",    name: "BEIN SPORTS 1" }
+      - { slug: "ex1",      name: "TABII SPOR 1" }
+      - { slug: "eu2",      name: "EUROSPORT 2" }
+      - { slug: "t2",       name: "TIVIBU SPOR 2" }
+      - { slug: "tv8",      name: "TV 8" }
+      - { slug: "bm2",      name: "BEIN SPORTS MAX 2" }
+      - { slug: "t1",       name: "TIVIBU SPOR 1" }
