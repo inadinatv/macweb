@@ -1,19 +1,19 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-10-05 20:25  
-> **Toplam maç:** 5  |  **Canlı:** 2  |  **Yaklaşan:** 0
+> **Güncellenme:** 2026-10-05 23:27  
+> **Toplam maç:** 5  |  **Canlı:** 0  |  **Yaklaşan:** 3
 
-## 🔴 CANLI
+## ⏰ YAKLAŞAN
 
-- 🔴 **Fransa 2 - 1 Belçika** — CANLI · `21:45` | UEFA Uluslar Ligi <https://fixbettv84.com/channel.html?id=as>
-- 🔴 **İtalya 2 - 1 Türkiye** — CANLI · `21:45` | UEFA Uluslar Ligi <https://fixbettv84.com/channel.html?id=atv>
+- ⏰ **Nilüfer Bld. vs İstanbul Gençlik** — YAKLAŞAN · `17:00` | Hentbol Erkekler Süper Ligi <https://fixbettv84.com/channel.html?id=trtspor2>
+- ⏰ **Beşiktaş vs Trabzonspor** — YAKLAŞAN · `19:00` | Basketbol Süper Ligi <https://fixbettv84.com/channel.html?id=b5>
+- ⏰ **Şanlıurfaspor vs Gebzespor** — YAKLAŞAN · `19:00` | TFF 2. Lig <https://fixbettv84.com/channel.html?id=t1>
 
 ## ✅ BİTTİ
 
-- ✅ **Nilüfer Bld. vs İstanbul Gençlik** — MS · `17:00` | Hentbol Erkekler Süper Ligi <https://fixbettv84.com/channel.html?id=trtspor2>
-- ✅ **Beşiktaş vs Trabzonspor** — MS · `19:00` | Basketbol Süper Ligi <https://fixbettv84.com/channel.html?id=b5>
-- ✅ **Şanlıurfaspor vs Gebzespor** — MS · `19:00` | TFF 2. Lig <https://fixbettv84.com/channel.html?id=t1>
+- ✅ **Fransa vs Belçika** — MS · `21:45` | UEFA Uluslar Ligi <https://fixbettv84.com/channel.html?id=as>
+- ✅ **İtalya vs Türkiye** — MS · `21:45` | UEFA Uluslar Ligi <https://fixbettv84.com/channel.html?id=atv>
 
 ---
 ## 🏆 Lig Bazlı
@@ -28,8 +28,8 @@
 - ⏰ Şanlıurfaspor vs Gebzespor — 19:00
 
 ### UEFA Uluslar Ligi
-- 🔴 Fransa vs Belçika — 21:45
-- 🔴 İtalya vs Türkiye — 21:45
+- ⏰ Fransa vs Belçika — 21:45
+- ⏰ İtalya vs Türkiye — 21:45
 
 ---
 ## 📺 7/24 KANALLAR (31)
