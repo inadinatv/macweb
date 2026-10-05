@@ -321,3 +321,40 @@ panels:
       - { slug: "tv8",      name: "TV 8" }
       - { slug: "bm2",      name: "BEIN SPORTS MAX 2" }
       - { slug: "t1",       name: "TIVIBU SPOR 1" }
+
+  # --------------------------------------------------------------------------
+  #  JUSTIN TV — kanal kimliğinden güncel HLS adresini API ile çözer
+  # --------------------------------------------------------------------------
+  - id: justintv
+    name: "JUSTIN TV"
+    icon: "📡"
+    enabled: true
+    base_url: "https://justintv109.top"
+    entry_urls:
+      - "https://justintv109.top/"
+    mirror:
+      pattern: "justintv{n}.top"
+      preferred_number: 109
+      scan_window: 10
+      must_contain_any: ["t2-channel-area", "data-m3u8"]
+    health_path: "/"
+    resolver:
+      url_template: "https://teletv5.top/load/yayinlink.php?id={slug}"
+      json_field: "deismackanal"
+    page_template: "{base_url}/matches?id={slug}"
+    embed_template: "{base_url}/matches?id={slug}"
+    embed_fallback: true
+    referrer: "{base_url}/"
+    channels:
+      - { slug: "bein-sports-1",     name: "BEIN SPORTS 1" }
+      - { slug: "bein-sports-2",     name: "BEIN SPORTS 2" }
+      - { slug: "bein-sports-3",     name: "BEIN SPORTS 3" }
+      - { slug: "bein-sports-4",     name: "BEIN SPORTS 4" }
+      - { slug: "bein-sports-5",     name: "BEIN SPORTS 5" }
+      - { slug: "bein-sports-max-1", name: "BEIN SPORTS MAX 1" }
+      - { slug: "bein-sports-max-2", name: "BEIN SPORTS MAX 2" }
+      - { slug: "s-sport",           name: "S SPORT" }
+      - { slug: "s-sport-2",         name: "S SPORT 2" }
+      - { slug: "trt-spor",          name: "TRT SPOR" }
+      - { slug: "trt-1",             name: "TRT 1" }
+      - { slug: "a-spor",            name: "A SPOR" }

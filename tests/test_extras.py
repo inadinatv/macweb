@@ -331,6 +331,12 @@ def test_refresh_writes_output_and_site_embeds_extra():
     tara_cfg = next(p for p in cfg["panels"] if p["id"] == "taraftarium")
     n_taraftarium = len(tara_cfg["channels"])
     assert n_taraftarium == 12
+    sultan_cfg = next(p for p in cfg["panels"] if p["id"] == "sultanbet")
+    n_sultanbet = len(sultan_cfg["channels"])
+    assert n_sultanbet == 18
+    justin_cfg = next(p for p in cfg["panels"] if p["id"] == "justintv")
+    n_justintv = len(justin_cfg["channels"])
+    assert n_justintv == 12
     net = FakeNet({
         BASE + "/": (200, '<a href="matches?id=bein-sports-1">BEIN</a>'),
         BASE + "/matches?id=bein-sports-1": (200, 'src:"https://edge.x/bs1/index.m3u8"'),
@@ -352,7 +358,7 @@ def test_refresh_writes_output_and_site_embeds_extra():
             data = extras.refresh(now, fetch=net)
             assert extras.EXTRA_OUTPUT.exists()
             saved = json.loads(extras.EXTRA_OUTPUT.read_text(encoding="utf-8"))
-            assert saved["total"] == 28 + n_mahsun + n_taraftarium
+            assert saved["total"] == 28 + n_mahsun + n_taraftarium + n_sultanbet + n_justintv
             assert saved["panels"][0]["resolved"] == 1
             assert saved["source"] == "output/extra_channels.json"
             sel = saved["panels"][1]
@@ -584,3 +590,33 @@ def test_mahsun_offline_uses_default_stream_base():
     assert bs1["sources"][0]["url"] == "https://andro.default.click/checklist/androstreamlivebs1.m3u8"
     assert bs1["sources"][-1]["url"] == MAH_BASE + "/event.html?id=androstreamlivebs1"
     print("OK: mahsun_offline_uses_default_stream_base")
+
+
+def test_api_resolver_adds_channel_specific_hls_before_embed():
+    now = datetime(2026, 10, 5, 12, 0, tzinfo=timezone.utc)
+    base = "https://justintv109.top"
+    panel = {
+        "id": "justintv", "name": "JUSTIN TV", "base_url": base,
+        "health_path": "/", "resolver": {
+            "url_template": "https://teletv5.top/load/yayinlink.php?id={slug}",
+            "json_field": "deismackanal",
+        },
+        "page_template": "{base_url}/matches?id={slug}",
+        "embed_template": "{base_url}/matches?id={slug}",
+        "embed_fallback": True, "referrer": "{base_url}/",
+        "channels": [{"slug": "bein-sports-1", "name": "BEIN SPORTS 1"}],
+    }
+    net = FakeNet({
+        base + "/": (200, '<div data-m3u8="https://cdn.example/placeholder.m3u8"></div>'),
+        "https://teletv5.top/load/yayinlink.php?id=bein-sports-1": (
+            200, '{"deismackanal":"https://edge.example/bs1/index.m3u8"}'
+        ),
+    })
+    out = extras.resolve_panel(panel, None, net, extras.DEFAULT_HEADERS, 5, now, 6)
+    ch = out["channels"][0]
+    assert out["resolved"] == 1
+    assert ch["resolved_url"] == "https://edge.example/bs1/index.m3u8"
+    assert ch["sources"][0]["type"] == "hls"
+    assert ch["sources"][0]["url"] == "https://edge.example/bs1/index.m3u8"
+    assert ch["sources"][-1]["type"] == "embed"
+    assert ch["sources"][-1]["url"] == base + "/matches?id=bein-sports-1"

@@ -1,7 +1,7 @@
 {
-  "updated_at": "2026-10-05T04:33:48+00:00",
+  "updated_at": "2026-10-05T10:37:12+00:00",
   "source": "output/extra_channels.json",
-  "total": 97,
+  "total": 109,
   "panels": [
     {
       "id": "atom",
@@ -2744,6 +2744,368 @@
           "fresh": false,
           "resolved_url": null,
           "resolved_at": null,
+          "stale": false
+        }
+      ]
+    },
+    {
+      "id": "justintv",
+      "name": "JUSTIN TV",
+      "icon": "📡",
+      "base_url": "https://justintv109.top",
+      "player_base": "",
+      "stream_base": "",
+      "healthy": true,
+      "resolved": 12,
+      "fresh": 12,
+      "total": 12,
+      "channels": [
+        {
+          "id": "justintv:bein-sports-1",
+          "slug": "bein-sports-1",
+          "name": "BEIN SPORTS 1",
+          "panel": "justintv",
+          "panel_name": "JUSTIN TV",
+          "icon": "⚽",
+          "logo": "",
+          "page_url": "https://justintv109.top/matches?id=bein-sports-1",
+          "referrer": "https://justintv109.top/",
+          "sources": [
+            {
+              "type": "hls",
+              "url": "https://ladyboy.yedektv.cfd//s-sport/tracks-v1a1/mono.m3u8",
+              "label": "Kaynak 1",
+              "mime_type": "application/vnd.apple.mpegurl"
+            },
+            {
+              "type": "embed",
+              "url": "https://justintv109.top/matches?id=bein-sports-1",
+              "label": "Site"
+            }
+          ],
+          "resolved": true,
+          "fresh": true,
+          "resolved_url": "https://ladyboy.yedektv.cfd//s-sport/tracks-v1a1/mono.m3u8",
+          "resolved_at": "2026-10-05T10:37:06+00:00",
+          "stale": false
+        },
+        {
+          "id": "justintv:bein-sports-2",
+          "slug": "bein-sports-2",
+          "name": "BEIN SPORTS 2",
+          "panel": "justintv",
+          "panel_name": "JUSTIN TV",
+          "icon": "⚽",
+          "logo": "",
+          "page_url": "https://justintv109.top/matches?id=bein-sports-2",
+          "referrer": "https://justintv109.top/",
+          "sources": [
+            {
+              "type": "hls",
+              "url": "https://ladyboy.yedektv.cfd//bein2/tracks-v1a1/mono.m3u8",
+              "label": "Kaynak 1",
+              "mime_type": "application/vnd.apple.mpegurl"
+            },
+            {
+              "type": "embed",
+              "url": "https://justintv109.top/matches?id=bein-sports-2",
+              "label": "Site"
+            }
+          ],
+          "resolved": true,
+          "fresh": true,
+          "resolved_url": "https://ladyboy.yedektv.cfd//bein2/tracks-v1a1/mono.m3u8",
+          "resolved_at": "2026-10-05T10:37:06+00:00",
+          "stale": false
+        },
+        {
+          "id": "justintv:bein-sports-3",
+          "slug": "bein-sports-3",
+          "name": "BEIN SPORTS 3",
+          "panel": "justintv",
+          "panel_name": "JUSTIN TV",
+          "icon": "⚽",
+          "logo": "",
+          "page_url": "https://justintv109.top/matches?id=bein-sports-3",
+          "referrer": "https://justintv109.top/",
+          "sources": [
+            {
+              "type": "hls",
+              "url": "https://ladyboy.yedektv.cfd//bein3/tracks-v1a1/mono.m3u8",
+              "label": "Kaynak 1",
+              "mime_type": "application/vnd.apple.mpegurl"
+            },
+            {
+              "type": "embed",
+              "url": "https://justintv109.top/matches?id=bein-sports-3",
+              "label": "Site"
+            }
+          ],
+          "resolved": true,
+          "fresh": true,
+          "resolved_url": "https://ladyboy.yedektv.cfd//bein3/tracks-v1a1/mono.m3u8",
+          "resolved_at": "2026-10-05T10:37:06+00:00",
+          "stale": false
+        },
+        {
+          "id": "justintv:bein-sports-4",
+          "slug": "bein-sports-4",
+          "name": "BEIN SPORTS 4",
+          "panel": "justintv",
+          "panel_name": "JUSTIN TV",
+          "icon": "⚽",
+          "logo": "",
+          "page_url": "https://justintv109.top/matches?id=bein-sports-4",
+          "referrer": "https://justintv109.top/",
+          "sources": [
+            {
+              "type": "hls",
+              "url": "https://ladyboy.yedektv.cfd//bein4/tracks-v1a1/mono.m3u8",
+              "label": "Kaynak 1",
+              "mime_type": "application/vnd.apple.mpegurl"
+            },
+            {
+              "type": "embed",
+              "url": "https://justintv109.top/matches?id=bein-sports-4",
+              "label": "Site"
+            }
+          ],
+          "resolved": true,
+          "fresh": true,
+          "resolved_url": "https://ladyboy.yedektv.cfd//bein4/tracks-v1a1/mono.m3u8",
+          "resolved_at": "2026-10-05T10:37:06+00:00",
+          "stale": false
+        },
+        {
+          "id": "justintv:bein-sports-5",
+          "slug": "bein-sports-5",
+          "name": "BEIN SPORTS 5",
+          "panel": "justintv",
+          "panel_name": "JUSTIN TV",
+          "icon": "⚽",
+          "logo": "",
+          "page_url": "https://justintv109.top/matches?id=bein-sports-5",
+          "referrer": "https://justintv109.top/",
+          "sources": [
+            {
+              "type": "hls",
+              "url": "https://ladyboy.yedektv.cfd//bein5/tracks-v1a1/mono.m3u8",
+              "label": "Kaynak 1",
+              "mime_type": "application/vnd.apple.mpegurl"
+            },
+            {
+              "type": "embed",
+              "url": "https://justintv109.top/matches?id=bein-sports-5",
+              "label": "Site"
+            }
+          ],
+          "resolved": true,
+          "fresh": true,
+          "resolved_url": "https://ladyboy.yedektv.cfd//bein5/tracks-v1a1/mono.m3u8",
+          "resolved_at": "2026-10-05T10:37:06+00:00",
+          "stale": false
+        },
+        {
+          "id": "justintv:bein-sports-max-1",
+          "slug": "bein-sports-max-1",
+          "name": "BEIN SPORTS MAX 1",
+          "panel": "justintv",
+          "panel_name": "JUSTIN TV",
+          "icon": "⚽",
+          "logo": "",
+          "page_url": "https://justintv109.top/matches?id=bein-sports-max-1",
+          "referrer": "https://justintv109.top/",
+          "sources": [
+            {
+              "type": "hls",
+              "url": "https://ladyboy.yedektv.cfd//beinmax1/tracks-v1a1/mono.m3u8",
+              "label": "Kaynak 1",
+              "mime_type": "application/vnd.apple.mpegurl"
+            },
+            {
+              "type": "embed",
+              "url": "https://justintv109.top/matches?id=bein-sports-max-1",
+              "label": "Site"
+            }
+          ],
+          "resolved": true,
+          "fresh": true,
+          "resolved_url": "https://ladyboy.yedektv.cfd//beinmax1/tracks-v1a1/mono.m3u8",
+          "resolved_at": "2026-10-05T10:37:06+00:00",
+          "stale": false
+        },
+        {
+          "id": "justintv:bein-sports-max-2",
+          "slug": "bein-sports-max-2",
+          "name": "BEIN SPORTS MAX 2",
+          "panel": "justintv",
+          "panel_name": "JUSTIN TV",
+          "icon": "⚽",
+          "logo": "",
+          "page_url": "https://justintv109.top/matches?id=bein-sports-max-2",
+          "referrer": "https://justintv109.top/",
+          "sources": [
+            {
+              "type": "hls",
+              "url": "https://ladyboy.yedektv.cfd//beinmax2/tracks-v1a1/mono.m3u8",
+              "label": "Kaynak 1",
+              "mime_type": "application/vnd.apple.mpegurl"
+            },
+            {
+              "type": "embed",
+              "url": "https://justintv109.top/matches?id=bein-sports-max-2",
+              "label": "Site"
+            }
+          ],
+          "resolved": true,
+          "fresh": true,
+          "resolved_url": "https://ladyboy.yedektv.cfd//beinmax2/tracks-v1a1/mono.m3u8",
+          "resolved_at": "2026-10-05T10:37:06+00:00",
+          "stale": false
+        },
+        {
+          "id": "justintv:s-sport",
+          "slug": "s-sport",
+          "name": "S SPORT",
+          "panel": "justintv",
+          "panel_name": "JUSTIN TV",
+          "icon": "🏀",
+          "logo": "",
+          "page_url": "https://justintv109.top/matches?id=s-sport",
+          "referrer": "https://justintv109.top/",
+          "sources": [
+            {
+              "type": "hls",
+              "url": "https://ladyboy.yedektv.cfd//s-sport/tracks-v1a1/mono.m3u8",
+              "label": "Kaynak 1",
+              "mime_type": "application/vnd.apple.mpegurl"
+            },
+            {
+              "type": "embed",
+              "url": "https://justintv109.top/matches?id=s-sport",
+              "label": "Site"
+            }
+          ],
+          "resolved": true,
+          "fresh": true,
+          "resolved_url": "https://ladyboy.yedektv.cfd//s-sport/tracks-v1a1/mono.m3u8",
+          "resolved_at": "2026-10-05T10:37:06+00:00",
+          "stale": false
+        },
+        {
+          "id": "justintv:s-sport-2",
+          "slug": "s-sport-2",
+          "name": "S SPORT 2",
+          "panel": "justintv",
+          "panel_name": "JUSTIN TV",
+          "icon": "🏀",
+          "logo": "",
+          "page_url": "https://justintv109.top/matches?id=s-sport-2",
+          "referrer": "https://justintv109.top/",
+          "sources": [
+            {
+              "type": "hls",
+              "url": "https://ladyboy.yedektv.cfd//s-sport2/tracks-v1a1/mono.m3u8",
+              "label": "Kaynak 1",
+              "mime_type": "application/vnd.apple.mpegurl"
+            },
+            {
+              "type": "embed",
+              "url": "https://justintv109.top/matches?id=s-sport-2",
+              "label": "Site"
+            }
+          ],
+          "resolved": true,
+          "fresh": true,
+          "resolved_url": "https://ladyboy.yedektv.cfd//s-sport2/tracks-v1a1/mono.m3u8",
+          "resolved_at": "2026-10-05T10:37:06+00:00",
+          "stale": false
+        },
+        {
+          "id": "justintv:trt-spor",
+          "slug": "trt-spor",
+          "name": "TRT SPOR",
+          "panel": "justintv",
+          "panel_name": "JUSTIN TV",
+          "icon": "🇹🇷",
+          "logo": "",
+          "page_url": "https://justintv109.top/matches?id=trt-spor",
+          "referrer": "https://justintv109.top/",
+          "sources": [
+            {
+              "type": "hls",
+              "url": "https://ladyboy.yedektv.cfd//trt-spor/tracks-v1a1/mono.m3u8",
+              "label": "Kaynak 1",
+              "mime_type": "application/vnd.apple.mpegurl"
+            },
+            {
+              "type": "embed",
+              "url": "https://justintv109.top/matches?id=trt-spor",
+              "label": "Site"
+            }
+          ],
+          "resolved": true,
+          "fresh": true,
+          "resolved_url": "https://ladyboy.yedektv.cfd//trt-spor/tracks-v1a1/mono.m3u8",
+          "resolved_at": "2026-10-05T10:37:06+00:00",
+          "stale": false
+        },
+        {
+          "id": "justintv:trt-1",
+          "slug": "trt-1",
+          "name": "TRT 1",
+          "panel": "justintv",
+          "panel_name": "JUSTIN TV",
+          "icon": "🇹🇷",
+          "logo": "",
+          "page_url": "https://justintv109.top/matches?id=trt-1",
+          "referrer": "https://justintv109.top/",
+          "sources": [
+            {
+              "type": "hls",
+              "url": "https://ladyboy.yedektv.cfd//trt1/tracks-v1a1/mono.m3u8",
+              "label": "Kaynak 1",
+              "mime_type": "application/vnd.apple.mpegurl"
+            },
+            {
+              "type": "embed",
+              "url": "https://justintv109.top/matches?id=trt-1",
+              "label": "Site"
+            }
+          ],
+          "resolved": true,
+          "fresh": true,
+          "resolved_url": "https://ladyboy.yedektv.cfd//trt1/tracks-v1a1/mono.m3u8",
+          "resolved_at": "2026-10-05T10:37:06+00:00",
+          "stale": false
+        },
+        {
+          "id": "justintv:a-spor",
+          "slug": "a-spor",
+          "name": "A SPOR",
+          "panel": "justintv",
+          "panel_name": "JUSTIN TV",
+          "icon": "⚽",
+          "logo": "",
+          "page_url": "https://justintv109.top/matches?id=a-spor",
+          "referrer": "https://justintv109.top/",
+          "sources": [
+            {
+              "type": "hls",
+              "url": "https://ladyboy.yedektv.cfd//aspor/tracks-v1a1/mono.m3u8",
+              "label": "Kaynak 1",
+              "mime_type": "application/vnd.apple.mpegurl"
+            },
+            {
+              "type": "embed",
+              "url": "https://justintv109.top/matches?id=a-spor",
+              "label": "Site"
+            }
+          ],
+          "resolved": true,
+          "fresh": true,
+          "resolved_url": "https://ladyboy.yedektv.cfd//aspor/tracks-v1a1/mono.m3u8",
+          "resolved_at": "2026-10-05T10:37:06+00:00",
           "stale": false
         }
       ]

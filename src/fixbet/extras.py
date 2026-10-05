@@ -222,6 +222,40 @@ def _verify_hls(url: str, referrer: str, fetch: Fetcher, headers: dict[str, str]
     return res is not None and res.status == 200 and is_hls_playlist(res.text or "")
 
 
+def resolve_api_stream(panel: dict[str, Any], slug: str, referrer: str,
+                       fetch: Fetcher | None, headers: dict[str, str],
+                       timeout: float) -> str | None:
+    """Kanal kimliğini JSON yayın API'sine verip m3u8 adresini döndürür."""
+    resolver = panel.get("resolver") or {}
+    template = str(resolver.get("url_template") or "")
+    field = str(resolver.get("json_field") or "deismackanal")
+    if not template or not slug or fetch is None:
+        return None
+    url = _fmt(template, {"slug": slug,
+                          "base_url": str(panel.get("base_url") or "").rstrip("/")})
+    if not url:
+        return None
+    hdrs = dict(headers)
+    if referrer:
+        hdrs["Referer"] = referrer
+    res = fetch(url, hdrs, timeout)
+    if res is None or res.status != 200:
+        return None
+    try:
+        data = json.loads(res.text or "")
+    except (TypeError, ValueError):
+        return None
+    value: Any = data
+    for part in field.split("."):
+        if not isinstance(value, dict):
+            return None
+        value = value.get(part)
+    stream = str(value or "").strip()
+    if stream.lower().startswith(("http://", "https://")) and ".m3u8" in stream.lower():
+        return stream
+    return None
+
+
 def extract_m3u8_from_page(url: str, referrer: str | None, fetch: Fetcher,
                            headers: dict[str, str] | None = None, timeout: float = 8,
                            depth: int = 2, rules: dict[str, Any] | None = None,
@@ -646,7 +680,11 @@ def resolve_channel(panel: dict[str, Any], ctx: dict[str, Any], ch: dict[str, An
     # Adres kapalıysa (healthy=False) kanal başına boşuna istek atılmaz; son çözüm/yedek kullanılır
     resolved, resolved_at, stale = "", None, False
     resolved_page_url = ""
-    if page_urls and fetch is not None and healthy is not False:
+    if fetch is not None and healthy is not False:
+        resolved = resolve_api_stream(panel, slug, referrer, fetch, headers, timeout) or ""
+        if resolved:
+            resolved_at = now.isoformat(timespec="seconds")
+    if not resolved and page_urls and fetch is not None and healthy is not False:
         # Önce ana sayfadan keşfedilen rota, sonra yapılandırılmış yedek rotalar.
         # Böylece site /mac-izle/<id> yerine /channel/watch/<id> kullandığında
         # bot kod değiştirmeden yeni yolu izler.
@@ -656,11 +694,11 @@ def resolve_channel(panel: dict[str, Any], ctx: dict[str, Any], ch: dict[str, An
             if resolved:
                 resolved_page_url = candidate
                 break
-        if resolved:
+        if resolved_page_url and resolved:
             # Sabit rota varken bağlantıyi rota dışındaki adrese taşıma.
             if not pinned_url:
                 page_url = resolved_page_url
-            resolved_at = now.isoformat(timespec="seconds")
+            resolved_at = resolved_at or now.isoformat(timespec="seconds")
     # Mahsun/androstream tarzı panellerde kanal adresi {stream_base} şablonuyla kurulur;
     # verify_static açıkken gerçekten HLS listesi döndürdüğü bu turda doğrulanır.
     if (not resolved and static and fetch is not None and healthy is not False
