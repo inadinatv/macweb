@@ -303,6 +303,7 @@ panels:
     embed_fallback: true
     referrer: "{base_url}/"
     channels:
+      - { slug: "zirve",    name: "BEIN SPORTS 1" }
       - { slug: "b3",       name: "BEIN SPORTS 3" }
       - { slug: "b2",       name: "BEIN SPORTS 2" }
       - { slug: "smarts",   name: "SMARTSPOR" }
@@ -314,7 +315,6 @@ panels:
       - { slug: "ex5",      name: "TABII SPOR 5" }
       - { slug: "trtspor2", name: "TRT SPOR YILDIZ" }
       - { slug: "trtspor",  name: "TRT SPOR" }
-      - { slug: "zirve",    name: "BEIN SPORTS 1" }
       - { slug: "ex1",      name: "TABII SPOR 1" }
       - { slug: "eu2",      name: "EUROSPORT 2" }
       - { slug: "t2",       name: "TIVIBU SPOR 2" }

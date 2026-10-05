@@ -2333,6 +2333,29 @@
       "total": 18,
       "channels": [
         {
+          "id": "sultanbet:zirve",
+          "slug": "zirve",
+          "name": "BEIN SPORTS 1",
+          "panel": "sultanbet",
+          "panel_name": "SULTANBET TV",
+          "icon": "⚽",
+          "logo": "",
+          "page_url": "https://sultanbettv101.live/channel?id=zirve",
+          "referrer": "https://sultanbettv101.live/",
+          "sources": [
+            {
+              "type": "embed",
+              "url": "https://sultanbettv101.live/channel?id=zirve",
+              "label": "Site"
+            }
+          ],
+          "resolved": false,
+          "fresh": false,
+          "resolved_url": null,
+          "resolved_at": null,
+          "stale": false
+        },
+        {
           "id": "sultanbet:b3",
           "slug": "b3",
           "name": "BEIN SPORTS 3",
@@ -2576,29 +2599,6 @@
             {
               "type": "embed",
               "url": "https://sultanbettv101.live/channel?id=trtspor",
-              "label": "Site"
-            }
-          ],
-          "resolved": false,
-          "fresh": false,
-          "resolved_url": null,
-          "resolved_at": null,
-          "stale": false
-        },
-        {
-          "id": "sultanbet:zirve",
-          "slug": "zirve",
-          "name": "BEIN SPORTS 1",
-          "panel": "sultanbet",
-          "panel_name": "SULTANBET TV",
-          "icon": "⚽",
-          "logo": "",
-          "page_url": "https://sultanbettv101.live/channel?id=zirve",
-          "referrer": "https://sultanbettv101.live/",
-          "sources": [
-            {
-              "type": "embed",
-              "url": "https://sultanbettv101.live/channel?id=zirve",
               "label": "Site"
             }
           ],
