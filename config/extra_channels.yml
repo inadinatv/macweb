@@ -278,3 +278,31 @@ panels:
       - { slug: "trt-spor",          name: "TRT SPOR" }
       - { slug: "trt-1",             name: "TRT 1" }
       - { slug: "a-spor",             name: "A SPOR" }
+
+  # --------------------------------------------------------------------------
+  #  TRİBÜN TV — kullanıcı tarafından verilen kanal sayfaları
+  #    Kaynak site Cloudflare/403 döndürebildiği için doğrudan HLS keşfi
+  #    yapılmaz; kanal sayfaları panel oynatıcısı olarak açılır.
+  # --------------------------------------------------------------------------
+  - id: tribun
+    name: "TRİBÜN TV"
+    icon: "🏟️"
+    enabled: true
+    base_url: "https://tribuntv.online"
+    page_template: "{base_url}/channel?id={slug}"
+    embed_template: "{base_url}/channel?id={slug}"
+    embed_fallback: true
+    referrer: "{base_url}/"
+    channels:
+      - { slug: "s2",       name: "S SPORT 2" }
+      - { slug: "b2max",    name: "BEIN SPORTS MAX 2" }
+      - { slug: "b1",       name: "BEIN SPORTS 1" }
+      - { slug: "bein5",    name: "BEIN SPORTS 5" }
+      - { slug: "b1max",    name: "BEIN SPORTS MAX 1" }
+      - { slug: "xtrt1",    name: "TRT 1" }
+      - { slug: "xtrtspor", name: "TRT SPOR" }
+      - { slug: "b3",       name: "BEIN SPORTS 3" }
+      - { slug: "b4",       name: "BEIN SPORTS 4" }
+      - { slug: "xaspor",   name: "A SPOR" }
+      - { slug: "b2",       name: "BEIN SPORTS 2" }
+      - { slug: "s1",       name: "S SPORT" }

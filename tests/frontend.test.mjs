@@ -253,7 +253,7 @@ test("tazeleme başarısız olursa gömülü gerçek veri kullanılıyor", async
 
 /* ---------------- ⚡ EXTRA (m3u8) paneli ---------------- */
 
-test("EXTRA sekmesi Atom kanallarını m3u8 kartları olarak listeliyor", async () => {
+test("EXTRA sekmesi panellerdeki kanalları listeliyor", async () => {
   const { window, dom, errors } = await loadPage();
   assert.deepEqual(errors, [], "sayfa hatası: " + errors.join("; "));
   assert.ok(EXTRA_COUNT >= 14, "extra_channels.json en az 14 Atom kanalı içermeli");
@@ -456,10 +456,10 @@ test("output/extra_channels.json ile EXTRA listesi canlı tazeleniyor", async ()
   dom.window.close();
 });
 
-test("panel çipleri EXTRA kartlarını panele göre süzüyor (ATOM / SELÇUK)", async () => {
+test("panel çipleri EXTRA kartlarını panele göre süzüyor", async () => {
   const { window, dom } = await loadPage();
   window.inadina.setTab("extraTab");
-  assert.ok(EXTRA.panels.length >= 2, "en az iki extra panel bekleniyor (atom + selcuk)");
+  assert.ok(EXTRA.panels.length >= 2, "en az iki extra panel bekleniyor");
   const chips = [...window.document.querySelectorAll("#panelRow .chip")];
   assert.equal(chips.length, EXTRA.panels.length + 1, "TÜMÜ + her panel için bir çip olmalı");
   const selcuk = chips.find((c) => c.textContent.includes("SELÇUK"));

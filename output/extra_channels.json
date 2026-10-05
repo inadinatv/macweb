@@ -1,7 +1,7 @@
 {
   "updated_at": "2026-10-05T04:33:48+00:00",
   "source": "output/extra_channels.json",
-  "total": 79,
+  "total": 91,
   "panels": [
     {
       "id": "atom",
@@ -2309,6 +2309,296 @@
             {
               "type": "embed",
               "url": "https://taraftarium60.com/channel/watch/a-spor",
+              "label": "Site"
+            }
+          ],
+          "resolved": false,
+          "fresh": false,
+          "resolved_url": null,
+          "resolved_at": null,
+          "stale": false
+        }
+      ]
+    },
+    {
+      "id": "tribun",
+      "name": "TRİBÜN TV",
+      "icon": "🏟️",
+      "base_url": "https://tribuntv.online",
+      "player_base": "",
+      "stream_base": "",
+      "healthy": null,
+      "resolved": 0,
+      "fresh": 0,
+      "total": 12,
+      "channels": [
+        {
+          "id": "tribun:s2",
+          "slug": "s2",
+          "name": "S SPORT 2",
+          "panel": "tribun",
+          "panel_name": "TRİBÜN TV",
+          "icon": "🏀",
+          "logo": "",
+          "page_url": "https://tribuntv.online/channel?id=s2",
+          "referrer": "https://tribuntv.online/",
+          "sources": [
+            {
+              "type": "embed",
+              "url": "https://tribuntv.online/channel?id=s2",
+              "label": "Site"
+            }
+          ],
+          "resolved": false,
+          "fresh": false,
+          "resolved_url": null,
+          "resolved_at": null,
+          "stale": false
+        },
+        {
+          "id": "tribun:b2max",
+          "slug": "b2max",
+          "name": "BEIN SPORTS MAX 2",
+          "panel": "tribun",
+          "panel_name": "TRİBÜN TV",
+          "icon": "⚽",
+          "logo": "",
+          "page_url": "https://tribuntv.online/channel?id=b2max",
+          "referrer": "https://tribuntv.online/",
+          "sources": [
+            {
+              "type": "embed",
+              "url": "https://tribuntv.online/channel?id=b2max",
+              "label": "Site"
+            }
+          ],
+          "resolved": false,
+          "fresh": false,
+          "resolved_url": null,
+          "resolved_at": null,
+          "stale": false
+        },
+        {
+          "id": "tribun:b1",
+          "slug": "b1",
+          "name": "BEIN SPORTS 1",
+          "panel": "tribun",
+          "panel_name": "TRİBÜN TV",
+          "icon": "⚽",
+          "logo": "",
+          "page_url": "https://tribuntv.online/channel?id=b1",
+          "referrer": "https://tribuntv.online/",
+          "sources": [
+            {
+              "type": "embed",
+              "url": "https://tribuntv.online/channel?id=b1",
+              "label": "Site"
+            }
+          ],
+          "resolved": false,
+          "fresh": false,
+          "resolved_url": null,
+          "resolved_at": null,
+          "stale": false
+        },
+        {
+          "id": "tribun:bein5",
+          "slug": "bein5",
+          "name": "BEIN SPORTS 5",
+          "panel": "tribun",
+          "panel_name": "TRİBÜN TV",
+          "icon": "⚽",
+          "logo": "",
+          "page_url": "https://tribuntv.online/channel?id=bein5",
+          "referrer": "https://tribuntv.online/",
+          "sources": [
+            {
+              "type": "embed",
+              "url": "https://tribuntv.online/channel?id=bein5",
+              "label": "Site"
+            }
+          ],
+          "resolved": false,
+          "fresh": false,
+          "resolved_url": null,
+          "resolved_at": null,
+          "stale": false
+        },
+        {
+          "id": "tribun:b1max",
+          "slug": "b1max",
+          "name": "BEIN SPORTS MAX 1",
+          "panel": "tribun",
+          "panel_name": "TRİBÜN TV",
+          "icon": "⚽",
+          "logo": "",
+          "page_url": "https://tribuntv.online/channel?id=b1max",
+          "referrer": "https://tribuntv.online/",
+          "sources": [
+            {
+              "type": "embed",
+              "url": "https://tribuntv.online/channel?id=b1max",
+              "label": "Site"
+            }
+          ],
+          "resolved": false,
+          "fresh": false,
+          "resolved_url": null,
+          "resolved_at": null,
+          "stale": false
+        },
+        {
+          "id": "tribun:xtrt1",
+          "slug": "xtrt1",
+          "name": "TRT 1",
+          "panel": "tribun",
+          "panel_name": "TRİBÜN TV",
+          "icon": "🇹🇷",
+          "logo": "",
+          "page_url": "https://tribuntv.online/channel?id=xtrt1",
+          "referrer": "https://tribuntv.online/",
+          "sources": [
+            {
+              "type": "embed",
+              "url": "https://tribuntv.online/channel?id=xtrt1",
+              "label": "Site"
+            }
+          ],
+          "resolved": false,
+          "fresh": false,
+          "resolved_url": null,
+          "resolved_at": null,
+          "stale": false
+        },
+        {
+          "id": "tribun:xtrtspor",
+          "slug": "xtrtspor",
+          "name": "TRT SPOR",
+          "panel": "tribun",
+          "panel_name": "TRİBÜN TV",
+          "icon": "🇹🇷",
+          "logo": "",
+          "page_url": "https://tribuntv.online/channel?id=xtrtspor",
+          "referrer": "https://tribuntv.online/",
+          "sources": [
+            {
+              "type": "embed",
+              "url": "https://tribuntv.online/channel?id=xtrtspor",
+              "label": "Site"
+            }
+          ],
+          "resolved": false,
+          "fresh": false,
+          "resolved_url": null,
+          "resolved_at": null,
+          "stale": false
+        },
+        {
+          "id": "tribun:b3",
+          "slug": "b3",
+          "name": "BEIN SPORTS 3",
+          "panel": "tribun",
+          "panel_name": "TRİBÜN TV",
+          "icon": "⚽",
+          "logo": "",
+          "page_url": "https://tribuntv.online/channel?id=b3",
+          "referrer": "https://tribuntv.online/",
+          "sources": [
+            {
+              "type": "embed",
+              "url": "https://tribuntv.online/channel?id=b3",
+              "label": "Site"
+            }
+          ],
+          "resolved": false,
+          "fresh": false,
+          "resolved_url": null,
+          "resolved_at": null,
+          "stale": false
+        },
+        {
+          "id": "tribun:b4",
+          "slug": "b4",
+          "name": "BEIN SPORTS 4",
+          "panel": "tribun",
+          "panel_name": "TRİBÜN TV",
+          "icon": "⚽",
+          "logo": "",
+          "page_url": "https://tribuntv.online/channel?id=b4",
+          "referrer": "https://tribuntv.online/",
+          "sources": [
+            {
+              "type": "embed",
+              "url": "https://tribuntv.online/channel?id=b4",
+              "label": "Site"
+            }
+          ],
+          "resolved": false,
+          "fresh": false,
+          "resolved_url": null,
+          "resolved_at": null,
+          "stale": false
+        },
+        {
+          "id": "tribun:xaspor",
+          "slug": "xaspor",
+          "name": "A SPOR",
+          "panel": "tribun",
+          "panel_name": "TRİBÜN TV",
+          "icon": "⚽",
+          "logo": "",
+          "page_url": "https://tribuntv.online/channel?id=xaspor",
+          "referrer": "https://tribuntv.online/",
+          "sources": [
+            {
+              "type": "embed",
+              "url": "https://tribuntv.online/channel?id=xaspor",
+              "label": "Site"
+            }
+          ],
+          "resolved": false,
+          "fresh": false,
+          "resolved_url": null,
+          "resolved_at": null,
+          "stale": false
+        },
+        {
+          "id": "tribun:b2",
+          "slug": "b2",
+          "name": "BEIN SPORTS 2",
+          "panel": "tribun",
+          "panel_name": "TRİBÜN TV",
+          "icon": "⚽",
+          "logo": "",
+          "page_url": "https://tribuntv.online/channel?id=b2",
+          "referrer": "https://tribuntv.online/",
+          "sources": [
+            {
+              "type": "embed",
+              "url": "https://tribuntv.online/channel?id=b2",
+              "label": "Site"
+            }
+          ],
+          "resolved": false,
+          "fresh": false,
+          "resolved_url": null,
+          "resolved_at": null,
+          "stale": false
+        },
+        {
+          "id": "tribun:s1",
+          "slug": "s1",
+          "name": "S SPORT",
+          "panel": "tribun",
+          "panel_name": "TRİBÜN TV",
+          "icon": "🏀",
+          "logo": "",
+          "page_url": "https://tribuntv.online/channel?id=s1",
+          "referrer": "https://tribuntv.online/",
+          "sources": [
+            {
+              "type": "embed",
+              "url": "https://tribuntv.online/channel?id=s1",
               "label": "Site"
             }
           ],
