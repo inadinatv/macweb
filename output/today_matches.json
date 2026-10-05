@@ -13,13 +13,13 @@
       "fixbettv12.com",
       "fixbettv11.com"
     ],
-    "last_checked": "2026-10-05T17:33:20+00:00",
+    "last_checked": "2026-10-05T20:24:30+00:00",
     "note": "OK",
     "probed": 200
   },
   "date": "2026-10-05",
   "timezone": "Europe/Istanbul",
-  "generated_at": "2026-10-05T21:35:57+03:00",
+  "generated_at": "2026-10-05T23:23:56+03:00",
   "matches": [
     {
       "match_id": "trtspor2",
@@ -110,20 +110,20 @@
       "channel_id": "as",
       "logo_home": "https://img.sporekrani.com/teams/Rtk0KwgrKevFpTQb4pwLwkk2Cf5e3olACPj4ZVtd.png",
       "logo_away": "https://img.sporekrani.com/teams/3q0fcO97FlMqbKAcLOcLh8v4elD6TTReSixvvcvo.png",
-      "status": "upcoming",
-      "started": false,
+      "status": "live",
+      "started": true,
       "raw_event": "21:45 | UEFA Uluslar Ligi",
       "url": "https://fixbettv84.com/channel.html?id=as",
-      "fetched_at": "2026-10-05T21:35:57+03:00",
+      "fetched_at": "2026-10-05T23:23:56+03:00",
       "status_source": "mackolik",
       "raw_status": "none",
-      "score_home": null,
-      "score_away": null,
-      "score_source": "",
-      "score_updated_at": "",
+      "score_home": 2,
+      "score_away": 1,
+      "score_source": "mackolik",
+      "score_updated_at": "2026-10-05T23:23:56+03:00",
       "event_id": "7abu9s4w6yd4g3rjnns1kuz9w",
       "starts_at": "2026-10-05T18:45:00+00:00",
-      "status_clock": ""
+      "status_clock": "82'"
     },
     {
       "match_id": "atv",
@@ -136,20 +136,20 @@
       "channel_id": "atv",
       "logo_home": "https://img.sporekrani.com/teams/3KqZbnGcwy66EDpIbZIyHEmY5uT8O3HhJIxvGfyj.png",
       "logo_away": "https://img.sporekrani.com/teams/njoQj8OVNIXxcxBWF2Y3hzFLmArAu0hLIaKwZGXh.png",
-      "status": "upcoming",
-      "started": false,
+      "status": "live",
+      "started": true,
       "raw_event": "21:45 | UEFA Uluslar Ligi",
       "url": "https://fixbettv84.com/channel.html?id=atv",
-      "fetched_at": "2026-10-05T21:35:57+03:00",
+      "fetched_at": "2026-10-05T23:23:56+03:00",
       "status_source": "mackolik",
       "raw_status": "none",
-      "score_home": null,
-      "score_away": null,
-      "score_source": "",
-      "score_updated_at": "",
+      "score_home": 2,
+      "score_away": 1,
+      "score_source": "mackolik",
+      "score_updated_at": "2026-10-05T23:23:56+03:00",
       "event_id": "7avn9pw8o6kws1vk3uq70o3ys",
       "starts_at": "2026-10-05T18:45:00+00:00",
-      "status_clock": ""
+      "status_clock": "82'"
     }
   ]
 }

@@ -1,13 +1,13 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-10-05 18:35  
-> **Toplam maç:** 5  |  **Canlı:** 0  |  **Yaklaşan:** 2
+> **Güncellenme:** 2026-10-05 20:25  
+> **Toplam maç:** 5  |  **Canlı:** 2  |  **Yaklaşan:** 0
 
-## ⏰ YAKLAŞAN
+## 🔴 CANLI
 
-- ⏰ **Fransa vs Belçika** — YAKLAŞAN · `21:45` | UEFA Uluslar Ligi <https://fixbettv84.com/channel.html?id=as>
-- ⏰ **İtalya vs Türkiye** — YAKLAŞAN · `21:45` | UEFA Uluslar Ligi <https://fixbettv84.com/channel.html?id=atv>
+- 🔴 **Fransa 2 - 1 Belçika** — CANLI · `21:45` | UEFA Uluslar Ligi <https://fixbettv84.com/channel.html?id=as>
+- 🔴 **İtalya 2 - 1 Türkiye** — CANLI · `21:45` | UEFA Uluslar Ligi <https://fixbettv84.com/channel.html?id=atv>
 
 ## ✅ BİTTİ
 
@@ -28,8 +28,8 @@
 - ⏰ Şanlıurfaspor vs Gebzespor — 19:00
 
 ### UEFA Uluslar Ligi
-- ⏰ Fransa vs Belçika — 21:45
-- ⏰ İtalya vs Türkiye — 21:45
+- 🔴 Fransa vs Belçika — 21:45
+- 🔴 İtalya vs Türkiye — 21:45
 
 ---
 ## 📺 7/24 KANALLAR (31)
