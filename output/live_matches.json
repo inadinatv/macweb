@@ -6,9 +6,14 @@
     "mirror_now": "fixbettv84.com",
     "state": "OK",
     "active_mirrors": [
-      "fixbettv84.com"
+      "fixbettv84.com",
+      "fixbettv27.com",
+      "fixbettv26.com",
+      "fixbettv13.com",
+      "fixbettv12.com",
+      "fixbettv11.com"
     ],
-    "last_checked": "2026-10-05T01:22:57+00:00",
+    "last_checked": "2026-10-05T04:34:22+00:00",
     "note": "OK",
     "probed": 200
   },
