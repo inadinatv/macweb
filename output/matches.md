@@ -1,14 +1,13 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-10-06 19:03  
-> **Toplam maç:** 10  |  **Canlı:** 3  |  **Yaklaşan:** 0
+> **Güncellenme:** 2026-10-06 20:02  
+> **Toplam maç:** 10  |  **Canlı:** 2  |  **Yaklaşan:** 0
 
 ## 🔴 CANLI
 
-- 🔴 **JL Bourg vs Tofaş** — CANLI · `20:30` | Eurocup <https://fixbettv84.com/channel.html?id=trtspor>
-- 🔴 **İngiltere 0 - 0 Çekya** — CANLI · `21:45` | UEFA Uluslar Ligi <https://fixbettv84.com/channel.html?id=as>
-- 🔴 **Hırvatistan 0 - 0 İspanya** — CANLI · `21:45` | UEFA Uluslar Ligi <https://fixbettv84.com/channel.html?id=ex1>
+- 🔴 **İngiltere 3 - 0 Çekya** — CANLI · `21:45` | UEFA Uluslar Ligi <https://fixbettv84.com/channel.html?id=as>
+- 🔴 **Hırvatistan 1 - 0 İspanya** — CANLI · `21:45` | UEFA Uluslar Ligi <https://fixbettv84.com/channel.html?id=ex2>
 
 ## ✅ BİTTİ
 
@@ -19,13 +18,14 @@
 - ✅ **Karşıyaka vs Afyonkarahisarspor** — MS · `19:00` | Ziraat Türkiye Kupası <https://fixbettv84.com/channel.html?id=as>
 - ✅ **BC Cibona vs Galatasaray MCT** — MS · `19:00` | FIBA Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=trtspor2>
 - ✅ **Türk Telekom vs Maxima Roma** — MS · `19:30` | Eurocup <https://fixbettv84.com/channel.html?id=trtspor2>
+- ✅ **JL Bourg vs Tofaş** — MS · `20:30` | Eurocup <https://fixbettv84.com/channel.html?id=trtspor>
 
 ---
 ## 🏆 Lig Bazlı
 
 ### Eurocup
 - ⏰ Türk Telekom vs Maxima Roma — 19:30
-- 🔴 JL Bourg vs Tofaş — 20:30
+- ⏰ JL Bourg vs Tofaş — 20:30
 
 ### FIBA Şampiyonlar Ligi
 - ⏰ BC Cibona vs Galatasaray MCT — 19:00

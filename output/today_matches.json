@@ -13,13 +13,13 @@
       "fixbettv12.com",
       "fixbettv11.com"
     ],
-    "last_checked": "2026-10-06T15:32:48+00:00",
+    "last_checked": "2026-10-06T20:01:37+00:00",
     "note": "OK",
     "probed": 200
   },
   "date": "2026-10-06",
   "timezone": "Europe/Istanbul",
-  "generated_at": "2026-10-06T22:03:02+03:00",
+  "generated_at": "2026-10-06T23:01:02+03:00",
   "matches": [
     {
       "match_id": "trtspor",
@@ -214,7 +214,7 @@
       "channel_id": "trtspor",
       "logo_home": "https://img.sporekrani.com/teams/vJ2TwntBghXm0SFk4yZN0nssbgfm5el03YMpZKVt.png",
       "logo_away": "https://img.sporekrani.com/teams/pCtMPLg0mXVUr1tHolPTc1HLW71lhcKpHoJg0tGs.png",
-      "status": "live",
+      "status": "finished",
       "started": true,
       "raw_event": "20:30 | Eurocup",
       "url": "https://fixbettv84.com/channel.html?id=trtspor",
@@ -244,42 +244,42 @@
       "started": true,
       "raw_event": "21:45 | UEFA Uluslar Ligi",
       "url": "https://fixbettv84.com/channel.html?id=as",
-      "fetched_at": "2026-10-06T22:03:02+03:00",
+      "fetched_at": "2026-10-06T23:01:02+03:00",
       "status_source": "mackolik",
       "raw_status": "none",
-      "score_home": 0,
+      "score_home": 3,
       "score_away": 0,
       "score_source": "mackolik",
-      "score_updated_at": "2026-10-06T22:03:02+03:00",
+      "score_updated_at": "2026-10-06T23:01:02+03:00",
       "event_id": "7c1d5jw2nwac6s95hjp7fet5g",
       "starts_at": "2026-10-06T18:45:00+00:00",
-      "status_clock": "18'"
+      "status_clock": "59'"
     },
     {
-      "match_id": "ex1",
+      "match_id": "ex2",
       "home": "Hırvatistan",
       "away": "İspanya",
       "league": "UEFA Uluslar Ligi",
       "time": "21:45",
       "sport": "Futbol",
       "is_match_of_day": false,
-      "channel_id": "ex1",
+      "channel_id": "ex2",
       "logo_home": "https://img.sporekrani.com/tr_w_72,h_72,c_limit/teams/2OLzm5SrYYyNlW3J4wSY711RAZ6xMN6D4310AklQ.png",
       "logo_away": "https://img.sporekrani.com/tr_w_72,h_72,c_limit/teams/wVMIcVwBJlbyrSz1PJ39ptMaddaFmKVn7NKdAXVa.png",
       "status": "live",
       "started": true,
       "raw_event": "21:45 | UEFA Uluslar Ligi",
-      "url": "https://fixbettv84.com/channel.html?id=ex1",
-      "fetched_at": "2026-10-06T22:03:02+03:00",
+      "url": "https://fixbettv84.com/channel.html?id=ex2",
+      "fetched_at": "2026-10-06T23:01:02+03:00",
       "status_source": "mackolik",
       "raw_status": "none",
-      "score_home": 0,
+      "score_home": 1,
       "score_away": 0,
       "score_source": "mackolik",
-      "score_updated_at": "2026-10-06T22:03:02+03:00",
+      "score_updated_at": "2026-10-06T23:01:02+03:00",
       "event_id": "7bgdax2ll1pjx30k069pt4utw",
       "starts_at": "2026-10-06T18:45:00+00:00",
-      "status_clock": "17'"
+      "status_clock": "59'"
     }
   ]
 }
