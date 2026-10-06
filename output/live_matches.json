@@ -13,7 +13,7 @@
       "fixbettv12.com",
       "fixbettv11.com"
     ],
-    "last_checked": "2026-10-06T14:49:31+00:00",
+    "last_checked": "2026-10-06T15:32:48+00:00",
     "note": "OK",
     "probed": 200
   },
@@ -42,6 +42,32 @@
       "score_updated_at": "",
       "event_id": "",
       "starts_at": "2026-10-06T17:00:00+03:00",
+      "status_clock": ""
+    },
+    {
+      "match_id": "trtspor",
+      "home": "Vakıfbank",
+      "away": "Eczacıbaşı",
+      "league": "TVF Axa Kadınlar Şampiyonlar Kupası",
+      "time": "18:00",
+      "sport": "Voleybol",
+      "is_match_of_day": false,
+      "channel_id": "trtspor",
+      "logo_home": "https://img.sporekrani.com/teams/aT2LeHuyb2t80Uud0IlKmTIJcmECkPqWBna059Oy.png",
+      "logo_away": "https://img.sporekrani.com/teams/LORrIWY5R14vuJ1ZCVn9dfBVmQPRzKLERPYyoLWA.png",
+      "status": "live",
+      "started": true,
+      "raw_event": "18:00 | TVF Axa Kadınlar Şampiyonlar Kupası",
+      "url": "https://fixbettv84.com/channel.html?id=trtspor",
+      "fetched_at": "",
+      "status_source": "schedule",
+      "raw_status": "",
+      "score_home": null,
+      "score_away": null,
+      "score_source": "",
+      "score_updated_at": "",
+      "event_id": "",
+      "starts_at": "2026-10-06T18:00:00+03:00",
       "status_clock": ""
     }
   ]

@@ -1,16 +1,16 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-10-06 14:49  
-> **Toplam maç:** 10  |  **Canlı:** 1  |  **Yaklaşan:** 7
+> **Güncellenme:** 2026-10-06 15:33  
+> **Toplam maç:** 10  |  **Canlı:** 2  |  **Yaklaşan:** 6
 
 ## 🔴 CANLI
 
 - 🔴 **Sakaryaspor vs Arıt Kayadibi** — CANLI · `17:00` | Ziraat Türkiye Kupası <https://fixbettv84.com/channel.html?id=as>
+- 🔴 **Vakıfbank vs Eczacıbaşı** — CANLI · `18:00` | TVF Axa Kadınlar Şampiyonlar Kupası <https://fixbettv84.com/channel.html?id=trtspor>
 
 ## ⏰ YAKLAŞAN
 
-- ⏰ **Vakıfbank vs Eczacıbaşı** — YAKLAŞAN · `18:00` | TVF Axa Kadınlar Şampiyonlar Kupası <https://fixbettv84.com/channel.html?id=trtspor>
 - ⏰ **Karşıyaka vs Afyonkarahisarspor** — YAKLAŞAN · `19:00` | Ziraat Türkiye Kupası <https://fixbettv84.com/channel.html?id=as>
 - ⏰ **BC Cibona vs Galatasaray MCT** — YAKLAŞAN · `19:00` | FIBA Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=trtspor2>
 - ⏰ **Türk Telekom vs Maxima Roma** — YAKLAŞAN · `19:30` | Eurocup <https://fixbettv84.com/channel.html?id=trtspor2>
@@ -37,7 +37,7 @@
 - ⏰ İngiltere vs Türkiye — 11:30
 
 ### TVF Axa Kadınlar Şampiyonlar Kupası
-- ⏰ Vakıfbank vs Eczacıbaşı — 18:00
+- 🔴 Vakıfbank vs Eczacıbaşı — 18:00
 
 ### UEFA Uluslar Ligi
 - ⏰ İngiltere vs Çekya — 21:45
