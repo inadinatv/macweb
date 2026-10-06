@@ -1,34 +1,31 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-10-06 15:33  
-> **Toplam maç:** 10  |  **Canlı:** 2  |  **Yaklaşan:** 6
+> **Güncellenme:** 2026-10-06 19:03  
+> **Toplam maç:** 10  |  **Canlı:** 3  |  **Yaklaşan:** 0
 
 ## 🔴 CANLI
 
-- 🔴 **Sakaryaspor vs Arıt Kayadibi** — CANLI · `17:00` | Ziraat Türkiye Kupası <https://fixbettv84.com/channel.html?id=as>
-- 🔴 **Vakıfbank vs Eczacıbaşı** — CANLI · `18:00` | TVF Axa Kadınlar Şampiyonlar Kupası <https://fixbettv84.com/channel.html?id=trtspor>
-
-## ⏰ YAKLAŞAN
-
-- ⏰ **Karşıyaka vs Afyonkarahisarspor** — YAKLAŞAN · `19:00` | Ziraat Türkiye Kupası <https://fixbettv84.com/channel.html?id=as>
-- ⏰ **BC Cibona vs Galatasaray MCT** — YAKLAŞAN · `19:00` | FIBA Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=trtspor2>
-- ⏰ **Türk Telekom vs Maxima Roma** — YAKLAŞAN · `19:30` | Eurocup <https://fixbettv84.com/channel.html?id=trtspor2>
-- ⏰ **JL Bourg vs Tofaş** — YAKLAŞAN · `20:30` | Eurocup <https://fixbettv84.com/channel.html?id=trtspor>
-- ⏰ **İngiltere vs Çekya** — YAKLAŞAN · `21:45` | UEFA Uluslar Ligi <https://fixbettv84.com/channel.html?id=as>
-- ⏰ **Hırvatistan vs İspanya** — YAKLAŞAN · `21:45` | UEFA Uluslar Ligi <https://fixbettv84.com/channel.html?id=ex1>
+- 🔴 **JL Bourg vs Tofaş** — CANLI · `20:30` | Eurocup <https://fixbettv84.com/channel.html?id=trtspor>
+- 🔴 **İngiltere 0 - 0 Çekya** — CANLI · `21:45` | UEFA Uluslar Ligi <https://fixbettv84.com/channel.html?id=as>
+- 🔴 **Hırvatistan 0 - 0 İspanya** — CANLI · `21:45` | UEFA Uluslar Ligi <https://fixbettv84.com/channel.html?id=ex1>
 
 ## ✅ BİTTİ
 
 - ✅ **İngiltere vs Türkiye** — MS · `11:30` | Görme Engelliler Avrupa Şampiyonası <https://fixbettv84.com/channel.html?id=trtspor>
 - ✅ **Kırklarelispor vs Bayburtspor** — MS · `14:00` | Ziraat Türkiye Kupası <https://fixbettv84.com/channel.html?id=as>
+- ✅ **Sakaryaspor vs Arıt Kayadibi** — MS · `17:00` | Ziraat Türkiye Kupası <https://fixbettv84.com/channel.html?id=as>
+- ✅ **Vakıfbank vs Eczacıbaşı** — MS · `18:00` | TVF Axa Kadınlar Şampiyonlar Kupası <https://fixbettv84.com/channel.html?id=trtspor>
+- ✅ **Karşıyaka vs Afyonkarahisarspor** — MS · `19:00` | Ziraat Türkiye Kupası <https://fixbettv84.com/channel.html?id=as>
+- ✅ **BC Cibona vs Galatasaray MCT** — MS · `19:00` | FIBA Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=trtspor2>
+- ✅ **Türk Telekom vs Maxima Roma** — MS · `19:30` | Eurocup <https://fixbettv84.com/channel.html?id=trtspor2>
 
 ---
 ## 🏆 Lig Bazlı
 
 ### Eurocup
 - ⏰ Türk Telekom vs Maxima Roma — 19:30
-- ⏰ JL Bourg vs Tofaş — 20:30
+- 🔴 JL Bourg vs Tofaş — 20:30
 
 ### FIBA Şampiyonlar Ligi
 - ⏰ BC Cibona vs Galatasaray MCT — 19:00
@@ -37,15 +34,15 @@
 - ⏰ İngiltere vs Türkiye — 11:30
 
 ### TVF Axa Kadınlar Şampiyonlar Kupası
-- 🔴 Vakıfbank vs Eczacıbaşı — 18:00
+- ⏰ Vakıfbank vs Eczacıbaşı — 18:00
 
 ### UEFA Uluslar Ligi
-- ⏰ İngiltere vs Çekya — 21:45
-- ⏰ Hırvatistan vs İspanya — 21:45
+- 🔴 İngiltere vs Çekya — 21:45
+- 🔴 Hırvatistan vs İspanya — 21:45
 
 ### Ziraat Türkiye Kupası
 - ⏰ Kırklarelispor vs Bayburtspor — 14:00
-- 🔴 Sakaryaspor vs Arıt Kayadibi — 17:00
+- ⏰ Sakaryaspor vs Arıt Kayadibi — 17:00
 - ⏰ Karşıyaka vs Afyonkarahisarspor — 19:00
 
 ---
