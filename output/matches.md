@@ -1,12 +1,15 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-10-06 13:35  
-> **Toplam maç:** 10  |  **Canlı:** 0  |  **Yaklaşan:** 8
+> **Güncellenme:** 2026-10-06 14:49  
+> **Toplam maç:** 10  |  **Canlı:** 1  |  **Yaklaşan:** 7
+
+## 🔴 CANLI
+
+- 🔴 **Sakaryaspor vs Arıt Kayadibi** — CANLI · `17:00` | Ziraat Türkiye Kupası <https://fixbettv84.com/channel.html?id=as>
 
 ## ⏰ YAKLAŞAN
 
-- ⏰ **Sakaryaspor vs Arıt Kayadibi** — YAKLAŞAN · `17:00` | Ziraat Türkiye Kupası <https://fixbettv84.com/channel.html?id=as>
 - ⏰ **Vakıfbank vs Eczacıbaşı** — YAKLAŞAN · `18:00` | TVF Axa Kadınlar Şampiyonlar Kupası <https://fixbettv84.com/channel.html?id=trtspor>
 - ⏰ **Karşıyaka vs Afyonkarahisarspor** — YAKLAŞAN · `19:00` | Ziraat Türkiye Kupası <https://fixbettv84.com/channel.html?id=as>
 - ⏰ **BC Cibona vs Galatasaray MCT** — YAKLAŞAN · `19:00` | FIBA Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=trtspor2>
@@ -42,7 +45,7 @@
 
 ### Ziraat Türkiye Kupası
 - ⏰ Kırklarelispor vs Bayburtspor — 14:00
-- ⏰ Sakaryaspor vs Arıt Kayadibi — 17:00
+- 🔴 Sakaryaspor vs Arıt Kayadibi — 17:00
 - ⏰ Karşıyaka vs Afyonkarahisarspor — 19:00
 
 ---
@@ -101,12 +104,12 @@
 ## ⚡ EKSTRA PANELLER — m3u8 (109)
 
 ### ⚛️ ATOM SPOR ✅ `https://www.atomsportv516.top`
-- 🟢 **BEIN SPORTS 1** <https://ladyboy.yedektv.cfd//s-sport/tracks-v1a1/mono.m3u8>
+- 🟢 **BEIN SPORTS 1** <https://ladyboy.yedektv.cfd//s-sport2/tracks-v1a1/mono.m3u8>
 - 🟢 **BEIN SPORTS 2** <https://ladyboy.yedektv.cfd//bein2/tracks-v1a1/mono.m3u8>
 - 🟢 **BEIN SPORTS 3** <https://ladyboy.yedektv.cfd//bein3/tracks-v1a1/mono.m3u8>
 - 🟢 **BEIN SPORTS 4** <https://ladyboy.yedektv.cfd//bein4/tracks-v1a1/mono.m3u8>
 - 🟢 **BEIN SPORTS 5** <https://ladyboy.yedektv.cfd//bein5/tracks-v1a1/mono.m3u8>
-- 🟢 **S SPORT** <https://ladyboy.yedektv.cfd//s-sport/tracks-v1a1/mono.m3u8>
+- ⚪ **S SPORT** <https://tv.atomspor.workers.dev/?ID=s-sport>
 - 🟢 **S SPORT 2** <https://ladyboy.yedektv.cfd//s-sport2/tracks-v1a1/mono.m3u8>
 - ⚪ **S SPORT PLUS** <https://tv.atomspor.workers.dev/?ID=ssport-plus>
 - ⚪ **TIVIBU SPOR 1** <https://tv.atomspor.workers.dev/?ID=tivibu-spor-1>
@@ -208,7 +211,7 @@
 - 🟢 **TIVIBU SPOR 1** <https://sultanbettv101.live/mono.m3u8>
 
 ### 📡 JUSTIN TV ✅ `https://justintv109.top`
-- 🟢 **BEIN SPORTS 1** <https://ladyboy.yedektv.cfd//s-sport/tracks-v1a1/mono.m3u8>
+- 🟢 **BEIN SPORTS 1** <https://ladyboy.yedektv.cfd//s-sport2/tracks-v1a1/mono.m3u8>
 - 🟢 **BEIN SPORTS 2** <https://ladyboy.yedektv.cfd//bein2/tracks-v1a1/mono.m3u8>
 - 🟢 **BEIN SPORTS 3** <https://ladyboy.yedektv.cfd//bein3/tracks-v1a1/mono.m3u8>
 - 🟢 **BEIN SPORTS 4** <https://ladyboy.yedektv.cfd//bein4/tracks-v1a1/mono.m3u8>
