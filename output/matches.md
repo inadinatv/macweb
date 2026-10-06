@@ -1,13 +1,11 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-10-06 07:56  
-> **Toplam maç:** 10  |  **Canlı:** 0  |  **Yaklaşan:** 10
+> **Güncellenme:** 2026-10-06 13:35  
+> **Toplam maç:** 10  |  **Canlı:** 0  |  **Yaklaşan:** 8
 
 ## ⏰ YAKLAŞAN
 
-- ⏰ **İngiltere vs Türkiye** — YAKLAŞAN · `11:30` | Görme Engelliler Avrupa Şampiyonası <https://fixbettv84.com/channel.html?id=trtspor>
-- ⏰ **Kırklarelispor vs Bayburtspor** — YAKLAŞAN · `14:00` | Ziraat Türkiye Kupası <https://fixbettv84.com/channel.html?id=as>
 - ⏰ **Sakaryaspor vs Arıt Kayadibi** — YAKLAŞAN · `17:00` | Ziraat Türkiye Kupası <https://fixbettv84.com/channel.html?id=as>
 - ⏰ **Vakıfbank vs Eczacıbaşı** — YAKLAŞAN · `18:00` | TVF Axa Kadınlar Şampiyonlar Kupası <https://fixbettv84.com/channel.html?id=trtspor>
 - ⏰ **Karşıyaka vs Afyonkarahisarspor** — YAKLAŞAN · `19:00` | Ziraat Türkiye Kupası <https://fixbettv84.com/channel.html?id=as>
@@ -16,6 +14,11 @@
 - ⏰ **JL Bourg vs Tofaş** — YAKLAŞAN · `20:30` | Eurocup <https://fixbettv84.com/channel.html?id=trtspor>
 - ⏰ **İngiltere vs Çekya** — YAKLAŞAN · `21:45` | UEFA Uluslar Ligi <https://fixbettv84.com/channel.html?id=as>
 - ⏰ **Hırvatistan vs İspanya** — YAKLAŞAN · `21:45` | UEFA Uluslar Ligi <https://fixbettv84.com/channel.html?id=ex1>
+
+## ✅ BİTTİ
+
+- ✅ **İngiltere vs Türkiye** — MS · `11:30` | Görme Engelliler Avrupa Şampiyonası <https://fixbettv84.com/channel.html?id=trtspor>
+- ✅ **Kırklarelispor vs Bayburtspor** — MS · `14:00` | Ziraat Türkiye Kupası <https://fixbettv84.com/channel.html?id=as>
 
 ---
 ## 🏆 Lig Bazlı
