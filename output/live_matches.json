@@ -13,36 +13,9 @@
       "fixbettv12.com",
       "fixbettv11.com"
     ],
-    "last_checked": "2026-10-07T20:22:19+00:00",
+    "last_checked": "2026-10-07T21:48:34+00:00",
     "note": "OK",
     "probed": 200
   },
-  "live": [
-    {
-      "match_id": "ss",
-      "home": "Paris",
-      "away": "Asvel Villeurbanne",
-      "league": "Euroleague",
-      "time": "21:45",
-      "sport": "Basketbol",
-      "is_match_of_day": false,
-      "channel_id": "ss",
-      "logo_home": "https://img.sporekrani.com/teams/anC8Uq3e61hWtVfJ4bWzdTbkrvfW8qaNZlE6BueQ.png",
-      "logo_away": "https://img.sporekrani.com/teams/mbGHYqJgE1lCaEU19gKFKnLA46Rc3p0nkgPhADhG.png",
-      "status": "live",
-      "started": true,
-      "raw_event": "21:45 | Euroleague",
-      "url": "https://fixbettv84.com/channel.html?id=ss",
-      "fetched_at": "",
-      "status_source": "schedule",
-      "raw_status": "",
-      "score_home": null,
-      "score_away": null,
-      "score_source": "",
-      "score_updated_at": "",
-      "event_id": "",
-      "starts_at": "2026-10-07T21:45:00+03:00",
-      "status_clock": ""
-    }
-  ]
+  "live": []
 }
