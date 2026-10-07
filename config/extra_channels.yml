@@ -358,3 +358,64 @@ panels:
       - { slug: "trt-spor",          name: "TRT SPOR" }
       - { slug: "trt-1",             name: "TRT 1" }
       - { slug: "a-spor",            name: "A SPOR" }
+
+
+  # --------------------------------------------------------------------------
+  #  PAPAZ SPORTS — 7/24 TV kanalları
+  #    viptv kanalları auth.php form-POST resolver'ıyla taze HLS URL'si alır;
+  #    TOKEN değeri yalnızca ilgili HLS kaynağının usertoken header'ında kullanılır.
+  #    iframe yedeği hash deep-link'i ile aynı kanalı Papa Sports sayfasında açar.
+  #    TRT kanalları kaynağın doğrudan açık HLS URL'sini kullanır.
+  # --------------------------------------------------------------------------
+  - id: papazsports
+    name: "PAPAZ SPORTS"
+    icon: "📡"
+    enabled: true
+    base_url: "https://www.papazsports1026.pro"
+    entry_urls:
+      - "https://www.papazsports1026.pro/"
+    mirror:
+      pattern: "www.papazsports{n}.pro"
+      preferred_number: 1026
+      scan_window: 5
+      must_contain_any: ["channel-slider", "data-target=\"viptv\""]
+    health_path: "/"
+    keep_resolved_hours: 0.5
+    resolver:
+      method: "POST"
+      attempt_when_unhealthy: true
+      url_template: "{base_url}/auth.php"
+      body:
+        channel: "{slug}"
+      json_field: "URL"
+      source_headers:
+        pl: "PapazSports"
+      response_headers:
+        usertoken: "TOKEN"
+    referrer: "{base_url}/"
+    embed_fallback: true
+    channels:
+      - { slug: "100001", name: "beIN 1", embed_hash: "#bein-1-canli-izle", embed_url: "{base_url}/{embed_hash}", page_url: "{base_url}/{embed_hash}" }
+      - { slug: "100002", name: "beIN 2", embed_hash: "#bein-2-canli-izle", embed_url: "{base_url}/{embed_hash}", page_url: "{base_url}/{embed_hash}" }
+      - { slug: "100003", name: "beIN 3", embed_hash: "#bein-3-canli-izle", embed_url: "{base_url}/{embed_hash}", page_url: "{base_url}/{embed_hash}" }
+      - { slug: "100004", name: "beIN 4", embed_hash: "#bein-4-canli-izle", embed_url: "{base_url}/{embed_hash}", page_url: "{base_url}/{embed_hash}" }
+      - { slug: "100005", name: "beIN 5", embed_hash: "#bein-5-canli-izle", embed_url: "{base_url}/{embed_hash}", page_url: "{base_url}/{embed_hash}" }
+      - { slug: "100006", name: "beIN Max 1", embed_hash: "#bein-max-1-canli-izle", embed_url: "{base_url}/{embed_hash}", page_url: "{base_url}/{embed_hash}" }
+      - { slug: "100007", name: "beIN Max 2", embed_hash: "#bein-max-2-canli-izle", embed_url: "{base_url}/{embed_hash}", page_url: "{base_url}/{embed_hash}" }
+      - { slug: "100010", name: "S-Sport 1", embed_hash: "#s-sport-1-canli-izle", embed_url: "{base_url}/{embed_hash}", page_url: "{base_url}/{embed_hash}" }
+      - { slug: "100011", name: "S-Sport 2", embed_hash: "#s-sport-2-canli-izle", embed_url: "{base_url}/{embed_hash}", page_url: "{base_url}/{embed_hash}" }
+      - { slug: "100021", name: "TiViBUSPOR 1", embed_hash: "#tivibuspor-1-canli-izle", embed_url: "{base_url}/{embed_hash}", page_url: "{base_url}/{embed_hash}" }
+      - { slug: "100022", name: "TiViBUSPOR 2", embed_hash: "#tivibuspor-2-canli-izle", embed_url: "{base_url}/{embed_hash}", page_url: "{base_url}/{embed_hash}" }
+      - { slug: "100023", name: "TiViBUSPOR 3", embed_hash: "#tivibuspor-3-canli-izle", embed_url: "{base_url}/{embed_hash}", page_url: "{base_url}/{embed_hash}" }
+      - { slug: "100024", name: "TiViBUSPOR 4", embed_hash: "#tivibuspor-4-canli-izle", embed_url: "{base_url}/{embed_hash}", page_url: "{base_url}/{embed_hash}" }
+      - { slug: "100030", name: "SMARTSPOR 1", embed_hash: "#smartspor-1-canli-izle", embed_url: "{base_url}/{embed_hash}", page_url: "{base_url}/{embed_hash}" }
+      - { slug: "100031", name: "SMARTSPOR 2", embed_hash: "#smartspor-2-canli-izle", embed_url: "{base_url}/{embed_hash}", page_url: "{base_url}/{embed_hash}" }
+      - { slug: "100053", name: "NBA TV", embed_hash: "#nba-tv-canli-izle", embed_url: "{base_url}/{embed_hash}", page_url: "{base_url}/{embed_hash}" }
+      - { slug: "trt-1", name: "TRT 1", resolver: false, url: "https://tv-trt1.medya.trt.com.tr/master.m3u8", embed_url: "{base_url}/#trt-1-canli-izle", page_url: "{base_url}/#trt-1-canli-izle" }
+      - { slug: "trt-2", name: "TRT 2", resolver: false, url: "https://tv-trt2.medya.trt.com.tr/master.m3u8", embed_url: "{base_url}/#trt-2-canli-izle", page_url: "{base_url}/#trt-2-canli-izle" }
+      - { slug: "trt-spor", name: "TRT Spor", resolver: false, url: "https://tv-trtspor1.medya.trt.com.tr/master.m3u8", embed_url: "{base_url}/#trt-spor-canli-izle", page_url: "{base_url}/#trt-spor-canli-izle" }
+      - { slug: "trt-yildiz", name: "TRT Yıldız", resolver: false, url: "https://tv-trtspor2.medya.trt.com.tr/master.m3u8", embed_url: "{base_url}/#trt-yildiz-canli-izle", page_url: "{base_url}/#trt-yildiz-canli-izle" }
+      - { slug: "100052", name: "A Spor", embed_hash: "#a-spor-canli-izle", embed_url: "{base_url}/{embed_hash}", page_url: "{base_url}/{embed_hash}" }
+      - { slug: "100051", name: "TV 8.5", embed_hash: "#tv-85-canli-izle", embed_url: "{base_url}/{embed_hash}", page_url: "{base_url}/{embed_hash}" }
+      - { slug: "100056", name: "EUROSPORT 1", embed_hash: "#eurosport-1-canli-izle", embed_url: "{base_url}/{embed_hash}", page_url: "{base_url}/{embed_hash}" }
+      - { slug: "100057", name: "EUROSPORT 2", embed_hash: "#eurosport-2-canli-izle", embed_url: "{base_url}/{embed_hash}", page_url: "{base_url}/{embed_hash}" }
