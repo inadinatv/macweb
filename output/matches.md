@@ -1,14 +1,11 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-10-07 09:19  
-> **Toplam maç:** 8  |  **Canlı:** 0  |  **Yaklaşan:** 7
+> **Güncellenme:** 2026-10-07 15:50  
+> **Toplam maç:** 8  |  **Canlı:** 0  |  **Yaklaşan:** 4
 
 ## ⏰ YAKLAŞAN
 
-- ⏰ **Zonguldakspor vs Düzcespor** — YAKLAŞAN · `14:00` | Ziraat Türkiye Kupası <https://fixbettv84.com/channel.html?id=as>
-- ⏰ **A.Charaeva vs Q.Zheng** — YAKLAŞAN · `14:00` | WTA Pekin <https://fixbettv84.com/channel.html?id=bm1>
-- ⏰ **Yeşilyurt Bld. vs Gelecek Siirt 56 SK** — YAKLAŞAN · `17:00` | Ziraat Türkiye Kupası <https://fixbettv84.com/channel.html?id=as>
 - ⏰ **Balkan Botevgrad vs Bahçeşehir Klj** — YAKLAŞAN · `19:00` | Eurocup <https://fixbettv84.com/channel.html?id=trtspor2>
 - ⏰ **ÇBK Mersin vs Fenerbahçe Tarfin** — YAKLAŞAN · `19:30` | FIBA Kadınlar Süper Kupa <https://fixbettv84.com/channel.html?id=trtspor>
 - ⏰ **Eskişehirspor vs Akşehirspor** — YAKLAŞAN · `20:00` | Ziraat Türkiye Kupası <https://fixbettv84.com/channel.html?id=as>
@@ -17,6 +14,9 @@
 ## ✅ BİTTİ
 
 - ✅ **Arjantin 3 - 0 Benin** — MS · `02:00` | Hazırlık Maçı <https://fixbettv84.com/channel.html?id=ex6>
+- ✅ **Zonguldakspor vs Düzcespor** — MS · `14:00` | Ziraat Türkiye Kupası <https://fixbettv84.com/channel.html?id=as>
+- ✅ **A.Charaeva vs Q.Zheng** — MS · `14:00` | WTA Pekin <https://fixbettv84.com/channel.html?id=bm1>
+- ✅ **Yeşilyurt Bld. vs Gelecek Siirt 56 SK** — MS · `17:00` | Ziraat Türkiye Kupası <https://fixbettv84.com/channel.html?id=as>
 
 ---
 ## 🏆 Lig Bazlı
