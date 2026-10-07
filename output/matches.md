@@ -1,18 +1,12 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-10-07 17:29  
-> **Toplam maç:** 8  |  **Canlı:** 3  |  **Yaklaşan:** 1
+> **Güncellenme:** 2026-10-07 19:45  
+> **Toplam maç:** 8  |  **Canlı:** 1  |  **Yaklaşan:** 0
 
 ## 🔴 CANLI
 
-- 🔴 **Balkan Botevgrad vs Bahçeşehir Klj** — CANLI · `19:00` | Eurocup <https://fixbettv84.com/channel.html?id=trtspor2>
-- 🔴 **ÇBK Mersin vs Fenerbahçe Tarfin** — CANLI · `19:30` | FIBA Kadınlar Süper Kupa <https://fixbettv84.com/channel.html?id=trtspor>
-- 🔴 **Eskişehirspor vs Akşehirspor** — CANLI · `20:00` | Ziraat Türkiye Kupası <https://fixbettv84.com/channel.html?id=as>
-
-## ⏰ YAKLAŞAN
-
-- ⏰ **Paris vs Asvel Villeurbanne** — YAKLAŞAN · `21:45` | Euroleague <https://fixbettv84.com/channel.html?id=ss>
+- 🔴 **Paris vs Asvel Villeurbanne** — CANLI · `21:45` | Euroleague <https://fixbettv84.com/channel.html?id=ss>
 
 ## ✅ BİTTİ
 
@@ -20,18 +14,21 @@
 - ✅ **Zonguldakspor vs Düzcespor** — MS · `14:00` | Ziraat Türkiye Kupası <https://fixbettv84.com/channel.html?id=as>
 - ✅ **A.Charaeva vs Q.Zheng** — MS · `14:00` | WTA Pekin <https://fixbettv84.com/channel.html?id=bm1>
 - ✅ **Yeşilyurt Bld. vs Gelecek Siirt 56 SK** — MS · `17:00` | Ziraat Türkiye Kupası <https://fixbettv84.com/channel.html?id=as>
+- ✅ **Balkan Botevgrad vs Bahçeşehir Klj** — MS · `19:00` | Eurocup <https://fixbettv84.com/channel.html?id=trtspor2>
+- ✅ **ÇBK Mersin vs Fenerbahçe Tarfin** — MS · `19:30` | FIBA Kadınlar Süper Kupa <https://fixbettv84.com/channel.html?id=trtspor>
+- ✅ **Eskişehirspor vs Akşehirspor** — MS · `20:00` | Ziraat Türkiye Kupası <https://fixbettv84.com/channel.html?id=as>
 
 ---
 ## 🏆 Lig Bazlı
 
 ### Eurocup
-- 🔴 Balkan Botevgrad vs Bahçeşehir Klj — 19:00
+- ⏰ Balkan Botevgrad vs Bahçeşehir Klj — 19:00
 
 ### Euroleague
-- ⏰ Paris vs Asvel Villeurbanne — 21:45
+- 🔴 Paris vs Asvel Villeurbanne — 21:45
 
 ### FIBA Kadınlar Süper Kupa
-- 🔴 ÇBK Mersin vs Fenerbahçe Tarfin — 19:30
+- ⏰ ÇBK Mersin vs Fenerbahçe Tarfin — 19:30
 
 ### Hazırlık Maçı
 - ⏰ Arjantin vs Benin — 02:00
@@ -42,7 +39,7 @@
 ### Ziraat Türkiye Kupası
 - ⏰ Zonguldakspor vs Düzcespor — 14:00
 - ⏰ Yeşilyurt Bld. vs Gelecek Siirt 56 SK — 17:00
-- 🔴 Eskişehirspor vs Akşehirspor — 20:00
+- ⏰ Eskişehirspor vs Akşehirspor — 20:00
 
 ---
 ## 📺 7/24 KANALLAR (31)
