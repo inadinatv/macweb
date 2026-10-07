@@ -1442,8 +1442,8 @@
                     const b = document.createElement("button");
                     b.type = "button";
                     b.className = "src-chip" + (i === state.currentSourceIndex ? " active" : "") + (s.type === "embed" ? " embed" : "");
-                    b.textContent = s.type === "embed" ? "🌐 Site" : ("▶ " + (s.label || ("Kaynak " + (i + 1))));
-                    b.title = safeStreamUrl(s.url);
+                    b.textContent = s.type === "embed" ? "🌐 Iframe" : ("▶ " + (s.label || ("Kaynak " + (i + 1))));
+                    b.title = s.type === "embed" ? "Iframe kaynağını seç" : safeStreamUrl(s.url);
                     b.onclick = () => playSource(i, true);
                     els.sourceRow.appendChild(b);
                 });
@@ -1493,6 +1493,11 @@
                 const src = list[sourceIndex];
                 hideError();
                 renderSourceChips();
+                if (state.currentIndex === -1 && state.currentExtraId) {
+                    const ch = extraById(state.currentExtraId);
+                    if (ch) setPlayerHeader(ch.name, ch.icon || "⚡",
+                        (ch.panel_name || "EXTRA") + " · " + (src.type === "embed" ? "IFRAME" : "M3U8"));
+                }
                 if (src.type === "embed") {
                     els.playerWrap.classList.remove("mode-hls");
                     if (els.pipBtn) els.pipBtn.hidden = true;
@@ -1769,12 +1774,13 @@
                         card.setAttribute("data-extra-id", ch.id);
                         card.setAttribute("role", "button");
                         card.setAttribute("tabindex", "0");
-                        card.setAttribute("title", ch.name + " — m3u8 yayını oynatıcıda aç" +
+                        const primaryIsEmbed = (ch.sources || [])[0]?.type === "embed";
+                        card.setAttribute("title", ch.name + " — " + (primaryIsEmbed ? "iframe" : "m3u8") + " yayını oynatıcıda aç" +
                             (ch.resolved ? "" : " (yedek kaynak)"));
                         card.style.animationDelay = Math.min(visible * 18, 320) + "ms";
                         const hasHls = (ch.sources || []).some((s) => s.type === "hls");
                         card.innerHTML =
-                            '<span class="ch-status">' + (hasHls ? "M3U8" : "PLAYER") + "</span>" +
+                            '<span class="ch-status">' + (primaryIsEmbed ? "IFRAME" : (hasHls ? "M3U8" : "PLAYER")) + "</span>" +
                             '<span class="ch-number">' + pad(n) + "</span>" +
                             '<span class="ch-live-dot" title="' + (ch.resolved ? "yayın adresi güncel" : "yedek kaynak") + '"></span>' +
                             '<span class="ch-icon-wrap">' + (ch.icon || "⚡") + "</span>" +
