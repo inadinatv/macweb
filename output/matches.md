@@ -1,7 +1,7 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-10-07 17:09  
+> **Güncellenme:** 2026-10-07 17:29  
 > **Toplam maç:** 8  |  **Canlı:** 3  |  **Yaklaşan:** 1
 
 ## 🔴 CANLI
@@ -97,7 +97,7 @@
 - **TV 8,5** — `7/24` <https://fixbettv84.com/channel.html?id=tv85>
 
 ---
-## ⚡ EKSTRA PANELLER — m3u8 (133)
+## ⚡ EKSTRA PANELLER — m3u8 (109)
 
 ### ⚛️ ATOM SPOR ✅ `https://www.atomsportv516.top`
 - 🟢 **BEIN SPORTS 1** <https://ladyboy.yedektv.cfd//s-sport2/tracks-v1a1/mono.m3u8>
@@ -219,29 +219,3 @@
 - 🟢 **TRT SPOR** <https://ladyboy.yedektv.cfd//trt-spor/tracks-v1a1/mono.m3u8>
 - 🟢 **TRT 1** <https://ladyboy.yedektv.cfd//trt1/tracks-v1a1/mono.m3u8>
 - 🟢 **A SPOR** <https://ladyboy.yedektv.cfd//aspor/tracks-v1a1/mono.m3u8>
-
-### 📡 PAPAZ SPORTS ⛔ `https://www.papazsports1026.pro`
-- ⚪ **beIN 1**
-- ⚪ **beIN 2**
-- ⚪ **beIN 3**
-- ⚪ **beIN 4**
-- ⚪ **beIN 5**
-- ⚪ **beIN Max 1**
-- ⚪ **beIN Max 2**
-- ⚪ **S-Sport 1**
-- ⚪ **S-Sport 2**
-- ⚪ **TiViBUSPOR 1**
-- ⚪ **TiViBUSPOR 2**
-- ⚪ **TiViBUSPOR 3**
-- ⚪ **TiViBUSPOR 4**
-- ⚪ **SMARTSPOR 1**
-- ⚪ **SMARTSPOR 2**
-- ⚪ **NBA TV**
-- ⚪ **TRT 1** <https://tv-trt1.medya.trt.com.tr/master.m3u8>
-- ⚪ **TRT 2** <https://tv-trt2.medya.trt.com.tr/master.m3u8>
-- ⚪ **TRT Spor** <https://tv-trtspor1.medya.trt.com.tr/master.m3u8>
-- ⚪ **TRT Yıldız** <https://tv-trtspor2.medya.trt.com.tr/master.m3u8>
-- ⚪ **A Spor**
-- ⚪ **TV 8.5**
-- ⚪ **EUROSPORT 1**
-- ⚪ **EUROSPORT 2**
