@@ -732,7 +732,11 @@ def resolve_channel(panel: dict[str, Any], ctx: dict[str, Any], ch: dict[str, An
         page_url = page_urls[0] if page_urls else ""
     if ch.get("page_url"):
         page_url = _fmt(str(ch.get("page_url")), channel_fmt)
-    if ch.get("embed_url"):
+    # A panel-level false value is an explicit opt-out and must override
+    # channel-specific embed URLs as well as the page-url fallback.
+    if panel.get("embed_fallback", True) is False:
+        embed_url = ""
+    elif ch.get("embed_url"):
         embed_url = _fmt(str(ch.get("embed_url")), channel_fmt)
     elif panel.get("embed_template"):
         embed_url = _fmt(panel.get("embed_template"), fmt) if slug else ""
