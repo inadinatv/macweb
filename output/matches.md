@@ -1,12 +1,8 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-10-06 23:45  
-> **Toplam maç:** 8  |  **Canlı:** 1  |  **Yaklaşan:** 6
-
-## 🔴 CANLI
-
-- 🔴 **Arjantin 0 - 0 Benin** — CANLI · `02:00` | Hazırlık Maçı <https://fixbettv84.com/channel.html?id=ex6>
+> **Güncellenme:** 2026-10-07 01:54  
+> **Toplam maç:** 8  |  **Canlı:** 0  |  **Yaklaşan:** 7
 
 ## ⏰ YAKLAŞAN
 
@@ -16,10 +12,11 @@
 - ⏰ **Balkan Botevgrad vs Bahçeşehir Klj** — YAKLAŞAN · `19:00` | Eurocup <https://fixbettv84.com/channel.html?id=trtspor2>
 - ⏰ **ÇBK Mersin vs Fenerbahçe Tarfin** — YAKLAŞAN · `19:30` | FIBA Kadınlar Süper Kupa <https://fixbettv84.com/channel.html?id=trtspor>
 - ⏰ **Eskişehirspor vs Akşehirspor** — YAKLAŞAN · `20:00` | Ziraat Türkiye Kupası <https://fixbettv84.com/channel.html?id=as>
+- ⏰ **Paris vs Asvel Villeurbanne** — YAKLAŞAN · `21:45` | Euroleague <https://fixbettv84.com/channel.html?id=ss>
 
 ## ✅ BİTTİ
 
-- ✅ **Paris vs Asvel Villeurbanne** — MS · `21:45` | Euroleague <https://fixbettv84.com/channel.html?id=ss>
+- ✅ **Arjantin 3 - 0 Benin** — MS · `02:00` | Hazırlık Maçı <https://fixbettv84.com/channel.html?id=ex6>
 
 ---
 ## 🏆 Lig Bazlı
@@ -34,7 +31,7 @@
 - ⏰ ÇBK Mersin vs Fenerbahçe Tarfin — 19:30
 
 ### Hazırlık Maçı
-- 🔴 Arjantin vs Benin — 02:00
+- ⏰ Arjantin vs Benin — 02:00
 
 ### WTA Pekin
 - ⏰ A.Charaeva vs Q.Zheng — 14:00

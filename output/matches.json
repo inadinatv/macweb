@@ -13,20 +13,20 @@
       "fixbettv12.com",
       "fixbettv11.com"
     ],
-    "last_checked": "2026-10-06T23:44:35+00:00",
+    "last_checked": "2026-10-07T01:54:04+00:00",
     "note": "OK",
     "probed": 200
   },
   "categories": {
     "meta": {
-      "generated_at": "2026-10-07T02:44:01+03:00",
+      "generated_at": "2026-10-07T04:53:30+03:00",
       "date": "2026-10-07",
       "total_matches": 8
     },
     "counts": {
       "total": 8,
-      "live": 1,
-      "upcoming": 6,
+      "live": 0,
+      "upcoming": 7,
       "finished": 1,
       "match_of_day": 0,
       "postponed": 0,
@@ -38,34 +38,7 @@
     "cancelled": [],
     "suspended": [],
     "abandoned": [],
-    "live": [
-      {
-        "match_id": "ex6",
-        "home": "Arjantin",
-        "away": "Benin",
-        "league": "Hazırlık Maçı",
-        "time": "02:00",
-        "sport": "Futbol",
-        "is_match_of_day": false,
-        "channel_id": "ex6",
-        "logo_home": "https://img.sporekrani.com/teams/N9BEHqnEsJFwmlCqoOrOaojAnUxw9G7FY2UADUAO.png",
-        "logo_away": "https://img.sporekrani.com/teams/K36CqXBZ6dJEuSgVd2QhoTlsHst3tB0GXkIPeA4V.png",
-        "status": "live",
-        "started": true,
-        "raw_event": "02:00 | Hazırlık Maçı",
-        "url": "https://fixbettv84.com/channel.html?id=ex6",
-        "fetched_at": "2026-10-07T02:44:01+03:00",
-        "status_source": "mackolik",
-        "raw_status": "none",
-        "score_home": 0,
-        "score_away": 0,
-        "score_source": "mackolik",
-        "score_updated_at": "2026-10-07T02:44:01+03:00",
-        "event_id": "aub5n5rlvq4zdwz7uljjs97h0",
-        "starts_at": "2026-10-06T23:00:00+00:00",
-        "status_clock": "15'"
-      }
-    ],
+    "live": [],
     "upcoming": [
       {
         "match_id": "as",
@@ -222,9 +195,7 @@
         "event_id": "",
         "starts_at": "2026-10-07T20:00:00+03:00",
         "status_clock": ""
-      }
-    ],
-    "finished": [
+      },
       {
         "match_id": "ss",
         "home": "Paris",
@@ -236,8 +207,8 @@
         "channel_id": "ss",
         "logo_home": "https://img.sporekrani.com/teams/anC8Uq3e61hWtVfJ4bWzdTbkrvfW8qaNZlE6BueQ.png",
         "logo_away": "https://img.sporekrani.com/teams/mbGHYqJgE1lCaEU19gKFKnLA46Rc3p0nkgPhADhG.png",
-        "status": "finished",
-        "started": true,
+        "status": "upcoming",
+        "started": false,
         "raw_event": "21:45 | Euroleague",
         "url": "https://fixbettv84.com/channel.html?id=ss",
         "fetched_at": "",
@@ -248,7 +219,35 @@
         "score_source": "",
         "score_updated_at": "",
         "event_id": "",
-        "starts_at": "2026-10-06T21:45:00+03:00",
+        "starts_at": "2026-10-07T21:45:00+03:00",
+        "status_clock": ""
+      }
+    ],
+    "finished": [
+      {
+        "match_id": "ex6",
+        "home": "Arjantin",
+        "away": "Benin",
+        "league": "Hazırlık Maçı",
+        "time": "02:00",
+        "sport": "Futbol",
+        "is_match_of_day": false,
+        "channel_id": "ex6",
+        "logo_home": "https://img.sporekrani.com/teams/N9BEHqnEsJFwmlCqoOrOaojAnUxw9G7FY2UADUAO.png",
+        "logo_away": "https://img.sporekrani.com/teams/K36CqXBZ6dJEuSgVd2QhoTlsHst3tB0GXkIPeA4V.png",
+        "status": "finished",
+        "started": true,
+        "raw_event": "02:00 | Hazırlık Maçı",
+        "url": "https://fixbettv84.com/channel.html?id=ex6",
+        "fetched_at": "2026-10-07T04:53:30+03:00",
+        "status_source": "mackolik",
+        "raw_status": "MS",
+        "score_home": 3,
+        "score_away": 0,
+        "score_source": "mackolik",
+        "score_updated_at": "2026-10-07T04:53:30+03:00",
+        "event_id": "aub5n5rlvq4zdwz7uljjs97h0",
+        "starts_at": "2026-10-06T23:00:00+00:00",
         "status_clock": ""
       }
     ],
@@ -294,8 +293,8 @@
           "channel_id": "ss",
           "logo_home": "https://img.sporekrani.com/teams/anC8Uq3e61hWtVfJ4bWzdTbkrvfW8qaNZlE6BueQ.png",
           "logo_away": "https://img.sporekrani.com/teams/mbGHYqJgE1lCaEU19gKFKnLA46Rc3p0nkgPhADhG.png",
-          "status": "finished",
-          "started": true,
+          "status": "upcoming",
+          "started": false,
           "raw_event": "21:45 | Euroleague",
           "url": "https://fixbettv84.com/channel.html?id=ss",
           "fetched_at": "",
@@ -306,7 +305,7 @@
           "score_source": "",
           "score_updated_at": "",
           "event_id": "",
-          "starts_at": "2026-10-06T21:45:00+03:00",
+          "starts_at": "2026-10-07T21:45:00+03:00",
           "status_clock": ""
         }
       ],
@@ -350,20 +349,20 @@
           "channel_id": "ex6",
           "logo_home": "https://img.sporekrani.com/teams/N9BEHqnEsJFwmlCqoOrOaojAnUxw9G7FY2UADUAO.png",
           "logo_away": "https://img.sporekrani.com/teams/K36CqXBZ6dJEuSgVd2QhoTlsHst3tB0GXkIPeA4V.png",
-          "status": "live",
+          "status": "finished",
           "started": true,
           "raw_event": "02:00 | Hazırlık Maçı",
           "url": "https://fixbettv84.com/channel.html?id=ex6",
-          "fetched_at": "2026-10-07T02:44:01+03:00",
+          "fetched_at": "2026-10-07T04:53:30+03:00",
           "status_source": "mackolik",
-          "raw_status": "none",
-          "score_home": 0,
+          "raw_status": "MS",
+          "score_home": 3,
           "score_away": 0,
           "score_source": "mackolik",
-          "score_updated_at": "2026-10-07T02:44:01+03:00",
+          "score_updated_at": "2026-10-07T04:53:30+03:00",
           "event_id": "aub5n5rlvq4zdwz7uljjs97h0",
           "starts_at": "2026-10-06T23:00:00+00:00",
-          "status_clock": "15'"
+          "status_clock": ""
         }
       ],
       "WTA Pekin": [
@@ -540,8 +539,8 @@
           "channel_id": "ss",
           "logo_home": "https://img.sporekrani.com/teams/anC8Uq3e61hWtVfJ4bWzdTbkrvfW8qaNZlE6BueQ.png",
           "logo_away": "https://img.sporekrani.com/teams/mbGHYqJgE1lCaEU19gKFKnLA46Rc3p0nkgPhADhG.png",
-          "status": "finished",
-          "started": true,
+          "status": "upcoming",
+          "started": false,
           "raw_event": "21:45 | Euroleague",
           "url": "https://fixbettv84.com/channel.html?id=ss",
           "fetched_at": "",
@@ -552,7 +551,7 @@
           "score_source": "",
           "score_updated_at": "",
           "event_id": "",
-          "starts_at": "2026-10-06T21:45:00+03:00",
+          "starts_at": "2026-10-07T21:45:00+03:00",
           "status_clock": ""
         }
       ],
@@ -568,20 +567,20 @@
           "channel_id": "ex6",
           "logo_home": "https://img.sporekrani.com/teams/N9BEHqnEsJFwmlCqoOrOaojAnUxw9G7FY2UADUAO.png",
           "logo_away": "https://img.sporekrani.com/teams/K36CqXBZ6dJEuSgVd2QhoTlsHst3tB0GXkIPeA4V.png",
-          "status": "live",
+          "status": "finished",
           "started": true,
           "raw_event": "02:00 | Hazırlık Maçı",
           "url": "https://fixbettv84.com/channel.html?id=ex6",
-          "fetched_at": "2026-10-07T02:44:01+03:00",
+          "fetched_at": "2026-10-07T04:53:30+03:00",
           "status_source": "mackolik",
-          "raw_status": "none",
-          "score_home": 0,
+          "raw_status": "MS",
+          "score_home": 3,
           "score_away": 0,
           "score_source": "mackolik",
-          "score_updated_at": "2026-10-07T02:44:01+03:00",
+          "score_updated_at": "2026-10-07T04:53:30+03:00",
           "event_id": "aub5n5rlvq4zdwz7uljjs97h0",
           "starts_at": "2026-10-06T23:00:00+00:00",
-          "status_clock": "15'"
+          "status_clock": ""
         },
         {
           "match_id": "as",
@@ -704,20 +703,20 @@
       "channel_id": "ex6",
       "logo_home": "https://img.sporekrani.com/teams/N9BEHqnEsJFwmlCqoOrOaojAnUxw9G7FY2UADUAO.png",
       "logo_away": "https://img.sporekrani.com/teams/K36CqXBZ6dJEuSgVd2QhoTlsHst3tB0GXkIPeA4V.png",
-      "status": "live",
+      "status": "finished",
       "started": true,
       "raw_event": "02:00 | Hazırlık Maçı",
       "url": "https://fixbettv84.com/channel.html?id=ex6",
-      "fetched_at": "2026-10-07T02:44:01+03:00",
+      "fetched_at": "2026-10-07T04:53:30+03:00",
       "status_source": "mackolik",
-      "raw_status": "none",
-      "score_home": 0,
+      "raw_status": "MS",
+      "score_home": 3,
       "score_away": 0,
       "score_source": "mackolik",
-      "score_updated_at": "2026-10-07T02:44:01+03:00",
+      "score_updated_at": "2026-10-07T04:53:30+03:00",
       "event_id": "aub5n5rlvq4zdwz7uljjs97h0",
       "starts_at": "2026-10-06T23:00:00+00:00",
-      "status_clock": "15'"
+      "status_clock": ""
     },
     {
       "match_id": "as",
@@ -886,8 +885,8 @@
       "channel_id": "ss",
       "logo_home": "https://img.sporekrani.com/teams/anC8Uq3e61hWtVfJ4bWzdTbkrvfW8qaNZlE6BueQ.png",
       "logo_away": "https://img.sporekrani.com/teams/mbGHYqJgE1lCaEU19gKFKnLA46Rc3p0nkgPhADhG.png",
-      "status": "finished",
-      "started": true,
+      "status": "upcoming",
+      "started": false,
       "raw_event": "21:45 | Euroleague",
       "url": "https://fixbettv84.com/channel.html?id=ss",
       "fetched_at": "",
@@ -898,7 +897,7 @@
       "score_source": "",
       "score_updated_at": "",
       "event_id": "",
-      "starts_at": "2026-10-06T21:45:00+03:00",
+      "starts_at": "2026-10-07T21:45:00+03:00",
       "status_clock": ""
     }
   ],
