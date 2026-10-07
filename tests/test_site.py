@@ -67,6 +67,7 @@ def test_extra_panel_and_hls_player():
                 "function refreshExtra", "canPlayType", "Hls.isSupported", "#extra="):
         assert tok in tpl, f"eksik: {tok}"
     assert "#panelRow { flex-wrap: wrap; overflow-x: visible; row-gap: 8px; }" in tpl
+    assert "Bu kanalın doğrudan yayın kaynağı şu anda erişilebilir değil." in tpl
     # extra kart tıklaması yayını HLS oynatıcıda açar ve player'e kaydırır
     assert "card.onclick = () => playExtra(ch.id, true);" in tpl
     print("OK: extra_panel_and_hls_player")
