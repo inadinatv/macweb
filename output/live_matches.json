@@ -13,7 +13,7 @@
       "fixbettv12.com",
       "fixbettv11.com"
     ],
-    "last_checked": "2026-10-07T16:48:52+00:00",
+    "last_checked": "2026-10-07T17:09:12+00:00",
     "note": "OK",
     "probed": 200
   },
@@ -68,6 +68,32 @@
       "score_updated_at": "",
       "event_id": "",
       "starts_at": "2026-10-07T19:30:00+03:00",
+      "status_clock": ""
+    },
+    {
+      "match_id": "as",
+      "home": "Eskişehirspor",
+      "away": "Akşehirspor",
+      "league": "Ziraat Türkiye Kupası",
+      "time": "20:00",
+      "sport": "Futbol",
+      "is_match_of_day": false,
+      "channel_id": "as",
+      "logo_home": "https://img.sporekrani.com/teams/wiC5K1wiWHFUlYTOiGA2BscMT3xkNiYm9IFlfxhL.png",
+      "logo_away": "https://upload.wikimedia.org/wikipedia/tr/0/0f/1922_aksehirspor.png",
+      "status": "live",
+      "started": true,
+      "raw_event": "20:00 | Ziraat Türkiye Kupası",
+      "url": "https://fixbettv84.com/channel.html?id=as",
+      "fetched_at": "",
+      "status_source": "schedule",
+      "raw_status": "",
+      "score_home": null,
+      "score_away": null,
+      "score_source": "",
+      "score_updated_at": "",
+      "event_id": "",
+      "starts_at": "2026-10-07T20:00:00+03:00",
       "status_clock": ""
     }
   ]

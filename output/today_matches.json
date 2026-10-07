@@ -13,13 +13,13 @@
       "fixbettv12.com",
       "fixbettv11.com"
     ],
-    "last_checked": "2026-10-07T16:48:52+00:00",
+    "last_checked": "2026-10-07T17:09:12+00:00",
     "note": "OK",
     "probed": 200
   },
   "date": "2026-10-07",
   "timezone": "Europe/Istanbul",
-  "generated_at": "2026-10-07T19:48:18+03:00",
+  "generated_at": "2026-10-07T20:08:37+03:00",
   "matches": [
     {
       "match_id": "ex6",
@@ -36,13 +36,13 @@
       "started": true,
       "raw_event": "02:00 | Hazırlık Maçı",
       "url": "https://fixbettv84.com/channel.html?id=ex6",
-      "fetched_at": "2026-10-07T19:48:18+03:00",
+      "fetched_at": "2026-10-07T20:08:37+03:00",
       "status_source": "mackolik",
       "raw_status": "MS",
       "score_home": 3,
       "score_away": 0,
       "score_source": "mackolik",
-      "score_updated_at": "2026-10-07T19:48:18+03:00",
+      "score_updated_at": "2026-10-07T20:08:37+03:00",
       "event_id": "aub5n5rlvq4zdwz7uljjs97h0",
       "starts_at": "2026-10-06T23:00:00+00:00",
       "status_clock": ""
@@ -188,8 +188,8 @@
       "channel_id": "as",
       "logo_home": "https://img.sporekrani.com/teams/wiC5K1wiWHFUlYTOiGA2BscMT3xkNiYm9IFlfxhL.png",
       "logo_away": "https://upload.wikimedia.org/wikipedia/tr/0/0f/1922_aksehirspor.png",
-      "status": "upcoming",
-      "started": false,
+      "status": "live",
+      "started": true,
       "raw_event": "20:00 | Ziraat Türkiye Kupası",
       "url": "https://fixbettv84.com/channel.html?id=as",
       "fetched_at": "",

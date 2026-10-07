@@ -1,17 +1,17 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-10-07 16:49  
-> **Toplam maç:** 8  |  **Canlı:** 2  |  **Yaklaşan:** 2
+> **Güncellenme:** 2026-10-07 17:09  
+> **Toplam maç:** 8  |  **Canlı:** 3  |  **Yaklaşan:** 1
 
 ## 🔴 CANLI
 
 - 🔴 **Balkan Botevgrad vs Bahçeşehir Klj** — CANLI · `19:00` | Eurocup <https://fixbettv84.com/channel.html?id=trtspor2>
 - 🔴 **ÇBK Mersin vs Fenerbahçe Tarfin** — CANLI · `19:30` | FIBA Kadınlar Süper Kupa <https://fixbettv84.com/channel.html?id=trtspor>
+- 🔴 **Eskişehirspor vs Akşehirspor** — CANLI · `20:00` | Ziraat Türkiye Kupası <https://fixbettv84.com/channel.html?id=as>
 
 ## ⏰ YAKLAŞAN
 
-- ⏰ **Eskişehirspor vs Akşehirspor** — YAKLAŞAN · `20:00` | Ziraat Türkiye Kupası <https://fixbettv84.com/channel.html?id=as>
 - ⏰ **Paris vs Asvel Villeurbanne** — YAKLAŞAN · `21:45` | Euroleague <https://fixbettv84.com/channel.html?id=ss>
 
 ## ✅ BİTTİ
@@ -42,7 +42,7 @@
 ### Ziraat Türkiye Kupası
 - ⏰ Zonguldakspor vs Düzcespor — 14:00
 - ⏰ Yeşilyurt Bld. vs Gelecek Siirt 56 SK — 17:00
-- ⏰ Eskişehirspor vs Akşehirspor — 20:00
+- 🔴 Eskişehirspor vs Akşehirspor — 20:00
 
 ---
 ## 📺 7/24 KANALLAR (31)
