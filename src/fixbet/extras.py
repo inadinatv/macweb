@@ -59,8 +59,6 @@ class FetchResult:
 
 # fetch(url, headers, timeout) -> FetchResult | None  (ağ hatası → None)
 Fetcher = Callable[[str, dict[str, str], float], "FetchResult | None"]
-# post(url, payload, headers, timeout) -> FetchResult | None
-PostFetcher = Callable[[str, dict[str, str], dict[str, str], float], "FetchResult | None"]
 
 
 def _http_get(url: str, headers: dict[str, str], timeout: float) -> FetchResult | None:
@@ -75,24 +73,6 @@ def _http_get(url: str, headers: dict[str, str], timeout: float) -> FetchResult 
                     return None
             encoding = "utf-8-sig" if body.startswith(b"\xef\xbb\xbf") else resp.encoding or "utf-8"
             return FetchResult(resp.status_code, resp.url, body.decode(encoding, errors="replace"), dict(resp.headers))
-    except requests.exceptions.RequestException:
-        return None
-
-
-def _http_post(url: str, payload: dict[str, str], headers: dict[str, str],
-               timeout: float) -> FetchResult | None:
-    """Küçük JSON resolver endpointleri için sınırlı, test edilebilir POST."""
-    try:
-        with requests.post(url, data=payload, headers=headers, timeout=(5, timeout),
-                           allow_redirects=True, stream=True) as resp:
-            body = bytearray()
-            for chunk in resp.iter_content(16384):
-                body.extend(chunk)
-                if len(body) > 2 * 1024 * 1024:
-                    return None
-            encoding = "utf-8-sig" if body.startswith(b"\xef\xbb\xbf") else resp.encoding or "utf-8"
-            return FetchResult(resp.status_code, resp.url, body.decode(encoding, errors="replace"),
-                               dict(resp.headers))
     except requests.exceptions.RequestException:
         return None
 
@@ -242,79 +222,38 @@ def _verify_hls(url: str, referrer: str, fetch: Fetcher, headers: dict[str, str]
     return res is not None and res.status == 200 and is_hls_playlist(res.text or "")
 
 
-def _json_path(data: Any, path: str) -> Any:
-    value = data
-    for part in str(path or "").split("."):
-        if not isinstance(value, dict):
-            return None
-        value = value.get(part)
-    return value
-
-
-def resolve_api_source(panel: dict[str, Any], slug: str, referrer: str,
-                       fetch: Fetcher | None, headers: dict[str, str], timeout: float,
-                       post_fetch: PostFetcher | None = None) -> tuple[str, dict[str, str]]:
-    """JSON resolver’dan HLS URL’si ve gerekiyorsa oynatıcı request header’larını al."""
+def resolve_api_stream(panel: dict[str, Any], slug: str, referrer: str,
+                       fetch: Fetcher | None, headers: dict[str, str],
+                       timeout: float) -> str | None:
+    """Kanal kimliğini JSON yayın API'sine verip m3u8 adresini döndürür."""
     resolver = panel.get("resolver") or {}
     template = str(resolver.get("url_template") or "")
     field = str(resolver.get("json_field") or "deismackanal")
-    if not template or not slug:
-        return "", {}
-    mapping = {"slug": slug, "base_url": str(panel.get("base_url") or "").rstrip("/")}
-    url = _fmt(template, mapping)
+    if not template or not slug or fetch is None:
+        return None
+    url = _fmt(template, {"slug": slug,
+                          "base_url": str(panel.get("base_url") or "").rstrip("/")})
     if not url:
-        return "", {}
+        return None
     hdrs = dict(headers)
     if referrer:
         hdrs["Referer"] = referrer
-
-    method = str(resolver.get("method") or "GET").upper()
-    if method == "POST":
-        if post_fetch is None:
-            return "", {}
-        body = resolver.get("body") or {}
-        if isinstance(body, str):
-            payload = dict(urllib.parse.parse_qsl(_fmt(body, mapping), keep_blank_values=True))
-        elif isinstance(body, dict):
-            payload = {str(k): _fmt(str(v), mapping) for k, v in body.items()}
-        else:
-            return "", {}
-        res = post_fetch(url, payload, hdrs, timeout)
-    elif method == "GET" and fetch is not None:
-        res = fetch(url, hdrs, timeout)
-    else:
-        return "", {}
+    res = fetch(url, hdrs, timeout)
     if res is None or res.status != 200:
-        return "", {}
+        return None
     try:
         data = json.loads(res.text or "")
     except (TypeError, ValueError):
-        return "", {}
-    stream = str(_json_path(data, field) or "").strip()
-    if not stream or ".m3u8" not in stream.lower():
-        return "", {}
-    stream = urllib.parse.urljoin(res.url or url, stream)
-    if urllib.parse.urlsplit(stream).scheme not in ("http", "https"):
-        return "", {}
-
-    source_headers = {
-        str(name): _fmt(str(value), mapping)
-        for name, value in (resolver.get("source_headers") or {}).items()
-        if _fmt(str(value), mapping)
-    }
-    for name, response_path in (resolver.get("response_headers") or {}).items():
-        value = _json_path(data, str(response_path))
-        if value is not None and str(value):
-            source_headers[str(name)] = str(value)
-    return stream, source_headers
-
-
-def resolve_api_stream(panel: dict[str, Any], slug: str, referrer: str,
-                       fetch: Fetcher | None, headers: dict[str, str],
-                       timeout: float, post_fetch: PostFetcher | None = None) -> str | None:
-    """Geriye uyumluluk için yalnızca resolver’ın HLS adresini döndür."""
-    stream, _ = resolve_api_source(panel, slug, referrer, fetch, headers, timeout, post_fetch)
-    return stream or None
+        return None
+    value: Any = data
+    for part in field.split("."):
+        if not isinstance(value, dict):
+            return None
+        value = value.get(part)
+    stream = str(value or "").strip()
+    if stream.lower().startswith(("http://", "https://")) and ".m3u8" in stream.lower():
+        return stream
+    return None
 
 
 def extract_m3u8_from_page(url: str, referrer: str | None, fetch: Fetcher,
@@ -702,8 +641,7 @@ def _channel_page_urls(panel: dict[str, Any], ctx: dict[str, Any], slug: str) ->
 
 def resolve_channel(panel: dict[str, Any], ctx: dict[str, Any], ch: dict[str, Any],
                     previous: dict[str, Any] | None, fetch: Fetcher | None, headers: dict[str, str],
-                    timeout: float, now: datetime, keep_hours: float | None,
-                    post_fetch: PostFetcher | None = None) -> dict[str, Any]:
+                    timeout: float, now: datetime, keep_hours: float | None) -> dict[str, Any]:
     """Tek kanal için kaynak listesini üretir.
 
     ctx: {"base_url", "healthy", "player_base", "stream_base", "home_html"} —
@@ -717,7 +655,6 @@ def resolve_channel(panel: dict[str, Any], ctx: dict[str, Any], ch: dict[str, An
     fmt = {"base_url": base_url, "slug": slug,
            "player_base": str(ctx.get("player_base") or "").rstrip("/"),
            "stream_base": str(ctx.get("stream_base") or "").rstrip("/")}
-    channel_fmt = dict(fmt, embed_hash=str(ch.get("embed_hash") or ""))
 
     page_urls = _channel_page_urls(panel, ctx, slug)
     # page_route (Taraftarium): kanal bağlantısı tek bir rotaya sabitlenir
@@ -730,11 +667,7 @@ def resolve_channel(panel: dict[str, Any], ctx: dict[str, Any], ch: dict[str, An
         page_url = pinned_url
     else:
         page_url = page_urls[0] if page_urls else ""
-    if ch.get("page_url"):
-        page_url = _fmt(str(ch.get("page_url")), channel_fmt)
-    if ch.get("embed_url"):
-        embed_url = _fmt(str(ch.get("embed_url")), channel_fmt)
-    elif panel.get("embed_template"):
+    if panel.get("embed_template"):
         embed_url = _fmt(panel.get("embed_template"), fmt) if slug else ""
     else:
         embed_url = page_url if panel.get("embed_fallback") else ""
@@ -746,13 +679,9 @@ def resolve_channel(panel: dict[str, Any], ctx: dict[str, Any], ch: dict[str, An
 
     # Adres kapalıysa (healthy=False) kanal başına boşuna istek atılmaz; son çözüm/yedek kullanılır
     resolved, resolved_at, stale = "", None, False
-    resolved_headers: dict[str, str] = {}
     resolved_page_url = ""
-    resolver = panel.get("resolver") or {}
-    resolver_allowed = healthy is not False or resolver.get("attempt_when_unhealthy", False)
-    if fetch is not None and resolver_allowed and ch.get("resolver", True) is not False:
-        resolved, resolved_headers = resolve_api_source(panel, slug, referrer, fetch, headers,
-                                                        timeout, post_fetch)
+    if fetch is not None and healthy is not False:
+        resolved = resolve_api_stream(panel, slug, referrer, fetch, headers, timeout) or ""
         if resolved:
             resolved_at = now.isoformat(timespec="seconds")
     if not resolved and page_urls and fetch is not None and healthy is not False:
@@ -787,31 +716,22 @@ def resolve_channel(panel: dict[str, Any], ctx: dict[str, Any], ch: dict[str, An
         prev_url, prev_at = previous.get("resolved_url"), previous.get("resolved_at")
         if prev_url and _fresh(prev_at, now, keep_hours):
             resolved, resolved_at, stale = str(prev_url), prev_at, True
-            resolved_headers = dict(previous.get("resolved_headers") or {})
 
     sources: list[dict[str, Any]] = []
 
-    def add(url: str, typ: str, source_headers: dict[str, str] | None = None) -> None:
-        if not url:
-            return
-        existing = next((item for item in sources if item["url"] == url), None)
-        if existing:
-            if typ == "hls" and source_headers:
-                existing.setdefault("headers", {}).update(source_headers)
-            return
-        sources.append({"type": typ, "url": url, "label": ""})
-        if typ == "hls":
-            sources[-1]["mime_type"] = "application/vnd.apple.mpegurl"
-            applied_headers = dict(ch.get("request_headers") or {})
-            applied_headers.update(source_headers or {})
-            if applied_headers:
-                # Yalnızca oynatıcı isteğinde kullanılan header’lar; gizli değerleri config’e koymayın.
-                sources[-1]["headers"] = applied_headers
-            if (panel.get("playback") or {}).get("require_proxy"):
-                sources[-1]["requires_proxy"] = True
+    def add(url: str, typ: str) -> None:
+        if url and all(s["url"] != url for s in sources):
+            sources.append({"type": typ, "url": url, "label": ""})
+            if typ == "hls":
+                sources[-1]["mime_type"] = "application/vnd.apple.mpegurl"
+                if ch.get("request_headers"):
+                    # Yalnızca herkese açık header'lar; gizli anahtarları buraya koymayın.
+                    sources[-1]["headers"] = dict(ch["request_headers"])
+                if (panel.get("playback") or {}).get("require_proxy"):
+                    sources[-1]["requires_proxy"] = True
 
     add(static, "hls")
-    add(resolved, "hls", resolved_headers)
+    add(resolved, "hls")
     add(fallback, "hls")
     add(embed_url, "embed")
     n = 0
@@ -838,14 +758,13 @@ def resolve_channel(panel: dict[str, Any], ctx: dict[str, Any], ch: dict[str, An
         "fresh": bool(resolved) and not stale,
         "resolved_url": resolved or None,
         "resolved_at": resolved_at,
-        "resolved_headers": resolved_headers or None,
         "stale": stale,
     }
 
 
 def resolve_panel(panel: dict[str, Any], previous: dict[str, Any] | None, fetch: Fetcher | None,
                   headers: dict[str, str], timeout: float, now: datetime, keep_hours: float | None,
-                  max_workers: int = 10, post_fetch: PostFetcher | None = None) -> dict[str, Any]:
+                  max_workers: int = 10) -> dict[str, Any]:
     base_url, healthy, html = choose_base_url(panel, previous, fetch, headers, timeout)
     player_base = find_player_base(panel, base_url, healthy, html, previous, fetch, headers, timeout)
     stream_base = find_stream_server(panel, base_url, healthy, html, previous, fetch, headers, timeout, player_base)
@@ -856,12 +775,10 @@ def resolve_panel(panel: dict[str, Any], previous: dict[str, Any] | None, fetch:
 
     prev_channels = {c.get("slug"): c for c in (previous or {}).get("channels", [])}
     chans = [c for c in (panel.get("channels") or []) if (c.get("slug") or c.get("id"))]
-    panel_keep_hours = panel.get("keep_resolved_hours", keep_hours)
 
     def work(ch: dict[str, Any]) -> dict[str, Any]:
         prev = prev_channels.get(str(ch.get("slug") or ch.get("id")))
-        return resolve_channel(panel, ctx, ch, prev, fetch, headers, timeout, now,
-                               panel_keep_hours, post_fetch)
+        return resolve_channel(panel, ctx, ch, prev, fetch, headers, timeout, now, keep_hours)
 
     if fetch is not None and len(chans) > 1:
         with cf.ThreadPoolExecutor(max_workers=max(1, min(max_workers, len(chans)))) as pool:
@@ -884,8 +801,7 @@ def resolve_panel(panel: dict[str, Any], previous: dict[str, Any] | None, fetch:
     }
 
 
-def _build(fetch: Fetcher | None, now: datetime | None, write: bool,
-           post_fetch: PostFetcher | None = None) -> dict[str, Any]:
+def _build(fetch: Fetcher | None, now: datetime | None, write: bool) -> dict[str, Any]:
     cfg = load_config()
     settings = cfg.get("settings") or {}
     timeout = float(settings.get("request_timeout_seconds", 8))
@@ -895,7 +811,6 @@ def _build(fetch: Fetcher | None, now: datetime | None, write: bool,
         keep_hours = None  # çevrimdışı: eldeki son çözüm süresiz korunur
     headers = dict(DEFAULT_HEADERS)
     headers.update(settings.get("headers") or {})
-    post_client = post_fetch
 
     utc_now = _utc(now)
     previous = load_output()
@@ -906,7 +821,7 @@ def _build(fetch: Fetcher | None, now: datetime | None, write: bool,
         if panel.get("enabled", True) is False:
             continue
         panels.append(resolve_panel(panel, prev_panels.get(panel.get("id")), fetch, headers,
-                                    timeout, utc_now, keep_hours, max_workers, post_client))
+                                    timeout, utc_now, keep_hours, max_workers))
 
     data = {
         "updated_at": utc_now.isoformat(timespec="seconds") if fetch is not None
@@ -920,14 +835,9 @@ def _build(fetch: Fetcher | None, now: datetime | None, write: bool,
     return data
 
 
-def refresh(now: datetime | None = None, fetch: Fetcher | None = None, write: bool = True,
-            post_fetch: PostFetcher | None = None) -> dict[str, Any]:
+def refresh(now: datetime | None = None, fetch: Fetcher | None = None, write: bool = True) -> dict[str, Any]:
     """Ağ üzerinden tüm panelleri çözümler ve output/extra_channels.json'a yazar."""
-    # Özel/fake GET transport'u enjekte edildiğinde POST'u da çağıran sağlamalı;
-    # varsayılan gerçek HTTP POST yalnızca production taşıması seçildiğinde açılır.
-    if fetch is None:
-        return _build(_http_get, now, write, post_fetch or _http_post)
-    return _build(fetch, now, write, post_fetch)
+    return _build(fetch or _http_get, now, write)
 
 
 def load_or_build(now: datetime | None = None) -> dict[str, Any]:

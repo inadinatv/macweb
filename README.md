@@ -100,11 +100,6 @@ raporlar üreten gelişmiş otomasyon botu.
        Güncel rota (`/mac-izle/<id>`) ve kullanıcının verdiği eski
        `/channel/watch/<id>` rotası birlikte desteklenir; sayfa HLS vermezse panel sayfası
        yedek olarak oynatıcıda açılır.
-     - **PAPAZ SPORTS** (24 kanal) — 20 kanalın imzalı HLS adresi `auth.php` form-POST
-       resolver’ıyla her güncellemede alınır; dönen kısa ömürlü `TOKEN`, yalnızca oynatıcı
-       istek header’ına eklenir ve en fazla 30 dakikalık son çözüm saklanır. 4 TRT kanalı
-       doğrudan HLS kullanır. Her kanalın iframe yedeği Papa Sports sayfasını doğru hash ile
-       açıp o kanalı otomatik seçer.
    - Bot her çalışmada **m3u8 adresini çıkarır** (düz link, göreli link, URL-encoded,
      base64/`atob`, iç içe iframe'ler, ana sayfadaki kanal bağlantısı veya
      `player.stream_base_patterns` kuralları). Çıkaramazsa son çözümü
