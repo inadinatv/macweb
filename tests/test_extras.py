@@ -337,9 +337,6 @@ def test_refresh_writes_output_and_site_embeds_extra():
     justin_cfg = next(p for p in cfg["panels"] if p["id"] == "justintv")
     n_justintv = len(justin_cfg["channels"])
     assert n_justintv == 12
-    papaz_cfg = next(p for p in cfg["panels"] if p["id"] == "papazsports")
-    n_papazsports = len(papaz_cfg["channels"])
-    assert n_papazsports == 24
     net = FakeNet({
         BASE + "/": (200, '<a href="matches?id=bein-sports-1">BEIN</a>'),
         BASE + "/matches?id=bein-sports-1": (200, 'src:"https://edge.x/bs1/index.m3u8"'),
@@ -361,7 +358,7 @@ def test_refresh_writes_output_and_site_embeds_extra():
             data = extras.refresh(now, fetch=net)
             assert extras.EXTRA_OUTPUT.exists()
             saved = json.loads(extras.EXTRA_OUTPUT.read_text(encoding="utf-8"))
-            assert saved["total"] == 28 + n_mahsun + n_taraftarium + n_sultanbet + n_justintv + n_papazsports
+            assert saved["total"] == 28 + n_mahsun + n_taraftarium + n_sultanbet + n_justintv
             assert saved["panels"][0]["resolved"] == 1
             assert saved["source"] == "output/extra_channels.json"
             sel = saved["panels"][1]
@@ -623,85 +620,3 @@ def test_api_resolver_adds_channel_specific_hls_before_embed():
     assert ch["sources"][0]["url"] == "https://edge.example/bs1/index.m3u8"
     assert ch["sources"][-1]["type"] == "embed"
     assert ch["sources"][-1]["url"] == base + "/matches?id=bein-sports-1"
-
-
-class FakePostNet:
-    def __init__(self, responses):
-        self.responses = responses
-        self.calls = []
-
-    def __call__(self, url, payload, headers, timeout):
-        self.calls.append((url, dict(payload), dict(headers), timeout))
-        response = self.responses.get(url)
-        if response is None:
-            return None
-        return extras.FetchResult(200, url, response, {"content-type": "application/json"})
-
-
-def test_post_api_resolver_keeps_ephemeral_header_without_site_iframe():
-    from fixbet.site import extra_payload
-
-    now = datetime(2026, 10, 7, 12, 0, tzinfo=timezone.utc)
-    base = "https://www.papazsports1026.pro"
-    api = base + "/auth.php"
-    panel = {
-        "id": "papazsports", "name": "PAPAZ SPORTS", "base_url": base,
-        "health_path": "/", "keep_resolved_hours": 0.5,
-        "resolver": {
-            "method": "POST", "attempt_when_unhealthy": True,
-            "url_template": "{base_url}/auth.php",
-            "body": {"channel": "{slug}"}, "json_field": "URL",
-            "source_headers": {"pl": "PapazSports"},
-            "response_headers": {"usertoken": "TOKEN"},
-        },
-        "referrer": "{base_url}/", "embed_fallback": False,
-        "channels": [
-            {"slug": "100001", "name": "beIN 1", "embed_hash": "#bein-1-canli-izle",
-             "embed_url": "{base_url}/{embed_hash}", "page_url": "{base_url}/{embed_hash}"},
-            {"slug": "trt-1", "name": "TRT 1", "resolver": False,
-             "url": "https://tv-trt1.medya.trt.com.tr/master.m3u8",
-             "embed_url": "{base_url}/#trt-1-canli-izle"},
-        ],
-    }
-    get_net = FakeNet({base + "/": (403, "automated fetch denied")})
-    post_net = FakePostNet({api: '{"URL":"https://edge.example/bein1/index.m3u8",'
-                                   '"TOKEN":"temporary-player-token"}'})
-    out = extras.resolve_panel(panel, None, get_net, extras.DEFAULT_HEADERS, 5, now, 6,
-                               max_workers=2, post_fetch=post_net)
-
-    bein = out["channels"][0]
-    assert post_net.calls[0][0] == api
-    assert post_net.calls[0][1] == {"channel": "100001"}
-    assert post_net.calls[0][2]["Referer"] == base + "/"
-    assert bein["sources"][0]["type"] == "hls"
-    assert bein["sources"][0]["url"] == "https://edge.example/bein1/index.m3u8"
-    assert bein["sources"][0]["headers"] == {
-        "pl": "PapazSports", "usertoken": "temporary-player-token",
-    }
-    assert [source["type"] for source in bein["sources"]] == ["hls"]
-    trt = out["channels"][1]
-    assert trt["sources"][0]["url"] == "https://tv-trt1.medya.trt.com.tr/master.m3u8"
-    assert [source["type"] for source in trt["sources"]] == ["hls"]
-    assert out["healthy"] is False
-    assert len(post_net.calls) == 1  # resolver:false TRT kanalı auth API’ye gönderilmez
-
-    payload = extra_payload({"panels": [out]})
-    assert payload["panels"][0]["channels"][0]["sources"][0]["headers"]["usertoken"] == "temporary-player-token"
-
-    # API erişimi yokken tam-site page URL'si kaynak olarak eklenmemeli.
-    unavailable = extras.resolve_channel(
-        panel, {"base_url": base, "healthy": False}, panel["channels"][0], None,
-        get_net, extras.DEFAULT_HEADERS, 5, now, 0.5, post_fetch=FakePostNet({}),
-    )
-    assert unavailable["sources"] == []
-    assert unavailable["page_url"] == base + "/#bein-1-canli-izle"
-
-
-def test_papazsports_configuration_contains_all_tv_channels():
-    panel = next(p for p in extras.load_config()["panels"] if p.get("id") == "papazsports")
-    assert len(panel["channels"]) == 24
-    assert sum(1 for c in panel["channels"] if c.get("resolver") is not False) == 20
-    assert sum(1 for c in panel["channels"] if c.get("resolver") is False) == 4
-    assert panel["resolver"]["method"] == "POST"
-    assert panel["embed_fallback"] is False
-    assert all(c.get("page_url") for c in panel["channels"])
