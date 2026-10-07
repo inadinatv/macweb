@@ -1,13 +1,16 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-10-07 15:54  
-> **Toplam maç:** 8  |  **Canlı:** 0  |  **Yaklaşan:** 4
+> **Güncellenme:** 2026-10-07 16:38  
+> **Toplam maç:** 8  |  **Canlı:** 2  |  **Yaklaşan:** 2
+
+## 🔴 CANLI
+
+- 🔴 **Balkan Botevgrad vs Bahçeşehir Klj** — CANLI · `19:00` | Eurocup <https://fixbettv84.com/channel.html?id=trtspor2>
+- 🔴 **ÇBK Mersin vs Fenerbahçe Tarfin** — CANLI · `19:30` | FIBA Kadınlar Süper Kupa <https://fixbettv84.com/channel.html?id=trtspor>
 
 ## ⏰ YAKLAŞAN
 
-- ⏰ **Balkan Botevgrad vs Bahçeşehir Klj** — YAKLAŞAN · `19:00` | Eurocup <https://fixbettv84.com/channel.html?id=trtspor2>
-- ⏰ **ÇBK Mersin vs Fenerbahçe Tarfin** — YAKLAŞAN · `19:30` | FIBA Kadınlar Süper Kupa <https://fixbettv84.com/channel.html?id=trtspor>
 - ⏰ **Eskişehirspor vs Akşehirspor** — YAKLAŞAN · `20:00` | Ziraat Türkiye Kupası <https://fixbettv84.com/channel.html?id=as>
 - ⏰ **Paris vs Asvel Villeurbanne** — YAKLAŞAN · `21:45` | Euroleague <https://fixbettv84.com/channel.html?id=ss>
 
@@ -22,13 +25,13 @@
 ## 🏆 Lig Bazlı
 
 ### Eurocup
-- ⏰ Balkan Botevgrad vs Bahçeşehir Klj — 19:00
+- 🔴 Balkan Botevgrad vs Bahçeşehir Klj — 19:00
 
 ### Euroleague
 - ⏰ Paris vs Asvel Villeurbanne — 21:45
 
 ### FIBA Kadınlar Süper Kupa
-- ⏰ ÇBK Mersin vs Fenerbahçe Tarfin — 19:30
+- 🔴 ÇBK Mersin vs Fenerbahçe Tarfin — 19:30
 
 ### Hazırlık Maçı
 - ⏰ Arjantin vs Benin — 02:00
@@ -94,7 +97,7 @@
 - **TV 8,5** — `7/24` <https://fixbettv84.com/channel.html?id=tv85>
 
 ---
-## ⚡ EKSTRA PANELLER — m3u8 (109)
+## ⚡ EKSTRA PANELLER — m3u8 (133)
 
 ### ⚛️ ATOM SPOR ✅ `https://www.atomsportv516.top`
 - 🟢 **BEIN SPORTS 1** <https://ladyboy.yedektv.cfd//s-sport2/tracks-v1a1/mono.m3u8>
@@ -112,7 +115,7 @@
 - ⚪ **TV 8,5** <https://tv.atomspor.workers.dev/?ID=tv-8-5>
 - ⚪ **BEIN SPORTS HABER** <https://tv.atomspor.workers.dev/?ID=bein-sports-haber>
 
-### 🎥 SELÇUK SPOR ✅ `https://www.sporcafe-0c2608ad69.xyz`
+### 🎥 SELÇUK SPOR ✅ `https://www.sporcafe-94be8c26c0.xyz`
 - 🟢 **BEIN SPORTS 1** <https://dga1op10s1u3lea.82250d06d39d38.click/live/selcukbeinsports1/playlist.m3u8>
 - 🟢 **BEIN SPORTS 2** <https://dga1op10s1u3lea.82250d06d39d38.click/live/selcukbeinsports2/playlist.m3u8>
 - 🟢 **BEIN SPORTS 3** <https://dga1op10s1u3lea.82250d06d39d38.click/live/selcukbeinsports3/playlist.m3u8>
@@ -216,3 +219,29 @@
 - 🟢 **TRT SPOR** <https://ladyboy.yedektv.cfd//trt-spor/tracks-v1a1/mono.m3u8>
 - 🟢 **TRT 1** <https://ladyboy.yedektv.cfd//trt1/tracks-v1a1/mono.m3u8>
 - 🟢 **A SPOR** <https://ladyboy.yedektv.cfd//aspor/tracks-v1a1/mono.m3u8>
+
+### 📡 PAPAZ SPORTS ⛔ `https://www.papazsports1026.pro`
+- ⚪ **beIN 1**
+- ⚪ **beIN 2**
+- ⚪ **beIN 3**
+- ⚪ **beIN 4**
+- ⚪ **beIN 5**
+- ⚪ **beIN Max 1**
+- ⚪ **beIN Max 2**
+- ⚪ **S-Sport 1**
+- ⚪ **S-Sport 2**
+- ⚪ **TiViBUSPOR 1**
+- ⚪ **TiViBUSPOR 2**
+- ⚪ **TiViBUSPOR 3**
+- ⚪ **TiViBUSPOR 4**
+- ⚪ **SMARTSPOR 1**
+- ⚪ **SMARTSPOR 2**
+- ⚪ **NBA TV**
+- ⚪ **TRT 1** <https://tv-trt1.medya.trt.com.tr/master.m3u8>
+- ⚪ **TRT 2** <https://tv-trt2.medya.trt.com.tr/master.m3u8>
+- ⚪ **TRT Spor** <https://tv-trtspor1.medya.trt.com.tr/master.m3u8>
+- ⚪ **TRT Yıldız** <https://tv-trtspor2.medya.trt.com.tr/master.m3u8>
+- ⚪ **A Spor**
+- ⚪ **TV 8.5**
+- ⚪ **EUROSPORT 1**
+- ⚪ **EUROSPORT 2**
