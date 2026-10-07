@@ -286,7 +286,6 @@
 
         .chip-row { display: flex; align-items: center; gap: 8px; overflow-x: auto; padding: 2px 2px 12px; scrollbar-width: none; -ms-overflow-style: none; }
         .chip-row::-webkit-scrollbar { display: none; }
-        #panelRow { flex-wrap: wrap; overflow-x: visible; row-gap: 8px; }
         .chip {
             flex: 0 0 auto; display: flex; align-items: center; gap: 7px; padding: 7px 14px; border-radius: 14px;
             background: rgba(255,255,255,0.04); border: 1.5px solid rgba(255,255,255,0.08);
@@ -1396,12 +1395,10 @@
                 const cur = state.currentSources[state.currentSourceIndex];
                 const channel = extraById(state.currentExtraId);
                 if (els.openExternal) {
-                    els.openExternal.style.display = "";
                     const candidate = (channel && channel.page_url) || (cur && cur.url) || els.iframe.src;
                     try { const u = new URL(candidate, location.href); els.openExternal.href = /^https?:$/.test(u.protocol) ? u.href : "#"; }
                     catch (e) { els.openExternal.href = "#"; }
                 }
-                $("retryStreamBtn").style.display = "";
                 $("nextSourceBtn").style.display = state.currentSources.length > 1 ? "" : "none";
             }
 
@@ -1716,30 +1713,19 @@
             /** EXTRA kanal kartı -> m3u8 yayını sayfanın HLS oynatıcısında aç */
             function playExtra(id, scroll) {
                 const ch = extraById(id);
-                if (!ch) return;
+                if (!ch || !(ch.sources || []).length) return;
                 state.currentIndex = -1;
                 state.currentExtraId = id;
-                state.currentSources = (ch.sources || []).slice();
+                state.currentSources = ch.sources.slice();
                 state.currentSourceIndex = 0;
                 setPlayerMode("hls");
+                const hasHls = ch.sources.some((s) => s.type === "hls");
+                setPlayerHeader(ch.name, ch.icon || "⚡", (ch.panel_name || "EXTRA") + (hasHls ? " · M3U8" : " · PLAYER"));
                 markActiveCard();
                 markActiveExtraCard();
                 if (history && history.replaceState) {
                     history.replaceState(null, "", "#extra=" + encodeURIComponent(id));
                 }
-                if (!state.currentSources.length) {
-                    stopHls();
-                    renderSourceChips();
-                    setPlayerHeader(ch.name, ch.icon || "⚡", (ch.panel_name || "EXTRA") + " · YAYIN BEKLENİYOR");
-                    showError("Bu kanalın doğrudan yayın kaynağı şu anda erişilebilir değil.");
-                    if (els.openExternal) els.openExternal.style.display = "none";
-                    $("retryStreamBtn").style.display = "none";
-                    if (scroll !== false) scrollToPlayer();
-                    return;
-                }
-                $("retryStreamBtn").style.display = "";
-                const hasHls = ch.sources.some((s) => s.type === "hls");
-                setPlayerHeader(ch.name, ch.icon || "⚡", (ch.panel_name || "EXTRA") + (hasHls ? " · M3U8" : " · PLAYER"));
                 playSource(0, false);
                 if (scroll !== false) scrollToPlayer();
             }

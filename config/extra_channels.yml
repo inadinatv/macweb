@@ -364,7 +364,7 @@ panels:
   #  PAPAZ SPORTS — 7/24 TV kanalları
   #    viptv kanalları auth.php form-POST resolver'ıyla taze HLS URL'si alır;
   #    TOKEN değeri yalnızca ilgili HLS kaynağının usertoken header'ında kullanılır.
-  #    Tam-site iframe yedeği kapalıdır; API erişimi yoksa 20 kanal oynatılmaz.
+  #    iframe yedeği hash deep-link'i ile aynı kanalı Papa Sports sayfasında açar.
   #    TRT kanalları kaynağın doğrudan açık HLS URL'sini kullanır.
   # --------------------------------------------------------------------------
   - id: papazsports
@@ -393,7 +393,7 @@ panels:
       response_headers:
         usertoken: "TOKEN"
     referrer: "{base_url}/"
-    embed_fallback: false
+    embed_fallback: true
     channels:
       - { slug: "100001", name: "beIN 1", embed_hash: "#bein-1-canli-izle", embed_url: "{base_url}/{embed_hash}", page_url: "{base_url}/{embed_hash}" }
       - { slug: "100002", name: "beIN 2", embed_hash: "#bein-2-canli-izle", embed_url: "{base_url}/{embed_hash}", page_url: "{base_url}/{embed_hash}" }

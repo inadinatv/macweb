@@ -638,7 +638,7 @@ class FakePostNet:
         return extras.FetchResult(200, url, response, {"content-type": "application/json"})
 
 
-def test_post_api_resolver_keeps_ephemeral_header_without_site_iframe():
+def test_post_api_resolver_keeps_ephemeral_header_and_channel_hash_iframe():
     from fixbet.site import extra_payload
 
     now = datetime(2026, 10, 7, 12, 0, tzinfo=timezone.utc)
@@ -654,7 +654,7 @@ def test_post_api_resolver_keeps_ephemeral_header_without_site_iframe():
             "source_headers": {"pl": "PapazSports"},
             "response_headers": {"usertoken": "TOKEN"},
         },
-        "referrer": "{base_url}/", "embed_fallback": False,
+        "referrer": "{base_url}/", "embed_fallback": True,
         "channels": [
             {"slug": "100001", "name": "beIN 1", "embed_hash": "#bein-1-canli-izle",
              "embed_url": "{base_url}/{embed_hash}", "page_url": "{base_url}/{embed_hash}"},
@@ -678,23 +678,16 @@ def test_post_api_resolver_keeps_ephemeral_header_without_site_iframe():
     assert bein["sources"][0]["headers"] == {
         "pl": "PapazSports", "usertoken": "temporary-player-token",
     }
-    assert [source["type"] for source in bein["sources"]] == ["hls"]
+    assert bein["sources"][-1] == {
+        "type": "embed", "url": base + "/#bein-1-canli-izle", "label": "Site",
+    }
     trt = out["channels"][1]
     assert trt["sources"][0]["url"] == "https://tv-trt1.medya.trt.com.tr/master.m3u8"
-    assert [source["type"] for source in trt["sources"]] == ["hls"]
     assert out["healthy"] is False
     assert len(post_net.calls) == 1  # resolver:false TRT kanalı auth API’ye gönderilmez
 
     payload = extra_payload({"panels": [out]})
     assert payload["panels"][0]["channels"][0]["sources"][0]["headers"]["usertoken"] == "temporary-player-token"
-
-    # API erişimi yokken tam-site page URL'si kaynak olarak eklenmemeli.
-    unavailable = extras.resolve_channel(
-        panel, {"base_url": base, "healthy": False}, panel["channels"][0], None,
-        get_net, extras.DEFAULT_HEADERS, 5, now, 0.5, post_fetch=FakePostNet({}),
-    )
-    assert unavailable["sources"] == []
-    assert unavailable["page_url"] == base + "/#bein-1-canli-izle"
 
 
 def test_papazsports_configuration_contains_all_tv_channels():
@@ -703,5 +696,4 @@ def test_papazsports_configuration_contains_all_tv_channels():
     assert sum(1 for c in panel["channels"] if c.get("resolver") is not False) == 20
     assert sum(1 for c in panel["channels"] if c.get("resolver") is False) == 4
     assert panel["resolver"]["method"] == "POST"
-    assert panel["embed_fallback"] is False
-    assert all(c.get("page_url") for c in panel["channels"])
+    assert all(c.get("embed_url") for c in panel["channels"])
