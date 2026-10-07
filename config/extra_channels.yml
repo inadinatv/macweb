@@ -344,6 +344,7 @@ panels:
     page_template: "{base_url}/matches?id={slug}"
     embed_template: "{base_url}/matches?id={slug}"
     embed_fallback: true
+    embed_first: true
     referrer: "{base_url}/"
     channels:
       - { slug: "bein-sports-1",     name: "BEIN SPORTS 1" }

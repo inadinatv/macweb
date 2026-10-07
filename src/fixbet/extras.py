@@ -730,17 +730,22 @@ def resolve_channel(panel: dict[str, Any], ctx: dict[str, Any], ch: dict[str, An
                 if (panel.get("playback") or {}).get("require_proxy"):
                     sources[-1]["requires_proxy"] = True
 
-    add(static, "hls")
-    add(resolved, "hls")
-    add(fallback, "hls")
-    add(embed_url, "embed")
+    source_candidates = [
+        (static, "hls"), (resolved, "hls"), (fallback, "hls"), (embed_url, "embed"),
+    ]
+    if panel.get("embed_first") and embed_url:
+        source_candidates = [(embed_url, "embed")] + [
+            item for item in source_candidates if item != (embed_url, "embed")
+        ]
+    for url, typ in source_candidates:
+        add(url, typ)
     n = 0
     for s in sources:
         if s["type"] == "hls":
             n += 1
             s["label"] = f"Kaynak {n}"
         else:
-            s["label"] = "Site"
+            s["label"] = "Iframe"
 
     return {
         "id": f"{panel_id}:{slug}",

@@ -118,7 +118,7 @@ def test_resolve_panel_online_and_sources_order():
         BASE + "/kanal/bein-sports-1",
     ]
     assert [s["type"] for s in bs1["sources"]] == ["hls", "hls", "embed"]
-    assert bs1["sources"][0]["label"] == "Kaynak 1" and bs1["sources"][2]["label"] == "Site"
+    assert bs1["sources"][0]["label"] == "Kaynak 1" and bs1["sources"][2]["label"] == "Iframe"
     assert bs1["icon"] == "⚽" and bs1["panel_name"] == "ATOM SPOR"
 
     ss = by["s-sport"]
@@ -365,7 +365,7 @@ def test_refresh_writes_output_and_site_embeds_extra():
             assert sel["id"] == "selcuk" and sel["player_base"] == player and sel["resolved"] == 1
             sbs1 = sel["channels"][0]
             assert sbs1["sources"][0]["url"] == "https://cdn.sel/hls/selcukbeinsports1/playlist.m3u8"
-            assert sbs1["sources"][-1] == {"type": "embed", "label": "Site",
+            assert sbs1["sources"][-1] == {"type": "embed", "label": "Iframe",
                                            "url": player + "/index.php?id=selcukbeinsports1"}
             assert sbs1["referrer"] == sel_base + "/"
             # Mahsun: baseurls'den sunucu bulundu, doğrulanan kanal canlı çözüldü
@@ -592,7 +592,7 @@ def test_mahsun_offline_uses_default_stream_base():
     print("OK: mahsun_offline_uses_default_stream_base")
 
 
-def test_api_resolver_adds_channel_specific_hls_before_embed():
+def test_api_resolver_can_prefer_embed_and_keep_hls_alternative():
     now = datetime(2026, 10, 5, 12, 0, tzinfo=timezone.utc)
     base = "https://justintv109.top"
     panel = {
@@ -603,7 +603,7 @@ def test_api_resolver_adds_channel_specific_hls_before_embed():
         },
         "page_template": "{base_url}/matches?id={slug}",
         "embed_template": "{base_url}/matches?id={slug}",
-        "embed_fallback": True, "referrer": "{base_url}/",
+        "embed_fallback": True, "embed_first": True, "referrer": "{base_url}/",
         "channels": [{"slug": "bein-sports-1", "name": "BEIN SPORTS 1"}],
     }
     net = FakeNet({
@@ -616,7 +616,6 @@ def test_api_resolver_adds_channel_specific_hls_before_embed():
     ch = out["channels"][0]
     assert out["resolved"] == 1
     assert ch["resolved_url"] == "https://edge.example/bs1/index.m3u8"
-    assert ch["sources"][0]["type"] == "hls"
-    assert ch["sources"][0]["url"] == "https://edge.example/bs1/index.m3u8"
-    assert ch["sources"][-1]["type"] == "embed"
-    assert ch["sources"][-1]["url"] == base + "/matches?id=bein-sports-1"
+    assert [s["type"] for s in ch["sources"]] == ["embed", "hls"]
+    assert ch["sources"][0]["url"] == base + "/matches?id=bein-sports-1"
+    assert ch["sources"][1]["url"] == "https://edge.example/bs1/index.m3u8"
