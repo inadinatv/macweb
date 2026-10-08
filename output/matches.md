@@ -1,12 +1,11 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-10-08 19:53  
-> **Toplam maç:** 9  |  **Canlı:** 2  |  **Yaklaşan:** 0
+> **Güncellenme:** 2026-10-08 20:48  
+> **Toplam maç:** 9  |  **Canlı:** 1  |  **Yaklaşan:** 0
 
 ## 🔴 CANLI
 
-- 🔴 **Panathinaikos vs Fenerbahçe Tarfin** — CANLI · `21:15` | Euroleague <https://fixbettv84.com/channel.html?id=ss>
 - 🔴 **Real Madrid vs Partizan** — CANLI · `21:45` | Euroleague <https://fixbettv84.com/channel.html?id=ss2>
 
 ## ✅ BİTTİ
@@ -18,6 +17,7 @@
 - ✅ **Denizli İdmanyurdu vs Serik Bld.** — MS · `17:00` | Ziraat Türkiye Kupası <https://fixbettv84.com/channel.html?id=as>
 - ✅ **Dubai Basket vs Kızılyıldız** — MS · `19:00` | Euroleague <https://fixbettv84.com/channel.html?id=ss2>
 - ✅ **Orduspor vs Karadeniz Ereğli** — MS · `20:00` | Ziraat Türkiye Kupası <https://fixbettv84.com/channel.html?id=as>
+- ✅ **Panathinaikos vs Fenerbahçe Tarfin** — MS · `21:15` | Euroleague <https://fixbettv84.com/channel.html?id=ss>
 
 ---
 ## 🏆 Lig Bazlı
@@ -27,7 +27,7 @@
 
 ### Euroleague
 - ⏰ Dubai Basket vs Kızılyıldız — 19:00
-- 🔴 Panathinaikos vs Fenerbahçe Tarfin — 21:15
+- ⏰ Panathinaikos vs Fenerbahçe Tarfin — 21:15
 - 🔴 Real Madrid vs Partizan — 21:45
 
 ### TVF Erkekler Kupa Volley
@@ -102,7 +102,7 @@
 - 🟢 **BEIN SPORTS 3** <https://ladyboy.yedektv.cfd//bein3/tracks-v1a1/mono.m3u8>
 - 🟢 **BEIN SPORTS 4** <https://ladyboy.yedektv.cfd//bein4/tracks-v1a1/mono.m3u8>
 - 🟢 **BEIN SPORTS 5** <https://ladyboy.yedektv.cfd//bein5/tracks-v1a1/mono.m3u8>
-- ⚪ **S SPORT** <https://tv.atomspor.workers.dev/?ID=s-sport>
+- 🟢 **S SPORT** <https://ladyboy.yedektv.cfd//s-sportt/tracks-v1a1/mono.m3u8>
 - 🟢 **S SPORT 2** <https://ladyboy.yedektv.cfd//s-sport2/tracks-v1a1/mono.m3u8>
 - ⚪ **S SPORT PLUS** <https://tv.atomspor.workers.dev/?ID=ssport-plus>
 - ⚪ **TIVIBU SPOR 1** <https://tv.atomspor.workers.dev/?ID=tivibu-spor-1>
@@ -211,7 +211,7 @@
 - 🟢 **BEIN SPORTS 5** <https://ladyboy.yedektv.cfd//bein5/tracks-v1a1/mono.m3u8>
 - 🟢 **BEIN SPORTS MAX 1** <https://ladyboy.yedektv.cfd//beinmax1/tracks-v1a1/mono.m3u8>
 - 🟢 **BEIN SPORTS MAX 2** <https://ladyboy.yedektv.cfd//beinmax2/tracks-v1a1/mono.m3u8>
-- 🟢 **S SPORT** <https://ladyboy.yedektv.cfd//s-sport/tracks-v1a1/mono.m3u8>
+- 🟢 **S SPORT** <https://ladyboy.yedektv.cfd//s-sportt/tracks-v1a1/mono.m3u8>
 - 🟢 **S SPORT 2** <https://ladyboy.yedektv.cfd//s-sport2/tracks-v1a1/mono.m3u8>
 - 🟢 **TRT SPOR** <https://ladyboy.yedektv.cfd//trt-spor/tracks-v1a1/mono.m3u8>
 - 🟢 **TRT 1** <https://ladyboy.yedektv.cfd//trt1/tracks-v1a1/mono.m3u8>

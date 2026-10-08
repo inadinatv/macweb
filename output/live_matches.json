@@ -13,37 +13,11 @@
       "fixbettv12.com",
       "fixbettv11.com"
     ],
-    "last_checked": "2026-10-08T15:56:59+00:00",
+    "last_checked": "2026-10-08T20:48:11+00:00",
     "note": "OK",
     "probed": 200
   },
   "live": [
-    {
-      "match_id": "ss",
-      "home": "Panathinaikos",
-      "away": "Fenerbahçe Tarfin",
-      "league": "Euroleague",
-      "time": "21:15",
-      "sport": "Basketbol",
-      "is_match_of_day": false,
-      "channel_id": "ss",
-      "logo_home": "https://img.sporekrani.com/teams/pBmHTDjxdSE8r4oiLuT8COAOtUK74PD6fh5uF4l4.png",
-      "logo_away": "https://img.sporekrani.com/teams/6fad4a16-b5bd-4727-8443-ddac90b0d13c.png",
-      "status": "live",
-      "started": true,
-      "raw_event": "21:15 | Euroleague",
-      "url": "https://fixbettv84.com/channel.html?id=ss",
-      "fetched_at": "",
-      "status_source": "schedule",
-      "raw_status": "",
-      "score_home": null,
-      "score_away": null,
-      "score_source": "",
-      "score_updated_at": "",
-      "event_id": "",
-      "starts_at": "2026-10-08T21:15:00+03:00",
-      "status_clock": ""
-    },
     {
       "match_id": "ss2",
       "home": "Real Madrid",
