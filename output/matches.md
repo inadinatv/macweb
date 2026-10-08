@@ -1,12 +1,15 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-10-08 06:40  
-> **Toplam maç:** 9  |  **Canlı:** 0  |  **Yaklaşan:** 9
+> **Güncellenme:** 2026-10-08 08:01  
+> **Toplam maç:** 9  |  **Canlı:** 1  |  **Yaklaşan:** 8
+
+## 🔴 CANLI
+
+- 🔴 **K.Muchova vs N.Bartunkova** — CANLI · `10:00` | WTA Pekin <https://fixbettv84.com/channel.html?id=bm1>
 
 ## ⏰ YAKLAŞAN
 
-- ⏰ **K.Muchova vs N.Bartunkova** — YAKLAŞAN · `10:00` | WTA Pekin <https://fixbettv84.com/channel.html?id=bm1>
 - ⏰ **L.Van Assche vs Y.Bu** — YAKLAŞAN · `13:00` | ATP Shanghai <https://fixbettv84.com/channel.html?id=ss>
 - ⏰ **Erciyes 38 FK vs Kahta 02** — YAKLAŞAN · `14:00` | Ziraat Türkiye Kupası <https://fixbettv84.com/channel.html?id=as>
 - ⏰ **TFL Altekma vs Gaziantep Gençlik** — YAKLAŞAN · `16:00` | TVF Erkekler Kupa Volley <https://fixbettv84.com/channel.html?id=trtspor2>
@@ -31,7 +34,7 @@
 - ⏰ TFL Altekma vs Gaziantep Gençlik — 16:00
 
 ### WTA Pekin
-- ⏰ K.Muchova vs N.Bartunkova — 10:00
+- 🔴 K.Muchova vs N.Bartunkova — 10:00
 
 ### Ziraat Türkiye Kupası
 - ⏰ Erciyes 38 FK vs Kahta 02 — 14:00

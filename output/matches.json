@@ -13,20 +13,20 @@
       "fixbettv12.com",
       "fixbettv11.com"
     ],
-    "last_checked": "2026-10-08T02:22:09+00:00",
+    "last_checked": "2026-10-08T08:01:10+00:00",
     "note": "OK",
     "probed": 200
   },
   "categories": {
     "meta": {
-      "generated_at": "2026-10-08T09:40:13+03:00",
+      "generated_at": "2026-10-08T11:00:40+03:00",
       "date": "2026-10-08",
       "total_matches": 9
     },
     "counts": {
       "total": 9,
-      "live": 0,
-      "upcoming": 9,
+      "live": 1,
+      "upcoming": 8,
       "finished": 0,
       "match_of_day": 0,
       "postponed": 0,
@@ -38,8 +38,7 @@
     "cancelled": [],
     "suspended": [],
     "abandoned": [],
-    "live": [],
-    "upcoming": [
+    "live": [
       {
         "match_id": "bm1",
         "home": "K.Muchova",
@@ -51,8 +50,8 @@
         "channel_id": "bm1",
         "logo_home": "https://static.flashscore.com/res/image/data/zPfjENFG-b9SLPqcf.png",
         "logo_away": "https://static.flashscore.com/res/image/data/U1bZs9e5-SUaUoUDh.png",
-        "status": "upcoming",
-        "started": false,
+        "status": "live",
+        "started": true,
         "raw_event": "10:00 | WTA Pekin",
         "url": "https://fixbettv84.com/channel.html?id=bm1",
         "fetched_at": "",
@@ -65,7 +64,9 @@
         "event_id": "",
         "starts_at": "2026-10-08T10:00:00+03:00",
         "status_clock": ""
-      },
+      }
+    ],
+    "upcoming": [
       {
         "match_id": "ss",
         "home": "L.Van Assche",
@@ -426,8 +427,8 @@
           "channel_id": "bm1",
           "logo_home": "https://static.flashscore.com/res/image/data/zPfjENFG-b9SLPqcf.png",
           "logo_away": "https://static.flashscore.com/res/image/data/U1bZs9e5-SUaUoUDh.png",
-          "status": "upcoming",
-          "started": false,
+          "status": "live",
+          "started": true,
           "raw_event": "10:00 | WTA Pekin",
           "url": "https://fixbettv84.com/channel.html?id=bm1",
           "fetched_at": "",
@@ -696,8 +697,8 @@
           "channel_id": "bm1",
           "logo_home": "https://static.flashscore.com/res/image/data/zPfjENFG-b9SLPqcf.png",
           "logo_away": "https://static.flashscore.com/res/image/data/U1bZs9e5-SUaUoUDh.png",
-          "status": "upcoming",
-          "started": false,
+          "status": "live",
+          "started": true,
           "raw_event": "10:00 | WTA Pekin",
           "url": "https://fixbettv84.com/channel.html?id=bm1",
           "fetched_at": "",
@@ -780,8 +781,8 @@
       "channel_id": "bm1",
       "logo_home": "https://static.flashscore.com/res/image/data/zPfjENFG-b9SLPqcf.png",
       "logo_away": "https://static.flashscore.com/res/image/data/U1bZs9e5-SUaUoUDh.png",
-      "status": "upcoming",
-      "started": false,
+      "status": "live",
+      "started": true,
       "raw_event": "10:00 | WTA Pekin",
       "url": "https://fixbettv84.com/channel.html?id=bm1",
       "fetched_at": "",
