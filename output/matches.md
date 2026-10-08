@@ -1,13 +1,8 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-10-08 15:32  
-> **Toplam maç:** 9  |  **Canlı:** 2  |  **Yaklaşan:** 4
-
-## 🔴 CANLI
-
-- 🔴 **TFL Altekma vs Gaziantep Gençlik** — CANLI · `16:00` | TVF Erkekler Kupa Volley <https://fixbettv84.com/channel.html?id=trtspor2>
-- 🔴 **Denizli İdmanyurdu vs Serik Bld.** — CANLI · `17:00` | Ziraat Türkiye Kupası <https://fixbettv84.com/channel.html?id=as>
+> **Güncellenme:** 2026-10-08 15:57  
+> **Toplam maç:** 9  |  **Canlı:** 0  |  **Yaklaşan:** 4
 
 ## ⏰ YAKLAŞAN
 
@@ -21,6 +16,8 @@
 - ✅ **K.Muchova vs N.Bartunkova** — MS · `10:00` | WTA Pekin <https://fixbettv84.com/channel.html?id=bm1>
 - ✅ **L.Van Assche vs Y.Bu** — MS · `13:00` | ATP Shanghai <https://fixbettv84.com/channel.html?id=ss>
 - ✅ **Erciyes 38 FK vs Kahta 02** — MS · `14:00` | Ziraat Türkiye Kupası <https://fixbettv84.com/channel.html?id=as>
+- ✅ **TFL Altekma vs Gaziantep Gençlik** — MS · `16:00` | TVF Erkekler Kupa Volley <https://fixbettv84.com/channel.html?id=trtspor2>
+- ✅ **Denizli İdmanyurdu vs Serik Bld.** — MS · `17:00` | Ziraat Türkiye Kupası <https://fixbettv84.com/channel.html?id=as>
 
 ---
 ## 🏆 Lig Bazlı
@@ -34,14 +31,14 @@
 - ⏰ Real Madrid vs Partizan — 21:45
 
 ### TVF Erkekler Kupa Volley
-- 🔴 TFL Altekma vs Gaziantep Gençlik — 16:00
+- ⏰ TFL Altekma vs Gaziantep Gençlik — 16:00
 
 ### WTA Pekin
 - ⏰ K.Muchova vs N.Bartunkova — 10:00
 
 ### Ziraat Türkiye Kupası
 - ⏰ Erciyes 38 FK vs Kahta 02 — 14:00
-- 🔴 Denizli İdmanyurdu vs Serik Bld. — 17:00
+- ⏰ Denizli İdmanyurdu vs Serik Bld. — 17:00
 - ⏰ Orduspor vs Karadeniz Ereğli — 20:00
 
 ---
@@ -120,7 +117,7 @@
 - 🟢 **BEIN SPORTS 2** <https://dga1op10s1u3lea.82250d06d39d38.click/live/selcukbeinsports2/playlist.m3u8>
 - 🟢 **BEIN SPORTS 3** <https://dga1op10s1u3lea.82250d06d39d38.click/live/selcukbeinsports3/playlist.m3u8>
 - 🟢 **BEIN SPORTS 4** <https://dga1op10s1u3lea.82250d06d39d38.click/live/selcukbeinsports4/playlist.m3u8>
-- ⚪ **BEIN SPORTS 5**
+- 🟢 **BEIN SPORTS 5** <https://dga1op10s1u3lea.82250d06d39d38.click/live/selcukbeinsports5/playlist.m3u8>
 - 🟢 **BEIN SPORTS MAX 1** <https://dga1op10s1u3lea.82250d06d39d38.click/live/selcukbeinsportsmax1/playlist.m3u8>
 - 🟢 **BEIN SPORTS MAX 2** <https://dga1op10s1u3lea.82250d06d39d38.click/live/selcukbeinsportsmax2/playlist.m3u8>
 - 🟢 **S SPORT** <https://dga1op10s1u3lea.82250d06d39d38.click/live/selcukssport/playlist.m3u8>
