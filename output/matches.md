@@ -1,23 +1,26 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-10-08 08:01  
-> **Toplam maç:** 9  |  **Canlı:** 1  |  **Yaklaşan:** 8
+> **Güncellenme:** 2026-10-08 14:03  
+> **Toplam maç:** 9  |  **Canlı:** 2  |  **Yaklaşan:** 4
 
 ## 🔴 CANLI
 
-- 🔴 **K.Muchova vs N.Bartunkova** — CANLI · `10:00` | WTA Pekin <https://fixbettv84.com/channel.html?id=bm1>
+- 🔴 **TFL Altekma vs Gaziantep Gençlik** — CANLI · `16:00` | TVF Erkekler Kupa Volley <https://fixbettv84.com/channel.html?id=trtspor2>
+- 🔴 **Denizli İdmanyurdu vs Serik Bld.** — CANLI · `17:00` | Ziraat Türkiye Kupası <https://fixbettv84.com/channel.html?id=as>
 
 ## ⏰ YAKLAŞAN
 
-- ⏰ **L.Van Assche vs Y.Bu** — YAKLAŞAN · `13:00` | ATP Shanghai <https://fixbettv84.com/channel.html?id=ss>
-- ⏰ **Erciyes 38 FK vs Kahta 02** — YAKLAŞAN · `14:00` | Ziraat Türkiye Kupası <https://fixbettv84.com/channel.html?id=as>
-- ⏰ **TFL Altekma vs Gaziantep Gençlik** — YAKLAŞAN · `16:00` | TVF Erkekler Kupa Volley <https://fixbettv84.com/channel.html?id=trtspor2>
-- ⏰ **Denizli İdmanyurdu vs Serik Bld.** — YAKLAŞAN · `17:00` | Ziraat Türkiye Kupası <https://fixbettv84.com/channel.html?id=as>
 - ⏰ **Dubai Basket vs Kızılyıldız** — YAKLAŞAN · `19:00` | Euroleague <https://fixbettv84.com/channel.html?id=ss2>
 - ⏰ **Orduspor vs Karadeniz Ereğli** — YAKLAŞAN · `20:00` | Ziraat Türkiye Kupası <https://fixbettv84.com/channel.html?id=as>
 - ⏰ **Panathinaikos vs Fenerbahçe Tarfin** — YAKLAŞAN · `21:15` | Euroleague <https://fixbettv84.com/channel.html?id=ss>
 - ⏰ **Real Madrid vs Partizan** — YAKLAŞAN · `21:45` | Euroleague <https://fixbettv84.com/channel.html?id=ss2>
+
+## ✅ BİTTİ
+
+- ✅ **K.Muchova vs N.Bartunkova** — MS · `10:00` | WTA Pekin <https://fixbettv84.com/channel.html?id=bm1>
+- ✅ **L.Van Assche vs Y.Bu** — MS · `13:00` | ATP Shanghai <https://fixbettv84.com/channel.html?id=ss>
+- ✅ **Erciyes 38 FK vs Kahta 02** — MS · `14:00` | Ziraat Türkiye Kupası <https://fixbettv84.com/channel.html?id=as>
 
 ---
 ## 🏆 Lig Bazlı
@@ -31,14 +34,14 @@
 - ⏰ Real Madrid vs Partizan — 21:45
 
 ### TVF Erkekler Kupa Volley
-- ⏰ TFL Altekma vs Gaziantep Gençlik — 16:00
+- 🔴 TFL Altekma vs Gaziantep Gençlik — 16:00
 
 ### WTA Pekin
-- 🔴 K.Muchova vs N.Bartunkova — 10:00
+- ⏰ K.Muchova vs N.Bartunkova — 10:00
 
 ### Ziraat Türkiye Kupası
 - ⏰ Erciyes 38 FK vs Kahta 02 — 14:00
-- ⏰ Denizli İdmanyurdu vs Serik Bld. — 17:00
+- 🔴 Denizli İdmanyurdu vs Serik Bld. — 17:00
 - ⏰ Orduspor vs Karadeniz Ereğli — 20:00
 
 ---
