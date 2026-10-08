@@ -1,15 +1,13 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-10-08 15:57  
-> **Toplam maç:** 9  |  **Canlı:** 0  |  **Yaklaşan:** 4
+> **Güncellenme:** 2026-10-08 19:53  
+> **Toplam maç:** 9  |  **Canlı:** 2  |  **Yaklaşan:** 0
 
-## ⏰ YAKLAŞAN
+## 🔴 CANLI
 
-- ⏰ **Dubai Basket vs Kızılyıldız** — YAKLAŞAN · `19:00` | Euroleague <https://fixbettv84.com/channel.html?id=ss2>
-- ⏰ **Orduspor vs Karadeniz Ereğli** — YAKLAŞAN · `20:00` | Ziraat Türkiye Kupası <https://fixbettv84.com/channel.html?id=as>
-- ⏰ **Panathinaikos vs Fenerbahçe Tarfin** — YAKLAŞAN · `21:15` | Euroleague <https://fixbettv84.com/channel.html?id=ss>
-- ⏰ **Real Madrid vs Partizan** — YAKLAŞAN · `21:45` | Euroleague <https://fixbettv84.com/channel.html?id=ss2>
+- 🔴 **Panathinaikos vs Fenerbahçe Tarfin** — CANLI · `21:15` | Euroleague <https://fixbettv84.com/channel.html?id=ss>
+- 🔴 **Real Madrid vs Partizan** — CANLI · `21:45` | Euroleague <https://fixbettv84.com/channel.html?id=ss2>
 
 ## ✅ BİTTİ
 
@@ -18,6 +16,8 @@
 - ✅ **Erciyes 38 FK vs Kahta 02** — MS · `14:00` | Ziraat Türkiye Kupası <https://fixbettv84.com/channel.html?id=as>
 - ✅ **TFL Altekma vs Gaziantep Gençlik** — MS · `16:00` | TVF Erkekler Kupa Volley <https://fixbettv84.com/channel.html?id=trtspor2>
 - ✅ **Denizli İdmanyurdu vs Serik Bld.** — MS · `17:00` | Ziraat Türkiye Kupası <https://fixbettv84.com/channel.html?id=as>
+- ✅ **Dubai Basket vs Kızılyıldız** — MS · `19:00` | Euroleague <https://fixbettv84.com/channel.html?id=ss2>
+- ✅ **Orduspor vs Karadeniz Ereğli** — MS · `20:00` | Ziraat Türkiye Kupası <https://fixbettv84.com/channel.html?id=as>
 
 ---
 ## 🏆 Lig Bazlı
@@ -27,8 +27,8 @@
 
 ### Euroleague
 - ⏰ Dubai Basket vs Kızılyıldız — 19:00
-- ⏰ Panathinaikos vs Fenerbahçe Tarfin — 21:15
-- ⏰ Real Madrid vs Partizan — 21:45
+- 🔴 Panathinaikos vs Fenerbahçe Tarfin — 21:15
+- 🔴 Real Madrid vs Partizan — 21:45
 
 ### TVF Erkekler Kupa Volley
 - ⏰ TFL Altekma vs Gaziantep Gençlik — 16:00
