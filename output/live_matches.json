@@ -17,5 +17,32 @@
     "note": "OK",
     "probed": 200
   },
-  "live": []
+  "live": [
+    {
+      "match_id": "ex6",
+      "home": "Arjantin",
+      "away": "Benin",
+      "league": "Hazırlık Maçı",
+      "time": "02:00",
+      "sport": "Futbol",
+      "is_match_of_day": false,
+      "channel_id": "ex6",
+      "logo_home": "https://img.sporekrani.com/teams/N9BEHqnEsJFwmlCqoOrOaojAnUxw9G7FY2UADUAO.png",
+      "logo_away": "https://img.sporekrani.com/teams/K36CqXBZ6dJEuSgVd2QhoTlsHst3tB0GXkIPeA4V.png",
+      "status": "live",
+      "started": true,
+      "raw_event": "02:00 | Hazırlık Maçı",
+      "url": "https://fixbettv84.com/channel.html?id=ex6",
+      "fetched_at": "",
+      "status_source": "schedule",
+      "raw_status": "",
+      "score_home": null,
+      "score_away": null,
+      "score_source": "",
+      "score_updated_at": "",
+      "event_id": "",
+      "starts_at": "2026-10-08T02:00:00+03:00",
+      "status_clock": ""
+    }
+  ]
 }

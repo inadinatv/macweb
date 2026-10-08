@@ -19,7 +19,7 @@
   },
   "date": "2026-10-08",
   "timezone": "Europe/Istanbul",
-  "generated_at": "2026-10-08T01:23:42+03:00",
+  "generated_at": "2026-10-08T03:39:35+03:00",
   "matches": [
     {
       "match_id": "ex6",
@@ -32,8 +32,8 @@
       "channel_id": "ex6",
       "logo_home": "https://img.sporekrani.com/teams/N9BEHqnEsJFwmlCqoOrOaojAnUxw9G7FY2UADUAO.png",
       "logo_away": "https://img.sporekrani.com/teams/K36CqXBZ6dJEuSgVd2QhoTlsHst3tB0GXkIPeA4V.png",
-      "status": "upcoming",
-      "started": false,
+      "status": "live",
+      "started": true,
       "raw_event": "02:00 | Hazırlık Maçı",
       "url": "https://fixbettv84.com/channel.html?id=ex6",
       "fetched_at": "",
