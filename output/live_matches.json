@@ -13,36 +13,9 @@
       "fixbettv12.com",
       "fixbettv11.com"
     ],
-    "last_checked": "2026-10-08T20:48:11+00:00",
+    "last_checked": "2026-10-08T22:37:24+00:00",
     "note": "OK",
     "probed": 200
   },
-  "live": [
-    {
-      "match_id": "ss2",
-      "home": "Real Madrid",
-      "away": "Partizan",
-      "league": "Euroleague",
-      "time": "21:45",
-      "sport": "Basketbol",
-      "is_match_of_day": false,
-      "channel_id": "ss2",
-      "logo_home": "https://img.sporekrani.com/teams/tGkJGgNyCmYK4sBJa0c8fePaLQoJuH1103BH1Tv7.png",
-      "logo_away": "https://img.sporekrani.com/teams/h8Sj15lmUiN8Q4RJCSuXjgtgAUVsi7THt9EHGNnl.png",
-      "status": "live",
-      "started": true,
-      "raw_event": "21:45 | Euroleague",
-      "url": "https://fixbettv84.com/channel.html?id=ss2",
-      "fetched_at": "",
-      "status_source": "schedule",
-      "raw_status": "",
-      "score_home": null,
-      "score_away": null,
-      "score_source": "",
-      "score_updated_at": "",
-      "event_id": "",
-      "starts_at": "2026-10-08T21:45:00+03:00",
-      "status_clock": ""
-    }
-  ]
+  "live": []
 }

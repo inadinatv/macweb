@@ -1,45 +1,61 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-10-08 20:48  
-> **Toplam maç:** 9  |  **Canlı:** 1  |  **Yaklaşan:** 0
+> **Güncellenme:** 2026-10-08 22:38  
+> **Toplam maç:** 12  |  **Canlı:** 0  |  **Yaklaşan:** 9
 
-## 🔴 CANLI
+## ⏰ YAKLAŞAN
 
-- 🔴 **Real Madrid vs Partizan** — CANLI · `21:45` | Euroleague <https://fixbettv84.com/channel.html?id=ss2>
+- ⏰ **Q.Zheng vs E.Svitolina** — YAKLAŞAN · `10:00` | WTA Pekin <https://fixbettv84.com/channel.html?id=bm1>
+- ⏰ **Veres Rivne vs Shakhtar Donetsk** — YAKLAŞAN · `15:30` | Ukrayna Premier Ligi <https://fixbettv84.com/channel.html?id=t1>
+- ⏰ **Sivasspor vs Pendikspor** — YAKLAŞAN · `17:00` | Trendyol 1. Lig <https://fixbettv84.com/channel.html?id=trtspor>
+- ⏰ **Bodrumspor vs Keçiörengücü** — YAKLAŞAN · `17:00` | Trendyol 1. Lig <https://fixbettv84.com/channel.html?id=b2>
+- ⏰ **Sungurlu Bld. vs Sultanbeyli Bld.** — YAKLAŞAN · `19:00` | TVF Erkekler Kupa Volley <https://fixbettv84.com/channel.html?id=trtspor2>
+- ⏰ **Galatasaray vs Kasımpaşa** — YAKLAŞAN · `20:00` | Trendyol Süper Lig ★ **Günün Maçı** <https://fixbettv84.com/channel.html?id=zirve>
+- ⏰ **Ümraniyespor vs Sarıyer** — YAKLAŞAN · `20:00` | Trendyol 1. Lig <https://fixbettv84.com/channel.html?id=b2>
+- ⏰ **Vanspor vs Bandırmaspor** — YAKLAŞAN · `20:00` | Trendyol 1. Lig <https://fixbettv84.com/channel.html?id=trtspor>
+- ⏰ **Lens vs Lyon** — YAKLAŞAN · `21:45` | Fransa Ligue 1 <https://fixbettv84.com/channel.html?id=b4>
 
 ## ✅ BİTTİ
 
-- ✅ **K.Muchova vs N.Bartunkova** — MS · `10:00` | WTA Pekin <https://fixbettv84.com/channel.html?id=bm1>
-- ✅ **L.Van Assche vs Y.Bu** — MS · `13:00` | ATP Shanghai <https://fixbettv84.com/channel.html?id=ss>
-- ✅ **Erciyes 38 FK vs Kahta 02** — MS · `14:00` | Ziraat Türkiye Kupası <https://fixbettv84.com/channel.html?id=as>
-- ✅ **TFL Altekma vs Gaziantep Gençlik** — MS · `16:00` | TVF Erkekler Kupa Volley <https://fixbettv84.com/channel.html?id=trtspor2>
-- ✅ **Denizli İdmanyurdu vs Serik Bld.** — MS · `17:00` | Ziraat Türkiye Kupası <https://fixbettv84.com/channel.html?id=as>
-- ✅ **Dubai Basket vs Kızılyıldız** — MS · `19:00` | Euroleague <https://fixbettv84.com/channel.html?id=ss2>
-- ✅ **Orduspor vs Karadeniz Ereğli** — MS · `20:00` | Ziraat Türkiye Kupası <https://fixbettv84.com/channel.html?id=as>
-- ✅ **Panathinaikos vs Fenerbahçe Tarfin** — MS · `21:15` | Euroleague <https://fixbettv84.com/channel.html?id=ss>
+- ✅ **Olympiakos vs Anadolu Efes** — MS · `21:15` | Euroleague <https://fixbettv84.com/channel.html?id=ss>
+- ✅ **Baskonia vs Beşiktaş** — MS · `21:30` | Euroleague <https://fixbettv84.com/channel.html?id=ss2>
+- ✅ **Braga vs Sporting Lisbon** — MS · `22:15` | Portekiz Liga NOS <https://fixbettv84.com/channel.html?id=b3>
+
+## ⭐ GÜNÜN MAÇI
+
+- ⏰ **Galatasaray vs Kasımpaşa** — YAKLAŞAN · `20:00` | Trendyol Süper Lig ★ **Günün Maçı** <https://fixbettv84.com/channel.html?id=zirve>
 
 ---
 ## 🏆 Lig Bazlı
 
-### ATP Shanghai
-- ⏰ L.Van Assche vs Y.Bu — 13:00
-
 ### Euroleague
-- ⏰ Dubai Basket vs Kızılyıldız — 19:00
-- ⏰ Panathinaikos vs Fenerbahçe Tarfin — 21:15
-- 🔴 Real Madrid vs Partizan — 21:45
+- ⏰ Olympiakos vs Anadolu Efes — 21:15
+- ⏰ Baskonia vs Beşiktaş — 21:30
+
+### Fransa Ligue 1
+- ⏰ Lens vs Lyon — 21:45
+
+### Portekiz Liga NOS
+- ⏰ Braga vs Sporting Lisbon — 22:15
 
 ### TVF Erkekler Kupa Volley
-- ⏰ TFL Altekma vs Gaziantep Gençlik — 16:00
+- ⏰ Sungurlu Bld. vs Sultanbeyli Bld. — 19:00
+
+### Trendyol 1. Lig
+- ⏰ Sivasspor vs Pendikspor — 17:00
+- ⏰ Bodrumspor vs Keçiörengücü — 17:00
+- ⏰ Ümraniyespor vs Sarıyer — 20:00
+- ⏰ Vanspor vs Bandırmaspor — 20:00
+
+### Trendyol Süper Lig
+- ⏰ Galatasaray vs Kasımpaşa — 20:00
+
+### Ukrayna Premier Ligi
+- ⏰ Veres Rivne vs Shakhtar Donetsk — 15:30
 
 ### WTA Pekin
-- ⏰ K.Muchova vs N.Bartunkova — 10:00
-
-### Ziraat Türkiye Kupası
-- ⏰ Erciyes 38 FK vs Kahta 02 — 14:00
-- ⏰ Denizli İdmanyurdu vs Serik Bld. — 17:00
-- ⏰ Orduspor vs Karadeniz Ereğli — 20:00
+- ⏰ Q.Zheng vs E.Svitolina — 10:00
 
 ---
 ## 📺 7/24 KANALLAR (31)
@@ -96,7 +112,7 @@
 ---
 ## ⚡ EKSTRA PANELLER — m3u8 (109)
 
-### ⚛️ ATOM SPOR ✅ `https://www.atomsportv516.top`
+### ⚛️ ATOM SPOR ✅ `https://atomsportv516.top`
 - 🟢 **BEIN SPORTS 1** <https://ladyboy.yedektv.cfd//s-sport2/tracks-v1a1/mono.m3u8>
 - 🟢 **BEIN SPORTS 2** <https://ladyboy.yedektv.cfd//bein2/tracks-v1a1/mono.m3u8>
 - 🟢 **BEIN SPORTS 3** <https://ladyboy.yedektv.cfd//bein3/tracks-v1a1/mono.m3u8>
