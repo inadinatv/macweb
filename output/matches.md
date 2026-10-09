@@ -1,12 +1,12 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-10-09 14:32  
+> **Güncellenme:** 2026-10-09 15:39  
 > **Toplam maç:** 11  |  **Canlı:** 2  |  **Yaklaşan:** 8
 
 ## 🔴 CANLI
 
-- 🔴 **Sivasspor 1 - 0 Pendikspor** — CANLI · `17:00` | Trendyol 1. Lig <https://fixbettv84.com/channel.html?id=trtspor>
+- 🔴 **Sivasspor 4 - 0 Pendikspor** — CANLI · `17:00` | Trendyol 1. Lig <https://fixbettv84.com/channel.html?id=trtspor>
 - 🔴 **Bodrumspor vs Keçiörengücü** — CANLI · `17:00` | Trendyol 1. Lig <https://fixbettv84.com/channel.html?id=b2>
 
 ## ⏰ YAKLAŞAN
