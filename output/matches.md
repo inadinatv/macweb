@@ -1,12 +1,15 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-10-09 06:04  
-> **Toplam maç:** 12  |  **Canlı:** 0  |  **Yaklaşan:** 12
+> **Güncellenme:** 2026-10-09 07:19  
+> **Toplam maç:** 12  |  **Canlı:** 1  |  **Yaklaşan:** 11
+
+## 🔴 CANLI
+
+- 🔴 **Q.Zheng vs E.Svitolina** — CANLI · `10:00` | WTA Pekin <https://fixbettv84.com/channel.html?id=bm1>
 
 ## ⏰ YAKLAŞAN
 
-- ⏰ **Q.Zheng vs E.Svitolina** — YAKLAŞAN · `10:00` | WTA Pekin <https://fixbettv84.com/channel.html?id=bm1>
 - ⏰ **Veres Rivne vs Shakhtar Donetsk** — YAKLAŞAN · `15:30` | Ukrayna Premier Ligi <https://fixbettv84.com/channel.html?id=t1>
 - ⏰ **Sivasspor vs Pendikspor** — YAKLAŞAN · `17:00` | Trendyol 1. Lig <https://fixbettv84.com/channel.html?id=trtspor>
 - ⏰ **Bodrumspor vs Keçiörengücü** — YAKLAŞAN · `17:00` | Trendyol 1. Lig <https://fixbettv84.com/channel.html?id=b2>
@@ -52,7 +55,7 @@
 - ⏰ Veres Rivne vs Shakhtar Donetsk — 15:30
 
 ### WTA Pekin
-- ⏰ Q.Zheng vs E.Svitolina — 10:00
+- 🔴 Q.Zheng vs E.Svitolina — 10:00
 
 ---
 ## 📺 7/24 KANALLAR (31)
