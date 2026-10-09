@@ -337,6 +337,7 @@ def test_refresh_writes_output_and_site_embeds_extra():
     justin_cfg = next(p for p in cfg["panels"] if p["id"] == "justintv")
     n_justintv = len(justin_cfg["channels"])
     assert n_justintv == 12
+    assert justin_cfg["resolver"]["url_template"] == "https://teletv15.top/load/yayinlink.php?id={slug}"
     net = FakeNet({
         BASE + "/": (200, '<a href="matches?id=bein-sports-1">BEIN</a>'),
         BASE + "/matches?id=bein-sports-1": (200, 'src:"https://edge.x/bs1/index.m3u8"'),
@@ -598,7 +599,7 @@ def test_api_resolver_adds_channel_specific_hls_before_embed():
     panel = {
         "id": "justintv", "name": "JUSTIN TV", "base_url": base,
         "health_path": "/", "resolver": {
-            "url_template": "https://teletv5.top/load/yayinlink.php?id={slug}",
+            "url_template": "https://teletv15.top/load/yayinlink.php?id={slug}",
             "json_field": "deismackanal",
         },
         "page_template": "{base_url}/matches?id={slug}",
@@ -608,7 +609,7 @@ def test_api_resolver_adds_channel_specific_hls_before_embed():
     }
     net = FakeNet({
         base + "/": (200, '<div data-m3u8="https://cdn.example/placeholder.m3u8"></div>'),
-        "https://teletv5.top/load/yayinlink.php?id=bein-sports-1": (
+        "https://teletv15.top/load/yayinlink.php?id=bein-sports-1": (
             200, '{"deismackanal":"https://edge.example/bs1/index.m3u8"}'
         ),
     })

@@ -339,7 +339,9 @@ panels:
       must_contain_any: ["t2-channel-area", "data-m3u8"]
     health_path: "/"
     resolver:
-      url_template: "https://teletv5.top/load/yayinlink.php?id={slug}"
+      # JustinTV'nin kanal sayfası şu anda teletv15 endpointini çağırıyor;
+      # eski teletv5 hostu erişilemiyor ve kanalları iframe yedeğine düşürüyordu.
+      url_template: "https://teletv15.top/load/yayinlink.php?id={slug}"
       json_field: "deismackanal"
     page_template: "{base_url}/matches?id={slug}"
     embed_template: "{base_url}/matches?id={slug}"
