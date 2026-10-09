@@ -1,14 +1,14 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-10-09 19:41  
+> **Güncellenme:** 2026-10-09 20:00  
 > **Toplam maç:** 11  |  **Canlı:** 4  |  **Yaklaşan:** 0
 
 ## 🔴 CANLI
 
 - 🔴 **Olympiakos vs Anadolu Efes** — CANLI · `21:15` | Euroleague <https://fixbettv84.com/channel.html?id=ss>
 - 🔴 **Baskonia vs Beşiktaş** — CANLI · `21:30` | Euroleague <https://fixbettv84.com/channel.html?id=ss2>
-- 🔴 **Lens 1 - 0 Lyon** — DEVRE · `21:45` | Fransa Ligue 1 <https://fixbettv84.com/channel.html?id=b4>
+- 🔴 **Lens 1 - 0 Lyon** — CANLI · `21:45` | Fransa Ligue 1 <https://fixbettv84.com/channel.html?id=b4>
 - 🔴 **Braga vs Sporting Lisbon** — CANLI · `22:15` | Portekiz Liga NOS <https://fixbettv84.com/channel.html?id=b3>
 
 ## ✅ BİTTİ
@@ -33,7 +33,7 @@
 - 🔴 Baskonia vs Beşiktaş — 21:30
 
 ### Fransa Ligue 1
-- ⏰ Lens vs Lyon — 21:45
+- 🔴 Lens vs Lyon — 21:45
 
 ### Portekiz Liga NOS
 - 🔴 Braga vs Sporting Lisbon — 22:15
