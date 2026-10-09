@@ -155,11 +155,44 @@ def test_espn_date_range_error_retries_with_local_single_day():
     def fetch(url, timeout):
         calls.append(url)
         if len(calls) == 1:
-            raise requests.HTTPError("range unsupported")
+            # ESPN'in aralık hatası bazen HTTP 200 içinde code=400 olarak döner.
+            return {"code": 400, "message": "Failed to get events endpoint."}
         return {"events": [event()]}
     row = scores.enrich([match()], NOW, fetch=fetch, settings=CFG)[0]
     assert row.status == "finished" and row.score_home == 2
     assert len(calls) == 2 and "dates=20260906" in calls[1]
+
+
+def test_backend_fetch_falls_back_between_espn_hosts_and_rejects_http_200_error(monkeypatch):
+    class Response:
+        def __init__(self, payload, status=200):
+            self.payload, self.status_code = payload, status
+        def raise_for_status(self):
+            if self.status_code >= 400:
+                error = requests.HTTPError(f"HTTP {self.status_code}")
+                error.response = self
+                raise error
+        def json(self):
+            return self.payload
+
+    for first_response in (
+        Response({}, 403),
+        Response({"code": 400, "message": "Failed to get events endpoint."}),
+    ):
+        calls = []
+        def fake_get(url, **kwargs):
+            calls.append(url)
+            if "site.web.api.espn.com" in url:
+                return first_response
+            return Response({"events": []})
+        monkeypatch.setattr(scores.requests, "get", fake_get)
+        monkeypatch.setattr(scores, "_ESPN_ACTIVE_BASE", None)
+        result = scores._fetch(scores.API_BASE + "soccer/tur.1/scoreboard?dates=20260906", 8)
+        assert result == {"events": []}
+        expected_calls = 4 if first_response.status_code == 403 else 2
+        assert len(calls) == expected_calls
+        assert "site.web.api.espn.com" in calls[0]
+        assert "site.api.espn.com" in calls[-1]
 
 
 def test_mackolik_match_miss_falls_back_to_espn_for_same_league(monkeypatch):
@@ -192,6 +225,24 @@ def test_confirmed_final_wins_over_other_providers_lagging_live_state(monkeypatc
                         settings=cfg)[0]
     assert row.status == "finished" and row.status_source == "espn"
     assert (row.score_home, row.score_away, row.status_clock) == (2, 1, "")
+
+
+def test_conflicting_final_score_prefers_fixtoor_espn_result(monkeypatch):
+    cfg = dict(CFG, leagues=[{"name": "Premier", "sport": "Futbol", "path": "soccer/tur.1"}])
+    base = int(datetime.fromisoformat("2026-09-06T17:00:00+00:00").timestamp() * 1000)
+    monkeypatch.setattr(scores, "_fetch_mackolik", lambda *args: {"data": {"matches": {
+        "m": {"id": "m", "mstUtc": base, "state": "post", "substate": "fullTime",
+              "status": "state", "statusBoxContent": "MS",
+              "competitionId": scores.MACKOLIK_COMP_MAP["soccer/tur.1"],
+              "homeTeam": {"name": "Manchester United"}, "awayTeam": {"name": "Chelsea"},
+              "score": {"home": "1", "away": "1"}}
+    }}})
+    row = scores.enrich([match(home="Manchester United")], NOW,
+                        fetch=lambda *args: {"events": [event("STATUS_FULL_TIME", pair=("3", "1"))]},
+                        settings=cfg)[0]
+    assert row.status == "finished"
+    assert (row.score_home, row.score_away) == (3, 1)
+    assert row.score_source == "espn"
 
 
 def test_unconfigured_football_league_uses_exact_mackolik_fallback(monkeypatch):

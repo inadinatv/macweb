@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>İNADİNA TV - Canlı Spor & Maç İzleme</title>
     <meta name="description" content="7/24 spor kanalları ve günün gerçek maç programı. Kanala tıkla, yayın doğrudan oynatıcıda açılsın." />
-    <meta name="updated-at" content="2026-10-09 19:41" />
+    <meta name="updated-at" content="2026-10-09 22:54" />
     <meta name="fixbet-source" content="https://fixbettv84.com" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@400;600;700;900&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -829,7 +829,7 @@
 
         <footer class="site-footer">
             <div class="refresh-note">
-                <span>Son güncelleme: <b id="updatedAtText">2026-10-09 19:41</b></span>
+                <span>Son güncelleme: <b id="updatedAtText">2026-10-09 22:54</b></span>
                 <button class="mini-btn" id="refreshDataBtn" title="Maç listesini yeniden yükle">🔄 Maçları yenile</button>
                 <span class="sync-chip sync-wait" id="liveSyncStatus" title="Sayfa, skorları botun anlık görüntüsünü beklemeden canlı skor kaynağından doğrudan tazeler">
                     <span class="sync-dot"></span><span id="liveSyncText">Canlı skor hazırlanıyor</span>
@@ -888,7 +888,7 @@
 
     <script>
         /*BOT_START*/
-        const updatedAt = "2026-10-09 19:41";
+        const updatedAt = "2026-10-09 22:54";
         const matchesSource = "output/today_matches.json";
         const streamLinks = ["https://fixbettv84.com/channel.html?id=zirve", "https://fixbettv84.com/channel.html?id=b2", "https://fixbettv84.com/channel.html?id=b3", "https://fixbettv84.com/channel.html?id=b4", "https://fixbettv84.com/channel.html?id=b5", "https://fixbettv84.com/channel.html?id=bm1", "https://fixbettv84.com/channel.html?id=bm2", "https://fixbettv84.com/channel.html?id=ss", "https://fixbettv84.com/channel.html?id=ss2", "https://fixbettv84.com/channel.html?id=smarts", "https://fixbettv84.com/channel.html?id=sms2", "https://fixbettv84.com/channel.html?id=t1", "https://fixbettv84.com/channel.html?id=t2", "https://fixbettv84.com/channel.html?id=t3", "https://fixbettv84.com/channel.html?id=t4", "https://fixbettv84.com/channel.html?id=trt1", "https://fixbettv84.com/channel.html?id=trtspor", "https://fixbettv84.com/channel.html?id=trtspor2", "https://fixbettv84.com/channel.html?id=as", "https://fixbettv84.com/channel.html?id=eu1", "https://fixbettv84.com/channel.html?id=eu2", "https://fixbettv84.com/channel.html?id=ex7", "https://fixbettv84.com/channel.html?id=ex1", "https://fixbettv84.com/channel.html?id=ex2", "https://fixbettv84.com/channel.html?id=ex3", "https://fixbettv84.com/channel.html?id=ex4", "https://fixbettv84.com/channel.html?id=ex5", "https://fixbettv84.com/channel.html?id=ex6", "https://fixbettv84.com/channel.html?id=atv", "https://fixbettv84.com/channel.html?id=tv8", "https://fixbettv84.com/channel.html?id=tv85"];
         const channelNames = ["BEIN SPORTS 1", "BEIN SPORTS 2", "BEIN SPORTS 3", "BEIN SPORTS 4", "BEIN SPORTS 5", "BEIN SPORTS MAX 1", "BEIN SPORTS MAX 2", "S SPORT", "S SPORT 2", "SMARTSPOR", "SMARTSPOR 2", "TIVIBU SPOR 1", "TIVIBU SPOR 2", "TIVIBU SPOR 3", "TIVIBU SPOR 4", "TRT 1", "TRT SPOR", "TRT SPOR YILDIZ", "A SPOR", "EURO SPORT 1", "EURO SPORT 2", "TABII SPOR", "TABII SPOR 1", "TABII SPOR 2", "TABII SPOR 3", "TABII SPOR 4", "TABII SPOR 5", "TABII SPOR 6", "ATV", "TV 8", "TV 8,5"];
@@ -2089,8 +2089,45 @@
                 if (Object.keys(mapped).length) syncAliases[path] = mapped;
             });
             const SYNC_TTL = 10 * 1000, SYNC_MAX_PARALLEL = 4;
+            // Fixtoor gibi önce ESPN web API'sini, hata/boş şemada site.api'yi dene.
+            // site.api tek başına WAF/HTTP 200 hata gövdesi döndürerek sessizce bayat skor bırakabiliyor.
+            const ESPN_SYNC_BASES = [
+                { name: "site.web", url: "https://site.web.api.espn.com/apis/site/v2/sports/" },
+                { name: "site.api", url: "https://site.api.espn.com/apis/site/v2/sports/" },
+            ];
+            let activeSyncBase = "";
             const syncCache = {}, syncInflight = new Set();
             let syncFailures = 0;
+
+            function espnErrorBody(json) {
+                return !!json && typeof json === "object" && Number(json.code) >= 400 && !!json.message;
+            }
+
+            async function fetchLiveScoreboard(path, query) {
+                const first = ESPN_SYNC_BASES.find((source) => source.name === activeSyncBase);
+                const sources = first ? [first, ...ESPN_SYNC_BASES.filter((source) => source !== first)] : ESPN_SYNC_BASES;
+                let lastError = null;
+                for (const source of sources) {
+                    const controller = new AbortController();
+                    const timer = setTimeout(() => controller.abort(), 4500);
+                    try {
+                        const response = await fetch(source.url + path + "/scoreboard" + query,
+                            { cache: "no-store", signal: controller.signal });
+                        if (!response.ok) throw new Error("HTTP " + response.status);
+                        const json = await response.json();
+                        if (!json || typeof json !== "object" || espnErrorBody(json) || !Array.isArray(json.events)) {
+                            throw new Error("geçersiz ESPN scoreboard yanıtı");
+                        }
+                        activeSyncBase = source.name;
+                        return json;
+                    } catch (error) {
+                        lastError = error;
+                    } finally {
+                        clearTimeout(timer);
+                    }
+                }
+                throw lastError || new Error("ESPN scoreboard kaynakları yanıt vermedi");
+            }
 
             function syncPathFor(m) {
                 return syncPathsByKey[norm(m.sport) + "|" + norm(m.league)] || null;
@@ -2224,14 +2261,10 @@
                     const hit = syncCache[path];
                     if (hit && now.getTime() - hit.at < SYNC_TTL) return;
                     syncInflight.add(path); launched++;
-                    const controller = new AbortController();
-                    const timer = setTimeout(() => controller.abort(), 8000);
                     const day = String((matchesData.find((m) => syncPathFor(m) === path) || {}).date || "").replace(/-/g, "");
                     const query = "?limit=400" + (day ? "&dates=" + encodeURIComponent(day) : "")
                         + "&_ts=" + Math.floor(Date.now() / SYNC_TTL);
-                    fetch("https://site.api.espn.com/apis/site/v2/sports/" + path + "/scoreboard" + query,
-                          { cache: "no-store", signal: controller.signal })
-                        .then((r) => { if (!r.ok) throw new Error("HTTP " + r.status); return r.json(); })
+                    fetchLiveScoreboard(path, query)
                         .then((json) => {
                             const comps = parseEspnScoreboard(json);
                             syncCache[path] = { at: Date.now() };
@@ -2245,7 +2278,7 @@
                             syncFailures++;
                             if (syncFailures >= 3) setSyncChip("sync-wait", "Canlı skor kaynağına erişilemedi · bot verisi gösteriliyor");
                         })
-                        .finally(() => { clearTimeout(timer); syncInflight.delete(path); });
+                        .finally(() => { syncInflight.delete(path); });
                 });
             }
 
@@ -2643,6 +2676,7 @@
                 mergeRemoteMatches: mergeRemoteMatches,
                 refreshMatches: refreshMatches,
                 liveSyncTick: liveSyncTick,
+                fetchLiveScoreboard: fetchLiveScoreboard,
                 applyLiveSync: applyLiveSync,
                 parseEspnScoreboard: parseEspnScoreboard,
                 syncCanon: syncCanon,

@@ -36,7 +36,14 @@ from .match_state import (
 from .models import Match
 
 log = logging.getLogger(__name__)
-API_BASE = "https://site.api.espn.com/apis/site/v2/sports/"
+API_BASE = "https://site.web.api.espn.com/apis/site/v2/sports/"
+ESPN_API_BASES = (API_BASE, "https://site.api.espn.com/apis/site/v2/sports/")
+ESPN_USER_AGENTS = (
+    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0 Safari/537.36",
+    "Mozilla/5.0 (X11; Linux x86_64; rv:132.0) Gecko/20100101 Firefox/132.0",
+    "Mozilla/5.0 (Macintosh; Intel Mac OS X 14_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.0 Safari/605.1.15",
+)
+_ESPN_ACTIVE_BASE: str | None = None
 MACKOLIK_LIVESCORE_URL = "https://www.mackolik.com/perform/p0/ajax/components/competition/livescores/json"
 MACKOLIK_FOOTBALL_FALLBACK = "mackolik/all-football"
 
@@ -81,10 +88,64 @@ def _identity(m: Match) -> tuple:
     return (fold(m.sport), fold(m.league), fold(m.home), fold(m.away), m.time)
 
 
+def _espn_error_body(data) -> bool:
+    """ESPN sometimes returns an API error as JSON with HTTP 200."""
+    if not isinstance(data, dict) or not data.get("message"):
+        return False
+    try:
+        return int(data.get("code")) >= 400
+    except (TypeError, ValueError):
+        return False
+
+
+def _espn_urls(url: str) -> list[str]:
+    """Return the same scoreboard path on ESPN's public API hosts."""
+    source = next((base for base in ESPN_API_BASES if url.startswith(base)), None)
+    if source is None:
+        return [url]
+    suffix = url[len(source):]
+    bases = list(ESPN_API_BASES)
+    if _ESPN_ACTIVE_BASE in bases:
+        bases.remove(_ESPN_ACTIVE_BASE)
+        bases.insert(0, _ESPN_ACTIVE_BASE)
+    return [base + suffix for base in bases]
+
+
 def _fetch(url: str, timeout: float) -> dict:
-    response = requests.get(url, headers={"Accept": "application/json", "User-Agent": "macweb-scoreboard/1.0"}, timeout=(5, timeout))
-    response.raise_for_status()
-    return response.json()
+    """Fetch ESPN scoreboard data with Fixtoor-style host and WAF fallback."""
+    global _ESPN_ACTIVE_BASE
+    last_error: Exception | None = None
+    for endpoint in _espn_urls(url):
+        for user_agent in ESPN_USER_AGENTS:
+            try:
+                response = requests.get(
+                    endpoint,
+                    headers={"Accept": "application/json, text/plain;q=0.9, */*;q=0.8",
+                             "Accept-Language": "tr-TR,tr;q=0.9,en;q=0.7",
+                             "Cache-Control": "no-cache", "User-Agent": user_agent},
+                    timeout=(5, timeout),
+                )
+                response.raise_for_status()
+                data = response.json()
+                if _espn_error_body(data):
+                    raise ValueError(f"ESPN HTTP 200 hata gövdesi: {data.get('message')}")
+                if not isinstance(data, dict) or not isinstance(data.get("events"), list):
+                    raise ValueError("ESPN scoreboard yanıtında events listesi yok")
+                _ESPN_ACTIVE_BASE = next((base for base in ESPN_API_BASES if endpoint.startswith(base)), None)
+                return data
+            except requests.HTTPError as exc:
+                last_error = exc
+                # WAF engeli User-Agent'a bağlı olabilir; bu hostta sıradaki kimliği dene.
+                if getattr(exc.response, "status_code", None) in (403, 406):
+                    continue
+                break
+            except (requests.RequestException, ValueError, TypeError) as exc:
+                last_error = exc
+                # Hatalı/boş gövdeyi diğer açık ESPN hostunda doğrula.
+                break
+    if last_error:
+        raise last_error
+    raise ValueError("ESPN scoreboard kaynakları yanıt vermedi")
 
 
 def _fetch_mackolik(date_str: str, timeout: float) -> dict:
@@ -525,6 +586,28 @@ def enrich(matches: list[Match], now: datetime, previous: list[Match] | None = N
             status_rank = {"finished": 4, "postponed": 4, "cancelled": 4, "abandoned": 4,
                            "suspended": 4, "live": 3, "halftime": 3, "upcoming": 1}
             picked = max(provider_picks, key=lambda row: status_rank.get(row[0]["status"], 0))
+            # İki sağlayıcı da MS derken skorlar çelişiyorsa Fixtoor'un kullandığı
+            # ESPN finalini seç. Mackolik'in gecikmiş 1-1 kaydı, ESPN'deki 3-1'i
+            # yalnızca sağlayıcı sırası nedeniyle ezmemeli. Eşleşen sonuçlarda ve
+            # canlı maçlarda mevcut Mackolik önceliği korunur.
+            final_scores = []
+            for candidate in provider_picks:
+                comp, side, source = candidate
+                if comp["status"] != "finished":
+                    continue
+                home_score, away_score = score_pair(
+                    (comp.get("home") or {}).get("score"),
+                    (comp.get("away") or {}).get("score"),
+                )
+                if home_score is None or away_score is None:
+                    continue
+                if side == "swapped":
+                    home_score, away_score = away_score, home_score
+                final_scores.append((candidate, (home_score, away_score)))
+            if len({pair for _, pair in final_scores}) > 1:
+                espn_final = next((candidate for candidate, _ in final_scores if candidate[2] == "espn"), None)
+                if espn_final:
+                    picked = espn_final
             found, side, src_tag = picked
             if match.status == "finished" and match.status_source != "schedule" and found["status"] in ("upcoming", "live", "halftime"):
                 continue
