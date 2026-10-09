@@ -1,7 +1,7 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-10-09 20:00  
+> **Güncellenme:** 2026-10-09 20:20  
 > **Toplam maç:** 11  |  **Canlı:** 4  |  **Yaklaşan:** 0
 
 ## 🔴 CANLI
@@ -216,15 +216,15 @@
 - 🟢 **TIVIBU SPOR 1** <https://sultanbettv101.live/mono.m3u8>
 
 ### 📡 JUSTIN TV ✅ `https://justintv109.top`
-- ⚪ **BEIN SPORTS 1**
-- ⚪ **BEIN SPORTS 2**
-- ⚪ **BEIN SPORTS 3**
-- ⚪ **BEIN SPORTS 4**
-- ⚪ **BEIN SPORTS 5**
-- ⚪ **BEIN SPORTS MAX 1**
-- ⚪ **BEIN SPORTS MAX 2**
-- ⚪ **S SPORT**
-- ⚪ **S SPORT 2**
-- ⚪ **TRT SPOR**
-- ⚪ **TRT 1**
-- ⚪ **A SPOR**
+- 🟢 **BEIN SPORTS 1** <https://ladyboy.ardastream2.cfd//beintv/tracks-v1a1/mono.m3u8>
+- 🟢 **BEIN SPORTS 2** <https://ladyboy.ardastream2.cfd//bein2/tracks-v1a1/mono.m3u8>
+- 🟢 **BEIN SPORTS 3** <https://ladyboy.ardastream2.cfd//bein3/tracks-v1a1/mono.m3u8>
+- 🟢 **BEIN SPORTS 4** <https://ladyboy.ardastream2.cfd//bein4/tracks-v1a1/mono.m3u8>
+- 🟢 **BEIN SPORTS 5** <https://ladyboy.ardastream2.cfd//bein5/tracks-v1a1/mono.m3u8>
+- 🟢 **BEIN SPORTS MAX 1** <https://ladyboy.ardastream2.cfd//beinmax1/tracks-v1a1/mono.m3u8>
+- 🟢 **BEIN SPORTS MAX 2** <https://ladyboy.ardastream2.cfd//beinmax2/tracks-v1a1/mono.m3u8>
+- 🟢 **S SPORT** <https://ladyboy.ardastream2.cfd//s-sport/tracks-v1a1/mono.m3u8>
+- 🟢 **S SPORT 2** <https://ladyboy.ardastream2.cfd//s-sport2/tracks-v1a1/mono.m3u8>
+- 🟢 **TRT SPOR** <https://ladyboy.ardastream2.cfd//trt-spor/tracks-v1a1/mono.m3u8>
+- 🟢 **TRT 1** <https://ladyboy.ardastream2.cfd//trt1/tracks-v1a1/mono.m3u8>
+- 🟢 **A SPOR** <https://ladyboy.ardastream2.cfd//aspor/tracks-v1a1/mono.m3u8>
