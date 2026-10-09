@@ -1,8 +1,8 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-10-09 00:07  
-> **Toplam maç:** 12  |  **Canlı:** 0  |  **Yaklaşan:** 9
+> **Güncellenme:** 2026-10-09 01:02  
+> **Toplam maç:** 12  |  **Canlı:** 0  |  **Yaklaşan:** 12
 
 ## ⏰ YAKLAŞAN
 
@@ -14,13 +14,10 @@
 - ⏰ **Galatasaray vs Kasımpaşa** — YAKLAŞAN · `20:00` | Trendyol Süper Lig ★ **Günün Maçı** <https://fixbettv84.com/channel.html?id=zirve>
 - ⏰ **Ümraniyespor vs Sarıyer** — YAKLAŞAN · `20:00` | Trendyol 1. Lig <https://fixbettv84.com/channel.html?id=b2>
 - ⏰ **Vanspor vs Bandırmaspor** — YAKLAŞAN · `20:00` | Trendyol 1. Lig <https://fixbettv84.com/channel.html?id=trtspor>
+- ⏰ **Olympiakos vs Anadolu Efes** — YAKLAŞAN · `21:15` | Euroleague <https://fixbettv84.com/channel.html?id=ss>
+- ⏰ **Baskonia vs Beşiktaş** — YAKLAŞAN · `21:30` | Euroleague <https://fixbettv84.com/channel.html?id=ss2>
 - ⏰ **Lens vs Lyon** — YAKLAŞAN · `21:45` | Fransa Ligue 1 <https://fixbettv84.com/channel.html?id=b4>
-
-## ✅ BİTTİ
-
-- ✅ **Olympiakos vs Anadolu Efes** — MS · `21:15` | Euroleague <https://fixbettv84.com/channel.html?id=ss>
-- ✅ **Baskonia vs Beşiktaş** — MS · `21:30` | Euroleague <https://fixbettv84.com/channel.html?id=ss2>
-- ✅ **Braga vs Sporting Lisbon** — MS · `22:15` | Portekiz Liga NOS <https://fixbettv84.com/channel.html?id=b3>
+- ⏰ **Braga vs Sporting Lisbon** — YAKLAŞAN · `22:15` | Portekiz Liga NOS <https://fixbettv84.com/channel.html?id=b3>
 
 ## ⭐ GÜNÜN MAÇI
 
