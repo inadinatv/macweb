@@ -1,21 +1,15 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-10-09 18:49  
-> **Toplam maç:** 11  |  **Canlı:** 6  |  **Yaklaşan:** 1
+> **Güncellenme:** 2026-10-09 19:41  
+> **Toplam maç:** 11  |  **Canlı:** 4  |  **Yaklaşan:** 0
 
 ## 🔴 CANLI
 
-- 🔴 **Galatasaray 1 - 1 Kasımpaşa** — CANLI · `20:00` | Trendyol Süper Lig ★ **Günün Maçı** <https://fixbettv84.com/channel.html?id=zirve>
-- 🔴 **Ümraniyespor 1 - 1 Sarıyer** — CANLI · `20:00` | Trendyol 1. Lig <https://fixbettv84.com/channel.html?id=b2>
-- 🔴 **Vanspor 0 - 2 Bandırmaspor** — CANLI · `20:00` | Trendyol 1. Lig <https://fixbettv84.com/channel.html?id=trtspor>
 - 🔴 **Olympiakos vs Anadolu Efes** — CANLI · `21:15` | Euroleague <https://fixbettv84.com/channel.html?id=ss>
 - 🔴 **Baskonia vs Beşiktaş** — CANLI · `21:30` | Euroleague <https://fixbettv84.com/channel.html?id=ss2>
-- 🔴 **Lens 0 - 0 Lyon** — CANLI · `21:45` | Fransa Ligue 1 <https://fixbettv84.com/channel.html?id=b4>
-
-## ⏰ YAKLAŞAN
-
-- ⏰ **Braga vs Sporting Lisbon** — YAKLAŞAN · `22:15` | Portekiz Liga NOS <https://fixbettv84.com/channel.html?id=b3>
+- 🔴 **Lens 1 - 0 Lyon** — DEVRE · `21:45` | Fransa Ligue 1 <https://fixbettv84.com/channel.html?id=b4>
+- 🔴 **Braga vs Sporting Lisbon** — CANLI · `22:15` | Portekiz Liga NOS <https://fixbettv84.com/channel.html?id=b3>
 
 ## ✅ BİTTİ
 
@@ -23,10 +17,13 @@
 - ✅ **Sivasspor 4 - 1 Pendikspor** — MS · `17:00` | Trendyol 1. Lig <https://fixbettv84.com/channel.html?id=trtspor>
 - ✅ **Bodrumspor vs Keçiörengücü** — MS · `17:00` | Trendyol 1. Lig <https://fixbettv84.com/channel.html?id=b2>
 - ✅ **Sungurlu Bld. vs Sultanbeyli Bld.** — MS · `19:00` | TVF Erkekler Kupa Volley <https://fixbettv84.com/channel.html?id=trtspor2>
+- ✅ **Galatasaray 3 - 1 Kasımpaşa** — MS · `20:00` | Trendyol Süper Lig ★ **Günün Maçı** <https://fixbettv84.com/channel.html?id=zirve>
+- ✅ **Ümraniyespor 1 - 1 Sarıyer** — MS · `20:00` | Trendyol 1. Lig <https://fixbettv84.com/channel.html?id=b2>
+- ✅ **Vanspor 0 - 2 Bandırmaspor** — MS · `20:00` | Trendyol 1. Lig <https://fixbettv84.com/channel.html?id=trtspor>
 
 ## ⭐ GÜNÜN MAÇI
 
-- 🔴 **Galatasaray 1 - 1 Kasımpaşa** — CANLI · `20:00` | Trendyol Süper Lig ★ **Günün Maçı** <https://fixbettv84.com/channel.html?id=zirve>
+- ✅ **Galatasaray 3 - 1 Kasımpaşa** — MS · `20:00` | Trendyol Süper Lig ★ **Günün Maçı** <https://fixbettv84.com/channel.html?id=zirve>
 
 ---
 ## 🏆 Lig Bazlı
@@ -36,10 +33,10 @@
 - 🔴 Baskonia vs Beşiktaş — 21:30
 
 ### Fransa Ligue 1
-- 🔴 Lens vs Lyon — 21:45
+- ⏰ Lens vs Lyon — 21:45
 
 ### Portekiz Liga NOS
-- ⏰ Braga vs Sporting Lisbon — 22:15
+- 🔴 Braga vs Sporting Lisbon — 22:15
 
 ### TVF Erkekler Kupa Volley
 - ⏰ Sungurlu Bld. vs Sultanbeyli Bld. — 19:00
@@ -47,11 +44,11 @@
 ### Trendyol 1. Lig
 - ⏰ Sivasspor vs Pendikspor — 17:00
 - ⏰ Bodrumspor vs Keçiörengücü — 17:00
-- 🔴 Ümraniyespor vs Sarıyer — 20:00
-- 🔴 Vanspor vs Bandırmaspor — 20:00
+- ⏰ Ümraniyespor vs Sarıyer — 20:00
+- ⏰ Vanspor vs Bandırmaspor — 20:00
 
 ### Trendyol Süper Lig
-- 🔴 Galatasaray vs Kasımpaşa — 20:00
+- ⏰ Galatasaray vs Kasımpaşa — 20:00
 
 ### Ukrayna Premier Ligi
 - ⏰ Veres Rivne vs Shakhtar Donetsk — 15:30
@@ -112,7 +109,7 @@
 ## ⚡ EKSTRA PANELLER — m3u8 (109)
 
 ### ⚛️ ATOM SPOR ✅ `https://atomsportv516.top`
-- 🟢 **BEIN SPORTS 1** <https://ladyboy.ardastream2.cfd//s-sport2/tracks-v1a1/mono.m3u8>
+- 🟢 **BEIN SPORTS 1** <https://ladyboy.ardastream2.cfd//beintv/tracks-v1a1/mono.m3u8>
 - 🟢 **BEIN SPORTS 2** <https://ladyboy.ardastream2.cfd//bein2/tracks-v1a1/mono.m3u8>
 - 🟢 **BEIN SPORTS 3** <https://ladyboy.ardastream2.cfd//bein3/tracks-v1a1/mono.m3u8>
 - 🟢 **BEIN SPORTS 4** <https://ladyboy.ardastream2.cfd//bein4/tracks-v1a1/mono.m3u8>
