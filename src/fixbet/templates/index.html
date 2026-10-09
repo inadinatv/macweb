@@ -2089,8 +2089,45 @@
                 if (Object.keys(mapped).length) syncAliases[path] = mapped;
             });
             const SYNC_TTL = 10 * 1000, SYNC_MAX_PARALLEL = 4;
+            // Fixtoor gibi önce ESPN web API'sini, hata/boş şemada site.api'yi dene.
+            // site.api tek başına WAF/HTTP 200 hata gövdesi döndürerek sessizce bayat skor bırakabiliyor.
+            const ESPN_SYNC_BASES = [
+                { name: "site.web", url: "https://site.web.api.espn.com/apis/site/v2/sports/" },
+                { name: "site.api", url: "https://site.api.espn.com/apis/site/v2/sports/" },
+            ];
+            let activeSyncBase = "";
             const syncCache = {}, syncInflight = new Set();
             let syncFailures = 0;
+
+            function espnErrorBody(json) {
+                return !!json && typeof json === "object" && Number(json.code) >= 400 && !!json.message;
+            }
+
+            async function fetchLiveScoreboard(path, query) {
+                const first = ESPN_SYNC_BASES.find((source) => source.name === activeSyncBase);
+                const sources = first ? [first, ...ESPN_SYNC_BASES.filter((source) => source !== first)] : ESPN_SYNC_BASES;
+                let lastError = null;
+                for (const source of sources) {
+                    const controller = new AbortController();
+                    const timer = setTimeout(() => controller.abort(), 4500);
+                    try {
+                        const response = await fetch(source.url + path + "/scoreboard" + query,
+                            { cache: "no-store", signal: controller.signal });
+                        if (!response.ok) throw new Error("HTTP " + response.status);
+                        const json = await response.json();
+                        if (!json || typeof json !== "object" || espnErrorBody(json) || !Array.isArray(json.events)) {
+                            throw new Error("geçersiz ESPN scoreboard yanıtı");
+                        }
+                        activeSyncBase = source.name;
+                        return json;
+                    } catch (error) {
+                        lastError = error;
+                    } finally {
+                        clearTimeout(timer);
+                    }
+                }
+                throw lastError || new Error("ESPN scoreboard kaynakları yanıt vermedi");
+            }
 
             function syncPathFor(m) {
                 return syncPathsByKey[norm(m.sport) + "|" + norm(m.league)] || null;
@@ -2224,14 +2261,10 @@
                     const hit = syncCache[path];
                     if (hit && now.getTime() - hit.at < SYNC_TTL) return;
                     syncInflight.add(path); launched++;
-                    const controller = new AbortController();
-                    const timer = setTimeout(() => controller.abort(), 8000);
                     const day = String((matchesData.find((m) => syncPathFor(m) === path) || {}).date || "").replace(/-/g, "");
                     const query = "?limit=400" + (day ? "&dates=" + encodeURIComponent(day) : "")
                         + "&_ts=" + Math.floor(Date.now() / SYNC_TTL);
-                    fetch("https://site.api.espn.com/apis/site/v2/sports/" + path + "/scoreboard" + query,
-                          { cache: "no-store", signal: controller.signal })
-                        .then((r) => { if (!r.ok) throw new Error("HTTP " + r.status); return r.json(); })
+                    fetchLiveScoreboard(path, query)
                         .then((json) => {
                             const comps = parseEspnScoreboard(json);
                             syncCache[path] = { at: Date.now() };
@@ -2245,7 +2278,7 @@
                             syncFailures++;
                             if (syncFailures >= 3) setSyncChip("sync-wait", "Canlı skor kaynağına erişilemedi · bot verisi gösteriliyor");
                         })
-                        .finally(() => { clearTimeout(timer); syncInflight.delete(path); });
+                        .finally(() => { syncInflight.delete(path); });
                 });
             }
 
@@ -2643,6 +2676,7 @@
                 mergeRemoteMatches: mergeRemoteMatches,
                 refreshMatches: refreshMatches,
                 liveSyncTick: liveSyncTick,
+                fetchLiveScoreboard: fetchLiveScoreboard,
                 applyLiveSync: applyLiveSync,
                 parseEspnScoreboard: parseEspnScoreboard,
                 syncCanon: syncCanon,

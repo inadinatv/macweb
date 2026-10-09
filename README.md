@@ -84,7 +84,9 @@ raporlar üreten gelişmiş otomasyon botu.
      klavye kısayolları (`←`/`→` kanal, `G`/`L` görünüm, `1`/`2` sekme), `#kanal=...` derin bağlantısı,
      JS kapalıysa çalışan `<noscript>` maç listesi.
    - **Canlı tazeleme:** Sayfa yayımlanmış `output/today_matches.json` snapshot'ını 30 saniyede
-     bir, aktif maçların ESPN skorunu 10 saniyede bir okur. Daha eski snapshot, daha taze
+     bir, aktif maçların ESPN skorunu 10 saniyede bir okur. Fixtoor'daki gibi önce
+     `site.web.api.espn.com`, hata/şema sorunu varsa `site.api.espn.com` denenir; HTTP 200
+     içindeki ESPN hata JSON'u geçerli skor yanıtı sayılmaz. Daha eski snapshot, daha taze
      skor/dakikayı geriye götürmez. Erişilemezse son gerçek veriyle çalışmaya devam eder.
 
 6. **⚡ EXTRA PANELLER — doğrudan m3u8 / panel kanalları** (`src/fixbet/extras.py` + `config/extra_channels.yml`)
@@ -235,7 +237,7 @@ yetkisi olmadığı için dosya kökte örnek olarak duruyor).
 
 ## 🤖 GitHub Actions ile Otomatik Güncelleme
 
-- **`.github/workflows/live_scores.yml`** → GitHub'ın desteklediği en kısa aralık olan 5 dakikada bir kalıcı skor snapshot'ını yazar.
+- **`.github/workflows/live_scores.yml`** → 5 dakikalık zamanlamayla kalıcı skor snapshot'ını yazar. GitHub zamanlanmış işlerinin başlama saati yoğunlukta gecikebilir; sayfa açıkken ESPN'in tarayıcıdan doğrudan sorgusu bu yüzden ayrıca çalışır.
 - **`.github/workflows/update.yml`** → her 15 dakikada bir tam site/kanal boru hattını çalıştırır ve raporları **push** eder.
 - **`.github/workflows/cron.yml`** → her gün belirli saatte uzun süreli izleme + toplu güncelleme çalıştırır.
 

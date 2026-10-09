@@ -1184,3 +1184,26 @@ test("canlı senkron 10 saniyelik cache-buster ve maç tarihiyle sağlayıcıyı
   assert.ok(HTML.includes('"&_ts=" + Math.floor(Date.now() / SYNC_TTL)'), "CDN cache-buster yok");
   assert.ok(HTML.includes("(liveWindowFor(m) + 90) * 60000"), "final yakalama penceresi maç sonuna uzatılmamış");
 });
+
+test("canlı ESPN isteği Fixtoor gibi 200 hata gövdesinde yedek hosta geçer", async () => {
+  const calls = [];
+  const fetchImpl = async (url) => {
+    const target = String(url);
+    if (target.includes("site.web.api.espn.com")) {
+      calls.push("site.web");
+      return { ok: true, json: async () => ({ code: 400, message: "Failed to get events endpoint." }) };
+    }
+    if (target.includes("site.api.espn.com")) {
+      calls.push("site.api");
+      return { ok: true, json: async () => ({ events: [] }) };
+    }
+    if (target.includes("today_matches.json")) return { ok: true, json: async () => TODAY };
+    if (target.includes("extra_channels.json")) return { ok: true, json: async () => EXTRA };
+    return { ok: true, json: async () => ({}) };
+  };
+  const { window, dom } = await loadPage({ fetchImpl });
+  const result = await window.inadina.fetchLiveScoreboard("soccer/eng.1", "?dates=20260906");
+  assert.deepEqual(calls, ["site.web", "site.api"]);
+  assert.deepEqual(result.events, []);
+  dom.window.close();
+});
