@@ -1,16 +1,15 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-10-09 07:19  
-> **Toplam maç:** 12  |  **Canlı:** 1  |  **Yaklaşan:** 11
+> **Güncellenme:** 2026-10-09 13:09  
+> **Toplam maç:** 12  |  **Canlı:** 1  |  **Yaklaşan:** 10
 
 ## 🔴 CANLI
 
-- 🔴 **Q.Zheng vs E.Svitolina** — CANLI · `10:00` | WTA Pekin <https://fixbettv84.com/channel.html?id=bm1>
+- 🔴 **Veres Rivne vs Shakhtar Donetsk** — CANLI · `15:30` | Ukrayna Premier Ligi <https://fixbettv84.com/channel.html?id=t1>
 
 ## ⏰ YAKLAŞAN
 
-- ⏰ **Veres Rivne vs Shakhtar Donetsk** — YAKLAŞAN · `15:30` | Ukrayna Premier Ligi <https://fixbettv84.com/channel.html?id=t1>
 - ⏰ **Sivasspor vs Pendikspor** — YAKLAŞAN · `17:00` | Trendyol 1. Lig <https://fixbettv84.com/channel.html?id=trtspor>
 - ⏰ **Bodrumspor vs Keçiörengücü** — YAKLAŞAN · `17:00` | Trendyol 1. Lig <https://fixbettv84.com/channel.html?id=b2>
 - ⏰ **Sungurlu Bld. vs Sultanbeyli Bld.** — YAKLAŞAN · `19:00` | TVF Erkekler Kupa Volley <https://fixbettv84.com/channel.html?id=trtspor2>
@@ -21,6 +20,10 @@
 - ⏰ **Baskonia vs Beşiktaş** — YAKLAŞAN · `21:30` | Euroleague <https://fixbettv84.com/channel.html?id=ss2>
 - ⏰ **Lens vs Lyon** — YAKLAŞAN · `21:45` | Fransa Ligue 1 <https://fixbettv84.com/channel.html?id=b4>
 - ⏰ **Braga vs Sporting Lisbon** — YAKLAŞAN · `22:15` | Portekiz Liga NOS <https://fixbettv84.com/channel.html?id=b3>
+
+## ✅ BİTTİ
+
+- ✅ **Q.Zheng vs E.Svitolina** — MS · `10:00` | WTA Pekin <https://fixbettv84.com/channel.html?id=bm1>
 
 ## ⭐ GÜNÜN MAÇI
 
@@ -52,10 +55,10 @@
 - ⏰ Galatasaray vs Kasımpaşa — 20:00
 
 ### Ukrayna Premier Ligi
-- ⏰ Veres Rivne vs Shakhtar Donetsk — 15:30
+- 🔴 Veres Rivne vs Shakhtar Donetsk — 15:30
 
 ### WTA Pekin
-- 🔴 Q.Zheng vs E.Svitolina — 10:00
+- ⏰ Q.Zheng vs E.Svitolina — 10:00
 
 ---
 ## 📺 7/24 KANALLAR (31)
