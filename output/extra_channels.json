@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-10T14:53:53+00:00",
+  "updated_at": "2026-10-10T15:23:16+00:00",
   "source": "output/extra_channels.json",
   "total": 109,
   "panels": [
@@ -47,7 +47,7 @@
           "resolved": true,
           "fresh": true,
           "resolved_url": "https://ladyboy.ardastream2.cfd//beintv/tracks-v1a1/mono.m3u8",
-          "resolved_at": "2026-10-10T14:53:53+00:00",
+          "resolved_at": "2026-10-10T15:23:16+00:00",
           "stale": false
         },
         {
@@ -82,7 +82,7 @@
           "resolved": true,
           "fresh": true,
           "resolved_url": "https://ladyboy.ardastream2.cfd//bein2/tracks-v1a1/mono.m3u8",
-          "resolved_at": "2026-10-10T14:53:53+00:00",
+          "resolved_at": "2026-10-10T15:23:16+00:00",
           "stale": false
         },
         {
@@ -117,7 +117,7 @@
           "resolved": true,
           "fresh": true,
           "resolved_url": "https://ladyboy.ardastream2.cfd//bein3/tracks-v1a1/mono.m3u8",
-          "resolved_at": "2026-10-10T14:53:53+00:00",
+          "resolved_at": "2026-10-10T15:23:16+00:00",
           "stale": false
         },
         {
@@ -152,7 +152,7 @@
           "resolved": true,
           "fresh": true,
           "resolved_url": "https://ladyboy.ardastream2.cfd//bein4/tracks-v1a1/mono.m3u8",
-          "resolved_at": "2026-10-10T14:53:53+00:00",
+          "resolved_at": "2026-10-10T15:23:16+00:00",
           "stale": false
         },
         {
@@ -187,7 +187,7 @@
           "resolved": true,
           "fresh": true,
           "resolved_url": "https://ladyboy.ardastream2.cfd//bein5/tracks-v1a1/mono.m3u8",
-          "resolved_at": "2026-10-10T14:53:53+00:00",
+          "resolved_at": "2026-10-10T15:23:16+00:00",
           "stale": false
         },
         {
@@ -222,7 +222,7 @@
           "resolved": true,
           "fresh": true,
           "resolved_url": "https://ladyboy.ardastream2.cfd//s-sport/tracks-v1a1/mono.m3u8",
-          "resolved_at": "2026-10-10T14:53:53+00:00",
+          "resolved_at": "2026-10-10T15:23:16+00:00",
           "stale": false
         },
         {
@@ -257,7 +257,7 @@
           "resolved": true,
           "fresh": true,
           "resolved_url": "https://ladyboy.ardastream2.cfd//s-sport2/tracks-v1a1/mono.m3u8",
-          "resolved_at": "2026-10-10T14:53:53+00:00",
+          "resolved_at": "2026-10-10T15:23:16+00:00",
           "stale": false
         },
         {
@@ -503,7 +503,7 @@
           "resolved": true,
           "fresh": true,
           "resolved_url": "https://dga1op10s1u3lea.82250d06d39d38.click/live/selcukbeinsports1/playlist.m3u8",
-          "resolved_at": "2026-10-10T14:53:53+00:00",
+          "resolved_at": "2026-10-10T15:23:16+00:00",
           "stale": false
         },
         {
@@ -532,7 +532,7 @@
           "resolved": true,
           "fresh": true,
           "resolved_url": "https://dga1op10s1u3lea.82250d06d39d38.click/live/selcukbeinsports2/playlist.m3u8",
-          "resolved_at": "2026-10-10T14:53:53+00:00",
+          "resolved_at": "2026-10-10T15:23:16+00:00",
           "stale": false
         },
         {
@@ -561,7 +561,7 @@
           "resolved": true,
           "fresh": true,
           "resolved_url": "https://dga1op10s1u3lea.82250d06d39d38.click/live/selcukbeinsports3/playlist.m3u8",
-          "resolved_at": "2026-10-10T14:53:53+00:00",
+          "resolved_at": "2026-10-10T15:23:16+00:00",
           "stale": false
         },
         {
@@ -590,7 +590,7 @@
           "resolved": true,
           "fresh": true,
           "resolved_url": "https://dga1op10s1u3lea.82250d06d39d38.click/live/selcukbeinsports4/playlist.m3u8",
-          "resolved_at": "2026-10-10T14:53:53+00:00",
+          "resolved_at": "2026-10-10T15:23:16+00:00",
           "stale": false
         },
         {
@@ -619,7 +619,7 @@
           "resolved": true,
           "fresh": true,
           "resolved_url": "https://dga1op10s1u3lea.82250d06d39d38.click/live/selcukbeinsports5/playlist.m3u8",
-          "resolved_at": "2026-10-10T14:53:53+00:00",
+          "resolved_at": "2026-10-10T15:23:16+00:00",
           "stale": false
         },
         {
@@ -648,7 +648,7 @@
           "resolved": true,
           "fresh": true,
           "resolved_url": "https://dga1op10s1u3lea.82250d06d39d38.click/live/selcukbeinsportsmax1/playlist.m3u8",
-          "resolved_at": "2026-10-10T14:53:53+00:00",
+          "resolved_at": "2026-10-10T15:23:16+00:00",
           "stale": false
         },
         {
@@ -677,7 +677,7 @@
           "resolved": true,
           "fresh": true,
           "resolved_url": "https://dga1op10s1u3lea.82250d06d39d38.click/live/selcukbeinsportsmax2/playlist.m3u8",
-          "resolved_at": "2026-10-10T14:53:53+00:00",
+          "resolved_at": "2026-10-10T15:23:16+00:00",
           "stale": false
         },
         {
@@ -706,7 +706,7 @@
           "resolved": true,
           "fresh": true,
           "resolved_url": "https://dga1op10s1u3lea.82250d06d39d38.click/live/selcukssport/playlist.m3u8",
-          "resolved_at": "2026-10-10T14:53:53+00:00",
+          "resolved_at": "2026-10-10T15:23:16+00:00",
           "stale": false
         },
         {
@@ -735,7 +735,7 @@
           "resolved": true,
           "fresh": true,
           "resolved_url": "https://dga1op10s1u3lea.82250d06d39d38.click/live/selcukssport2/playlist.m3u8",
-          "resolved_at": "2026-10-10T14:53:53+00:00",
+          "resolved_at": "2026-10-10T15:23:16+00:00",
           "stale": false
         },
         {
@@ -764,7 +764,7 @@
           "resolved": true,
           "fresh": true,
           "resolved_url": "https://dga1op10s1u3lea.82250d06d39d38.click/live/selcuktivibuspor1/playlist.m3u8",
-          "resolved_at": "2026-10-10T14:53:53+00:00",
+          "resolved_at": "2026-10-10T15:23:16+00:00",
           "stale": false
         },
         {
@@ -793,7 +793,7 @@
           "resolved": true,
           "fresh": true,
           "resolved_url": "https://dga1op10s1u3lea.82250d06d39d38.click/live/selcuktivibuspor2/playlist.m3u8",
-          "resolved_at": "2026-10-10T14:53:53+00:00",
+          "resolved_at": "2026-10-10T15:23:16+00:00",
           "stale": false
         },
         {
@@ -822,7 +822,7 @@
           "resolved": true,
           "fresh": true,
           "resolved_url": "https://dga1op10s1u3lea.82250d06d39d38.click/live/selcuksmartspor/playlist.m3u8",
-          "resolved_at": "2026-10-10T14:53:53+00:00",
+          "resolved_at": "2026-10-10T15:23:16+00:00",
           "stale": false
         },
         {
@@ -851,7 +851,7 @@
           "resolved": true,
           "fresh": true,
           "resolved_url": "https://dga1op10s1u3lea.82250d06d39d38.click/live/selcukaspor/playlist.m3u8",
-          "resolved_at": "2026-10-10T14:53:53+00:00",
+          "resolved_at": "2026-10-10T15:23:16+00:00",
           "stale": false
         },
         {
@@ -880,7 +880,7 @@
           "resolved": true,
           "fresh": true,
           "resolved_url": "https://dga1op10s1u3lea.82250d06d39d38.click/live/selcukeurosport1/playlist.m3u8",
-          "resolved_at": "2026-10-10T14:53:53+00:00",
+          "resolved_at": "2026-10-10T15:23:16+00:00",
           "stale": false
         }
       ]
@@ -894,7 +894,7 @@
       "stream_base": "https://andro.evrenesoglu127.click/checklist",
       "healthy": true,
       "resolved": 39,
-      "fresh": 39,
+      "fresh": 0,
       "total": 39,
       "channels": [
         {
@@ -921,10 +921,10 @@
             }
           ],
           "resolved": true,
-          "fresh": true,
+          "fresh": false,
           "resolved_url": "https://andro.evrenesoglu127.click/checklist/androstreamlivebs1.m3u8",
           "resolved_at": "2026-10-10T14:53:53+00:00",
-          "stale": false
+          "stale": true
         },
         {
           "id": "mahsun:androstreamlivebs2",
@@ -950,10 +950,10 @@
             }
           ],
           "resolved": true,
-          "fresh": true,
+          "fresh": false,
           "resolved_url": "https://andro.evrenesoglu127.click/checklist/androstreamlivebs2.m3u8",
           "resolved_at": "2026-10-10T14:53:53+00:00",
-          "stale": false
+          "stale": true
         },
         {
           "id": "mahsun:androstreamlivebs3",
@@ -979,10 +979,10 @@
             }
           ],
           "resolved": true,
-          "fresh": true,
+          "fresh": false,
           "resolved_url": "https://andro.evrenesoglu127.click/checklist/androstreamlivebs3.m3u8",
           "resolved_at": "2026-10-10T14:53:53+00:00",
-          "stale": false
+          "stale": true
         },
         {
           "id": "mahsun:androstreamlivebs4",
@@ -1008,10 +1008,10 @@
             }
           ],
           "resolved": true,
-          "fresh": true,
+          "fresh": false,
           "resolved_url": "https://andro.evrenesoglu127.click/checklist/androstreamlivebs4.m3u8",
           "resolved_at": "2026-10-10T14:53:53+00:00",
-          "stale": false
+          "stale": true
         },
         {
           "id": "mahsun:androstreamlivebs5",
@@ -1037,10 +1037,10 @@
             }
           ],
           "resolved": true,
-          "fresh": true,
+          "fresh": false,
           "resolved_url": "https://andro.evrenesoglu127.click/checklist/androstreamlivebs5.m3u8",
           "resolved_at": "2026-10-10T14:53:53+00:00",
-          "stale": false
+          "stale": true
         },
         {
           "id": "mahsun:androstreamlivebsm1",
@@ -1066,10 +1066,10 @@
             }
           ],
           "resolved": true,
-          "fresh": true,
+          "fresh": false,
           "resolved_url": "https://andro.evrenesoglu127.click/checklist/androstreamlivebsm1.m3u8",
           "resolved_at": "2026-10-10T14:53:53+00:00",
-          "stale": false
+          "stale": true
         },
         {
           "id": "mahsun:androstreamlivebsm2",
@@ -1095,10 +1095,10 @@
             }
           ],
           "resolved": true,
-          "fresh": true,
+          "fresh": false,
           "resolved_url": "https://andro.evrenesoglu127.click/checklist/androstreamlivebsm2.m3u8",
           "resolved_at": "2026-10-10T14:53:53+00:00",
-          "stale": false
+          "stale": true
         },
         {
           "id": "mahsun:androstreamlivess1",
@@ -1124,10 +1124,10 @@
             }
           ],
           "resolved": true,
-          "fresh": true,
+          "fresh": false,
           "resolved_url": "https://andro.evrenesoglu127.click/checklist/androstreamlivess1.m3u8",
           "resolved_at": "2026-10-10T14:53:53+00:00",
-          "stale": false
+          "stale": true
         },
         {
           "id": "mahsun:androstreamlivess2",
@@ -1153,10 +1153,10 @@
             }
           ],
           "resolved": true,
-          "fresh": true,
+          "fresh": false,
           "resolved_url": "https://andro.evrenesoglu127.click/checklist/androstreamlivess2.m3u8",
           "resolved_at": "2026-10-10T14:53:53+00:00",
-          "stale": false
+          "stale": true
         },
         {
           "id": "mahsun:androstreamlivessplus1",
@@ -1182,10 +1182,10 @@
             }
           ],
           "resolved": true,
-          "fresh": true,
+          "fresh": false,
           "resolved_url": "https://andro.evrenesoglu127.click/checklist/androstreamlivessplus1.m3u8",
           "resolved_at": "2026-10-10T14:53:53+00:00",
-          "stale": false
+          "stale": true
         },
         {
           "id": "mahsun:androstreamlivets",
@@ -1211,10 +1211,10 @@
             }
           ],
           "resolved": true,
-          "fresh": true,
+          "fresh": false,
           "resolved_url": "https://andro.evrenesoglu127.click/checklist/androstreamlivets.m3u8",
           "resolved_at": "2026-10-10T14:53:53+00:00",
-          "stale": false
+          "stale": true
         },
         {
           "id": "mahsun:androstreamlivets1",
@@ -1240,10 +1240,10 @@
             }
           ],
           "resolved": true,
-          "fresh": true,
+          "fresh": false,
           "resolved_url": "https://andro.evrenesoglu127.click/checklist/androstreamlivets1.m3u8",
           "resolved_at": "2026-10-10T14:53:53+00:00",
-          "stale": false
+          "stale": true
         },
         {
           "id": "mahsun:androstreamlivets2",
@@ -1269,10 +1269,10 @@
             }
           ],
           "resolved": true,
-          "fresh": true,
+          "fresh": false,
           "resolved_url": "https://andro.evrenesoglu127.click/checklist/androstreamlivets2.m3u8",
           "resolved_at": "2026-10-10T14:53:53+00:00",
-          "stale": false
+          "stale": true
         },
         {
           "id": "mahsun:androstreamlivets3",
@@ -1298,10 +1298,10 @@
             }
           ],
           "resolved": true,
-          "fresh": true,
+          "fresh": false,
           "resolved_url": "https://andro.evrenesoglu127.click/checklist/androstreamlivets3.m3u8",
           "resolved_at": "2026-10-10T14:53:53+00:00",
-          "stale": false
+          "stale": true
         },
         {
           "id": "mahsun:androstreamlivets4",
@@ -1327,10 +1327,10 @@
             }
           ],
           "resolved": true,
-          "fresh": true,
+          "fresh": false,
           "resolved_url": "https://andro.evrenesoglu127.click/checklist/androstreamlivets4.m3u8",
           "resolved_at": "2026-10-10T14:53:53+00:00",
-          "stale": false
+          "stale": true
         },
         {
           "id": "mahsun:androstreamlivesm1",
@@ -1356,10 +1356,10 @@
             }
           ],
           "resolved": true,
-          "fresh": true,
+          "fresh": false,
           "resolved_url": "https://andro.evrenesoglu127.click/checklist/androstreamlivesm1.m3u8",
           "resolved_at": "2026-10-10T14:53:53+00:00",
-          "stale": false
+          "stale": true
         },
         {
           "id": "mahsun:androstreamlivesm2",
@@ -1385,10 +1385,10 @@
             }
           ],
           "resolved": true,
-          "fresh": true,
+          "fresh": false,
           "resolved_url": "https://andro.evrenesoglu127.click/checklist/androstreamlivesm2.m3u8",
           "resolved_at": "2026-10-10T14:53:53+00:00",
-          "stale": false
+          "stale": true
         },
         {
           "id": "mahsun:androstreamlivees1",
@@ -1414,10 +1414,10 @@
             }
           ],
           "resolved": true,
-          "fresh": true,
+          "fresh": false,
           "resolved_url": "https://andro.evrenesoglu127.click/checklist/androstreamlivees1.m3u8",
           "resolved_at": "2026-10-10T14:53:53+00:00",
-          "stale": false
+          "stale": true
         },
         {
           "id": "mahsun:androstreamlivees2",
@@ -1443,10 +1443,10 @@
             }
           ],
           "resolved": true,
-          "fresh": true,
+          "fresh": false,
           "resolved_url": "https://andro.evrenesoglu127.click/checklist/androstreamlivees2.m3u8",
           "resolved_at": "2026-10-10T14:53:53+00:00",
-          "stale": false
+          "stale": true
         },
         {
           "id": "mahsun:androstreamlivetb",
@@ -1472,10 +1472,10 @@
             }
           ],
           "resolved": true,
-          "fresh": true,
+          "fresh": false,
           "resolved_url": "https://andro.evrenesoglu127.click/checklist/androstreamlivetb.m3u8",
           "resolved_at": "2026-10-10T14:53:53+00:00",
-          "stale": false
+          "stale": true
         },
         {
           "id": "mahsun:androstreamlivetb1",
@@ -1501,10 +1501,10 @@
             }
           ],
           "resolved": true,
-          "fresh": true,
+          "fresh": false,
           "resolved_url": "https://andro.evrenesoglu127.click/checklist/androstreamlivetb1.m3u8",
           "resolved_at": "2026-10-10T14:53:53+00:00",
-          "stale": false
+          "stale": true
         },
         {
           "id": "mahsun:androstreamlivetb2",
@@ -1530,10 +1530,10 @@
             }
           ],
           "resolved": true,
-          "fresh": true,
+          "fresh": false,
           "resolved_url": "https://andro.evrenesoglu127.click/checklist/androstreamlivetb2.m3u8",
           "resolved_at": "2026-10-10T14:53:53+00:00",
-          "stale": false
+          "stale": true
         },
         {
           "id": "mahsun:androstreamlivetb3",
@@ -1559,10 +1559,10 @@
             }
           ],
           "resolved": true,
-          "fresh": true,
+          "fresh": false,
           "resolved_url": "https://andro.evrenesoglu127.click/checklist/androstreamlivetb3.m3u8",
           "resolved_at": "2026-10-10T14:53:53+00:00",
-          "stale": false
+          "stale": true
         },
         {
           "id": "mahsun:androstreamlivetb4",
@@ -1588,10 +1588,10 @@
             }
           ],
           "resolved": true,
-          "fresh": true,
+          "fresh": false,
           "resolved_url": "https://andro.evrenesoglu127.click/checklist/androstreamlivetb4.m3u8",
           "resolved_at": "2026-10-10T14:53:53+00:00",
-          "stale": false
+          "stale": true
         },
         {
           "id": "mahsun:androstreamlivetb5",
@@ -1617,10 +1617,10 @@
             }
           ],
           "resolved": true,
-          "fresh": true,
+          "fresh": false,
           "resolved_url": "https://andro.evrenesoglu127.click/checklist/androstreamlivetb5.m3u8",
           "resolved_at": "2026-10-10T14:53:53+00:00",
-          "stale": false
+          "stale": true
         },
         {
           "id": "mahsun:androstreamlivetb6",
@@ -1646,10 +1646,10 @@
             }
           ],
           "resolved": true,
-          "fresh": true,
+          "fresh": false,
           "resolved_url": "https://andro.evrenesoglu127.click/checklist/androstreamlivetb6.m3u8",
           "resolved_at": "2026-10-10T14:53:53+00:00",
-          "stale": false
+          "stale": true
         },
         {
           "id": "mahsun:androstreamlivetb7",
@@ -1675,10 +1675,10 @@
             }
           ],
           "resolved": true,
-          "fresh": true,
+          "fresh": false,
           "resolved_url": "https://andro.evrenesoglu127.click/checklist/androstreamlivetb7.m3u8",
           "resolved_at": "2026-10-10T14:53:53+00:00",
-          "stale": false
+          "stale": true
         },
         {
           "id": "mahsun:androstreamlivetb8",
@@ -1704,10 +1704,10 @@
             }
           ],
           "resolved": true,
-          "fresh": true,
+          "fresh": false,
           "resolved_url": "https://andro.evrenesoglu127.click/checklist/androstreamlivetb8.m3u8",
           "resolved_at": "2026-10-10T14:53:53+00:00",
-          "stale": false
+          "stale": true
         },
         {
           "id": "mahsun:androstreamliveexn",
@@ -1733,10 +1733,10 @@
             }
           ],
           "resolved": true,
-          "fresh": true,
+          "fresh": false,
           "resolved_url": "https://andro.evrenesoglu127.click/checklist/androstreamliveexn.m3u8",
           "resolved_at": "2026-10-10T14:53:53+00:00",
-          "stale": false
+          "stale": true
         },
         {
           "id": "mahsun:androstreamliveexn1",
@@ -1762,10 +1762,10 @@
             }
           ],
           "resolved": true,
-          "fresh": true,
+          "fresh": false,
           "resolved_url": "https://andro.evrenesoglu127.click/checklist/androstreamliveexn1.m3u8",
           "resolved_at": "2026-10-10T14:53:53+00:00",
-          "stale": false
+          "stale": true
         },
         {
           "id": "mahsun:androstreamliveexn2",
@@ -1791,10 +1791,10 @@
             }
           ],
           "resolved": true,
-          "fresh": true,
+          "fresh": false,
           "resolved_url": "https://andro.evrenesoglu127.click/checklist/androstreamliveexn2.m3u8",
           "resolved_at": "2026-10-10T14:53:53+00:00",
-          "stale": false
+          "stale": true
         },
         {
           "id": "mahsun:androstreamliveexn3",
@@ -1820,10 +1820,10 @@
             }
           ],
           "resolved": true,
-          "fresh": true,
+          "fresh": false,
           "resolved_url": "https://andro.evrenesoglu127.click/checklist/androstreamliveexn3.m3u8",
           "resolved_at": "2026-10-10T14:53:53+00:00",
-          "stale": false
+          "stale": true
         },
         {
           "id": "mahsun:androstreamliveexn4",
@@ -1849,10 +1849,10 @@
             }
           ],
           "resolved": true,
-          "fresh": true,
+          "fresh": false,
           "resolved_url": "https://andro.evrenesoglu127.click/checklist/androstreamliveexn4.m3u8",
           "resolved_at": "2026-10-10T14:53:53+00:00",
-          "stale": false
+          "stale": true
         },
         {
           "id": "mahsun:androstreamliveexn5",
@@ -1878,10 +1878,10 @@
             }
           ],
           "resolved": true,
-          "fresh": true,
+          "fresh": false,
           "resolved_url": "https://andro.evrenesoglu127.click/checklist/androstreamliveexn5.m3u8",
           "resolved_at": "2026-10-10T14:53:53+00:00",
-          "stale": false
+          "stale": true
         },
         {
           "id": "mahsun:androstreamliveexn6",
@@ -1907,10 +1907,10 @@
             }
           ],
           "resolved": true,
-          "fresh": true,
+          "fresh": false,
           "resolved_url": "https://andro.evrenesoglu127.click/checklist/androstreamliveexn6.m3u8",
           "resolved_at": "2026-10-10T14:53:53+00:00",
-          "stale": false
+          "stale": true
         },
         {
           "id": "mahsun:androstreamliveexn7",
@@ -1936,10 +1936,10 @@
             }
           ],
           "resolved": true,
-          "fresh": true,
+          "fresh": false,
           "resolved_url": "https://andro.evrenesoglu127.click/checklist/androstreamliveexn7.m3u8",
           "resolved_at": "2026-10-10T14:53:53+00:00",
-          "stale": false
+          "stale": true
         },
         {
           "id": "mahsun:androstreamliveexn8",
@@ -1965,10 +1965,10 @@
             }
           ],
           "resolved": true,
-          "fresh": true,
+          "fresh": false,
           "resolved_url": "https://andro.evrenesoglu127.click/checklist/androstreamliveexn8.m3u8",
           "resolved_at": "2026-10-10T14:53:53+00:00",
-          "stale": false
+          "stale": true
         },
         {
           "id": "mahsun:androstreamliveidm",
@@ -1994,10 +1994,10 @@
             }
           ],
           "resolved": true,
-          "fresh": true,
+          "fresh": false,
           "resolved_url": "https://andro.evrenesoglu127.click/checklist/androstreamliveidm.m3u8",
           "resolved_at": "2026-10-10T14:53:53+00:00",
-          "stale": false
+          "stale": true
         },
         {
           "id": "mahsun:androstreamlivecbcs",
@@ -2023,10 +2023,10 @@
             }
           ],
           "resolved": true,
-          "fresh": true,
+          "fresh": false,
           "resolved_url": "https://andro.evrenesoglu127.click/checklist/androstreamlivecbcs.m3u8",
           "resolved_at": "2026-10-10T14:53:53+00:00",
-          "stale": false
+          "stale": true
         }
       ]
     },
@@ -2358,7 +2358,7 @@
           "resolved": true,
           "fresh": true,
           "resolved_url": "https://sultanbettv101.live/mono.m3u8",
-          "resolved_at": "2026-10-10T14:53:53+00:00",
+          "resolved_at": "2026-10-10T15:23:16+00:00",
           "stale": false
         },
         {
@@ -2387,7 +2387,7 @@
           "resolved": true,
           "fresh": true,
           "resolved_url": "https://sultanbettv101.live/mono.m3u8",
-          "resolved_at": "2026-10-10T14:53:53+00:00",
+          "resolved_at": "2026-10-10T15:23:16+00:00",
           "stale": false
         },
         {
@@ -2416,7 +2416,7 @@
           "resolved": true,
           "fresh": true,
           "resolved_url": "https://sultanbettv101.live/mono.m3u8",
-          "resolved_at": "2026-10-10T14:53:53+00:00",
+          "resolved_at": "2026-10-10T15:23:16+00:00",
           "stale": false
         },
         {
@@ -2445,7 +2445,7 @@
           "resolved": true,
           "fresh": true,
           "resolved_url": "https://sultanbettv101.live/mono.m3u8",
-          "resolved_at": "2026-10-10T14:53:53+00:00",
+          "resolved_at": "2026-10-10T15:23:16+00:00",
           "stale": false
         },
         {
@@ -2474,7 +2474,7 @@
           "resolved": true,
           "fresh": true,
           "resolved_url": "https://sultanbettv101.live/mono.m3u8",
-          "resolved_at": "2026-10-10T14:53:53+00:00",
+          "resolved_at": "2026-10-10T15:23:16+00:00",
           "stale": false
         },
         {
@@ -2503,7 +2503,7 @@
           "resolved": true,
           "fresh": true,
           "resolved_url": "https://sultanbettv101.live/mono.m3u8",
-          "resolved_at": "2026-10-10T14:53:53+00:00",
+          "resolved_at": "2026-10-10T15:23:16+00:00",
           "stale": false
         },
         {
@@ -2532,7 +2532,7 @@
           "resolved": true,
           "fresh": true,
           "resolved_url": "https://sultanbettv101.live/mono.m3u8",
-          "resolved_at": "2026-10-10T14:53:53+00:00",
+          "resolved_at": "2026-10-10T15:23:16+00:00",
           "stale": false
         },
         {
@@ -2561,7 +2561,7 @@
           "resolved": true,
           "fresh": true,
           "resolved_url": "https://sultanbettv101.live/mono.m3u8",
-          "resolved_at": "2026-10-10T14:53:53+00:00",
+          "resolved_at": "2026-10-10T15:23:16+00:00",
           "stale": false
         },
         {
@@ -2590,7 +2590,7 @@
           "resolved": true,
           "fresh": true,
           "resolved_url": "https://sultanbettv101.live/mono.m3u8",
-          "resolved_at": "2026-10-10T14:53:53+00:00",
+          "resolved_at": "2026-10-10T15:23:16+00:00",
           "stale": false
         },
         {
@@ -2619,7 +2619,7 @@
           "resolved": true,
           "fresh": true,
           "resolved_url": "https://sultanbettv101.live/mono.m3u8",
-          "resolved_at": "2026-10-10T14:53:53+00:00",
+          "resolved_at": "2026-10-10T15:23:16+00:00",
           "stale": false
         },
         {
@@ -2648,7 +2648,7 @@
           "resolved": true,
           "fresh": true,
           "resolved_url": "https://sultanbettv101.live/mono.m3u8",
-          "resolved_at": "2026-10-10T14:53:53+00:00",
+          "resolved_at": "2026-10-10T15:23:16+00:00",
           "stale": false
         },
         {
@@ -2677,7 +2677,7 @@
           "resolved": true,
           "fresh": true,
           "resolved_url": "https://sultanbettv101.live/mono.m3u8",
-          "resolved_at": "2026-10-10T14:53:53+00:00",
+          "resolved_at": "2026-10-10T15:23:16+00:00",
           "stale": false
         },
         {
@@ -2706,7 +2706,7 @@
           "resolved": true,
           "fresh": true,
           "resolved_url": "https://sultanbettv101.live/mono.m3u8",
-          "resolved_at": "2026-10-10T14:53:53+00:00",
+          "resolved_at": "2026-10-10T15:23:16+00:00",
           "stale": false
         },
         {
@@ -2735,7 +2735,7 @@
           "resolved": true,
           "fresh": true,
           "resolved_url": "https://sultanbettv101.live/mono.m3u8",
-          "resolved_at": "2026-10-10T14:53:53+00:00",
+          "resolved_at": "2026-10-10T15:23:16+00:00",
           "stale": false
         },
         {
@@ -2764,7 +2764,7 @@
           "resolved": true,
           "fresh": true,
           "resolved_url": "https://sultanbettv101.live/mono.m3u8",
-          "resolved_at": "2026-10-10T14:53:53+00:00",
+          "resolved_at": "2026-10-10T15:23:16+00:00",
           "stale": false
         },
         {
@@ -2793,7 +2793,7 @@
           "resolved": true,
           "fresh": true,
           "resolved_url": "https://sultanbettv101.live/mono.m3u8",
-          "resolved_at": "2026-10-10T14:53:53+00:00",
+          "resolved_at": "2026-10-10T15:23:16+00:00",
           "stale": false
         },
         {
@@ -2822,7 +2822,7 @@
           "resolved": true,
           "fresh": true,
           "resolved_url": "https://sultanbettv101.live/mono.m3u8",
-          "resolved_at": "2026-10-10T14:53:53+00:00",
+          "resolved_at": "2026-10-10T15:23:16+00:00",
           "stale": false
         },
         {
@@ -2851,7 +2851,7 @@
           "resolved": true,
           "fresh": true,
           "resolved_url": "https://sultanbettv101.live/mono.m3u8",
-          "resolved_at": "2026-10-10T14:53:53+00:00",
+          "resolved_at": "2026-10-10T15:23:16+00:00",
           "stale": false
         }
       ]
@@ -2894,7 +2894,7 @@
           "resolved": true,
           "fresh": true,
           "resolved_url": "https://ladyboy.ardastream2.cfd//beintv/tracks-v1a1/mono.m3u8",
-          "resolved_at": "2026-10-10T14:53:53+00:00",
+          "resolved_at": "2026-10-10T15:23:16+00:00",
           "stale": false
         },
         {
@@ -2923,7 +2923,7 @@
           "resolved": true,
           "fresh": true,
           "resolved_url": "https://ladyboy.ardastream2.cfd//bein2/tracks-v1a1/mono.m3u8",
-          "resolved_at": "2026-10-10T14:53:53+00:00",
+          "resolved_at": "2026-10-10T15:23:16+00:00",
           "stale": false
         },
         {
@@ -2952,7 +2952,7 @@
           "resolved": true,
           "fresh": true,
           "resolved_url": "https://ladyboy.ardastream2.cfd//bein3/tracks-v1a1/mono.m3u8",
-          "resolved_at": "2026-10-10T14:53:53+00:00",
+          "resolved_at": "2026-10-10T15:23:16+00:00",
           "stale": false
         },
         {
@@ -2981,7 +2981,7 @@
           "resolved": true,
           "fresh": true,
           "resolved_url": "https://ladyboy.ardastream2.cfd//bein4/tracks-v1a1/mono.m3u8",
-          "resolved_at": "2026-10-10T14:53:53+00:00",
+          "resolved_at": "2026-10-10T15:23:16+00:00",
           "stale": false
         },
         {
@@ -3010,7 +3010,7 @@
           "resolved": true,
           "fresh": true,
           "resolved_url": "https://ladyboy.ardastream2.cfd//bein5/tracks-v1a1/mono.m3u8",
-          "resolved_at": "2026-10-10T14:53:53+00:00",
+          "resolved_at": "2026-10-10T15:23:16+00:00",
           "stale": false
         },
         {
@@ -3039,7 +3039,7 @@
           "resolved": true,
           "fresh": true,
           "resolved_url": "https://ladyboy.ardastream2.cfd//beinmax1/tracks-v1a1/mono.m3u8",
-          "resolved_at": "2026-10-10T14:53:53+00:00",
+          "resolved_at": "2026-10-10T15:23:16+00:00",
           "stale": false
         },
         {
@@ -3068,7 +3068,7 @@
           "resolved": true,
           "fresh": true,
           "resolved_url": "https://ladyboy.ardastream2.cfd//beinmax2/tracks-v1a1/mono.m3u8",
-          "resolved_at": "2026-10-10T14:53:53+00:00",
+          "resolved_at": "2026-10-10T15:23:16+00:00",
           "stale": false
         },
         {
@@ -3097,7 +3097,7 @@
           "resolved": true,
           "fresh": true,
           "resolved_url": "https://ladyboy.ardastream2.cfd//s-sport/tracks-v1a1/mono.m3u8",
-          "resolved_at": "2026-10-10T14:53:53+00:00",
+          "resolved_at": "2026-10-10T15:23:16+00:00",
           "stale": false
         },
         {
@@ -3126,7 +3126,7 @@
           "resolved": true,
           "fresh": true,
           "resolved_url": "https://ladyboy.ardastream2.cfd//s-sport2/tracks-v1a1/mono.m3u8",
-          "resolved_at": "2026-10-10T14:53:53+00:00",
+          "resolved_at": "2026-10-10T15:23:16+00:00",
           "stale": false
         },
         {
@@ -3155,7 +3155,7 @@
           "resolved": true,
           "fresh": true,
           "resolved_url": "https://ladyboy.ardastream2.cfd//trt-spor/tracks-v1a1/mono.m3u8",
-          "resolved_at": "2026-10-10T14:53:53+00:00",
+          "resolved_at": "2026-10-10T15:23:16+00:00",
           "stale": false
         },
         {
@@ -3184,7 +3184,7 @@
           "resolved": true,
           "fresh": true,
           "resolved_url": "https://ladyboy.ardastream2.cfd//trt1/tracks-v1a1/mono.m3u8",
-          "resolved_at": "2026-10-10T14:53:53+00:00",
+          "resolved_at": "2026-10-10T15:23:16+00:00",
           "stale": false
         },
         {
@@ -3213,7 +3213,7 @@
           "resolved": true,
           "fresh": true,
           "resolved_url": "https://ladyboy.ardastream2.cfd//aspor/tracks-v1a1/mono.m3u8",
-          "resolved_at": "2026-10-10T14:53:53+00:00",
+          "resolved_at": "2026-10-10T15:23:16+00:00",
           "stale": false
         }
       ]
