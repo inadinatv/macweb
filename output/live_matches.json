@@ -17,32 +17,5 @@
     "note": "OK",
     "probed": 200
   },
-  "live": [
-    {
-      "match_id": "ss",
-      "home": "Real Madrid",
-      "away": "Villarreal",
-      "league": "İspanya La Liga",
-      "time": "22:00",
-      "sport": "Futbol",
-      "is_match_of_day": false,
-      "channel_id": "ss",
-      "logo_home": "https://img.sporekrani.com/teams/Clc4LOfTBSjPOeXnGfF4ot90t40BMgo2YiuAluuI.png",
-      "logo_away": "https://img.sporekrani.com/teams/72c8e6b4-1dd6-4dcf-9bc0-b88c01d3a624.png",
-      "status": "live",
-      "started": true,
-      "raw_event": "22:00 | İspanya La Liga",
-      "url": "https://fixbettv84.com/channel.html?id=ss",
-      "fetched_at": "2026-10-10T23:49:32+03:00",
-      "status_source": "espn",
-      "raw_status": "STATUS_SECOND_HALF",
-      "score_home": 1,
-      "score_away": 0,
-      "score_source": "espn",
-      "score_updated_at": "2026-10-10T23:49:32+03:00",
-      "event_id": "401882848",
-      "starts_at": "2026-10-10T19:00:00+00:00",
-      "status_clock": "90'+1'"
-    }
-  ]
+  "live": []
 }

@@ -1,23 +1,23 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-10-10 20:50  
-> **Toplam maç:** 9  |  **Canlı:** 1  |  **Yaklaşan:** 0
+> **Güncellenme:** 2026-10-10 22:14  
+> **Toplam maç:** 9  |  **Canlı:** 0  |  **Yaklaşan:** 3
 
-## 🔴 CANLI
+## ⏰ YAKLAŞAN
 
-- 🔴 **Real Madrid 1 - 0 Villarreal** — CANLI · `22:00` | İspanya La Liga <https://fixbettv84.com/channel.html?id=ss>
+- ⏰ **Manchester Utd vs Tottenham** — YAKLAŞAN · `19:30` | İngiltere Premier Lig <https://fixbettv84.com/channel.html?id=b3>
+- ⏰ **Barcelona vs Getafe** — YAKLAŞAN · `19:30` | İspanya La Liga <https://fixbettv84.com/channel.html?id=ss>
+- ⏰ **Maritimo vs Porto** — YAKLAŞAN · `20:00` | Portekiz Liga NOS <https://fixbettv84.com/channel.html?id=bm2>
 
 ## ✅ BİTTİ
 
-- ✅ **Manchester Utd vs Tottenham** — MS · `19:30` | İngiltere Premier Lig <https://fixbettv84.com/channel.html?id=b3>
-- ✅ **Barcelona 3 - 0 Getafe** — MS · `19:30` | İspanya La Liga <https://fixbettv84.com/channel.html?id=ss>
-- ✅ **Maritimo vs Porto** — MS · `20:00` | Portekiz Liga NOS <https://fixbettv84.com/channel.html?id=bm2>
 - ✅ **Çayırova Bld. vs Fenerbahçe Tarfin** — MS · `20:30` | Basketbol Süper Ligi <https://fixbettv84.com/channel.html?id=b5>
-- ✅ **Lorient 1 - 0 Paris FC** — MS · `21:45` | Fransa Ligue 1 <https://fixbettv84.com/channel.html?id=b4>
-- ✅ **Monaco 2 - 2 Toulouse** — MS · `21:45` | Fransa Ligue 1 <https://fixbettv84.com/channel.html?id=b3>
-- ✅ **PSG 3 - 1 Le Mans** — MS · `21:45` | Fransa Ligue 1 <https://fixbettv84.com/channel.html?id=b2>
-- ✅ **Napoli 3 - 0 Frosinone** — MS · `21:45` | İtalya Serie A <https://fixbettv84.com/channel.html?id=ss2>
+- ✅ **Lorient vs Paris FC** — MS · `21:45` | Fransa Ligue 1 <https://fixbettv84.com/channel.html?id=b4>
+- ✅ **Monaco vs Toulouse** — MS · `21:45` | Fransa Ligue 1 <https://fixbettv84.com/channel.html?id=b3>
+- ✅ **PSG vs Le Mans** — MS · `21:45` | Fransa Ligue 1 <https://fixbettv84.com/channel.html?id=b2>
+- ✅ **Napoli vs Frosinone** — MS · `21:45` | İtalya Serie A <https://fixbettv84.com/channel.html?id=ss2>
+- ✅ **Real Madrid vs Villarreal** — MS · `22:00` | İspanya La Liga <https://fixbettv84.com/channel.html?id=ss>
 
 ---
 ## 🏆 Lig Bazlı
@@ -38,7 +38,7 @@
 
 ### İspanya La Liga
 - ⏰ Barcelona vs Getafe — 19:30
-- 🔴 Real Madrid vs Villarreal — 22:00
+- ⏰ Real Madrid vs Villarreal — 22:00
 
 ### İtalya Serie A
 - ⏰ Napoli vs Frosinone — 21:45
