@@ -1,34 +1,34 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-10-10 19:27  
-> **Toplam maç:** 9  |  **Canlı:** 6  |  **Yaklaşan:** 0
+> **Güncellenme:** 2026-10-10 20:50  
+> **Toplam maç:** 9  |  **Canlı:** 1  |  **Yaklaşan:** 0
 
 ## 🔴 CANLI
 
-- 🔴 **Çayırova Bld. vs Fenerbahçe Tarfin** — CANLI · `20:30` | Basketbol Süper Ligi <https://fixbettv84.com/channel.html?id=b5>
-- 🔴 **Lorient 0 - 0 Paris FC** — CANLI · `21:45` | Fransa Ligue 1 <https://fixbettv84.com/channel.html?id=b4>
-- 🔴 **Monaco 1 - 0 Toulouse** — CANLI · `21:45` | Fransa Ligue 1 <https://fixbettv84.com/channel.html?id=b3>
-- 🔴 **PSG 1 - 0 Le Mans** — CANLI · `21:45` | Fransa Ligue 1 <https://fixbettv84.com/channel.html?id=b2>
-- 🔴 **Napoli 2 - 0 Frosinone** — CANLI · `21:45` | İtalya Serie A <https://fixbettv84.com/channel.html?id=ss2>
-- 🔴 **Real Madrid 0 - 0 Villarreal** — CANLI · `22:00` | İspanya La Liga <https://fixbettv84.com/channel.html?id=ss>
+- 🔴 **Real Madrid 1 - 0 Villarreal** — CANLI · `22:00` | İspanya La Liga <https://fixbettv84.com/channel.html?id=ss>
 
 ## ✅ BİTTİ
 
 - ✅ **Manchester Utd vs Tottenham** — MS · `19:30` | İngiltere Premier Lig <https://fixbettv84.com/channel.html?id=b3>
 - ✅ **Barcelona 3 - 0 Getafe** — MS · `19:30` | İspanya La Liga <https://fixbettv84.com/channel.html?id=ss>
 - ✅ **Maritimo vs Porto** — MS · `20:00` | Portekiz Liga NOS <https://fixbettv84.com/channel.html?id=bm2>
+- ✅ **Çayırova Bld. vs Fenerbahçe Tarfin** — MS · `20:30` | Basketbol Süper Ligi <https://fixbettv84.com/channel.html?id=b5>
+- ✅ **Lorient 1 - 0 Paris FC** — MS · `21:45` | Fransa Ligue 1 <https://fixbettv84.com/channel.html?id=b4>
+- ✅ **Monaco 2 - 2 Toulouse** — MS · `21:45` | Fransa Ligue 1 <https://fixbettv84.com/channel.html?id=b3>
+- ✅ **PSG 3 - 1 Le Mans** — MS · `21:45` | Fransa Ligue 1 <https://fixbettv84.com/channel.html?id=b2>
+- ✅ **Napoli 3 - 0 Frosinone** — MS · `21:45` | İtalya Serie A <https://fixbettv84.com/channel.html?id=ss2>
 
 ---
 ## 🏆 Lig Bazlı
 
 ### Basketbol Süper Ligi
-- 🔴 Çayırova Bld. vs Fenerbahçe Tarfin — 20:30
+- ⏰ Çayırova Bld. vs Fenerbahçe Tarfin — 20:30
 
 ### Fransa Ligue 1
-- 🔴 Lorient vs Paris FC — 21:45
-- 🔴 Monaco vs Toulouse — 21:45
-- 🔴 PSG vs Le Mans — 21:45
+- ⏰ Lorient vs Paris FC — 21:45
+- ⏰ Monaco vs Toulouse — 21:45
+- ⏰ PSG vs Le Mans — 21:45
 
 ### Portekiz Liga NOS
 - ⏰ Maritimo vs Porto — 20:00
@@ -41,7 +41,7 @@
 - 🔴 Real Madrid vs Villarreal — 22:00
 
 ### İtalya Serie A
-- 🔴 Napoli vs Frosinone — 21:45
+- ⏰ Napoli vs Frosinone — 21:45
 
 ---
 ## 📺 7/24 KANALLAR (31)
