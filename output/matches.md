@@ -1,8 +1,8 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-10-09 23:33  
-> **Toplam maç:** 30  |  **Canlı:** 0  |  **Yaklaşan:** 29
+> **Güncellenme:** 2026-10-10 01:59  
+> **Toplam maç:** 30  |  **Canlı:** 0  |  **Yaklaşan:** 30
 
 ## ⏰ YAKLAŞAN
 
@@ -30,15 +30,12 @@
 - ⏰ **Manchester Utd vs Tottenham** — YAKLAŞAN · `19:30` | İngiltere Premier Lig <https://fixbettv84.com/channel.html?id=b3>
 - ⏰ **Barcelona vs Getafe** — YAKLAŞAN · `19:30` | İspanya La Liga <https://fixbettv84.com/channel.html?id=ss>
 - ⏰ **Maritimo vs Porto** — YAKLAŞAN · `20:00` | Portekiz Liga NOS <https://fixbettv84.com/channel.html?id=bm2>
+- ⏰ **Çayırova Bld. vs Fenerbahçe Tarfin** — YAKLAŞAN · `20:30` | Basketbol Süper Ligi <https://fixbettv84.com/channel.html?id=b5>
 - ⏰ **Lorient vs Paris FC** — YAKLAŞAN · `21:45` | Fransa Ligue 1 <https://fixbettv84.com/channel.html?id=b4>
 - ⏰ **Monaco vs Toulouse** — YAKLAŞAN · `21:45` | Fransa Ligue 1 <https://fixbettv84.com/channel.html?id=b3>
 - ⏰ **PSG vs Le Mans** — YAKLAŞAN · `21:45` | Fransa Ligue 1 <https://fixbettv84.com/channel.html?id=b2>
 - ⏰ **Napoli vs Frosinone** — YAKLAŞAN · `21:45` | İtalya Serie A <https://fixbettv84.com/channel.html?id=ss2>
 - ⏰ **Real Madrid vs Villarreal** — YAKLAŞAN · `22:00` | İspanya La Liga <https://fixbettv84.com/channel.html?id=ss>
-
-## ✅ BİTTİ
-
-- ✅ **Çayırova Bld. vs Fenerbahçe Tarfin** — MS · `20:30` | Basketbol Süper Ligi <https://fixbettv84.com/channel.html?id=b5>
 
 ## ⭐ GÜNÜN MAÇI
 
