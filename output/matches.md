@@ -1,59 +1,28 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-10-10 18:54  
-> **Toplam maç:** 30  |  **Canlı:** 5  |  **Yaklaşan:** 1
+> **Güncellenme:** 2026-10-10 19:27  
+> **Toplam maç:** 9  |  **Canlı:** 6  |  **Yaklaşan:** 0
 
 ## 🔴 CANLI
 
 - 🔴 **Çayırova Bld. vs Fenerbahçe Tarfin** — CANLI · `20:30` | Basketbol Süper Ligi <https://fixbettv84.com/channel.html?id=b5>
 - 🔴 **Lorient 0 - 0 Paris FC** — CANLI · `21:45` | Fransa Ligue 1 <https://fixbettv84.com/channel.html?id=b4>
-- 🔴 **Monaco 0 - 0 Toulouse** — CANLI · `21:45` | Fransa Ligue 1 <https://fixbettv84.com/channel.html?id=b3>
-- 🔴 **PSG 0 - 0 Le Mans** — CANLI · `21:45` | Fransa Ligue 1 <https://fixbettv84.com/channel.html?id=b2>
-- 🔴 **Napoli 0 - 0 Frosinone** — CANLI · `21:45` | İtalya Serie A <https://fixbettv84.com/channel.html?id=ss2>
-
-## ⏰ YAKLAŞAN
-
-- ⏰ **Real Madrid vs Villarreal** — YAKLAŞAN · `22:00` | İspanya La Liga <https://fixbettv84.com/channel.html?id=ss>
+- 🔴 **Monaco 1 - 0 Toulouse** — CANLI · `21:45` | Fransa Ligue 1 <https://fixbettv84.com/channel.html?id=b3>
+- 🔴 **PSG 1 - 0 Le Mans** — CANLI · `21:45` | Fransa Ligue 1 <https://fixbettv84.com/channel.html?id=b2>
+- 🔴 **Napoli 2 - 0 Frosinone** — CANLI · `21:45` | İtalya Serie A <https://fixbettv84.com/channel.html?id=ss2>
+- 🔴 **Real Madrid 0 - 0 Villarreal** — CANLI · `22:00` | İspanya La Liga <https://fixbettv84.com/channel.html?id=ss>
 
 ## ✅ BİTTİ
 
-- ✅ **Bahçeşehir Klj vs Karşıyaka** — MS · `13:00` | Basketbol Süper Ligi <https://fixbettv84.com/channel.html?id=b5>
-- ✅ **Gaziantep Gençlik vs Onikişubat Belediyespor** — MS · `13:00` | TVF Erkekler Kupa Volley <https://fixbettv84.com/channel.html?id=trtspor2>
-- ✅ **Gençlerbirliği vs Amedspor** — MS · `13:30` | Trendyol Süper Lig <https://fixbettv84.com/channel.html?id=b2>
-- ✅ **Boluspor 0 - 1 Antalyaspor** — MS · `13:30` | Trendyol 1. Lig <https://fixbettv84.com/channel.html?id=trtspor>
-- ✅ **Arsenal 2 - 1 Leeds United** — MS · `14:30` | İngiltere Premier Lig <https://fixbettv84.com/channel.html?id=b3>
-- ✅ **Nantes 0 - 0 Reims** — MS · `15:00` | Fransa Ligue 2 <https://fixbettv84.com/channel.html?id=bm2>
-- ✅ **Petkimspor vs Körfez Basket** — MS · `15:30` | Basketbol Süper Ligi <https://fixbettv84.com/channel.html?id=b5>
-- ✅ **Genoa 2 - 1 Fiorentina** — MS · `16:00` | İtalya Serie A <https://fixbettv84.com/channel.html?id=ss2>
-- ✅ **Alanyaspor 0 - 0 Erzurumspor** — MS · `16:00` | Trendyol Süper Lig <https://fixbettv84.com/channel.html?id=b2>
-- ✅ **Samsunspor 0 - 3 Trabzonspor** — MS · `16:00` | Trendyol Süper Lig <https://fixbettv84.com/channel.html?id=zirve>
-- ✅ **Iğdırspor 2 - 1 Batman Petrol** — MS · `16:00` | Trendyol 1. Lig <https://fixbettv84.com/channel.html?id=trtspor>
-- ✅ **Aston Villa 2 - 2 Brentford** — MS · `17:00` | İngiltere Premier Lig <https://fixbettv84.com/channel.html?id=bm1>
-- ✅ **Chelsea 5 - 1 Bournemouth** — MS · `17:00` | İngiltere Premier Lig <https://fixbettv84.com/channel.html?id=b3>
-- ✅ **Sunderland 0 - 2 Brighton** — MS · `17:00` | İngiltere Premier Lig <https://fixbettv84.com/channel.html?id=bm2>
-- ✅ **Alaves 1 - 2 Atletico Madrid** — MS · `17:15` | İspanya La Liga <https://fixbettv84.com/channel.html?id=ss>
-- ✅ **Tofaş vs Esenler Erokspor** — MS · `18:00` | Basketbol Süper Ligi <https://fixbettv84.com/channel.html?id=b5>
-- ✅ **Beykoz Bld. vs Beşiktaş** — MS · `18:30` | Hentbol Erkekler Süper Ligi <https://fixbettv84.com/channel.html?id=trtspor2>
-- ✅ **Ç.Rizespor 0 - 3 Fenerbahçe** — MS · `19:00` | Trendyol Süper Lig ★ **Günün Maçı** <https://fixbettv84.com/channel.html?id=zirve>
-- ✅ **Inter vs Parma** — MS · `19:00` | İtalya Serie A <https://fixbettv84.com/channel.html?id=ss2>
-- ✅ **Kayserispor 3 - 2 Manisa FK** — MS · `19:00` | Trendyol 1. Lig <https://fixbettv84.com/channel.html?id=b2>
-- ✅ **İstanbulspor 0 - 1 Esenler Erokspor** — MS · `19:00` | Trendyol 1. Lig <https://fixbettv84.com/channel.html?id=trtspor>
 - ✅ **Manchester Utd vs Tottenham** — MS · `19:30` | İngiltere Premier Lig <https://fixbettv84.com/channel.html?id=b3>
 - ✅ **Barcelona 3 - 0 Getafe** — MS · `19:30` | İspanya La Liga <https://fixbettv84.com/channel.html?id=ss>
 - ✅ **Maritimo vs Porto** — MS · `20:00` | Portekiz Liga NOS <https://fixbettv84.com/channel.html?id=bm2>
-
-## ⭐ GÜNÜN MAÇI
-
-- ✅ **Ç.Rizespor 0 - 3 Fenerbahçe** — MS · `19:00` | Trendyol Süper Lig ★ **Günün Maçı** <https://fixbettv84.com/channel.html?id=zirve>
 
 ---
 ## 🏆 Lig Bazlı
 
 ### Basketbol Süper Ligi
-- ⏰ Bahçeşehir Klj vs Karşıyaka — 13:00
-- ⏰ Petkimspor vs Körfez Basket — 15:30
-- ⏰ Tofaş vs Esenler Erokspor — 18:00
 - 🔴 Çayırova Bld. vs Fenerbahçe Tarfin — 20:30
 
 ### Fransa Ligue 1
@@ -61,45 +30,17 @@
 - 🔴 Monaco vs Toulouse — 21:45
 - 🔴 PSG vs Le Mans — 21:45
 
-### Fransa Ligue 2
-- ⏰ Nantes vs Reims — 15:00
-
-### Hentbol Erkekler Süper Ligi
-- ⏰ Beykoz Bld. vs Beşiktaş — 18:30
-
 ### Portekiz Liga NOS
 - ⏰ Maritimo vs Porto — 20:00
 
-### TVF Erkekler Kupa Volley
-- ⏰ Gaziantep Gençlik vs Onikişubat Belediyespor — 13:00
-
-### Trendyol 1. Lig
-- ⏰ Boluspor vs Antalyaspor — 13:30
-- ⏰ Iğdırspor vs Batman Petrol — 16:00
-- ⏰ Kayserispor vs Manisa FK — 19:00
-- ⏰ İstanbulspor vs Esenler Erokspor — 19:00
-
-### Trendyol Süper Lig
-- ⏰ Gençlerbirliği vs Amedspor — 13:30
-- ⏰ Alanyaspor vs Erzurumspor — 16:00
-- ⏰ Samsunspor vs Trabzonspor — 16:00
-- ⏰ Ç.Rizespor vs Fenerbahçe — 19:00
-
 ### İngiltere Premier Lig
-- ⏰ Arsenal vs Leeds United — 14:30
-- ⏰ Aston Villa vs Brentford — 17:00
-- ⏰ Chelsea vs Bournemouth — 17:00
-- ⏰ Sunderland vs Brighton — 17:00
 - ⏰ Manchester Utd vs Tottenham — 19:30
 
 ### İspanya La Liga
-- ⏰ Alaves vs Atletico Madrid — 17:15
 - ⏰ Barcelona vs Getafe — 19:30
-- ⏰ Real Madrid vs Villarreal — 22:00
+- 🔴 Real Madrid vs Villarreal — 22:00
 
 ### İtalya Serie A
-- ⏰ Genoa vs Fiorentina — 16:00
-- ⏰ Inter vs Parma — 19:00
 - 🔴 Napoli vs Frosinone — 21:45
 
 ---
@@ -157,7 +98,7 @@
 ---
 ## ⚡ EKSTRA PANELLER — m3u8 (109)
 
-### ⚛️ ATOM SPOR ✅ `https://atomsportv516.top`
+### ⚛️ ATOM SPOR ✅ `https://atomsportv517.top`
 - 🟢 **BEIN SPORTS 1** <https://ladyboy.ardastream2.cfd//beintv/tracks-v1a1/mono.m3u8>
 - 🟢 **BEIN SPORTS 2** <https://ladyboy.ardastream2.cfd//bein2/tracks-v1a1/mono.m3u8>
 - 🟢 **BEIN SPORTS 3** <https://ladyboy.ardastream2.cfd//bein3/tracks-v1a1/mono.m3u8>
@@ -190,45 +131,45 @@
 - 🟢 **EUROSPORT 1** <https://dga1op10s1u3lea.82250d06d39d38.click/live/selcukeurosport1/playlist.m3u8>
 
 ### 🌴 MAHSUN SPORTS ✅ `https://mahsunsports.xyz`
-- 🟡 **BEIN SPORTS 1** <https://andro.evrenesoglu127.click/checklist/androstreamlivebs1.m3u8>
-- 🟡 **BEIN SPORTS 2** <https://andro.evrenesoglu127.click/checklist/androstreamlivebs2.m3u8>
-- 🟡 **BEIN SPORTS 3** <https://andro.evrenesoglu127.click/checklist/androstreamlivebs3.m3u8>
-- 🟡 **BEIN SPORTS 4** <https://andro.evrenesoglu127.click/checklist/androstreamlivebs4.m3u8>
-- 🟡 **BEIN SPORTS 5** <https://andro.evrenesoglu127.click/checklist/androstreamlivebs5.m3u8>
-- 🟡 **BEIN SPORTS MAX 1** <https://andro.evrenesoglu127.click/checklist/androstreamlivebsm1.m3u8>
-- 🟡 **BEIN SPORTS MAX 2** <https://andro.evrenesoglu127.click/checklist/androstreamlivebsm2.m3u8>
-- 🟡 **S SPORT 1** <https://andro.evrenesoglu127.click/checklist/androstreamlivess1.m3u8>
-- 🟡 **S SPORT 2** <https://andro.evrenesoglu127.click/checklist/androstreamlivess2.m3u8>
-- 🟡 **S SPORT PLUS** <https://andro.evrenesoglu127.click/checklist/androstreamlivessplus1.m3u8>
-- 🟡 **TIVIBU SPOR** <https://andro.evrenesoglu127.click/checklist/androstreamlivets.m3u8>
-- 🟡 **TIVIBU SPOR 1** <https://andro.evrenesoglu127.click/checklist/androstreamlivets1.m3u8>
-- 🟡 **TIVIBU SPOR 2** <https://andro.evrenesoglu127.click/checklist/androstreamlivets2.m3u8>
-- 🟡 **TIVIBU SPOR 3** <https://andro.evrenesoglu127.click/checklist/androstreamlivets3.m3u8>
-- 🟡 **TIVIBU SPOR 4** <https://andro.evrenesoglu127.click/checklist/androstreamlivets4.m3u8>
-- 🟡 **SMARTSPOR** <https://andro.evrenesoglu127.click/checklist/androstreamlivesm1.m3u8>
-- 🟡 **SMARTSPOR 2** <https://andro.evrenesoglu127.click/checklist/androstreamlivesm2.m3u8>
-- 🟡 **EUROSPORT 1** <https://andro.evrenesoglu127.click/checklist/androstreamlivees1.m3u8>
-- 🟡 **EUROSPORT 2** <https://andro.evrenesoglu127.click/checklist/androstreamlivees2.m3u8>
-- 🟡 **TABII SPOR** <https://andro.evrenesoglu127.click/checklist/androstreamlivetb.m3u8>
-- 🟡 **TABII SPOR 1** <https://andro.evrenesoglu127.click/checklist/androstreamlivetb1.m3u8>
-- 🟡 **TABII SPOR 2** <https://andro.evrenesoglu127.click/checklist/androstreamlivetb2.m3u8>
-- 🟡 **TABII SPOR 3** <https://andro.evrenesoglu127.click/checklist/androstreamlivetb3.m3u8>
-- 🟡 **TABII SPOR 4** <https://andro.evrenesoglu127.click/checklist/androstreamlivetb4.m3u8>
-- 🟡 **TABII SPOR 5** <https://andro.evrenesoglu127.click/checklist/androstreamlivetb5.m3u8>
-- 🟡 **TABII SPOR 6** <https://andro.evrenesoglu127.click/checklist/androstreamlivetb6.m3u8>
-- 🟡 **TABII SPOR 7** <https://andro.evrenesoglu127.click/checklist/androstreamlivetb7.m3u8>
-- 🟡 **TABII SPOR 8** <https://andro.evrenesoglu127.click/checklist/androstreamlivetb8.m3u8>
-- 🟡 **EXXEN SPOR** <https://andro.evrenesoglu127.click/checklist/androstreamliveexn.m3u8>
-- 🟡 **EXXEN SPOR 1** <https://andro.evrenesoglu127.click/checklist/androstreamliveexn1.m3u8>
-- 🟡 **EXXEN SPOR 2** <https://andro.evrenesoglu127.click/checklist/androstreamliveexn2.m3u8>
-- 🟡 **EXXEN SPOR 3** <https://andro.evrenesoglu127.click/checklist/androstreamliveexn3.m3u8>
-- 🟡 **EXXEN SPOR 4** <https://andro.evrenesoglu127.click/checklist/androstreamliveexn4.m3u8>
-- 🟡 **EXXEN SPOR 5** <https://andro.evrenesoglu127.click/checklist/androstreamliveexn5.m3u8>
-- 🟡 **EXXEN SPOR 6** <https://andro.evrenesoglu127.click/checklist/androstreamliveexn6.m3u8>
-- 🟡 **EXXEN SPOR 7** <https://andro.evrenesoglu127.click/checklist/androstreamliveexn7.m3u8>
-- 🟡 **EXXEN SPOR 8** <https://andro.evrenesoglu127.click/checklist/androstreamliveexn8.m3u8>
-- 🟡 **IDMAN TV** <https://andro.evrenesoglu127.click/checklist/androstreamliveidm.m3u8>
-- 🟡 **CBC SPORT** <https://andro.evrenesoglu127.click/checklist/androstreamlivecbcs.m3u8>
+- 🟢 **BEIN SPORTS 1** <https://andro.evrenesoglu149.click/checklist/androstreamlivebs1.m3u8>
+- 🟢 **BEIN SPORTS 2** <https://andro.evrenesoglu149.click/checklist/androstreamlivebs2.m3u8>
+- 🟢 **BEIN SPORTS 3** <https://andro.evrenesoglu149.click/checklist/androstreamlivebs3.m3u8>
+- 🟢 **BEIN SPORTS 4** <https://andro.evrenesoglu149.click/checklist/androstreamlivebs4.m3u8>
+- 🟢 **BEIN SPORTS 5** <https://andro.evrenesoglu149.click/checklist/androstreamlivebs5.m3u8>
+- 🟢 **BEIN SPORTS MAX 1** <https://andro.evrenesoglu149.click/checklist/androstreamlivebsm1.m3u8>
+- 🟢 **BEIN SPORTS MAX 2** <https://andro.evrenesoglu149.click/checklist/androstreamlivebsm2.m3u8>
+- 🟢 **S SPORT 1** <https://andro.evrenesoglu149.click/checklist/androstreamlivess1.m3u8>
+- 🟢 **S SPORT 2** <https://andro.evrenesoglu149.click/checklist/androstreamlivess2.m3u8>
+- 🟢 **S SPORT PLUS** <https://andro.evrenesoglu149.click/checklist/androstreamlivessplus1.m3u8>
+- 🟢 **TIVIBU SPOR** <https://andro.evrenesoglu149.click/checklist/androstreamlivets.m3u8>
+- 🟢 **TIVIBU SPOR 1** <https://andro.evrenesoglu149.click/checklist/androstreamlivets1.m3u8>
+- 🟢 **TIVIBU SPOR 2** <https://andro.evrenesoglu149.click/checklist/androstreamlivets2.m3u8>
+- 🟢 **TIVIBU SPOR 3** <https://andro.evrenesoglu149.click/checklist/androstreamlivets3.m3u8>
+- 🟢 **TIVIBU SPOR 4** <https://andro.evrenesoglu149.click/checklist/androstreamlivets4.m3u8>
+- 🟢 **SMARTSPOR** <https://andro.evrenesoglu149.click/checklist/androstreamlivesm1.m3u8>
+- 🟢 **SMARTSPOR 2** <https://andro.evrenesoglu149.click/checklist/androstreamlivesm2.m3u8>
+- 🟢 **EUROSPORT 1** <https://andro.evrenesoglu149.click/checklist/androstreamlivees1.m3u8>
+- 🟢 **EUROSPORT 2** <https://andro.evrenesoglu149.click/checklist/androstreamlivees2.m3u8>
+- 🟢 **TABII SPOR** <https://andro.evrenesoglu149.click/checklist/androstreamlivetb.m3u8>
+- 🟢 **TABII SPOR 1** <https://andro.evrenesoglu149.click/checklist/androstreamlivetb1.m3u8>
+- 🟢 **TABII SPOR 2** <https://andro.evrenesoglu149.click/checklist/androstreamlivetb2.m3u8>
+- 🟢 **TABII SPOR 3** <https://andro.evrenesoglu149.click/checklist/androstreamlivetb3.m3u8>
+- 🟢 **TABII SPOR 4** <https://andro.evrenesoglu149.click/checklist/androstreamlivetb4.m3u8>
+- 🟢 **TABII SPOR 5** <https://andro.evrenesoglu149.click/checklist/androstreamlivetb5.m3u8>
+- 🟢 **TABII SPOR 6** <https://andro.evrenesoglu149.click/checklist/androstreamlivetb6.m3u8>
+- 🟢 **TABII SPOR 7** <https://andro.evrenesoglu149.click/checklist/androstreamlivetb7.m3u8>
+- 🟢 **TABII SPOR 8** <https://andro.evrenesoglu149.click/checklist/androstreamlivetb8.m3u8>
+- 🟢 **EXXEN SPOR** <https://andro.evrenesoglu149.click/checklist/androstreamliveexn.m3u8>
+- 🟢 **EXXEN SPOR 1** <https://andro.evrenesoglu149.click/checklist/androstreamliveexn1.m3u8>
+- 🟢 **EXXEN SPOR 2** <https://andro.evrenesoglu149.click/checklist/androstreamliveexn2.m3u8>
+- 🟢 **EXXEN SPOR 3** <https://andro.evrenesoglu149.click/checklist/androstreamliveexn3.m3u8>
+- 🟢 **EXXEN SPOR 4** <https://andro.evrenesoglu149.click/checklist/androstreamliveexn4.m3u8>
+- 🟢 **EXXEN SPOR 5** <https://andro.evrenesoglu149.click/checklist/androstreamliveexn5.m3u8>
+- 🟢 **EXXEN SPOR 6** <https://andro.evrenesoglu149.click/checklist/androstreamliveexn6.m3u8>
+- 🟢 **EXXEN SPOR 7** <https://andro.evrenesoglu149.click/checklist/androstreamliveexn7.m3u8>
+- 🟢 **EXXEN SPOR 8** <https://andro.evrenesoglu149.click/checklist/androstreamliveexn8.m3u8>
+- 🟢 **IDMAN TV** <https://andro.evrenesoglu149.click/checklist/androstreamliveidm.m3u8>
+- 🟢 **CBC SPORT** <https://andro.evrenesoglu149.click/checklist/androstreamlivecbcs.m3u8>
 
 ### 📺 TARAFTARIUM24 ✅ `https://taraftarium60.com`
 - ⚪ **BEIN SPORTS 1**
@@ -264,7 +205,7 @@
 - 🟢 **BEIN SPORTS MAX 2** <https://sultanbettv101.live/mono.m3u8>
 - 🟢 **TIVIBU SPOR 1** <https://sultanbettv101.live/mono.m3u8>
 
-### 📡 JUSTIN TV ✅ `https://justintv109.top`
+### 📡 JUSTIN TV ✅ `https://www.justintv110.top`
 - 🟢 **BEIN SPORTS 1** <https://ladyboy.ardastream2.cfd//beintv/tracks-v1a1/mono.m3u8>
 - 🟢 **BEIN SPORTS 2** <https://ladyboy.ardastream2.cfd//bein2/tracks-v1a1/mono.m3u8>
 - 🟢 **BEIN SPORTS 3** <https://ladyboy.ardastream2.cfd//bein3/tracks-v1a1/mono.m3u8>

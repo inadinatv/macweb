@@ -13,7 +13,7 @@
       "fixbettv12.com",
       "fixbettv11.com"
     ],
-    "last_checked": "2026-10-10T15:23:51+00:00",
+    "last_checked": "2026-10-10T19:26:54+00:00",
     "note": "OK",
     "probed": 200
   },
@@ -59,16 +59,16 @@
       "started": true,
       "raw_event": "21:45 | Fransa Ligue 1",
       "url": "https://fixbettv84.com/channel.html?id=b4",
-      "fetched_at": "2026-10-10T21:54:18+03:00",
+      "fetched_at": "2026-10-10T22:26:18+03:00",
       "status_source": "espn",
       "raw_status": "STATUS_FIRST_HALF",
       "score_home": 0,
       "score_away": 0,
       "score_source": "espn",
-      "score_updated_at": "2026-10-10T21:54:18+03:00",
+      "score_updated_at": "2026-10-10T22:26:18+03:00",
       "event_id": "401876445",
       "starts_at": "2026-10-10T18:45:00+00:00",
-      "status_clock": "9'"
+      "status_clock": "42'"
     },
     {
       "match_id": "b3",
@@ -85,16 +85,16 @@
       "started": true,
       "raw_event": "21:45 | Fransa Ligue 1",
       "url": "https://fixbettv84.com/channel.html?id=b3",
-      "fetched_at": "2026-10-10T21:54:18+03:00",
+      "fetched_at": "2026-10-10T22:26:18+03:00",
       "status_source": "espn",
       "raw_status": "STATUS_FIRST_HALF",
-      "score_home": 0,
+      "score_home": 1,
       "score_away": 0,
       "score_source": "espn",
-      "score_updated_at": "2026-10-10T21:54:18+03:00",
+      "score_updated_at": "2026-10-10T22:26:18+03:00",
       "event_id": "401876444",
       "starts_at": "2026-10-10T18:45:00+00:00",
-      "status_clock": "6'"
+      "status_clock": "39'"
     },
     {
       "match_id": "b2",
@@ -111,16 +111,16 @@
       "started": true,
       "raw_event": "21:45 | Fransa Ligue 1",
       "url": "https://fixbettv84.com/channel.html?id=b2",
-      "fetched_at": "2026-10-10T21:54:18+03:00",
+      "fetched_at": "2026-10-10T22:26:18+03:00",
       "status_source": "espn",
       "raw_status": "STATUS_FIRST_HALF",
-      "score_home": 0,
+      "score_home": 1,
       "score_away": 0,
       "score_source": "espn",
-      "score_updated_at": "2026-10-10T21:54:18+03:00",
+      "score_updated_at": "2026-10-10T22:26:18+03:00",
       "event_id": "401876442",
       "starts_at": "2026-10-10T18:45:00+00:00",
-      "status_clock": "9'"
+      "status_clock": "42'"
     },
     {
       "match_id": "ss2",
@@ -137,16 +137,42 @@
       "started": true,
       "raw_event": "21:45 | İtalya Serie A",
       "url": "https://fixbettv84.com/channel.html?id=ss2",
-      "fetched_at": "2026-10-10T21:54:18+03:00",
+      "fetched_at": "2026-10-10T22:26:18+03:00",
+      "status_source": "espn",
+      "raw_status": "STATUS_FIRST_HALF",
+      "score_home": 2,
+      "score_away": 0,
+      "score_source": "espn",
+      "score_updated_at": "2026-10-10T22:26:18+03:00",
+      "event_id": "401874754",
+      "starts_at": "2026-10-10T18:45:00+00:00",
+      "status_clock": "41'"
+    },
+    {
+      "match_id": "ss",
+      "home": "Real Madrid",
+      "away": "Villarreal",
+      "league": "İspanya La Liga",
+      "time": "22:00",
+      "sport": "Futbol",
+      "is_match_of_day": false,
+      "channel_id": "ss",
+      "logo_home": "https://img.sporekrani.com/teams/Clc4LOfTBSjPOeXnGfF4ot90t40BMgo2YiuAluuI.png",
+      "logo_away": "https://img.sporekrani.com/teams/72c8e6b4-1dd6-4dcf-9bc0-b88c01d3a624.png",
+      "status": "live",
+      "started": true,
+      "raw_event": "22:00 | İspanya La Liga",
+      "url": "https://fixbettv84.com/channel.html?id=ss",
+      "fetched_at": "2026-10-10T22:26:18+03:00",
       "status_source": "espn",
       "raw_status": "STATUS_FIRST_HALF",
       "score_home": 0,
       "score_away": 0,
       "score_source": "espn",
-      "score_updated_at": "2026-10-10T21:54:18+03:00",
-      "event_id": "401874754",
-      "starts_at": "2026-10-10T18:45:00+00:00",
-      "status_clock": "9'"
+      "score_updated_at": "2026-10-10T22:26:18+03:00",
+      "event_id": "401882848",
+      "starts_at": "2026-10-10T19:00:00+00:00",
+      "status_clock": "24'"
     }
   ]
 }

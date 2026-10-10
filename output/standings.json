@@ -1,13 +1,13 @@
 {
  "source": "mackolik",
- "generated_at": "2026-10-10T18:23:16+03:00",
+ "generated_at": "2026-10-10T22:26:18+03:00",
  "leagues": [
   {
    "id": "soccer/tur.1",
    "name": "Trendyol Süper Lig",
    "sport": "Futbol",
    "season": "2026-27 Turkish Super Lig",
-   "updated_at": "2026-10-10T18:23:16+03:00",
+   "updated_at": "2026-10-10T22:26:18+03:00",
    "teams": 18,
    "rows": [
     {
@@ -48,6 +48,24 @@
     },
     {
      "rank": 3,
+     "team": "Fenerbahçe",
+     "sourceTeam": "Fenerbahçe",
+     "abbr": "",
+     "logo": "https://file.mackolikfeeds.com/teams/8lroq0cbhdxj8124qtxwrhvmm",
+     "played": 7,
+     "wins": 4,
+     "draws": 1,
+     "losses": 2,
+     "goalsFor": 19,
+     "goalsAgainst": 6,
+     "diff": 13,
+     "points": 13,
+     "note": "",
+     "zone": "europa",
+     "zoneLabel": "Avrupa kupaları"
+    },
+    {
+     "rank": 4,
      "team": "Trabzonspor",
      "sourceTeam": "Trabzonspor",
      "abbr": "",
@@ -61,11 +79,11 @@
      "diff": 11,
      "points": 13,
      "note": "",
-     "zone": "europa",
-     "zoneLabel": "Avrupa kupaları"
+     "zone": "",
+     "zoneLabel": ""
     },
     {
-     "rank": 4,
+     "rank": 5,
      "team": "Beşiktaş",
      "sourceTeam": "Beşiktaş",
      "abbr": "",
@@ -83,7 +101,7 @@
      "zoneLabel": ""
     },
     {
-     "rank": 5,
+     "rank": 6,
      "team": "Kocaelispor",
      "sourceTeam": "Kocaelispor",
      "abbr": "",
@@ -101,7 +119,7 @@
      "zoneLabel": ""
     },
     {
-     "rank": 6,
+     "rank": 7,
      "team": "Alanyaspor",
      "sourceTeam": "Alanyaspor",
      "abbr": "",
@@ -119,43 +137,7 @@
      "zoneLabel": ""
     },
     {
-     "rank": 7,
-     "team": "Fenerbahçe",
-     "sourceTeam": "Fenerbahçe",
-     "abbr": "",
-     "logo": "https://file.mackolikfeeds.com/teams/8lroq0cbhdxj8124qtxwrhvmm",
-     "played": 6,
-     "wins": 3,
-     "draws": 1,
-     "losses": 2,
-     "goalsFor": 16,
-     "goalsAgainst": 6,
-     "diff": 10,
-     "points": 10,
-     "note": "",
-     "zone": "",
-     "zoneLabel": ""
-    },
-    {
      "rank": 8,
-     "team": "Çaykur Rizespor",
-     "sourceTeam": "Ç. Rizespor",
-     "abbr": "",
-     "logo": "https://file.mackolikfeeds.com/teams/1lbrlj3uu8wi2h9j79snuoae4",
-     "played": 6,
-     "wins": 3,
-     "draws": 1,
-     "losses": 2,
-     "goalsFor": 7,
-     "goalsAgainst": 6,
-     "diff": 1,
-     "points": 10,
-     "note": "",
-     "zone": "",
-     "zoneLabel": ""
-    },
-    {
-     "rank": 9,
      "team": "Kasımpaşa",
      "sourceTeam": "Kasımpaşa",
      "abbr": "",
@@ -167,6 +149,24 @@
      "goalsFor": 8,
      "goalsAgainst": 8,
      "diff": 0,
+     "points": 10,
+     "note": "",
+     "zone": "",
+     "zoneLabel": ""
+    },
+    {
+     "rank": 9,
+     "team": "Çaykur Rizespor",
+     "sourceTeam": "Ç. Rizespor",
+     "abbr": "",
+     "logo": "https://file.mackolikfeeds.com/teams/1lbrlj3uu8wi2h9j79snuoae4",
+     "played": 7,
+     "wins": 3,
+     "draws": 1,
+     "losses": 3,
+     "goalsFor": 7,
+     "goalsAgainst": 9,
+     "diff": -2,
      "points": 10,
      "note": "",
      "zone": "",
