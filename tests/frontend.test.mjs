@@ -240,6 +240,40 @@ test("output/today_matches.json ile canlı tazeleme çalışıyor", async () => 
   dom.window.close();
 });
 
+test("canlı Fixbet programı eski snapshot'ı dengeler ve MS skoru Bitti filtresine taşır", async () => {
+  const feed = `<!doctype html><a href="channel?id=final-1"><div class="match-detail">
+    <div class="date">Futbol</div><div class="event">12:00 | Trendyol Süper Lig</div>
+    <div class="teams"><div class="home">Final Takım <span class="score">3</span></div>
+    <div class="away">Rakip Takım <span class="score">1</span></div></div><div class="match-status">MS</div>
+  </div></a>
+  <a href="channel?id=next-1"><div class="match-detail"><div class="date">Futbol</div>
+    <div class="event">19:00 | Trendyol Süper Lig</div><div class="teams"><div class="home">Yeni Ev</div>
+    <div class="away">Yeni Deplasman</div></div></div></a>`;
+  const fetchImpl = async (url) => {
+    if (String(url).startsWith("https://data-reality.com/matches.php")) {
+      return { ok: true, status: 200, text: async () => feed };
+    }
+    if (String(url).startsWith("https://data-reality.com/matches2.php")) {
+      return { ok: true, status: 200, text: async () => "" };
+    }
+    return { ok: true, status: 200, json: async () => TODAY };
+  };
+  const { window, dom } = await loadPage({ fetchImpl });
+  assert.equal(await window.inadina.refreshMatches(true), true, "canlı feed tazelenmedi");
+  window.inadina.setTab("matchesTab");
+  assert.equal(matchCards(window).length, 2, "eski snapshot maçları canlı listenin üzerinde kaldı");
+  const final = [...matchCards(window)].find((card) => card.getAttribute("data-event").includes("Final Takım"));
+  assert.ok(final, "canlı feed’deki final maç yok");
+  assert.equal(final.getAttribute("data-status"), "finished", "MS durumu Bitti olmadı");
+  assert.match(final.querySelector(".match-score").textContent, /3.*1/, "kaynağın final skoru gösterilmedi");
+  const finishedChip = [...window.document.querySelectorAll("#matchFilterRow .chip")]
+    .find((chip) => chip.textContent.includes("Bitti"));
+  assert.ok(finishedChip && finishedChip.textContent.includes("1"), "Bitti filtresi final maçı saymıyor");
+  assert.ok(window.document.getElementById("updatedAtText").textContent.includes("Fixbet canlı program"),
+    "canlı program kaynağı kullanıcıya belirtilmedi");
+  dom.window.close();
+});
+
 test("tazeleme başarısız olursa gömülü gerçek veri kullanılıyor", async () => {
   const fetchImpl = async () => ({ ok: false, status: 404, json: async () => ({}) });
   const { window, dom, errors } = await loadPage({ fetchImpl });
@@ -757,9 +791,13 @@ test("yüklenemeyen CDN Promise'i sıfırlanır, tekrar deneme yeni script yükl
 test('gecikmiş liste isteği daha yeni dinamik skoru ezmez',async()=>{
   const {window}=await loadPage();
   const pending=[];
-  window.fetch=()=>new Promise(resolve=>pending.push(resolve));
+  window.fetch=(url)=>String(url).startsWith('https://data-reality.com/')
+    ? Promise.resolve({ok:false,status:503})
+    : new Promise(resolve=>pending.push(resolve));
   const old=window.inadina.refreshMatches();
   const fresh=window.inadina.refreshMatches();
+  await tick(); // canlı feed düşer; iki istek artık snapshot yedeğinde bekler
+  assert.equal(pending.length,2,'iki snapshot isteği sırayla başlatılmadı');
   pending[1]({ok:true,json:async()=>({date:'2026-09-06',matches:[remoteRow('latest','FT',[3,1])]})});
   await fresh;
   pending[0]({ok:true,json:async()=>({date:'2026-09-06',matches:[remoteRow('latest','live',[1,1])]})});

@@ -389,6 +389,12 @@ def build_index_html(matches: list[Match], channels_data: dict[str, Any] | None 
 
     base = scraper.current_base_url()
     now = now or datetime.now()
+    data_source = config.load_settings().get("data_source", {}) or {}
+    match_feed_sources = list(dict.fromkeys(
+        str(data_source.get(key) or "").strip()
+        for key in ("primary", "fallback")
+        if str(data_source.get(key) or "").strip()
+    ))
 
     if channels_data is None:
         channels_data = channels.categorize(channels.fetch_channels())
@@ -402,8 +408,10 @@ def build_index_html(matches: list[Match], channels_data: dict[str, Any] | None 
     html = TEMPLATE.read_text(encoding="utf-8")
     replacements = {
         "{{SITE_ADDR}}": escape(base or ""),
+        "{{SITE_ADDR_JSON}}": _js(base or ""),
         "{{UPDATED_AT}}": escape(now.strftime("%Y-%m-%d %H:%M")),
         "{{MATCHES_SOURCE}}": MATCHES_SOURCE,
+        "{{MATCH_FEED_SOURCES}}": _js(match_feed_sources),
         "{{STREAM_LINKS}}": _js(payload["links"]),
         "{{CHANNEL_NAMES}}": _js(payload["names"]),
         "{{CHANNEL_BRANDS}}": _js(payload["brands"]),

@@ -890,6 +890,8 @@
         /*BOT_START*/
         const updatedAt = "{{UPDATED_AT}}";
         const matchesSource = "{{MATCHES_SOURCE}}";
+        const matchFeedSources = {{MATCH_FEED_SOURCES}};
+        const matchPlayerBase = {{SITE_ADDR_JSON}};
         const streamLinks = {{STREAM_LINKS}};
         const channelNames = {{CHANNEL_NAMES}};
         const channelBrands = {{CHANNEL_BRANDS}};
@@ -2052,24 +2054,173 @@
                 });
             }
 
+            const LIVE_FIXTURE_TTL = 90 * 1000;
+            let liveFixtureCache = null, liveFixtureCacheAt = 0, liveFixturePromise = null;
+
+            function localDateKey(now) {
+                const parts = {};
+                new Intl.DateTimeFormat("en-US", { timeZone: matchTimezone, year: "numeric", month: "2-digit", day: "2-digit" })
+                    .formatToParts(now || new Date()).forEach((part) => { parts[part.type] = part.value; });
+                return parts.year + "-" + parts.month + "-" + parts.day;
+            }
+
+            /** Fixbet'in CORS açık maç HTML'ini backend parser'ıyla aynı alanlara indirger. */
+            function parseFixbetSchedule(markup, feedUrl) {
+                if (typeof DOMParser === "undefined") return [];
+                const doc = new DOMParser().parseFromString(String(markup || ""), "text/html");
+                const out = [], seen = new Set();
+                const teamText = (el) => {
+                    if (!el) return "";
+                    const clone = el.cloneNode(true);
+                    clone.querySelectorAll(".score, .home-score, .away-score, .score-home, .score-away").forEach((n) => n.remove());
+                    return String(clone.textContent || "").trim();
+                };
+                const sideScore = (card, side) => {
+                    const nodes = [card, ...card.querySelectorAll("[data-" + side + "-score], [data-score-" + side + "]")];
+                    for (const node of nodes) {
+                        for (const attr of ["data-" + side + "-score", "data-score-" + side]) {
+                            if (node.hasAttribute(attr)) return scoreNumber(node.getAttribute(attr));
+                        }
+                    }
+                    const node = card.querySelector("." + side + "-score, .score-" + side + ", ." + side + " .score");
+                    return node ? scoreNumber(node.textContent) : null;
+                };
+                doc.querySelectorAll("a[href*='channel']").forEach((card) => {
+                    let id = "";
+                    try { id = new URL(card.getAttribute("href") || "", feedUrl || location.href).searchParams.get("id") || ""; }
+                    catch (e) { return; }
+                    if (!id) return;
+                    const detail = card.querySelector(".match-detail");
+                    let home = "", away = "", event = "", sport = "Spor", statusText = "";
+                    if (detail) {
+                        event = (detail.querySelector(".event") || {}).textContent || "";
+                        sport = ((detail.querySelector(".date") || {}).textContent || "Spor").trim() || "Spor";
+                        home = teamText(detail.querySelector(".home"));
+                        away = teamText(detail.querySelector(".away"));
+                        statusText = event;
+                    } else {
+                        const name = card.querySelector(".channel-name"), status = card.querySelector(".channel-status");
+                        if (!name || !status) return;
+                        const teamLabel = String(name.textContent || "").trim();
+                        const foldedLabel = teamLabel.toLocaleLowerCase("tr");
+                        let splitAt = -1, splitLength = 0;
+                        for (const separator of [" vs. ", " vs ", " – ", " - "]) {
+                            const at = foldedLabel.indexOf(separator.toLocaleLowerCase("tr"));
+                            if (at >= 0) { splitAt = at; splitLength = separator.length; break; }
+                        }
+                        if (splitAt < 0) return;
+                        home = teamLabel.slice(0, splitAt).trim(); away = teamLabel.slice(splitAt + splitLength).trim();
+                        event = status.textContent || ""; statusText = event;
+                    }
+                    if (!home || !away) return;
+                    const parts = event.split("|").map((v) => v.trim()).filter(Boolean);
+                    const timeToken = parts.map((v) => v.split(" ")[0]).find((v) => [":", ".", "h", "H"].some((sep) => v.includes(sep))) || "";
+                    const timeSep = [":", ".", "h", "H"].find((sep) => timeToken.includes(sep));
+                    const timeParts = timeSep ? timeToken.split(timeSep) : [];
+                    const hour = timeParts[0] || "", minute = timeParts[1] || "";
+                    const validTime = hour.length > 0 && hour.length <= 2 && minute.length === 2
+                        && !Number.isNaN(Number(hour)) && !Number.isNaN(Number(minute));
+                    const time = validTime ? (hour.padStart(2, "0") + ":" + minute) : "";
+                    const leagueParts = parts.filter((v) => !normalizeStatus(v) && !foldStatus(v).includes("gunun maci"));
+                    const league = leagueParts.length ? leagueParts[leagueParts.length - 1].split("[")[0].trim() : "";
+                    const statusValues = [card.getAttribute("data-status"), card.getAttribute("data-match-status")];
+                    card.querySelectorAll("[data-status], [data-match-status], .match-status, .status, .channel-status")
+                        .forEach((node) => statusValues.push(node.getAttribute("data-status"), node.getAttribute("data-match-status"), node.textContent));
+                    statusValues.push(...statusText.split("|"));
+                    const rawStatus = statusValues.flatMap((v) => String(v || "").split("|").map((x) => x.trim()))
+                        .find((v) => normalizeStatus(v)) || "";
+                    let scoreHome = sideScore(card, "home"), scoreAway = sideScore(card, "away");
+                    if (scoreHome === null && scoreAway === null) {
+                        const scoreNode = card.querySelector(".match-score, .final-score");
+                        const scoreText = String(scoreNode ? scoreNode.textContent : "").trim();
+                        const scoreSep = ["-", "–", ":"].find((sep) => scoreText.includes(sep));
+                        const pair = scoreSep ? scoreText.split(scoreSep).map((v) => v.trim()) : [];
+                        if (pair.length === 2) { scoreHome = scoreNumber(pair[0]); scoreAway = scoreNumber(pair[1]); }
+                    }
+                    if (scoreHome === null || scoreAway === null) { scoreHome = null; scoreAway = null; }
+                    const imgs = card.querySelectorAll("img");
+                    let base = String(matchPlayerBase || new URL(feedUrl || location.href).origin);
+                    while (base.endsWith("/")) base = base.slice(0, -1);
+                    const identity = [id, foldStatus(home), foldStatus(away), time].join("|");
+                    if (seen.has(identity)) return;
+                    seen.add(identity);
+                    out.push({
+                        match_id: id, channel_id: id, home: home, away: away, league: league, time: time, sport: sport,
+                        is_match_of_day: foldStatus(event).includes("gunun maci"),
+                        status: rawStatus ? normalizeStatus(rawStatus) : "upcoming",
+                        status_source: rawStatus ? "source" : "schedule", raw_status: rawStatus,
+                        score_home: scoreHome, score_away: scoreAway,
+                        score_source: scoreHome !== null ? "source" : "", event_id: card.getAttribute("data-event-id") || "",
+                        logo_home: imgs[0] ? (imgs[0].getAttribute("src") || imgs[0].getAttribute("data-src") || "") : "",
+                        logo_away: imgs[1] ? (imgs[1].getAttribute("src") || imgs[1].getAttribute("data-src") || "") : "",
+                        url: base + "/channel.html?id=" + encodeURIComponent(id), raw_event: event
+                    });
+                });
+                return out;
+            }
+
+            async function fetchLiveFixtures(force) {
+                if (!matchFeedSources.length || typeof fetch !== "function") return null;
+                const now = Date.now();
+                if (!force && liveFixtureCache && now - liveFixtureCacheAt < LIVE_FIXTURE_TTL) return liveFixtureCache;
+                if (liveFixturePromise) return liveFixturePromise;
+                const pending = (async () => {
+                    for (const source of matchFeedSources) {
+                        const controller = new AbortController();
+                        const timer = setTimeout(() => controller.abort(), 6000);
+                        try {
+                            const sep = source.includes("?") ? "&" : "?";
+                            const response = await fetch(source + sep + "macweb_ts=" + Date.now(),
+                                { cache: "no-store", signal: controller.signal });
+                            if (!response.ok) continue;
+                            const html = await response.text();
+                            const parsed = parseFixbetSchedule(html, source);
+                            if (!parsed.length) continue;
+                            const date = localDateKey(new Date());
+                            const rows = normalizeRemote({ date: date, timezone: matchTimezone, matches: parsed });
+                            if (!rows.length) continue;
+                            const result = { rows: rows, date: date };
+                            liveFixtureCache = result; liveFixtureCacheAt = Date.now();
+                            return result;
+                        } catch (e) {
+                            // Birinci feed/CORS erişilemezse sıradaki kaynak denenir.
+                        } finally { clearTimeout(timer); }
+                    }
+                    return null;
+                })();
+                liveFixturePromise = pending;
+                try { return await pending; }
+                finally { if (liveFixturePromise === pending) liveFixturePromise = null; }
+            }
+
             function refreshMatches(silent) {
-                if (!matchesSource || typeof fetch !== "function") return Promise.resolve(false);
+                if ((!matchesSource && !matchFeedSources.length) || typeof fetch !== "function") return Promise.resolve(false);
                 const request = ++matchesRefreshToken;
-                const controller = new AbortController();
-                const timeout = setTimeout(() => controller.abort(), 6000);
-                return fetch(matchesSource + "?ts=" + Date.now(), { cache: "no-store", signal: controller.signal })
-                    .then((r) => (r.ok ? r.json() : Promise.reject(new Error("HTTP " + r.status))))
-                    .then((json) => {
+                const applyRows = (rows, date, live) => {
                         if (request !== matchesRefreshToken) return false;
-                        const rows = normalizeRemote(json);
                         if (!rows.length) throw new Error("boş liste");
                         matchesData = mergeRemoteMatches(rows);
                         renderMatchFilters(new Date());
                         renderMatches();
-                        if (json.date) els.updatedAt.textContent = json.date + " (canlı veri)";
+                        if (date) els.updatedAt.textContent = date + (live ? " (Fixbet canlı program)" : " (canlı veri · snapshot yedeği)");
                         return true;
-                    })
-                    .catch(() => { if (!silent && request === matchesRefreshToken) els.updatedAt.textContent = updatedAt + " (çevrimdışı)"; return false; }).finally(() => clearTimeout(timeout));
+                };
+                const loadSnapshot = () => {
+                    if (!matchesSource) return Promise.reject(new Error("snapshot kaynağı yok"));
+                    const controller = new AbortController();
+                    const timeout = setTimeout(() => controller.abort(), 6000);
+                    return fetch(matchesSource + "?ts=" + Date.now(), { cache: "no-store", signal: controller.signal })
+                        .then((r) => (r.ok ? r.json() : Promise.reject(new Error("HTTP " + r.status))))
+                        .then((json) => applyRows(normalizeRemote(json), json.date || "", false))
+                        .finally(() => clearTimeout(timeout));
+                };
+                return fetchLiveFixtures(!silent)
+                    .then((live) => live ? applyRows(live.rows, live.date, true) : loadSnapshot())
+                    .catch(() => loadSnapshot())
+                    .catch(() => {
+                        if (!silent && request === matchesRefreshToken) els.updatedAt.textContent = updatedAt + " (çevrimdışı)";
+                        return false;
+                    });
             }
 
             /* ---------------- Canlı skor senkronu (bot beklemeden) ----------------
