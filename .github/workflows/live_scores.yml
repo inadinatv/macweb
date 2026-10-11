@@ -2,8 +2,9 @@ name: Canlı Skor (5dk)
 
 # Maç saatlerinde anlık gol + final skoru GitHub'a yazılsın diye hafif bir iş:
 # sadece skor API'lerini çağırır, tam site taraması yapmaz.
-# İstemci sayfası ayrıca 10 sn'de bir doğrudan ESPN'den tazeler; bot buna ek olarak
-# GitHub'ın desteklediği en kısa aralıkla kalıcı snapshot'ı yeniler.
+# İstemci Fixtoor gibi canlıda 5 sn, yakın maçta 15 sn, boşta 60 sn sorgular;
+# hata serisinde 120 sn bekler ve son doğrulanmış skoru yerel önbellekte korur.
+# Bot buna ek olarak GitHub'ın desteklediği en kısa aralıkta kalıcı snapshot'ı yeniler.
 
 on:
   schedule:

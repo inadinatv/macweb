@@ -2319,7 +2319,9 @@
                 Object.keys(row).forEach((k) => { mapped[foldStatus(k)] = foldStatus(row[k]); });
                 if (Object.keys(mapped).length) syncAliases[path] = mapped;
             });
-            const SYNC_TTL = 10 * 1000, SYNC_MAX_PARALLEL = 4;
+            const SYNC_INTERVALS = { live: 5 * 1000, near: 15 * 1000, idle: 60 * 1000, error: 120 * 1000 };
+            const SYNC_CACHE_KEY = "inadinatv.live-scores.v1", SYNC_CACHE_MAX_AGE = 24 * 60 * 60 * 1000;
+            const SYNC_REQUEST_TIMEOUT = 9000, SYNC_MAX_PARALLEL = 4;
             // Fixtoor gibi önce ESPN web API'sini, hata/boş şemada site.api'yi dene.
             // site.api tek başına WAF/HTTP 200 hata gövdesi döndürerek sessizce bayat skor bırakabiliyor.
             const ESPN_SYNC_BASES = [
@@ -2329,6 +2331,7 @@
             let activeSyncBase = "";
             const syncCache = {}, syncInflight = new Set();
             let syncFailures = 0;
+            let liveSyncTimer = null;
 
             function espnErrorBody(json) {
                 return !!json && typeof json === "object" && Number(json.code) >= 400 && !!json.message;
@@ -2340,10 +2343,10 @@
                 let lastError = null;
                 for (const source of sources) {
                     const controller = new AbortController();
-                    const timer = setTimeout(() => controller.abort(), 4500);
+                    const timer = setTimeout(() => controller.abort(), SYNC_REQUEST_TIMEOUT);
                     try {
                         const response = await fetch(source.url + path + "/scoreboard" + query,
-                            { cache: "no-store", signal: controller.signal });
+                            { mode: "cors", credentials: "omit", cache: "no-store", signal: controller.signal });
                         if (!response.ok) throw new Error("HTTP " + response.status);
                         const json = await response.json();
                         if (!json || typeof json !== "object" || espnErrorBody(json) || !Array.isArray(json.events)) {
@@ -2358,6 +2361,74 @@
                     }
                 }
                 throw lastError || new Error("ESPN scoreboard kaynakları yanıt vermedi");
+            }
+
+            function syncDatesForPath(path) {
+                const days = new Set();
+                matchesData.forEach((m) => {
+                    if (syncPathFor(m) !== path || NON_LIVE_STATUS[m.status]) return;
+                    const start = matchStart(m);
+                    if (start) days.add(start.toISOString().slice(0, 10).replace(/-/g, ""));
+                });
+                if (!days.size) days.add(new Date().toISOString().slice(0, 10).replace(/-/g, ""));
+                return Array.from(days).sort();
+            }
+
+            async function fetchLivePath(path, days) {
+                const responses = await Promise.all(days.map(async (day) => {
+                    try {
+                        const json = await fetchLiveScoreboard(path, "?dates=" + encodeURIComponent(day) + "&limit=100");
+                        return { ok: true, rows: parseEspnScoreboard(json) };
+                    } catch (_) { return { ok: false, rows: [] }; }
+                }));
+                const successful = responses.filter((r) => r.ok);
+                if (!successful.length) throw new Error("Hiçbir ESPN maç günü okunamadı");
+                const unique = new Map();
+                successful.forEach((response) => response.rows.forEach((row) => {
+                    const key = String(row.id || "") + "|" + row.start.toISOString();
+                    unique.set(key, row);
+                }));
+                return Array.from(unique.values());
+            }
+
+            function persistLiveSyncCache() {
+                try {
+                    const paths = {};
+                    Object.keys(syncCache).forEach((path) => {
+                        const hit = syncCache[path];
+                        if (!hit || !Array.isArray(hit.comps)) return;
+                        paths[path] = { at: hit.at, comps: hit.comps.map((c) => ({
+                            id: c.id, start: c.start.toISOString(), homeName: c.homeName, awayName: c.awayName,
+                            homeScore: c.homeScore, awayScore: c.awayScore, status: c.status,
+                            clock: c.clock, neutral: c.neutral
+                        })) };
+                    });
+                    localStorage.setItem(SYNC_CACHE_KEY, JSON.stringify({ savedAt: Date.now(), base: activeSyncBase, paths }));
+                } catch (_) { /* localStorage kapalı/doluysa canlı ağ akışı sürer */ }
+            }
+
+            function restoreLiveSyncCache() {
+                try {
+                    const raw = localStorage.getItem(SYNC_CACHE_KEY);
+                    if (!raw) return 0;
+                    const cache = JSON.parse(raw);
+                    if (!cache || Date.now() - Number(cache.savedAt || 0) > SYNC_CACHE_MAX_AGE || !cache.paths) {
+                        localStorage.removeItem(SYNC_CACHE_KEY);
+                        return 0;
+                    }
+                    if (ESPN_SYNC_BASES.some((source) => source.name === cache.base)) activeSyncBase = cache.base;
+                    let changes = 0;
+                    Object.keys(cache.paths).forEach((path) => {
+                        const hit = cache.paths[path];
+                        if (!hit || !Array.isArray(hit.comps) || Date.now() - Number(hit.at || 0) > SYNC_CACHE_MAX_AGE) return;
+                        const comps = hit.comps.map((c) => ({ ...c, start: new Date(c.start) }))
+                            .filter((c) => c.start && !isNaN(c.start.getTime()));
+                        syncCache[path] = { at: Number(hit.at) || 0, comps };
+                        changes += applyLiveSync(path, comps, hit.at);
+                    });
+                    if (changes) { renderMatchFilters(new Date()); renderMatches(); }
+                    return changes;
+                } catch (_) { return 0; }
             }
 
             function syncPathFor(m) {
@@ -2406,8 +2477,8 @@
                 return out;
             }
 
-            function applyLiveSync(path, comps) {
-                const stamp = new Date().toISOString();
+            function applyLiveSync(path, comps, receivedAt) {
+                const stamp = new Date(receivedAt || Date.now()).toISOString();
                 const tolerance = Math.max(5, scoreSyncConfig.toleranceMinutes || 45) * 60000;
                 let changes = 0;
                 matchesData.forEach((m) => {
@@ -2480,37 +2551,77 @@
                 txt.textContent = text;
             }
 
+            function syncPathHasLiveMatch(path, now) {
+                return matchesData.some((m) => syncPathFor(m) === path && !NON_LIVE_STATUS[m.status]
+                    && isActiveMatch(computeState(m, now).status));
+            }
+
+            function liveSyncInterval(now) {
+                if (document.hidden) return syncIntervalForState(false, false, syncFailures, true);
+                if (syncFailures >= 3) return syncIntervalForState(false, false, syncFailures, false);
+                const wanted = syncWantedPaths(now);
+                return syncIntervalForState(wanted.some((path) => syncPathHasLiveMatch(path, now)),
+                    wanted.length > 0, syncFailures, false);
+            }
+
+            function syncIntervalForState(hasLive, hasNearMatch, failures, hidden) {
+                if (hidden) return SYNC_INTERVALS.idle;
+                if (failures >= 3) return SYNC_INTERVALS.error;
+                if (hasLive) return SYNC_INTERVALS.live;
+                if (hasNearMatch) return SYNC_INTERVALS.near;
+                return SYNC_INTERVALS.idle;
+            }
+
             function liveSyncTick() {
-                if (!scoreSyncConfig.enabled || typeof fetch !== "function" || document.hidden) return;
+                if (!scoreSyncConfig.enabled || typeof fetch !== "function" || document.hidden) return Promise.resolve([]);
                 const now = new Date();
                 const wanted = syncWantedPaths(now);
-                if (!wanted.length) { setSyncChip("sync-off", "Canlı skor: şu an izlenecek maç yok"); return; }
+                if (!wanted.length) {
+                    setSyncChip("sync-off", "Canlı skor: şu an izlenecek maç yok");
+                    return Promise.resolve([]);
+                }
                 let launched = 0;
+                const jobs = [];
                 wanted.forEach((path) => {
-                    if (launched >= SYNC_MAX_PARALLEL) return;
-                    if (syncInflight.has(path)) return;
+                    if (launched >= SYNC_MAX_PARALLEL || syncInflight.has(path)) return;
+                    const interval = syncPathHasLiveMatch(path, now) ? SYNC_INTERVALS.live : SYNC_INTERVALS.near;
                     const hit = syncCache[path];
-                    if (hit && now.getTime() - hit.at < SYNC_TTL) return;
+                    if (hit && now.getTime() - hit.at < interval) return;
                     syncInflight.add(path); launched++;
-                    const day = String((matchesData.find((m) => syncPathFor(m) === path) || {}).date || "").replace(/-/g, "");
-                    const query = "?limit=400" + (day ? "&dates=" + encodeURIComponent(day) : "")
-                        + "&_ts=" + Math.floor(Date.now() / SYNC_TTL);
-                    fetchLiveScoreboard(path, query)
-                        .then((json) => {
-                            const comps = parseEspnScoreboard(json);
-                            syncCache[path] = { at: Date.now() };
+                    jobs.push(fetchLivePath(path, syncDatesForPath(path))
+                        .then((comps) => {
+                            syncCache[path] = { at: Date.now(), comps };
                             syncFailures = 0;
                             const changes = applyLiveSync(path, comps);
                             if (changes > 0) { renderMatchFilters(new Date()); renderMatches(); }
+                            persistLiveSyncCache();
                             const t = new Date();
                             setSyncChip("", "⚡ Canlı skor · " + pad(t.getHours()) + ":" + pad(t.getMinutes()) + ":" + pad(t.getSeconds()));
+                            return { path, changes };
                         })
                         .catch(() => {
                             syncFailures++;
                             if (syncFailures >= 3) setSyncChip("sync-wait", "Canlı skor kaynağına erişilemedi · bot verisi gösteriliyor");
+                            return { path, changes: 0, failed: true };
                         })
-                        .finally(() => { syncInflight.delete(path); });
+                        .finally(() => { syncInflight.delete(path); }));
                 });
+                return Promise.all(jobs);
+            }
+
+            function scheduleLiveSync(delay) {
+                if (liveSyncTimer !== null) clearTimeout(liveSyncTimer);
+                liveSyncTimer = setTimeout(() => {
+                    liveSyncTimer = null;
+                    if (document.hidden) { scheduleLiveSync(SYNC_INTERVALS.idle); return; }
+                    Promise.resolve(liveSyncTick()).catch(() => [])
+                        .finally(() => scheduleLiveSync(liveSyncInterval(new Date())));
+                }, Math.max(0, Number(delay) || 0));
+            }
+
+            function startLiveSyncLoop() {
+                if (liveSyncTimer !== null) clearTimeout(liveSyncTimer);
+                scheduleLiveSync(0);
             }
 
             /* ---------------- LİG PUANI → PUAN DURUMU modalı ---------------- */
@@ -2866,25 +2977,27 @@
                 renderPanelChips();
                 renderChannels();
                 renderMatches();
+                restoreLiveSyncCache();
                 renderExtra();
                 renderStandings();
                 tickClock();
                 bindEvents();
                 createParticles();
+                if (!location.hash) toggleVipStream();
                 applyDeepLink();
                 setInterval(tickClock, 15000);
                 refreshMatches(true);
                 refreshExtra(true);
                 refreshStandings(true);
-                // Snapshot 30 sn'de bir; aktif maçlarda sağlayıcı skoru ~10 sn'de bir.
+                // Snapshot 30 sn'de bir; skor motoru Fixtoor gibi adaptif 5/15/60 sn.
                 setInterval(() => { refreshMatches(true); refreshStandings(true); }, 30 * 1000);
                 setInterval(() => { refreshExtra(true); }, 5 * 60 * 1000);
-                setTimeout(liveSyncTick, 2000);
-                setInterval(liveSyncTick, SYNC_TTL);
+                startLiveSyncLoop();
                 // Sekmeye geri dönünce hemen tazele: arka planda bekleyen sayfa bayat kalmasın
                 document.addEventListener("visibilitychange", () => {
-                    if (!document.hidden) { tickClock(); refreshMatches(true); liveSyncTick(); }
+                    if (!document.hidden) { tickClock(); refreshMatches(true); startLiveSyncLoop(); }
                 });
+                window.addEventListener("online", startLiveSyncLoop);
                 window.inadina.ready = true;
             }
 
@@ -2910,6 +3023,10 @@
                 liveSyncTick: liveSyncTick,
                 fetchLiveScoreboard: fetchLiveScoreboard,
                 applyLiveSync: applyLiveSync,
+                liveSyncInterval: liveSyncInterval,
+                syncIntervalForState: syncIntervalForState,
+                syncDatesForPath: syncDatesForPath,
+                restoreLiveSyncCache: restoreLiveSyncCache,
                 parseEspnScoreboard: parseEspnScoreboard,
                 syncCanon: syncCanon,
                 refreshExtra: refreshExtra,

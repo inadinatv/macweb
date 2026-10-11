@@ -87,10 +87,15 @@ raporlar üreten gelişmiş otomasyon botu.
      `matches2.php`) 90 saniyelik önbellekle doğrudan okur; bu, GitHub Actions gecikse bile
      uygulamadaki günlük programı kaynak siteyle eşitler. Feed erişilemezse yayımlanmış
      `output/today_matches.json` snapshot’ı yedek olarak kalır. Kaynağın `MS/FT` final durumu
-     ve skoru anında **Bitti** filtresine taşınır; canlı skor senkronu ayrıca ESPN’den 10
-     saniyede bir güncellenir. Fixtoor’daki gibi önce `site.web.api.espn.com`, hata/şema sorunu
-     varsa `site.api.espn.com` denenir; HTTP 200 içindeki ESPN hata JSON’u geçerli yanıt sayılmaz.
-     Daha eski snapshot, daha taze skor/dakikayı geriye götürmez.
+     ve skoru anında **Bitti** filtresine taşınır. Canlı skor motoru Fixtoor ile aynı adaptif
+     tempoyu kullanır: canlı maçta **5 sn**, yakın maçta **15 sn**, izlenecek maç yoksa **60 sn**;
+     üç ardışık hata sonrasında istekler **120 sn** arayla denenir. Son doğrulanmış ESPN skorları
+     24 saatlik `localStorage` önbelleğinde tutulup sayfa açılışında hemen gösterilir, ardından ağdan
+     yeniden doğrulanır. Her lig için maçın **UTC takvim günü** tekil `dates=YYYYMMDD` sorgulanır
+     (hatalı aralık isteği kullanılmaz); `site.web.api.espn.com` ve `site.api.espn.com` hostları
+     birbirine yedektir, HTTP 200 içindeki hata JSON’u başarı sayılmaz. Sunucu tarafındaki
+     `live_scores.yml` workflow’u Fixtoor gibi GitHub Actions’ın desteklediği **5 dk** aralıkta
+     son snapshot’ı günceller. Daha eski snapshot, daha taze skor/dakikayı geriye götürmez.
 
 6. **⚡ EXTRA PANELLER — doğrudan m3u8 / panel kanalları** (`src/fixbet/extras.py` + `config/extra_channels.yml`)
    - Ana siteden bağımsız ek kaynaklar:
@@ -120,7 +125,9 @@ raporlar üreten gelişmiş otomasyon botu.
    - Oynatıcı ekleri: **kaynak çipleri** (Kaynak 1 / Kaynak 2 / 🌐 Site), açılmayan kaynakta
      **otomatik sıradaki kaynağa geçiş**, hata katmanı (🔄 Tekrar dene · ⏭ Diğer kaynak ·
      ↗ Yeni sekmede aç), PiP, tam ekran, `←`/`→` ile EXTRA kanallar arasında gezinme, `S` kaynak
-     değiştir, `3` sekme, `#extra=atom:bein-sports-1` derin bağlantısı.
+       değiştir, `3` sekme, `#extra=atom:bein-sports-1` derin bağlantısı. Tam ekran yanındaki
+       **VIP Yayın** düğmesi Trend48’i aynı iframe’de açıp önceki kanala döner; doğrudan derin
+       bağlantı yoksa uygulama açılışında VIP yayını varsayılan olarak başlatır.
    - Yeni bir extra panel eklemek için `config/extra_channels.yml` → `panels` altına yeni blok
      eklemek yeterlidir; sayfa/bot tarafında kod değişikliği gerekmez.
 

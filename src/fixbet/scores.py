@@ -39,11 +39,14 @@ log = logging.getLogger(__name__)
 API_BASE = "https://site.web.api.espn.com/apis/site/v2/sports/"
 ESPN_API_BASES = (API_BASE, "https://site.api.espn.com/apis/site/v2/sports/")
 ESPN_USER_AGENTS = (
-    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0 Safari/537.36",
-    "Mozilla/5.0 (X11; Linux x86_64; rv:132.0) Gecko/20100101 Firefox/132.0",
-    "Mozilla/5.0 (Macintosh; Intel Mac OS X 14_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.0 Safari/605.1.15",
+    "curl/8.5.0",
+    "python-requests/2.32.3",
+    "okhttp/4.12.0",
+    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36",
+    "FixtoorBot/1.2 (+https://github.com/inadinatv/Fixtoor)",
 )
 _ESPN_ACTIVE_BASE: str | None = None
+_ESPN_ACTIVE_USER_AGENT: str | None = None
 MACKOLIK_LIVESCORE_URL = "https://www.mackolik.com/perform/p0/ajax/components/competition/livescores/json"
 MACKOLIK_FOOTBALL_FALLBACK = "mackolik/all-football"
 
@@ -112,36 +115,65 @@ def _espn_urls(url: str) -> list[str]:
 
 
 def _fetch(url: str, timeout: float) -> dict:
-    """Fetch ESPN scoreboard data with Fixtoor-style host and WAF fallback."""
-    global _ESPN_ACTIVE_BASE
+    """Fetch ESPN data with Fixtoor's host/UA memory and bounded retry policy."""
+    global _ESPN_ACTIVE_BASE, _ESPN_ACTIVE_USER_AGENT
     last_error: Exception | None = None
     for endpoint in _espn_urls(url):
-        for user_agent in ESPN_USER_AGENTS:
-            try:
-                response = requests.get(
-                    endpoint,
-                    headers={"Accept": "application/json, text/plain;q=0.9, */*;q=0.8",
-                             "Accept-Language": "tr-TR,tr;q=0.9,en;q=0.7",
-                             "Cache-Control": "no-cache", "User-Agent": user_agent},
-                    timeout=(5, timeout),
-                )
-                response.raise_for_status()
-                data = response.json()
-                if _espn_error_body(data):
-                    raise ValueError(f"ESPN HTTP 200 hata gövdesi: {data.get('message')}")
-                if not isinstance(data, dict) or not isinstance(data.get("events"), list):
-                    raise ValueError("ESPN scoreboard yanıtında events listesi yok")
-                _ESPN_ACTIVE_BASE = next((base for base in ESPN_API_BASES if endpoint.startswith(base)), None)
-                return data
-            except requests.HTTPError as exc:
-                last_error = exc
-                # WAF engeli User-Agent'a bağlı olabilir; bu hostta sıradaki kimliği dene.
-                if getattr(exc.response, "status_code", None) in (403, 406):
+        agents = list(ESPN_USER_AGENTS)
+        if _ESPN_ACTIVE_USER_AGENT in agents:
+            agents.remove(_ESPN_ACTIVE_USER_AGENT)
+            agents.insert(0, _ESPN_ACTIVE_USER_AGENT)
+        reject_endpoint = False
+        for user_agent in agents:
+            for attempt in range(4):
+                try:
+                    response = requests.get(
+                        endpoint,
+                        headers={"Accept": "application/json, text/plain;q=0.9, */*;q=0.8",
+                                 "Accept-Language": "tr-TR,tr;q=0.9,en;q=0.7",
+                                 "Cache-Control": "no-cache", "User-Agent": user_agent},
+                        timeout=(5, timeout),
+                    )
+                    response.raise_for_status()
+                    data = response.json()
+                    if _espn_error_body(data):
+                        raise ValueError(f"ESPN HTTP 200 hata gövdesi: {data.get('message')}")
+                    if not isinstance(data, dict) or not isinstance(data.get("events"), list):
+                        raise ValueError("ESPN scoreboard yanıtında events listesi yok")
+                    _ESPN_ACTIVE_BASE = next((base for base in ESPN_API_BASES if endpoint.startswith(base)), None)
+                    _ESPN_ACTIVE_USER_AGENT = user_agent
+                    return data
+                except requests.HTTPError as exc:
+                    last_error = exc
+                    status = getattr(getattr(exc, "response", None), "status_code", None)
+                    # WAF engeli kimliğe bağlı olabilir; beklemeden sonraki UA'yı dene.
+                    if status in (403, 406):
+                        break
+                    # URL bu hostta kalıcı olarak yoksa diğer ESPN hostuna geç.
+                    if status in (401, 404):
+                        reject_endpoint = True
+                        break
+                    if status == 429 or (status is not None and status >= 500):
+                        if attempt < 3:
+                            try:
+                                delay = min(max(int(exc.response.headers.get("Retry-After", "0")), 2), 30) \
+                                    if status == 429 else min(2 * (attempt + 1), 8)
+                            except (AttributeError, TypeError, ValueError):
+                                delay = min(2 * (attempt + 1), 8)
+                            time.sleep(delay)
+                        continue
+                    reject_endpoint = True
+                    break
+                except (requests.RequestException, ValueError, TypeError) as exc:
+                    last_error = exc
+                    # 200 ama bozuk şema/hata gövdesi: tekrar etmek yerine yedek host.
+                    if isinstance(exc, (ValueError, TypeError)):
+                        reject_endpoint = True
+                        break
+                    if attempt < 3:
+                        time.sleep(min(2 * (attempt + 1), 8))
                     continue
-                break
-            except (requests.RequestException, ValueError, TypeError) as exc:
-                last_error = exc
-                # Hatalı/boş gövdeyi diğer açık ESPN hostunda doğrula.
+            if reject_endpoint:
                 break
     if last_error:
         raise last_error
@@ -498,10 +530,7 @@ def enrich(matches: list[Match], now: datetime, previous: list[Match] | None = N
             log.warning("Mackolik skor kaynağı okunamadı (%s); ESPN'e düşülüyor.", type(exc).__name__)
             mackolik_results = {}
 
-    # --- ESPN için hazırlık (UTC tarih aralığı) ---
-    start = datetime.combine(now.date(), dtime.min, tzinfo=tz).astimezone(timezone.utc)
-    end = datetime.combine(now.date(), dtime.max, tzinfo=tz).astimezone(timezone.utc)
-    dates = start.strftime("%Y%m%d") + "-" + end.strftime("%Y%m%d")
+    # --- ESPN: Fixtoor gibi aralık yerine maçın gerçek UTC gününü sorgula ---
     fetch = fetch or _fetch
 
     # ESPN her yapılandırılmış lig için okunur. Mackolik'in bir ligde herhangi bir
@@ -509,22 +538,33 @@ def enrich(matches: list[Match], now: datetime, previous: list[Match] | None = N
     # kapatmamalıdır; sağlayıcı seçimi aşağıda maç başına yapılır.
     espn_paths = [path for path in groups if path != MACKOLIK_FOOTBALL_FALLBACK]
     def load(path: str):
-        # Bazı ESPN ligleri UTC gün aralığını kabul ederken bazı turnuvalar (örn.
-        # UEFA Kadınlar Şampiyonlar Ligi) sadece tek YYYYMMDD kabul ediyor.
-        query_days = [dates]
-        local_day = now.strftime("%Y%m%d")
-        if local_day not in query_days:
-            query_days.append(local_day)
+        # ESPN'in aralık endpoint'i HTTP 200 içinde code=400 döndürebilir.
+        # Maç saatini UTC'ye çevirerek gereken tekil gün(ler)i al; bu aynı
+        # zamanda İstanbul gece yarısındaki önceki UTC gününü de kapsar.
+        query_days = sorted({
+            scheduled.astimezone(timezone.utc).strftime("%Y%m%d")
+            for item in groups[path]
+            if (scheduled := start_time(item, now, tz)) is not None
+        }) or [now.astimezone(timezone.utc).strftime("%Y%m%d")]
+        found: dict[str, dict] = {}
+        successes = 0
         last: Exception | None = None
         for query_day in query_days:
             url = API_BASE + path + "/scoreboard?" + urlencode({"dates": query_day, "limit": 1000})
             try:
-                return path, competitions(fetch(url, float(cfg.get("request_timeout_seconds", 8))))
+                rows = competitions(fetch(url, float(cfg.get("request_timeout_seconds", 8))))
+                successes += 1
+                for row in rows:
+                    key = row.get("id") or (row["start"].isoformat(),
+                                              str((row.get("home") or {}).get("team", {}).get("displayName", "")),
+                                              str((row.get("away") or {}).get("team", {}).get("displayName", "")))
+                    found[str(key)] = row
             except (requests.RequestException, ValueError, TypeError, KeyError) as exc:
                 last = exc
-        log.warning("Skor kaynağı okunamadı (%s, %s); son bilinen veri korunuyor.",
-                    path, type(last).__name__ if last else "unknown")
-        return path, []
+        if not successes:
+            log.warning("Skor kaynağı okunamadı (%s, %s); son bilinen veri korunuyor.",
+                        path, type(last).__name__ if last else "unknown")
+        return path, list(found.values())
 
     workers = max(1, min(8, int(cfg.get("max_workers", 4))))
     espn_results: dict[str, list[dict]] = {}

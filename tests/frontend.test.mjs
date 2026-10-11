@@ -145,9 +145,12 @@ test("VIP Yayın düğmesi Trend48’i aynı iframe’de açar ve önceki kanala
   const button = window.document.getElementById("vipStreamBtn");
   const iframe = window.document.getElementById("liveIframe");
   assert.ok(button, "VIP Yayın düğmesi yok");
-  assert.equal(iframe.getAttribute("src"), "", "VIP yayın uygulama açılışında otomatik yüklenmemeli");
+  assert.equal(iframe.getAttribute("src"), "https://trend48.st/live-tv?ch=beinsports1-tr",
+    "derin bağlantı yokken uygulama açılışında Trend48 iframe'de başlamalı");
+  assert.equal(button.getAttribute("aria-pressed"), "true", "açılışta VIP düğmesi aktif olmalı");
 
   cards(window)[2].click();
+  assert.equal(button.getAttribute("aria-pressed"), "false", "normal kanal seçimi VIP modunu kapatmalı");
   const previousUrl = iframe.getAttribute("src");
   const previousTitle = window.document.getElementById("playerTitle").textContent;
   button.click();
@@ -167,6 +170,17 @@ test("VIP Yayın düğmesi Trend48’i aynı iframe’de açar ve önceki kanala
   button.click();
   button.click();
   assert.equal(iframe.getAttribute("src"), newChannelUrl, "yeni seçilen kanal dönüş hedefi olmalı");
+  dom.window.close();
+});
+
+test("canlı skor polling aralığı Fixtoor gibi canlı/yakın/boşta/hata durumuna uyuyor", async () => {
+  const { window, dom } = await loadPage();
+  const interval = window.inadina.syncIntervalForState;
+  assert.equal(interval(true, true, 0, false), 5000, "canlı maç 5 sn'de bir yoklanmalı");
+  assert.equal(interval(false, true, 0, false), 15000, "yakın maç 15 sn'de bir yoklanmalı");
+  assert.equal(interval(false, false, 0, false), 60000, "boşta 60 sn beklenmeli");
+  assert.equal(interval(false, true, 3, false), 120000, "3 hatadan sonra 120 sn beklenmeli");
+  assert.equal(interval(true, true, 0, true), 60000, "arka plan sekmesinde istek sıklığı düşmeli");
   dom.window.close();
 });
 
@@ -320,7 +334,8 @@ test("canlı Fixbet programı eski snapshot'ı dengeler ve MS skoru Bitti filtre
   assert.match(final.querySelector(".match-score").textContent, /3.*1/, "kaynağın final skoru gösterilmedi");
   const finishedChip = [...window.document.querySelectorAll("#matchFilterRow .chip")]
     .find((chip) => chip.textContent.includes("Bitti"));
-  assert.ok(finishedChip && finishedChip.textContent.includes("1"), "Bitti filtresi final maçı saymıyor");
+  assert.ok(finishedChip && Number(finishedChip.querySelector(".chip-count").textContent) >= 1,
+    "Bitti filtresi final maçı saymıyor: " + JSON.stringify([...window.document.querySelectorAll("#matchFilterRow .chip")].map((chip) => chip.textContent)));
   assert.ok(window.document.getElementById("updatedAtText").textContent.includes("Fixbet canlı program"),
     "canlı program kaynağı kullanıcıya belirtilmedi");
   dom.window.close();
@@ -1230,13 +1245,16 @@ test("canlı skor senkronu kesin eşleşmeye skor, dakika ve gol animasyonu işl
   await window.inadina.refreshMatches();
   const comps = [{ id: "ev1", start: new Date("2026-09-06T20:00:00+03:00"), homeName: "Bournemouth", awayName: "Liverpool",
     homeScore: 1, awayScore: 0, status: "live", clock: "34'", neutral: false }];
-  const changes = window.inadina.applyLiveSync("soccer/eng.1", comps);
+  const cachedAt = Date.parse("2026-09-06T18:10:00.000Z");
+  const changes = window.inadina.applyLiveSync("soccer/eng.1", comps, cachedAt);
   assert.equal(changes, 1, "eşleşen maça dokunulmalıydı");
   window.inadina.renderMatches();
   const card = byEvent(window, "b4");
   assert.equal(card.dataset.status, "live");
   assert.equal(card.querySelector('[data-score-side="home"]').textContent, "1");
   assert.ok(card.textContent.includes("34'"), "canlı dakika rozeti yok");
+  assert.ok(card.querySelector(".match-score").title.includes("2026-09-06T18:10:00.000Z"),
+    "eski yerel cache skoru yeni alınmış gibi timestamp almamalı");
   assert.ok(card.querySelector(".match-score").classList.contains("bump"), "gol animasyonu yok");
   const clockOnly = window.inadina.applyLiveSync("soccer/eng.1", [{ ...comps[0], clock: "35'" }]);
   assert.equal(clockOnly, 1, "skor değişmese de dakika değişimi render tetiklemeli");
@@ -1268,32 +1286,41 @@ test("canlı skor senkronu gerçek MS sonucunu canlıya çevirmez", async () => 
   assert.equal(byEvent(window, "ftx").dataset.status, "finished");
 });
 
-test("canlı senkron 10 saniyelik cache-buster ve maç tarihiyle sağlayıcıyı çağırır", () => {
-  assert.match(HTML, /const SYNC_TTL = 10 \* 1000/);
-  assert.ok(HTML.includes('"&dates=" + encodeURIComponent(day)'), "scoreboard isteğinde maç tarihi yok");
-  assert.ok(HTML.includes('"&_ts=" + Math.floor(Date.now() / SYNC_TTL)'), "CDN cache-buster yok");
+test("canlı senkron Fixtoor adaptif temposunu ve tekil UTC-gün scoreboard isteğini kullanır", () => {
+  assert.match(HTML, /const SYNC_INTERVALS = \{ live: 5 \* 1000, near: 15 \* 1000, idle: 60 \* 1000, error: 120 \* 1000 \}/);
+  assert.ok(HTML.includes('start.toISOString().slice(0, 10).replace(/-/g, "")'), "maçın UTC tarihi kullanılmıyor");
+  assert.ok(HTML.includes('"?dates=" + encodeURIComponent(day) + "&limit=100"'), "tekil gün query’si yok");
+  assert.ok(!HTML.includes('"&_ts="'), "eski 10 saniyelik query cache-buster kalmış");
   assert.ok(HTML.includes("(liveWindowFor(m) + 90) * 60000"), "final yakalama penceresi maç sonuna uzatılmamış");
 });
 
 test("canlı ESPN isteği Fixtoor gibi 200 hata gövdesinde yedek hosta geçer", async () => {
   const calls = [];
-  const fetchImpl = async (url) => {
+  const optionsSeen = [];
+  const fetchImpl = async (url, options) => {
     const target = String(url);
     if (target.includes("site.web.api.espn.com")) {
       calls.push("site.web");
+      optionsSeen.push(options);
       return { ok: true, json: async () => ({ code: 400, message: "Failed to get events endpoint." }) };
     }
     if (target.includes("site.api.espn.com")) {
       calls.push("site.api");
+      optionsSeen.push(options);
       return { ok: true, json: async () => ({ events: [] }) };
     }
     if (target.includes("today_matches.json")) return { ok: true, json: async () => TODAY };
     if (target.includes("extra_channels.json")) return { ok: true, json: async () => EXTRA };
     return { ok: true, json: async () => ({}) };
   };
-  const { window, dom } = await loadPage({ fetchImpl });
+  const { window, dom } = await loadPage({
+    fetchImpl,
+    beforeParse(w) { Object.defineProperty(w.document, "hidden", { configurable: true, value: true }); },
+  });
   const result = await window.inadina.fetchLiveScoreboard("soccer/eng.1", "?dates=20260906");
   assert.deepEqual(calls, ["site.web", "site.api"]);
+  assert.ok(optionsSeen.every((o) => o.mode === "cors" && o.credentials === "omit" && o.cache === "no-store"),
+    "cross-origin request Fixtoor’daki gibi credentials olmadan no-store olmalı");
   assert.deepEqual(result.events, []);
   dom.window.close();
 });

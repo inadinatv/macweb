@@ -144,23 +144,30 @@ def test_one_request_per_league_and_no_request_for_unmapped_sport():
     scores.enrich([match(), match(home="A"), match(sport="Tenis")], NOW, fetch=fetch, settings=CFG)
     assert len(calls) == 1
     assert "soccer/eng.1/scoreboard" in calls[0]
-    assert "dates=20260905-20260906" in calls[0]
+    assert "dates=20260906" in calls[0]
     calls.clear()
     scores.enrich([match()], NOW, fetch=fetch, settings=dict(CFG, enabled=False))
     assert not calls
 
 
-def test_espn_date_range_error_retries_with_local_single_day():
+def test_espn_uses_single_utc_day_instead_of_broken_date_range():
     calls = []
     def fetch(url, timeout):
         calls.append(url)
-        if len(calls) == 1:
-            # ESPN'in aralık hatası bazen HTTP 200 içinde code=400 olarak döner.
-            return {"code": 400, "message": "Failed to get events endpoint."}
         return {"events": [event()]}
     row = scores.enrich([match()], NOW, fetch=fetch, settings=CFG)[0]
     assert row.status == "finished" and row.score_home == 2
-    assert len(calls) == 2 and "dates=20260906" in calls[1]
+    assert len(calls) == 1 and "dates=20260906" in calls[0]
+
+
+def test_espn_queries_the_match_utc_day_across_istanbul_midnight():
+    calls = []
+    m = match(time="00:30")
+    scores.enrich([m], NOW, fetch=lambda url, timeout: calls.append(url) or {"events": [
+        event(date="2026-09-05T21:30Z")
+    ]}, settings=CFG)
+    assert len(calls) == 1 and "dates=20260905" in calls[0]
+    assert m.score_home == 2
 
 
 def test_backend_fetch_falls_back_between_espn_hosts_and_rejects_http_200_error(monkeypatch):
@@ -187,12 +194,36 @@ def test_backend_fetch_falls_back_between_espn_hosts_and_rejects_http_200_error(
             return Response({"events": []})
         monkeypatch.setattr(scores.requests, "get", fake_get)
         monkeypatch.setattr(scores, "_ESPN_ACTIVE_BASE", None)
+        monkeypatch.setattr(scores, "_ESPN_ACTIVE_USER_AGENT", None)
         result = scores._fetch(scores.API_BASE + "soccer/tur.1/scoreboard?dates=20260906", 8)
         assert result == {"events": []}
-        expected_calls = 4 if first_response.status_code == 403 else 2
+        expected_calls = len(scores.ESPN_USER_AGENTS) + 1 if first_response.status_code == 403 else 2
         assert len(calls) == expected_calls
         assert "site.web.api.espn.com" in calls[0]
         assert "site.api.espn.com" in calls[-1]
+
+
+def test_backend_fetch_retries_temporary_server_error(monkeypatch):
+    class Response:
+        status_code = 200
+        def __init__(self, status=200): self.status_code = status
+        def raise_for_status(self):
+            if self.status_code >= 400:
+                error = requests.HTTPError(f"HTTP {self.status_code}")
+                error.response = self
+                raise error
+        def json(self): return {"events": []}
+
+    calls = []
+    def fake_get(url, **kwargs):
+        calls.append(url)
+        return Response(503) if len(calls) == 1 else Response()
+    monkeypatch.setattr(scores.requests, "get", fake_get)
+    monkeypatch.setattr(scores.time, "sleep", lambda _delay: None)
+    monkeypatch.setattr(scores, "_ESPN_ACTIVE_BASE", None)
+    monkeypatch.setattr(scores, "_ESPN_ACTIVE_USER_AGENT", None)
+    assert scores._fetch(scores.API_BASE + "soccer/tur.1/scoreboard?dates=20260906", 8) == {"events": []}
+    assert len(calls) == 2
 
 
 def test_mackolik_match_miss_falls_back_to_espn_for_same_league(monkeypatch):
@@ -262,7 +293,11 @@ def test_unconfigured_football_league_uses_exact_mackolik_fallback(monkeypatch):
 
 def test_midnight_utc_day_boundary():
     m = match(time="00:30")
-    enrich([m], [event(date="2026-09-05T21:30Z")])
+    calls = []
+    scores.enrich([m], NOW, fetch=lambda url, timeout: calls.append(url) or {"events": [
+        event(date="2026-09-05T21:30Z")
+    ]}, settings=CFG)
+    assert "dates=20260905" in calls[0]
     assert m.score_home == 2
 
 
