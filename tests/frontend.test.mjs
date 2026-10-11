@@ -140,6 +140,58 @@ test("kanal kartına tıklayınca yayın açılıyor ve player'e kayıyor", asyn
   dom.window.close();
 });
 
+test("VIP Yayın düğmesi Trend48’i aynı iframe’de açar ve önceki kanala toggle eder", async () => {
+  const { window, dom } = await loadPage();
+  const button = window.document.getElementById("vipStreamBtn");
+  const iframe = window.document.getElementById("liveIframe");
+  assert.ok(button, "VIP Yayın düğmesi yok");
+  assert.equal(iframe.getAttribute("src"), "", "VIP yayın uygulama açılışında otomatik yüklenmemeli");
+
+  cards(window)[2].click();
+  const previousUrl = iframe.getAttribute("src");
+  const previousTitle = window.document.getElementById("playerTitle").textContent;
+  button.click();
+  assert.equal(iframe.getAttribute("src"), "https://trend48.st/live-tv?ch=beinsports1-tr");
+  assert.equal(window.document.getElementById("playerTitle").textContent, "VIP Yayın");
+  assert.equal(button.getAttribute("aria-pressed"), "true");
+
+  button.click();
+  assert.equal(iframe.getAttribute("src"), previousUrl, "önceki kanal iframe’i geri yüklenmeli");
+  assert.equal(window.document.getElementById("playerTitle").textContent, previousTitle);
+  assert.equal(button.getAttribute("aria-pressed"), "false");
+
+  button.click();
+  cards(window)[1].click();
+  assert.equal(button.textContent, "★ VIP Yayın", "başka kanal seçilince eski toggle state’i temizlenmeli");
+  const newChannelUrl = iframe.getAttribute("src");
+  button.click();
+  button.click();
+  assert.equal(iframe.getAttribute("src"), newChannelUrl, "yeni seçilen kanal dönüş hedefi olmalı");
+  dom.window.close();
+});
+
+test("VIP’den dönünce önceki EXTRA HLS kaynağı yeniden başlatılır", async () => {
+  const { window, dom } = await loadPage();
+  const button = window.document.getElementById("vipStreamBtn");
+  const channel = window.inadina.extraChannels().find((c) => (c.sources || []).some((s) => s.type === "hls"));
+  assert.ok(channel, "test için HLS EXTRA kaynağı bulunamadı");
+  window.inadina.playExtra(channel.id, false);
+  await tick(30);
+  const firstLoadCount = window.hlsLog.filter((x) => x.startsWith("load:")).length;
+  assert.ok(firstLoadCount > 0, "önceki HLS yayını başlamadı");
+
+  button.click();
+  assert.equal(window.document.getElementById("liveIframe").getAttribute("src"), "https://trend48.st/live-tv?ch=beinsports1-tr");
+  assert.equal(window.inadina.state.currentExtraId, null);
+  button.click();
+  await tick(30);
+  assert.equal(window.inadina.state.currentExtraId, channel.id);
+  assert.equal(window.inadina.state.playerMode, "hls");
+  assert.ok(window.hlsLog.filter((x) => x.startsWith("load:")).length > firstLoadCount,
+    "önceki HLS kaynağı VIP’den dönüşte yeniden başlatılmalı");
+  dom.window.close();
+});
+
 test("ızgara / yatay liste görünümü değiştirilebiliyor", async () => {
   const { window, dom } = await loadPage();
   const grid = window.document.getElementById("channelGrid");

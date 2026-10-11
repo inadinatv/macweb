@@ -733,6 +733,7 @@
                     <div class="player-actions">
                         <button class="ctrl-btn" id="pipBtn" title="Resim içinde resim (yalnızca m3u8 yayınlarda)" hidden>⧉ PiP</button>
                         <button class="ctrl-btn" id="reloadPlayerBtn" title="Yayını yenile">🔄 Yenile</button>
+                        <button class="ctrl-btn" id="vipStreamBtn" type="button" title="Trend48 VIP yayınını aynı oynatıcıda aç" aria-pressed="false" style="padding:4px 8px;font-size:.72rem;color:#ffe08a;border-color:rgba(255,224,138,.38)">★ VIP Yayın</button>
                         <button class="ctrl-btn" id="fullscreenBtn" title="Tam ekran">⛶ Tam Ekran</button>
                     </div>
                 </div>
@@ -1270,6 +1271,7 @@
 
             function loadStream(url, title, icon, statusText, scroll) {
                 if (!url) return;
+                dismissVipMode();
                 setPlayerMode("iframe");
                 loadFrame(url);
                 setPlayerHeader(title, icon, statusText);
@@ -1298,6 +1300,8 @@
             let matchesRefreshToken = 0, extraRefreshToken = 0, standingsRefreshToken = 0;
             let hlsFailTimer = null, stallTimer = null, playToken = 0;
             const playerLogs = [];
+            const VIP_STREAM_URL = "https://trend48.st/live-tv?ch=beinsports1-tr";
+            let vipReturnState = null;
 
             function extraChannels() {
                 const out = [];
@@ -1430,6 +1434,81 @@
                     if (token === playToken) showError("Yayın sayfası zamanında yanıt vermedi. Sayfa gömülmeye izin vermiyor olabilir; yeni sekmede deneyin.");
                 }, 15000);
                 els.iframe.src = url;
+            }
+
+            function setVipButtonActive(active) {
+                const button = $("vipStreamBtn");
+                if (!button) return;
+                button.textContent = active ? "↩ Kanala dön" : "★ VIP Yayın";
+                button.title = active ? "Önceki yayına dön" : "Trend48 VIP yayınını aynı oynatıcıda aç";
+                button.setAttribute("aria-pressed", active ? "true" : "false");
+            }
+
+            /** VIP açıkken başka bir kanal seçilirse önceki dönüş hedefi artık geçerli değildir. */
+            function dismissVipMode() {
+                if (!vipReturnState) return;
+                vipReturnState = null;
+                setVipButtonActive(false);
+            }
+
+            function toggleVipStream() {
+                if (vipReturnState) {
+                    const previous = vipReturnState;
+                    vipReturnState = null;
+                    setVipButtonActive(false);
+                    stopHls();
+                    state.currentIndex = previous.currentIndex;
+                    state.currentExtraId = previous.currentExtraId;
+                    state.currentSources = previous.currentSources;
+                    state.currentSourceIndex = previous.currentSourceIndex;
+
+                    if (previous.currentExtraId && previous.currentSources.length) {
+                        setPlayerMode("hls");
+                        state.currentExtraId = previous.currentExtraId;
+                        state.currentSources = previous.currentSources;
+                        state.currentSourceIndex = previous.currentSourceIndex;
+                        markActiveCard();
+                        markActiveExtraCard();
+                        playSource(previous.currentSourceIndex, false);
+                        return;
+                    }
+
+                    setPlayerMode("iframe");
+                    state.currentIndex = previous.currentIndex;
+                    setPlayerHeader(previous.title, previous.icon, previous.status);
+                    markActiveCard();
+                    markActiveExtraCard();
+                    if (previous.iframeSrc && previous.iframeSrc !== "about:blank") {
+                        loadFrame(previous.iframeSrc);
+                    } else {
+                        els.iframe.src = "about:blank";
+                        setLoading(false);
+                        if (els.playerTip) els.playerTip.style.display = previous.tipDisplay;
+                    }
+                    return;
+                }
+
+                vipReturnState = {
+                    currentIndex: state.currentIndex,
+                    currentExtraId: state.currentExtraId,
+                    currentSources: (state.currentSources || []).slice(),
+                    currentSourceIndex: state.currentSourceIndex,
+                    iframeSrc: els.iframe.getAttribute("src") || "",
+                    title: els.playerTitle.textContent,
+                    icon: els.playerIcon.textContent,
+                    status: els.nowStatus.textContent,
+                    tipDisplay: els.playerTip ? els.playerTip.style.display : ""
+                };
+                setVipButtonActive(true);
+                setPlayerMode("iframe");
+                state.currentIndex = -1;
+                state.currentExtraId = null;
+                state.currentSources = [];
+                state.currentSourceIndex = 0;
+                setPlayerHeader("VIP Yayın", "⭐", "TREND48 · BEIN SPORTS 1");
+                markActiveCard();
+                markActiveExtraCard();
+                loadFrame(VIP_STREAM_URL);
             }
 
             function renderSourceChips() {
@@ -1721,6 +1800,7 @@
             function playExtra(id, scroll) {
                 const ch = extraById(id);
                 if (!ch || !(ch.sources || []).length) return;
+                dismissVipMode();
                 state.currentIndex = -1;
                 state.currentExtraId = id;
                 state.currentSources = ch.sources.slice();
@@ -2681,6 +2761,7 @@
                 };
 
                 $("reloadPlayerBtn").onclick = retryCurrentSource;
+                $("vipStreamBtn").onclick = toggleVipStream;
 
                 $("fullscreenBtn").onclick = () => {
                     const isHls = state.playerMode === "hls" && els.playerWrap.classList.contains("mode-hls");
