@@ -83,11 +83,14 @@ raporlar üreten gelişmiş otomasyon botu.
      **arama**, durum/spor filtreleri, canlı saat, takım logoları, ⭐ Günün Maçı rozeti,
      klavye kısayolları (`←`/`→` kanal, `G`/`L` görünüm, `1`/`2` sekme), `#kanal=...` derin bağlantısı,
      JS kapalıysa çalışan `<noscript>` maç listesi.
-   - **Canlı tazeleme:** Sayfa yayımlanmış `output/today_matches.json` snapshot'ını 30 saniyede
-     bir, aktif maçların ESPN skorunu 10 saniyede bir okur. Fixtoor'daki gibi önce
-     `site.web.api.espn.com`, hata/şema sorunu varsa `site.api.espn.com` denenir; HTTP 200
-     içindeki ESPN hata JSON'u geçerli skor yanıtı sayılmaz. Daha eski snapshot, daha taze
-     skor/dakikayı geriye götürmez. Erişilemezse son gerçek veriyle çalışmaya devam eder.
+   - **Canlı tazeleme:** Sayfa CORS açık Fixbet maç feed’ini (`matches.php`, gerekirse
+     `matches2.php`) 90 saniyelik önbellekle doğrudan okur; bu, GitHub Actions gecikse bile
+     uygulamadaki günlük programı kaynak siteyle eşitler. Feed erişilemezse yayımlanmış
+     `output/today_matches.json` snapshot’ı yedek olarak kalır. Kaynağın `MS/FT` final durumu
+     ve skoru anında **Bitti** filtresine taşınır; canlı skor senkronu ayrıca ESPN’den 10
+     saniyede bir güncellenir. Fixtoor’daki gibi önce `site.web.api.espn.com`, hata/şema sorunu
+     varsa `site.api.espn.com` denenir; HTTP 200 içindeki ESPN hata JSON’u geçerli yanıt sayılmaz.
+     Daha eski snapshot, daha taze skor/dakikayı geriye götürmez.
 
 6. **⚡ EXTRA PANELLER — doğrudan m3u8 / panel kanalları** (`src/fixbet/extras.py` + `config/extra_channels.yml`)
    - Ana siteden bağımsız ek kaynaklar:
