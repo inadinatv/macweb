@@ -211,6 +211,22 @@ def test_repo_config_targets_superlig_only():
     assert cfg.get("enabled") is True
 
 
+def test_injected_espn_fetch_skips_live_html_providers(monkeypatch):
+    def unexpected_html_fetch(*args, **kwargs):
+        pytest.fail("enjekte edilmiş ESPN fetch kullanılırken canlı HTML kaynağı çağrıldı")
+
+    monkeypatch.setattr(standings, "_fetch_iddaa_rows", unexpected_html_fetch)
+    monkeypatch.setattr(standings, "_fetch_mackolik_rows", unexpected_html_fetch)
+    out = standings.refresh(
+        now=NOW,
+        fetch=lambda url, timeout: payload(entry("Galatasaray", "GAL", 4, 3, 1, 0, 12, 6, 6, 10, 1)),
+        write=False,
+        settings=CFG,
+    )
+    assert out["source"] == "espn"
+    assert rows_of(out)[0]["team"] == "Galatasaray"
+
+
 def test_seeded_output_is_real_and_internally_consistent():
     """output/standings.json: her satır kendi içinde tutarlı olmalı (uydurma yok)."""
     data = standings.load_or_build(NOW)

@@ -857,8 +857,11 @@ def refresh(now: datetime | None = None, fetch: Fetcher | None = None,
     - Trendyol Süper Lig için kaynak sırası: iddaa → mackolik → espn → önceki.
     - Diğer ligler için ESPN (veya varsa diğer kaynaklar).
     - Bir lig çekilemezse o ligin son bilinen tablosu aynen korunur.
+    - ``fetch`` verilmişse bu, ağsız/test amaçlı ESPN JSON fetcher'ıdır; canlı HTML
+      sağlayıcıları atlanır ve yalnızca enjekte edilen fetcher kullanılır.
     """
     cfg = settings if settings is not None else load_config()
+    injected_fetch = fetch is not None
     tz = ZoneInfo(config.load_settings().get("bot", {}).get("timezone", "Europe/Istanbul"))
     now = now or datetime.now(tz)
     now = now.replace(tzinfo=tz) if now.tzinfo is None else now.astimezone(tz)
@@ -885,7 +888,7 @@ def refresh(now: datetime | None = None, fetch: Fetcher | None = None,
 
             # Sadece Türkiye Süper Lig için canlı iddaa/mackolik öncelikli
             is_tur = path == "soccer/tur.1"
-            if is_tur:
+            if is_tur and not injected_fetch:
                 # 1) iddaa
                 try:
                     rows = _fetch_iddaa_rows(timeout, display)
