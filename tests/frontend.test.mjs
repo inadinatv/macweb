@@ -144,37 +144,25 @@ test("VIP Yayın düğmesi Trend48’i aynı iframe’de açar ve önceki kanala
   const { window, dom } = await loadPage();
   const button = window.document.getElementById("vipStreamBtn");
   const iframe = window.document.getElementById("liveIframe");
-  const logo = window.document.getElementById("vipBrandOverlay");
   assert.ok(button, "VIP Yayın düğmesi yok");
-  assert.ok(logo, "VIP logo overlay’i yok");
-  assert.equal(logo.tagName, "IMG", "watermark bir görsel varlığı olmalı");
-  assert.equal(logo.getAttribute("src"), "assets/inadina-tv-vip-watermark.png");
-  assert.equal(logo.getAttribute("alt"), "İNADINA TV");
-  const watermark = readFileSync(path.join(ROOT, "assets", "inadina-tv-vip-watermark.png"));
-  assert.equal(watermark.subarray(0, 8).toString("hex"), "89504e470d0a1a0a", "PNG imzası geçerli olmalı");
-  assert.equal(watermark[25], 6, "PNG gerçek alfa kanallı RGBA olmalı");
+  assert.equal(window.document.getElementById("vipBrandOverlay"), null, "VIP oynatıcıda logo kaplaması olmamalı");
   assert.equal(iframe.getAttribute("src"), "https://trend48.st/live-tv?ch=beinsports1-tr",
     "derin bağlantı yokken uygulama açılışında Trend48 iframe'de başlamalı");
   assert.equal(button.getAttribute("aria-pressed"), "true", "açılışta VIP düğmesi aktif olmalı");
-  assert.equal(logo.classList.contains("active"), true, "VIP açılışında logo overlay’i görünmeli");
-  assert.equal(logo.getAttribute("aria-hidden"), "false");
 
   cards(window)[2].click();
   assert.equal(button.getAttribute("aria-pressed"), "false", "normal kanal seçimi VIP modunu kapatmalı");
-  assert.equal(logo.classList.contains("active"), false, "normal kanalda VIP logo overlay’i kapanmalı");
   const previousUrl = iframe.getAttribute("src");
   const previousTitle = window.document.getElementById("playerTitle").textContent;
   button.click();
   assert.equal(iframe.getAttribute("src"), "https://trend48.st/live-tv?ch=beinsports1-tr");
   assert.equal(window.document.getElementById("playerTitle").textContent, "VIP Yayın");
   assert.equal(button.getAttribute("aria-pressed"), "true");
-  assert.equal(logo.classList.contains("active"), true, "VIP yeniden açıldığında logo overlay’i görünmeli");
 
   button.click();
   assert.equal(iframe.getAttribute("src"), previousUrl, "önceki kanal iframe’i geri yüklenmeli");
   assert.equal(window.document.getElementById("playerTitle").textContent, previousTitle);
   assert.equal(button.getAttribute("aria-pressed"), "false");
-  assert.equal(logo.classList.contains("active"), false, "VIP’den dönünce logo overlay’i kapanmalı");
 
   button.click();
   cards(window)[1].click();

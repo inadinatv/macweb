@@ -156,15 +156,6 @@
         .ctrl-btn:hover { background: rgba(255,45,122,0.3); border-color: var(--neon-pink); box-shadow: 0 0 12px rgba(255,45,122,0.4); }
         .player-wrap { position: relative; aspect-ratio: 16 / 9; background: #000; overflow: hidden; width: 100%; }
         .player-wrap iframe { width: 100%; height: 100%; border: 0; display: block; }
-        .vip-brand-overlay {
-            position: absolute; z-index: 4; left: 12%; bottom: 16%;
-            width: clamp(80px, 23%, 96px); height: auto; display: block;
-            opacity: 0; visibility: hidden; transform: translateY(4px);
-            transition: opacity .18s ease, transform .18s ease, visibility .18s ease;
-            pointer-events: none;
-        }
-        .vip-brand-overlay.active { opacity: 1; visibility: visible; transform: translateY(0); }
-        .vip-brand-overlay img { display: block; width: 100%; height: auto; }
         .player-tip {
             position: absolute; inset: 0; display: flex; flex-direction: column; gap: 8px;
             align-items: center; justify-content: center; text-align: center; padding: 20px;
@@ -767,7 +758,6 @@
                     </div>
                     <video id="hlsVideo" controls playsinline autoplay preload="none" title="m3u8 yayın oynatıcı"></video>
                     <iframe id="liveIframe" src="" title="Canlı yayın oynatıcı" allowfullscreen allow="autoplay; encrypted-media; picture-in-picture" loading="eager"></iframe>
-                    <img class="vip-brand-overlay" id="vipBrandOverlay" src="assets/inadina-tv-vip-watermark.png" alt="İNADINA TV" aria-hidden="true" />
                 </div>
             </div>
 
@@ -1449,14 +1439,9 @@
             function setVipButtonActive(active) {
                 const button = $("vipStreamBtn");
                 if (!button) return;
-                const logo = $("vipBrandOverlay");
                 button.textContent = active ? "↩ Kanala dön" : "★ VIP Yayın";
                 button.title = active ? "Önceki yayına dön" : "Trend48 VIP yayınını aynı oynatıcıda aç";
                 button.setAttribute("aria-pressed", active ? "true" : "false");
-                if (logo) {
-                    logo.classList.toggle("active", active);
-                    logo.setAttribute("aria-hidden", active ? "false" : "true");
-                }
             }
 
             /** VIP açıkken başka bir kanal seçilirse önceki dönüş hedefi artık geçerli değildir. */
