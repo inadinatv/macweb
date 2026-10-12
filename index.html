@@ -156,6 +156,24 @@
         .ctrl-btn:hover { background: rgba(255,45,122,0.3); border-color: var(--neon-pink); box-shadow: 0 0 12px rgba(255,45,122,0.4); }
         .player-wrap { position: relative; aspect-ratio: 16 / 9; background: #000; overflow: hidden; width: 100%; }
         .player-wrap iframe { width: 100%; height: 100%; border: 0; display: block; }
+        .vip-brand-overlay {
+            position: absolute; z-index: 4; left: 10%; bottom: 12%;
+            width: clamp(120px, 36%, 164px); height: clamp(32px, 14%, 40px);
+            box-sizing: border-box; display: flex; align-items: center; gap: 7px; padding: 4px 8px;
+            border: 1px solid rgba(255,255,255,.13); border-radius: 9px;
+            background: #10121b; color: #fff; box-shadow: 0 2px 12px rgba(0,0,0,.42);
+            opacity: 0; visibility: hidden; transform: translateY(4px);
+            transition: opacity .18s ease, transform .18s ease, visibility .18s ease;
+            pointer-events: none;
+        }
+        .vip-brand-overlay.active { opacity: 1; visibility: visible; transform: translateY(0); }
+        .vip-brand-icon { flex: 0 0 23px; width: 23px; height: 23px; }
+        .vip-brand-icon svg { display: block; width: 100%; height: 100%; }
+        .vip-brand-wordmark {
+            display: flex; align-items: baseline; gap: 5px; white-space: nowrap;
+            color: #fff; font-size: .62rem; font-weight: 900; letter-spacing: .045em; line-height: 1;
+        }
+        .vip-brand-wordmark b { color: #ff5b9b; font-size: .72rem; letter-spacing: .02em; }
         .player-tip {
             position: absolute; inset: 0; display: flex; flex-direction: column; gap: 8px;
             align-items: center; justify-content: center; text-align: center; padding: 20px;
@@ -758,6 +776,16 @@
                     </div>
                     <video id="hlsVideo" controls playsinline autoplay preload="none" title="m3u8 yayın oynatıcı"></video>
                     <iframe id="liveIframe" src="" title="Canlı yayın oynatıcı" allowfullscreen allow="autoplay; encrypted-media; picture-in-picture" loading="eager"></iframe>
+                    <div class="vip-brand-overlay" id="vipBrandOverlay" aria-hidden="true">
+                        <span class="vip-brand-icon" aria-hidden="true">
+                            <svg viewBox="0 0 28 28" focusable="false">
+                                <defs><linearGradient id="vipBrandGradient" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ff2d7a"/><stop offset="1" stop-color="#9b4dff"/></linearGradient></defs>
+                                <rect x="1" y="1" width="26" height="26" rx="8" fill="url(#vipBrandGradient)"/>
+                                <path d="M11 8.2a1 1 0 0 0-1.5.87v9.86a1 1 0 0 0 1.5.87l8.1-4.93a1 1 0 0 0 0-1.74z" fill="#fff"/>
+                            </svg>
+                        </span>
+                        <span class="vip-brand-wordmark"><span>İNADINA</span><b>TV</b></span>
+                    </div>
                 </div>
             </div>
 
@@ -1439,9 +1467,14 @@
             function setVipButtonActive(active) {
                 const button = $("vipStreamBtn");
                 if (!button) return;
+                const logo = $("vipBrandOverlay");
                 button.textContent = active ? "↩ Kanala dön" : "★ VIP Yayın";
                 button.title = active ? "Önceki yayına dön" : "Trend48 VIP yayınını aynı oynatıcıda aç";
                 button.setAttribute("aria-pressed", active ? "true" : "false");
+                if (logo) {
+                    logo.classList.toggle("active", active);
+                    logo.setAttribute("aria-hidden", active ? "false" : "true");
+                }
             }
 
             /** VIP açıkken başka bir kanal seçilirse önceki dönüş hedefi artık geçerli değildir. */
