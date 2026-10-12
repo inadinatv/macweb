@@ -147,6 +147,12 @@ test("VIP Yayın düğmesi Trend48’i aynı iframe’de açar ve önceki kanala
   const logo = window.document.getElementById("vipBrandOverlay");
   assert.ok(button, "VIP Yayın düğmesi yok");
   assert.ok(logo, "VIP logo overlay’i yok");
+  assert.equal(logo.tagName, "IMG", "watermark bir görsel varlığı olmalı");
+  assert.equal(logo.getAttribute("src"), "assets/inadina-tv-vip-watermark.png");
+  assert.equal(logo.getAttribute("alt"), "İNADINA TV");
+  const watermark = readFileSync(path.join(ROOT, "assets", "inadina-tv-vip-watermark.png"));
+  assert.equal(watermark.subarray(0, 8).toString("hex"), "89504e470d0a1a0a", "PNG imzası geçerli olmalı");
+  assert.equal(watermark[25], 6, "PNG gerçek alfa kanallı RGBA olmalı");
   assert.equal(iframe.getAttribute("src"), "https://trend48.st/live-tv?ch=beinsports1-tr",
     "derin bağlantı yokken uygulama açılışında Trend48 iframe'de başlamalı");
   assert.equal(button.getAttribute("aria-pressed"), "true", "açılışta VIP düğmesi aktif olmalı");
