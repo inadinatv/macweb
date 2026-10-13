@@ -428,11 +428,18 @@
         .match-card:hover { border-color: rgba(0,234,255,0.5); transform: translateY(-3px); box-shadow: 0 10px 26px rgba(0,0,0,0.6), 0 0 22px rgba(0,234,255,0.15); }
         .match-card.is-live { border-color: rgba(255,45,122,0.45); box-shadow: 0 0 18px rgba(255,45,122,0.18); }
         .match-card.is-live:hover { border-color: var(--neon-pink); box-shadow: 0 10px 26px rgba(0,0,0,0.6), var(--glow-pink); }
+        .match-card.is-mod {
+            grid-column: 1 / -1; padding: 16px 18px;
+            background: linear-gradient(115deg, rgba(54,39,15,0.82), rgba(20,16,42,0.94) 48%, rgba(12,9,26,0.98));
+            border-color: rgba(255,204,51,0.4); box-shadow: 0 0 24px rgba(255,168,0,0.11);
+        }
+        .match-card.is-mod .match-teams { font-size: clamp(1.25rem, 2.8vw, 1.7rem); padding: 4px 0; }
         .match-card.is-mod::after {
             content: ''; position: absolute; top: 0; left: 0; width: 3px; height: 100%;
             background: linear-gradient(180deg, var(--neon-gold), rgba(255,168,0,0.2));
         }
         .match-card.is-done { border-color: rgba(158,147,188,.16); }
+        .match-card.is-mod.is-done { border-color: rgba(255,204,51,0.4); }
         .match-header { display: flex; align-items: center; justify-content: space-between; gap: 8px; font-size: 0.74rem; font-weight: 700; color: var(--text-muted); flex-wrap: wrap; }
         .match-league { display: flex; align-items: center; gap: 6px; color: var(--neon-cyan); min-width: 0; max-width: 100%; }
         .match-league span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
@@ -1094,10 +1101,12 @@
                     const a = scoreNumber(m.scoreAway !== undefined ? m.scoreAway : m.score_away);
                     const isFinished = st.status === "finished" || normalizeStatus(m.rawStatus || m.raw_status) === "finished" || normalizeStatus(m.status) === "finished";
                     const hasScore = (isActiveMatch(st.status) || isFinished) && h !== null && a !== null;
+                    const matchDay = st.start ? localDateKey(st.start) : String(m.date || "");
+                    const isTodayFeatured = !!m.isMod && (!matchDay || matchDay === localDateKey(now));
                     const stamp = new Date(m.scoreUpdatedAt || m.score_updated_at || "");
                     const clock = String(m.statusClock || m.status_clock || "").trim();
                     return Object.assign({}, m, {
-                        _status: st.status, _estimated: st.estimated, _waiting: !!st.waitingSource,
+                        _status: st.status, _estimated: st.estimated, _waiting: !!st.waitingSource, _isFeatured: isTodayFeatured,
                         _clock: isActiveMatch(st.status) ? clock : "",
                         _score: hasScore ? [h, a] : null,
                         _scoreStale: hasScore && isActiveMatch(st.status) && !isNaN(stamp.getTime()) && now - stamp > 10 * 60000,
@@ -1109,6 +1118,8 @@
             function sortMatches(list) {
                 const rank = { live: 0, halftime: 0, upcoming: 1, finished: 2, postponed: 3, suspended: 3, cancelled: 4, abandoned: 4 };
                 return list.slice().sort((a, b) => {
+                    const featured = Number(!!b._isFeatured) - Number(!!a._isFeatured);
+                    if (featured) return featured;
                     const diff = (rank[a._status] ?? 9) - (rank[b._status] ?? 9);
                     return diff || String(a.time || "99:99").localeCompare(String(b.time || "99:99"));
                 });
@@ -1145,7 +1156,7 @@
                 list.forEach((m) => {
                     const key = m._status === "halftime" ? "live" : m._status;
                     counts[key] = (counts[key] || 0) + 1;
-                    if (m.isMod) counts.mod++;
+                    if (m._isFeatured) counts.mod++;
                     const s = m.sport || "Diğer";
                     sports[s] = (sports[s] || 0) + 1;
                 });
@@ -1412,8 +1423,33 @@
                 els.playerError.classList.remove("active");
             }
 
+            function normalizeIframeUrl(value) {
+                const u = new URL(String(value || ""), location.href);
+                if (!/^https?:$/.test(u.protocol)) throw new Error("scheme");
+                const host = u.hostname.toLowerCase();
+                const makeEmbed = (rawId) => {
+                    const match = decodeURIComponent(rawId || "").match(/^[a-z0-9]+/i);
+                    if (!match) return u.href;
+                    const embed = new URL("https://www.dailymotion.com/embed/video/" + encodeURIComponent(match[0]));
+                    embed.search = u.search;
+                    embed.hash = u.hash;
+                    return embed.href;
+                };
+                if (host === "dai.ly" || host.endsWith(".dai.ly")) {
+                    const id = u.pathname.split("/").filter(Boolean)[0];
+                    if (id) return makeEmbed(id);
+                }
+                if ((host === "dailymotion.com" || host.endsWith(".dailymotion.com")) && host !== "geo.dailymotion.com") {
+                    if (/^\/embed\/video\//i.test(u.pathname)) return u.href;
+                    const match = u.pathname.match(/^\/video\/([^/]+)/i);
+                    if (match) return makeEmbed(match[1]);
+                }
+                return u.href;
+            }
+
             function loadFrame(url) {
                 try {
+                    url = normalizeIframeUrl(url);
                     const u = new URL(url, location.href);
                     if (!/^https?:$/.test(u.protocol)) throw new Error("scheme");
                     url = u.href;
@@ -1952,7 +1988,7 @@
 
                 list = list.filter((m) => {
                     if (state.activeStatus !== "all") {
-                        if (state.activeStatus === "mod") { if (!m.isMod) return false; }
+                        if (state.activeStatus === "mod") { if (!m._isFeatured) return false; }
                         else if (state.activeStatus === "live" ? !isActiveMatch(m._status) : m._status !== state.activeStatus) return false;
                     }
                     if (state.activeSport !== "all" && (m.sport || "Diğer") !== state.activeSport) return false;
@@ -1968,7 +2004,7 @@
                     const active = isActiveMatch(m._status);
                     const card = document.createElement("div");
                     card.className = "match-card" + (active ? " is-live" : "") +
-                        (m._status === "finished" ? " is-done" : "") + (m.isMod ? " is-mod" : "");
+                        (m._status === "finished" ? " is-done" : "") + (m._isFeatured ? " is-mod" : "");
                     card.setAttribute("data-status", m._status);
                     card.setAttribute("data-time", m.time || "");
                     // Bir kanalda aynı gün birçok maç olabilir: kanal ID'siyle skor eşleştirilmez.
@@ -2003,7 +2039,7 @@
                     card.innerHTML =
                         '<div class="match-header">' +
                             '<span class="match-league">' + m._icon + " <span>" + esc(m.league || "") + "</span></span>" +
-                            (m.isMod ? '<span class="match-status-tag mod">⭐ Günün Maçı</span>' : "") +
+                            (m._isFeatured ? '<span class="match-status-tag mod">⭐ Günün Maçı</span>' : "") +
                             '<span class="match-status-tag' + tagClass + '" title="' + statusTitle + '">' + tagLabel + "</span>" +
                         "</div>" +
                         '<div class="match-teams">' +
@@ -2112,13 +2148,31 @@
             /** Yayımlanmış snapshot doğrudan canlı API'den daha eskiyse ekrandaki
              *  skor/dakikayı geriye götürme. Kaynaktan doğrulanmış final ve daha
              *  yeni snapshot ise her zaman kazanır. */
-            function mergeRemoteMatches(rows) {
-                const current = new Map(matchesData.map((m) => [matchIdentity(m), m]));
+            function mergeRemoteMatches(rows, existingRows, referenceNow) {
+                const priorRows = Array.isArray(existingRows) ? existingRows : matchesData;
+                const current = new Map(priorRows.map((m) => [matchIdentity(m), m]));
+                const now = referenceNow instanceof Date ? referenceNow : new Date();
                 return rows.map((next) => {
                     const old = current.get(matchIdentity(next));
                     if (!old) return next;
                     const nextReal = next.statusSource !== "schedule" ? normalizeStatus(next.rawStatus || next.status) : null;
                     if (nextReal === "finished" || NON_LIVE_STATUS[nextReal]) return next;
+                    const oldStart = matchStart(old), nextStart = matchStart(next);
+                    const crossedLocalDay = old.statusSource === "schedule" && next.statusSource === "schedule"
+                        && normalizeStatus(next.rawStatus || next.status) === "upcoming"
+                        && oldStart && nextStart && oldStart < now
+                        && localDateKey(oldStart) !== localDateKey(nextStart);
+                    if (crossedLocalDay) {
+                        // Fixbet may keep yesterday's un-dated schedule row after midnight.
+                        // Keep its original kickoff so the same fixture cannot reappear as tomorrow's upcoming game.
+                        return Object.assign({}, next, {
+                            status: old.status, statusSource: old.statusSource, rawStatus: old.rawStatus,
+                            statusClock: old.statusClock, scoreHome: old.scoreHome, scoreAway: old.scoreAway,
+                            scoreSource: old.scoreSource, scoreUpdatedAt: old.scoreUpdatedAt,
+                            eventId: old.eventId || next.eventId, startsAt: old.startsAt || oldStart.toISOString(),
+                            isMod: !!(old.isMod || next.isMod)
+                        });
+                    }
                     const oldReal = old.statusSource !== "schedule" ? normalizeStatus(old.rawStatus || old.status) : null;
                     const oldStamp = new Date(old.scoreUpdatedAt || 0).getTime();
                     const nextStamp = new Date(next.scoreUpdatedAt || 0).getTime();
@@ -3017,8 +3071,11 @@
                 setView: setView,
                 setTab: setTab,
                 computeState: computeState,
+                decoratedMatches: decoratedMatches,
                 normalizeRemote: normalizeRemote,
                 mergeRemoteMatches: mergeRemoteMatches,
+                normalizeIframeUrl: normalizeIframeUrl,
+                loadFrame: loadFrame,
                 refreshMatches: refreshMatches,
                 liveSyncTick: liveSyncTick,
                 fetchLiveScoreboard: fetchLiveScoreboard,

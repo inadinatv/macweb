@@ -140,6 +140,21 @@ test("kanal kartına tıklayınca yayın açılıyor ve player'e kayıyor", asyn
   dom.window.close();
 });
 
+test("DailyMotion watch ve kısa linkleri iframe için embed URL'sine çevriliyor", async () => {
+  const { window, dom } = await loadPage();
+  const iframe = window.document.getElementById("liveIframe");
+  window.inadina.loadFrame("https://www.dailymotion.com/video/x8abc123_ornek-baslik?start=24");
+  assert.equal(iframe.getAttribute("src"), "https://www.dailymotion.com/embed/video/x8abc123?start=24");
+  iframe.dispatchEvent(new window.Event("load"));
+  assert.equal(window.inadina.normalizeIframeUrl("https://dai.ly/x8short99"),
+    "https://www.dailymotion.com/embed/video/x8short99");
+  assert.equal(window.inadina.normalizeIframeUrl("https://www.dailymotion.com/embed/video/x8embed99"),
+    "https://www.dailymotion.com/embed/video/x8embed99");
+  assert.equal(window.inadina.normalizeIframeUrl("https://www.youtube.com/embed/test123"),
+    "https://www.youtube.com/embed/test123", "başka sağlayıcı URL’leri değişmemeli");
+  dom.window.close();
+});
+
 test("VIP Yayın düğmesi Trend48’i aynı iframe’de açar ve önceki kanala toggle eder", async () => {
   const { window, dom } = await loadPage();
   const button = window.document.getElementById("vipStreamBtn");
@@ -235,11 +250,37 @@ test("günün maçları gerçek programdan geliyor", async () => {
 
   const text = window.document.getElementById("matchesGrid").textContent;
   for (const m of TODAY.matches) assert.ok(text.includes(m.home) && text.includes(m.away), "gerçek maç eksik: " + m.home);
-  const modCount = TODAY.matches.filter((m) => m.is_match_of_day).length;
+  const modCount = window.inadina.decoratedMatches(new Date()).filter((m) => m._isFeatured).length;
   assert.equal(window.document.querySelectorAll(".match-card.is-mod").length, modCount,
-    "günün maçı rozetleri gerçek veriyle uyuşmuyor");
+    "yalnızca bugünkü Günün Maçı spotlight olarak işaretlenmeli");
   if (modCount) assert.ok(text.includes("⭐ Günün Maçı"), "günün maçı rozeti yok");
   assert.equal(window.document.getElementById("badgeMatches").textContent, String(TODAY.matches.length));
+  dom.window.close();
+});
+
+test("bugünün Günün Maçı tam genişlikte gösterilir ve diğer maçların önüne sabitlenir", async () => {
+  const feed = `<!doctype html>
+    <a href="channel?id=normal"><div class="match-detail"><div class="date">Futbol</div>
+      <div class="event">12:00 | Test Ligi</div><div class="teams"><div class="home">Normal Ev</div>
+      <div class="away">Normal Deplasman</div></div></div></a>
+    <a href="channel?id=featured"><div class="match-detail"><div class="date">Futbol</div>
+      <div class="event">23:00 | Test Ligi [Günün Maçı]</div><div class="teams"><div class="home">Öne Çıkan Ev</div>
+      <div class="away">Öne Çıkan Deplasman</div></div></div></a>`;
+  const fetchImpl = async (url) => {
+    if (String(url).startsWith("https://data-reality.com/matches.php")) return { ok: true, status: 200, text: async () => feed };
+    if (String(url).startsWith("https://data-reality.com/matches2.php")) return { ok: true, status: 200, text: async () => "" };
+    return { ok: true, status: 200, json: async () => TODAY };
+  };
+  const { window, dom } = await loadPage({ fetchImpl });
+  assert.equal(await window.inadina.refreshMatches(true), true);
+  window.inadina.setTab("matchesTab");
+  const list = [...matchCards(window)];
+  assert.equal(list.length, 2, "test programındaki iki maç gösterilmeli");
+  assert.ok(list[0].textContent.includes("Öne Çıkan Ev"), "Günün Maçı ilk sırada değil");
+  assert.ok(list[0].classList.contains("is-mod"), "Günün Maçı spotlight sınıfı almadı");
+  assert.ok(HTML.includes("grid-column: 1 / -1"), "spotlight kartı tüm maç sütunlarını kaplamıyor");
+  assert.ok(list[0].textContent.includes("⭐ Günün Maçı"), "Günün Maçı etiketi eksik");
+  assert.equal(list[1].classList.contains("is-mod"), false, "normal maç spotlight olmamalı");
   dom.window.close();
 });
 
@@ -339,6 +380,34 @@ test("canlı Fixbet programı eski snapshot'ı dengeler ve MS skoru Bitti filtre
     "Bitti filtresi final maçı saymıyor: " + JSON.stringify([...window.document.querySelectorAll("#matchFilterRow .chip")].map((chip) => chip.textContent)));
   assert.ok(window.document.getElementById("updatedAtText").textContent.includes("Fixbet canlı program"),
     "canlı program kaynağı kullanıcıya belirtilmedi");
+  dom.window.close();
+});
+
+test("gece yarısından sonra tarihsiz eski schedule maçı yarının yaklaşan maçı olmaz", async () => {
+  const { window, dom } = await loadPage();
+  const now = new window.Date("2026-10-14T00:15:00+03:00");
+  const existing = [{
+    sport: "Futbol", league: "Test Kupası", home: "Galatasaray", away: "Barcelona", time: "22:00",
+    date: "2026-10-13", startsAt: "2026-10-13T22:00:00+03:00", status: "finished",
+    statusSource: "schedule", rawStatus: "", isMod: true,
+  }];
+  const nextDayStampedFeedRow = [{
+    sport: "Futbol", league: "Test Kupası", home: "Galatasaray", away: "Barcelona", time: "22:00",
+    date: "2026-10-14", status: "upcoming", statusSource: "schedule", rawStatus: "", isMod: true,
+  }, {
+    sport: "Futbol", league: "Test Kupası", home: "Gece Takımı", away: "Rakip", time: "00:05",
+    date: "2026-10-14", status: "upcoming", statusSource: "schedule", rawStatus: "",
+  }];
+  existing.push({
+    sport: "Futbol", league: "Test Kupası", home: "Gece Takımı", away: "Rakip", time: "00:05",
+    date: "2026-10-13", startsAt: "2026-10-13T00:05:00+03:00", status: "finished",
+    statusSource: "schedule", rawStatus: "",
+  });
+  const merged = window.inadina.mergeRemoteMatches(nextDayStampedFeedRow, existing, now);
+  assert.equal(merged[0].startsAt, "2026-10-13T22:00:00+03:00", "orijinal kickoff tarihi kaybolmamalı");
+  assert.equal(window.inadina.computeState(merged[0], now).status, "finished", "biten maç tekrar yaklaşan görünmemeli");
+  assert.equal(merged[1].startsAt, "2026-10-13T00:05:00+03:00", "gece yarısı sonrası eski saat de korunmalı");
+  assert.equal(window.inadina.computeState(merged[1], now).status, "finished", "00:05 maçı yanlışlıkla canlı olmamalı");
   dom.window.close();
 });
 
