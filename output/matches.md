@@ -1,18 +1,15 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-10-13 08:11  
-> **Toplam maç:** 22  |  **Canlı:** 1  |  **Yaklaşan:** 21
+> **Güncellenme:** 2026-10-13 11:55  
+> **Toplam maç:** 22  |  **Canlı:** 1  |  **Yaklaşan:** 18
 
 ## 🔴 CANLI
 
-- 🔴 **Newcastle Jets 0 - 0 Gamba Osaka** — CANLI · `10:45` | AFC Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=smarts>
+- 🔴 **Bandırmaspor 0 - 0 Sivasspor** — CANLI · `14:30` | Trendyol 1. Lig <https://fixbettv84.com/channel.html?id=trtspor>
 
 ## ⏰ YAKLAŞAN
 
-- ⏰ **Kyoto vs Ratchaburi** — YAKLAŞAN · `13:00` | AFC Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=sms2>
-- ⏰ **Shanghai Port vs Daejeon Citizen** — YAKLAŞAN · `13:00` | AFC Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=smarts>
-- ⏰ **Bandırmaspor vs Sivasspor** — YAKLAŞAN · `14:30` | Trendyol 1. Lig <https://fixbettv84.com/channel.html?id=trtspor>
 - ⏰ **Buriram vs Beijing Guoan** — YAKLAŞAN · `15:15` | AFC Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=sms2>
 - ⏰ **Cong An Ha Noi vs Kashima Antlers** — YAKLAŞAN · `15:15` | AFC Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=smarts>
 - ⏰ **Sarıyer vs Bodrumspor** — YAKLAŞAN · `17:00` | Trendyol 1. Lig <https://fixbettv84.com/channel.html?id=trtspor>
@@ -32,6 +29,12 @@
 - ⏰ **Villarreal vs Napoli** — YAKLAŞAN · `22:00` | UEFA Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=ex4>
 - ⏰ **Arsenal vs Lille** — YAKLAŞAN · `22:00` | UEFA Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=ex1>
 
+## ✅ BİTTİ
+
+- ✅ **Newcastle Jets 1 - 3 Gamba Osaka** — MS · `10:45` | AFC Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=smarts>
+- ✅ **Kyoto vs Ratchaburi** — MS · `13:00` | AFC Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=sms2>
+- ✅ **Shanghai Port vs Daejeon Citizen** — MS · `13:00` | AFC Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=smarts>
+
 ## ⭐ GÜNÜN MAÇI
 
 - ⏰ **Galatasaray vs Barcelona** — YAKLAŞAN · `22:00` | UEFA Şampiyonlar Ligi ★ **Günün Maçı** <https://fixbettv84.com/channel.html?id=trt1>
@@ -40,7 +43,7 @@
 ## 🏆 Lig Bazlı
 
 ### AFC Şampiyonlar Ligi
-- 🔴 Newcastle Jets vs Gamba Osaka — 10:45
+- ⏰ Newcastle Jets vs Gamba Osaka — 10:45
 - ⏰ Kyoto vs Ratchaburi — 13:00
 - ⏰ Shanghai Port vs Daejeon Citizen — 13:00
 - ⏰ Buriram vs Beijing Guoan — 15:15
@@ -59,7 +62,7 @@
 - ⏰ Partizan vs Panathinaikos — 21:30
 
 ### Trendyol 1. Lig
-- ⏰ Bandırmaspor vs Sivasspor — 14:30
+- 🔴 Bandırmaspor vs Sivasspor — 14:30
 - ⏰ Sarıyer vs Bodrumspor — 17:00
 
 ### UEFA Şampiyonlar Ligi
