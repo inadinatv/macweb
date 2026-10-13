@@ -1,18 +1,11 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-10-13 11:55  
-> **Toplam maç:** 22  |  **Canlı:** 1  |  **Yaklaşan:** 18
-
-## 🔴 CANLI
-
-- 🔴 **Bandırmaspor 0 - 0 Sivasspor** — CANLI · `14:30` | Trendyol 1. Lig <https://fixbettv84.com/channel.html?id=trtspor>
+> **Güncellenme:** 2026-10-13 16:00  
+> **Toplam maç:** 22  |  **Canlı:** 0  |  **Yaklaşan:** 15
 
 ## ⏰ YAKLAŞAN
 
-- ⏰ **Buriram vs Beijing Guoan** — YAKLAŞAN · `15:15` | AFC Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=sms2>
-- ⏰ **Cong An Ha Noi vs Kashima Antlers** — YAKLAŞAN · `15:15` | AFC Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=smarts>
-- ⏰ **Sarıyer vs Bodrumspor** — YAKLAŞAN · `17:00` | Trendyol 1. Lig <https://fixbettv84.com/channel.html?id=trtspor>
 - ⏰ **Bahçeşehir Klj vs Manresa** — YAKLAŞAN · `19:00` | Eurocup <https://fixbettv84.com/channel.html?id=trtspor2>
 - ⏰ **Al Sadd vs Al Hilal** — YAKLAŞAN · `19:00` | AFC Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=smarts>
 - ⏰ **Al Seeb vs Al Hussein** — YAKLAŞAN · `19:00` | AFC Şampiyonlar Ligi 2 <https://fixbettv84.com/channel.html?id=sms2>
@@ -34,6 +27,10 @@
 - ✅ **Newcastle Jets 1 - 3 Gamba Osaka** — MS · `10:45` | AFC Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=smarts>
 - ✅ **Kyoto vs Ratchaburi** — MS · `13:00` | AFC Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=sms2>
 - ✅ **Shanghai Port vs Daejeon Citizen** — MS · `13:00` | AFC Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=smarts>
+- ✅ **Bandırmaspor 1 - 1 Sivasspor** — MS · `14:30` | Trendyol 1. Lig <https://fixbettv84.com/channel.html?id=trtspor>
+- ✅ **Buriram 0 - 1 Beijing Guoan** — MS · `15:15` | AFC Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=sms2>
+- ✅ **Cong An Ha Noi vs Kashima Antlers** — MS · `15:15` | AFC Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=smarts>
+- ✅ **Sarıyer vs Bodrumspor** — MS · `17:00` | Trendyol 1. Lig <https://fixbettv84.com/channel.html?id=trtspor>
 
 ## ⭐ GÜNÜN MAÇI
 
@@ -62,7 +59,7 @@
 - ⏰ Partizan vs Panathinaikos — 21:30
 
 ### Trendyol 1. Lig
-- 🔴 Bandırmaspor vs Sivasspor — 14:30
+- ⏰ Bandırmaspor vs Sivasspor — 14:30
 - ⏰ Sarıyer vs Bodrumspor — 17:00
 
 ### UEFA Şampiyonlar Ligi
