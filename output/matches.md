@@ -1,14 +1,17 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-10-13 16:00  
-> **Toplam maç:** 22  |  **Canlı:** 0  |  **Yaklaşan:** 15
+> **Güncellenme:** 2026-10-13 16:35  
+> **Toplam maç:** 22  |  **Canlı:** 3  |  **Yaklaşan:** 12
+
+## 🔴 CANLI
+
+- 🔴 **Bahçeşehir Klj vs Manresa** — CANLI · `19:00` | Eurocup <https://fixbettv84.com/channel.html?id=trtspor2>
+- 🔴 **Al Sadd 0 - 0 Al Hilal** — CANLI · `19:00` | AFC Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=smarts>
+- 🔴 **Al Seeb vs Al Hussein** — CANLI · `19:00` | AFC Şampiyonlar Ligi 2 <https://fixbettv84.com/channel.html?id=sms2>
 
 ## ⏰ YAKLAŞAN
 
-- ⏰ **Bahçeşehir Klj vs Manresa** — YAKLAŞAN · `19:00` | Eurocup <https://fixbettv84.com/channel.html?id=trtspor2>
-- ⏰ **Al Sadd vs Al Hilal** — YAKLAŞAN · `19:00` | AFC Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=smarts>
-- ⏰ **Al Seeb vs Al Hussein** — YAKLAŞAN · `19:00` | AFC Şampiyonlar Ligi 2 <https://fixbettv84.com/channel.html?id=sms2>
 - ⏰ **Lens vs Sporting Lisbon** — YAKLAŞAN · `19:45` | UEFA Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=ex7>
 - ⏰ **Sabah Bakü vs Slavia Prag** — YAKLAŞAN · `19:45` | UEFA Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=ex1>
 - ⏰ **Fenerbahçe Tarfin vs Zalgiris Kaunas** — YAKLAŞAN · `20:45` | Euroleague <https://fixbettv84.com/channel.html?id=ss>
@@ -45,14 +48,14 @@
 - ⏰ Shanghai Port vs Daejeon Citizen — 13:00
 - ⏰ Buriram vs Beijing Guoan — 15:15
 - ⏰ Cong An Ha Noi vs Kashima Antlers — 15:15
-- ⏰ Al Sadd vs Al Hilal — 19:00
+- 🔴 Al Sadd vs Al Hilal — 19:00
 - ⏰ Al Ittihad vs Al Ahli Dubai — 21:15
 
 ### AFC Şampiyonlar Ligi 2
-- ⏰ Al Seeb vs Al Hussein — 19:00
+- 🔴 Al Seeb vs Al Hussein — 19:00
 
 ### Eurocup
-- ⏰ Bahçeşehir Klj vs Manresa — 19:00
+- 🔴 Bahçeşehir Klj vs Manresa — 19:00
 
 ### Euroleague
 - ⏰ Fenerbahçe Tarfin vs Zalgiris Kaunas — 20:45
@@ -237,14 +240,14 @@
 
 ### 📡 JUSTIN TV ✅ `https://www.justintv110.top`
 - 🟢 **BEIN SPORTS 1** <https://ladyboy.ardastream2.cfd//beintv/tracks-v1a1/mono.m3u8>
-- 🟢 **BEIN SPORTS 2** <https://ladyboy.ardastream2.cfd//bein2/tracks-v1a1/mono.m3u8>
+- 🟡 **BEIN SPORTS 2** <https://ladyboy.ardastream2.cfd//bein2/tracks-v1a1/mono.m3u8>
 - 🟢 **BEIN SPORTS 3** <https://ladyboy.ardastream2.cfd//bein3/tracks-v1a1/mono.m3u8>
 - 🟢 **BEIN SPORTS 4** <https://ladyboy.ardastream2.cfd//bein4/tracks-v1a1/mono.m3u8>
 - 🟢 **BEIN SPORTS 5** <https://ladyboy.ardastream2.cfd//bein5/tracks-v1a1/mono.m3u8>
 - 🟢 **BEIN SPORTS MAX 1** <https://ladyboy.ardastream2.cfd//beinmax1/tracks-v1a1/mono.m3u8>
 - 🟢 **BEIN SPORTS MAX 2** <https://ladyboy.ardastream2.cfd//beinmax2/tracks-v1a1/mono.m3u8>
 - 🟢 **S SPORT** <https://ladyboy.ardastream2.cfd//s-sport/tracks-v1a1/mono.m3u8>
-- 🟢 **S SPORT 2** <https://ladyboy.ardastream2.cfd//s-sport2/tracks-v1a1/mono.m3u8>
+- 🟡 **S SPORT 2** <https://ladyboy.ardastream2.cfd//s-sport2/tracks-v1a1/mono.m3u8>
 - 🟢 **TRT SPOR** <https://ladyboy.ardastream2.cfd//trt-spor/tracks-v1a1/mono.m3u8>
-- 🟢 **TRT 1** <https://ladyboy.ardastream2.cfd//trt1/tracks-v1a1/mono.m3u8>
+- 🟡 **TRT 1** <https://ladyboy.ardastream2.cfd//trt1/tracks-v1a1/mono.m3u8>
 - 🟢 **A SPOR** <https://ladyboy.ardastream2.cfd//aspor/tracks-v1a1/mono.m3u8>
