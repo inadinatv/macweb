@@ -1,40 +1,40 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-10-13 19:03  
-> **Toplam maç:** 22  |  **Canlı:** 10  |  **Yaklaşan:** 0
+> **Güncellenme:** 2026-10-13 21:10  
+> **Toplam maç:** 22  |  **Canlı:** 0  |  **Yaklaşan:** 12
 
-## 🔴 CANLI
+## ⏰ YAKLAŞAN
 
-- 🔴 **Fenerbahçe Tarfin vs Zalgiris Kaunas** — CANLI · `20:45` | Euroleague <https://fixbettv84.com/channel.html?id=ss>
-- 🔴 **Al Ittihad vs Al Ahli Dubai** — CANLI · `21:15` | AFC Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=sms2>
-- 🔴 **Partizan vs Panathinaikos** — CANLI · `21:30` | Euroleague <https://fixbettv84.com/channel.html?id=ss>
-- 🔴 **Galatasaray 0 - 0 Barcelona** — CANLI · `22:00` | UEFA Şampiyonlar Ligi ★ **Günün Maçı** <https://fixbettv84.com/channel.html?id=trt1>
-- 🔴 **Atletico Madrid vs Manchester Utd** — CANLI · `22:00` | UEFA Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=ex7>
-- 🔴 **Inter vs Club Brugge** — CANLI · `22:00` | UEFA Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=ex2>
-- 🔴 **Leipzig vs PSV** — CANLI · `22:00` | UEFA Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=ex5>
-- 🔴 **Viking vs Bayern Münih** — CANLI · `22:00` | UEFA Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=ex3>
-- 🔴 **Villarreal 0 - 0 Napoli** — CANLI · `22:00` | UEFA Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=ex4>
-- 🔴 **Arsenal 0 - 0 Lille** — CANLI · `22:00` | UEFA Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=ex1>
+- ⏰ **Newcastle Jets vs Gamba Osaka** — YAKLAŞAN · `10:45` | AFC Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=smarts>
+- ⏰ **Kyoto vs Ratchaburi** — YAKLAŞAN · `13:00` | AFC Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=sms2>
+- ⏰ **Shanghai Port vs Daejeon Citizen** — YAKLAŞAN · `13:00` | AFC Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=smarts>
+- ⏰ **Bandırmaspor vs Sivasspor** — YAKLAŞAN · `14:30` | Trendyol 1. Lig <https://fixbettv84.com/channel.html?id=trtspor>
+- ⏰ **Buriram vs Beijing Guoan** — YAKLAŞAN · `15:15` | AFC Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=sms2>
+- ⏰ **Cong An Ha Noi vs Kashima Antlers** — YAKLAŞAN · `15:15` | AFC Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=smarts>
+- ⏰ **Sarıyer vs Bodrumspor** — YAKLAŞAN · `17:00` | Trendyol 1. Lig <https://fixbettv84.com/channel.html?id=trtspor>
+- ⏰ **Bahçeşehir Klj vs Manresa** — YAKLAŞAN · `19:00` | Eurocup <https://fixbettv84.com/channel.html?id=trtspor2>
+- ⏰ **Al Sadd vs Al Hilal** — YAKLAŞAN · `19:00` | AFC Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=smarts>
+- ⏰ **Al Seeb vs Al Hussein** — YAKLAŞAN · `19:00` | AFC Şampiyonlar Ligi 2 <https://fixbettv84.com/channel.html?id=sms2>
+- ⏰ **Lens vs Sporting Lisbon** — YAKLAŞAN · `19:45` | UEFA Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=ex7>
+- ⏰ **Sabah Bakü vs Slavia Prag** — YAKLAŞAN · `19:45` | UEFA Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=ex1>
 
 ## ✅ BİTTİ
 
-- ✅ **Newcastle Jets 1 - 3 Gamba Osaka** — MS · `10:45` | AFC Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=smarts>
-- ✅ **Kyoto vs Ratchaburi** — MS · `13:00` | AFC Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=sms2>
-- ✅ **Shanghai Port vs Daejeon Citizen** — MS · `13:00` | AFC Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=smarts>
-- ✅ **Bandırmaspor 1 - 1 Sivasspor** — MS · `14:30` | Trendyol 1. Lig <https://fixbettv84.com/channel.html?id=trtspor>
-- ✅ **Buriram 0 - 1 Beijing Guoan** — MS · `15:15` | AFC Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=sms2>
-- ✅ **Cong An Ha Noi vs Kashima Antlers** — MS · `15:15` | AFC Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=smarts>
-- ✅ **Sarıyer vs Bodrumspor** — MS · `17:00` | Trendyol 1. Lig <https://fixbettv84.com/channel.html?id=trtspor>
-- ✅ **Bahçeşehir Klj vs Manresa** — MS · `19:00` | Eurocup <https://fixbettv84.com/channel.html?id=trtspor2>
-- ✅ **Al Sadd 0 - 2 Al Hilal** — MS · `19:00` | AFC Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=smarts>
-- ✅ **Al Seeb vs Al Hussein** — MS · `19:00` | AFC Şampiyonlar Ligi 2 <https://fixbettv84.com/channel.html?id=sms2>
-- ✅ **Lens vs Sporting Lisbon** — MS · `19:45` | UEFA Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=ex7>
-- ✅ **Sabah Bakü vs Slavia Prag** — MS · `19:45` | UEFA Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=ex1>
+- ✅ **Fenerbahçe Tarfin vs Zalgiris Kaunas** — MS · `20:45` | Euroleague <https://fixbettv84.com/channel.html?id=ss>
+- ✅ **Al Ittihad vs Al Ahli Dubai** — MS · `21:15` | AFC Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=sms2>
+- ✅ **Partizan vs Panathinaikos** — MS · `21:30` | Euroleague <https://fixbettv84.com/channel.html?id=ss>
+- ✅ **Galatasaray vs Barcelona** — MS · `22:00` | UEFA Şampiyonlar Ligi ★ **Günün Maçı** <https://fixbettv84.com/channel.html?id=trt1>
+- ✅ **Atletico Madrid vs Manchester Utd** — MS · `22:00` | UEFA Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=ex7>
+- ✅ **Inter vs Club Brugge** — MS · `22:00` | UEFA Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=ex2>
+- ✅ **Leipzig vs PSV** — MS · `22:00` | UEFA Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=ex5>
+- ✅ **Viking vs Bayern Münih** — MS · `22:00` | UEFA Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=ex3>
+- ✅ **Villarreal vs Napoli** — MS · `22:00` | UEFA Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=ex4>
+- ✅ **Arsenal vs Lille** — MS · `22:00` | UEFA Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=ex1>
 
 ## ⭐ GÜNÜN MAÇI
 
-- 🔴 **Galatasaray 0 - 0 Barcelona** — CANLI · `22:00` | UEFA Şampiyonlar Ligi ★ **Günün Maçı** <https://fixbettv84.com/channel.html?id=trt1>
+- ✅ **Galatasaray vs Barcelona** — MS · `22:00` | UEFA Şampiyonlar Ligi ★ **Günün Maçı** <https://fixbettv84.com/channel.html?id=trt1>
 
 ---
 ## 🏆 Lig Bazlı
@@ -46,7 +46,7 @@
 - ⏰ Buriram vs Beijing Guoan — 15:15
 - ⏰ Cong An Ha Noi vs Kashima Antlers — 15:15
 - ⏰ Al Sadd vs Al Hilal — 19:00
-- 🔴 Al Ittihad vs Al Ahli Dubai — 21:15
+- ⏰ Al Ittihad vs Al Ahli Dubai — 21:15
 
 ### AFC Şampiyonlar Ligi 2
 - ⏰ Al Seeb vs Al Hussein — 19:00
@@ -55,8 +55,8 @@
 - ⏰ Bahçeşehir Klj vs Manresa — 19:00
 
 ### Euroleague
-- 🔴 Fenerbahçe Tarfin vs Zalgiris Kaunas — 20:45
-- 🔴 Partizan vs Panathinaikos — 21:30
+- ⏰ Fenerbahçe Tarfin vs Zalgiris Kaunas — 20:45
+- ⏰ Partizan vs Panathinaikos — 21:30
 
 ### Trendyol 1. Lig
 - ⏰ Bandırmaspor vs Sivasspor — 14:30
@@ -65,13 +65,13 @@
 ### UEFA Şampiyonlar Ligi
 - ⏰ Lens vs Sporting Lisbon — 19:45
 - ⏰ Sabah Bakü vs Slavia Prag — 19:45
-- 🔴 Galatasaray vs Barcelona — 22:00
-- 🔴 Atletico Madrid vs Manchester Utd — 22:00
-- 🔴 Inter vs Club Brugge — 22:00
-- 🔴 Leipzig vs PSV — 22:00
-- 🔴 Viking vs Bayern Münih — 22:00
-- 🔴 Villarreal vs Napoli — 22:00
-- 🔴 Arsenal vs Lille — 22:00
+- ⏰ Galatasaray vs Barcelona — 22:00
+- ⏰ Atletico Madrid vs Manchester Utd — 22:00
+- ⏰ Inter vs Club Brugge — 22:00
+- ⏰ Leipzig vs PSV — 22:00
+- ⏰ Viking vs Bayern Münih — 22:00
+- ⏰ Villarreal vs Napoli — 22:00
+- ⏰ Arsenal vs Lille — 22:00
 
 ---
 ## 📺 7/24 KANALLAR (31)
@@ -128,7 +128,7 @@
 ---
 ## ⚡ EKSTRA PANELLER — m3u8 (109)
 
-### ⚛️ ATOM SPOR ✅ `https://atomsportv517.top`
+### ⚛️ ATOM SPOR ✅ `https://www.atomsportv518.top`
 - ⚪ **BEIN SPORTS 1** <https://tv.atomspor.workers.dev/?ID=bein-sports-1>
 - ⚪ **BEIN SPORTS 2** <https://tv.atomspor.workers.dev/?ID=bein-sports-2>
 - ⚪ **BEIN SPORTS 3** <https://tv.atomspor.workers.dev/?ID=bein-sports-3>
@@ -237,14 +237,14 @@
 
 ### 📡 JUSTIN TV ✅ `https://www.justintv110.top`
 - 🟢 **BEIN SPORTS 1** <https://ladyboy.ardastream2.cfd//beintv/tracks-v1a1/mono.m3u8>
-- 🟡 **BEIN SPORTS 2** <https://ladyboy.ardastream2.cfd//bein2/tracks-v1a1/mono.m3u8>
+- 🟢 **BEIN SPORTS 2** <https://ladyboy.ardastream2.cfd//bein2/tracks-v1a1/mono.m3u8>
 - 🟢 **BEIN SPORTS 3** <https://ladyboy.ardastream2.cfd//bein3/tracks-v1a1/mono.m3u8>
 - 🟢 **BEIN SPORTS 4** <https://ladyboy.ardastream2.cfd//bein4/tracks-v1a1/mono.m3u8>
 - 🟢 **BEIN SPORTS 5** <https://ladyboy.ardastream2.cfd//bein5/tracks-v1a1/mono.m3u8>
 - 🟢 **BEIN SPORTS MAX 1** <https://ladyboy.ardastream2.cfd//beinmax1/tracks-v1a1/mono.m3u8>
 - 🟢 **BEIN SPORTS MAX 2** <https://ladyboy.ardastream2.cfd//beinmax2/tracks-v1a1/mono.m3u8>
 - 🟢 **S SPORT** <https://ladyboy.ardastream2.cfd//s-sport/tracks-v1a1/mono.m3u8>
-- 🟡 **S SPORT 2** <https://ladyboy.ardastream2.cfd//s-sport2/tracks-v1a1/mono.m3u8>
+- 🟢 **S SPORT 2** <https://ladyboy.ardastream2.cfd//s-sport2/tracks-v1a1/mono.m3u8>
 - 🟢 **TRT SPOR** <https://ladyboy.ardastream2.cfd//trt-spor/tracks-v1a1/mono.m3u8>
-- 🟡 **TRT 1** <https://ladyboy.ardastream2.cfd//trt1/tracks-v1a1/mono.m3u8>
+- 🟢 **TRT 1** <https://ladyboy.ardastream2.cfd//trt1/tracks-v1a1/mono.m3u8>
 - 🟢 **A SPOR** <https://ladyboy.ardastream2.cfd//aspor/tracks-v1a1/mono.m3u8>
