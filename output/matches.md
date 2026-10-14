@@ -1,19 +1,17 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-10-14 10:16  
-> **Toplam maç:** 22  |  **Canlı:** 2  |  **Yaklaşan:** 20
+> **Güncellenme:** 2026-10-14 13:01  
+> **Toplam maç:** 22  |  **Canlı:** 3  |  **Yaklaşan:** 17
 
 ## 🔴 CANLI
 
-- 🔴 **Kashiwa Reysol 2 - 0 Port FC** — CANLI · `13:00` | AFC Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=sms2>
-- 🔴 **Vissel Kobe vs Jeonbuk** — CANLI · `13:00` | AFC Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=smarts>
+- 🔴 **A.Sabalenka vs A.Li** — CANLI · `14:00` | WTA Pekin <https://fixbettv84.com/channel.html?id=bm1>
+- 🔴 **Batman Petrol 3 - 1 İstanbulspor** — CANLI · `14:30` | Trendyol 1. Lig <https://fixbettv84.com/channel.html?id=trtspor>
+- 🔴 **Aras Kargo vs Galatasaray** — CANLI · `16:00` | TVF Sultanlar Ligi <https://fixbettv84.com/channel.html?id=trtspor2>
 
 ## ⏰ YAKLAŞAN
 
-- ⏰ **A.Sabalenka vs A.Li** — YAKLAŞAN · `14:00` | WTA Pekin <https://fixbettv84.com/channel.html?id=bm1>
-- ⏰ **Batman Petrol vs İstanbulspor** — YAKLAŞAN · `14:30` | Trendyol 1. Lig <https://fixbettv84.com/channel.html?id=trtspor>
-- ⏰ **Aras Kargo vs Galatasaray** — YAKLAŞAN · `16:00` | TVF Sultanlar Ligi <https://fixbettv84.com/channel.html?id=trtspor2>
 - ⏰ **Ümraniyespor vs Boluspor** — YAKLAŞAN · `17:00` | Trendyol 1. Lig <https://fixbettv84.com/channel.html?id=trtspor>
 - ⏰ **Hapoel Tel Aviv vs Beşiktaş** — YAKLAŞAN · `19:00` | Euroleague <https://fixbettv84.com/channel.html?id=ss>
 - ⏰ **İlbank vs Eczacibasi** — YAKLAŞAN · `19:00` | TVF Sultanlar Ligi <https://fixbettv84.com/channel.html?id=trtspor2>
@@ -32,6 +30,11 @@
 - ⏰ **Slovan Bratislava vs Stuttgart** — YAKLAŞAN · `22:00` | UEFA Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=ex5>
 - ⏰ **Venezia vs Türk Telekom** — YAKLAŞAN · `22:00` | Eurocup <https://fixbettv84.com/channel.html?id=trtspor>
 
+## ✅ BİTTİ
+
+- ✅ **Kashiwa Reysol 5 - 1 Port FC** — MS · `13:00` | AFC Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=sms2>
+- ✅ **Vissel Kobe vs Jeonbuk** — MS · `13:00` | AFC Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=smarts>
+
 ## ⭐ GÜNÜN MAÇI
 
 - ⏰ **Aston Villa vs Fenerbahçe** — YAKLAŞAN · `22:00` | UEFA Şampiyonlar Ligi ★ **Günün Maçı** <https://fixbettv84.com/channel.html?id=trt1>
@@ -40,8 +43,8 @@
 ## 🏆 Lig Bazlı
 
 ### AFC Şampiyonlar Ligi
-- 🔴 Kashiwa Reysol vs Port FC — 13:00
-- 🔴 Vissel Kobe vs Jeonbuk — 13:00
+- ⏰ Kashiwa Reysol vs Port FC — 13:00
+- ⏰ Vissel Kobe vs Jeonbuk — 13:00
 
 ### Eurocup
 - ⏰ Tofaş vs Buducnost — 20:00
@@ -53,11 +56,11 @@
 - ⏰ Paris vs Virtus Bologna — 21:45
 
 ### TVF Sultanlar Ligi
-- ⏰ Aras Kargo vs Galatasaray — 16:00
+- 🔴 Aras Kargo vs Galatasaray — 16:00
 - ⏰ İlbank vs Eczacibasi — 19:00
 
 ### Trendyol 1. Lig
-- ⏰ Batman Petrol vs İstanbulspor — 14:30
+- 🔴 Batman Petrol vs İstanbulspor — 14:30
 - ⏰ Ümraniyespor vs Boluspor — 17:00
 - ⏰ Antalyaspor vs Kayserispor — 20:00
 
@@ -73,7 +76,7 @@
 - ⏰ Slovan Bratislava vs Stuttgart — 22:00
 
 ### WTA Pekin
-- ⏰ A.Sabalenka vs A.Li — 14:00
+- 🔴 A.Sabalenka vs A.Li — 14:00
 
 ---
 ## 📺 7/24 KANALLAR (31)
