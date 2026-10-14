@@ -1,23 +1,21 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-10-14 15:13  
-> **Toplam maç:** 22  |  **Canlı:** 2  |  **Yaklaşan:** 16
+> **Güncellenme:** 2026-10-14 17:57  
+> **Toplam maç:** 22  |  **Canlı:** 7  |  **Yaklaşan:** 9
 
 ## 🔴 CANLI
 
-- 🔴 **Aras Kargo vs Galatasaray** — CANLI · `16:00` | TVF Sultanlar Ligi <https://fixbettv84.com/channel.html?id=trtspor2>
-- 🔴 **Ümraniyespor 0 - 1 Boluspor** — CANLI · `17:00` | Trendyol 1. Lig <https://fixbettv84.com/channel.html?id=trtspor>
+- 🔴 **Hapoel Tel Aviv vs Beşiktaş** — CANLI · `19:00` | Euroleague <https://fixbettv84.com/channel.html?id=ss>
+- 🔴 **İlbank vs Eczacibasi** — CANLI · `19:00` | TVF Sultanlar Ligi <https://fixbettv84.com/channel.html?id=trtspor2>
+- 🔴 **Feyenoord 1 - 1 Como** — CANLI · `19:45` | UEFA Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=ex1>
+- 🔴 **LASK Linz 0 - 4 Liverpool** — CANLI · `19:45` | UEFA Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=ex7>
+- 🔴 **Antalyaspor 0 - 3 Kayserispor** — DEVRE · `20:00` | Trendyol 1. Lig <https://fixbettv84.com/channel.html?id=b2>
+- 🔴 **Tofaş vs Buducnost** — CANLI · `20:00` | Eurocup <https://fixbettv84.com/channel.html?id=trtspor>
+- 🔴 **Anadolu Efes vs Bayern Münih** — CANLI · `20:30` | Euroleague <https://fixbettv84.com/channel.html?id=ss2>
 
 ## ⏰ YAKLAŞAN
 
-- ⏰ **Hapoel Tel Aviv vs Beşiktaş** — YAKLAŞAN · `19:00` | Euroleague <https://fixbettv84.com/channel.html?id=ss>
-- ⏰ **İlbank vs Eczacibasi** — YAKLAŞAN · `19:00` | TVF Sultanlar Ligi <https://fixbettv84.com/channel.html?id=trtspor2>
-- ⏰ **Feyenoord vs Como** — YAKLAŞAN · `19:45` | UEFA Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=ex1>
-- ⏰ **LASK Linz vs Liverpool** — YAKLAŞAN · `19:45` | UEFA Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=ex7>
-- ⏰ **Antalyaspor vs Kayserispor** — YAKLAŞAN · `20:00` | Trendyol 1. Lig <https://fixbettv84.com/channel.html?id=b2>
-- ⏰ **Tofaş vs Buducnost** — YAKLAŞAN · `20:00` | Eurocup <https://fixbettv84.com/channel.html?id=trtspor>
-- ⏰ **Anadolu Efes vs Bayern Münih** — YAKLAŞAN · `20:30` | Euroleague <https://fixbettv84.com/channel.html?id=ss2>
 - ⏰ **Paris vs Virtus Bologna** — YAKLAŞAN · `21:45` | Euroleague <https://fixbettv84.com/channel.html?id=ss>
 - ⏰ **Aston Villa vs Fenerbahçe** — YAKLAŞAN · `22:00` | UEFA Şampiyonlar Ligi ★ **Günün Maçı** <https://fixbettv84.com/channel.html?id=trt1>
 - ⏰ **Roma vs Real Madrid** — YAKLAŞAN · `22:00` | UEFA Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=ex1>
@@ -34,6 +32,11 @@
 - ✅ **Vissel Kobe vs Jeonbuk** — MS · `13:00` | AFC Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=smarts>
 - ✅ **A.Sabalenka vs A.Li** — MS · `14:00` | WTA Pekin <https://fixbettv84.com/channel.html?id=bm1>
 - ✅ **Batman Petrol 4 - 2 İstanbulspor** — MS · `14:30` | Trendyol 1. Lig <https://fixbettv84.com/channel.html?id=trtspor>
+- ✅ **Aras Kargo vs Galatasaray** — MS · `16:00` | TVF Sultanlar Ligi <https://fixbettv84.com/channel.html?id=trtspor2>
+
+## Durduruldu
+
+- ✅ **Ümraniyespor vs Boluspor** — Durduruldu · `17:00` | Trendyol 1. Lig <https://fixbettv84.com/channel.html?id=trtspor>
 
 ## ⭐ GÜNÜN MAÇI
 
@@ -47,26 +50,26 @@
 - ⏰ Vissel Kobe vs Jeonbuk — 13:00
 
 ### Eurocup
-- ⏰ Tofaş vs Buducnost — 20:00
+- 🔴 Tofaş vs Buducnost — 20:00
 - ⏰ Venezia vs Türk Telekom — 22:00
 
 ### Euroleague
-- ⏰ Hapoel Tel Aviv vs Beşiktaş — 19:00
-- ⏰ Anadolu Efes vs Bayern Münih — 20:30
+- 🔴 Hapoel Tel Aviv vs Beşiktaş — 19:00
+- 🔴 Anadolu Efes vs Bayern Münih — 20:30
 - ⏰ Paris vs Virtus Bologna — 21:45
 
 ### TVF Sultanlar Ligi
-- 🔴 Aras Kargo vs Galatasaray — 16:00
-- ⏰ İlbank vs Eczacibasi — 19:00
+- ⏰ Aras Kargo vs Galatasaray — 16:00
+- 🔴 İlbank vs Eczacibasi — 19:00
 
 ### Trendyol 1. Lig
 - ⏰ Batman Petrol vs İstanbulspor — 14:30
-- 🔴 Ümraniyespor vs Boluspor — 17:00
+- ⏰ Ümraniyespor vs Boluspor — 17:00
 - ⏰ Antalyaspor vs Kayserispor — 20:00
 
 ### UEFA Şampiyonlar Ligi
-- ⏰ Feyenoord vs Como — 19:45
-- ⏰ LASK Linz vs Liverpool — 19:45
+- 🔴 Feyenoord vs Como — 19:45
+- 🔴 LASK Linz vs Liverpool — 19:45
 - ⏰ Aston Villa vs Fenerbahçe — 22:00
 - ⏰ Roma vs Real Madrid — 22:00
 - ⏰ Real Betis vs Porto — 22:00
