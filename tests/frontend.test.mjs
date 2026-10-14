@@ -140,21 +140,6 @@ test("kanal kartına tıklayınca yayın açılıyor ve player'e kayıyor", asyn
   dom.window.close();
 });
 
-test("DailyMotion watch ve kısa linkleri iframe için embed URL'sine çevriliyor", async () => {
-  const { window, dom } = await loadPage();
-  const iframe = window.document.getElementById("liveIframe");
-  window.inadina.loadFrame("https://www.dailymotion.com/video/x8abc123_ornek-baslik?start=24");
-  assert.equal(iframe.getAttribute("src"), "https://www.dailymotion.com/embed/video/x8abc123?start=24");
-  iframe.dispatchEvent(new window.Event("load"));
-  assert.equal(window.inadina.normalizeIframeUrl("https://dai.ly/x8short99"),
-    "https://www.dailymotion.com/embed/video/x8short99");
-  assert.equal(window.inadina.normalizeIframeUrl("https://www.dailymotion.com/embed/video/x8embed99"),
-    "https://www.dailymotion.com/embed/video/x8embed99");
-  assert.equal(window.inadina.normalizeIframeUrl("https://www.youtube.com/embed/test123"),
-    "https://www.youtube.com/embed/test123", "başka sağlayıcı URL’leri değişmemeli");
-  dom.window.close();
-});
-
 test("VIP Yayın düğmesi Trend48’i aynı iframe’de açar ve önceki kanala toggle eder", async () => {
   const { window, dom } = await loadPage();
   const button = window.document.getElementById("vipStreamBtn");
@@ -282,6 +267,50 @@ test("bugünün Günün Maçı tam genişlikte gösterilir ve diğer maçların 
   assert.ok(list[0].textContent.includes("⭐ Günün Maçı"), "Günün Maçı etiketi eksik");
   assert.equal(list[1].classList.contains("is-mod"), false, "normal maç spotlight olmamalı");
   dom.window.close();
+});
+
+test("Günün Maçı kartındaki Fikstür düğmesi arama/filtreleri sıfırlayıp günlük maçlara götürüyor", async () => {
+  const feed = `<!doctype html>
+    <a href="channel?id=normal"><div class="match-detail"><div class="date">Futbol</div>
+      <div class="event">12:00 | Test Ligi</div><div class="teams"><div class="home">Normal Ev</div>
+      <div class="away">Normal Deplasman</div></div></div></a>
+    <a href="channel?id=featured"><div class="match-detail"><div class="date">Futbol</div>
+      <div class="event">23:00 | Test Ligi [Günün Maçı]</div><div class="teams"><div class="home">Öne Çıkan Ev</div>
+      <div class="away">Öne Çıkan Deplasman</div></div></div></a>`;
+  const fetchImpl = async (url) => {
+    if (String(url).startsWith("https://data-reality.com/matches.php")) return { ok: true, status: 200, text: async () => feed };
+    if (String(url).startsWith("https://data-reality.com/matches2.php")) return { ok: true, status: 200, text: async () => "" };
+    return { ok: true, status: 200, json: async () => TODAY };
+  };
+  const { window, dom } = await loadPage({ fetchImpl });
+  await window.inadina.refreshMatches(true);
+  window.inadina.setTab("matchesTab");
+  const featuredFilter = [...window.document.querySelectorAll("#matchFilterRow .chip")]
+    .find((button) => button.textContent.includes("Günün Maçı"));
+  featuredFilter.click();
+  const search = window.document.getElementById("searchInput");
+  search.value = "Öne Çıkan Ev";
+  search.dispatchEvent(new window.Event("input", { bubbles: true }));
+  assert.equal(matchCards(window).length, 1);
+
+  window.scrolledTo.length = 0;
+  const fixtureButton = matchCards(window)[0].querySelector(".fixture-match-btn");
+  assert.ok(fixtureButton, "featured kartında FİKSTÜR düğmesi olmalı");
+  fixtureButton.click();
+  assert.equal(window.inadina.state.activeTab, "matchesTab");
+  assert.equal(window.inadina.state.activeStatus, "all", "durum filtresi sıfırlanmalı");
+  assert.equal(window.inadina.state.activeSport, "all", "spor filtresi sıfırlanmalı");
+  assert.equal(search.value, "", "arama temizlenmeli");
+  assert.equal(matchCards(window).length, 2, "günlük fikstürdeki tüm maçlar görünmeli");
+  assert.ok(window.scrolledTo.includes("matchFilterRow"), "fikstür filtresine kaydırılmalı");
+  dom.window.close();
+});
+
+test("mobil liste görünümü sabit dokunma hedefleri ve taşmayı önleyen kuralları içeriyor", () => {
+  assert.ok(HTML.includes(".channel-grid.view-list .ch-card { min-height: 58px"), "liste satırları için kararlı dokunma yüksekliği yok");
+  assert.ok(HTML.includes(".channel-grid.view-list .ch-name { font-size: .84rem; line-height: 1.12;"), "mobil kanal adı dar ekrana göre ayarlanmamış");
+  assert.ok(HTML.includes("@media (hover: none)"), "dokunmatik cihazlarda hover kayması kapatılmamış");
+  assert.ok(HTML.includes("@media (max-width: 380px)"), "çok dar ekranlar için sıkıştırılmış satır düzeni yok");
 });
 
 test("maç kartındaki İZLE butonu yayını player'de açıyor", async () => {

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>İNADİNA TV - Canlı Spor & Maç İzleme</title>
     <meta name="description" content="7/24 spor kanalları ve günün gerçek maç programı. Kanala tıkla, yayın doğrudan oynatıcıda açılsın." />
-    <meta name="updated-at" content="2026-10-14 00:29" />
+    <meta name="updated-at" content="2026-10-14 07:45" />
     <meta name="fixbet-source" content="https://fixbettv84.com" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@400;600;700;900&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -372,26 +372,40 @@
         .ch-card.active .ch-play-hint { opacity: 1; background: linear-gradient(180deg, rgba(255,45,122,0.2), rgba(155,77,255,0.8)); }
 
         /* Yatay (liste) görünüm */
-        .channel-grid.view-list { display: flex; flex-direction: column; gap: 6px; }
+        .channel-grid.view-list { display: flex; flex-direction: column; gap: 7px; width: 100%; min-width: 0; }
         .channel-grid.view-list .ch-card {
-            flex-direction: row; align-items: center; justify-content: flex-start; gap: 10px;
-            text-align: left; min-height: 0; padding: 6px 12px; border-radius: 11px;
+            box-sizing: border-box; width: 100%; min-width: 0; flex-flow: row nowrap;
+            align-items: center; justify-content: flex-start; gap: clamp(6px, 1.8vw, 10px);
+            text-align: left; min-height: 58px; padding: 8px 11px; border-radius: 13px;
+            background: linear-gradient(105deg, rgba(23,18,43,.97), rgba(12,10,26,.98));
         }
         .channel-grid.view-list .ch-card:hover { transform: translateX(3px); }
         .channel-grid.view-list .ch-status,
         .channel-grid.view-list .ch-live-dot,
-        .channel-grid.view-list .ch-number { position: static; animation: none; }
-        .channel-grid.view-list .ch-number { order: 0; font-size: 0.76rem; min-width: 20px; color: rgba(255,255,255,0.35); }
-        .channel-grid.view-list .ch-icon-wrap { order: 1; width: 26px; height: 26px; border-radius: 8px; font-size: 0.9rem; margin-top: 0; }
-        .channel-grid.view-list .ch-name { order: 2; -webkit-line-clamp: 1; width: auto; flex: 1 1 auto; font-size: 0.84rem; }
-        .channel-grid.view-list .ch-brand { order: 3; }
-        .channel-grid.view-list .ch-status { order: 4; }
-        .channel-grid.view-list .ch-live-dot { order: 5; }
+        .channel-grid.view-list .ch-number { position: static; animation: none; flex-shrink: 0; }
+        .channel-grid.view-list .ch-number { order: 0; flex: 0 0 20px; min-width: 0; text-align: center; font-size: 0.76rem; color: rgba(255,255,255,0.4); }
+        .channel-grid.view-list .ch-icon-wrap { order: 1; flex: 0 0 30px; width: 30px; height: 30px; border-radius: 9px; font-size: 0.9rem; margin: 0; }
+        .channel-grid.view-list .ch-name { order: 2; flex: 1 1 0; min-width: 0; -webkit-line-clamp: 1; width: auto; font-size: 0.86rem; }
+        .channel-grid.view-list .ch-brand { order: 3; flex: 0 1 auto; width: auto; max-width: min(18vw, 110px); min-width: 0; }
+        .channel-grid.view-list .ch-status { order: 4; flex: 0 0 auto; white-space: nowrap; font-size: .56rem; padding: 4px 7px; }
+        .channel-grid.view-list .ch-live-dot { order: 5; flex: 0 0 6px; margin: 0; }
         .channel-grid.view-list .ch-play-hint {
-            position: static; order: 6; opacity: .8; padding: 2px 8px; border-radius: 8px;
-            background: rgba(255,45,122,0.18); color: var(--neon-pink); min-width: 54px; text-align: center;
+            position: static; order: 6; flex: 0 0 62px; min-width: 62px; min-height: 36px;
+            display: flex; align-items: center; justify-content: center; box-sizing: border-box;
+            opacity: 1; padding: 6px 7px; border-radius: 9px;
+            background: rgba(255,45,122,0.14); color: #ffd4e4; text-align: center;
         }
-        .channel-grid.view-list .ch-card.active .ch-play-hint { background: rgba(255,45,122,0.35); color: #fff; }
+        .channel-grid.view-list .ch-card.active {
+            border-color: rgba(255,204,51,.62) !important;
+            background: linear-gradient(100deg, rgba(255,204,51,.12), rgba(155,77,255,.14), rgba(12,10,26,.98)) !important;
+            box-shadow: inset 3px 0 0 var(--neon-gold), 0 0 18px rgba(255,204,51,.12) !important;
+        }
+        .channel-grid.view-list .ch-card.active .ch-play-hint { background: linear-gradient(135deg, rgba(255,204,51,.28), rgba(255,45,122,.28)); color: #fff; }
+        .ch-card:focus-visible { outline: 2px solid var(--neon-cyan); outline-offset: 2px; }
+        @media (hover: none) {
+            .ch-card:hover, .channel-grid.view-list .ch-card:hover { transform: none; }
+            .ch-card:hover .ch-icon-wrap { transform: none; }
+        }
 
         /* ---------- EXTRA (m3u8) kanal kartları ---------- */
         .ch-card.extra .ch-status { background: rgba(0,234,255,0.12); color: var(--neon-cyan); border-color: rgba(0,234,255,0.3); }
@@ -509,6 +523,15 @@
             box-shadow: 0 0 14px rgba(255,45,122,0.3); display: flex; align-items: center; gap: 6px; font-family: inherit;
         }
         .play-match-btn:hover { transform: scale(1.05); box-shadow: 0 0 24px rgba(255,45,122,0.6); }
+        .fixture-match-btn {
+            display: inline-flex; align-items: center; justify-content: center; gap: 6px;
+            background: linear-gradient(135deg, rgba(255,204,51,.14), rgba(155,77,255,.12));
+            color: #ffe08a; border: 1px solid rgba(255,204,51,.42); padding: 7px 12px;
+            border-radius: 11px; font-weight: 800; font-size: .76rem; cursor: pointer;
+            transition: border-color .2s ease, box-shadow .2s ease, background .2s ease; font-family: inherit;
+        }
+        .fixture-match-btn:hover { border-color: var(--neon-gold); box-shadow: 0 0 16px rgba(255,204,51,.2); }
+        .fixture-match-btn:focus-visible { outline: 2px solid var(--neon-cyan); outline-offset: 2px; }
         .empty-msg {
             text-align: center; padding: 34px 20px; color: var(--text-muted); font-size: 0.95rem;
             grid-column: 1/-1; background: rgba(255,255,255,0.02); border: 1px dashed rgba(255,255,255,0.1); border-radius: 14px;
@@ -679,7 +702,19 @@
             .ch-card { min-height: 76px; padding: 7px 5px; }
             .ch-icon-wrap { width: 30px; height: 30px; font-size: 0.95rem; }
             .ch-name { font-size: 0.68rem; }
+            .channel-grid.view-list { gap: 8px; }
+            .channel-grid.view-list .ch-card { min-height: 58px; padding: 8px 9px; gap: 8px; }
+            .channel-grid.view-list .ch-number, .channel-grid.view-list .ch-brand { display: none; }
+            .channel-grid.view-list .ch-icon-wrap { flex-basis: 30px; width: 30px; height: 30px; }
+            .channel-grid.view-list .ch-name { font-size: .84rem; line-height: 1.12; }
+            .channel-grid.view-list .ch-status { font-size: .54rem; padding: 4px 6px; }
+            .channel-grid.view-list .ch-play-hint { flex-basis: 58px; min-width: 58px; min-height: 40px; }
             .match-grid { grid-template-columns: 1fr; }
+            .match-card.is-mod { padding: 14px 12px; }
+            .match-card.is-mod .match-teams { font-size: clamp(1.06rem, 5.2vw, 1.35rem); gap: 4px; }
+            .match-card.is-mod .match-footer { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: stretch; gap: 8px; }
+            .match-card.is-mod .match-channel-name { grid-column: 1 / -1; min-width: 0; }
+            .match-card.is-mod .play-match-btn, .match-card.is-mod .fixture-match-btn { width: 100%; min-height: 42px; justify-content: center; padding: 8px 6px; }
             .tab-btn { font-size: 0.92rem; padding: 8px 14px; }
             .view-btn { font-size: 0.78rem; padding: 5px 9px; }
             .league-btn { padding: 6px 12px 6px 10px; font-size: 0.88rem; letter-spacing: 1.2px; }
@@ -695,6 +730,11 @@
             .standings-table .cell-team { font-size: 0.95rem; }
             .standings-table .cell-team .t-logo { display: none; }
             .standings-legend { font-size: 0.66rem; gap: 4px 10px; padding: 8px; }
+        }
+        @media (max-width: 380px) {
+            .channel-grid.view-list .ch-card { gap: 6px; padding: 7px 8px; }
+            .channel-grid.view-list .ch-status { font-size: .5rem; padding: 4px 5px; }
+            .channel-grid.view-list .ch-play-hint { flex-basis: 54px; min-width: 54px; font-size: .55rem; }
         }
         @media (prefers-reduced-motion: reduce) {
             * { animation: none !important; transition: none !important; }
@@ -837,7 +877,7 @@
 
         <footer class="site-footer">
             <div class="refresh-note">
-                <span>Son güncelleme: <b id="updatedAtText">2026-10-14 00:29</b></span>
+                <span>Son güncelleme: <b id="updatedAtText">2026-10-14 07:45</b></span>
                 <button class="mini-btn" id="refreshDataBtn" title="Maç listesini yeniden yükle">🔄 Maçları yenile</button>
                 <span class="sync-chip sync-wait" id="liveSyncStatus" title="Sayfa, skorları botun anlık görüntüsünü beklemeden canlı skor kaynağından doğrudan tazeler">
                     <span class="sync-dot"></span><span id="liveSyncText">Canlı skor hazırlanıyor</span>
@@ -896,7 +936,7 @@
 
     <script>
         /*BOT_START*/
-        const updatedAt = "2026-10-14 00:29";
+        const updatedAt = "2026-10-14 07:45";
         const matchesSource = "output/today_matches.json";
         const matchFeedSources = ["https://data-reality.com/matches.php", "https://data-reality.com/matches2.php"];
         const matchPlayerBase = "https://fixbettv84.com";
@@ -1423,33 +1463,8 @@
                 els.playerError.classList.remove("active");
             }
 
-            function normalizeIframeUrl(value) {
-                const u = new URL(String(value || ""), location.href);
-                if (!/^https?:$/.test(u.protocol)) throw new Error("scheme");
-                const host = u.hostname.toLowerCase();
-                const makeEmbed = (rawId) => {
-                    const match = decodeURIComponent(rawId || "").match(/^[a-z0-9]+/i);
-                    if (!match) return u.href;
-                    const embed = new URL("https://www.dailymotion.com/embed/video/" + encodeURIComponent(match[0]));
-                    embed.search = u.search;
-                    embed.hash = u.hash;
-                    return embed.href;
-                };
-                if (host === "dai.ly" || host.endsWith(".dai.ly")) {
-                    const id = u.pathname.split("/").filter(Boolean)[0];
-                    if (id) return makeEmbed(id);
-                }
-                if ((host === "dailymotion.com" || host.endsWith(".dailymotion.com")) && host !== "geo.dailymotion.com") {
-                    if (/^\/embed\/video\//i.test(u.pathname)) return u.href;
-                    const match = u.pathname.match(/^\/video\/([^/]+)/i);
-                    if (match) return makeEmbed(match[1]);
-                }
-                return u.href;
-            }
-
             function loadFrame(url) {
                 try {
-                    url = normalizeIframeUrl(url);
                     const u = new URL(url, location.href);
                     if (!/^https?:$/.test(u.protocol)) throw new Error("scheme");
                     url = u.href;
@@ -2049,6 +2064,7 @@
                         "</div>" +
                         '<div class="match-footer">' +
                             '<span class="match-channel-name">📡 <span>' + esc(m.channelName || "Kanal") + "</span></span>" +
+                            (m._isFeatured ? '<button class="fixture-match-btn" type="button" aria-label="Tüm günün maçlarını göster">📅 FİKSTÜR</button>' : "") +
                             '<button class="play-match-btn" type="button">▶ ' + (active ? "CANLI İZLE" : "YAYINA GİT") + "</button>" +
                         "</div>";
                     if (scoreChanged) {
@@ -2058,6 +2074,8 @@
                     }
                     prevScoreByKey.set(eventKey, m._score ? [m._score[0], m._score[1]] : null);
                     card.querySelector(".play-match-btn").onclick = () => playMatch(m);
+                    const fixtureButton = card.querySelector(".fixture-match-btn");
+                    if (fixtureButton) fixtureButton.onclick = openTodayFixtures;
                     els.matchesGrid.appendChild(card);
                 });
 
@@ -2100,6 +2118,21 @@
                 els.brandRow.style.display = tabId === "channelsTab" ? "flex" : "none";
                 els.matchFilterRow.style.display = tabId === "matchesTab" ? "flex" : "none";
                 els.panelRow.style.display = tabId === "extraTab" ? "flex" : "none";
+            }
+
+            function openTodayFixtures() {
+                state.search = "";
+                state.activeStatus = "all";
+                state.activeSport = "all";
+                els.searchInput.value = "";
+                renderChannels();
+                renderExtra();
+                renderMatchFilters(new Date());
+                renderMatches();
+                setTab("matchesTab");
+                if (els.matchFilterRow && els.matchFilterRow.scrollIntoView) {
+                    els.matchFilterRow.scrollIntoView({ behavior: "smooth", block: "start" });
+                }
             }
 
             /* ---------------- Canlı veri tazeleme ---------------- */
@@ -3074,8 +3107,6 @@
                 decoratedMatches: decoratedMatches,
                 normalizeRemote: normalizeRemote,
                 mergeRemoteMatches: mergeRemoteMatches,
-                normalizeIframeUrl: normalizeIframeUrl,
-                loadFrame: loadFrame,
                 refreshMatches: refreshMatches,
                 liveSyncTick: liveSyncTick,
                 fetchLiveScoreboard: fetchLiveScoreboard,
