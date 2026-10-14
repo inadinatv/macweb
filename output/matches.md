@@ -1,13 +1,13 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-10-14 14:09  
+> **Güncellenme:** 2026-10-14 15:13  
 > **Toplam maç:** 22  |  **Canlı:** 2  |  **Yaklaşan:** 16
 
 ## 🔴 CANLI
 
 - 🔴 **Aras Kargo vs Galatasaray** — CANLI · `16:00` | TVF Sultanlar Ligi <https://fixbettv84.com/channel.html?id=trtspor2>
-- 🔴 **Ümraniyespor 0 - 0 Boluspor** — CANLI · `17:00` | Trendyol 1. Lig <https://fixbettv84.com/channel.html?id=trtspor>
+- 🔴 **Ümraniyespor 0 - 1 Boluspor** — CANLI · `17:00` | Trendyol 1. Lig <https://fixbettv84.com/channel.html?id=trtspor>
 
 ## ⏰ YAKLAŞAN
 

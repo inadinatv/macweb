@@ -13,7 +13,7 @@
       "fixbettv12.com",
       "fixbettv11.com"
     ],
-    "last_checked": "2026-10-14T14:09:08+00:00",
+    "last_checked": "2026-10-14T15:12:56+00:00",
     "note": "OK",
     "probed": 200
   },
@@ -59,16 +59,16 @@
       "started": true,
       "raw_event": "17:00 | Trendyol 1. Lig",
       "url": "https://fixbettv84.com/channel.html?id=trtspor",
-      "fetched_at": "2026-10-14T17:08:34+03:00",
+      "fetched_at": "2026-10-14T18:12:22+03:00",
       "status_source": "mackolik",
       "raw_status": "none",
       "score_home": 0,
-      "score_away": 0,
+      "score_away": 1,
       "score_source": "mackolik",
-      "score_updated_at": "2026-10-14T17:08:34+03:00",
+      "score_updated_at": "2026-10-14T18:12:22+03:00",
       "event_id": "cu7w3n4c4mj73fl7fuysn59g4",
       "starts_at": "2026-10-14T14:00:00+00:00",
-      "status_clock": "10'"
+      "status_clock": "55'"
     }
   ]
 }
