@@ -257,13 +257,14 @@
                 linear-gradient(115deg, rgba(27,20,44,.97), rgba(13,11,29,.97) 58%, rgba(40,17,49,.92));
             box-shadow: 0 0 30px rgba(255,204,51,.08), 0 12px 32px rgba(0,0,0,.3), inset 0 1px 0 rgba(255,255,255,.06);
         }
-        .home-featured-heading { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-bottom: 11px; }
+        .home-featured-heading { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-bottom: 11px; flex-wrap: wrap; }
         .home-featured-title { display: flex; align-items: center; gap: 8px; color: #ffe08a; font-family: 'Bebas Neue', sans-serif; font-size: 1.25rem; letter-spacing: 1.5px; }
         .home-featured-title .featured-star { color: var(--neon-gold); filter: drop-shadow(0 0 7px rgba(255,204,51,.6)); }
+        .home-featured-meta { display: flex; align-items: center; justify-content: flex-end; flex-wrap: wrap; gap: 8px; margin-left: auto; }
+        .home-featured-time { color: var(--neon-cyan); font-size: .78rem; font-weight: 800; white-space: nowrap; }
+        .home-featured-status { color: #ffe08a; border: 1px solid rgba(255,204,51,.26); background: rgba(255,204,51,.08); padding: 4px 9px; border-radius: 20px; font-size: .73rem; font-weight: 800; white-space: nowrap; }
         .home-featured-match { display: grid; grid-template-columns: minmax(0,1fr) auto; align-items: center; gap: 14px; }
         .home-featured-info { display: flex; flex-direction: column; gap: 9px; min-width: 0; }
-        .home-featured-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 7px; color: var(--neon-cyan); font-size: .72rem; font-weight: 800; }
-        .home-featured-status { color: #ffe08a; border: 1px solid rgba(255,204,51,.26); background: rgba(255,204,51,.08); padding: 3px 8px; border-radius: 20px; white-space: nowrap; }
         .home-featured-teams { display: grid; grid-template-columns: minmax(0,1fr) auto minmax(0,1fr); align-items: center; gap: 12px; color: #fff; font: 800 clamp(1.15rem, 2.6vw, 1.75rem)/1.05 'Barlow Condensed', sans-serif; text-shadow: 0 2px 10px rgba(0,0,0,.55); }
         .home-featured-team { display: flex; align-items: center; gap: 9px; min-width: 0; }
         .home-featured-team:first-child { justify-content: flex-end; text-align: right; }
@@ -279,6 +280,9 @@
             .home-featured-section { margin-bottom: 12px; padding: 13px 12px; border-radius: 18px; }
             .home-featured-heading { margin-bottom: 9px; }
             .home-featured-title { font-size: 1.1rem; }
+            .home-featured-meta { gap: 5px; }
+            .home-featured-time { font-size: .72rem; }
+            .home-featured-status { font-size: .65rem; padding: 3px 7px; }
             .home-featured-match { grid-template-columns: 1fr; gap: 10px; }
             .home-featured-teams { gap: 5px; font-size: clamp(1.08rem, 5vw, 1.38rem); }
             .home-featured-team { gap: 5px; }
@@ -811,6 +815,7 @@
         <section class="home-featured-section" id="homeFeaturedSection" aria-labelledby="homeFeaturedTitle" aria-live="polite">
             <div class="home-featured-heading">
                 <h2 class="home-featured-title" id="homeFeaturedTitle"><span class="featured-star" aria-hidden="true">★</span> GÜNÜN MAÇI</h2>
+                <div class="home-featured-meta" id="homeFeaturedMeta" aria-label="Maç saati ve durumu"></div>
             </div>
             <div id="homeFeaturedContent"></div>
         </section>
@@ -1065,6 +1070,7 @@
                 panelRow: $("panelRow"),
                 searchInput: $("searchInput"),
                 homeFeaturedContent: $("homeFeaturedContent"),
+                homeFeaturedMeta: $("homeFeaturedMeta"),
                 badgeChannels: $("badgeChannels"),
                 badgeMatches: $("badgeMatches"),
                 badgeExtra: $("badgeExtra"),
@@ -2066,6 +2072,7 @@
                 if (!els.homeFeaturedContent) return;
                 const selected = selectHomeFeatured(now || new Date());
                 if (!selected) {
+                    els.homeFeaturedMeta.innerHTML = "";
                     els.homeFeaturedContent.innerHTML =
                         '<div class="home-featured-empty"><p>Bugünün maç programı hazır olduğunda Günün Maçı burada görünecek.</p>' +
                         '<button class="fixture-match-btn home-featured-fixture" type="button">📅 TÜM MAÇLAR</button></div>';
@@ -2076,18 +2083,19 @@
                 const m = selected.match;
                 const statusText = m._status === "live" || m._status === "halftime"
                     ? (m._clock || matchStatusConfig.labels[m._status] || "CANLI")
-                    : m._status === "finished" ? "BİTTİ" : (m.time || "SAAT BEKLENİYOR") + (m._countdown ? " · " + m._countdown : "");
+                    : m._status === "finished" ? "BİTTİ" : (m._countdown || "YAKLAŞAN");
                 const center = m._score ? (m._score[0] + " - " + m._score[1]) : (m._status === "finished" ? "Skor yok" : "VS");
                 const team = (name, logo, side) => '<div class="home-featured-team ' + side + '">' +
                     (side === "home" && logo ? '<img loading="lazy" src="' + esc(logo) + '" alt="" onerror="this.remove()">' : "") +
                     '<span>' + esc(name) + "</span>" +
                     (side === "away" && logo ? '<img loading="lazy" src="' + esc(logo) + '" alt="" onerror="this.remove()">' : "") +
                     "</div>";
+                els.homeFeaturedMeta.innerHTML =
+                    '<span class="home-featured-time">' + sportIcon(m.sport) + " " + esc(m.time || "SAAT BEKLENİYOR") + '</span>' +
+                    '<span class="home-featured-status">' + esc(statusText) + '</span>';
                 els.homeFeaturedContent.innerHTML =
                     '<div class="home-featured-match" data-selection="' + (selected.official ? "official" : "suggested") + '">' +
                         '<div class="home-featured-info">' +
-                            '<div class="home-featured-meta"><span>' + sportIcon(m.sport) + " " + esc(m.league || m.sport || "Maç Programı") + '</span>' +
-                                '<span class="home-featured-status">' + esc(statusText) + '</span></div>' +
                             '<div class="home-featured-teams">' + team(m.home, m.logoHome, "home") +
                                 '<span class="home-featured-vs">' + esc(center) + '</span>' + team(m.away, m.logoAway, "away") + '</div>' +
                         '</div>' +
