@@ -19,7 +19,7 @@
   },
   "date": "2026-10-15",
   "timezone": "Europe/Istanbul",
-  "generated_at": "2026-10-15T00:04:34+03:00",
+  "generated_at": "2026-10-15T00:33:03+03:00",
   "matches": [
     {
       "match_id": "trt1",
@@ -578,7 +578,7 @@
       "channel_id": "trtspor",
       "logo_home": "https://img.sporekrani.com/teams/sdxwJEyZcpsbeooX3OOg5twG7yzLoKjMuDrO0KDq.png",
       "logo_away": "https://img.sporekrani.com/teams/pPQanfgb7angX4ZU5uuyXIjXJd9y2GJNarD4NKFE.png",
-      "status": "live",
+      "status": "finished",
       "started": true,
       "raw_event": "22:00 | Eurocup",
       "url": "https://fixbettv84.com/channel.html?id=trtspor",

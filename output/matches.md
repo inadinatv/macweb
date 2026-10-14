@@ -1,12 +1,8 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-10-14 21:05  
-> **Toplam maç:** 22  |  **Canlı:** 1  |  **Yaklaşan:** 12
-
-## 🔴 CANLI
-
-- 🔴 **Venezia vs Türk Telekom** — CANLI · `22:00` | Eurocup <https://fixbettv84.com/channel.html?id=trtspor>
+> **Güncellenme:** 2026-10-14 21:33  
+> **Toplam maç:** 22  |  **Canlı:** 0  |  **Yaklaşan:** 12
 
 ## ⏰ YAKLAŞAN
 
@@ -34,6 +30,7 @@
 - ✅ **Manchester City vs PSG** — MS · `22:00` | UEFA Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=ex7>
 - ✅ **Shakhtar Donetsk vs AEK** — MS · `22:00` | UEFA Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=ex2>
 - ✅ **Slovan Bratislava vs Stuttgart** — MS · `22:00` | UEFA Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=ex5>
+- ✅ **Venezia vs Türk Telekom** — MS · `22:00` | Eurocup <https://fixbettv84.com/channel.html?id=trtspor>
 
 ## ⭐ GÜNÜN MAÇI
 
@@ -48,7 +45,7 @@
 
 ### Eurocup
 - ⏰ Tofaş vs Buducnost — 20:00
-- 🔴 Venezia vs Türk Telekom — 22:00
+- ⏰ Venezia vs Türk Telekom — 22:00
 
 ### Euroleague
 - ⏰ Hapoel Tel Aviv vs Beşiktaş — 19:00
