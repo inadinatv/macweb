@@ -263,6 +263,7 @@ test("bugünün Günün Maçı tam genişlikte gösterilir ve diğer maçların 
   assert.ok(homeFeatured, "maç sekmesine girmeden ana spotlight görünmeli");
   assert.equal(homeFeatured.getAttribute("data-selection"), "official", "kaynağın bugünkü Günün Maçı seçimi ana ekranda öne alınmalı");
   assert.ok(homeFeatured.textContent.includes("Öne Çıkan Ev"), "ana spotlight resmi seçilen maçı göstermiyor");
+  assert.doesNotMatch(homeFeatured.textContent, /Fixbet|kaynak/i, "Günün Maçı kartında yayın/veri kaynağı belirtilmemeli");
   window.inadina.setTab("matchesTab");
   const list = [...matchCards(window)];
   assert.equal(list.length, 2, "test programındaki iki maç gösterilmeli");
@@ -340,7 +341,7 @@ test("Günün Maçı ana ekranda açılışta görünür; kaynak seçimi yoksa b
   assert.ok(card, "ana ekran spotlight kartı render edilmedi");
   assert.equal(card.getAttribute("data-selection"), "suggested", "kaynak seçim yapmadığında öneri olduğu belirtilmeli");
   assert.ok(card.textContent.includes("İlk Ev") && card.textContent.includes("İlk Deplasman"), "bugünün en yakın yaklaşan maçı önerilmedi");
-  assert.ok(home.textContent.includes("Kaynakta özel seçim yok"), "önerinin kaynaktan gelmediği açıkça belirtilmeli");
+  assert.doesNotMatch(home.textContent, /Fixbet|kaynak|otomatik öneri/i, "kaynak ve öneri açıklaması kullanıcıya gösterilmemeli");
   assert.equal(home.previousElementSibling?.tagName, "HEADER", "Günün Maçı kartı uygulama başlığının hemen altında olmalı");
   assert.ok(home.compareDocumentPosition(window.document.querySelector(".system-section")) & window.Node.DOCUMENT_POSITION_FOLLOWING,
     "Günün Maçı paneli kanal/sekme alanından önce ana ekranda yer almalı");

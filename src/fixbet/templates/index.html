@@ -260,7 +260,6 @@
         .home-featured-heading { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-bottom: 11px; }
         .home-featured-title { display: flex; align-items: center; gap: 8px; color: #ffe08a; font-family: 'Bebas Neue', sans-serif; font-size: 1.25rem; letter-spacing: 1.5px; }
         .home-featured-title .featured-star { color: var(--neon-gold); filter: drop-shadow(0 0 7px rgba(255,204,51,.6)); }
-        .home-featured-source { color: var(--text-muted); font-size: .67rem; text-align: right; }
         .home-featured-match { display: grid; grid-template-columns: minmax(0,1fr) auto; align-items: center; gap: 14px; }
         .home-featured-info { display: flex; flex-direction: column; gap: 9px; min-width: 0; }
         .home-featured-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 7px; color: var(--neon-cyan); font-size: .72rem; font-weight: 800; }
@@ -280,7 +279,6 @@
             .home-featured-section { margin-bottom: 12px; padding: 13px 12px; border-radius: 18px; }
             .home-featured-heading { margin-bottom: 9px; }
             .home-featured-title { font-size: 1.1rem; }
-            .home-featured-source { max-width: 48%; font-size: .61rem; }
             .home-featured-match { grid-template-columns: 1fr; gap: 10px; }
             .home-featured-teams { gap: 5px; font-size: clamp(1.08rem, 5vw, 1.38rem); }
             .home-featured-team { gap: 5px; }
@@ -813,7 +811,6 @@
         <section class="home-featured-section" id="homeFeaturedSection" aria-labelledby="homeFeaturedTitle" aria-live="polite">
             <div class="home-featured-heading">
                 <h2 class="home-featured-title" id="homeFeaturedTitle"><span class="featured-star" aria-hidden="true">★</span> GÜNÜN MAÇI</h2>
-                <span class="home-featured-source" id="homeFeaturedSource"></span>
             </div>
             <div id="homeFeaturedContent"></div>
         </section>
@@ -1068,7 +1065,6 @@
                 panelRow: $("panelRow"),
                 searchInput: $("searchInput"),
                 homeFeaturedContent: $("homeFeaturedContent"),
-                homeFeaturedSource: $("homeFeaturedSource"),
                 badgeChannels: $("badgeChannels"),
                 badgeMatches: $("badgeMatches"),
                 badgeExtra: $("badgeExtra"),
@@ -2070,7 +2066,6 @@
                 if (!els.homeFeaturedContent) return;
                 const selected = selectHomeFeatured(now || new Date());
                 if (!selected) {
-                    els.homeFeaturedSource.textContent = "Günün programı";
                     els.homeFeaturedContent.innerHTML =
                         '<div class="home-featured-empty"><p>Bugünün maç programı hazır olduğunda Günün Maçı burada görünecek.</p>' +
                         '<button class="fixture-match-btn home-featured-fixture" type="button">📅 TÜM MAÇLAR</button></div>';
@@ -2088,9 +2083,6 @@
                     '<span>' + esc(name) + "</span>" +
                     (side === "away" && logo ? '<img loading="lazy" src="' + esc(logo) + '" alt="" onerror="this.remove()">' : "") +
                     "</div>";
-                els.homeFeaturedSource.textContent = selected.official
-                    ? "Fixbet’in seçimi · Bugünün maçları içinde öne çıkan"
-                    : "Kaynakta özel seçim yok · Bugünün programından otomatik öneri";
                 els.homeFeaturedContent.innerHTML =
                     '<div class="home-featured-match" data-selection="' + (selected.official ? "official" : "suggested") + '">' +
                         '<div class="home-featured-info">' +
