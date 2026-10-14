@@ -317,8 +317,9 @@ test("Günün Maçı kartındaki Fikstür düğmesi arama/filtreleri sıfırlay�
 });
 
 test("Günün Maçı ana ekranda açılışta görünür; kaynak seçimi yoksa bugünün sıradaki maçı önerilir", async () => {
+  const fixedNow = Date.parse("2026-10-14T12:00:00+03:00");
   const upcomingTime = (offsetHours) => {
-    const date = new Date(Date.now() + offsetHours * 60 * 60 * 1000);
+    const date = new Date(fixedNow + offsetHours * 60 * 60 * 1000);
     const parts = new Intl.DateTimeFormat("en-GB", { timeZone: "Europe/Istanbul", hour: "2-digit", minute: "2-digit", hourCycle: "h23" }).formatToParts(date);
     const values = Object.fromEntries(parts.map((part) => [part.type, part.value]));
     return values.hour + ":" + values.minute;
@@ -336,7 +337,16 @@ test("Günün Maçı ana ekranda açılışta görünür; kaynak seçimi yoksa b
     if (String(url).startsWith("https://data-reality.com/matches2.php")) return { ok: true, status: 200, text: async () => "" };
     return { ok: true, status: 200, json: async () => TODAY };
   };
-  const { window, dom } = await loadPage({ fetchImpl });
+  const { window, dom } = await loadPage({ fetchImpl, beforeParse: (w) => {
+    const NativeDate = w.Date;
+    class FixedDate extends NativeDate {
+      constructor(...args) { super(...(args.length ? args : [fixedNow])); }
+      static now() { return fixedNow; }
+    }
+    FixedDate.parse = NativeDate.parse;
+    FixedDate.UTC = NativeDate.UTC;
+    w.Date = FixedDate;
+  } });
   assert.equal(window.inadina.state.activeTab, "channelsTab");
   await window.inadina.refreshMatches(true);
 
@@ -759,6 +769,9 @@ const byEvent = (window, id) => [...matchCards(window)].find(c => c.dataset.even
 function withExtra(data, playback = {}) {
   return HTML.replace(/let extraData = [^\n]+;/, "let extraData = " + JSON.stringify(data) + ";")
     .replace(/const playbackConfig = [^\n]+;/, "const playbackConfig = " + JSON.stringify(playback) + ";");
+}
+function withMatches(rows) {
+  return HTML.replace(/let matchesData = [^\n]+;/, "let matchesData = " + JSON.stringify(rows) + ";");
 }
 function singleExtra(source) {
   return { panels: [{ id: "test", name: "Test", channels: [{ id: "test:one", name: "Test", sources: [source] }] }] };
@@ -1375,18 +1388,126 @@ test("kaynak gecikirse maç başlama saatine göre CANLI'ya yükseltilir", async
 
 test("ESPN scoreboard ayrıştırıcısı durum, skor ve dakika çıkarır", async () => {
   const { window, dom } = await loadPage();
-  const comps = window.inadina.parseEspnScoreboard({
-    events: [{ id: "401", date: "2026-09-06T17:00:00Z", competitions: [{
+  const scoreboard = (status, id = "401") => ({
+    events: [{ id, date: "2026-09-06T17:00:00Z", competitions: [{
       id: "c1", date: "2026-09-06T17:00:00Z", neutralSite: false,
       competitors: [{ homeAway: "home", score: "1", team: { displayName: "Kasimpasa" } },
-                    { homeAway: "away", score: "0", team: { displayName: "Goztepe" } }],
-      status: { displayClock: "63'", type: { name: "STATUS_IN_PROGRESS", shortDetail: "63'", state: "in" } },
-    }] }] });
+                    { homeAway: "away", score: "0", team: { displayName: "Goztepe" } }], status,
+    }] }],
+  });
+  const comps = window.inadina.parseEspnScoreboard(scoreboard({ displayClock: "63:12", type: { name: "STATUS_IN_PROGRESS", shortDetail: "63'", state: "in" } }), "soccer/eng.1");
   assert.equal(comps.length, 1);
   assert.equal(comps[0].status, "live");
-  assert.equal(comps[0].clock, "63'");
+  assert.equal(comps[0].clock, "63′");
   assert.equal(comps[0].homeScore, 1);
   assert.equal(comps[0].awayScore, 0);
+  const stoppage = window.inadina.parseEspnScoreboard(scoreboard({ displayClock: "45:00", type: {
+    name: "STATUS_IN_PROGRESS", shortDetail: "45'+3", state: "in" } }, "402"), "soccer/uefa.champions")[0];
+  assert.equal(stoppage.clock, "45+3′", "uzatma dakikası kısa detaydan korunmalı");
+  const halftime = window.inadina.parseEspnScoreboard(scoreboard({ displayClock: "45:00", type: {
+    name: "STATUS_HALFTIME", shortDetail: "Halftime", state: "post" } }, "403"), "soccer/uefa.champions")[0];
+  assert.equal(halftime.status, "halftime");
+  assert.equal(halftime.clock, "", "devre arasında eskimiş 45. dakika gösterilmemeli");
+  dom.window.close();
+});
+
+function featuredLiveRow(minutesAgo = 30, extra = {}) {
+  const start = new Date(Date.now() - minutesAgo * 60000);
+  const time = new Intl.DateTimeFormat("en-GB", { timeZone: "Europe/Istanbul", hour: "2-digit", minute: "2-digit", hourCycle: "h23" }).format(start);
+  return {
+    match_id: "trt1", event_id: "featured-event", starts_at: start.toISOString(),
+    home: "Aston Villa", away: "Fenerbahçe", league: "UEFA Şampiyonlar Ligi", sport: "Futbol", time,
+    status: "live", status_source: "schedule", status_clock: "29′", raw_status: "",
+    score_home: 0, score_away: 0, score_source: "espn", score_updated_at: new Date(Date.now() - 60000).toISOString(),
+    is_match_of_day: true, channel_id: "trt1", url: "https://fixbet.test/channel.html?id=trt1", ...extra,
+  };
+}
+
+test("ana Günün Maçı kartı gol, canlı dakika, kanal ve devre arasıyla aynı state’i izliyor", async () => {
+  const row = featuredLiveRow();
+  const { window, dom } = await loadPage({
+    html: withMatches([row]),
+    fetchImpl: async () => ({ ok: false, status: 503, json: async () => ({}) }),
+    beforeParse: (w) => Object.defineProperty(w.document, "hidden", { configurable: true, get: () => true }),
+  });
+  const path = "soccer/uefa.champions";
+  const start = new Date(row.starts_at);
+  let homeCard = window.document.querySelector("#homeFeaturedSection .home-featured-match");
+  assert.ok(homeCard, "Günün Maçı ana kartta açılmalı");
+  assert.equal(homeCard.dataset.selection, "official", "ham snapshot is_match_of_day bayrağı açılışta tanınmalı");
+  assert.equal(homeCard.dataset.score, "0-0");
+  assert.ok(window.document.querySelector("#homeFeaturedSection .home-featured-channel").textContent.includes("TRT"),
+    "ham channel_id kanal adı olarak çözülmeli");
+
+  const live = { id: "featured-event", start, homeName: row.home, awayName: row.away, homeScore: 1, awayScore: 0,
+    status: "live", clock: "45+3′", neutral: false };
+  assert.equal(window.inadina.applyLiveSync(path, [live], Date.now()), 1);
+  window.inadina.renderMatches();
+  homeCard = window.document.querySelector("#homeFeaturedSection .home-featured-match");
+  assert.equal(homeCard.dataset.score, "1-0", "gol sonrası skor ana kartta anında değişmeli");
+  assert.equal(homeCard.dataset.clock, "45+3′", "duraklama dakikası kartta görünmeli");
+  assert.ok(window.document.querySelector("#homeFeaturedMeta .home-featured-status").textContent.includes("45+3′"));
+  assert.equal(window.document.querySelector("#homeFeaturedSection .home-featured-goal")?.textContent, "GOL!");
+  assert.ok(window.document.querySelector("#homeFeaturedSection .home-featured-freshness").textContent.includes("CANLI SKOR"));
+
+  assert.equal(window.inadina.applyLiveSync(path, [{ ...live, status: "halftime", clock: "" }], Date.now()), 1);
+  window.inadina.renderMatches();
+  homeCard = window.document.querySelector("#homeFeaturedSection .home-featured-match");
+  assert.equal(homeCard.dataset.status, "halftime");
+  assert.equal(homeCard.dataset.score, "1-0", "devre arasında skor korunmalı");
+  assert.equal(window.document.querySelector("#homeFeaturedMeta .home-featured-status").textContent, "DEVRE ARASI");
+  assert.equal(window.document.querySelector("#homeFeaturedSection .home-featured-goal"), null,
+    "devre durumunda önceki GOL bildirimi yinelenmemeli");
+  dom.window.close();
+});
+
+test("15 dakika eski canlı skor cache’i uygulama dönüşünde ESPN’den hemen tazelenir", async () => {
+  let hidden = true;
+  const row = featuredLiveRow(35, { status_clock: "34′" });
+  const oldAt = Date.now() - 15 * 60000;
+  row.score_updated_at = new Date(oldAt).toISOString();
+  const path = "soccer/uefa.champions";
+  const cached = { savedAt: oldAt, base: "site.web", paths: { [path]: { at: oldAt, comps: [{
+    id: "cached-event", start: row.starts_at, homeName: row.home, awayName: row.away,
+    homeScore: 0, awayScore: 0, status: "live", clock: "34′", neutral: false,
+  }] } } };
+  const freshScoreboard = { events: [{ id: "fresh-event", date: row.starts_at, competitions: [{
+    id: "fresh-comp", date: row.starts_at, competitors: [
+      { homeAway: "home", score: "1", team: { displayName: row.home } },
+      { homeAway: "away", score: "0", team: { displayName: row.away } },
+    ], status: { displayClock: "50:00", type: { name: "STATUS_IN_PROGRESS", shortDetail: "50'", state: "in" } },
+  }] }] };
+  const scoreboardCalls = [];
+  const fetchImpl = async (url) => {
+    if (String(url).includes("site.web.api.espn.com")) {
+      scoreboardCalls.push(String(url));
+      return { ok: true, json: async () => freshScoreboard };
+    }
+    return { ok: false, status: 503, json: async () => ({}) };
+  };
+  const { window, dom } = await loadPage({
+    html: withMatches([row]), fetchImpl,
+    beforeParse: (w) => {
+      Object.defineProperty(w.document, "hidden", { configurable: true, get: () => hidden });
+      w.localStorage.setItem("inadinatv.live-scores.v1", JSON.stringify(cached));
+    },
+  });
+  hidden = false;
+  window.document.dispatchEvent(new window.Event("visibilitychange"));
+  for (let attempt = 0; attempt < 50 && !scoreboardCalls.length; attempt++) {
+    await new Promise((resolve) => setTimeout(resolve, 10));
+  }
+  for (let attempt = 0; attempt < 50; attempt++) {
+    const current = window.document.querySelector("#homeFeaturedSection .home-featured-match");
+    if (current && current.dataset.clock === "50′") break;
+    await new Promise((resolve) => setTimeout(resolve, 10));
+  }
+  const card = window.document.querySelector("#homeFeaturedSection .home-featured-match");
+  assert.ok(scoreboardCalls.length > 0, "15 dakikalık cache poll’u engellememeli, görünür olunca ESPN hemen çağrılmalı");
+  assert.equal(card.dataset.score, "1-0", "uygulamaya dönünce yeni skor Günün Maçı kartına gelmeli");
+  assert.equal(card.dataset.clock, "50′");
+  assert.ok(!window.document.querySelector("#homeFeaturedSection .home-featured-freshness").classList.contains("is-stale"),
+    "başarılı veri yenilemesi eski skor uyarısını kaldırmalı");
   dom.window.close();
 });
 
