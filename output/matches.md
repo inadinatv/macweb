@@ -1,13 +1,16 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-10-14 07:27  
-> **Toplam maç:** 22  |  **Canlı:** 0  |  **Yaklaşan:** 22
+> **Güncellenme:** 2026-10-14 10:16  
+> **Toplam maç:** 22  |  **Canlı:** 2  |  **Yaklaşan:** 20
+
+## 🔴 CANLI
+
+- 🔴 **Kashiwa Reysol 2 - 0 Port FC** — CANLI · `13:00` | AFC Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=sms2>
+- 🔴 **Vissel Kobe vs Jeonbuk** — CANLI · `13:00` | AFC Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=smarts>
 
 ## ⏰ YAKLAŞAN
 
-- ⏰ **Kashiwa Reysol vs Port FC** — YAKLAŞAN · `13:00` | AFC Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=sms2>
-- ⏰ **Vissel Kobe vs Jeonbuk** — YAKLAŞAN · `13:00` | AFC Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=smarts>
 - ⏰ **A.Sabalenka vs A.Li** — YAKLAŞAN · `14:00` | WTA Pekin <https://fixbettv84.com/channel.html?id=bm1>
 - ⏰ **Batman Petrol vs İstanbulspor** — YAKLAŞAN · `14:30` | Trendyol 1. Lig <https://fixbettv84.com/channel.html?id=trtspor>
 - ⏰ **Aras Kargo vs Galatasaray** — YAKLAŞAN · `16:00` | TVF Sultanlar Ligi <https://fixbettv84.com/channel.html?id=trtspor2>
@@ -37,8 +40,8 @@
 ## 🏆 Lig Bazlı
 
 ### AFC Şampiyonlar Ligi
-- ⏰ Kashiwa Reysol vs Port FC — 13:00
-- ⏰ Vissel Kobe vs Jeonbuk — 13:00
+- 🔴 Kashiwa Reysol vs Port FC — 13:00
+- 🔴 Vissel Kobe vs Jeonbuk — 13:00
 
 ### Eurocup
 - ⏰ Tofaş vs Buducnost — 20:00
@@ -200,7 +203,7 @@
 - 🟢 **IDMAN TV** <https://andro.evrenesoglu149.click/checklist/androstreamliveidm.m3u8>
 - 🟢 **CBC SPORT** <https://andro.evrenesoglu149.click/checklist/androstreamlivecbcs.m3u8>
 
-### 📺 TARAFTARIUM24 ✅ `https://taraftarium60.com`
+### 📺 TARAFTARIUM24 ✅ `https://taraftariumtv32.com`
 - ⚪ **BEIN SPORTS 1**
 - ⚪ **BEIN SPORTS 2**
 - ⚪ **BEIN SPORTS 3**
