@@ -1,8 +1,8 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-10-13 23:15  
-> **Toplam maç:** 22  |  **Canlı:** 0  |  **Yaklaşan:** 12
+> **Güncellenme:** 2026-10-14 00:19  
+> **Toplam maç:** 22  |  **Canlı:** 0  |  **Yaklaşan:** 22
 
 ## ⏰ YAKLAŞAN
 
@@ -18,23 +18,20 @@
 - ⏰ **Al Seeb vs Al Hussein** — YAKLAŞAN · `19:00` | AFC Şampiyonlar Ligi 2 <https://fixbettv84.com/channel.html?id=sms2>
 - ⏰ **Lens vs Sporting Lisbon** — YAKLAŞAN · `19:45` | UEFA Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=ex7>
 - ⏰ **Sabah Bakü vs Slavia Prag** — YAKLAŞAN · `19:45` | UEFA Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=ex1>
-
-## ✅ BİTTİ
-
-- ✅ **Fenerbahçe Tarfin vs Zalgiris Kaunas** — MS · `20:45` | Euroleague <https://fixbettv84.com/channel.html?id=ss>
-- ✅ **Al Ittihad vs Al Ahli Dubai** — MS · `21:15` | AFC Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=sms2>
-- ✅ **Partizan vs Panathinaikos** — MS · `21:30` | Euroleague <https://fixbettv84.com/channel.html?id=ss>
-- ✅ **Galatasaray vs Barcelona** — MS · `22:00` | UEFA Şampiyonlar Ligi ★ **Günün Maçı** <https://fixbettv84.com/channel.html?id=trt1>
-- ✅ **Atletico Madrid vs Manchester Utd** — MS · `22:00` | UEFA Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=ex7>
-- ✅ **Inter vs Club Brugge** — MS · `22:00` | UEFA Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=ex2>
-- ✅ **Leipzig vs PSV** — MS · `22:00` | UEFA Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=ex5>
-- ✅ **Viking vs Bayern Münih** — MS · `22:00` | UEFA Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=ex3>
-- ✅ **Villarreal vs Napoli** — MS · `22:00` | UEFA Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=ex4>
-- ✅ **Arsenal vs Lille** — MS · `22:00` | UEFA Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=ex1>
+- ⏰ **Fenerbahçe Tarfin vs Zalgiris Kaunas** — YAKLAŞAN · `20:45` | Euroleague <https://fixbettv84.com/channel.html?id=ss>
+- ⏰ **Al Ittihad vs Al Ahli Dubai** — YAKLAŞAN · `21:15` | AFC Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=sms2>
+- ⏰ **Partizan vs Panathinaikos** — YAKLAŞAN · `21:30` | Euroleague <https://fixbettv84.com/channel.html?id=ss>
+- ⏰ **Galatasaray vs Barcelona** — YAKLAŞAN · `22:00` | UEFA Şampiyonlar Ligi ★ **Günün Maçı** <https://fixbettv84.com/channel.html?id=trt1>
+- ⏰ **Atletico Madrid vs Manchester Utd** — YAKLAŞAN · `22:00` | UEFA Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=ex7>
+- ⏰ **Inter vs Club Brugge** — YAKLAŞAN · `22:00` | UEFA Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=ex2>
+- ⏰ **Leipzig vs PSV** — YAKLAŞAN · `22:00` | UEFA Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=ex5>
+- ⏰ **Viking vs Bayern Münih** — YAKLAŞAN · `22:00` | UEFA Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=ex3>
+- ⏰ **Villarreal vs Napoli** — YAKLAŞAN · `22:00` | UEFA Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=ex4>
+- ⏰ **Arsenal vs Lille** — YAKLAŞAN · `22:00` | UEFA Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=ex1>
 
 ## ⭐ GÜNÜN MAÇI
 
-- ✅ **Galatasaray vs Barcelona** — MS · `22:00` | UEFA Şampiyonlar Ligi ★ **Günün Maçı** <https://fixbettv84.com/channel.html?id=trt1>
+- ⏰ **Galatasaray vs Barcelona** — YAKLAŞAN · `22:00` | UEFA Şampiyonlar Ligi ★ **Günün Maçı** <https://fixbettv84.com/channel.html?id=trt1>
 
 ---
 ## 🏆 Lig Bazlı
