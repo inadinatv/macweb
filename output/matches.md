@@ -1,18 +1,16 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-10-14 13:01  
-> **Toplam maç:** 22  |  **Canlı:** 3  |  **Yaklaşan:** 17
+> **Güncellenme:** 2026-10-14 14:09  
+> **Toplam maç:** 22  |  **Canlı:** 2  |  **Yaklaşan:** 16
 
 ## 🔴 CANLI
 
-- 🔴 **A.Sabalenka vs A.Li** — CANLI · `14:00` | WTA Pekin <https://fixbettv84.com/channel.html?id=bm1>
-- 🔴 **Batman Petrol 3 - 1 İstanbulspor** — CANLI · `14:30` | Trendyol 1. Lig <https://fixbettv84.com/channel.html?id=trtspor>
 - 🔴 **Aras Kargo vs Galatasaray** — CANLI · `16:00` | TVF Sultanlar Ligi <https://fixbettv84.com/channel.html?id=trtspor2>
+- 🔴 **Ümraniyespor 0 - 0 Boluspor** — CANLI · `17:00` | Trendyol 1. Lig <https://fixbettv84.com/channel.html?id=trtspor>
 
 ## ⏰ YAKLAŞAN
 
-- ⏰ **Ümraniyespor vs Boluspor** — YAKLAŞAN · `17:00` | Trendyol 1. Lig <https://fixbettv84.com/channel.html?id=trtspor>
 - ⏰ **Hapoel Tel Aviv vs Beşiktaş** — YAKLAŞAN · `19:00` | Euroleague <https://fixbettv84.com/channel.html?id=ss>
 - ⏰ **İlbank vs Eczacibasi** — YAKLAŞAN · `19:00` | TVF Sultanlar Ligi <https://fixbettv84.com/channel.html?id=trtspor2>
 - ⏰ **Feyenoord vs Como** — YAKLAŞAN · `19:45` | UEFA Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=ex1>
@@ -34,6 +32,8 @@
 
 - ✅ **Kashiwa Reysol 5 - 1 Port FC** — MS · `13:00` | AFC Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=sms2>
 - ✅ **Vissel Kobe vs Jeonbuk** — MS · `13:00` | AFC Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=smarts>
+- ✅ **A.Sabalenka vs A.Li** — MS · `14:00` | WTA Pekin <https://fixbettv84.com/channel.html?id=bm1>
+- ✅ **Batman Petrol 4 - 2 İstanbulspor** — MS · `14:30` | Trendyol 1. Lig <https://fixbettv84.com/channel.html?id=trtspor>
 
 ## ⭐ GÜNÜN MAÇI
 
@@ -60,8 +60,8 @@
 - ⏰ İlbank vs Eczacibasi — 19:00
 
 ### Trendyol 1. Lig
-- 🔴 Batman Petrol vs İstanbulspor — 14:30
-- ⏰ Ümraniyespor vs Boluspor — 17:00
+- ⏰ Batman Petrol vs İstanbulspor — 14:30
+- 🔴 Ümraniyespor vs Boluspor — 17:00
 - ⏰ Antalyaspor vs Kayserispor — 20:00
 
 ### UEFA Şampiyonlar Ligi
@@ -76,7 +76,7 @@
 - ⏰ Slovan Bratislava vs Stuttgart — 22:00
 
 ### WTA Pekin
-- 🔴 A.Sabalenka vs A.Li — 14:00
+- ⏰ A.Sabalenka vs A.Li — 14:00
 
 ---
 ## 📺 7/24 KANALLAR (31)
@@ -241,15 +241,15 @@
 - 🟢 **TIVIBU SPOR 1** <https://sultanbettv101.live/mono.m3u8>
 
 ### 📡 JUSTIN TV ✅ `https://www.justintv110.top`
-- 🟢 **BEIN SPORTS 1** <https://ladyboy.ardastream2.cfd//beintv/tracks-v1a1/mono.m3u8>
-- 🟢 **BEIN SPORTS 2** <https://ladyboy.ardastream2.cfd//bein2/tracks-v1a1/mono.m3u8>
-- 🟢 **BEIN SPORTS 3** <https://ladyboy.ardastream2.cfd//bein3/tracks-v1a1/mono.m3u8>
-- 🟢 **BEIN SPORTS 4** <https://ladyboy.ardastream2.cfd//bein4/tracks-v1a1/mono.m3u8>
-- 🟢 **BEIN SPORTS 5** <https://ladyboy.ardastream2.cfd//bein5/tracks-v1a1/mono.m3u8>
-- 🟢 **BEIN SPORTS MAX 1** <https://ladyboy.ardastream2.cfd//beinmax1/tracks-v1a1/mono.m3u8>
-- 🟢 **BEIN SPORTS MAX 2** <https://ladyboy.ardastream2.cfd//beinmax2/tracks-v1a1/mono.m3u8>
-- 🟢 **S SPORT** <https://ladyboy.ardastream2.cfd//s-sport/tracks-v1a1/mono.m3u8>
-- 🟢 **S SPORT 2** <https://ladyboy.ardastream2.cfd//s-sport2/tracks-v1a1/mono.m3u8>
-- 🟢 **TRT SPOR** <https://ladyboy.ardastream2.cfd//trt-spor/tracks-v1a1/mono.m3u8>
-- 🟢 **TRT 1** <https://ladyboy.ardastream2.cfd//trt1/tracks-v1a1/mono.m3u8>
-- 🟢 **A SPOR** <https://ladyboy.ardastream2.cfd//aspor/tracks-v1a1/mono.m3u8>
+- 🟢 **BEIN SPORTS 1** <https://ladyboy.ardatvgs.cfd//beintv/tracks-v1a1/mono.m3u8>
+- 🟢 **BEIN SPORTS 2** <https://ladyboy.ardatvgs.cfd//bein2/tracks-v1a1/mono.m3u8>
+- 🟢 **BEIN SPORTS 3** <https://ladyboy.ardatvgs.cfd//bein3/tracks-v1a1/mono.m3u8>
+- 🟢 **BEIN SPORTS 4** <https://ladyboy.ardatvgs.cfd//bein4/tracks-v1a1/mono.m3u8>
+- 🟢 **BEIN SPORTS 5** <https://ladyboy.ardatvgs.cfd//bein5/tracks-v1a1/mono.m3u8>
+- 🟢 **BEIN SPORTS MAX 1** <https://ladyboy.ardatvgs.cfd//beinmax1/tracks-v1a1/mono.m3u8>
+- 🟢 **BEIN SPORTS MAX 2** <https://ladyboy.ardatvgs.cfd//beinmax2/tracks-v1a1/mono.m3u8>
+- 🟢 **S SPORT** <https://ladyboy.ardatvgs.cfd//s-sport/tracks-v1a1/mono.m3u8>
+- 🟢 **S SPORT 2** <https://ladyboy.ardatvgs.cfd//s-sport2/tracks-v1a1/mono.m3u8>
+- 🟢 **TRT SPOR** <https://ladyboy.ardatvgs.cfd//trt-spor/tracks-v1a1/mono.m3u8>
+- 🟢 **TRT 1** <https://ladyboy.ardatvgs.cfd//trt1/tracks-v1a1/mono.m3u8>
+- 🟢 **A SPOR** <https://ladyboy.ardatvgs.cfd//aspor/tracks-v1a1/mono.m3u8>
