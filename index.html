@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>İNADİNA TV - Canlı Spor & Maç İzleme</title>
     <meta name="description" content="7/24 spor kanalları ve günün gerçek maç programı. Kanala tıkla, yayın doğrudan oynatıcıda açılsın." />
-    <meta name="updated-at" content="2026-10-14 07:45" />
+    <meta name="updated-at" content="2026-10-14 08:23" />
     <meta name="fixbet-source" content="https://fixbettv84.com" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@400;600;700;900&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -247,6 +247,47 @@
         .hint-box kbd {
             background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15);
             border-radius: 5px; padding: 0 5px; font-family: inherit; font-size: 0.68rem; color: #fff;
+        }
+
+        /* Ana ekranda, maçlar sekmesine gerek kalmadan görünen Günün Maçı */
+        .home-featured-section {
+            position: relative; z-index: 1; margin: 0 0 18px; padding: 15px 18px 16px;
+            overflow: hidden; border: 1px solid rgba(255,204,51,.38); border-radius: 22px;
+            background: radial-gradient(ellipse at 8% 0%, rgba(255,204,51,.13), transparent 46%),
+                linear-gradient(115deg, rgba(27,20,44,.97), rgba(13,11,29,.97) 58%, rgba(40,17,49,.92));
+            box-shadow: 0 0 30px rgba(255,204,51,.08), 0 12px 32px rgba(0,0,0,.3), inset 0 1px 0 rgba(255,255,255,.06);
+        }
+        .home-featured-heading { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-bottom: 11px; }
+        .home-featured-title { display: flex; align-items: center; gap: 8px; color: #ffe08a; font-family: 'Bebas Neue', sans-serif; font-size: 1.25rem; letter-spacing: 1.5px; }
+        .home-featured-title .featured-star { color: var(--neon-gold); filter: drop-shadow(0 0 7px rgba(255,204,51,.6)); }
+        .home-featured-source { color: var(--text-muted); font-size: .67rem; text-align: right; }
+        .home-featured-match { display: grid; grid-template-columns: minmax(0,1fr) auto; align-items: center; gap: 14px; }
+        .home-featured-info { display: flex; flex-direction: column; gap: 9px; min-width: 0; }
+        .home-featured-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 7px; color: var(--neon-cyan); font-size: .72rem; font-weight: 800; }
+        .home-featured-status { color: #ffe08a; border: 1px solid rgba(255,204,51,.26); background: rgba(255,204,51,.08); padding: 3px 8px; border-radius: 20px; white-space: nowrap; }
+        .home-featured-teams { display: grid; grid-template-columns: minmax(0,1fr) auto minmax(0,1fr); align-items: center; gap: 12px; color: #fff; font: 800 clamp(1.15rem, 2.6vw, 1.75rem)/1.05 'Barlow Condensed', sans-serif; text-shadow: 0 2px 10px rgba(0,0,0,.55); }
+        .home-featured-team { display: flex; align-items: center; gap: 9px; min-width: 0; }
+        .home-featured-team:first-child { justify-content: flex-end; text-align: right; }
+        .home-featured-team:last-child { justify-content: flex-start; text-align: left; }
+        .home-featured-team span { min-width: 0; overflow-wrap: anywhere; }
+        .home-featured-team img { flex: 0 0 34px; width: 34px; height: 34px; object-fit: contain; filter: drop-shadow(0 0 7px rgba(255,204,51,.25)); }
+        .home-featured-vs { color: var(--neon-gold); font: 700 .7rem 'Barlow', sans-serif; letter-spacing: 1px; }
+        .home-featured-actions { display: flex; align-items: center; gap: 8px; flex: 0 0 auto; }
+        .home-featured-empty { display: flex; align-items: center; justify-content: space-between; gap: 12px; color: var(--text-muted); font-size: .85rem; }
+        .home-featured-empty p { margin: 0; }
+        .home-featured-section .play-match-btn, .home-featured-section .fixture-match-btn { min-height: 40px; }
+        @media (max-width: 640px) {
+            .home-featured-section { margin-bottom: 12px; padding: 13px 12px; border-radius: 18px; }
+            .home-featured-heading { margin-bottom: 9px; }
+            .home-featured-title { font-size: 1.1rem; }
+            .home-featured-source { max-width: 48%; font-size: .61rem; }
+            .home-featured-match { grid-template-columns: 1fr; gap: 10px; }
+            .home-featured-teams { gap: 5px; font-size: clamp(1.08rem, 5vw, 1.38rem); }
+            .home-featured-team { gap: 5px; }
+            .home-featured-team img { flex-basis: 27px; width: 27px; height: 27px; }
+            .home-featured-actions { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); }
+            .home-featured-actions button { width: 100%; justify-content: center; }
+            .home-featured-empty { align-items: stretch; flex-direction: column; }
         }
 
         /* ---------- Tabs / toolbar ---------- */
@@ -769,6 +810,14 @@
             </div>
         </header>
 
+        <section class="home-featured-section" id="homeFeaturedSection" aria-labelledby="homeFeaturedTitle" aria-live="polite">
+            <div class="home-featured-heading">
+                <h2 class="home-featured-title" id="homeFeaturedTitle"><span class="featured-star" aria-hidden="true">★</span> GÜNÜN MAÇI</h2>
+                <span class="home-featured-source" id="homeFeaturedSource"></span>
+            </div>
+            <div id="homeFeaturedContent"></div>
+        </section>
+
         <div class="main-layout">
             <div class="player-container" id="playerContainer">
                 <div class="player-top-bar">
@@ -877,7 +926,7 @@
 
         <footer class="site-footer">
             <div class="refresh-note">
-                <span>Son güncelleme: <b id="updatedAtText">2026-10-14 07:45</b></span>
+                <span>Son güncelleme: <b id="updatedAtText">2026-10-14 08:23</b></span>
                 <button class="mini-btn" id="refreshDataBtn" title="Maç listesini yeniden yükle">🔄 Maçları yenile</button>
                 <span class="sync-chip sync-wait" id="liveSyncStatus" title="Sayfa, skorları botun anlık görüntüsünü beklemeden canlı skor kaynağından doğrudan tazeler">
                     <span class="sync-dot"></span><span id="liveSyncText">Canlı skor hazırlanıyor</span>
@@ -936,7 +985,7 @@
 
     <script>
         /*BOT_START*/
-        const updatedAt = "2026-10-14 07:45";
+        const updatedAt = "2026-10-14 08:23";
         const matchesSource = "output/today_matches.json";
         const matchFeedSources = ["https://data-reality.com/matches.php", "https://data-reality.com/matches2.php"];
         const matchPlayerBase = "https://fixbettv84.com";
@@ -1018,6 +1067,8 @@
                 matchFilterRow: $("matchFilterRow"),
                 panelRow: $("panelRow"),
                 searchInput: $("searchInput"),
+                homeFeaturedContent: $("homeFeaturedContent"),
+                homeFeaturedSource: $("homeFeaturedSource"),
                 badgeChannels: $("badgeChannels"),
                 badgeMatches: $("badgeMatches"),
                 badgeExtra: $("badgeExtra"),
@@ -1996,6 +2047,67 @@
             /* Skor değişimini yakalayıp karta "bump/flash" animasyonu ekleyen harita */
             const prevScoreByKey = new Map();
 
+            function selectHomeFeatured(now) {
+                const all = decoratedMatches(now || new Date());
+                const official = all.find((m) => m._isFeatured);
+                if (official) return { match: official, official: true };
+
+                const todayKey = localDateKey(now || new Date());
+                const today = all.filter((m) => {
+                    const start = matchStart(m);
+                    const day = start ? localDateKey(start) : String(m.date || "");
+                    return day === todayKey;
+                });
+                const playable = today.filter((m) => m._status === "upcoming" || isActiveMatch(m._status));
+                if (playable.length) return { match: sortMatches(playable)[0], official: false };
+
+                const finished = today.filter((m) => m._status === "finished")
+                    .sort((a, b) => String(b.time || "").localeCompare(String(a.time || "")));
+                return finished.length ? { match: finished[0], official: false } : null;
+            }
+
+            function renderHomeFeatured(now) {
+                if (!els.homeFeaturedContent) return;
+                const selected = selectHomeFeatured(now || new Date());
+                if (!selected) {
+                    els.homeFeaturedSource.textContent = "Günün programı";
+                    els.homeFeaturedContent.innerHTML =
+                        '<div class="home-featured-empty"><p>Bugünün maç programı hazır olduğunda Günün Maçı burada görünecek.</p>' +
+                        '<button class="fixture-match-btn home-featured-fixture" type="button">📅 TÜM MAÇLAR</button></div>';
+                    els.homeFeaturedContent.querySelector(".home-featured-fixture").onclick = openTodayFixtures;
+                    return;
+                }
+
+                const m = selected.match;
+                const statusText = m._status === "live" || m._status === "halftime"
+                    ? (m._clock || matchStatusConfig.labels[m._status] || "CANLI")
+                    : m._status === "finished" ? "BİTTİ" : (m.time || "SAAT BEKLENİYOR") + (m._countdown ? " · " + m._countdown : "");
+                const center = m._score ? (m._score[0] + " - " + m._score[1]) : (m._status === "finished" ? "Skor yok" : "VS");
+                const team = (name, logo, side) => '<div class="home-featured-team ' + side + '">' +
+                    (side === "home" && logo ? '<img loading="lazy" src="' + esc(logo) + '" alt="" onerror="this.remove()">' : "") +
+                    '<span>' + esc(name) + "</span>" +
+                    (side === "away" && logo ? '<img loading="lazy" src="' + esc(logo) + '" alt="" onerror="this.remove()">' : "") +
+                    "</div>";
+                els.homeFeaturedSource.textContent = selected.official
+                    ? "Fixbet’in seçimi · Bugünün maçları içinde öne çıkan"
+                    : "Kaynakta özel seçim yok · Bugünün programından otomatik öneri";
+                els.homeFeaturedContent.innerHTML =
+                    '<div class="home-featured-match" data-selection="' + (selected.official ? "official" : "suggested") + '">' +
+                        '<div class="home-featured-info">' +
+                            '<div class="home-featured-meta"><span>' + sportIcon(m.sport) + " " + esc(m.league || m.sport || "Maç Programı") + '</span>' +
+                                '<span class="home-featured-status">' + esc(statusText) + '</span></div>' +
+                            '<div class="home-featured-teams">' + team(m.home, m.logoHome, "home") +
+                                '<span class="home-featured-vs">' + esc(center) + '</span>' + team(m.away, m.logoAway, "away") + '</div>' +
+                        '</div>' +
+                        '<div class="home-featured-actions">' +
+                            '<button class="fixture-match-btn home-featured-fixture" type="button">📅 FİKSTÜR</button>' +
+                            '<button class="play-match-btn home-featured-play" type="button">▶ ' + (isActiveMatch(m._status) ? "CANLI İZLE" : "MAÇA GİT") + '</button>' +
+                        '</div>' +
+                    '</div>';
+                els.homeFeaturedContent.querySelector(".home-featured-fixture").onclick = openTodayFixtures;
+                els.homeFeaturedContent.querySelector(".home-featured-play").onclick = () => playMatch(m);
+            }
+
             function renderMatches() {
                 const now = new Date();
                 const q = state.search;
@@ -2088,6 +2200,7 @@
             const baseTitle = document.title;
 
             function updateStats(now) {
+                renderHomeFeatured(now || new Date());
                 const list = decoratedMatches(now || new Date());
                 const live = list.filter((m) => isActiveMatch(m._status)).length;
                 els.totalChannels.textContent = String(streamLinks.length + extraChannels().length);

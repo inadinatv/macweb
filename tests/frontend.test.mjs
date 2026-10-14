@@ -258,6 +258,11 @@ test("bugünün Günün Maçı tam genişlikte gösterilir ve diğer maçların 
   };
   const { window, dom } = await loadPage({ fetchImpl });
   assert.equal(await window.inadina.refreshMatches(true), true);
+  assert.equal(window.inadina.state.activeTab, "channelsTab", "uygulama ilk açılışta ana sekmede kalmalı");
+  const homeFeatured = window.document.querySelector("#homeFeaturedSection .home-featured-match");
+  assert.ok(homeFeatured, "maç sekmesine girmeden ana spotlight görünmeli");
+  assert.equal(homeFeatured.getAttribute("data-selection"), "official", "kaynağın bugünkü Günün Maçı seçimi ana ekranda öne alınmalı");
+  assert.ok(homeFeatured.textContent.includes("Öne Çıkan Ev"), "ana spotlight resmi seçilen maçı göstermiyor");
   window.inadina.setTab("matchesTab");
   const list = [...matchCards(window)];
   assert.equal(list.length, 2, "test programındaki iki maç gösterilmeli");
@@ -303,6 +308,48 @@ test("Günün Maçı kartındaki Fikstür düğmesi arama/filtreleri sıfırlay�
   assert.equal(search.value, "", "arama temizlenmeli");
   assert.equal(matchCards(window).length, 2, "günlük fikstürdeki tüm maçlar görünmeli");
   assert.ok(window.scrolledTo.includes("matchFilterRow"), "fikstür filtresine kaydırılmalı");
+  dom.window.close();
+});
+
+test("Günün Maçı ana ekranda açılışta görünür; kaynak seçimi yoksa bugünün sıradaki maçı önerilir", async () => {
+  const upcomingTime = (offsetHours) => {
+    const date = new Date(Date.now() + offsetHours * 60 * 60 * 1000);
+    const parts = new Intl.DateTimeFormat("en-GB", { timeZone: "Europe/Istanbul", hour: "2-digit", minute: "2-digit", hourCycle: "h23" }).formatToParts(date);
+    const values = Object.fromEntries(parts.map((part) => [part.type, part.value]));
+    return values.hour + ":" + values.minute;
+  };
+  const firstTime = upcomingTime(2), secondTime = upcomingTime(4);
+  const feed = `<!doctype html>
+    <a href="channel?id=first"><div class="match-detail"><div class="date">Futbol</div>
+      <div class="event">${firstTime} | İlk Lig</div><div class="teams"><div class="home">İlk Ev</div>
+      <div class="away">İlk Deplasman</div></div></div></a>
+    <a href="channel?id=second"><div class="match-detail"><div class="date">Futbol</div>
+      <div class="event">${secondTime} | İkinci Lig</div><div class="teams"><div class="home">İkinci Ev</div>
+      <div class="away">İkinci Deplasman</div></div></div></a>`;
+  const fetchImpl = async (url) => {
+    if (String(url).startsWith("https://data-reality.com/matches.php")) return { ok: true, status: 200, text: async () => feed };
+    if (String(url).startsWith("https://data-reality.com/matches2.php")) return { ok: true, status: 200, text: async () => "" };
+    return { ok: true, status: 200, json: async () => TODAY };
+  };
+  const { window, dom } = await loadPage({ fetchImpl });
+  assert.equal(window.inadina.state.activeTab, "channelsTab");
+  await window.inadina.refreshMatches(true);
+
+  const home = window.document.getElementById("homeFeaturedSection");
+  const card = home.querySelector(".home-featured-match");
+  assert.ok(card, "ana ekran spotlight kartı render edilmedi");
+  assert.equal(card.getAttribute("data-selection"), "suggested", "kaynak seçim yapmadığında öneri olduğu belirtilmeli");
+  assert.ok(card.textContent.includes("İlk Ev") && card.textContent.includes("İlk Deplasman"), "bugünün en yakın yaklaşan maçı önerilmedi");
+  assert.ok(home.textContent.includes("Kaynakta özel seçim yok"), "önerinin kaynaktan gelmediği açıkça belirtilmeli");
+  assert.equal(home.previousElementSibling?.tagName, "HEADER", "Günün Maçı kartı uygulama başlığının hemen altında olmalı");
+  assert.ok(home.compareDocumentPosition(window.document.querySelector(".system-section")) & window.Node.DOCUMENT_POSITION_FOLLOWING,
+    "Günün Maçı paneli kanal/sekme alanından önce ana ekranda yer almalı");
+
+  window.scrolledTo.length = 0;
+  home.querySelector(".home-featured-fixture").click();
+  assert.equal(window.inadina.state.activeTab, "matchesTab", "ana kartın Fikstür düğmesi maç sekmesine götürmeli");
+  assert.equal(matchCards(window).length, 2, "Fikstür açılınca bugünün tüm maçları gösterilmeli");
+  assert.ok(window.scrolledTo.includes("matchFilterRow"), "maç listesine kaydırma yapılmalı");
   dom.window.close();
 });
 
