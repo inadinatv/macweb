@@ -235,12 +235,136 @@ test("günün maçları gerçek programdan geliyor", async () => {
 
   const text = window.document.getElementById("matchesGrid").textContent;
   for (const m of TODAY.matches) assert.ok(text.includes(m.home) && text.includes(m.away), "gerçek maç eksik: " + m.home);
-  const modCount = TODAY.matches.filter((m) => m.is_match_of_day).length;
+  const modCount = window.inadina.decoratedMatches(new Date()).filter((m) => m._isFeatured).length;
   assert.equal(window.document.querySelectorAll(".match-card.is-mod").length, modCount,
-    "günün maçı rozetleri gerçek veriyle uyuşmuyor");
+    "yalnızca bugünkü Günün Maçı spotlight olarak işaretlenmeli");
   if (modCount) assert.ok(text.includes("⭐ Günün Maçı"), "günün maçı rozeti yok");
   assert.equal(window.document.getElementById("badgeMatches").textContent, String(TODAY.matches.length));
   dom.window.close();
+});
+
+test("bugünün Günün Maçı tam genişlikte gösterilir ve diğer maçların önüne sabitlenir", async () => {
+  const feed = `<!doctype html>
+    <a href="channel?id=normal"><div class="match-detail"><div class="date">Futbol</div>
+      <div class="event">12:00 | Test Ligi</div><div class="teams"><div class="home">Normal Ev</div>
+      <div class="away">Normal Deplasman</div></div></div></a>
+    <a href="channel?id=featured"><div class="match-detail"><div class="date">Futbol</div>
+      <div class="event">23:00 | Test Ligi [Günün Maçı]</div><div class="teams"><div class="home">Öne Çıkan Ev</div>
+      <div class="away">Öne Çıkan Deplasman</div></div></div></a>`;
+  const fetchImpl = async (url) => {
+    if (String(url).startsWith("https://data-reality.com/matches.php")) return { ok: true, status: 200, text: async () => feed };
+    if (String(url).startsWith("https://data-reality.com/matches2.php")) return { ok: true, status: 200, text: async () => "" };
+    return { ok: true, status: 200, json: async () => TODAY };
+  };
+  const { window, dom } = await loadPage({ fetchImpl });
+  assert.equal(await window.inadina.refreshMatches(true), true);
+  assert.equal(window.inadina.state.activeTab, "channelsTab", "uygulama ilk açılışta ana sekmede kalmalı");
+  const homeFeatured = window.document.querySelector("#homeFeaturedSection .home-featured-match");
+  assert.ok(homeFeatured, "maç sekmesine girmeden ana spotlight görünmeli");
+  assert.equal(homeFeatured.getAttribute("data-selection"), "official", "kaynağın bugünkü Günün Maçı seçimi ana ekranda öne alınmalı");
+  assert.ok(homeFeatured.textContent.includes("Öne Çıkan Ev"), "ana spotlight resmi seçilen maçı göstermiyor");
+  assert.doesNotMatch(homeFeatured.textContent, /Fixbet|kaynak/i, "Günün Maçı kartında yayın/veri kaynağı belirtilmemeli");
+  const featuredMeta = window.document.getElementById("homeFeaturedMeta");
+  assert.ok(featuredMeta.querySelector(".home-featured-time").textContent.includes("23:00"), "spor simgesi yanında maç saati görünmeli");
+  assert.ok(featuredMeta.querySelector(".home-featured-status").textContent, "maçın kalan süre/durum bilgisi başlıkta görünmeli");
+  assert.ok(!featuredMeta.querySelector(".home-featured-status").textContent.includes("23:00"), "maç saati durum rozetinde yinelenmemeli");
+  window.inadina.setTab("matchesTab");
+  const list = [...matchCards(window)];
+  assert.equal(list.length, 2, "test programındaki iki maç gösterilmeli");
+  assert.ok(list[0].textContent.includes("Öne Çıkan Ev"), "Günün Maçı ilk sırada değil");
+  assert.ok(list[0].classList.contains("is-mod"), "Günün Maçı spotlight sınıfı almadı");
+  assert.ok(HTML.includes("grid-column: 1 / -1"), "spotlight kartı tüm maç sütunlarını kaplamıyor");
+  assert.ok(list[0].textContent.includes("⭐ Günün Maçı"), "Günün Maçı etiketi eksik");
+  assert.equal(list[1].classList.contains("is-mod"), false, "normal maç spotlight olmamalı");
+  dom.window.close();
+});
+
+test("Günün Maçı kartındaki Fikstür düğmesi arama/filtreleri sıfırlayıp günlük maçlara götürüyor", async () => {
+  const feed = `<!doctype html>
+    <a href="channel?id=normal"><div class="match-detail"><div class="date">Futbol</div>
+      <div class="event">12:00 | Test Ligi</div><div class="teams"><div class="home">Normal Ev</div>
+      <div class="away">Normal Deplasman</div></div></div></a>
+    <a href="channel?id=featured"><div class="match-detail"><div class="date">Futbol</div>
+      <div class="event">23:00 | Test Ligi [Günün Maçı]</div><div class="teams"><div class="home">Öne Çıkan Ev</div>
+      <div class="away">Öne Çıkan Deplasman</div></div></div></a>`;
+  const fetchImpl = async (url) => {
+    if (String(url).startsWith("https://data-reality.com/matches.php")) return { ok: true, status: 200, text: async () => feed };
+    if (String(url).startsWith("https://data-reality.com/matches2.php")) return { ok: true, status: 200, text: async () => "" };
+    return { ok: true, status: 200, json: async () => TODAY };
+  };
+  const { window, dom } = await loadPage({ fetchImpl });
+  await window.inadina.refreshMatches(true);
+  window.inadina.setTab("matchesTab");
+  const featuredFilter = [...window.document.querySelectorAll("#matchFilterRow .chip")]
+    .find((button) => button.textContent.includes("Günün Maçı"));
+  featuredFilter.click();
+  const search = window.document.getElementById("searchInput");
+  search.value = "Öne Çıkan Ev";
+  search.dispatchEvent(new window.Event("input", { bubbles: true }));
+  assert.equal(matchCards(window).length, 1);
+
+  window.scrolledTo.length = 0;
+  const fixtureButton = matchCards(window)[0].querySelector(".fixture-match-btn");
+  assert.ok(fixtureButton, "featured kartında FİKSTÜR düğmesi olmalı");
+  fixtureButton.click();
+  assert.equal(window.inadina.state.activeTab, "matchesTab");
+  assert.equal(window.inadina.state.activeStatus, "all", "durum filtresi sıfırlanmalı");
+  assert.equal(window.inadina.state.activeSport, "all", "spor filtresi sıfırlanmalı");
+  assert.equal(search.value, "", "arama temizlenmeli");
+  assert.equal(matchCards(window).length, 2, "günlük fikstürdeki tüm maçlar görünmeli");
+  assert.ok(window.scrolledTo.includes("matchFilterRow"), "fikstür filtresine kaydırılmalı");
+  dom.window.close();
+});
+
+test("Günün Maçı ana ekranda açılışta görünür; kaynak seçimi yoksa bugünün sıradaki maçı önerilir", async () => {
+  const upcomingTime = (offsetHours) => {
+    const date = new Date(Date.now() + offsetHours * 60 * 60 * 1000);
+    const parts = new Intl.DateTimeFormat("en-GB", { timeZone: "Europe/Istanbul", hour: "2-digit", minute: "2-digit", hourCycle: "h23" }).formatToParts(date);
+    const values = Object.fromEntries(parts.map((part) => [part.type, part.value]));
+    return values.hour + ":" + values.minute;
+  };
+  const firstTime = upcomingTime(2), secondTime = upcomingTime(4);
+  const feed = `<!doctype html>
+    <a href="channel?id=first"><div class="match-detail"><div class="date">Futbol</div>
+      <div class="event">${firstTime} | İlk Lig</div><div class="teams"><div class="home">İlk Ev</div>
+      <div class="away">İlk Deplasman</div></div></div></a>
+    <a href="channel?id=second"><div class="match-detail"><div class="date">Futbol</div>
+      <div class="event">${secondTime} | İkinci Lig</div><div class="teams"><div class="home">İkinci Ev</div>
+      <div class="away">İkinci Deplasman</div></div></div></a>`;
+  const fetchImpl = async (url) => {
+    if (String(url).startsWith("https://data-reality.com/matches.php")) return { ok: true, status: 200, text: async () => feed };
+    if (String(url).startsWith("https://data-reality.com/matches2.php")) return { ok: true, status: 200, text: async () => "" };
+    return { ok: true, status: 200, json: async () => TODAY };
+  };
+  const { window, dom } = await loadPage({ fetchImpl });
+  assert.equal(window.inadina.state.activeTab, "channelsTab");
+  await window.inadina.refreshMatches(true);
+
+  const home = window.document.getElementById("homeFeaturedSection");
+  const card = home.querySelector(".home-featured-match");
+  assert.ok(card, "ana ekran spotlight kartı render edilmedi");
+  assert.equal(card.getAttribute("data-selection"), "suggested", "kaynak seçim yapmadığında öneri olduğu belirtilmeli");
+  assert.ok(card.textContent.includes("İlk Ev") && card.textContent.includes("İlk Deplasman"), "bugünün en yakın yaklaşan maçı önerilmedi");
+  assert.doesNotMatch(home.textContent, /Fixbet|kaynak|otomatik öneri/i, "kaynak ve öneri açıklaması kullanıcıya gösterilmemeli");
+  assert.ok(window.document.querySelector("#homeFeaturedMeta .home-featured-time").textContent.includes(firstTime), "maç saati başlığın yanında görünmeli");
+  assert.ok(window.document.querySelector("#homeFeaturedMeta .home-featured-status").textContent, "kalan süre başlığın yanında görünmeli");
+  assert.equal(home.previousElementSibling?.tagName, "HEADER", "Günün Maçı kartı uygulama başlığının hemen altında olmalı");
+  assert.ok(home.compareDocumentPosition(window.document.querySelector(".system-section")) & window.Node.DOCUMENT_POSITION_FOLLOWING,
+    "Günün Maçı paneli kanal/sekme alanından önce ana ekranda yer almalı");
+
+  window.scrolledTo.length = 0;
+  home.querySelector(".home-featured-fixture").click();
+  assert.equal(window.inadina.state.activeTab, "matchesTab", "ana kartın Fikstür düğmesi maç sekmesine götürmeli");
+  assert.equal(matchCards(window).length, 2, "Fikstür açılınca bugünün tüm maçları gösterilmeli");
+  assert.ok(window.scrolledTo.includes("matchFilterRow"), "maç listesine kaydırma yapılmalı");
+  dom.window.close();
+});
+
+test("mobil liste görünümü sabit dokunma hedefleri ve taşmayı önleyen kuralları içeriyor", () => {
+  assert.ok(HTML.includes(".channel-grid.view-list .ch-card { min-height: 58px"), "liste satırları için kararlı dokunma yüksekliği yok");
+  assert.ok(HTML.includes(".channel-grid.view-list .ch-name { font-size: .84rem; line-height: 1.12;"), "mobil kanal adı dar ekrana göre ayarlanmamış");
+  assert.ok(HTML.includes("@media (hover: none)"), "dokunmatik cihazlarda hover kayması kapatılmamış");
+  assert.ok(HTML.includes("@media (max-width: 380px)"), "çok dar ekranlar için sıkıştırılmış satır düzeni yok");
 });
 
 test("maç kartındaki İZLE butonu yayını player'de açıyor", async () => {
@@ -339,6 +463,34 @@ test("canlı Fixbet programı eski snapshot'ı dengeler ve MS skoru Bitti filtre
     "Bitti filtresi final maçı saymıyor: " + JSON.stringify([...window.document.querySelectorAll("#matchFilterRow .chip")].map((chip) => chip.textContent)));
   assert.ok(window.document.getElementById("updatedAtText").textContent.includes("Fixbet canlı program"),
     "canlı program kaynağı kullanıcıya belirtilmedi");
+  dom.window.close();
+});
+
+test("gece yarısından sonra tarihsiz eski schedule maçı yarının yaklaşan maçı olmaz", async () => {
+  const { window, dom } = await loadPage();
+  const now = new window.Date("2026-10-14T00:15:00+03:00");
+  const existing = [{
+    sport: "Futbol", league: "Test Kupası", home: "Galatasaray", away: "Barcelona", time: "22:00",
+    date: "2026-10-13", startsAt: "2026-10-13T22:00:00+03:00", status: "finished",
+    statusSource: "schedule", rawStatus: "", isMod: true,
+  }];
+  const nextDayStampedFeedRow = [{
+    sport: "Futbol", league: "Test Kupası", home: "Galatasaray", away: "Barcelona", time: "22:00",
+    date: "2026-10-14", status: "upcoming", statusSource: "schedule", rawStatus: "", isMod: true,
+  }, {
+    sport: "Futbol", league: "Test Kupası", home: "Gece Takımı", away: "Rakip", time: "00:05",
+    date: "2026-10-14", status: "upcoming", statusSource: "schedule", rawStatus: "",
+  }];
+  existing.push({
+    sport: "Futbol", league: "Test Kupası", home: "Gece Takımı", away: "Rakip", time: "00:05",
+    date: "2026-10-13", startsAt: "2026-10-13T00:05:00+03:00", status: "finished",
+    statusSource: "schedule", rawStatus: "",
+  });
+  const merged = window.inadina.mergeRemoteMatches(nextDayStampedFeedRow, existing, now);
+  assert.equal(merged[0].startsAt, "2026-10-13T22:00:00+03:00", "orijinal kickoff tarihi kaybolmamalı");
+  assert.equal(window.inadina.computeState(merged[0], now).status, "finished", "biten maç tekrar yaklaşan görünmemeli");
+  assert.equal(merged[1].startsAt, "2026-10-13T00:05:00+03:00", "gece yarısı sonrası eski saat de korunmalı");
+  assert.equal(window.inadina.computeState(merged[1], now).status, "finished", "00:05 maçı yanlışlıkla canlı olmamalı");
   dom.window.close();
 });
 
