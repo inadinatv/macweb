@@ -1,12 +1,15 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-10-15 13:47  
-> **Toplam maç:** 18  |  **Canlı:** 0  |  **Yaklaşan:** 18
+> **Güncellenme:** 2026-10-15 14:14  
+> **Toplam maç:** 18  |  **Canlı:** 1  |  **Yaklaşan:** 17
+
+## 🔴 CANLI
+
+- 🔴 **Mardin 1969 vs Karagümrük** — CANLI · `17:00` | Trendyol 1. Lig <https://fixbettv84.com/channel.html?id=trtspor>
 
 ## ⏰ YAKLAŞAN
 
-- ⏰ **Mardin 1969 vs Karagümrük** — YAKLAŞAN · `17:00` | Trendyol 1. Lig <https://fixbettv84.com/channel.html?id=trtspor>
 - ⏰ **KuPS vs Trabzonspor** — YAKLAŞAN · `19:45` | UEFA Avrupa Konferans Ligi ★ **Günün Maçı** <https://fixbettv84.com/channel.html?id=trt1>
 - ⏰ **Lech Poznan vs Bayer Leverkusen** — YAKLAŞAN · `19:45` | UEFA Avrupa Ligi <https://fixbettv84.com/channel.html?id=ex2>
 - ⏰ **Lyon vs Crystal Palace** — YAKLAŞAN · `19:45` | UEFA Avrupa Ligi <https://fixbettv84.com/channel.html?id=ex7>
@@ -40,7 +43,7 @@
 - ⏰ Real Madrid vs Asvel Villeurbanne — 22:00
 
 ### Trendyol 1. Lig
-- ⏰ Mardin 1969 vs Karagümrük — 17:00
+- 🔴 Mardin 1969 vs Karagümrük — 17:00
 - ⏰ Muğlaspor vs Bursaspor — 20:00
 
 ### UEFA Avrupa Konferans Ligi
