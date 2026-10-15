@@ -1,68 +1,36 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-10-15 21:49  
-> **Toplam maç:** 18  |  **Canlı:** 0  |  **Yaklaşan:** 8
+> **Güncellenme:** 2026-10-15 22:20  
+> **Toplam maç:** 6  |  **Canlı:** 0  |  **Yaklaşan:** 6
 
 ## ⏰ YAKLAŞAN
 
-- ⏰ **Mardin 1969 vs Karagümrük** — YAKLAŞAN · `17:00` | Trendyol 1. Lig <https://fixbettv84.com/channel.html?id=trtspor>
-- ⏰ **Lech Poznan vs Bayer Leverkusen** — YAKLAŞAN · `19:45` | UEFA Avrupa Ligi <https://fixbettv84.com/channel.html?id=ex2>
-- ⏰ **Lyon vs Crystal Palace** — YAKLAŞAN · `19:45` | UEFA Avrupa Ligi <https://fixbettv84.com/channel.html?id=ex7>
-- ⏰ **St.Gilloise vs Real Sociedad** — YAKLAŞAN · `19:45` | UEFA Avrupa Ligi <https://fixbettv84.com/channel.html?id=ex3>
-- ⏰ **Salzburg vs Milan** — YAKLAŞAN · `19:45` | UEFA Avrupa Ligi <https://fixbettv84.com/channel.html?id=ex1>
-- ⏰ **Torreense vs Sunderland** — YAKLAŞAN · `19:45` | UEFA Avrupa Ligi <https://fixbettv84.com/channel.html?id=ex4>
-- ⏰ **CSKA Sofya vs Monaco** — YAKLAŞAN · `19:45` | UEFA Avrupa Konferans Ligi <https://fixbettv84.com/channel.html?id=ex5>
-- ⏰ **Muğlaspor vs Bursaspor** — YAKLAŞAN · `20:00` | Trendyol 1. Lig <https://fixbettv84.com/channel.html?id=b2>
-
-## ✅ BİTTİ
-
-- ✅ **KuPS 2 - 4 Trabzonspor** — MS · `19:45` | UEFA Avrupa Konferans Ligi ★ **Günün Maçı** <https://fixbettv84.com/channel.html?id=trt1>
-- ✅ **Fenerbahçe Tarfin vs Partizan** — MS · `20:45` | Euroleague <https://fixbettv84.com/channel.html?id=ss>
-- ✅ **Hoffenheim 2 - 3 Beşiktaş** — MS · `22:00` | UEFA Avrupa Ligi ★ **Günün Maçı** <https://fixbettv84.com/channel.html?id=trt1>
-- ✅ **Benfica 4 - 1 Celtic** — MS · `22:00` | UEFA Avrupa Ligi <https://fixbettv84.com/channel.html?id=ex1>
-- ✅ **Bournemouth 3 - 0 Sturm Graz** — MS · `22:00` | UEFA Avrupa Ligi <https://fixbettv84.com/channel.html?id=ex3>
-- ✅ **Celta Vigo 1 - 2 Juventus** — MS · `22:00` | UEFA Avrupa Ligi <https://fixbettv84.com/channel.html?id=ex7>
-- ✅ **Dinamo Zagreb 1 - 0 Anderlecht** — MS · `22:00` | UEFA Avrupa Ligi <https://fixbettv84.com/channel.html?id=ex4>
-- ✅ **Marsilya vs Olympiakos** — MS · `22:00` | UEFA Avrupa Ligi <https://fixbettv84.com/channel.html?id=ex2>
-- ✅ **Kopenhag vs Braga** — MS · `22:00` | UEFA Avrupa Konferans Ligi <https://fixbettv84.com/channel.html?id=ex5>
-- ✅ **Real Madrid vs Asvel Villeurbanne** — MS · `22:00` | Euroleague2 <https://fixbettv84.com/channel.html?id=ss>
-
-## ⭐ GÜNÜN MAÇI
-
-- ✅ **KuPS 2 - 4 Trabzonspor** — MS · `19:45` | UEFA Avrupa Konferans Ligi ★ **Günün Maçı** <https://fixbettv84.com/channel.html?id=trt1>
-- ✅ **Hoffenheim 2 - 3 Beşiktaş** — MS · `22:00` | UEFA Avrupa Ligi ★ **Günün Maçı** <https://fixbettv84.com/channel.html?id=trt1>
+- ⏰ **Karşıyaka vs Çayırova Bld.** — YAKLAŞAN · `19:00` | Basketbol Süper Ligi <https://fixbettv84.com/channel.html?id=b5>
+- ⏰ **Beşiktaş vs Bayern Münih** — YAKLAŞAN · `20:00` | Euroleague <https://fixbettv84.com/channel.html?id=ss>
+- ⏰ **Zalgiris Kaunas vs Anadolu Efes** — YAKLAŞAN · `20:00` | Euroleague <https://fixbettv84.com/channel.html?id=ss2>
+- ⏰ **Çorum FK vs Ç.Rizespor** — YAKLAŞAN · `20:00` | Trendyol Süper Lig <https://fixbettv84.com/channel.html?id=zirve>
+- ⏰ **Le Mans vs Toulouse** — YAKLAŞAN · `21:45` | Fransa Ligue 1 <https://fixbettv84.com/channel.html?id=b4>
+- ⏰ **Deportivo vs Levante** — YAKLAŞAN · `22:00` | İspanya La Liga <https://fixbettv84.com/channel.html?id=ss2>
 
 ---
 ## 🏆 Lig Bazlı
 
+### Basketbol Süper Ligi
+- ⏰ Karşıyaka vs Çayırova Bld. — 19:00
+
 ### Euroleague
-- ⏰ Fenerbahçe Tarfin vs Partizan — 20:45
+- ⏰ Beşiktaş vs Bayern Münih — 20:00
+- ⏰ Zalgiris Kaunas vs Anadolu Efes — 20:00
 
-### Euroleague2
-- ⏰ Real Madrid vs Asvel Villeurbanne — 22:00
+### Fransa Ligue 1
+- ⏰ Le Mans vs Toulouse — 21:45
 
-### Trendyol 1. Lig
-- ⏰ Mardin 1969 vs Karagümrük — 17:00
-- ⏰ Muğlaspor vs Bursaspor — 20:00
+### Trendyol Süper Lig
+- ⏰ Çorum FK vs Ç.Rizespor — 20:00
 
-### UEFA Avrupa Konferans Ligi
-- ⏰ KuPS vs Trabzonspor — 19:45
-- ⏰ CSKA Sofya vs Monaco — 19:45
-- ⏰ Kopenhag vs Braga — 22:00
-
-### UEFA Avrupa Ligi
-- ⏰ Lech Poznan vs Bayer Leverkusen — 19:45
-- ⏰ Lyon vs Crystal Palace — 19:45
-- ⏰ St.Gilloise vs Real Sociedad — 19:45
-- ⏰ Salzburg vs Milan — 19:45
-- ⏰ Torreense vs Sunderland — 19:45
-- ⏰ Hoffenheim vs Beşiktaş — 22:00
-- ⏰ Benfica vs Celtic — 22:00
-- ⏰ Bournemouth vs Sturm Graz — 22:00
-- ⏰ Celta Vigo vs Juventus — 22:00
-- ⏰ Dinamo Zagreb vs Anderlecht — 22:00
-- ⏰ Marsilya vs Olympiakos — 22:00
+### İspanya La Liga
+- ⏰ Deportivo vs Levante — 22:00
 
 ---
 ## 📺 7/24 KANALLAR (31)
