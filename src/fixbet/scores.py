@@ -533,6 +533,21 @@ def enrich(matches: list[Match], now: datetime, previous: list[Match] | None = N
     # --- ESPN: Fixtoor gibi aralık yerine maçın gerçek UTC gününü sorgula ---
     fetch = fetch or _fetch
 
+    def expected_starts(match: Match) -> list[datetime]:
+        scheduled = start_time(match, now, tz)
+        if scheduled is None:
+            return []
+        expected = [scheduled]
+        # Fixbet'in Günün Maçı işareti gece yarısından sonra bir önceki
+        # program gününde kalabiliyor. Saat bugünün ilerleyen bir saatiyse,
+        # eşleşmeyi dünün gerçek scoreboard'ında da ara. Böylece dün biten
+        # maç yarın oynanacakmış gibi gösterilmez. Bugünün gerçek event'i
+        # varsa aşağıda daima öncelik kazanır.
+        if (match.is_match_of_day and match.status_source == "schedule"
+                and scheduled.astimezone(tz).date() == now.date() and scheduled > now):
+            expected.append(scheduled - timedelta(days=1))
+        return expected
+
     # ESPN her yapılandırılmış lig için okunur. Mackolik'in bir ligde herhangi bir
     # maç döndürmüş olması, aynı ligdeki başka bir karşılaşmanın ESPN yedeğini
     # kapatmamalıdır; sağlayıcı seçimi aşağıda maç başına yapılır.
@@ -544,7 +559,7 @@ def enrich(matches: list[Match], now: datetime, previous: list[Match] | None = N
         query_days = sorted({
             scheduled.astimezone(timezone.utc).strftime("%Y%m%d")
             for item in groups[path]
-            if (scheduled := start_time(item, now, tz)) is not None
+            for scheduled in expected_starts(item)
         }) or [now.astimezone(timezone.utc).strftime("%Y%m%d")]
         found: dict[str, dict] = {}
         successes = 0
@@ -610,14 +625,28 @@ def enrich(matches: list[Match], now: datetime, previous: list[Match] | None = N
             providers = (("mackolik", mackolik_results.get(path, [])),
                          ("espn", espn_results.get(path, [])))
             for src_tag, provider_rows in providers:
-                candidates = [(c, orientation(c, match)) for c in provider_rows
-                              if c["start"].astimezone(tz).date() == now.date()
-                              and abs(c["start"] - scheduled) <= tolerance]
-                candidates = [(c, o) for c, o in candidates if o]
+                candidates = []
+                for comp in provider_rows:
+                    side = orientation(comp, match)
+                    if not side:
+                        continue
+                    event_date = comp["start"].astimezone(tz).date()
+                    expected = [start for start in expected_starts(match)
+                                if start.astimezone(tz).date() == event_date
+                                and abs(comp["start"] - start) <= tolerance]
+                    if expected:
+                        closest = min(expected, key=lambda start: abs(comp["start"] - start))
+                        candidates.append((comp, side, closest))
+                # A real event scheduled for today wins over a stale previous-day
+                # event between the same teams, if both exist.
+                same_day = [row for row in candidates
+                            if row[2].astimezone(tz).date() == scheduled.astimezone(tz).date()]
+                if same_day:
+                    candidates = same_day
                 if len(candidates) > 1:
-                    candidates.sort(key=lambda x: abs(x[0]["start"] - scheduled))
-                    first = abs(candidates[0][0]["start"] - scheduled)
-                    second = abs(candidates[1][0]["start"] - scheduled)
+                    candidates.sort(key=lambda x: abs(x[0]["start"] - x[2]))
+                    first = abs(candidates[0][0]["start"] - candidates[0][2])
+                    second = abs(candidates[1][0]["start"] - candidates[1][2])
                     candidates = [candidates[0]] if first != second else []
                 if len(candidates) == 1:
                     provider_picks.append((candidates[0][0], candidates[0][1], src_tag))
