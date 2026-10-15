@@ -27,6 +27,7 @@ leagues:
   - { name: "UEFA Kadınlar Şampiyonlar Ligi", sport: "Futbol", path: "soccer/uefa.wchampions" }
   - { name: "UEFA Avrupa Ligi", sport: "Futbol", path: "soccer/uefa.europa" }
   - { name: "UEFA Konferans Ligi", sport: "Futbol", path: "soccer/uefa.europa.conf" }
+  - { name: "UEFA Avrupa Konferans Ligi", sport: "Futbol", path: "soccer/uefa.europa.conf" }
   - { name: "AFC Şampiyonlar Ligi", sport: "Futbol", path: "soccer/afc.champions" }
   - { name: "Portekiz Liga NOS", sport: "Futbol", path: "soccer/por.1" }
   - { name: "Türkiye Kupası", sport: "Futbol", path: "soccer/tur.cup" }
@@ -130,3 +131,5 @@ team_aliases:
     Atletico Madrid: "Atlético Madrid"
   soccer/uefa.europa:
     "TSG Hoffenheim": "Hoffenheim"
+  soccer/uefa.europa.conf:
+    "KuPS Kuopio": "KuPS"

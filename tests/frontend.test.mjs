@@ -1427,14 +1427,25 @@ function featuredLiveRow(minutesAgo = 30, extra = {}) {
 }
 
 test("ana Günün Maçı kartı gol, canlı dakika, kanal ve devre arasıyla aynı state’i izliyor", async () => {
-  const row = featuredLiveRow();
+  const fixedNow = Date.UTC(2026, 9, 16, 12, 0, 0);
+  const start = new Date(fixedNow - 30 * 60000);
+  const time = new Intl.DateTimeFormat("en-GB", { timeZone: "Europe/Istanbul", hour: "2-digit", minute: "2-digit", hourCycle: "h23" }).format(start);
+  const row = featuredLiveRow(30, {
+    starts_at: start.toISOString(), time, score_updated_at: new Date(fixedNow - 60000).toISOString(),
+  });
   const { window, dom } = await loadPage({
     html: withMatches([row]),
     fetchImpl: async () => ({ ok: false, status: 503, json: async () => ({}) }),
-    beforeParse: (w) => Object.defineProperty(w.document, "hidden", { configurable: true, get: () => true }),
+    beforeParse: (w) => {
+      const NativeDate = w.Date;
+      w.Date = class FixedDate extends NativeDate {
+        constructor(...args) { if (!args.length) super(fixedNow); else super(...args); }
+        static now() { return fixedNow; }
+      };
+      Object.defineProperty(w.document, "hidden", { configurable: true, get: () => true });
+    },
   });
   const path = "soccer/uefa.champions";
-  const start = new Date(row.starts_at);
   let homeCard = window.document.querySelector("#homeFeaturedSection .home-featured-match");
   assert.ok(homeCard, "Günün Maçı ana kartta açılmalı");
   assert.equal(homeCard.dataset.selection, "official", "ham snapshot is_match_of_day bayrağı açılışta tanınmalı");
@@ -1444,7 +1455,7 @@ test("ana Günün Maçı kartı gol, canlı dakika, kanal ve devre arasıyla ayn
 
   const live = { id: "featured-event", start, homeName: row.home, awayName: row.away, homeScore: 1, awayScore: 0,
     status: "live", clock: "45+3′", neutral: false };
-  assert.equal(window.inadina.applyLiveSync(path, [live], Date.now()), 1);
+  assert.equal(window.inadina.applyLiveSync(path, [live], fixedNow), 1);
   window.inadina.renderMatches();
   homeCard = window.document.querySelector("#homeFeaturedSection .home-featured-match");
   assert.equal(homeCard.dataset.score, "1-0", "gol sonrası skor ana kartta anında değişmeli");
@@ -1453,7 +1464,7 @@ test("ana Günün Maçı kartı gol, canlı dakika, kanal ve devre arasıyla ayn
   assert.equal(window.document.querySelector("#homeFeaturedSection .home-featured-goal")?.textContent, "GOL!");
   assert.ok(window.document.querySelector("#homeFeaturedSection .home-featured-freshness").textContent.includes("CANLI SKOR"));
 
-  assert.equal(window.inadina.applyLiveSync(path, [{ ...live, status: "halftime", clock: "" }], Date.now()), 1);
+  assert.equal(window.inadina.applyLiveSync(path, [{ ...live, status: "halftime", clock: "" }], fixedNow), 1);
   window.inadina.renderMatches();
   homeCard = window.document.querySelector("#homeFeaturedSection .home-featured-match");
   assert.equal(homeCard.dataset.status, "halftime");
@@ -1465,20 +1476,35 @@ test("ana Günün Maçı kartı gol, canlı dakika, kanal ve devre arasıyla ayn
 });
 
 test("resmi Günün Maçı bitmişse kart bugünün canlı maçına geçer ve final skorunu korur", async () => {
-  const finishedOfficial = featuredLiveRow(210, {
+  const fixedNow = Date.UTC(2026, 9, 15, 18, 0, 0);
+  const fixedRow = (startAt, extra) => {
+    const start = new Date(startAt);
+    const time = new Intl.DateTimeFormat("en-GB", { timeZone: "Europe/Istanbul", hour: "2-digit", minute: "2-digit", hourCycle: "h23" }).format(start);
+    return featuredLiveRow(0, {
+      ...extra, starts_at: start.toISOString(), time, score_updated_at: new Date(fixedNow - 60000).toISOString(),
+    });
+  };
+  const finishedOfficial = fixedRow(Date.UTC(2026, 9, 15, 16, 45, 0), {
     event_id: "kups-finished", home: "KuPS", away: "Trabzonspor", league: "UEFA Avrupa Konferans Ligi",
     status: "finished", status_source: "source", raw_status: "FT", status_clock: "",
     score_home: null, score_away: null, score_source: "", score_updated_at: "",
   });
-  const liveBeşiktaş = featuredLiveRow(62, {
+  const liveBeşiktaş = fixedRow(Date.UTC(2026, 9, 15, 19, 0, 0), {
     event_id: "besiktas-live", home: "Hoffenheim", away: "Beşiktaş", league: "UEFA Avrupa Ligi",
     status: "live", status_source: "espn", raw_status: "STATUS_SECOND_HALF", status_clock: "56′",
-    score_home: 0, score_away: 1, score_source: "espn", score_updated_at: new Date().toISOString(),
+    score_home: 0, score_away: 1, score_source: "espn",
   });
   const { window, dom } = await loadPage({
     html: withMatches([finishedOfficial, liveBeşiktaş]),
     fetchImpl: async () => ({ ok: false, status: 503, json: async () => ({}) }),
-    beforeParse: (w) => Object.defineProperty(w.document, "hidden", { configurable: true, get: () => true }),
+    beforeParse: (w) => {
+      const NativeDate = w.Date;
+      w.Date = class FixedDate extends NativeDate {
+        constructor(...args) { if (!args.length) super(fixedNow); else super(...args); }
+        static now() { return fixedNow; }
+      };
+      Object.defineProperty(w.document, "hidden", { configurable: true, get: () => true });
+    },
   });
   let card = window.document.querySelector("#homeFeaturedSection .home-featured-match");
   assert.ok(card.textContent.includes("Hoffenheim") && card.textContent.includes("Beşiktaş"),
@@ -1492,7 +1518,7 @@ test("resmi Günün Maçı bitmişse kart bugünün canlı maçına geçer ve fi
   const updated = window.inadina.applyLiveSync("soccer/uefa.europa", [{
     id: liveBeşiktaş.event_id, start: new Date(liveBeşiktaş.starts_at), homeName: "TSG Hoffenheim",
     awayName: "Besiktas", homeScore: 1, awayScore: 1, status: "live", clock: "69′", neutral: false,
-  }]);
+  }], fixedNow);
   assert.equal(updated, 1, "provider takım adı farkıyla da canlı skor eşleşmeli");
   window.inadina.renderMatches();
   card = window.document.querySelector("#homeFeaturedSection .home-featured-match");
@@ -1501,14 +1527,113 @@ test("resmi Günün Maçı bitmişse kart bugünün canlı maçına geçer ve fi
 
   const finalized = window.inadina.applyLiveSync("soccer/uefa.europa", [{
     id: liveBeşiktaş.event_id, start: new Date(liveBeşiktaş.starts_at), homeName: "TSG Hoffenheim",
-    awayName: "Besiktas", homeScore: 1, awayScore: 1, status: "finished", clock: "", neutral: false,
-  }]);
-  assert.equal(finalized, 1, "maç sonu gerçek final state’i uygulanmalı");
+    awayName: "Besiktas", homeScore: null, awayScore: null, status: "finished", clock: "", neutral: false,
+  }], fixedNow);
+  assert.equal(finalized, 1, "skorsuz maç sonu state’i uygulanmalı");
   window.inadina.renderMatches();
   card = window.document.querySelector("#homeFeaturedSection .home-featured-match");
   assert.equal(card.dataset.status, "finished");
-  assert.equal(card.dataset.score, "1-1", "maç bitince final skor kartta kalmalı");
+  assert.equal(card.dataset.score, "1-1", "final yanıtı skorsuzsa son bilinen skor silinmemeli");
   assert.equal(window.document.querySelector("#homeFeaturedMeta").textContent.includes("BİTTİ"), true);
+
+  const finalScoreArrived = window.inadina.applyLiveSync("soccer/uefa.europa", [{
+    id: liveBeşiktaş.event_id, start: new Date(liveBeşiktaş.starts_at), homeName: "TSG Hoffenheim",
+    awayName: "Besiktas", homeScore: 2, awayScore: 3, status: "finished", clock: "", neutral: false,
+  }], fixedNow);
+  assert.equal(finalScoreArrived, 1, "gecikmeli final skoru sonuca işlenmeli");
+  window.inadina.renderMatches();
+  card = window.document.querySelector("#homeFeaturedSection .home-featured-match");
+  assert.equal(card.dataset.score, "2-3", "gecikmeli gelen final skor ekranda güncellenmeli");
+  dom.window.close();
+});
+
+test("skorsuz bitiş feed’i daha önce doğrulanmış skoru remote merge’de korur", async () => {
+  const row = featuredLiveRow(60, {
+    home: "Hoffenheim", away: "Beşiktaş", league: "UEFA Avrupa Ligi",
+    status: "live", status_source: "espn", raw_status: "STATUS_SECOND_HALF",
+    score_home: 1, score_away: 3, score_source: "espn",
+  });
+  const { window, dom } = await loadPage({
+    html: withMatches([row]),
+    fetchImpl: async () => ({ ok: false, status: 503, json: async () => ({}) }),
+    beforeParse: (w) => Object.defineProperty(w.document, "hidden", { configurable: true, get: () => true }),
+  });
+  const old = window.inadina.normalizeRemote({ matches: [row] })[0];
+  const remoteFinal = window.inadina.normalizeRemote({ matches: [{
+    ...row, status: "finished", status_source: "source", raw_status: "FT",
+    score_home: null, score_away: null, score_source: "", score_updated_at: "",
+  }] })[0];
+  const merged = window.inadina.mergeRemoteMatches([remoteFinal], [old], new Date())[0];
+  assert.equal(merged.status, "finished", "final status alınmalı");
+  assert.equal(merged.scoreHome, 1, "final feed skorsuzsa önceki ev sahibi skoru silinmemeli");
+  assert.equal(merged.scoreAway, 3, "final feed skorsuzsa önceki deplasman skoru silinmemeli");
+  assert.equal(merged.scoreSource, "espn");
+  dom.window.close();
+});
+
+test("UEFA Avrupa Konferans Ligi ve KuPS Kuopio adı final skoruna eşleşir", async () => {
+  const row = featuredLiveRow(210, {
+    event_id: "401915858", home: "KuPS", away: "Trabzonspor",
+    league: "UEFA Avrupa Konferans Ligi", status: "finished", status_source: "source", raw_status: "FT",
+    starts_at: "2026-10-15T16:45:00.000Z", time: "19:45",
+    score_home: null, score_away: null, score_source: "", score_updated_at: "",
+  });
+  const { window, dom } = await loadPage({
+    html: withMatches([row]),
+    fetchImpl: async () => ({ ok: false, status: 503, json: async () => ({}) }),
+    beforeParse: (w) => Object.defineProperty(w.document, "hidden", { configurable: true, get: () => true }),
+  });
+  const updated = window.inadina.applyLiveSync("soccer/uefa.europa.conf", [{
+    id: row.event_id, start: new Date(row.starts_at), homeName: "KuPS Kuopio", awayName: "Trabzonspor",
+    homeScore: 2, awayScore: 4, status: "finished", clock: "", neutral: false,
+  }]);
+  assert.equal(updated, 1, "alternatif lig ve provider takım adıyla final olayı eşleşmeli");
+  const match = window.inadina.decoratedMatches(new Date()).find((m) => m.home === "KuPS");
+  assert.deepEqual(Array.from(match._score), [2, 4], "KuPS–Trabzonspor final skoru 2–4 olarak saklanmalı");
+  dom.window.close();
+});
+
+test("skoru eksik bitmiş maç 24 saat boyunca dakikada bir final skoru için izlenir", async () => {
+  let hidden = true;
+  const fixedNow = Date.UTC(2026, 9, 16, 12, 0, 0);
+  const start = new Date(fixedNow - 5 * 60 * 60000);
+  const time = new Intl.DateTimeFormat("en-GB", { timeZone: "Europe/Istanbul", hour: "2-digit", minute: "2-digit", hourCycle: "h23" }).format(start);
+  const row = featuredLiveRow(300, {
+    event_id: "kups-final-retry", home: "KuPS", away: "Trabzonspor", league: "UEFA Avrupa Konferans Ligi",
+    starts_at: start.toISOString(), time, status: "finished", status_source: "source", raw_status: "FT",
+    status_clock: "", score_home: null, score_away: null, score_source: "", score_updated_at: "",
+  });
+  const { window, dom } = await loadPage({
+    html: withMatches([row]),
+    fetchImpl: async () => ({ ok: false, status: 503, json: async () => ({}) }),
+    beforeParse: (w) => {
+      const NativeDate = w.Date;
+      w.Date = class FixedDate extends NativeDate {
+        constructor(...args) { if (!args.length) super(fixedNow); else super(...args); }
+        static now() { return fixedNow; }
+      };
+      Object.defineProperty(w.document, "hidden", { configurable: true, get: () => hidden });
+    },
+  });
+  hidden = false;
+  const now = new window.Date(fixedNow);
+  const path = "soccer/uefa.europa.conf";
+  assert.ok(window.inadina.syncWantedPaths(now).includes(path),
+    "kickoff’tan beş saat sonra skor yoksa final sonucu aranmaya devam etmeli");
+  assert.deepEqual(Array.from(window.inadina.syncDatesForPath(path)), ["20261016"],
+    "ESPN’e maçın başladığı gün sorulmalı");
+  assert.equal(window.inadina.liveSyncInterval(now), 60000,
+    "canlı maç kadar sık değil, eksik final skoru dakikada bir denenmeli");
+  assert.ok(!window.inadina.syncWantedPaths(new window.Date(fixedNow + 25 * 60 * 60000)).includes(path),
+    "eksik final skoru için sınırsız polling yapılmamalı");
+
+  const updated = window.inadina.applyLiveSync(path, [{
+    id: row.event_id, start, homeName: "KuPS Kuopio", awayName: "Trabzonspor",
+    homeScore: 2, awayScore: 4, status: "finished", clock: "", neutral: false,
+  }], fixedNow);
+  assert.equal(updated, 1, "gecikmeli ESPN final olayı eşleşmeli");
+  assert.ok(!window.inadina.syncWantedPaths(now).includes(path),
+    "final skor geldiğinde 24 saatlik eksik-skor retry’si sona ermeli");
   dom.window.close();
 });
 
@@ -1568,9 +1693,13 @@ test("resmi Günün Maçı bitince kart sıradaki resmi yaklaşan maça geçer",
 
 test("15 dakika eski canlı skor cache’i uygulama dönüşünde ESPN’den hemen tazelenir", async () => {
   let hidden = true;
-  const row = featuredLiveRow(35, { status_clock: "34′" });
-  const oldAt = Date.now() - 15 * 60000;
-  row.score_updated_at = new Date(oldAt).toISOString();
+  const fixedNow = Date.UTC(2026, 9, 16, 12, 0, 0);
+  const start = new Date(fixedNow - 35 * 60000);
+  const time = new Intl.DateTimeFormat("en-GB", { timeZone: "Europe/Istanbul", hour: "2-digit", minute: "2-digit", hourCycle: "h23" }).format(start);
+  const oldAt = fixedNow - 15 * 60000;
+  const row = featuredLiveRow(35, {
+    starts_at: start.toISOString(), time, status_clock: "34′", score_updated_at: new Date(oldAt).toISOString(),
+  });
   const path = "soccer/uefa.champions";
   const cached = { savedAt: oldAt, base: "site.web", paths: { [path]: { at: oldAt, comps: [{
     id: "cached-event", start: row.starts_at, homeName: row.home, awayName: row.away,
@@ -1593,6 +1722,11 @@ test("15 dakika eski canlı skor cache’i uygulama dönüşünde ESPN’den hem
   const { window, dom } = await loadPage({
     html: withMatches([row]), fetchImpl,
     beforeParse: (w) => {
+      const NativeDate = w.Date;
+      w.Date = class FixedDate extends NativeDate {
+        constructor(...args) { if (!args.length) super(fixedNow); else super(...args); }
+        static now() { return fixedNow; }
+      };
       Object.defineProperty(w.document, "hidden", { configurable: true, get: () => hidden });
       w.localStorage.setItem("inadinatv.live-scores.v1", JSON.stringify(cached));
     },
@@ -1666,11 +1800,12 @@ test("canlı skor senkronu gerçek MS sonucunu canlıya çevirmez", async () => 
 });
 
 test("canlı senkron Fixtoor adaptif temposunu ve tekil UTC-gün scoreboard isteğini kullanır", () => {
-  assert.match(HTML, /const SYNC_INTERVALS = \{ live: 5 \* 1000, near: 15 \* 1000, idle: 60 \* 1000, error: 120 \* 1000 \}/);
+  assert.match(HTML, /const SYNC_INTERVALS = \{ live: 5 \* 1000, near: 15 \* 1000, final: 60 \* 1000, idle: 60 \* 1000, error: 120 \* 1000 \}/);
+  assert.ok(HTML.includes("FINAL_SCORE_RETRY_WINDOW = 24 * 60 * 60 * 1000"), "skorsuz final sonuçlar 24 saat izlenmeli");
   assert.ok(HTML.includes('start.toISOString().slice(0, 10).replace(/-/g, "")'), "maçın UTC tarihi kullanılmıyor");
   assert.ok(HTML.includes('"?dates=" + encodeURIComponent(day) + "&limit=100"'), "tekil gün query’si yok");
   assert.ok(!HTML.includes('"&_ts="'), "eski 10 saniyelik query cache-buster kalmış");
-  assert.ok(HTML.includes("(liveWindowFor(m) + 90) * 60000"), "final yakalama penceresi maç sonuna uzatılmamış");
+  assert.ok(HTML.includes("(liveWindowFor(m) + 90) * 60000"), "normal sonuç düzeltme penceresi korunmalı");
 });
 
 test("canlı ESPN isteği Fixtoor gibi 200 hata gövdesinde yedek hosta geçer", async () => {
