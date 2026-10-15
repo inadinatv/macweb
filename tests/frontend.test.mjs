@@ -1513,17 +1513,25 @@ test("resmi Günün Maçı bitmişse kart bugünün canlı maçına geçer ve fi
 });
 
 test("resmi Günün Maçı bitince kart sıradaki resmi yaklaşan maça geçer", async () => {
-  const trabzon = featuredLiveRow(70, {
+  const fixedNow = Date.UTC(2026, 9, 15, 12, 0, 0);
+  const fixedRow = (offsetMinutes, extra) => {
+    const start = new Date(fixedNow + offsetMinutes * 60000);
+    const time = new Intl.DateTimeFormat("en-GB", { timeZone: "Europe/Istanbul", hour: "2-digit", minute: "2-digit", hourCycle: "h23" }).format(start);
+    return featuredLiveRow(0, {
+      ...extra, starts_at: start.toISOString(), time, score_updated_at: new Date(fixedNow - 60000).toISOString(),
+    });
+  };
+  const trabzon = fixedRow(-70, {
     event_id: "trabzon-first", home: "Trabzonspor", away: "Basel", league: "UEFA Konferans Ligi",
     status: "live", status_source: "espn", raw_status: "STATUS_SECOND_HALF", status_clock: "70′",
     score_home: 1, score_away: 0, score_source: "espn", is_match_of_day: true,
   });
-  const besiktas = featuredLiveRow(-10, {
+  const besiktas = fixedRow(10, {
     event_id: "besiktas-next", home: "Beşiktaş", away: "Porto", league: "UEFA Avrupa Ligi",
     status: "upcoming", status_source: "schedule", raw_status: "", status_clock: "",
     score_home: null, score_away: null, score_source: "", is_match_of_day: true,
   });
-  const unrelatedLive = featuredLiveRow(30, {
+  const unrelatedLive = fixedRow(-30, {
     event_id: "unrelated-live", home: "Chelsea", away: "Arsenal", league: "İngiltere Premier Lig",
     status: "live", status_source: "espn", raw_status: "STATUS_FIRST_HALF", status_clock: "30′",
     score_home: 0, score_away: 0, score_source: "espn", is_match_of_day: false,
@@ -1531,7 +1539,14 @@ test("resmi Günün Maçı bitince kart sıradaki resmi yaklaşan maça geçer",
   const { window, dom } = await loadPage({
     html: withMatches([trabzon, besiktas, unrelatedLive]),
     fetchImpl: async () => ({ ok: false, status: 503, json: async () => ({}) }),
-    beforeParse: (w) => Object.defineProperty(w.document, "hidden", { configurable: true, get: () => true }),
+    beforeParse: (w) => {
+      const NativeDate = w.Date;
+      w.Date = class FixedDate extends NativeDate {
+        constructor(...args) { if (!args.length) super(fixedNow); else super(...args); }
+        static now() { return fixedNow; }
+      };
+      Object.defineProperty(w.document, "hidden", { configurable: true, get: () => true });
+    },
   });
   let card = window.document.querySelector("#homeFeaturedSection .home-featured-match");
   assert.ok(card.textContent.includes("Trabzonspor"), "devam eden resmi Günün Maçı korunmalı");
