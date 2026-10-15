@@ -1512,6 +1512,45 @@ test("resmi Günün Maçı bitmişse kart bugünün canlı maçına geçer ve fi
   dom.window.close();
 });
 
+test("resmi Günün Maçı bitince kart sıradaki resmi yaklaşan maça geçer", async () => {
+  const trabzon = featuredLiveRow(70, {
+    event_id: "trabzon-first", home: "Trabzonspor", away: "Basel", league: "UEFA Konferans Ligi",
+    status: "live", status_source: "espn", raw_status: "STATUS_SECOND_HALF", status_clock: "70′",
+    score_home: 1, score_away: 0, score_source: "espn", is_match_of_day: true,
+  });
+  const besiktas = featuredLiveRow(-10, {
+    event_id: "besiktas-next", home: "Beşiktaş", away: "Porto", league: "UEFA Avrupa Ligi",
+    status: "upcoming", status_source: "schedule", raw_status: "", status_clock: "",
+    score_home: null, score_away: null, score_source: "", is_match_of_day: true,
+  });
+  const unrelatedLive = featuredLiveRow(30, {
+    event_id: "unrelated-live", home: "Chelsea", away: "Arsenal", league: "İngiltere Premier Lig",
+    status: "live", status_source: "espn", raw_status: "STATUS_FIRST_HALF", status_clock: "30′",
+    score_home: 0, score_away: 0, score_source: "espn", is_match_of_day: false,
+  });
+  const { window, dom } = await loadPage({
+    html: withMatches([trabzon, besiktas, unrelatedLive]),
+    fetchImpl: async () => ({ ok: false, status: 503, json: async () => ({}) }),
+    beforeParse: (w) => Object.defineProperty(w.document, "hidden", { configurable: true, get: () => true }),
+  });
+  let card = window.document.querySelector("#homeFeaturedSection .home-featured-match");
+  assert.ok(card.textContent.includes("Trabzonspor"), "devam eden resmi Günün Maçı korunmalı");
+
+  const finished = window.inadina.applyLiveSync("soccer/uefa.europa.conf", [{
+    id: trabzon.event_id, start: new Date(trabzon.starts_at), homeName: trabzon.home, awayName: trabzon.away,
+    homeScore: 2, awayScore: 0, status: "finished", clock: "", neutral: false,
+  }]);
+  assert.equal(finished, 1, "ilk maçın bitiş durumu işlenmeli");
+  window.inadina.renderMatches();
+  card = window.document.querySelector("#homeFeaturedSection .home-featured-match");
+  assert.ok(card.textContent.includes("Beşiktaş") && card.textContent.includes("Porto"),
+    "Trabzon maçı bitince sıradaki resmi Beşiktaş maçı öne alınmalı");
+  assert.equal(card.dataset.selection, "official");
+  assert.equal(card.dataset.status, "upcoming");
+  assert.equal(card.dataset.event, "besiktas-next");
+  dom.window.close();
+});
+
 test("15 dakika eski canlı skor cache’i uygulama dönüşünde ESPN’den hemen tazelenir", async () => {
   let hidden = true;
   const row = featuredLiveRow(35, { status_clock: "34′" });

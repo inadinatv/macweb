@@ -2089,12 +2089,11 @@
                 });
                 const officialActive = activeSort(today.filter((m) => m._isFeatured && isActiveMatch(m._status)));
                 if (officialActive.length) return { match: officialActive[0], official: true };
-                const active = activeSort(today.filter((m) => isActiveMatch(m._status)));
-                if (active.length) return { match: active[0], official: !!active[0]._isFeatured };
-
                 const officialUpcoming = today.filter((m) => m._isFeatured && m._status === "upcoming")
                     .sort((a, b) => String(a.time || "99:99").localeCompare(String(b.time || "99:99")));
                 if (officialUpcoming.length) return { match: officialUpcoming[0], official: true };
+                const active = activeSort(today.filter((m) => isActiveMatch(m._status)));
+                if (active.length) return { match: active[0], official: !!active[0]._isFeatured };
                 const upcoming = today.filter((m) => m._status === "upcoming")
                     .sort((a, b) => String(a.time || "99:99").localeCompare(String(b.time || "99:99")));
                 if (upcoming.length) return { match: upcoming[0], official: false };
