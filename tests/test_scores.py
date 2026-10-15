@@ -170,6 +170,73 @@ def test_espn_queries_the_match_utc_day_across_istanbul_midnight():
     assert m.score_home == 2
 
 
+def test_featured_schedule_looks_back_for_previous_day_final_and_uses_real_score():
+    now = datetime.fromisoformat("2026-10-16T00:35:00+03:00")
+    featured = match(home="KuPS", away="Trabzonspor", league="UEFA Avrupa Konferans Ligi",
+                     time="19:45", is_match_of_day=True)
+    cfg = dict(CFG,
+               leagues=[{"name": "UEFA Avrupa Konferans Ligi", "sport": "Futbol",
+                         "path": "soccer/uefa.europa.conf"}],
+               team_aliases={"soccer/uefa.europa.conf": {"KuPS Kuopio": "KuPS"}})
+    calls = []
+    yesterday_final = event(home="KuPS Kuopio", away="Trabzonspor", pair=("2", "4"),
+                           date="2026-10-15T16:45Z", id="401915858")
+
+    def fetch(url, timeout):
+        calls.append(url)
+        if "dates=20261015" in url:
+            return {"events": [yesterday_final]}
+        return {"events": []}
+
+    row = scores.enrich([featured], now, fetch=fetch, settings=cfg)[0]
+    categorizer.classify([row], now)
+
+    assert {"dates=20261015" in url for url in calls} == {True, False}
+    assert row.status == "finished" and row.status_source == "espn"
+    assert (row.score_home, row.score_away) == (2, 4)
+    assert row.event_id == "401915858"
+    assert row.starts_at == "2026-10-15T16:45:00+00:00"
+
+
+def test_featured_schedule_prefers_a_real_event_today_over_yesterdays_fixture():
+    now = datetime.fromisoformat("2026-10-16T00:35:00+03:00")
+    featured = match(home="KuPS", away="Trabzonspor", league="UEFA Avrupa Konferans Ligi",
+                     time="19:45", is_match_of_day=True)
+    cfg = dict(CFG,
+               leagues=[{"name": "UEFA Avrupa Konferans Ligi", "sport": "Futbol",
+                         "path": "soccer/uefa.europa.conf"}],
+               team_aliases={"soccer/uefa.europa.conf": {"KuPS Kuopio": "KuPS"}})
+    yesterday_final = event(home="KuPS Kuopio", away="Trabzonspor", pair=("2", "4"),
+                           date="2026-10-15T16:45Z", id="yesterday")
+    today_upcoming = event("STATUS_SCHEDULED", home="KuPS Kuopio", away="Trabzonspor",
+                           pair=(None, None), date="2026-10-16T16:45Z", id="today")
+
+    row = scores.enrich([featured], now,
+                        fetch=lambda url, timeout: {"events": [yesterday_final, today_upcoming]},
+                        settings=cfg)[0]
+
+    assert row.status == "upcoming" and row.event_id == "today"
+    assert row.score_home is None and row.score_away is None
+    assert row.starts_at == "2026-10-16T16:45:00+00:00"
+
+
+def test_non_featured_schedule_does_not_add_previous_day_scoreboard_request():
+    now = datetime.fromisoformat("2026-10-16T00:35:00+03:00")
+    ordinary = match(home="KuPS", away="Trabzonspor", league="UEFA Avrupa Konferans Ligi",
+                     time="19:45", is_match_of_day=False)
+    cfg = dict(CFG,
+               leagues=[{"name": "UEFA Avrupa Konferans Ligi", "sport": "Futbol",
+                         "path": "soccer/uefa.europa.conf"}],
+               team_aliases={"soccer/uefa.europa.conf": {"KuPS Kuopio": "KuPS"}})
+    calls = []
+    row = scores.enrich([ordinary], now,
+                        fetch=lambda url, timeout: calls.append(url) or {"events": []},
+                        settings=cfg)[0]
+
+    assert len(calls) == 1 and "dates=20261016" in calls[0]
+    assert row.status == "upcoming" and row.score_home is None
+
+
 def test_backend_fetch_falls_back_between_espn_hosts_and_rejects_http_200_error(monkeypatch):
     class Response:
         def __init__(self, payload, status=200):
