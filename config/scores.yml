@@ -128,3 +128,5 @@ team_aliases:
   soccer/esp.1:
     Ath. Bilbao: "Athletic Club"
     Atletico Madrid: "Atlético Madrid"
+  soccer/uefa.europa:
+    "TSG Hoffenheim": "Hoffenheim"

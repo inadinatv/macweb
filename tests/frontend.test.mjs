@@ -1408,6 +1408,9 @@ test("ESPN scoreboard ayrıştırıcısı durum, skor ve dakika çıkarır", asy
     name: "STATUS_HALFTIME", shortDetail: "Halftime", state: "post" } }, "403"), "soccer/uefa.champions")[0];
   assert.equal(halftime.status, "halftime");
   assert.equal(halftime.clock, "", "devre arasında eskimiş 45. dakika gösterilmemeli");
+  const secondHalf = window.inadina.parseEspnScoreboard(scoreboard({ period: 2, displayClock: "11:24", type: {
+    name: "STATUS_IN_PROGRESS", shortDetail: "Second Half", detail: "Second Half", state: "in" } }, "404"), "soccer/uefa.europa")[0];
+  assert.equal(secondHalf.clock, "56′", "ikinci yarı saat sayacı 45 dakikaya eklenmeli; 11′ olarak sıfırlanmamalı");
   dom.window.close();
 });
 
@@ -1458,6 +1461,108 @@ test("ana Günün Maçı kartı gol, canlı dakika, kanal ve devre arasıyla ayn
   assert.equal(window.document.querySelector("#homeFeaturedMeta .home-featured-status").textContent, "DEVRE ARASI");
   assert.equal(window.document.querySelector("#homeFeaturedSection .home-featured-goal"), null,
     "devre durumunda önceki GOL bildirimi yinelenmemeli");
+  dom.window.close();
+});
+
+test("resmi Günün Maçı bitmişse kart bugünün canlı maçına geçer ve final skorunu korur", async () => {
+  const finishedOfficial = featuredLiveRow(210, {
+    event_id: "kups-finished", home: "KuPS", away: "Trabzonspor", league: "UEFA Avrupa Konferans Ligi",
+    status: "finished", status_source: "source", raw_status: "FT", status_clock: "",
+    score_home: null, score_away: null, score_source: "", score_updated_at: "",
+  });
+  const liveBeşiktaş = featuredLiveRow(62, {
+    event_id: "besiktas-live", home: "Hoffenheim", away: "Beşiktaş", league: "UEFA Avrupa Ligi",
+    status: "live", status_source: "espn", raw_status: "STATUS_SECOND_HALF", status_clock: "56′",
+    score_home: 0, score_away: 1, score_source: "espn", score_updated_at: new Date().toISOString(),
+  });
+  const { window, dom } = await loadPage({
+    html: withMatches([finishedOfficial, liveBeşiktaş]),
+    fetchImpl: async () => ({ ok: false, status: 503, json: async () => ({}) }),
+    beforeParse: (w) => Object.defineProperty(w.document, "hidden", { configurable: true, get: () => true }),
+  });
+  let card = window.document.querySelector("#homeFeaturedSection .home-featured-match");
+  assert.ok(card.textContent.includes("Hoffenheim") && card.textContent.includes("Beşiktaş"),
+    "biten KuPS maçı yerine bugünün devam eden Beşiktaş maçı seçilmeli");
+  assert.equal(card.dataset.selection, "official", "canlı resmi Günün Maçı seçimi korunmalı");
+  assert.equal(card.dataset.status, "live");
+  assert.equal(card.dataset.score, "0-1");
+  assert.equal(card.dataset.clock, "56′");
+  assert.ok(window.document.querySelector("#homeFeaturedMeta").textContent.includes("56′"));
+
+  const updated = window.inadina.applyLiveSync("soccer/uefa.europa", [{
+    id: liveBeşiktaş.event_id, start: new Date(liveBeşiktaş.starts_at), homeName: "TSG Hoffenheim",
+    awayName: "Besiktas", homeScore: 1, awayScore: 1, status: "live", clock: "69′", neutral: false,
+  }]);
+  assert.equal(updated, 1, "provider takım adı farkıyla da canlı skor eşleşmeli");
+  window.inadina.renderMatches();
+  card = window.document.querySelector("#homeFeaturedSection .home-featured-match");
+  assert.equal(card.dataset.score, "1-1", "ESPN gol skoru ana kartta anında güncellenmeli");
+  assert.equal(card.dataset.clock, "69′", "ikinci yarı dakikası ana kartta ilerlemeli");
+
+  const finalized = window.inadina.applyLiveSync("soccer/uefa.europa", [{
+    id: liveBeşiktaş.event_id, start: new Date(liveBeşiktaş.starts_at), homeName: "TSG Hoffenheim",
+    awayName: "Besiktas", homeScore: 1, awayScore: 1, status: "finished", clock: "", neutral: false,
+  }]);
+  assert.equal(finalized, 1, "maç sonu gerçek final state’i uygulanmalı");
+  window.inadina.renderMatches();
+  card = window.document.querySelector("#homeFeaturedSection .home-featured-match");
+  assert.equal(card.dataset.status, "finished");
+  assert.equal(card.dataset.score, "1-1", "maç bitince final skor kartta kalmalı");
+  assert.equal(window.document.querySelector("#homeFeaturedMeta").textContent.includes("BİTTİ"), true);
+  dom.window.close();
+});
+
+test("resmi Günün Maçı bitince kart sıradaki resmi yaklaşan maça geçer", async () => {
+  const fixedNow = Date.UTC(2026, 9, 15, 12, 0, 0);
+  const fixedRow = (offsetMinutes, extra) => {
+    const start = new Date(fixedNow + offsetMinutes * 60000);
+    const time = new Intl.DateTimeFormat("en-GB", { timeZone: "Europe/Istanbul", hour: "2-digit", minute: "2-digit", hourCycle: "h23" }).format(start);
+    return featuredLiveRow(0, {
+      ...extra, starts_at: start.toISOString(), time, score_updated_at: new Date(fixedNow - 60000).toISOString(),
+    });
+  };
+  const trabzon = fixedRow(-70, {
+    event_id: "trabzon-first", home: "Trabzonspor", away: "Basel", league: "UEFA Konferans Ligi",
+    status: "live", status_source: "espn", raw_status: "STATUS_SECOND_HALF", status_clock: "70′",
+    score_home: 1, score_away: 0, score_source: "espn", is_match_of_day: true,
+  });
+  const besiktas = fixedRow(10, {
+    event_id: "besiktas-next", home: "Beşiktaş", away: "Porto", league: "UEFA Avrupa Ligi",
+    status: "upcoming", status_source: "schedule", raw_status: "", status_clock: "",
+    score_home: null, score_away: null, score_source: "", is_match_of_day: true,
+  });
+  const unrelatedLive = fixedRow(-30, {
+    event_id: "unrelated-live", home: "Chelsea", away: "Arsenal", league: "İngiltere Premier Lig",
+    status: "live", status_source: "espn", raw_status: "STATUS_FIRST_HALF", status_clock: "30′",
+    score_home: 0, score_away: 0, score_source: "espn", is_match_of_day: false,
+  });
+  const { window, dom } = await loadPage({
+    html: withMatches([trabzon, besiktas, unrelatedLive]),
+    fetchImpl: async () => ({ ok: false, status: 503, json: async () => ({}) }),
+    beforeParse: (w) => {
+      const NativeDate = w.Date;
+      w.Date = class FixedDate extends NativeDate {
+        constructor(...args) { if (!args.length) super(fixedNow); else super(...args); }
+        static now() { return fixedNow; }
+      };
+      Object.defineProperty(w.document, "hidden", { configurable: true, get: () => true });
+    },
+  });
+  let card = window.document.querySelector("#homeFeaturedSection .home-featured-match");
+  assert.ok(card.textContent.includes("Trabzonspor"), "devam eden resmi Günün Maçı korunmalı");
+
+  const finished = window.inadina.applyLiveSync("soccer/uefa.europa.conf", [{
+    id: trabzon.event_id, start: new Date(trabzon.starts_at), homeName: trabzon.home, awayName: trabzon.away,
+    homeScore: 2, awayScore: 0, status: "finished", clock: "", neutral: false,
+  }]);
+  assert.equal(finished, 1, "ilk maçın bitiş durumu işlenmeli");
+  window.inadina.renderMatches();
+  card = window.document.querySelector("#homeFeaturedSection .home-featured-match");
+  assert.ok(card.textContent.includes("Beşiktaş") && card.textContent.includes("Porto"),
+    "Trabzon maçı bitince sıradaki resmi Beşiktaş maçı öne alınmalı");
+  assert.equal(card.dataset.selection, "official");
+  assert.equal(card.dataset.status, "upcoming");
+  assert.equal(card.dataset.event, "besiktas-next");
   dom.window.close();
 });
 
