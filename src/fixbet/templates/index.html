@@ -2377,11 +2377,26 @@
                 const priorRows = Array.isArray(existingRows) ? existingRows : matchesData;
                 const current = new Map(priorRows.map((m) => [matchIdentity(m), m]));
                 const now = referenceNow instanceof Date ? referenceNow : new Date();
+                const hasCompleteScore = (m) =>
+                    scoreNumber(m.scoreHome !== undefined ? m.scoreHome : m.score_home) !== null &&
+                    scoreNumber(m.scoreAway !== undefined ? m.scoreAway : m.score_away) !== null;
                 return rows.map((next) => {
                     const old = current.get(matchIdentity(next));
                     if (!old) return next;
                     const nextReal = next.statusSource !== "schedule" ? normalizeStatus(next.rawStatus || next.status) : null;
-                    if (nextReal === "finished" || NON_LIVE_STATUS[nextReal]) return next;
+                    if (nextReal === "finished") {
+                        // A final-status feed can arrive before its score; don't erase a validated score.
+                        if (hasCompleteScore(next) || !hasCompleteScore(old)) return next;
+                        return Object.assign({}, next, {
+                            scoreHome: old.scoreHome !== undefined ? old.scoreHome : old.score_home,
+                            scoreAway: old.scoreAway !== undefined ? old.scoreAway : old.score_away,
+                            scoreSource: old.scoreSource || old.score_source || "",
+                            scoreUpdatedAt: old.scoreUpdatedAt || old.score_updated_at || "",
+                            eventId: old.eventId || old.event_id || next.eventId,
+                            startsAt: old.startsAt || old.starts_at || next.startsAt
+                        });
+                    }
+                    if (NON_LIVE_STATUS[nextReal]) return next;
                     const oldStart = matchStart(old), nextStart = matchStart(next);
                     const crossedLocalDay = old.statusSource === "schedule" && next.statusSource === "schedule"
                         && normalizeStatus(next.rawStatus || next.status) === "upcoming"
@@ -2598,7 +2613,8 @@
                 Object.keys(row).forEach((k) => { mapped[foldStatus(k)] = foldStatus(row[k]); });
                 if (Object.keys(mapped).length) syncAliases[path] = mapped;
             });
-            const SYNC_INTERVALS = { live: 5 * 1000, near: 15 * 1000, idle: 60 * 1000, error: 120 * 1000 };
+            const SYNC_INTERVALS = { live: 5 * 1000, near: 15 * 1000, final: 60 * 1000, idle: 60 * 1000, error: 120 * 1000 };
+            const FINAL_SCORE_RETRY_WINDOW = 24 * 60 * 60 * 1000;
             const SYNC_CACHE_KEY = "inadinatv.live-scores.v1", SYNC_CACHE_MAX_AGE = 24 * 60 * 60 * 1000;
             const SYNC_REQUEST_TIMEOUT = 9000, SYNC_MAX_PARALLEL = 4;
             // Fixtoor gibi önce ESPN web API'sini, hata/boş şemada site.api'yi dene.
@@ -2821,7 +2837,8 @@
                     if (hasScore) {
                         m.scoreHome = c.homeScore; m.scoreAway = c.awayScore;
                         m.scoreSource = "espn"; m.scoreUpdatedAt = stamp;
-                    } else if (c.status === "finished" || NON_LIVE_STATUS[c.status]) {
+                    // A final status without a score isn't evidence that the last valid score was wrong.
+                    } else if (NON_LIVE_STATUS[c.status]) {
                         m.scoreHome = null; m.scoreAway = null;
                         m.scoreSource = ""; m.scoreUpdatedAt = "";
                     }
@@ -2842,6 +2859,13 @@
                 return c.status === "live" ? "status in progress" : c.status;
             }
 
+            function hasCompleteScore(m) {
+                const home = m && (m.scoreHome ?? m.score_home);
+                const away = m && (m.scoreAway ?? m.score_away);
+                return home !== null && home !== undefined && home !== ""
+                    && away !== null && away !== undefined && away !== "";
+            }
+
             /** Hangi ligler şimdi izlenmeli: canlılar, 90 dk içinde başlayanlar, yeni bitenler. */
             function syncWantedPaths(now) {
                 const wanted = new Set();
@@ -2852,8 +2876,12 @@
                     if (isActiveMatch(st.status)) { wanted.add(path); return; }
                     if (!st.start) return;
                     const diff = now.getTime() - st.start.getTime();
+                    const normalFinalWindow = st.status === "finished" && diff >= 0
+                        && diff < (liveWindowFor(m) + 90) * 60000;
+                    const missingFinalScore = st.status === "finished" && diff >= 0
+                        && diff < FINAL_SCORE_RETRY_WINDOW && !hasCompleteScore(m);
                     if ((st.status === "upcoming" && diff > -90 * 60000 && diff < 5 * 60000)
-                        || (st.status === "finished" && diff >= 0 && diff < (liveWindowFor(m) + 90) * 60000)) wanted.add(path);
+                        || normalFinalWindow || missingFinalScore) wanted.add(path);
                 });
                 return Array.from(wanted);
             }
@@ -2870,19 +2898,45 @@
                     && isActiveMatch(computeState(m, now).status));
             }
 
+            function syncPathHasNearMatch(path, now) {
+                return matchesData.some((m) => {
+                    if (syncPathFor(m) !== path || NON_LIVE_STATUS[m.status]) return false;
+                    const st = computeState(m, now);
+                    if (!st.start || isActiveMatch(st.status)) return false;
+                    const diff = now.getTime() - st.start.getTime();
+                    return (st.status === "upcoming" && diff > -90 * 60000 && diff < 5 * 60000)
+                        || (st.status === "finished" && diff >= 0 && diff < (liveWindowFor(m) + 90) * 60000);
+                });
+            }
+
+            function syncPathHasPendingFinalScore(path, now) {
+                return matchesData.some((m) => {
+                    if (syncPathFor(m) !== path || NON_LIVE_STATUS[m.status] || hasCompleteScore(m)) return false;
+                    const st = computeState(m, now);
+                    if (st.status !== "finished" || !st.start) return false;
+                    const diff = now.getTime() - st.start.getTime();
+                    return diff >= 0 && diff < FINAL_SCORE_RETRY_WINDOW;
+                });
+            }
+
             function liveSyncInterval(now) {
                 if (document.hidden) return syncIntervalForState(false, false, syncFailures, true);
                 if (syncFailures >= 3) return syncIntervalForState(false, false, syncFailures, false);
                 const wanted = syncWantedPaths(now);
-                return syncIntervalForState(wanted.some((path) => syncPathHasLiveMatch(path, now)),
-                    wanted.length > 0, syncFailures, false);
+                return syncIntervalForState(
+                    wanted.some((path) => syncPathHasLiveMatch(path, now)),
+                    wanted.some((path) => syncPathHasNearMatch(path, now)),
+                    syncFailures, false,
+                    wanted.some((path) => syncPathHasPendingFinalScore(path, now))
+                );
             }
 
-            function syncIntervalForState(hasLive, hasNearMatch, failures, hidden) {
+            function syncIntervalForState(hasLive, hasNearMatch, failures, hidden, hasPendingFinalScore) {
                 if (hidden) return SYNC_INTERVALS.idle;
                 if (failures >= 3) return SYNC_INTERVALS.error;
                 if (hasLive) return SYNC_INTERVALS.live;
                 if (hasNearMatch) return SYNC_INTERVALS.near;
+                if (hasPendingFinalScore) return SYNC_INTERVALS.final;
                 return SYNC_INTERVALS.idle;
             }
 
@@ -2898,7 +2952,8 @@
                 const jobs = [];
                 wanted.forEach((path) => {
                     if (launched >= SYNC_MAX_PARALLEL || syncInflight.has(path)) return;
-                    const interval = syncPathHasLiveMatch(path, now) ? SYNC_INTERVALS.live : SYNC_INTERVALS.near;
+                    const interval = syncPathHasLiveMatch(path, now) ? SYNC_INTERVALS.live
+                        : syncPathHasNearMatch(path, now) ? SYNC_INTERVALS.near : SYNC_INTERVALS.final;
                     const hit = syncCache[path];
                     if (hit && now.getTime() - hit.at < interval) return;
                     syncInflight.add(path); launched++;
@@ -3340,6 +3395,7 @@
                 applyLiveSync: applyLiveSync,
                 liveSyncInterval: liveSyncInterval,
                 syncIntervalForState: syncIntervalForState,
+                syncWantedPaths: syncWantedPaths,
                 syncDatesForPath: syncDatesForPath,
                 restoreLiveSyncCache: restoreLiveSyncCache,
                 parseEspnScoreboard: parseEspnScoreboard,
