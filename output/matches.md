@@ -1,7 +1,7 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-10-15 09:20  
+> **Güncellenme:** 2026-10-15 10:12  
 > **Toplam maç:** 18  |  **Canlı:** 0  |  **Yaklaşan:** 18
 
 ## ⏰ YAKLAŞAN
@@ -117,13 +117,13 @@
 ## ⚡ EKSTRA PANELLER — m3u8 (109)
 
 ### ⚛️ ATOM SPOR ✅ `https://www.atomsportv518.top`
-- ⚪ **BEIN SPORTS 1** <https://tv.atomspor.workers.dev/?ID=bein-sports-1>
-- ⚪ **BEIN SPORTS 2** <https://tv.atomspor.workers.dev/?ID=bein-sports-2>
-- ⚪ **BEIN SPORTS 3** <https://tv.atomspor.workers.dev/?ID=bein-sports-3>
-- ⚪ **BEIN SPORTS 4** <https://tv.atomspor.workers.dev/?ID=bein-sports-4>
-- ⚪ **BEIN SPORTS 5** <https://tv.atomspor.workers.dev/?ID=bein-sports-5>
-- ⚪ **S SPORT** <https://tv.atomspor.workers.dev/?ID=s-sport>
-- ⚪ **S SPORT 2** <https://tv.atomspor.workers.dev/?ID=s-sport-2>
+- 🟢 **BEIN SPORTS 1** <https://ladyboy.ardatvgs.cfd//beintv/tracks-v1a1/mono.m3u8>
+- 🟢 **BEIN SPORTS 2** <https://ladyboy.ardatvgs.cfd//bein2/tracks-v1a1/mono.m3u8>
+- 🟢 **BEIN SPORTS 3** <https://ladyboy.ardatvgs.cfd//bein3/tracks-v1a1/mono.m3u8>
+- 🟢 **BEIN SPORTS 4** <https://ladyboy.ardatvgs.cfd//bein4/tracks-v1a1/mono.m3u8>
+- 🟢 **BEIN SPORTS 5** <https://ladyboy.ardatvgs.cfd//bein5/tracks-v1a1/mono.m3u8>
+- 🟢 **S SPORT** <https://ladyboy.ardatvgs.cfd//s-sport/tracks-v1a1/mono.m3u8>
+- 🟢 **S SPORT 2** <https://ladyboy.ardatvgs.cfd//s-sport2/tracks-v1a1/mono.m3u8>
 - ⚪ **S SPORT PLUS** <https://tv.atomspor.workers.dev/?ID=ssport-plus>
 - ⚪ **TIVIBU SPOR 1** <https://tv.atomspor.workers.dev/?ID=tivibu-spor-1>
 - ⚪ **TIVIBU SPOR 2** <https://tv.atomspor.workers.dev/?ID=tivibu-spor-2>
