@@ -1,12 +1,15 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-10-16 14:37  
-> **Toplam maç:** 6  |  **Canlı:** 0  |  **Yaklaşan:** 6
+> **Güncellenme:** 2026-10-16 16:49  
+> **Toplam maç:** 6  |  **Canlı:** 1  |  **Yaklaşan:** 5
+
+## 🔴 CANLI
+
+- 🔴 **Karşıyaka vs Çayırova Bld.** — CANLI · `19:00` | Basketbol Süper Ligi <https://fixbettv84.com/channel.html?id=b5>
 
 ## ⏰ YAKLAŞAN
 
-- ⏰ **Karşıyaka vs Çayırova Bld.** — YAKLAŞAN · `19:00` | Basketbol Süper Ligi <https://fixbettv84.com/channel.html?id=b5>
 - ⏰ **Beşiktaş vs Bayern Münih** — YAKLAŞAN · `20:00` | Euroleague <https://fixbettv84.com/channel.html?id=ss>
 - ⏰ **Zalgiris Kaunas vs Anadolu Efes** — YAKLAŞAN · `20:00` | Euroleague <https://fixbettv84.com/channel.html?id=ss2>
 - ⏰ **Çorum FK vs Ç.Rizespor** — YAKLAŞAN · `20:00` | Trendyol Süper Lig <https://fixbettv84.com/channel.html?id=zirve>
@@ -17,7 +20,7 @@
 ## 🏆 Lig Bazlı
 
 ### Basketbol Süper Ligi
-- ⏰ Karşıyaka vs Çayırova Bld. — 19:00
+- 🔴 Karşıyaka vs Çayırova Bld. — 19:00
 
 ### Euroleague
 - ⏰ Beşiktaş vs Bayern Münih — 20:00

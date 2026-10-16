@@ -17,5 +17,32 @@
     "note": "OK",
     "probed": 200
   },
-  "live": []
+  "live": [
+    {
+      "match_id": "b5",
+      "home": "Karşıyaka",
+      "away": "Çayırova Bld.",
+      "league": "Basketbol Süper Ligi",
+      "time": "19:00",
+      "sport": "Basketbol",
+      "is_match_of_day": false,
+      "channel_id": "b5",
+      "logo_home": "https://img.sporekrani.com/teams/ee1c5947-d062-4cee-a265-3ec091fef3c5.png",
+      "logo_away": "https://img.sporekrani.com/teams/uQ4IhZQy8OjyYFq72WrRxHDCeRtmekLZscY8OWqP.png",
+      "status": "live",
+      "started": true,
+      "raw_event": "19:00 | Basketbol Süper Ligi",
+      "url": "https://fixbettv84.com/channel.html?id=b5",
+      "fetched_at": "",
+      "status_source": "schedule",
+      "raw_status": "",
+      "score_home": null,
+      "score_away": null,
+      "score_source": "",
+      "score_updated_at": "",
+      "event_id": "",
+      "starts_at": "2026-10-16T19:00:00+03:00",
+      "status_clock": ""
+    }
+  ]
 }
