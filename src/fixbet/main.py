@@ -264,7 +264,7 @@ def main(argv: list[str] | None = None) -> int:
     sub.add_parser("standings", help="Sadece lig puan durumunu çek ve sayfayı güncelle")
     sub.add_parser("matches", help="Maçları çek ve kategorize et")
     sub.add_parser("live-scores", help="Sadece skorları tazele (maç saatlerinde hızlı)")
-    sub.add_parser("kodaman-refresh", help="Yalnızca Kodaman ana sayfasında açıkça görünen kanal ID’lerini yenile")
+    sub.add_parser("kodaman-refresh", help="Kodaman’ın herkese açık KANALLAR menüsündeki kanal ID’lerini yenile")
     sub.add_parser("cat", help="Özeti konsola bas")
     web_parser = sub.add_parser("web", help="Sayfa + isteğe bağlı HLS proxy hizmeti (HTTPS reverse proxy arkasında)")
     web_parser.add_argument("--host", default="0.0.0.0")
@@ -301,7 +301,7 @@ def main(argv: list[str] | None = None) -> int:
         return 0 if build_index_from_output() else 1
     if args.cmd == "kodaman-refresh":
         try:
-            manifest, changed = kodaman.refresh_manifest()
+            manifest, changed = kodaman.refresh_manifest(menu_fetcher=kodaman.fetch_visible_channel_menu)
         except kodaman.PublicSourceUnavailable as exc:
             print(f"[!] Kodaman listesi yenilenemedi: {exc}; son bilinen liste korunuyor.")
             return 0

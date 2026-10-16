@@ -18,6 +18,7 @@ const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const HTML = readFileSync(path.join(ROOT, "index.html"), "utf8");
 const TODAY = JSON.parse(readFileSync(path.join(ROOT, "output", "today_matches.json"), "utf8"));
 const EXTRA = JSON.parse(readFileSync(path.join(ROOT, "output", "extra_channels.json"), "utf8"));
+const KODAMAN = JSON.parse(readFileSync(path.join(ROOT, "output", "kodaman_channels.json"), "utf8"));
 const EXTRA_COUNT = EXTRA.panels.reduce((n, p) => n + p.channels.length, 0);
 
 const openPages = new Set();
@@ -141,15 +142,14 @@ test("kanal kartına tıklayınca yayın açılıyor ve player'e kayıyor", asyn
   dom.window.close();
 });
 
-test("TV KANALLARI 2 public manifest’ten ID’leri yükler ve teyitli player hatasını kapatır", async () => {
+test("TV KANALLARI 2 31 public kanalı iframe’de açar; kaynak yazısı, dış link ve popup izni yoktur", async () => {
   const feed = {
-    base_url: "https://kodamantv21.com",
+    base_url: KODAMAN.base_url,
     updated_at: "2026-10-16T19:00:00Z",
-    channels: [
-      { id: "alpha-1", name: "Alpha TV", status: "page" },
-      { id: "zirve", name: "Zirve Stream", status: "error" },
-      { id: "bad/id", name: "Güvensiz ID", status: "page" },
-    ],
+    channels: KODAMAN.channels.map((channel, index) => ({
+      ...channel,
+      status: index === 0 ? "error" : channel.status,
+    })).concat([{ id: "bad/id", name: "Güvensiz ID", status: "page" }]),
   };
   const fetchImpl = async (url) => {
     if (String(url).includes("/output/kodaman_channels.json")) return { ok: true, status: 200, json: async () => feed };
@@ -164,16 +164,33 @@ test("TV KANALLARI 2 public manifest’ten ID’leri yükler ve teyitli player h
   button.click();
   assert.equal(window.inadina.state.activeTab, "kodamanTab");
   assert.ok(window.document.getElementById("kodamanTab").classList.contains("active"));
-  assert.equal(window.inadina.state.kodamanChannels.length, 2, "geçersiz ID filtrelenmeli");
-  assert.match(window.document.getElementById("kodamanMeta").textContent, /2 ID/);
-  assert.equal(window.document.getElementById("kodamanExternal").href, "https://kodamantv21.com/");
-  const playable = window.document.querySelector('#kodamanGrid [data-kodaman-id="alpha-1"]');
-  const unavailable = window.document.querySelector('#kodamanGrid [data-kodaman-id="zirve"]');
-  assert.ok(playable, "public player kartı çizilmedi");
-  assert.equal(unavailable.disabled, true, "son kontrolde hata veren player açılabilir olmamalı");
+  assert.equal(KODAMAN.channels.length, 31, "canlı manifestte 31 public kanal olmalı");
+  assert.equal(window.inadina.state.kodamanChannels.length, 31, "geçersiz ID filtrelenirken 31 kanal kalmalı");
+  assert.equal(window.document.querySelectorAll("#kodamanGrid .ch-card").length, 31, "31 kanal kartı çizilmeli");
+  assert.equal(window.document.getElementById("kodamanExternal"), null, "Kodaman dış site linki olmamalı");
+  assert.equal(window.document.getElementById("kodamanMeta"), null, "kaynak/uyarı yazısı olmamalı");
+  assert.equal(window.document.getElementById("kodamanTab").querySelectorAll("a[href^='http']").length, 0,
+    "sekmeden dış siteye navigasyon olmamalı");
+  assert.equal(window.document.getElementById("kodamanTab").textContent.includes("Kodaman TV"), false,
+    "kullanıcı arayüzünde Kodaman TV marka yazısı olmamalı");
+  const firstChannel = KODAMAN.channels[0];
+  const playable = window.document.querySelector(`#kodamanGrid [data-kodaman-id="${firstChannel.id}"]`);
+  assert.ok(playable, "ilk public kanal kartı çizilmedi");
+  assert.equal(playable.disabled, false, "player durum hatası kanalı listeden/kullanımdan kaldırmamalı");
   playable.click();
-  assert.equal(window.document.getElementById("liveIframe").getAttribute("src"), "https://kodamantv21.com/channel?id=alpha-1");
-  assert.equal(window.document.getElementById("playerTitle").textContent, "Alpha TV");
+  const iframe = window.document.getElementById("liveIframe");
+  assert.equal(iframe.getAttribute("src"), `${KODAMAN.base_url}/channel?id=${firstChannel.id}`);
+  assert.equal(window.document.getElementById("playerTitle").textContent, firstChannel.name);
+  assert.equal(window.document.getElementById("nowStatus").textContent, "7/24 YAYIN");
+  assert.match(iframe.getAttribute("sandbox"), /allow-scripts/);
+  assert.doesNotMatch(iframe.getAttribute("sandbox"), /allow-modals|allow-popups|allow-top-navigation/,
+    "Kodaman iframe’i alert/popup ve üst sayfa yönlendirmesi açmamalı");
+  assert.equal(window.document.getElementById("openExternalBtn").hidden, true,
+    "Kodaman için yeni sekmede aç kontrolü gizlenmeli");
+  cards(window)[0].click();
+  assert.equal(iframe.hasAttribute("sandbox"), false, "normal TV iframe’inin sandbox davranışı değişmemeli");
+  assert.equal(window.document.getElementById("openExternalBtn").hidden, false,
+    "normal TV kanalında dış açma kontrolü geri gelmeli");
   window.document.dispatchEvent(new window.KeyboardEvent("keydown", { key: "2", bubbles: true }));
   assert.equal(window.inadina.state.activeTab, "kodamanTab", "2 kısayolu ikinci sekmeyi açmalı");
   dom.window.close();

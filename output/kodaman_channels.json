@@ -3,9 +3,159 @@
   "channels": [
     {
       "id": "zirve",
-      "name": "Zirve Stream",
-      "status": "page"
+      "name": "BEIN SPORTS 1",
+      "status": "listed"
+    },
+    {
+      "id": "b2",
+      "name": "BEIN SPORTS 2",
+      "status": "listed"
+    },
+    {
+      "id": "b3",
+      "name": "BEIN SPORTS 3",
+      "status": "listed"
+    },
+    {
+      "id": "b4",
+      "name": "BEIN SPORTS 4",
+      "status": "listed"
+    },
+    {
+      "id": "b5",
+      "name": "BEIN SPORTS 5",
+      "status": "listed"
+    },
+    {
+      "id": "bm1",
+      "name": "BEIN SPORTS MAX 1",
+      "status": "listed"
+    },
+    {
+      "id": "bm2",
+      "name": "BEIN SPORTS MAX 2",
+      "status": "listed"
+    },
+    {
+      "id": "ss",
+      "name": "S SPORT",
+      "status": "listed"
+    },
+    {
+      "id": "ss2",
+      "name": "S SPORT 2",
+      "status": "listed"
+    },
+    {
+      "id": "smarts",
+      "name": "SMART SPOR",
+      "status": "listed"
+    },
+    {
+      "id": "sms2",
+      "name": "SMART SPOR 2",
+      "status": "listed"
+    },
+    {
+      "id": "t1",
+      "name": "TIVIBU SPOR 1",
+      "status": "listed"
+    },
+    {
+      "id": "t2",
+      "name": "TIVIBU SPOR 2",
+      "status": "listed"
+    },
+    {
+      "id": "t3",
+      "name": "TIVIBU SPOR 3",
+      "status": "listed"
+    },
+    {
+      "id": "t4",
+      "name": "TIVIBU SPOR 4",
+      "status": "listed"
+    },
+    {
+      "id": "trtspor",
+      "name": "TRT SPOR",
+      "status": "listed"
+    },
+    {
+      "id": "trtspor2",
+      "name": "TRT SPOR YILDIZ",
+      "status": "listed"
+    },
+    {
+      "id": "trt1",
+      "name": "TRT 1",
+      "status": "listed"
+    },
+    {
+      "id": "as",
+      "name": "A SPOR",
+      "status": "listed"
+    },
+    {
+      "id": "atv",
+      "name": "ATV",
+      "status": "listed"
+    },
+    {
+      "id": "tv8",
+      "name": "TV 8",
+      "status": "listed"
+    },
+    {
+      "id": "tv85",
+      "name": "TV 8,5",
+      "status": "listed"
+    },
+    {
+      "id": "eu1",
+      "name": "EURO SPORT 1",
+      "status": "listed"
+    },
+    {
+      "id": "eu2",
+      "name": "EURO SPORT 2",
+      "status": "listed"
+    },
+    {
+      "id": "ex7",
+      "name": "TABII SPOR",
+      "status": "listed"
+    },
+    {
+      "id": "ex1",
+      "name": "TABII SPOR 1",
+      "status": "listed"
+    },
+    {
+      "id": "ex2",
+      "name": "TABII SPOR 2",
+      "status": "listed"
+    },
+    {
+      "id": "ex3",
+      "name": "TABII SPOR 3",
+      "status": "listed"
+    },
+    {
+      "id": "ex4",
+      "name": "TABII SPOR 4",
+      "status": "listed"
+    },
+    {
+      "id": "ex5",
+      "name": "TABII SPOR 5",
+      "status": "listed"
+    },
+    {
+      "id": "ex6",
+      "name": "TABII SPOR 6",
+      "status": "listed"
     }
   ],
-  "updated_at": "2026-10-16T19:17:08Z"
+  "updated_at": "2026-10-16T19:56:37Z"
 }

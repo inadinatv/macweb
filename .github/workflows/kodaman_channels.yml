@@ -15,7 +15,7 @@ permissions:
 jobs:
   refresh:
     runs-on: ubuntu-latest
-    timeout-minutes: 5
+    timeout-minutes: 10
     steps:
       - name: Depoyu al
         uses: actions/checkout@v4
@@ -28,8 +28,18 @@ jobs:
         with:
           python-version: "3.12"
 
+      - name: Node.js kur
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
       - name: Bağımlılıkları kur
-        run: pip install -r requirements.txt
+        run: |
+          pip install -r requirements.txt
+          npm install --no-audit --no-fund
+
+      - name: Görünür menü tarayıcısını kur
+        run: npx playwright install --with-deps chromium
 
       - name: Herkese açık Kodaman ID’lerini yenile
         run: python fixbet.py kodaman-refresh
