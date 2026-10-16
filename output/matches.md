@@ -1,23 +1,20 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-10-16 18:24  
-> **Toplam maç:** 6  |  **Canlı:** 3  |  **Yaklaşan:** 2
+> **Güncellenme:** 2026-10-16 19:44  
+> **Toplam maç:** 6  |  **Canlı:** 2  |  **Yaklaşan:** 0
 
 ## 🔴 CANLI
 
-- 🔴 **Beşiktaş vs Bayern Münih** — CANLI · `20:00` | Euroleague <https://fixbettv84.com/channel.html?id=ss>
-- 🔴 **Zalgiris Kaunas vs Anadolu Efes** — CANLI · `20:00` | Euroleague <https://fixbettv84.com/channel.html?id=ss2>
-- 🔴 **Çorum FK 1 - 1 Ç.Rizespor** — CANLI · `20:00` | Trendyol Süper Lig <https://fixbettv84.com/channel.html?id=zirve>
-
-## ⏰ YAKLAŞAN
-
-- ⏰ **Le Mans vs Toulouse** — YAKLAŞAN · `21:45` | Fransa Ligue 1 <https://fixbettv84.com/channel.html?id=b4>
-- ⏰ **Deportivo vs Levante** — YAKLAŞAN · `22:00` | İspanya La Liga <https://fixbettv84.com/channel.html?id=ss2>
+- 🔴 **Le Mans 0 - 0 Toulouse** — DEVRE · `21:45` | Fransa Ligue 1 <https://fixbettv84.com/channel.html?id=b4>
+- 🔴 **Deportivo 0 - 0 Levante** — CANLI · `22:00` | İspanya La Liga <https://fixbettv84.com/channel.html?id=ss2>
 
 ## ✅ BİTTİ
 
 - ✅ **Karşıyaka vs Çayırova Bld.** — MS · `19:00` | Basketbol Süper Ligi <https://fixbettv84.com/channel.html?id=b5>
+- ✅ **Beşiktaş vs Bayern Münih** — MS · `20:00` | Euroleague <https://fixbettv84.com/channel.html?id=ss>
+- ✅ **Zalgiris Kaunas vs Anadolu Efes** — MS · `20:00` | Euroleague <https://fixbettv84.com/channel.html?id=ss2>
+- ✅ **Çorum FK 2 - 1 Ç.Rizespor** — MS · `20:00` | Trendyol Süper Lig <https://fixbettv84.com/channel.html?id=zirve>
 
 ---
 ## 🏆 Lig Bazlı
@@ -26,17 +23,17 @@
 - ⏰ Karşıyaka vs Çayırova Bld. — 19:00
 
 ### Euroleague
-- 🔴 Beşiktaş vs Bayern Münih — 20:00
-- 🔴 Zalgiris Kaunas vs Anadolu Efes — 20:00
+- ⏰ Beşiktaş vs Bayern Münih — 20:00
+- ⏰ Zalgiris Kaunas vs Anadolu Efes — 20:00
 
 ### Fransa Ligue 1
 - ⏰ Le Mans vs Toulouse — 21:45
 
 ### Trendyol Süper Lig
-- 🔴 Çorum FK vs Ç.Rizespor — 20:00
+- ⏰ Çorum FK vs Ç.Rizespor — 20:00
 
 ### İspanya La Liga
-- ⏰ Deportivo vs Levante — 22:00
+- 🔴 Deportivo vs Levante — 22:00
 
 ---
 ## 📺 7/24 KANALLAR (31)
