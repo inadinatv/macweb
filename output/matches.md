@@ -1,7 +1,7 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-10-16 21:33  
+> **Güncellenme:** 2026-10-16 22:13  
 > **Toplam maç:** 6  |  **Canlı:** 0  |  **Yaklaşan:** 4
 
 ## ⏰ YAKLAŞAN
@@ -13,8 +13,8 @@
 
 ## ✅ BİTTİ
 
-- ✅ **Le Mans vs Toulouse** — MS · `21:45` | Fransa Ligue 1 <https://fixbettv84.com/channel.html?id=b4>
-- ✅ **Deportivo vs Levante** — MS · `22:00` | İspanya La Liga <https://fixbettv84.com/channel.html?id=ss2>
+- ✅ **Le Mans 0 - 3 Toulouse** — MS · `21:45` | Fransa Ligue 1 <https://fixbettv84.com/channel.html?id=b4>
+- ✅ **Deportivo 1 - 1 Levante** — MS · `22:00` | İspanya La Liga <https://fixbettv84.com/channel.html?id=ss2>
 
 ---
 ## 🏆 Lig Bazlı
