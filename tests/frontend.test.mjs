@@ -1426,6 +1426,53 @@ function featuredLiveRow(minutesAgo = 30, extra = {}) {
   };
 }
 
+test("Günün Maçı basketboldan önce bugünün futbol fikstürünü seçer ve Fixtoor uyumlu ESPN skorunu eşler", async () => {
+  const fixedNow = Date.UTC(2026, 9, 16, 16, 30, 0);
+  const row = (id, sport, league, home, away, startAt) => {
+    const start = new Date(startAt);
+    const time = new Intl.DateTimeFormat("en-GB", { timeZone: "Europe/Istanbul", hour: "2-digit", minute: "2-digit", hourCycle: "h23" }).format(start);
+    return featuredLiveRow(0, {
+      event_id: id, sport, league, home, away, starts_at: start.toISOString(), time,
+      date: "2026-10-16", status: "upcoming", status_source: "mackolik", raw_status: "NS",
+      score_home: null, score_away: null, score_source: "", score_updated_at: "", is_match_of_day: false,
+    });
+  };
+  const football = row("corum-rize", "Futbol", "Trendyol Süper Lig", "Çorum FK", "Ç.Rizespor", "2026-10-16T17:00:00Z");
+  const basketball = row("earlier-basketball", "Basketbol", "Euroleague", "Beşiktaş", "Bayern Münih", "2026-10-16T15:00:00Z");
+  const { window, dom } = await loadPage({
+    html: withMatches([basketball, football]),
+    fetchImpl: async () => ({ ok: false, status: 503, json: async () => ({}) }),
+    beforeParse: (w) => {
+      const NativeDate = w.Date;
+      w.Date = class FixedDate extends NativeDate {
+        constructor(...args) { if (!args.length) super(fixedNow); else super(...args); }
+        static now() { return fixedNow; }
+      };
+      Object.defineProperty(w.document, "hidden", { configurable: true, get: () => true });
+    },
+  });
+  let card = window.document.querySelector("#homeFeaturedSection .home-featured-match");
+  assert.ok(card.textContent.includes("Çorum FK") && card.textContent.includes("Ç.Rizespor"),
+    "aynı günün futbol maçı, daha erken basketbol fikstüründen önce seçilmeli");
+  assert.deepEqual(Array.from(window.inadina.syncPathsFor(football)), ["soccer/tur.1"],
+    "Çorum–Rize maçı Fixtoor ile aynı günlük ESPN scoreboard yoluna bağlanmalı");
+  assert.deepEqual(Array.from(window.inadina.syncDatesForPath("soccer/tur.1")), ["20261016"],
+    "maçın UTC fikstür günü tekil scoreboard sorgusu için üretilmeli");
+  assert.ok(Array.from(window.inadina.syncWantedPaths(new Date(fixedNow))).includes("soccer/tur.1"),
+    "başlama saatine yaklaşan maçın scoreboard yolu canlı poll’a dahil edilmeli");
+
+  const changed = window.inadina.applyLiveSync("soccer/tur.1", [{
+    id: football.event_id, start: new Date(football.starts_at), homeName: "Corum FK", awayName: "Caykur Rizespor",
+    homeScore: 1, awayScore: 0, status: "live", clock: "12′", neutral: false,
+  }], fixedNow);
+  assert.equal(changed, 1, "alternatif scoreboard yolundan gelen kesin takım+saat eşleşmesi uygulanmalı");
+  window.inadina.renderMatches();
+  card = window.document.querySelector("#homeFeaturedSection .home-featured-match");
+  assert.equal(card.dataset.score, "1-0");
+  assert.equal(card.dataset.clock, "12′");
+  dom.window.close();
+});
+
 test("ana Günün Maçı kartı gol, canlı dakika, kanal ve devre arasıyla aynı state’i izliyor", async () => {
   const fixedNow = Date.UTC(2026, 9, 16, 12, 0, 0);
   const start = new Date(fixedNow - 30 * 60000);
