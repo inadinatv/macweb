@@ -17,7 +17,7 @@ import time
 from datetime import datetime
 from zoneinfo import ZoneInfo
 
-from . import categorizer, channels, config, domain_checker, extras, parser, reports, scraper, scores, site, standings
+from . import categorizer, channels, config, domain_checker, extras, kodaman, parser, reports, scraper, scores, site, standings
 from .models import Match
 
 TZ = ZoneInfo("Europe/Istanbul")
@@ -264,6 +264,7 @@ def main(argv: list[str] | None = None) -> int:
     sub.add_parser("standings", help="Sadece lig puan durumunu çek ve sayfayı güncelle")
     sub.add_parser("matches", help="Maçları çek ve kategorize et")
     sub.add_parser("live-scores", help="Sadece skorları tazele (maç saatlerinde hızlı)")
+    sub.add_parser("kodaman-refresh", help="Yalnızca Kodaman ana sayfasında açıkça görünen kanal ID’lerini yenile")
     sub.add_parser("cat", help="Özeti konsola bas")
     web_parser = sub.add_parser("web", help="Sayfa + isteğe bağlı HLS proxy hizmeti (HTTPS reverse proxy arkasında)")
     web_parser.add_argument("--host", default="0.0.0.0")
@@ -298,6 +299,16 @@ def main(argv: list[str] | None = None) -> int:
         return 0
     if args.cmd == "build-index":
         return 0 if build_index_from_output() else 1
+    if args.cmd == "kodaman-refresh":
+        try:
+            manifest, changed = kodaman.refresh_manifest()
+        except kodaman.PublicSourceUnavailable as exc:
+            print(f"[!] Kodaman listesi yenilenemedi: {exc}; son bilinen liste korunuyor.")
+            return 0
+        print(f"Kodaman: {len(manifest.get('channels', []))} görünür kanal ID’si · "
+              f"alan adı {manifest.get('base_url')} · "
+              f"{'manifest güncellendi' if changed else 'değişiklik yok'}")
+        return 0
     if args.cmd == "extras":
         now = _now()
         data = refresh_extras(now)

@@ -141,16 +141,39 @@ test("kanal kartına tıklayınca yayın açılıyor ve player'e kayıyor", asyn
   dom.window.close();
 });
 
-test("TV KANALLARI 2 sekmesi Kodaman kaynağını dürüst boş durumla gösterir", async () => {
-  const { window, dom } = await loadPage();
+test("TV KANALLARI 2 public manifest’ten ID’leri yükler ve teyitli player hatasını kapatır", async () => {
+  const feed = {
+    base_url: "https://kodamantv21.com",
+    updated_at: "2026-10-16T19:00:00Z",
+    channels: [
+      { id: "alpha-1", name: "Alpha TV", status: "page" },
+      { id: "zirve", name: "Zirve Stream", status: "error" },
+      { id: "bad/id", name: "Güvensiz ID", status: "page" },
+    ],
+  };
+  const fetchImpl = async (url) => {
+    if (String(url).includes("/output/kodaman_channels.json")) return { ok: true, status: 200, json: async () => feed };
+    if (String(url).startsWith("https://data-reality.com/matches.php")) return { ok: true, status: 200, text: async () => "" };
+    if (String(url).startsWith("https://data-reality.com/matches2.php")) return { ok: true, status: 200, text: async () => "" };
+    return { ok: true, status: 200, json: async () => TODAY, text: async () => "" };
+  };
+  const { window, dom } = await loadPage({ fetchImpl });
+  await tick(30);
   const button = window.document.querySelector('.tab-btn[data-tab="kodamanTab"]');
   assert.ok(button, "TV KANALLARI 2 düğmesi yok");
   button.click();
   assert.equal(window.inadina.state.activeTab, "kodamanTab");
   assert.ok(window.document.getElementById("kodamanTab").classList.contains("active"));
-  assert.match(window.document.getElementById("kodamanTab").textContent, /kanal kataloğu\/ID listesi yayımlanmıyor/);
-  assert.equal(window.document.querySelector('#kodamanTab a[href="https://kodamantv21.com/"]')?.target, "_blank");
-  assert.equal(window.document.getElementById("liveIframe").getAttribute("src"), "", "kırık/teyitsiz kanal otomatik oynatılmamalı");
+  assert.equal(window.inadina.state.kodamanChannels.length, 2, "geçersiz ID filtrelenmeli");
+  assert.match(window.document.getElementById("kodamanMeta").textContent, /2 ID/);
+  assert.equal(window.document.getElementById("kodamanExternal").href, "https://kodamantv21.com/");
+  const playable = window.document.querySelector('#kodamanGrid [data-kodaman-id="alpha-1"]');
+  const unavailable = window.document.querySelector('#kodamanGrid [data-kodaman-id="zirve"]');
+  assert.ok(playable, "public player kartı çizilmedi");
+  assert.equal(unavailable.disabled, true, "son kontrolde hata veren player açılabilir olmamalı");
+  playable.click();
+  assert.equal(window.document.getElementById("liveIframe").getAttribute("src"), "https://kodamantv21.com/channel?id=alpha-1");
+  assert.equal(window.document.getElementById("playerTitle").textContent, "Alpha TV");
   window.document.dispatchEvent(new window.KeyboardEvent("keydown", { key: "2", bubbles: true }));
   assert.equal(window.inadina.state.activeTab, "kodamanTab", "2 kısayolu ikinci sekmeyi açmalı");
   dom.window.close();

@@ -600,6 +600,8 @@
             text-align: center; padding: 34px 20px; color: var(--text-muted); font-size: 0.95rem;
             grid-column: 1/-1; background: rgba(255,255,255,0.02); border: 1px dashed rgba(255,255,255,0.1); border-radius: 14px;
         }
+        .kodaman-channel { font: inherit; color: inherit; }
+        .kodaman-channel:disabled { cursor: not-allowed; opacity: .68; }
 
         /* ---------- PUAN DURUMU modalı ---------- */
         .modal-overlay {
@@ -936,10 +938,11 @@
 
             <div class="tab-content" id="kodamanTab">
                 <div class="extra-note">
-                    <span>📡 <b>Kodaman TV</b> herkese açık sayfasında şu an kanal kataloğu/ID listesi yayımlanmıyor. Yalnızca <b>zirve</b> oyuncu ID’si görüldü; oyuncu sayfası inceleme sırasında hata verdiği için çalışmayan yayın buraya eklenmedi.</span>
-                    <a class="ctrl-btn extra-meta" href="https://kodamantv21.com/" target="_blank" rel="noopener noreferrer" style="text-decoration:none">↗ Kodaman TV’yi aç</a>
+                    <span>📡 <b>Kodaman TV</b> sekmesi yalnızca ana sayfada açıkça yayımlanan kanal ID’lerini listeler. Liste saatlik yenilenir; durum kontrolü player sayfası yanıtıyla sınırlıdır, video oynatımı cihazda ayrıca doğrulanır.</span>
+                    <span class="extra-meta" id="kodamanMeta">Kanal listesi yükleniyor…</span>
+                    <a class="ctrl-btn extra-meta" id="kodamanExternal" href="https://kodamantv21.com/" target="_blank" rel="noopener noreferrer" style="text-decoration:none">↗ Kodaman TV’yi aç</a>
                 </div>
-                <div class="empty-msg">Kanal ID’lerini sunan herkese açık bir liste veya resmi API bulunduğunda bu alan güvenilir kaynaklarla güncellenecek.</div>
+                <div class="channel-grid" id="kodamanGrid"><div class="empty-msg">Açık kanal ID’leri yükleniyor…</div></div>
             </div>
 
             <div class="tab-content" id="matchesTab">
@@ -1070,6 +1073,12 @@
                 // Oynatıcı modu: "iframe" (site yayını) | "hls" (m3u8 — EXTRA)
                 playerMode: "iframe",
                 currentExtraId: null,
+                currentKodamanId: null,
+                kodamanChannels: [],
+                kodamanBaseUrl: "",
+                kodamanUpdatedAt: "",
+                kodamanLoading: true,
+                kodamanLoadError: false,
                 currentSourceIndex: 0,
                 currentSources: []
             };
@@ -1091,6 +1100,9 @@
                 nowChannel: $("nowChannel"),
                 nowStatus: $("nowStatus"),
                 channelGrid: $("channelGrid"),
+                kodamanGrid: $("kodamanGrid"),
+                kodamanMeta: $("kodamanMeta"),
+                kodamanExternal: $("kodamanExternal"),
                 extraGrid: $("extraGrid"),
                 extraMeta: $("extraMeta"),
                 matchesGrid: $("matchesGrid"),
@@ -1366,6 +1378,133 @@
                 markActiveCard();
             }
 
+            function safeKodamanBase(value) {
+                try {
+                    const url = new URL(String(value || ""));
+                    return url.protocol === "https:" && /^kodamantv\d+\.com$/i.test(url.hostname)
+                        ? url.origin : "";
+                } catch (e) { return ""; }
+            }
+
+            function kodamanStatusLabel(status) {
+                if (status === "error") return "PLAYER HATA";
+                if (status === "page") return "SAYFA ERİŞİLİR";
+                return "DURUM BİLİNMİYOR";
+            }
+
+            function renderKodamanChannels() {
+                if (!els.kodamanGrid) return;
+                els.kodamanGrid.innerHTML = "";
+                const channels = state.kodamanChannels || [];
+                if (!channels.length) {
+                    const empty = document.createElement("div");
+                    empty.className = "empty-msg";
+                    empty.textContent = state.kodamanLoading ? "Açık kanal ID’leri yükleniyor…"
+                        : state.kodamanLoadError ? "Kanal listesi şu an alınamadı; sonraki yenilemede tekrar denenecek."
+                            : "Kodaman ana sayfasında açıkça görünen bir kanal ID’si bulunamadı.";
+                    els.kodamanGrid.appendChild(empty);
+                }
+                channels.forEach((channel, i) => {
+                    const card = document.createElement("button");
+                    const status = channel.status || "unknown";
+                    card.type = "button";
+                    card.className = "ch-card kodaman-channel" + (state.currentKodamanId === channel.id ? " active" : "");
+                    card.disabled = status === "error";
+                    card.setAttribute("data-kodaman-id", channel.id);
+                    card.setAttribute("aria-label", channel.name + " · " + kodamanStatusLabel(status));
+                    card.title = status === "error"
+                        ? "Kodaman player sayfası son kontrolde hata bildirdi; tekrar denendiğinde durum güncellenecek."
+                        : status === "page" ? "Player sayfası erişilebilir; video oynatımı tarayıcıda doğrulanmadı."
+                            : "Kodaman TV’de " + channel.name + " kanalını oynatıcıda aç";
+                    card.style.animationDelay = Math.min(i * 18, 320) + "ms";
+
+                    const badge = document.createElement("span");
+                    badge.className = "ch-status";
+                    badge.textContent = kodamanStatusLabel(status);
+                    const number = document.createElement("span");
+                    number.className = "ch-number";
+                    number.textContent = pad(i + 1);
+                    const icon = document.createElement("span");
+                    icon.className = "ch-icon-wrap";
+                    icon.textContent = "📡";
+                    const name = document.createElement("span");
+                    name.className = "ch-name";
+                    name.textContent = channel.name;
+                    const brand = document.createElement("span");
+                    brand.className = "ch-brand";
+                    brand.textContent = "KODAMAN TV";
+                    const hint = document.createElement("span");
+                    hint.className = "ch-play-hint";
+                    hint.textContent = status === "error" ? "GEÇİCİ HATA" : "▶ İZLE";
+                    card.append(badge, number, icon, name, brand, hint);
+                    if (status !== "error") card.onclick = () => playKodamanChannel(channel.id, true);
+                    els.kodamanGrid.appendChild(card);
+                });
+                markActiveKodamanCard();
+                if (els.kodamanMeta) {
+                    const stamp = state.kodamanUpdatedAt ? new Date(state.kodamanUpdatedAt) : null;
+                    const when = stamp && !isNaN(stamp.getTime()) ? stamp.toLocaleString("tr-TR") : "henüz yok";
+                    els.kodamanMeta.textContent = "Son liste: " + when + " · " + channels.length + " ID";
+                }
+            }
+
+            async function refreshKodamanChannels() {
+                if (!els.kodamanGrid || typeof fetch !== "function") return false;
+                try {
+                    const url = new URL("output/kodaman_channels.json", location.href);
+                    url.searchParams.set("v", String(Date.now()));
+                    const response = await fetch(url.toString(), { cache: "no-store" });
+                    if (!response || !response.ok) throw new Error("Kodaman listesi alınamadı");
+                    const manifest = await response.json();
+                    const base = safeKodamanBase(manifest && manifest.base_url);
+                    if (!base || !Array.isArray(manifest.channels)) throw new Error("Kodaman listesi geçersiz");
+                    state.kodamanBaseUrl = base;
+                    state.kodamanChannels = manifest.channels.map((item) => {
+                        const id = String(item && item.id || "").trim();
+                        if (!/^[A-Za-z0-9_-]{1,64}$/.test(id)) return null;
+                        const status = ["error", "page", "unknown"].includes(item.status) ? item.status : "unknown";
+                        return { id: id, name: String(item.name || id).trim().slice(0, 64) || id, status: status };
+                    }).filter(Boolean);
+                    state.kodamanUpdatedAt = String(manifest.updated_at || "");
+                    state.kodamanLoadError = false;
+                    if (els.kodamanExternal) els.kodamanExternal.href = base + "/";
+                } catch (e) {
+                    state.kodamanLoadError = true;
+                } finally {
+                    state.kodamanLoading = false;
+                    renderKodamanChannels();
+                }
+                return !state.kodamanLoadError;
+            }
+
+            function markActiveKodamanCard() {
+                document.querySelectorAll(".kodaman-channel").forEach((card) => {
+                    card.classList.toggle("active", card.getAttribute("data-kodaman-id") === state.currentKodamanId);
+                });
+            }
+
+            function playKodamanChannel(id, scroll) {
+                const channel = (state.kodamanChannels || []).find((item) => item.id === id);
+                const base = safeKodamanBase(state.kodamanBaseUrl);
+                if (!channel || channel.status === "error" || !base) return false;
+                state.currentIndex = -1;
+                state.currentKodamanId = channel.id;
+                loadStream(base + "/channel?id=" + encodeURIComponent(channel.id), channel.name, "📡",
+                    "KODAMAN TV · " + kodamanStatusLabel(channel.status), scroll !== false);
+                markActiveCard();
+                markActiveExtraCard();
+                markActiveKodamanCard();
+                return true;
+            }
+
+            function stepKodaman(delta) {
+                const channels = (state.kodamanChannels || []).filter((item) => item.status !== "error");
+                if (!channels.length) return;
+                const index = channels.findIndex((item) => item.id === state.currentKodamanId);
+                const next = (index + delta + channels.length) % channels.length;
+                playKodamanChannel(channels[next].id, false);
+            }
+
             function markActiveCard() {
                 document.querySelectorAll(".ch-card").forEach((card) => {
                     const idx = parseInt(card.getAttribute("data-idx"), 10);
@@ -1417,6 +1556,7 @@
             function playChannel(index, scroll) {
                 if (index < 0 || index >= streamLinks.length) return;
                 state.currentIndex = index;
+                state.currentKodamanId = null;
                 loadStream(streamLinks[index], channelNames[index], channelIcons[index],
                     (channelStatuses[index] || "7/24") + " YAYIN", scroll !== false);
                 markActiveCard();
@@ -1859,6 +1999,7 @@
                 const ch = extraById(id);
                 if (!ch || !(ch.sources || []).length) return;
                 state.currentIndex = -1;
+                state.currentKodamanId = null;
                 state.currentExtraId = id;
                 state.currentSources = ch.sources.slice();
                 state.currentSourceIndex = 0;
@@ -3177,11 +3318,13 @@
                 // ◀ ▶ : EXTRA yayın açıkken EXTRA kanallar arasında, değilse site kanalları arasında gezer
                 $("navPrev").onclick = () => {
                     if (state.currentExtraId) { stepExtra(-1); return; }
+                    if (state.currentKodamanId) { stepKodaman(-1); return; }
                     if (!streamLinks.length) return;
                     playChannel((state.currentIndex - 1 + streamLinks.length) % streamLinks.length, false);
                 };
                 $("navNext").onclick = () => {
                     if (state.currentExtraId) { stepExtra(1); return; }
+                    if (state.currentKodamanId) { stepKodaman(1); return; }
                     if (!streamLinks.length) return;
                     playChannel((state.currentIndex + 1) % streamLinks.length, false);
                 };
@@ -3291,6 +3434,7 @@
                 renderMatchFilters(new Date());
                 renderPanelChips();
                 renderChannels();
+                renderKodamanChannels();
                 renderMatches();
                 restoreLiveSyncCache();
                 renderExtra();
@@ -3299,6 +3443,7 @@
                 bindEvents();
                 createParticles();
                 applyDeepLink();
+                refreshKodamanChannels();
                 setInterval(tickClock, 15000);
                 refreshMatches(true);
                 refreshExtra(true);
@@ -3306,12 +3451,13 @@
                 // Snapshot 30 sn'de bir; skor motoru Fixtoor gibi adaptif 5/15/60 sn.
                 setInterval(() => { refreshMatches(true); refreshStandings(true); }, 30 * 1000);
                 setInterval(() => { refreshExtra(true); }, 5 * 60 * 1000);
+                setInterval(refreshKodamanChannels, 15 * 60 * 1000);
                 startLiveSyncLoop();
                 // Sekmeye geri dönünce hemen tazele: arka planda bekleyen sayfa bayat kalmasın
                 document.addEventListener("visibilitychange", () => {
-                    if (!document.hidden) { tickClock(); refreshMatches(true); startLiveSyncLoop(); }
+                    if (!document.hidden) { tickClock(); refreshMatches(true); refreshKodamanChannels(); startLiveSyncLoop(); }
                 });
-                window.addEventListener("online", startLiveSyncLoop);
+                window.addEventListener("online", () => { refreshKodamanChannels(); startLiveSyncLoop(); });
                 window.inadina.ready = true;
             }
 
@@ -3319,6 +3465,9 @@
             window.inadina = {
                 state: state,
                 playChannel: playChannel,
+                playKodamanChannel: playKodamanChannel,
+                refreshKodamanChannels: refreshKodamanChannels,
+                renderKodamanChannels: renderKodamanChannels,
                 playMatch: playMatch,
                 playExtra: playExtra,
                 playSource: playSource,
