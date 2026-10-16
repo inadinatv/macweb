@@ -13,7 +13,7 @@
       "fixbettv12.com",
       "fixbettv11.com"
     ],
-    "last_checked": "2026-10-16T18:24:28+00:00",
+    "last_checked": "2026-10-16T20:12:37+00:00",
     "note": "OK",
     "probed": 200
   },
@@ -29,20 +29,20 @@
       "channel_id": "b4",
       "logo_home": "https://thumb.wikimedia.org/wikipedia/en/thumb/5/57/Le_Mans_FC_logo.svg/500px-Le_Mans_FC_logo.svg.png",
       "logo_away": "https://img.sporekrani.com/teams/J4oAcU2zUgmkDqu2vdgQvTAZ8AJgAbUFDkSLXG8r.png",
-      "status": "halftime",
+      "status": "live",
       "started": true,
       "raw_event": "21:45 | Fransa Ligue 1",
       "url": "https://fixbettv84.com/channel.html?id=b4",
-      "fetched_at": "2026-10-16T22:44:17+03:00",
+      "fetched_at": "2026-10-16T23:12:03+03:00",
       "status_source": "espn",
-      "raw_status": "STATUS_HALFTIME",
+      "raw_status": "STATUS_SECOND_HALF",
       "score_home": 0,
-      "score_away": 0,
+      "score_away": 2,
       "score_source": "espn",
-      "score_updated_at": "2026-10-16T22:44:17+03:00",
+      "score_updated_at": "2026-10-16T23:12:03+03:00",
       "event_id": "401876437",
       "starts_at": "2026-10-16T18:45:00+00:00",
-      "status_clock": "İY"
+      "status_clock": "70'"
     },
     {
       "match_id": "ss2",
@@ -59,16 +59,16 @@
       "started": true,
       "raw_event": "22:00 | İspanya La Liga",
       "url": "https://fixbettv84.com/channel.html?id=ss2",
-      "fetched_at": "2026-10-16T22:44:17+03:00",
+      "fetched_at": "2026-10-16T23:12:03+03:00",
       "status_source": "espn",
-      "raw_status": "STATUS_FIRST_HALF",
+      "raw_status": "STATUS_SECOND_HALF",
       "score_home": 0,
       "score_away": 0,
       "score_source": "espn",
-      "score_updated_at": "2026-10-16T22:44:17+03:00",
+      "score_updated_at": "2026-10-16T23:12:03+03:00",
       "event_id": "401882844",
       "starts_at": "2026-10-16T19:00:00+00:00",
-      "status_clock": "41'"
+      "status_clock": "52'"
     }
   ]
 }
