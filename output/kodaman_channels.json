@@ -1,0 +1,11 @@
+{
+  "base_url": "https://kodamantv21.com",
+  "channels": [
+    {
+      "id": "zirve",
+      "name": "Zirve Stream",
+      "status": "page"
+    }
+  ],
+  "updated_at": "2026-10-16T19:17:08Z"
+}

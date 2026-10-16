@@ -53,6 +53,9 @@ def test_no_server_text_and_no_fake_matches():
     # tek gerçek maç sekmesi: günün maçları
     assert 'data-tab="matchesTab"' in tpl
     assert 'data-tab="channelsTab"' in tpl
+    assert 'data-tab="kodamanTab"' in tpl
+    assert 'id="kodamanGrid"' in tpl
+    assert "function refreshKodamanChannels" in tpl
     # ekstra (m3u8) paneli
     assert 'data-tab="extraTab"' in tpl
     print("OK: no_server_text_and_no_fake_matches")
@@ -196,7 +199,7 @@ def test_league_standings_button_and_modal():
     assert tpl.index('id="liveClock"') < tpl.index('id="leagueBtn"'), "buton saatten sonra gelmeli"
     assert 'id="fixtureBtn"' in tpl and 'href="go:fixtor"' in tpl and "FİKSTÜR" in tpl
     assert tpl.index('id="leagueBtn"') < tpl.index('id="fixtureBtn"'), "fikstür butonu lig butonundan sonra gelmeli"
-    assert tpl.count('class="tab-btn') == 3, "sekme sayısı değişmemeli"
+    assert tpl.count('class="tab-btn') == 4, "TV KANALLARI 2 dahil dört sekme olmalı"
     # modal: karartma, neon pembe kenar, kapatma butonu, başlık
     assert 'id="leagueModal"' in tpl and 'id="leagueModalClose"' in tpl
     assert "backdrop-filter: blur" in tpl

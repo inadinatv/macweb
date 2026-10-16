@@ -107,9 +107,10 @@ test("sayfada sunucu/adres yazısı ve uydurma maç verisi yok", () => {
   assert.ok(!HTML.includes("Golden State Warriors"), "uydurma NBA maçı duruyor");
   assert.ok(!HTML.includes("Carlos Alcaraz"), "uydurma tenis maçı duruyor");
   assert.ok(HTML.includes("channel.html?id=zirve"), "gerçek kanal bağlantısı yok");
-  // sekmeler: kanallar + günün maçları + extra (ayrı "canlı maçlar" sekmesi kaldırıldı)
-  assert.equal((HTML.match(/class="tab-btn/g) || []).length, 3, "üç sekme olmalı");
+  // sekmeler: ana kanallar + Kodaman kanalları + günün maçları + extra
+  assert.equal((HTML.match(/class="tab-btn/g) || []).length, 4, "dört sekme olmalı");
   assert.ok(!/CANLI MAÇLAR/.test(HTML), "sahte canlı maç sekmesi duruyor");
+  assert.ok(HTML.includes('data-tab="kodamanTab"'), "TV KANALLARI 2 sekmesi yok");
   assert.ok(HTML.includes('data-tab="extraTab"'), "EXTRA sekmesi yok");
 });
 
@@ -140,37 +141,54 @@ test("kanal kartına tıklayınca yayın açılıyor ve player'e kayıyor", asyn
   dom.window.close();
 });
 
-test("VIP Yayın düğmesi Trend48’i aynı iframe’de açar ve önceki kanala toggle eder", async () => {
+test("TV KANALLARI 2 public manifest’ten ID’leri yükler ve teyitli player hatasını kapatır", async () => {
+  const feed = {
+    base_url: "https://kodamantv21.com",
+    updated_at: "2026-10-16T19:00:00Z",
+    channels: [
+      { id: "alpha-1", name: "Alpha TV", status: "page" },
+      { id: "zirve", name: "Zirve Stream", status: "error" },
+      { id: "bad/id", name: "Güvensiz ID", status: "page" },
+    ],
+  };
+  const fetchImpl = async (url) => {
+    if (String(url).includes("/output/kodaman_channels.json")) return { ok: true, status: 200, json: async () => feed };
+    if (String(url).startsWith("https://data-reality.com/matches.php")) return { ok: true, status: 200, text: async () => "" };
+    if (String(url).startsWith("https://data-reality.com/matches2.php")) return { ok: true, status: 200, text: async () => "" };
+    return { ok: true, status: 200, json: async () => TODAY, text: async () => "" };
+  };
+  const { window, dom } = await loadPage({ fetchImpl });
+  await tick(30);
+  const button = window.document.querySelector('.tab-btn[data-tab="kodamanTab"]');
+  assert.ok(button, "TV KANALLARI 2 düğmesi yok");
+  button.click();
+  assert.equal(window.inadina.state.activeTab, "kodamanTab");
+  assert.ok(window.document.getElementById("kodamanTab").classList.contains("active"));
+  assert.equal(window.inadina.state.kodamanChannels.length, 2, "geçersiz ID filtrelenmeli");
+  assert.match(window.document.getElementById("kodamanMeta").textContent, /2 ID/);
+  assert.equal(window.document.getElementById("kodamanExternal").href, "https://kodamantv21.com/");
+  const playable = window.document.querySelector('#kodamanGrid [data-kodaman-id="alpha-1"]');
+  const unavailable = window.document.querySelector('#kodamanGrid [data-kodaman-id="zirve"]');
+  assert.ok(playable, "public player kartı çizilmedi");
+  assert.equal(unavailable.disabled, true, "son kontrolde hata veren player açılabilir olmamalı");
+  playable.click();
+  assert.equal(window.document.getElementById("liveIframe").getAttribute("src"), "https://kodamantv21.com/channel?id=alpha-1");
+  assert.equal(window.document.getElementById("playerTitle").textContent, "Alpha TV");
+  window.document.dispatchEvent(new window.KeyboardEvent("keydown", { key: "2", bubbles: true }));
+  assert.equal(window.inadina.state.activeTab, "kodamanTab", "2 kısayolu ikinci sekmeyi açmalı");
+  dom.window.close();
+});
+
+test("kırık VIP akışı kaldırıldı; uygulama Trend48’i açmadan normal kanalları oynatır", async () => {
   const { window, dom } = await loadPage();
-  const button = window.document.getElementById("vipStreamBtn");
   const iframe = window.document.getElementById("liveIframe");
-  assert.ok(button, "VIP Yayın düğmesi yok");
+  assert.equal(window.document.getElementById("vipStreamBtn"), null, "VIP düğmesi kaldırılmalı");
   assert.equal(window.document.getElementById("vipBrandOverlay"), null, "VIP oynatıcıda logo kaplaması olmamalı");
-  assert.equal(iframe.getAttribute("src"), "https://trend48.st/live-tv?ch=beinsports1-tr",
-    "derin bağlantı yokken uygulama açılışında Trend48 iframe'de başlamalı");
-  assert.equal(button.getAttribute("aria-pressed"), "true", "açılışta VIP düğmesi aktif olmalı");
+  assert.equal(iframe.getAttribute("src"), "", "uygulama açılışında kırık Trend48 akışı yüklenmemeli");
+  assert.equal(window.document.body.textContent.includes("Trend48"), false, "kırık VIP kaynağı arayüzden kaldırılmalı");
 
-  cards(window)[2].click();
-  assert.equal(button.getAttribute("aria-pressed"), "false", "normal kanal seçimi VIP modunu kapatmalı");
-  const previousUrl = iframe.getAttribute("src");
-  const previousTitle = window.document.getElementById("playerTitle").textContent;
-  button.click();
-  assert.equal(iframe.getAttribute("src"), "https://trend48.st/live-tv?ch=beinsports1-tr");
-  assert.equal(window.document.getElementById("playerTitle").textContent, "VIP Yayın");
-  assert.equal(button.getAttribute("aria-pressed"), "true");
-
-  button.click();
-  assert.equal(iframe.getAttribute("src"), previousUrl, "önceki kanal iframe’i geri yüklenmeli");
-  assert.equal(window.document.getElementById("playerTitle").textContent, previousTitle);
-  assert.equal(button.getAttribute("aria-pressed"), "false");
-
-  button.click();
-  cards(window)[1].click();
-  assert.equal(button.textContent, "★ VIP Yayın", "başka kanal seçilince eski toggle state’i temizlenmeli");
-  const newChannelUrl = iframe.getAttribute("src");
-  button.click();
-  button.click();
-  assert.equal(iframe.getAttribute("src"), newChannelUrl, "yeni seçilen kanal dönüş hedefi olmalı");
+  cards(window)[0].click();
+  assert.match(iframe.getAttribute("src"), /channel\.html\?id=/, "normal kanal seçimi çalışmaya devam etmeli");
   dom.window.close();
 });
 
@@ -182,28 +200,6 @@ test("canlı skor polling aralığı Fixtoor gibi canlı/yakın/boşta/hata duru
   assert.equal(interval(false, false, 0, false), 60000, "boşta 60 sn beklenmeli");
   assert.equal(interval(false, true, 3, false), 120000, "3 hatadan sonra 120 sn beklenmeli");
   assert.equal(interval(true, true, 0, true), 60000, "arka plan sekmesinde istek sıklığı düşmeli");
-  dom.window.close();
-});
-
-test("VIP’den dönünce önceki EXTRA HLS kaynağı yeniden başlatılır", async () => {
-  const { window, dom } = await loadPage();
-  const button = window.document.getElementById("vipStreamBtn");
-  const channel = window.inadina.extraChannels().find((c) => (c.sources || []).some((s) => s.type === "hls"));
-  assert.ok(channel, "test için HLS EXTRA kaynağı bulunamadı");
-  window.inadina.playExtra(channel.id, false);
-  await tick(30);
-  const firstLoadCount = window.hlsLog.filter((x) => x.startsWith("load:")).length;
-  assert.ok(firstLoadCount > 0, "önceki HLS yayını başlamadı");
-
-  button.click();
-  assert.equal(window.document.getElementById("liveIframe").getAttribute("src"), "https://trend48.st/live-tv?ch=beinsports1-tr");
-  assert.equal(window.inadina.state.currentExtraId, null);
-  button.click();
-  await tick(30);
-  assert.equal(window.inadina.state.currentExtraId, channel.id);
-  assert.equal(window.inadina.state.playerMode, "hls");
-  assert.ok(window.hlsLog.filter((x) => x.startsWith("load:")).length > firstLoadCount,
-    "önceki HLS kaynağı VIP’den dönüşte yeniden başlatılmalı");
   dom.window.close();
 });
 
