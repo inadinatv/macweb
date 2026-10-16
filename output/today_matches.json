@@ -13,13 +13,13 @@
       "fixbettv12.com",
       "fixbettv11.com"
     ],
-    "last_checked": "2026-10-15T22:19:58+00:00",
+    "last_checked": "2026-10-16T00:36:26+00:00",
     "note": "OK",
     "probed": 200
   },
   "date": "2026-10-16",
   "timezone": "Europe/Istanbul",
-  "generated_at": "2026-10-16T02:50:26+03:00",
+  "generated_at": "2026-10-16T03:35:50+03:00",
   "matches": [
     {
       "match_id": "b5",
@@ -114,7 +114,7 @@
       "started": false,
       "raw_event": "20:00 | Trendyol Süper Lig",
       "url": "https://fixbettv84.com/channel.html?id=zirve",
-      "fetched_at": "2026-10-16T02:50:26+03:00",
+      "fetched_at": "2026-10-16T03:35:50+03:00",
       "status_source": "mackolik",
       "raw_status": "none",
       "score_home": null,
@@ -140,7 +140,7 @@
       "started": false,
       "raw_event": "21:45 | Fransa Ligue 1",
       "url": "https://fixbettv84.com/channel.html?id=b4",
-      "fetched_at": "2026-10-16T02:50:26+03:00",
+      "fetched_at": "2026-10-16T03:35:50+03:00",
       "status_source": "espn",
       "raw_status": "STATUS_SCHEDULED",
       "score_home": null,
@@ -166,7 +166,7 @@
       "started": false,
       "raw_event": "22:00 | İspanya La Liga",
       "url": "https://fixbettv84.com/channel.html?id=ss2",
-      "fetched_at": "2026-10-16T02:50:26+03:00",
+      "fetched_at": "2026-10-16T03:35:50+03:00",
       "status_source": "espn",
       "raw_status": "STATUS_SCHEDULED",
       "score_home": null,
