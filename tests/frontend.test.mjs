@@ -1427,7 +1427,7 @@ function featuredLiveRow(minutesAgo = 30, extra = {}) {
 }
 
 test("Günün Maçı basketboldan önce bugünün futbol fikstürünü seçer ve Fixtoor uyumlu ESPN skorunu eşler", async () => {
-  const fixedNow = Date.UTC(2026, 9, 16, 12, 0, 0);
+  const fixedNow = Date.UTC(2026, 9, 16, 16, 30, 0);
   const row = (id, sport, league, home, away, startAt) => {
     const start = new Date(startAt);
     const time = new Intl.DateTimeFormat("en-GB", { timeZone: "Europe/Istanbul", hour: "2-digit", minute: "2-digit", hourCycle: "h23" }).format(start);
@@ -1456,6 +1456,10 @@ test("Günün Maçı basketboldan önce bugünün futbol fikstürünü seçer ve
     "aynı günün futbol maçı, daha erken basketbol fikstüründen önce seçilmeli");
   assert.deepEqual(Array.from(window.inadina.syncPathsFor(football)), ["soccer/tur.1"],
     "Çorum–Rize maçı Fixtoor ile aynı günlük ESPN scoreboard yoluna bağlanmalı");
+  assert.deepEqual(Array.from(window.inadina.syncDatesForPath("soccer/tur.1")), ["20261016"],
+    "maçın UTC fikstür günü tekil scoreboard sorgusu için üretilmeli");
+  assert.ok(Array.from(window.inadina.syncWantedPaths(new Date(fixedNow))).includes("soccer/tur.1"),
+    "başlama saatine yaklaşan maçın scoreboard yolu canlı poll’a dahil edilmeli");
 
   const changed = window.inadina.applyLiveSync("soccer/tur.1", [{
     id: football.event_id, start: new Date(football.starts_at), homeName: "Corum FK", awayName: "Caykur Rizespor",
