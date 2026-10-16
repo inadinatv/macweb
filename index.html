@@ -2083,22 +2083,31 @@
                     const day = start ? localDateKey(start) : String(m.date || "");
                     return day === todayKey;
                 });
+                // Günün maçlarında resmi seçim yoksa futbol, basketbol gibi diğer
+                // sporların daha erken saatli fikstüründen önce gelir. Böylece
+                // Çorum FK–Ç.Rizespor gibi futbol maçları basketbol fallback'ine yenilmez.
+                const scheduledFootball = today.filter((m) => {
+                    const sport = norm(m.sport);
+                    return (sport === "futbol" || sport === "soccer")
+                        && (isActiveMatch(m._status) || m._status === "upcoming");
+                });
+                const candidates = scheduledFootball.length ? scheduledFootball : today;
                 const activeSort = (list) => list.slice().sort((a, b) => {
                     const liveRank = (m) => m._status === "live" ? 0 : 1;
                     return liveRank(a) - liveRank(b) || String(a.time || "99:99").localeCompare(String(b.time || "99:99"));
                 });
-                const officialActive = activeSort(today.filter((m) => m._isFeatured && isActiveMatch(m._status)));
+                const officialActive = activeSort(candidates.filter((m) => m._isFeatured && isActiveMatch(m._status)));
                 if (officialActive.length) return { match: officialActive[0], official: true };
-                const officialUpcoming = today.filter((m) => m._isFeatured && m._status === "upcoming")
+                const officialUpcoming = candidates.filter((m) => m._isFeatured && m._status === "upcoming")
                     .sort((a, b) => String(a.time || "99:99").localeCompare(String(b.time || "99:99")));
                 if (officialUpcoming.length) return { match: officialUpcoming[0], official: true };
-                const active = activeSort(today.filter((m) => isActiveMatch(m._status)));
+                const active = activeSort(candidates.filter((m) => isActiveMatch(m._status)));
                 if (active.length) return { match: active[0], official: !!active[0]._isFeatured };
-                const upcoming = today.filter((m) => m._status === "upcoming")
+                const upcoming = candidates.filter((m) => m._status === "upcoming")
                     .sort((a, b) => String(a.time || "99:99").localeCompare(String(b.time || "99:99")));
                 if (upcoming.length) return { match: upcoming[0], official: false };
 
-                const finished = today.filter((m) => m._status === "finished");
+                const finished = candidates.filter((m) => m._status === "finished");
                 const officialScored = finished.filter((m) => m._isFeatured && m._score)
                     .sort((a, b) => String(b.time || "").localeCompare(String(a.time || "")));
                 if (officialScored.length) return { match: officialScored[0], official: true };
@@ -2603,6 +2612,7 @@
              * eşleşen maçlara (lig + tarih + saat + iki takım adı) skor/durum işler.
              * Eşleşme belirsizse hiçbir veri eklenmez — uydurma skor olmaz. */
             const syncPathsByKey = {};
+            const syncPathFallbacks = scoreSyncConfig.pathFallbacks || {};
             (scoreSyncConfig.leagues || []).forEach((l) => {
                 if (l && l.path) syncPathsByKey[norm(l.sport) + "|" + norm(l.league || l.name)] = l.path;
             });
@@ -2661,7 +2671,7 @@
             function syncDatesForPath(path) {
                 const days = new Set();
                 matchesData.forEach((m) => {
-                    if (syncPathFor(m) !== path || NON_LIVE_STATUS[m.status]) return;
+                    if (!syncPathsFor(m).includes(path) || NON_LIVE_STATUS[m.status]) return;
                     const start = matchStart(m);
                     if (start) days.add(start.toISOString().slice(0, 10).replace(/-/g, ""));
                 });
@@ -2728,6 +2738,13 @@
 
             function syncPathFor(m) {
                 return syncPathsByKey[norm(m.sport) + "|" + norm(m.league)] || null;
+            }
+
+            function syncPathsFor(m) {
+                const primary = syncPathFor(m);
+                if (!primary) return [];
+                const fallbacks = Array.isArray(syncPathFallbacks[primary]) ? syncPathFallbacks[primary] : [];
+                return Array.from(new Set([primary, ...fallbacks.filter((path) => typeof path === "string" && path)]));
             }
 
             /** Takım adlarını katla + bilinen takma adlara çevir + fk/sk/spor eklerini kırp. */
@@ -2807,7 +2824,7 @@
                 const tolerance = Math.max(5, scoreSyncConfig.toleranceMinutes || 45) * 60000;
                 let changes = 0;
                 matchesData.forEach((m) => {
-                    if (syncPathFor(m) !== path) return;
+                    if (!syncPathsFor(m).includes(path)) return;
                     if (NON_LIVE_STATUS[m.status]) return;                     // ertelendi/iptal: dokunma
                     const mStart = matchStart(m);
                     if (!mStart) return;
@@ -2870,10 +2887,10 @@
             function syncWantedPaths(now) {
                 const wanted = new Set();
                 matchesData.forEach((m) => {
-                    const path = syncPathFor(m);
-                    if (!path || NON_LIVE_STATUS[m.status]) return;
+                    const paths = syncPathsFor(m);
+                    if (!paths.length || NON_LIVE_STATUS[m.status]) return;
                     const st = computeState(m, now);
-                    if (isActiveMatch(st.status)) { wanted.add(path); return; }
+                    if (isActiveMatch(st.status)) { paths.forEach((path) => wanted.add(path)); return; }
                     if (!st.start) return;
                     const diff = now.getTime() - st.start.getTime();
                     const normalFinalWindow = st.status === "finished" && diff >= 0
@@ -2881,7 +2898,7 @@
                     const missingFinalScore = st.status === "finished" && diff >= 0
                         && diff < FINAL_SCORE_RETRY_WINDOW && !hasCompleteScore(m);
                     if ((st.status === "upcoming" && diff > -90 * 60000 && diff < 5 * 60000)
-                        || normalFinalWindow || missingFinalScore) wanted.add(path);
+                        || normalFinalWindow || missingFinalScore) paths.forEach((path) => wanted.add(path));
                 });
                 return Array.from(wanted);
             }
@@ -2894,13 +2911,13 @@
             }
 
             function syncPathHasLiveMatch(path, now) {
-                return matchesData.some((m) => syncPathFor(m) === path && !NON_LIVE_STATUS[m.status]
+                return matchesData.some((m) => syncPathsFor(m).includes(path) && !NON_LIVE_STATUS[m.status]
                     && isActiveMatch(computeState(m, now).status));
             }
 
             function syncPathHasNearMatch(path, now) {
                 return matchesData.some((m) => {
-                    if (syncPathFor(m) !== path || NON_LIVE_STATUS[m.status]) return false;
+                    if (!syncPathsFor(m).includes(path) || NON_LIVE_STATUS[m.status]) return false;
                     const st = computeState(m, now);
                     if (!st.start || isActiveMatch(st.status)) return false;
                     const diff = now.getTime() - st.start.getTime();
@@ -2911,7 +2928,7 @@
 
             function syncPathHasPendingFinalScore(path, now) {
                 return matchesData.some((m) => {
-                    if (syncPathFor(m) !== path || NON_LIVE_STATUS[m.status] || hasCompleteScore(m)) return false;
+                    if (!syncPathsFor(m).includes(path) || NON_LIVE_STATUS[m.status] || hasCompleteScore(m)) return false;
                     const st = computeState(m, now);
                     if (st.status !== "finished" || !st.start) return false;
                     const diff = now.getTime() - st.start.getTime();
@@ -3396,6 +3413,7 @@
                 liveSyncInterval: liveSyncInterval,
                 syncIntervalForState: syncIntervalForState,
                 syncWantedPaths: syncWantedPaths,
+                syncPathsFor: syncPathsFor,
                 syncDatesForPath: syncDatesForPath,
                 restoreLiveSyncCache: restoreLiveSyncCache,
                 parseEspnScoreboard: parseEspnScoreboard,
