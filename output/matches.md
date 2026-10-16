@@ -1,36 +1,39 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-10-16 16:49  
-> **Toplam maç:** 6  |  **Canlı:** 1  |  **Yaklaşan:** 5
+> **Güncellenme:** 2026-10-16 18:24  
+> **Toplam maç:** 6  |  **Canlı:** 3  |  **Yaklaşan:** 2
 
 ## 🔴 CANLI
 
-- 🔴 **Karşıyaka vs Çayırova Bld.** — CANLI · `19:00` | Basketbol Süper Ligi <https://fixbettv84.com/channel.html?id=b5>
+- 🔴 **Beşiktaş vs Bayern Münih** — CANLI · `20:00` | Euroleague <https://fixbettv84.com/channel.html?id=ss>
+- 🔴 **Zalgiris Kaunas vs Anadolu Efes** — CANLI · `20:00` | Euroleague <https://fixbettv84.com/channel.html?id=ss2>
+- 🔴 **Çorum FK 1 - 1 Ç.Rizespor** — CANLI · `20:00` | Trendyol Süper Lig <https://fixbettv84.com/channel.html?id=zirve>
 
 ## ⏰ YAKLAŞAN
 
-- ⏰ **Beşiktaş vs Bayern Münih** — YAKLAŞAN · `20:00` | Euroleague <https://fixbettv84.com/channel.html?id=ss>
-- ⏰ **Zalgiris Kaunas vs Anadolu Efes** — YAKLAŞAN · `20:00` | Euroleague <https://fixbettv84.com/channel.html?id=ss2>
-- ⏰ **Çorum FK vs Ç.Rizespor** — YAKLAŞAN · `20:00` | Trendyol Süper Lig <https://fixbettv84.com/channel.html?id=zirve>
 - ⏰ **Le Mans vs Toulouse** — YAKLAŞAN · `21:45` | Fransa Ligue 1 <https://fixbettv84.com/channel.html?id=b4>
 - ⏰ **Deportivo vs Levante** — YAKLAŞAN · `22:00` | İspanya La Liga <https://fixbettv84.com/channel.html?id=ss2>
+
+## ✅ BİTTİ
+
+- ✅ **Karşıyaka vs Çayırova Bld.** — MS · `19:00` | Basketbol Süper Ligi <https://fixbettv84.com/channel.html?id=b5>
 
 ---
 ## 🏆 Lig Bazlı
 
 ### Basketbol Süper Ligi
-- 🔴 Karşıyaka vs Çayırova Bld. — 19:00
+- ⏰ Karşıyaka vs Çayırova Bld. — 19:00
 
 ### Euroleague
-- ⏰ Beşiktaş vs Bayern Münih — 20:00
-- ⏰ Zalgiris Kaunas vs Anadolu Efes — 20:00
+- 🔴 Beşiktaş vs Bayern Münih — 20:00
+- 🔴 Zalgiris Kaunas vs Anadolu Efes — 20:00
 
 ### Fransa Ligue 1
 - ⏰ Le Mans vs Toulouse — 21:45
 
 ### Trendyol Süper Lig
-- ⏰ Çorum FK vs Ç.Rizespor — 20:00
+- 🔴 Çorum FK vs Ç.Rizespor — 20:00
 
 ### İspanya La Liga
 - ⏰ Deportivo vs Levante — 22:00
