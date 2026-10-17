@@ -1,13 +1,13 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-10-17 12:34  
+> **Güncellenme:** 2026-10-17 12:57  
 > **Toplam maç:** 30  |  **Canlı:** 3  |  **Yaklaşan:** 25
 
 ## 🔴 CANLI
 
-- 🔴 **Everton 0 - 0 Chelsea** — DEVRE · `14:30` | İngiltere Premier Lig <https://fixbettv84.com/channel.html?id=b3>
-- 🔴 **Espanyol 0 - 0 Atletico Madrid** — CANLI · `15:00` | İspanya La Liga <https://fixbettv84.com/channel.html?id=ss>
+- 🔴 **Everton 0 - 1 Chelsea** — CANLI · `14:30` | İngiltere Premier Lig <https://fixbettv84.com/channel.html?id=b3>
+- 🔴 **Espanyol 0 - 0 Atletico Madrid** — DEVRE · `15:00` | İspanya La Liga <https://fixbettv84.com/channel.html?id=ss>
 - 🔴 **Bursaspor vs Bahçeşehir Klj** — CANLI · `15:30` | Basketbol Süper Ligi <https://fixbettv84.com/channel.html?id=b5>
 
 ## ⏰ YAKLAŞAN
@@ -82,7 +82,7 @@
 - ⏰ Shakhtar Donetsk vs Kolos — 18:00
 
 ### İngiltere Premier Lig
-- ⏰ Everton vs Chelsea — 14:30
+- 🔴 Everton vs Chelsea — 14:30
 - ⏰ Brentford vs Liverpool — 17:00
 - ⏰ Fulham vs Hull City — 17:00
 - ⏰ Manchester City vs Ipswich Town — 17:00
@@ -93,7 +93,7 @@
 - ⏰ SP Burgos vs Obradoiro CAB — 22:00
 
 ### İspanya La Liga
-- 🔴 Espanyol vs Atletico Madrid — 15:00
+- ⏰ Espanyol vs Atletico Madrid — 15:00
 - ⏰ Villarreal vs Elche — 17:15
 - ⏰ Real Betis vs Barcelona — 19:30
 - ⏰ Valencia vs Athletic Bilbao — 22:00
