@@ -1,19 +1,15 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-10-17 17:57  
-> **Toplam maç:** 30  |  **Canlı:** 4  |  **Yaklaşan:** 6
+> **Güncellenme:** 2026-10-17 18:35  
+> **Toplam maç:** 30  |  **Canlı:** 1  |  **Yaklaşan:** 5
 
 ## 🔴 CANLI
 
-- 🔴 **Fenerbahçe Medicana vs Ziraat Bankkart** — CANLI · `19:00` | TVF Efeler Ligi <https://fixbettv84.com/channel.html?id=trtspor2>
-- 🔴 **Manresa vs Unicaja Malaga** — CANLI · `19:00` | İspanya Basketbol Ligi <https://fixbettv84.com/channel.html?id=smarts>
-- 🔴 **Newcastle 0 - 1 Aston Villa** — CANLI · `19:30` | İngiltere Premier Lig <https://fixbettv84.com/channel.html?id=b3>
-- 🔴 **Real Betis 2 - 3 Barcelona** — CANLI · `19:30` | İspanya La Liga <https://fixbettv84.com/channel.html?id=ss>
+- 🔴 **Red Star vs St. Etienne** — CANLI · `21:00` | Fransa Ligue 2 <https://fixbettv84.com/channel.html?id=b2>
 
 ## ⏰ YAKLAŞAN
 
-- ⏰ **Red Star vs St. Etienne** — YAKLAŞAN · `21:00` | Fransa Ligue 2 <https://fixbettv84.com/channel.html?id=b2>
 - ⏰ **Lille vs Brest** — YAKLAŞAN · `21:45` | Fransa Ligue 1 <https://fixbettv84.com/channel.html?id=b4>
 - ⏰ **Troyes vs Lens** — YAKLAŞAN · `21:45` | Fransa Ligue 1 <https://fixbettv84.com/channel.html?id=bm1>
 - ⏰ **Roma vs Genoa** — YAKLAŞAN · `21:45` | İtalya Serie A <https://fixbettv84.com/channel.html?id=ss2>
@@ -42,6 +38,10 @@
 - ✅ **Fenerbahçe 3 - 0 Alanyaspor** — MS · `19:00` | Trendyol Süper Lig ★ **Günün Maçı** <https://fixbettv84.com/channel.html?id=zirve>
 - ✅ **Bologna vs Inter** — MS · `19:00` | İtalya Serie A <https://fixbettv84.com/channel.html?id=ss2>
 - ✅ **Bodrumspor vs Bandırmaspor** — MS · `19:00` | Trendyol 1. Lig <https://fixbettv84.com/channel.html?id=trtspor>
+- ✅ **Fenerbahçe Medicana vs Ziraat Bankkart** — MS · `19:00` | TVF Efeler Ligi <https://fixbettv84.com/channel.html?id=trtspor2>
+- ✅ **Manresa vs Unicaja Malaga** — MS · `19:00` | İspanya Basketbol Ligi <https://fixbettv84.com/channel.html?id=smarts>
+- ✅ **Newcastle 0 - 1 Aston Villa** — MS · `19:30` | İngiltere Premier Lig <https://fixbettv84.com/channel.html?id=b3>
+- ✅ **Real Betis 2 - 5 Barcelona** — MS · `19:30` | İspanya La Liga <https://fixbettv84.com/channel.html?id=ss>
 
 ## ⭐ GÜNÜN MAÇI
 
@@ -62,11 +62,11 @@
 - ⏰ Troyes vs Lens — 21:45
 
 ### Fransa Ligue 2
-- ⏰ Red Star vs St. Etienne — 21:00
+- 🔴 Red Star vs St. Etienne — 21:00
 
 ### TVF Efeler Ligi
 - ⏰ Halkbank vs Galatasaray — 16:00
-- 🔴 Fenerbahçe Medicana vs Ziraat Bankkart — 19:00
+- ⏰ Fenerbahçe Medicana vs Ziraat Bankkart — 19:00
 
 ### Trendyol 1. Lig
 - ⏰ Sivasspor vs Sarıyer — 16:00
@@ -86,16 +86,16 @@
 - ⏰ Brentford vs Liverpool — 17:00
 - ⏰ Fulham vs Hull City — 17:00
 - ⏰ Manchester City vs Ipswich Town — 17:00
-- 🔴 Newcastle vs Aston Villa — 19:30
+- ⏰ Newcastle vs Aston Villa — 19:30
 
 ### İspanya Basketbol Ligi
-- 🔴 Manresa vs Unicaja Malaga — 19:00
+- ⏰ Manresa vs Unicaja Malaga — 19:00
 - ⏰ SP Burgos vs Obradoiro CAB — 22:00
 
 ### İspanya La Liga
 - ⏰ Espanyol vs Atletico Madrid — 15:00
 - ⏰ Villarreal vs Elche — 17:15
-- 🔴 Real Betis vs Barcelona — 19:30
+- ⏰ Real Betis vs Barcelona — 19:30
 - ⏰ Valencia vs Athletic Bilbao — 22:00
 
 ### İtalya Serie A
