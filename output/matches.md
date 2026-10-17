@@ -1,15 +1,18 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-10-17 09:07  
-> **Toplam maç:** 30  |  **Canlı:** 0  |  **Yaklaşan:** 30
+> **Güncellenme:** 2026-10-17 12:05  
+> **Toplam maç:** 30  |  **Canlı:** 4  |  **Yaklaşan:** 26
+
+## 🔴 CANLI
+
+- 🔴 **Bandırma Bordo vs Türk Telekom** — CANLI · `13:00` | Basketbol Süper Ligi <https://fixbettv84.com/channel.html?id=b5>
+- 🔴 **Erzurumspor 2 - 0 Eyüpspor** — CANLI · `13:30` | Trendyol Süper Lig <https://fixbettv84.com/channel.html?id=b2>
+- 🔴 **Everton 0 - 0 Chelsea** — CANLI · `14:30` | İngiltere Premier Lig <https://fixbettv84.com/channel.html?id=b3>
+- 🔴 **Espanyol 0 - 0 Atletico Madrid** — CANLI · `15:00` | İspanya La Liga <https://fixbettv84.com/channel.html?id=ss>
 
 ## ⏰ YAKLAŞAN
 
-- ⏰ **Bandırma Bordo vs Türk Telekom** — YAKLAŞAN · `13:00` | Basketbol Süper Ligi <https://fixbettv84.com/channel.html?id=b5>
-- ⏰ **Erzurumspor vs Eyüpspor** — YAKLAŞAN · `13:30` | Trendyol Süper Lig <https://fixbettv84.com/channel.html?id=b2>
-- ⏰ **Everton vs Chelsea** — YAKLAŞAN · `14:30` | İngiltere Premier Lig <https://fixbettv84.com/channel.html?id=b3>
-- ⏰ **Espanyol vs Atletico Madrid** — YAKLAŞAN · `15:00` | İspanya La Liga <https://fixbettv84.com/channel.html?id=ss>
 - ⏰ **Bursaspor vs Bahçeşehir Klj** — YAKLAŞAN · `15:30` | Basketbol Süper Ligi <https://fixbettv84.com/channel.html?id=b5>
 - ⏰ **Gençlerbirliği vs Galatasaray** — YAKLAŞAN · `16:00` | Trendyol Süper Lig ★ **Günün Maçı** <https://fixbettv84.com/channel.html?id=zirve>
 - ⏰ **Venezia vs Napoli** — YAKLAŞAN · `16:00` | İtalya Serie A <https://fixbettv84.com/channel.html?id=ss2>
@@ -46,7 +49,7 @@
 ## 🏆 Lig Bazlı
 
 ### Basketbol Süper Ligi
-- ⏰ Bandırma Bordo vs Türk Telekom — 13:00
+- 🔴 Bandırma Bordo vs Türk Telekom — 13:00
 - ⏰ Bursaspor vs Bahçeşehir Klj — 15:30
 - ⏰ Körfez Basket vs Tofaş — 18:00
 
@@ -67,7 +70,7 @@
 - ⏰ Bodrumspor vs Bandırmaspor — 19:00
 
 ### Trendyol Süper Lig
-- ⏰ Erzurumspor vs Eyüpspor — 13:30
+- 🔴 Erzurumspor vs Eyüpspor — 13:30
 - ⏰ Gençlerbirliği vs Galatasaray — 16:00
 - ⏰ Amedspor vs Konyaspor — 16:00
 - ⏰ Fenerbahçe vs Alanyaspor — 19:00
@@ -76,7 +79,7 @@
 - ⏰ Shakhtar Donetsk vs Kolos — 18:00
 
 ### İngiltere Premier Lig
-- ⏰ Everton vs Chelsea — 14:30
+- 🔴 Everton vs Chelsea — 14:30
 - ⏰ Brentford vs Liverpool — 17:00
 - ⏰ Fulham vs Hull City — 17:00
 - ⏰ Manchester City vs Ipswich Town — 17:00
@@ -87,7 +90,7 @@
 - ⏰ SP Burgos vs Obradoiro CAB — 22:00
 
 ### İspanya La Liga
-- ⏰ Espanyol vs Atletico Madrid — 15:00
+- 🔴 Espanyol vs Atletico Madrid — 15:00
 - ⏰ Villarreal vs Elche — 17:15
 - ⏰ Real Betis vs Barcelona — 19:30
 - ⏰ Valencia vs Athletic Bilbao — 22:00
