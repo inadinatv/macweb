@@ -1,20 +1,16 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-10-17 18:35  
-> **Toplam maç:** 30  |  **Canlı:** 1  |  **Yaklaşan:** 5
+> **Güncellenme:** 2026-10-17 19:48  
+> **Toplam maç:** 30  |  **Canlı:** 5  |  **Yaklaşan:** 0
 
 ## 🔴 CANLI
 
-- 🔴 **Red Star vs St. Etienne** — CANLI · `21:00` | Fransa Ligue 2 <https://fixbettv84.com/channel.html?id=b2>
-
-## ⏰ YAKLAŞAN
-
-- ⏰ **Lille vs Brest** — YAKLAŞAN · `21:45` | Fransa Ligue 1 <https://fixbettv84.com/channel.html?id=b4>
-- ⏰ **Troyes vs Lens** — YAKLAŞAN · `21:45` | Fransa Ligue 1 <https://fixbettv84.com/channel.html?id=bm1>
-- ⏰ **Roma vs Genoa** — YAKLAŞAN · `21:45` | İtalya Serie A <https://fixbettv84.com/channel.html?id=ss2>
-- ⏰ **Valencia vs Athletic Bilbao** — YAKLAŞAN · `22:00` | İspanya La Liga <https://fixbettv84.com/channel.html?id=ss>
-- ⏰ **SP Burgos vs Obradoiro CAB** — YAKLAŞAN · `22:00` | İspanya Basketbol Ligi <https://fixbettv84.com/channel.html?id=smarts>
+- 🔴 **Lille 0 - 1 Brest** — CANLI · `21:45` | Fransa Ligue 1 <https://fixbettv84.com/channel.html?id=b4>
+- 🔴 **Troyes 1 - 2 Lens** — DEVRE · `21:45` | Fransa Ligue 1 <https://fixbettv84.com/channel.html?id=bm1>
+- 🔴 **Roma vs Genoa** — CANLI · `21:45` | İtalya Serie A <https://fixbettv84.com/channel.html?id=ss2>
+- 🔴 **Valencia vs Athletic Bilbao** — CANLI · `22:00` | İspanya La Liga <https://fixbettv84.com/channel.html?id=ss>
+- 🔴 **SP Burgos vs Obradoiro CAB** — CANLI · `22:00` | İspanya Basketbol Ligi <https://fixbettv84.com/channel.html?id=smarts>
 
 ## ✅ BİTTİ
 
@@ -42,6 +38,7 @@
 - ✅ **Manresa vs Unicaja Malaga** — MS · `19:00` | İspanya Basketbol Ligi <https://fixbettv84.com/channel.html?id=smarts>
 - ✅ **Newcastle 0 - 1 Aston Villa** — MS · `19:30` | İngiltere Premier Lig <https://fixbettv84.com/channel.html?id=b3>
 - ✅ **Real Betis 2 - 5 Barcelona** — MS · `19:30` | İspanya La Liga <https://fixbettv84.com/channel.html?id=ss>
+- ✅ **Red Star vs St. Etienne** — MS · `21:00` | Fransa Ligue 2 <https://fixbettv84.com/channel.html?id=b2>
 
 ## ⭐ GÜNÜN MAÇI
 
@@ -58,11 +55,11 @@
 
 ### Fransa Ligue 1
 - ⏰ Strasbourg vs PSG — 18:15
-- ⏰ Lille vs Brest — 21:45
+- 🔴 Lille vs Brest — 21:45
 - ⏰ Troyes vs Lens — 21:45
 
 ### Fransa Ligue 2
-- 🔴 Red Star vs St. Etienne — 21:00
+- ⏰ Red Star vs St. Etienne — 21:00
 
 ### TVF Efeler Ligi
 - ⏰ Halkbank vs Galatasaray — 16:00
@@ -90,18 +87,18 @@
 
 ### İspanya Basketbol Ligi
 - ⏰ Manresa vs Unicaja Malaga — 19:00
-- ⏰ SP Burgos vs Obradoiro CAB — 22:00
+- 🔴 SP Burgos vs Obradoiro CAB — 22:00
 
 ### İspanya La Liga
 - ⏰ Espanyol vs Atletico Madrid — 15:00
 - ⏰ Villarreal vs Elche — 17:15
 - ⏰ Real Betis vs Barcelona — 19:30
-- ⏰ Valencia vs Athletic Bilbao — 22:00
+- 🔴 Valencia vs Athletic Bilbao — 22:00
 
 ### İtalya Serie A
 - ⏰ Venezia vs Napoli — 16:00
 - ⏰ Bologna vs Inter — 19:00
-- ⏰ Roma vs Genoa — 21:45
+- 🔴 Roma vs Genoa — 21:45
 
 ---
 ## 📺 7/24 KANALLAR (31)
