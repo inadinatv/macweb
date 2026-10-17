@@ -308,6 +308,62 @@ def test_mackolik_match_miss_falls_back_to_espn_for_same_league(monkeypatch):
     assert (row.score_home, row.score_away) == (2, 1)
 
 
+def test_espn_clock_and_score_win_when_both_providers_report_the_same_live_match(monkeypatch):
+    cfg = dict(CFG, leagues=[{"name": "Premier", "sport": "Futbol", "path": "soccer/tur.1"}],
+               team_aliases={"soccer/tur.1": {"Manchester Utd": "Manchester United"}})
+    base = int(datetime.fromisoformat("2026-09-06T17:00:00+00:00").timestamp() * 1000)
+    monkeypatch.setattr(scores, "_fetch_mackolik", lambda *args: {"data": {"matches": {
+        "m": {"id": "m", "mstUtc": base, "lastUpdated": base + 62 * 60_000,
+              "periodStart": base + 45 * 60_000, "periodId": 2, "state": "live", "substate": "none",
+              "status": "minutes", "competitionId": scores.MACKOLIK_COMP_MAP["soccer/tur.1"],
+              "homeTeam": {"name": "Manchester United"}, "awayTeam": {"name": "Chelsea"},
+              "score": {"home": "1", "away": "0"}}
+    }}})
+    row = scores.enrich([match()], NOW,
+                        fetch=lambda *args: {"events": [event("STATUS_IN_PROGRESS", pair=("1", "1"), clock="47'")]},
+                        settings=cfg)[0]
+    assert row.status == "live" and row.status_source == "espn"
+    assert row.score_source == "espn" and (row.score_home, row.score_away) == (1, 1)
+    assert row.status_clock == "47'"
+
+
+def test_mackolik_fills_missing_live_score_and_clock_from_espn(monkeypatch):
+    cfg = dict(CFG, leagues=[{"name": "Premier", "sport": "Futbol", "path": "soccer/tur.1"}],
+               team_aliases={"soccer/tur.1": {"Manchester Utd": "Manchester United"}})
+    base = int(datetime.fromisoformat("2026-09-06T17:00:00+00:00").timestamp() * 1000)
+    monkeypatch.setattr(scores, "_fetch_mackolik", lambda *args: {"data": {"matches": {
+        "m": {"id": "m", "mstUtc": base, "lastUpdated": base + 62 * 60_000,
+              "periodStart": base + 45 * 60_000, "periodId": 2, "state": "live", "substate": "none",
+              "status": "minutes", "competitionId": scores.MACKOLIK_COMP_MAP["soccer/tur.1"],
+              "homeTeam": {"name": "Manchester United"}, "awayTeam": {"name": "Chelsea"},
+              "score": {"home": "1", "away": "0"}}
+    }}})
+    row = scores.enrich([match()], NOW,
+                        fetch=lambda *args: {"events": [event("STATUS_IN_PROGRESS", pair=(None, None), clock="")]},
+                        settings=cfg)[0]
+    assert row.status == "live" and row.status_source == "espn"
+    assert row.score_source == "mackolik" and (row.score_home, row.score_away) == (1, 0)
+    assert row.status_clock, "ESPN clock boşsa eşleşen Mackolik canlı dakikası tamamlayıcı olarak kullanılmalı"
+
+
+def test_confirmed_mackolik_final_beats_espn_postponed_state(monkeypatch):
+    cfg = dict(CFG, leagues=[{"name": "Premier", "sport": "Futbol", "path": "soccer/tur.1"}],
+               team_aliases={"soccer/tur.1": {"Manchester Utd": "Manchester United"}})
+    base = int(datetime.fromisoformat("2026-09-06T17:00:00+00:00").timestamp() * 1000)
+    monkeypatch.setattr(scores, "_fetch_mackolik", lambda *args: {"data": {"matches": {
+        "m": {"id": "m", "mstUtc": base, "state": "post", "substate": "fullTime",
+              "status": "state", "statusBoxContent": "MS",
+              "competitionId": scores.MACKOLIK_COMP_MAP["soccer/tur.1"],
+              "homeTeam": {"name": "Manchester United"}, "awayTeam": {"name": "Chelsea"},
+              "score": {"home": "2", "away": "1"}}
+    }}})
+    row = scores.enrich([match()], NOW,
+                        fetch=lambda *args: {"events": [event("STATUS_POSTPONED", pair=("0", "0"))]},
+                        settings=cfg)[0]
+    assert row.status == "finished" and row.status_source == "mackolik"
+    assert row.score_source == "mackolik" and (row.score_home, row.score_away) == (2, 1)
+
+
 def test_confirmed_final_wins_over_other_providers_lagging_live_state(monkeypatch):
     cfg = dict(CFG, leagues=[{"name": "Premier", "sport": "Futbol", "path": "soccer/tur.1"}])
     base = int(datetime.fromisoformat("2026-09-06T17:00:00+00:00").timestamp() * 1000)
