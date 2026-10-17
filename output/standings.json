@@ -1,13 +1,13 @@
 {
  "source": "mackolik",
- "generated_at": "2026-10-17T15:04:04+03:00",
+ "generated_at": "2026-10-17T15:33:08+03:00",
  "leagues": [
   {
    "id": "soccer/tur.1",
    "name": "Trendyol Süper Lig",
    "sport": "Futbol",
    "season": "2026-27 Turkish Super Lig",
-   "updated_at": "2026-10-17T15:04:04+03:00",
+   "updated_at": "2026-10-17T15:33:08+03:00",
    "teams": 18,
    "rows": [
     {
@@ -156,6 +156,24 @@
     },
     {
      "rank": 9,
+     "team": "Erzurum BB",
+     "sourceTeam": "Erzurumspor FK",
+     "abbr": "",
+     "logo": "https://file.mackolikfeeds.com/teams/ea2gyhkv6vwmxbxevdb4u3796",
+     "played": 8,
+     "wins": 3,
+     "draws": 2,
+     "losses": 3,
+     "goalsFor": 5,
+     "goalsAgainst": 11,
+     "diff": -6,
+     "points": 11,
+     "note": "",
+     "zone": "",
+     "zoneLabel": ""
+    },
+    {
+     "rank": 10,
      "team": "Kasımpaşa",
      "sourceTeam": "Kasımpaşa",
      "abbr": "",
@@ -173,7 +191,7 @@
      "zoneLabel": ""
     },
     {
-     "rank": 10,
+     "rank": 11,
      "team": "Çaykur Rizespor",
      "sourceTeam": "Ç. Rizespor",
      "abbr": "",
@@ -191,7 +209,7 @@
      "zoneLabel": ""
     },
     {
-     "rank": 11,
+     "rank": 12,
      "team": "Başakşehir",
      "sourceTeam": "Başakşehir",
      "abbr": "",
@@ -209,7 +227,7 @@
      "zoneLabel": ""
     },
     {
-     "rank": 12,
+     "rank": 13,
      "team": "Gaziantep FK",
      "sourceTeam": "Gaziantep FK",
      "abbr": "",
@@ -227,7 +245,7 @@
      "zoneLabel": ""
     },
     {
-     "rank": 13,
+     "rank": 14,
      "team": "Gençlerbirliği",
      "sourceTeam": "Gençlerbirliği",
      "abbr": "",
@@ -238,24 +256,6 @@
      "losses": 3,
      "goalsFor": 7,
      "goalsAgainst": 15,
-     "diff": -8,
-     "points": 8,
-     "note": "",
-     "zone": "",
-     "zoneLabel": ""
-    },
-    {
-     "rank": 14,
-     "team": "Erzurum BB",
-     "sourceTeam": "Erzurumspor FK",
-     "abbr": "",
-     "logo": "https://file.mackolikfeeds.com/teams/ea2gyhkv6vwmxbxevdb4u3796",
-     "played": 7,
-     "wins": 2,
-     "draws": 2,
-     "losses": 3,
-     "goalsFor": 3,
-     "goalsAgainst": 11,
      "diff": -8,
      "points": 8,
      "note": "",
@@ -322,13 +322,13 @@
      "sourceTeam": "Eyüpspor",
      "abbr": "",
      "logo": "https://file.mackolikfeeds.com/teams/bmgtxgipsznlb1j20zwjti3xh",
-     "played": 7,
+     "played": 8,
      "wins": 1,
      "draws": 0,
-     "losses": 6,
+     "losses": 7,
      "goalsFor": 2,
-     "goalsAgainst": 20,
-     "diff": -18,
+     "goalsAgainst": 22,
+     "diff": -20,
      "points": 3,
      "note": "",
      "zone": "relegation",
