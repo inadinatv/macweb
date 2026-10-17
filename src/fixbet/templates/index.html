@@ -2367,13 +2367,18 @@
                 try { localStorage.setItem("inadinatv.view", state.view); } catch (e) { /* gizli mod */ }
             }
 
-            function setTab(tabId) {
+            function setTab(tabId, scrollToChannels = false) {
                 state.activeTab = tabId;
                 document.querySelectorAll(".tab-btn").forEach((b) => b.classList.toggle("active", b.getAttribute("data-tab") === tabId));
                 document.querySelectorAll(".tab-content").forEach((c) => c.classList.toggle("active", c.id === tabId));
                 els.brandRow.style.display = tabId === "channelsTab" ? "flex" : "none";
                 els.matchFilterRow.style.display = tabId === "matchesTab" ? "flex" : "none";
                 els.panelRow.style.display = tabId === "extraTab" ? "flex" : "none";
+                if (scrollToChannels && tabId === "channelsTab" && els.channelGrid && els.channelGrid.scrollIntoView) {
+                    const reduceMotion = typeof window.matchMedia === "function" &&
+                        window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+                    els.channelGrid.scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth", block: "start" });
+                }
             }
 
             function openTodayFixtures() {
@@ -3292,7 +3297,8 @@
             /* ---------------- Olaylar ---------------- */
             function bindEvents() {
                 document.querySelectorAll(".tab-btn").forEach((btn) => {
-                    btn.onclick = () => setTab(btn.getAttribute("data-tab"));
+                    const tabId = btn.getAttribute("data-tab");
+                    btn.onclick = () => setTab(tabId, tabId === "channelsTab");
                 });
                 document.querySelectorAll(".view-btn").forEach((btn) => {
                     btn.onclick = () => setView(btn.getAttribute("data-view"));
@@ -3368,7 +3374,7 @@
                     else if (e.key === "g" || e.key === "G") { setView("grid"); }
                     else if (e.key === "l" || e.key === "L") { setView("list"); }
                     else if (e.key === "s" || e.key === "S") { if (state.currentExtraId) $("nextSourceBtn").click(); }
-                    else if (e.key === "1") { setTab("channelsTab"); }
+                    else if (e.key === "1") { setTab("channelsTab", true); }
                     else if (e.key === "2") { setTab("kodamanTab"); }
                     else if (e.key === "3") { setTab("matchesTab"); }
                     else if (e.key === "4") { setTab("extraTab"); }

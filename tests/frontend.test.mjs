@@ -142,6 +142,15 @@ test("kanal kartına tıklayınca yayın açılıyor ve player'e kayıyor", asyn
   dom.window.close();
 });
 
+test("TV KANALLARI 1'e tıklayınca kart ızgarasına kayar; ilk açılış konumu korunur", async () => {
+  const { window, dom } = await loadPage();
+  assert.deepEqual(window.scrolledTo, [], "uygulama açılışında otomatik kaydırma olmamalı");
+  window.document.querySelector('.tab-btn[data-tab="channelsTab"]').click();
+  assert.equal(window.inadina.state.activeTab, "channelsTab");
+  assert.deepEqual(window.scrolledTo, ["channelGrid"], "TV KANALLARI 1 kartlarına kaydırılmalı");
+  dom.window.close();
+});
+
 test("TV KANALLARI 2 31 public kanalı iframe’de açar; kaynak yazısı, dış link ve popup izni yoktur", async () => {
   const feed = {
     base_url: KODAMAN.base_url,
