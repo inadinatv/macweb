@@ -1,7 +1,7 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-10-17 22:25  
+> **Güncellenme:** 2026-10-17 22:58  
 > **Toplam maç:** 30  |  **Canlı:** 0  |  **Yaklaşan:** 22
 
 ## ⏰ YAKLAŞAN
@@ -34,8 +34,8 @@
 - ✅ **Gençlerbirliği 0 - 1 Galatasaray** — MS · `16:00` | Trendyol Süper Lig ★ **Günün Maçı** <https://fixbettv84.com/channel.html?id=zirve>
 - ✅ **Fenerbahçe 3 - 0 Alanyaspor** — MS · `19:00` | Trendyol Süper Lig ★ **Günün Maçı** <https://fixbettv84.com/channel.html?id=zirve>
 - ✅ **Red Star vs St. Etienne** — MS · `21:00` | Fransa Ligue 2 <https://fixbettv84.com/channel.html?id=b2>
-- ✅ **Lille vs Brest** — MS · `21:45` | Fransa Ligue 1 <https://fixbettv84.com/channel.html?id=b4>
-- ✅ **Troyes vs Lens** — MS · `21:45` | Fransa Ligue 1 <https://fixbettv84.com/channel.html?id=bm1>
+- ✅ **Lille 1 - 1 Brest** — MS · `21:45` | Fransa Ligue 1 <https://fixbettv84.com/channel.html?id=b4>
+- ✅ **Troyes 1 - 3 Lens** — MS · `21:45` | Fransa Ligue 1 <https://fixbettv84.com/channel.html?id=bm1>
 - ✅ **Roma vs Genoa** — MS · `21:45` | İtalya Serie A <https://fixbettv84.com/channel.html?id=ss2>
 - ✅ **Valencia vs Athletic Bilbao** — MS · `22:00` | İspanya La Liga <https://fixbettv84.com/channel.html?id=ss>
 - ✅ **SP Burgos vs Obradoiro CAB** — MS · `22:00` | İspanya Basketbol Ligi <https://fixbettv84.com/channel.html?id=smarts>
