@@ -1,12 +1,12 @@
 # Mevcut data-reality maç programında skor / gerçek status yok.
-# Çok kaynaklı canlı sistem: Türk ligleri için Mackolik (birincil), diğer ligler ve
-# yedek için ESPN scoreboard. Sadece kesin eşleşmelerde skor eklenir; belirsiz
+# Çok kaynaklı canlı sistem: Fixtoor ile aynı ESPN scoreboard önceliği;
+# Mackolik ikincil kaynaktır ve daha güncel doğrulanmış durumu da sağlayabilir. Yalnızca kesin eşleşmelerde skor eklenir; belirsiz
 # veya hatalı eşleşmeye skor UYDURULMAZ.
 enabled: true
 request_timeout_seconds: 8
 max_workers: 4
 max_start_difference_minutes: 45
-# ESPN yolu tanımlı olmayan futbol liglerinde de Mackolik'in günlük listesinden
+# ESPN yolu tanımlı olmayan futbol liglerinde Mackolik'in günlük listesinden
 # yalnızca iki takım + tarih + başlangıç saati kesin eşleşirse durum/skor eklenir.
 mackolik_all_football: true
 

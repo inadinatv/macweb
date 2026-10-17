@@ -1,15 +1,15 @@
 """Programı bozmadan gerçek durum/skor ekler — çok kaynaklı canlı sistem.
 
 Kaynaklar:
-  * Türkiye Süper Lig (ve 1. Lig) için birincil: Mackolik livescore (anlık, Türkçe)
-  * Diğer ligler ve fallback: ESPN scoreboard (uluslararası)
+  * ESPN scoreboard: Fixtoor ile uyumlu ana skor/durum/dakika kaynağı
+  * Mackolik livescore: ikincil kaynak; ESPN eşleşmesi yoksa veya daha güncel durumu doğrularsa kullanılır
   * Her ikisi de aynı eşleşme mantığını kullanır (lig + tarih + saat + takım adı).
   * Belirsizlikte skor eklenmez; kaynak kesilirse son bilinen skor korunur.
 
 Yenilenebilir canlı sistem:
   * Her pipeline çalışmasında taze skor çekilir.
   * İstemci sayfada ayrıca yayımlanmış snapshot'ı ve canlı scoreboard'u tazeler.
-  * Mackolik + ESPN birlikte okunur; yedek seçimi lig değil maç bazında yapılır.
+  * ESPN + Mackolik birlikte okunur; yedek seçimi lig değil maç bazında yapılır.
 """
 from __future__ import annotations
 
@@ -499,7 +499,7 @@ def enrich(matches: list[Match], now: datetime, previous: list[Match] | None = N
     if not groups:
         return matches
 
-    # --- Mackolik denemesi (Türk ligleri için birincil) ---
+    # --- Mackolik ikincil kaynağı (ESPN eşleşmesi yoksa veya daha güncelse) ---
     mackolik_results: dict[str, list[dict]] = {}
     football_paths = [p for p in groups if p in MACKOLIK_COMP_MAP or p == MACKOLIK_FOOTBALL_FALLBACK]
     if football_paths:
@@ -619,11 +619,12 @@ def enrich(matches: list[Match], now: datetime, previous: list[Match] | None = N
             if not scheduled:
                 continue
             # İki sağlayıcı da okunur. Belirsizlik bir sağlayıcıda skor üretmez;
-            # diğeri yine kesin eşleşme bulabilir. Durumlar çelişirse final veya
-            # oynanmayacak durum, gecikmiş canlı/başlamadı kaydından üstündür.
+            # diğeri yine kesin eşleşme bulabilir. Aynı durum seviyesinde ESPN
+            # (Fixtoor ile uyumlu) önce gelir; doğrulanmış final/oynanmayacak durum
+            # gecikmiş canlı veya başlamadı kaydından üstündür.
             provider_picks: list[tuple[dict, str, str]] = []
-            providers = (("mackolik", mackolik_results.get(path, [])),
-                         ("espn", espn_results.get(path, [])))
+            providers = (("espn", espn_results.get(path, [])),
+                         ("mackolik", mackolik_results.get(path, [])))
             for src_tag, provider_rows in providers:
                 candidates = []
                 for comp in provider_rows:
@@ -652,13 +653,12 @@ def enrich(matches: list[Match], now: datetime, previous: list[Match] | None = N
                     provider_picks.append((candidates[0][0], candidates[0][1], src_tag))
             if not provider_picks:
                 continue
-            status_rank = {"finished": 4, "postponed": 4, "cancelled": 4, "abandoned": 4,
+            status_rank = {"finished": 5, "postponed": 4, "cancelled": 4, "abandoned": 4,
                            "suspended": 4, "live": 3, "halftime": 3, "upcoming": 1}
             picked = max(provider_picks, key=lambda row: status_rank.get(row[0]["status"], 0))
             # İki sağlayıcı da MS derken skorlar çelişiyorsa Fixtoor'un kullandığı
-            # ESPN finalini seç. Mackolik'in gecikmiş 1-1 kaydı, ESPN'deki 3-1'i
-            # yalnızca sağlayıcı sırası nedeniyle ezmemeli. Eşleşen sonuçlarda ve
-            # canlı maçlarda mevcut Mackolik önceliği korunur.
+            # ESPN finalini seç. Aynı canlı durumunda ESPN birincildir; ancak ESPN
+            # skor/clock alanı eksikse Mackolik yalnızca eksik alanı tamamlayabilir.
             final_scores = []
             for candidate in provider_picks:
                 comp, side, source = candidate
@@ -680,19 +680,39 @@ def enrich(matches: list[Match], now: datetime, previous: list[Match] | None = N
             found, side, src_tag = picked
             if match.status == "finished" and match.status_source != "schedule" and found["status"] in ("upcoming", "live", "halftime"):
                 continue
-            ours_home, ours_away = (found["home"], found["away"]) if side == "straight" else (found["away"], found["home"])
-            h, a = score_pair(ours_home.get("score"), ours_away.get("score"))
+
+            def oriented_score(candidate: tuple[dict, str, str]) -> tuple[int | None, int | None]:
+                comp, orientation_side, _source = candidate
+                ours_home, ours_away = (comp["home"], comp["away"]) if orientation_side == "straight" else (comp["away"], comp["home"])
+                return score_pair(ours_home.get("score"), ours_away.get("score"))
+
+            h, a = oriented_score(picked)
+            score_source = src_tag
+            if found["status"] in SCORE_STATUSES and (h is None or a is None):
+                for candidate in provider_picks:
+                    if candidate[2] == src_tag or candidate[0]["status"] != found["status"]:
+                        continue
+                    fallback_home, fallback_away = oriented_score(candidate)
+                    if fallback_home is not None and fallback_away is not None:
+                        h, a = fallback_home, fallback_away
+                        score_source = candidate[2]
+                        break
+            clock = found.get("clock", "")
+            if found["status"] in ACTIVE_STATUSES and not clock:
+                clock = next((candidate[0].get("clock", "") for candidate in provider_picks
+                              if candidate[2] != src_tag and candidate[0]["status"] == found["status"]
+                              and candidate[0].get("clock")), "")
             prior_status = match.status
             match.status, match.status_source = found["status"], src_tag
             match.raw_status, match.event_id = found["raw_status"], found["id"]
             match.starts_at, match.fetched_at = found["start"].isoformat(), stamp
-            match.status_clock = found.get("clock", "") if match.status in ACTIVE_STATUSES else ""
+            match.status_clock = clock if match.status in ACTIVE_STATUSES else ""
             if match.status not in SCORE_STATUSES:
                 match.score_home = match.score_away = None
                 match.score_source = match.score_updated_at = ""
             elif h is not None:
                 match.score_home, match.score_away = h, a
-                match.score_source, match.score_updated_at = src_tag, stamp
+                match.score_source, match.score_updated_at = score_source, stamp
             elif prior_status != match.status:
                 match.score_home = match.score_away = None
                 match.score_source = match.score_updated_at = ""

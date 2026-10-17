@@ -1564,6 +1564,92 @@ test("ana Günün Maçı kartı gol, canlı dakika, kanal ve devre arasıyla ayn
   dom.window.close();
 });
 
+test("Fixbet canlı satırındaki saat lig sayılmaz; snapshot ligi korunur ve ESPN skoru Günün Maçı'na bağlanır", async () => {
+  const fixedNow = Date.UTC(2026, 9, 17, 13, 51, 0);
+  const existing = {
+    match_id: "zirve", channel_id: "zirve", home: "Gençlerbirliği", away: "Galatasaray",
+    league: "Trendyol Süper Lig", sport: "Futbol", time: "16:00", date: "2026-10-17",
+    starts_at: "2026-10-17T13:00:00Z", status: "upcoming", status_source: "schedule",
+    is_match_of_day: true, score_home: null, score_away: null,
+  };
+  const markup = '<a href="/channel.html?id=zirve"><div class="match-detail">' +
+    '<div class="date">Futbol</div><div class="event">16:00</div>' +
+    '<div class="home">Gençlerbirliği</div><div class="away">Galatasaray</div></div></a>';
+  const { window, dom } = await loadPage({
+    html: withMatches([existing]),
+    fetchImpl: async () => ({ ok: false, status: 503, json: async () => ({}) }),
+    beforeParse: (w) => {
+      const NativeDate = w.Date;
+      w.Date = class FixedDate extends NativeDate {
+        constructor(...args) { if (!args.length) super(fixedNow); else super(...args); }
+        static now() { return fixedNow; }
+      };
+      Object.defineProperty(w.document, "hidden", { configurable: true, get: () => true });
+    },
+  });
+  const parsed = window.inadina.parseFixbetSchedule(markup, "https://fixbet.test/");
+  assert.equal(parsed.length, 1);
+  assert.equal(parsed[0].time, "16:00");
+  assert.equal(parsed[0].league, "", "yalnız saat içeren event alanı lig adı gibi kaydedilmemeli");
+  const normalized = window.inadina.normalizeRemote({
+    date: "2026-10-17", timezone: "Europe/Istanbul", matches: parsed,
+  });
+  const merged = window.inadina.mergeRemoteMatches(normalized, [existing], new Date(fixedNow));
+  assert.equal(merged[0].league, "Trendyol Süper Lig", "lig bilgisi snapshot'tan devralınmalı");
+  assert.equal(merged[0].isMod, true, "resmi Günün Maçı bayrağı korunmalı");
+  assert.ok(Array.from(window.inadina.syncPathsFor(merged[0])).includes("soccer/tur.1"),
+    "eşleşen maç Türk Süper Lig ESPN yoluna bağlanmalı");
+
+  window.eval("matchesData = " + JSON.stringify(merged));
+  const changed = window.inadina.applyLiveSync("soccer/tur.1", [{
+    id: "espn-gencler", start: new Date(existing.starts_at), homeName: "Genclerbirligi", awayName: "Galatasaray",
+    homeScore: 0, awayScore: 0, status: "halftime", clock: "", neutral: false,
+  }], fixedNow);
+  assert.equal(changed, 1, "ESPN devre durumu ve 0-0 skoru eşleşen satıra uygulanmalı");
+  window.inadina.renderMatches();
+  const card = window.document.querySelector("#homeFeaturedSection .home-featured-match");
+  assert.equal(card.dataset.status, "halftime");
+  assert.equal(card.dataset.score, "0-0", "sıfır-sıfır skoru ana Günün Maçı kartında görünmeli");
+  assert.equal(window.document.querySelector("#homeFeaturedMeta .home-featured-status").textContent, "DEVRE ARASI");
+  dom.window.close();
+});
+
+test("Günün Maçı canlı futbolu sıralar ve kaynak dakikası yoksa yaklaşık dakikayı gösterir", async () => {
+  const fixedNow = Date.UTC(2026, 9, 17, 13, 50, 0);
+  const live = {
+    match_id: "live", home: "Canlı Ev", away: "Canlı Dep", league: "Trendyol Süper Lig", sport: "Futbol",
+    time: "16:00", date: "2026-10-17", starts_at: "2026-10-17T13:00:00Z", status: "live",
+    status_source: "espn", raw_status: "STATUS_IN_PROGRESS", status_clock: "", is_match_of_day: false,
+    score_home: 0, score_away: 0, score_source: "espn", score_updated_at: new Date(fixedNow - 60000).toISOString(),
+  };
+  const upcoming = {
+    ...live, match_id: "official-next", home: "Resmi Ev", away: "Resmi Dep", time: "20:00",
+    starts_at: "2026-10-17T17:00:00Z", status: "upcoming", status_source: "schedule",
+    raw_status: "", status_clock: "", is_match_of_day: false, score_home: null, score_away: null,
+  };
+  const { window, dom } = await loadPage({
+    html: withMatches([upcoming, live]),
+    fetchImpl: async () => ({ ok: false, status: 503, json: async () => ({}) }),
+    beforeParse: (w) => {
+      const NativeDate = w.Date;
+      w.Date = class FixedDate extends NativeDate {
+        constructor(...args) { if (!args.length) super(fixedNow); else super(...args); }
+        static now() { return fixedNow; }
+      };
+      Object.defineProperty(w.document, "hidden", { configurable: true, get: () => true });
+    },
+  });
+  const now = new window.Date(fixedNow);
+  const selected = window.inadina.selectHomeFeatured(now);
+  assert.equal(selected.match.home, "Canlı Ev", "canlı futbol, sonraki resmi fikstürden önce gelmeli");
+  const sorted = window.inadina.sortMatches(window.inadina.decoratedMatches(now));
+  assert.equal(sorted[0].home, "Canlı Ev", "günlük liste durum önceliğine göre canlı maçı üste almalı");
+  window.inadina.renderMatches();
+  assert.ok(window.document.querySelector("#homeFeaturedMeta .home-featured-status").textContent.includes("≈ 50'"),
+    "ESPN clock boşsa ana kart yaklaşık futbol dakikasını açıkça göstermeli");
+  dom.window.close();
+});
+
 test("resmi Günün Maçı bitmişse kart bugünün canlı maçına geçer ve final skorunu korur", async () => {
   const fixedNow = Date.UTC(2026, 9, 15, 18, 0, 0);
   const fixedRow = (startAt, extra) => {
