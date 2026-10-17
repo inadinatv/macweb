@@ -13,36 +13,9 @@
       "fixbettv12.com",
       "fixbettv11.com"
     ],
-    "last_checked": "2026-10-17T20:16:15+00:00",
+    "last_checked": "2026-10-17T22:25:15+00:00",
     "note": "OK",
     "probed": 200
   },
-  "live": [
-    {
-      "match_id": "smarts",
-      "home": "SP Burgos",
-      "away": "Obradoiro CAB",
-      "league": "İspanya Basketbol Ligi",
-      "time": "22:00",
-      "sport": "Basketbol",
-      "is_match_of_day": false,
-      "channel_id": "smarts",
-      "logo_home": "https://img.sporekrani.com/teams/choPCJbR5wbovJ9Fj2U0eqP2D9VmfjR6drcmXVTi.png",
-      "logo_away": "https://img.sporekrani.com/teams/61Gn3jxyL9CqHgjKr8mZeVC0hMiz8p2Ld0dnaOcS.png",
-      "status": "live",
-      "started": true,
-      "raw_event": "22:00 | İspanya Basketbol Ligi",
-      "url": "https://fixbettv84.com/channel.html?id=smarts",
-      "fetched_at": "",
-      "status_source": "schedule",
-      "raw_status": "",
-      "score_home": null,
-      "score_away": null,
-      "score_source": "",
-      "score_updated_at": "",
-      "event_id": "",
-      "starts_at": "2026-10-17T22:00:00+03:00",
-      "status_clock": ""
-    }
-  ]
+  "live": []
 }
