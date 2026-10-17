@@ -35,6 +35,14 @@ async function loadPage(options = {}) {
     virtualConsole,
     beforeParse(window) {
       window.scrolledTo = [];
+      window.scrollCalls = [];
+      Object.defineProperty(window, "scrollTo", {
+        configurable: true,
+        value: (...args) => window.scrollCalls.push(args),
+      });
+      if (options.innerWidth) {
+        Object.defineProperty(window, "innerWidth", { configurable: true, value: options.innerWidth });
+      }
       // iframe src ataması jsdom'da dış ağ isteği başlatıyor; testi çevrimdışı ve
       // deterministik tutmak için src'i düz bir öznitelik gibi davranmaya zorluyoruz.
       Object.defineProperty(window.HTMLIFrameElement.prototype, "src", {
@@ -142,12 +150,15 @@ test("kanal kartına tıklayınca yayın açılıyor ve player'e kayıyor", asyn
   dom.window.close();
 });
 
-test("TV KANALLARI 1'e tıklayınca kart ızgarasına kayar; ilk açılış konumu korunur", async () => {
-  const { window, dom } = await loadPage();
-  assert.deepEqual(window.scrolledTo, [], "uygulama açılışında otomatik kaydırma olmamalı");
+test("TV KANALLARI 1 mobilde dokununca kartları ekrana getirir; açılış konumu korunur", async () => {
+  const { window, dom } = await loadPage({ innerWidth: 390 });
+  assert.deepEqual(window.scrollCalls, [], "uygulama açılışında otomatik kaydırma olmamalı");
+  const grid = window.document.getElementById("channelGrid");
+  grid.getBoundingClientRect = () => ({ top: 420 });
   window.document.querySelector('.tab-btn[data-tab="channelsTab"]').click();
+  await tick(50);
   assert.equal(window.inadina.state.activeTab, "channelsTab");
-  assert.deepEqual(window.scrolledTo, ["channelGrid"], "TV KANALLARI 1 kartlarına kaydırılmalı");
+  assert.deepEqual(window.scrollCalls, [[0, 408]], "mobilde kart ızgarasına anında kaydırılmalı ve üstte boşluk kalmalı");
   dom.window.close();
 });
 
@@ -176,6 +187,7 @@ test("TV KANALLARI 2 31 public kanalı iframe’de açar; kaynak yazısı, dış
   assert.equal(KODAMAN.channels.length, 31, "canlı manifestte 31 public kanal olmalı");
   assert.equal(window.inadina.state.kodamanChannels.length, 31, "geçersiz ID filtrelenirken 31 kanal kalmalı");
   assert.equal(window.document.querySelectorAll("#kodamanGrid .ch-card").length, 31, "31 kanal kartı çizilmeli");
+  assert.equal(window.document.getElementById("badgeKodaman").textContent, "31", "TV KANALLARI 2 sekmesinde kanal sayısı görünmeli");
   assert.equal(window.document.getElementById("kodamanExternal"), null, "Kodaman dış site linki olmamalı");
   assert.equal(window.document.getElementById("kodamanMeta"), null, "kaynak/uyarı yazısı olmamalı");
   assert.equal(window.document.getElementById("kodamanTab").querySelectorAll("a[href^='http']").length, 0,
@@ -1099,12 +1111,20 @@ test("LİG PUANI butonu saatin hemen yanında ve tablo ikonu içeriyor", () => {
   assert.ok(/rgba\(0,234,255/.test(css) && /rgba\(255,45,122/.test(css), "mavi+pembe neon parlama yok");
 });
 
-test("FİKSTÜR butonu LİG PUANI butonunun yanında ve go:fixtor bağlantısı içeriyor", () => {
-  assert.ok(HTML.includes('id="fixtureBtn"'), "FİKSTÜR butonu yok");
+test("VIP Fixture butonu tüm maç bilgisi açıklamasını ve dinamik maç sayısını gösterir", async () => {
+  const { window, dom } = await loadPage();
+  const button = window.document.getElementById("fixtureBtn");
+  assert.ok(button, "VIP Fixture butonu yok");
   assert.ok(HTML.includes('href="go:fixtor"'), "go:fixtor yönlendirme bağlantısı yok");
-  assert.ok(HTML.includes("FİKSTÜR"), "FİKSTÜR etiketi yok");
+  assert.ok(button.textContent.includes("VIP FIXTURE"), "VIP FIXTURE etiketi yok");
+  assert.ok(button.textContent.includes("CANLI · BUGÜN · BİTEN"), "kapsam açıklaması görünmüyor");
+  const fixtureCount = window.document.getElementById("fixtureMatchCount");
+  assert.match(fixtureCount.textContent, /^\d+ MAÇ$/, "üst düğmede günlük maç sayısı gösterilmeli");
+  assert.equal(fixtureCount.textContent, window.document.getElementById("badgeMatches").textContent + " MAÇ");
+  assert.match(fixtureCount.title, /canlı.*bitti/, "başlıkta canlı ve biten maç özeti bulunmalı");
   assert.ok(HTML.includes("fixture-btn"), "fixture-btn sınıfı yok");
   assert.ok(HTML.indexOf('id="leagueBtn"') < HTML.indexOf('id="fixtureBtn"'), "Fikstür butonu LigPuan butonunun yanında olmalı");
+  dom.window.close();
 });
 
 test("PUAN DURUMU modalı backdrop-filter karartma ve neon pembe kenar kullanıyor", () => {

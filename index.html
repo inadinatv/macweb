@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>İNADİNA TV - Canlı Spor & Maç İzleme</title>
     <meta name="description" content="7/24 spor kanalları ve günün gerçek maç programı. Kanala tıkla, yayın doğrudan oynatıcıda açılsın." />
-    <meta name="updated-at" content="2026-10-17 09:01" />
+    <meta name="updated-at" content="2026-10-17 09:46" />
     <meta name="fixbet-source" content="https://fixbettv84.com" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@400;600;700;900&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -120,6 +120,10 @@
             -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
         }
         .league-btn .lg-caret { font-size: 0.7rem; opacity: .75; color: var(--neon-pink); }
+        .fixture-btn { gap: 8px; }
+        .fixture-btn-copy { display: flex; flex-direction: column; align-items: flex-start; gap: 3px; line-height: 1; }
+        .fixture-btn-sub { color: var(--text-muted); font-family: 'Barlow Condensed', sans-serif; font-size: .58rem; font-weight: 800; letter-spacing: .45px; white-space: nowrap; }
+        .fixture-count { flex: 0 0 auto; padding: 3px 6px; border: 1px solid rgba(255,204,51,.32); border-radius: 9px; background: rgba(255,204,51,.12); color: var(--neon-gold); font-size: .57rem; font-weight: 900; letter-spacing: .35px; line-height: 1; white-space: nowrap; }
         .search-box { position: relative; min-width: 230px; z-index: 1; }
         .search-input {
             width: 100%; background: rgba(20,16,40,0.8); border: 1px solid rgba(155,77,255,0.3);
@@ -784,6 +788,9 @@
             .tab-btn { font-size: 0.92rem; padding: 8px 14px; }
             .view-btn { font-size: 0.78rem; padding: 5px 9px; }
             .league-btn { padding: 6px 12px 6px 10px; font-size: 0.88rem; letter-spacing: 1.2px; }
+            .fixture-btn { gap: 6px; padding: 6px 9px; }
+            .fixture-btn-sub { font-size: .52rem; letter-spacing: .15px; }
+            .fixture-count { font-size: .52rem; padding: 3px 5px; }
             .modal-overlay { padding: 10px; }
             .modal-panel { max-height: 88vh; border-radius: 16px; }
             .modal-title { font-size: 1.45rem; letter-spacing: 2px; }
@@ -824,9 +831,12 @@
                     <span class="lg-text">LİG PUANI</span>
                     <span class="lg-caret" aria-hidden="true">▾</span>
                 </button>
-                <a href="go:fixtor" class="league-btn fixture-btn" id="fixtureBtn" title="Fikstür">
+                <a href="go:fixtor" class="league-btn fixture-btn" id="fixtureBtn"
+                   title="VIP Fixture: canlı skorlar, günün fikstürü ve biten maç sonuçları"
+                   aria-label="VIP Fixture — canlı skorlar, günün maçları ve sonuçlar">
                     <span class="lg-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg></span>
-                    <span class="lg-text">FİKSTÜR</span>
+                    <span class="fixture-btn-copy"><span class="lg-text">VIP FIXTURE</span><span class="fixture-btn-sub">CANLI · BUGÜN · BİTEN</span></span>
+                    <span class="fixture-count" id="fixtureMatchCount" aria-live="polite">0 MAÇ</span>
                 </a>
                 <div class="search-box">
                     <span class="search-icon">🔍</span>
@@ -918,7 +928,7 @@
             <div class="tabs-header">
                 <div class="tabs-list">
                     <button class="tab-btn active" data-tab="channelsTab">📺 TV KANALLARI <span class="tab-badge" id="badgeChannels">0</span></button>
-                    <button class="tab-btn" data-tab="kodamanTab">📡 TV KANALLARI 2</button>
+                    <button class="tab-btn" data-tab="kodamanTab">📡 TV KANALLARI 2 <span class="tab-badge" id="badgeKodaman">0</span></button>
                     <button class="tab-btn" data-tab="matchesTab">📅 GÜNÜN MAÇLARI <span class="tab-badge" id="badgeMatches">0</span></button>
                     <button class="tab-btn extra-tab" data-tab="extraTab">⚡ EXTRA PANELLER <span class="tab-badge" id="badgeExtra">0</span></button>
                 </div>
@@ -955,7 +965,7 @@
 
         <footer class="site-footer">
             <div class="refresh-note">
-                <span>Son güncelleme: <b id="updatedAtText">2026-10-17 09:01</b></span>
+                <span>Son güncelleme: <b id="updatedAtText">2026-10-17 09:46</b></span>
                 <button class="mini-btn" id="refreshDataBtn" title="Maç listesini yeniden yükle">🔄 Maçları yenile</button>
                 <span class="sync-chip sync-wait" id="liveSyncStatus" title="Sayfa, skorları botun anlık görüntüsünü beklemeden canlı skor kaynağından doğrudan tazeler">
                     <span class="sync-dot"></span><span id="liveSyncText">Canlı skor hazırlanıyor</span>
@@ -1014,7 +1024,7 @@
 
     <script>
         /*BOT_START*/
-        const updatedAt = "2026-10-17 09:01";
+        const updatedAt = "2026-10-17 09:46";
         const matchesSource = "output/today_matches.json";
         const matchFeedSources = ["https://data-reality.com/matches.php", "https://data-reality.com/matches2.php"];
         const matchPlayerBase = "https://fixbettv84.com";
@@ -1106,8 +1116,10 @@
                 homeFeaturedContent: $("homeFeaturedContent"),
                 homeFeaturedMeta: $("homeFeaturedMeta"),
                 badgeChannels: $("badgeChannels"),
+                badgeKodaman: $("badgeKodaman"),
                 badgeMatches: $("badgeMatches"),
                 badgeExtra: $("badgeExtra"),
+                fixtureMatchCount: $("fixtureMatchCount"),
                 totalChannels: $("totalChannelsCount"),
                 totalMatches: $("totalMatchesCount"),
                 totalLive: $("totalLiveCount"),
@@ -1383,6 +1395,7 @@
                 if (!els.kodamanGrid) return;
                 els.kodamanGrid.innerHTML = "";
                 const channels = state.kodamanChannels || [];
+                if (els.badgeKodaman) els.badgeKodaman.textContent = String(channels.length);
                 if (!channels.length) {
                     const empty = document.createElement("div");
                     empty.className = "empty-msg";
@@ -2346,12 +2359,17 @@
                 renderHomeFeatured(now || new Date());
                 const list = decoratedMatches(now || new Date());
                 const live = list.filter((m) => isActiveMatch(m._status)).length;
+                const finished = list.filter((m) => m._status === "finished").length;
                 els.totalChannels.textContent = String(streamLinks.length + extraChannels().length);
                 els.totalChannels.title = streamLinks.length + " site kanalı + " + extraChannels().length + " extra (m3u8)";
                 els.totalMatches.textContent = String(list.length);
                 els.totalLive.textContent = String(live);
                 els.badgeChannels.textContent = String(streamLinks.length);
                 els.badgeMatches.textContent = String(list.length);
+                if (els.fixtureMatchCount) {
+                    els.fixtureMatchCount.textContent = list.length + " MAÇ";
+                    els.fixtureMatchCount.title = list.length + " maç · " + live + " canlı · " + finished + " bitti";
+                }
                 // Sekme başlığında canlı maç sayısı: sekme arka plandayken bile canlı akış görünür
                 document.title = live > 0 ? "🔴 " + live + " canlı · İNADİNA TV" : baseTitle;
             }
@@ -2367,6 +2385,29 @@
                 try { localStorage.setItem("inadinatv.view", state.view); } catch (e) { /* gizli mod */ }
             }
 
+            function scrollToChannelGrid() {
+                const target = els.channelGrid;
+                if (!target) return;
+                const reduceMotion = typeof window.matchMedia === "function" &&
+                    window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+                const mobile = (typeof window.matchMedia === "function" &&
+                    window.matchMedia("(max-width: 640px)").matches) || window.innerWidth <= 640;
+                const scroll = () => {
+                    const currentY = Number(window.pageYOffset || window.scrollY || document.documentElement.scrollTop || 0);
+                    const top = Math.max(0, target.getBoundingClientRect().top + currentY - 12);
+                    if (typeof window.scrollTo === "function") {
+                        // Mobil WebView'lerde koordinat biçimi daha tutarlı; dokununca kartları hemen göster.
+                        if (mobile || reduceMotion) window.scrollTo(0, top);
+                        else window.scrollTo({ top: top, left: 0, behavior: "smooth" });
+                    } else if (target.scrollIntoView) {
+                        target.scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth", block: "start" });
+                    }
+                };
+                if (typeof window.requestAnimationFrame === "function") {
+                    window.requestAnimationFrame(() => window.requestAnimationFrame(scroll));
+                } else setTimeout(scroll, 0);
+            }
+
             function setTab(tabId, scrollToChannels = false) {
                 state.activeTab = tabId;
                 document.querySelectorAll(".tab-btn").forEach((b) => b.classList.toggle("active", b.getAttribute("data-tab") === tabId));
@@ -2374,11 +2415,7 @@
                 els.brandRow.style.display = tabId === "channelsTab" ? "flex" : "none";
                 els.matchFilterRow.style.display = tabId === "matchesTab" ? "flex" : "none";
                 els.panelRow.style.display = tabId === "extraTab" ? "flex" : "none";
-                if (scrollToChannels && tabId === "channelsTab" && els.channelGrid && els.channelGrid.scrollIntoView) {
-                    const reduceMotion = typeof window.matchMedia === "function" &&
-                        window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-                    els.channelGrid.scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth", block: "start" });
-                }
+                if (scrollToChannels && tabId === "channelsTab") scrollToChannelGrid();
             }
 
             function openTodayFixtures() {

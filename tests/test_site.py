@@ -197,7 +197,9 @@ def test_league_standings_button_and_modal():
     assert 'id="leagueBtn"' in tpl and "LİG PUANI" in tpl
     assert 'class="league-btn"' in tpl
     assert tpl.index('id="liveClock"') < tpl.index('id="leagueBtn"'), "buton saatten sonra gelmeli"
-    assert 'id="fixtureBtn"' in tpl and 'href="go:fixtor"' in tpl and "FİKSTÜR" in tpl
+    assert 'id="fixtureBtn"' in tpl and 'href="go:fixtor"' in tpl and "VIP FIXTURE" in tpl
+    assert 'id="fixtureMatchCount"' in tpl and "CANLI · BUGÜN · BİTEN" in tpl
+    assert 'id="badgeKodaman"' in tpl, "TV KANALLARI 2 kanal sayacı olmalı"
     assert tpl.index('id="leagueBtn"') < tpl.index('id="fixtureBtn"'), "fikstür butonu lig butonundan sonra gelmeli"
     assert tpl.count('class="tab-btn') == 4, "TV KANALLARI 2 dahil dört sekme olmalı"
     # modal: karartma, neon pembe kenar, kapatma butonu, başlık
