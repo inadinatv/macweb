@@ -1,15 +1,11 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-10-17 20:16  
-> **Toplam maç:** 30  |  **Canlı:** 5  |  **Yaklaşan:** 0
+> **Güncellenme:** 2026-10-17 20:56  
+> **Toplam maç:** 30  |  **Canlı:** 1  |  **Yaklaşan:** 0
 
 ## 🔴 CANLI
 
-- 🔴 **Lille 1 - 1 Brest** — CANLI · `21:45` | Fransa Ligue 1 <https://fixbettv84.com/channel.html?id=b4>
-- 🔴 **Troyes 1 - 3 Lens** — CANLI · `21:45` | Fransa Ligue 1 <https://fixbettv84.com/channel.html?id=bm1>
-- 🔴 **Roma vs Genoa** — CANLI · `21:45` | İtalya Serie A <https://fixbettv84.com/channel.html?id=ss2>
-- 🔴 **Valencia vs Athletic Bilbao** — CANLI · `22:00` | İspanya La Liga <https://fixbettv84.com/channel.html?id=ss>
 - 🔴 **SP Burgos vs Obradoiro CAB** — CANLI · `22:00` | İspanya Basketbol Ligi <https://fixbettv84.com/channel.html?id=smarts>
 
 ## ✅ BİTTİ
@@ -39,6 +35,10 @@
 - ✅ **Newcastle 0 - 1 Aston Villa** — MS · `19:30` | İngiltere Premier Lig <https://fixbettv84.com/channel.html?id=b3>
 - ✅ **Real Betis 2 - 5 Barcelona** — MS · `19:30` | İspanya La Liga <https://fixbettv84.com/channel.html?id=ss>
 - ✅ **Red Star vs St. Etienne** — MS · `21:00` | Fransa Ligue 2 <https://fixbettv84.com/channel.html?id=b2>
+- ✅ **Lille 1 - 1 Brest** — MS · `21:45` | Fransa Ligue 1 <https://fixbettv84.com/channel.html?id=b4>
+- ✅ **Troyes 1 - 3 Lens** — MS · `21:45` | Fransa Ligue 1 <https://fixbettv84.com/channel.html?id=bm1>
+- ✅ **Roma vs Genoa** — MS · `21:45` | İtalya Serie A <https://fixbettv84.com/channel.html?id=ss2>
+- ✅ **Valencia vs Athletic Bilbao** — MS · `22:00` | İspanya La Liga <https://fixbettv84.com/channel.html?id=ss>
 
 ## ⭐ GÜNÜN MAÇI
 
@@ -55,8 +55,8 @@
 
 ### Fransa Ligue 1
 - ⏰ Strasbourg vs PSG — 18:15
-- 🔴 Lille vs Brest — 21:45
-- 🔴 Troyes vs Lens — 21:45
+- ⏰ Lille vs Brest — 21:45
+- ⏰ Troyes vs Lens — 21:45
 
 ### Fransa Ligue 2
 - ⏰ Red Star vs St. Etienne — 21:00
@@ -93,12 +93,12 @@
 - ⏰ Espanyol vs Atletico Madrid — 15:00
 - ⏰ Villarreal vs Elche — 17:15
 - ⏰ Real Betis vs Barcelona — 19:30
-- 🔴 Valencia vs Athletic Bilbao — 22:00
+- ⏰ Valencia vs Athletic Bilbao — 22:00
 
 ### İtalya Serie A
 - ⏰ Venezia vs Napoli — 16:00
 - ⏰ Bologna vs Inter — 19:00
-- 🔴 Roma vs Genoa — 21:45
+- ⏰ Roma vs Genoa — 21:45
 
 ---
 ## 📺 7/24 KANALLAR (31)
