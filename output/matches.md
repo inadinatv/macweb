@@ -1,7 +1,7 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-10-18 21:20  
+> **Güncellenme:** 2026-10-18 21:33  
 > **Toplam maç:** 32  |  **Canlı:** 0  |  **Yaklaşan:** 26
 
 ## ⏰ YAKLAŞAN
@@ -36,11 +36,11 @@
 ## ✅ BİTTİ
 
 - ✅ **Beşiktaş vs Galatasaray MCT** — MS · `20:30` | Basketbol Süper Ligi <https://fixbettv84.com/channel.html?id=b5>
-- ✅ **Racing Club vs Independiente** — MS · `21:00` | Arjantin Primera Division <https://fixbettv84.com/channel.html?id=smarts>
-- ✅ **Lyon vs Nice** — MS · `21:45` | Fransa Ligue 1 <https://fixbettv84.com/channel.html?id=b4>
-- ✅ **Juventus vs Lazio** — MS · `21:45` | İtalya Serie A <https://fixbettv84.com/channel.html?id=ss2>
-- ✅ **Real Madrid vs Sevilla** — MS · `22:00` | İspanya La Liga <https://fixbettv84.com/channel.html?id=ss>
-- ✅ **Fluminense vs Santos** — MS · `22:00` | Brezilya Serie A <https://fixbettv84.com/channel.html?id=sms2>
+- ✅ **Racing Club 1 - 1 Independiente** — MS · `21:00` | Arjantin Primera Division <https://fixbettv84.com/channel.html?id=smarts>
+- ✅ **Lyon 2 - 1 Nice** — MS · `21:45` | Fransa Ligue 1 <https://fixbettv84.com/channel.html?id=b4>
+- ✅ **Juventus 0 - 3 Lazio** — MS · `21:45` | İtalya Serie A <https://fixbettv84.com/channel.html?id=ss2>
+- ✅ **Real Madrid 4 - 1 Sevilla** — MS · `22:00` | İspanya La Liga <https://fixbettv84.com/channel.html?id=ss>
+- ✅ **Fluminense 1 - 2 Santos** — MS · `22:00` | Brezilya Serie A <https://fixbettv84.com/channel.html?id=sms2>
 
 ---
 ## 🏆 Lig Bazlı
