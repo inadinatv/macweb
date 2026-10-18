@@ -1,13 +1,13 @@
 {
  "source": "mackolik",
- "generated_at": "2026-10-18T16:18:44+03:00",
+ "generated_at": "2026-10-18T19:43:02+03:00",
  "leagues": [
   {
    "id": "soccer/tur.1",
    "name": "Trendyol Süper Lig",
    "sport": "Futbol",
    "season": "2026-27 Turkish Super Lig",
-   "updated_at": "2026-10-18T16:18:44+03:00",
+   "updated_at": "2026-10-18T19:43:02+03:00",
    "teams": 18,
    "rows": [
     {
@@ -142,13 +142,13 @@
      "sourceTeam": "Kocaelispor",
      "abbr": "",
      "logo": "https://file.mackolikfeeds.com/teams/b703zecenioz21dnj3p63v3f7",
-     "played": 7,
+     "played": 8,
      "wins": 4,
      "draws": 0,
-     "losses": 3,
-     "goalsFor": 8,
-     "goalsAgainst": 6,
-     "diff": 2,
+     "losses": 4,
+     "goalsFor": 9,
+     "goalsAgainst": 8,
+     "diff": 1,
      "points": 12,
      "note": "",
      "zone": "",
@@ -210,6 +210,24 @@
     },
     {
      "rank": 12,
+     "team": "Göztepe",
+     "sourceTeam": "Göztepe",
+     "abbr": "",
+     "logo": "https://file.mackolikfeeds.com/teams/cjbaf8s09qoa1n11r33gc560x",
+     "played": 8,
+     "wins": 2,
+     "draws": 3,
+     "losses": 3,
+     "goalsFor": 17,
+     "goalsAgainst": 16,
+     "diff": 1,
+     "points": 9,
+     "note": "",
+     "zone": "",
+     "zoneLabel": ""
+    },
+    {
+     "rank": 13,
      "team": "Başakşehir",
      "sourceTeam": "Başakşehir",
      "abbr": "",
@@ -227,7 +245,7 @@
      "zoneLabel": ""
     },
     {
-     "rank": 13,
+     "rank": 14,
      "team": "Gaziantep FK",
      "sourceTeam": "Gaziantep FK",
      "abbr": "",
@@ -245,7 +263,7 @@
      "zoneLabel": ""
     },
     {
-     "rank": 14,
+     "rank": 15,
      "team": "Gençlerbirliği",
      "sourceTeam": "Gençlerbirliği",
      "abbr": "",
@@ -258,24 +276,6 @@
      "goalsAgainst": 16,
      "diff": -9,
      "points": 8,
-     "note": "",
-     "zone": "",
-     "zoneLabel": ""
-    },
-    {
-     "rank": 15,
-     "team": "Göztepe",
-     "sourceTeam": "Göztepe",
-     "abbr": "",
-     "logo": "https://file.mackolikfeeds.com/teams/cjbaf8s09qoa1n11r33gc560x",
-     "played": 7,
-     "wins": 1,
-     "draws": 3,
-     "losses": 3,
-     "goalsFor": 15,
-     "goalsAgainst": 15,
-     "diff": 0,
-     "points": 6,
      "note": "",
      "zone": "",
      "zoneLabel": ""
