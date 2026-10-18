@@ -1,19 +1,17 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-10-18 09:42  
-> **Toplam maç:** 32  |  **Canlı:** 0  |  **Yaklaşan:** 32
+> **Güncellenme:** 2026-10-18 12:52  
+> **Toplam maç:** 32  |  **Canlı:** 3  |  **Yaklaşan:** 24
+
+## 🔴 CANLI
+
+- 🔴 **Zeren Spor vs Fenerbahçe Medicana** — CANLI · `15:00` | TVF Sultanlar Ligi <https://fixbettv84.com/channel.html?id=trtspor2>
+- 🔴 **Osasuna 1 - 0 Racing Santander** — DEVRE · `15:00` | İspanya La Liga <https://fixbettv84.com/channel.html?id=ss>
+- 🔴 **Fenerbahçe Tarfin vs Petkimspor** — CANLI · `15:30` | Basketbol Süper Ligi <https://fixbettv84.com/channel.html?id=b5>
 
 ## ⏰ YAKLAŞAN
 
-- ⏰ **Denizli Basket vs Trabzonspor** — YAKLAŞAN · `13:00` | Basketbol Süper Ligi <https://fixbettv84.com/channel.html?id=b5>
-- ⏰ **Udinese vs Lecce** — YAKLAŞAN · `13:30` | İtalya Serie A <https://fixbettv84.com/channel.html?id=ss2>
-- ⏰ **Kasımpaşa vs Samsunspor** — YAKLAŞAN · `13:30` | Trendyol Süper Lig <https://fixbettv84.com/channel.html?id=zirve>
-- ⏰ **Iğdırspor vs Boluspor** — YAKLAŞAN · `13:30` | Trendyol 1. Lig <https://fixbettv84.com/channel.html?id=trtspor>
-- ⏰ **Real Madrid vs Bilbao Basket** — YAKLAŞAN · `13:30` | İspanya Basketbol Ligi <https://fixbettv84.com/channel.html?id=smarts>
-- ⏰ **Zeren Spor vs Fenerbahçe Medicana** — YAKLAŞAN · `15:00` | TVF Sultanlar Ligi <https://fixbettv84.com/channel.html?id=trtspor2>
-- ⏰ **Osasuna vs Racing Santander** — YAKLAŞAN · `15:00` | İspanya La Liga <https://fixbettv84.com/channel.html?id=ss>
-- ⏰ **Fenerbahçe Tarfin vs Petkimspor** — YAKLAŞAN · `15:30` | Basketbol Süper Ligi <https://fixbettv84.com/channel.html?id=b5>
 - ⏰ **Bournemouth vs Sunderland** — YAKLAŞAN · `16:00` | İngiltere Premier Lig <https://fixbettv84.com/channel.html?id=bm2>
 - ⏰ **Brighton vs Crystal Palace** — YAKLAŞAN · `16:00` | İngiltere Premier Lig <https://fixbettv84.com/channel.html?id=b4>
 - ⏰ **Leeds United vs Manchester Utd** — YAKLAŞAN · `16:00` | İngiltere Premier Lig <https://fixbettv84.com/channel.html?id=b3>
@@ -39,6 +37,14 @@
 - ⏰ **Real Madrid vs Sevilla** — YAKLAŞAN · `22:00` | İspanya La Liga <https://fixbettv84.com/channel.html?id=ss>
 - ⏰ **Fluminense vs Santos** — YAKLAŞAN · `22:00` | Brezilya Serie A <https://fixbettv84.com/channel.html?id=sms2>
 
+## ✅ BİTTİ
+
+- ✅ **Denizli Basket vs Trabzonspor** — MS · `13:00` | Basketbol Süper Ligi <https://fixbettv84.com/channel.html?id=b5>
+- ✅ **Udinese 0 - 3 Lecce** — MS · `13:30` | İtalya Serie A <https://fixbettv84.com/channel.html?id=ss2>
+- ✅ **Kasımpaşa 4 - 1 Samsunspor** — MS · `13:30` | Trendyol Süper Lig <https://fixbettv84.com/channel.html?id=zirve>
+- ✅ **Iğdırspor 1 - 0 Boluspor** — MS · `13:30` | Trendyol 1. Lig <https://fixbettv84.com/channel.html?id=trtspor>
+- ✅ **Real Madrid vs Bilbao Basket** — MS · `13:30` | İspanya Basketbol Ligi <https://fixbettv84.com/channel.html?id=smarts>
+
 ---
 ## 🏆 Lig Bazlı
 
@@ -47,7 +53,7 @@
 
 ### Basketbol Süper Ligi
 - ⏰ Denizli Basket vs Trabzonspor — 13:00
-- ⏰ Fenerbahçe Tarfin vs Petkimspor — 15:30
+- 🔴 Fenerbahçe Tarfin vs Petkimspor — 15:30
 - ⏰ Beşiktaş vs Galatasaray MCT — 20:30
 
 ### Brezilya Serie A
@@ -59,7 +65,7 @@
 - ⏰ Lyon vs Nice — 21:45
 
 ### TVF Sultanlar Ligi
-- ⏰ Zeren Spor vs Fenerbahçe Medicana — 15:00
+- 🔴 Zeren Spor vs Fenerbahçe Medicana — 15:00
 - ⏰ Eczacıbaşı vs Vakıfbank — 18:00
 
 ### Trendyol 1. Lig
