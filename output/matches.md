@@ -1,21 +1,18 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-10-18 18:59  
-> **Toplam maç:** 32  |  **Canlı:** 5  |  **Yaklaşan:** 2
+> **Güncellenme:** 2026-10-18 19:12  
+> **Toplam maç:** 32  |  **Canlı:** 7  |  **Yaklaşan:** 0
 
 ## 🔴 CANLI
 
 - 🔴 **Joventut Badalona vs Barcelona** — CANLI · `20:00` | İspanya Basketbol Ligi <https://fixbettv84.com/channel.html?id=sms2>
 - 🔴 **Beşiktaş vs Galatasaray MCT** — CANLI · `20:30` | Basketbol Süper Ligi <https://fixbettv84.com/channel.html?id=b5>
-- 🔴 **Racing Club 1 - 0 Independiente** — CANLI · `21:00` | Arjantin Primera Division <https://fixbettv84.com/channel.html?id=smarts>
-- 🔴 **Lyon 0 - 0 Nice** — CANLI · `21:45` | Fransa Ligue 1 <https://fixbettv84.com/channel.html?id=b4>
+- 🔴 **Racing Club 1 - 1 Independiente** — CANLI · `21:00` | Arjantin Primera Division <https://fixbettv84.com/channel.html?id=smarts>
+- 🔴 **Lyon 0 - 1 Nice** — CANLI · `21:45` | Fransa Ligue 1 <https://fixbettv84.com/channel.html?id=b4>
 - 🔴 **Juventus 0 - 0 Lazio** — CANLI · `21:45` | İtalya Serie A <https://fixbettv84.com/channel.html?id=ss2>
-
-## ⏰ YAKLAŞAN
-
-- ⏰ **Real Madrid vs Sevilla** — YAKLAŞAN · `22:00` | İspanya La Liga <https://fixbettv84.com/channel.html?id=ss>
-- ⏰ **Fluminense vs Santos** — YAKLAŞAN · `22:00` | Brezilya Serie A <https://fixbettv84.com/channel.html?id=sms2>
+- 🔴 **Real Madrid 0 - 0 Sevilla** — CANLI · `22:00` | İspanya La Liga <https://fixbettv84.com/channel.html?id=ss>
+- 🔴 **Fluminense 1 - 0 Santos** — CANLI · `22:00` | Brezilya Serie A <https://fixbettv84.com/channel.html?id=sms2>
 
 ## ✅ BİTTİ
 
@@ -57,7 +54,7 @@
 - 🔴 Beşiktaş vs Galatasaray MCT — 20:30
 
 ### Brezilya Serie A
-- ⏰ Fluminense vs Santos — 22:00
+- 🔴 Fluminense vs Santos — 22:00
 
 ### Fransa Ligue 1
 - ⏰ Lorient vs Monaco — 18:15
@@ -94,7 +91,7 @@
 - ⏰ Osasuna vs Racing Santander — 15:00
 - ⏰ Celta Vigo vs Alaves — 17:15
 - ⏰ Malaga vs Real Sociedad — 19:30
-- ⏰ Real Madrid vs Sevilla — 22:00
+- 🔴 Real Madrid vs Sevilla — 22:00
 
 ### İtalya Serie A
 - ⏰ Udinese vs Lecce — 13:30
