@@ -432,8 +432,15 @@ test("mobil liste görünümü sabit dokunma hedefleri ve taşmayı önleyen kur
   assert.ok(HTML.includes("@media (max-width: 380px)"), "çok dar ekranlar için sıkıştırılmış satır düzeni yok");
 });
 
-test("maç kartındaki İZLE butonu yayını player'de açıyor", async () => {
-  const { window, dom } = await loadPage();
+test("maç kartındaki İZLE butonu eşleşen Kodaman kanalını player'de açıyor", async () => {
+  const fetchImpl = async (url) => {
+    if (String(url).includes("/output/kodaman_channels.json")) return { ok: true, status: 200, json: async () => KODAMAN };
+    if (String(url).startsWith("https://data-reality.com/matches.php")) return { ok: true, status: 200, text: async () => "" };
+    if (String(url).startsWith("https://data-reality.com/matches2.php")) return { ok: true, status: 200, text: async () => "" };
+    return { ok: true, status: 200, json: async () => TODAY, text: async () => "" };
+  };
+  const { window, dom } = await loadPage({ fetchImpl });
+  await tick(30);
   window.inadina.setTab("matchesTab");
   const first = matchCards(window)[0];
   const expected = TODAY.matches.find((m) => first.textContent.includes(m.home) && first.textContent.includes(m.away));
@@ -441,9 +448,35 @@ test("maç kartındaki İZLE butonu yayını player'de açıyor", async () => {
   first.querySelector(".play-match-btn").click();
 
   const iframe = window.document.getElementById("liveIframe");
-  assert.ok(iframe.src.includes("id=" + expected.channel_id),
+  assert.equal(iframe.src, `${KODAMAN.base_url}/channel?id=${expected.channel_id}`,
     `beklenen kanal ${expected.channel_id}, yüklenen ${iframe.src}`);
+  assert.equal(window.inadina.state.currentKodamanId, expected.channel_id, "eşleşen Kodaman kanal state’i seçilmeli");
+  assert.equal(window.inadina.state.activeTab, "kodamanTab", "maçtan oynatınca Kodaman sekmesi açılmalı");
   assert.ok(window.scrolledTo.includes("playerContainer"), "maçtan player'e kaydırma yok");
+  dom.window.close();
+});
+
+test("Günün Maçı CANLI İZLE eylemi Kodaman’a yönlendirir; eşleşme yoksa Fixbet’e düşmez", async () => {
+  const fetchImpl = async (url) => {
+    if (String(url).includes("/output/kodaman_channels.json")) return { ok: true, status: 200, json: async () => KODAMAN };
+    if (String(url).startsWith("https://data-reality.com/matches.php")) return { ok: true, status: 200, text: async () => "" };
+    if (String(url).startsWith("https://data-reality.com/matches2.php")) return { ok: true, status: 200, text: async () => "" };
+    return { ok: true, status: 200, json: async () => TODAY, text: async () => "" };
+  };
+  const { window, dom } = await loadPage({ fetchImpl });
+  await tick(30);
+  const featured = window.inadina.selectHomeFeatured(new Date()).match;
+  const watchButton = window.document.querySelector(".home-featured-play");
+  assert.ok(featured && watchButton, "Günün Maçı izlet düğmesi render edilmedi");
+  watchButton.click();
+  assert.equal(window.inadina.state.currentKodamanId, featured.channelId, "ana Günün Maçı kanalı Kodaman ID’sine eşleşmeli");
+  assert.equal(new URL(window.document.getElementById("liveIframe").src).hostname, new URL(KODAMAN.base_url).hostname,
+    "ana Günün Maçı Fixbet hostu yerine Kodaman hostunu kullanmalı");
+
+  window.inadina.playMatch({ home: "Test Ev", away: "Test Dep", sport: "Futbol", channelId: "kodaman-da-yok",
+    channelName: "Bilinmeyen Spor", streamUrl: "https://fixbettv84.com/channel.html?id=kodaman-da-yok" });
+  assert.equal(window.document.getElementById("liveIframe").getAttribute("src"), null, "Kodaman eşleşmesi yokken Fixbet stream’i açılmamalı");
+  assert.ok(window.document.getElementById("playerError").classList.contains("active"), "eşleşmeyen kanal için kullanıcıya hata gösterilmeli");
   dom.window.close();
 });
 
