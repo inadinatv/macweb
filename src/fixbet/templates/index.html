@@ -1087,6 +1087,7 @@
                 currentSourceIndex: 0,
                 currentSources: []
             };
+            let kodamanRefreshPromise = null;
 
             const els = {
                 iframe: $("liveIframe"),
@@ -1469,31 +1470,45 @@
                 markActiveKodamanCard();
             }
 
-            async function refreshKodamanChannels() {
-                if (!els.kodamanGrid || typeof fetch !== "function") return false;
-                try {
-                    const url = new URL("output/kodaman_channels.json", location.href);
-                    url.searchParams.set("v", String(Date.now()));
-                    const response = await fetch(url.toString(), { cache: "no-store" });
-                    if (!response || !response.ok) throw new Error("Kodaman listesi alınamadı");
-                    const manifest = await response.json();
-                    const base = safeKodamanBase(manifest && manifest.base_url);
-                    if (!base || !Array.isArray(manifest.channels)) throw new Error("Kodaman listesi geçersiz");
-                    state.kodamanBaseUrl = base;
-                    state.kodamanChannels = manifest.channels.map((item) => {
-                        const id = String(item && item.id || "").trim();
-                        if (!/^[A-Za-z0-9_-]{1,64}$/.test(id)) return null;
-                        return { id: id, name: String(item.name || id).trim().slice(0, 64) || id, status: "listed" };
-                    }).filter(Boolean);
-                    state.kodamanUpdatedAt = String(manifest.updated_at || "");
-                    state.kodamanLoadError = false;
-                } catch (e) {
-                    state.kodamanLoadError = true;
-                } finally {
+            function refreshKodamanChannels() {
+                if (kodamanRefreshPromise) return kodamanRefreshPromise;
+                if (!els.kodamanGrid) return Promise.resolve(false);
+                if (typeof fetch !== "function") {
                     state.kodamanLoading = false;
+                    state.kodamanLoadError = true;
                     renderKodamanChannels();
+                    return Promise.resolve(false);
                 }
-                return !state.kodamanLoadError;
+                state.kodamanLoading = true;
+                const request = (async () => {
+                    try {
+                        const url = new URL("output/kodaman_channels.json", location.href);
+                        url.searchParams.set("v", String(Date.now()));
+                        const response = await fetch(url.toString(), { cache: "no-store" });
+                        if (!response || !response.ok) throw new Error("Kodaman listesi alınamadı");
+                        const manifest = await response.json();
+                        const base = safeKodamanBase(manifest && manifest.base_url);
+                        if (!base || !Array.isArray(manifest.channels)) throw new Error("Kodaman listesi geçersiz");
+                        state.kodamanBaseUrl = base;
+                        state.kodamanChannels = manifest.channels.map((item) => {
+                            const id = String(item && item.id || "").trim();
+                            if (!/^[A-Za-z0-9_-]{1,64}$/.test(id)) return null;
+                            return { id: id, name: String(item.name || id).trim().slice(0, 64) || id, status: "listed" };
+                        }).filter(Boolean);
+                        state.kodamanUpdatedAt = String(manifest.updated_at || "");
+                        state.kodamanLoadError = false;
+                    } catch (e) {
+                        state.kodamanLoadError = true;
+                    } finally {
+                        state.kodamanLoading = false;
+                        renderKodamanChannels();
+                    }
+                    return !state.kodamanLoadError;
+                })();
+                kodamanRefreshPromise = request;
+                return request.finally(() => {
+                    if (kodamanRefreshPromise === request) kodamanRefreshPromise = null;
+                });
             }
 
             function markActiveKodamanCard() {
@@ -2166,11 +2181,47 @@
                 playExtra(list[next].id, false);
             }
 
+            function kodamanChannelForMatch(m) {
+                if (!m || !Array.isArray(state.kodamanChannels)) return null;
+                const ids = [m.channelId, m.channel_id]
+                    .map((value) => String(value || "").trim()).filter(Boolean);
+                const streamUrl = m.streamUrl || m.stream_url || m.url || "";
+                try {
+                    const urlId = new URL(streamUrl, location.href).searchParams.get("id");
+                    if (urlId) ids.push(urlId);
+                } catch (e) { /* kanal adı eşleştirmesiyle devam et */ }
+                const byId = state.kodamanChannels.find((channel) =>
+                    ids.some((id) => id.toLowerCase() === channel.id.toLowerCase()));
+                if (byId) return byId;
+                const wantedName = norm(matchChannelName(m));
+                return wantedName ? state.kodamanChannels.find((channel) => norm(channel.name) === wantedName) || null : null;
+            }
+
+            function playMatchWithKodaman(m) {
+                setTab("kodamanTab");
+                const channel = kodamanChannelForMatch(m);
+                if (channel && playKodamanChannel(channel.id, true)) return true;
+
+                state.currentIndex = -1;
+                state.currentKodamanId = null;
+                setExternalNavigationEnabled(false);
+                setPlayerMode("iframe");
+                els.iframe.removeAttribute("src");
+                markActiveCard();
+                markActiveKodamanCard();
+                setPlayerHeader(m.home + " - " + m.away, m._icon || sportIcon(m.sport), "YAYIN KANALI BULUNAMADI");
+                showError("Bu maç için Kodaman TV kanal listesinde eşleşen yayın bulunamadı.");
+                scrollToPlayer();
+                return false;
+            }
+
             function playMatch(m) {
-                const idx = streamLinks.indexOf(m.streamUrl);
-                if (idx >= 0) { playChannel(idx, true); return; }
-                loadStream(m.streamUrl, m.home + " - " + m.away, m._icon || sportIcon(m.sport),
-                    (matchChannelName(m) || "MAÇ YAYINI"), true);
+                if (!m) return false;
+                if (state.kodamanLoading) {
+                    setTab("kodamanTab");
+                    return refreshKodamanChannels().then(() => playMatchWithKodaman(m));
+                }
+                return playMatchWithKodaman(m);
             }
 
             /* ---------------- Maç kartları ---------------- */
