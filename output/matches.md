@@ -1,17 +1,14 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-10-18 19:12  
-> **Toplam maç:** 32  |  **Canlı:** 7  |  **Yaklaşan:** 0
+> **Güncellenme:** 2026-10-18 19:49  
+> **Toplam maç:** 32  |  **Canlı:** 4  |  **Yaklaşan:** 0
 
 ## 🔴 CANLI
 
-- 🔴 **Joventut Badalona vs Barcelona** — CANLI · `20:00` | İspanya Basketbol Ligi <https://fixbettv84.com/channel.html?id=sms2>
-- 🔴 **Beşiktaş vs Galatasaray MCT** — CANLI · `20:30` | Basketbol Süper Ligi <https://fixbettv84.com/channel.html?id=b5>
-- 🔴 **Racing Club 1 - 1 Independiente** — CANLI · `21:00` | Arjantin Primera Division <https://fixbettv84.com/channel.html?id=smarts>
-- 🔴 **Lyon 0 - 1 Nice** — CANLI · `21:45` | Fransa Ligue 1 <https://fixbettv84.com/channel.html?id=b4>
-- 🔴 **Juventus 0 - 0 Lazio** — CANLI · `21:45` | İtalya Serie A <https://fixbettv84.com/channel.html?id=ss2>
-- 🔴 **Real Madrid 0 - 0 Sevilla** — CANLI · `22:00` | İspanya La Liga <https://fixbettv84.com/channel.html?id=ss>
+- 🔴 **Lyon 2 - 1 Nice** — DEVRE · `21:45` | Fransa Ligue 1 <https://fixbettv84.com/channel.html?id=b4>
+- 🔴 **Juventus 0 - 1 Lazio** — CANLI · `21:45` | İtalya Serie A <https://fixbettv84.com/channel.html?id=ss2>
+- 🔴 **Real Madrid 2 - 0 Sevilla** — CANLI · `22:00` | İspanya La Liga <https://fixbettv84.com/channel.html?id=ss>
 - 🔴 **Fluminense 1 - 0 Santos** — CANLI · `22:00` | Brezilya Serie A <https://fixbettv84.com/channel.html?id=sms2>
 
 ## ✅ BİTTİ
@@ -41,17 +38,20 @@
 - ✅ **İstanbul Başakşehir 2 - 1 Gaziantep FK** — MS · `19:00` | Trendyol Süper Lig <https://fixbettv84.com/channel.html?id=zirve>
 - ✅ **İstanbulspor 0 - 2 Antalyaspor** — MS · `19:00` | Trendyol 1. Lig <https://fixbettv84.com/channel.html?id=trtspor>
 - ✅ **Malaga 2 - 5 Real Sociedad** — MS · `19:30` | İspanya La Liga <https://fixbettv84.com/channel.html?id=ss>
+- ✅ **Joventut Badalona vs Barcelona** — MS · `20:00` | İspanya Basketbol Ligi <https://fixbettv84.com/channel.html?id=sms2>
+- ✅ **Beşiktaş vs Galatasaray MCT** — MS · `20:30` | Basketbol Süper Ligi <https://fixbettv84.com/channel.html?id=b5>
+- ✅ **Racing Club 1 - 1 Independiente** — MS · `21:00` | Arjantin Primera Division <https://fixbettv84.com/channel.html?id=smarts>
 
 ---
 ## 🏆 Lig Bazlı
 
 ### Arjantin Primera Division
-- 🔴 Racing Club vs Independiente — 21:00
+- ⏰ Racing Club vs Independiente — 21:00
 
 ### Basketbol Süper Ligi
 - ⏰ Denizli Basket vs Trabzonspor — 13:00
 - ⏰ Fenerbahçe Tarfin vs Petkimspor — 15:30
-- 🔴 Beşiktaş vs Galatasaray MCT — 20:30
+- ⏰ Beşiktaş vs Galatasaray MCT — 20:30
 
 ### Brezilya Serie A
 - 🔴 Fluminense vs Santos — 22:00
@@ -59,7 +59,7 @@
 ### Fransa Ligue 1
 - ⏰ Lorient vs Monaco — 18:15
 - ⏰ Paris FC vs Rennes — 18:15
-- 🔴 Lyon vs Nice — 21:45
+- ⏰ Lyon vs Nice — 21:45
 
 ### TVF Sultanlar Ligi
 - ⏰ Zeren Spor vs Fenerbahçe Medicana — 15:00
@@ -85,7 +85,7 @@
 ### İspanya Basketbol Ligi
 - ⏰ Real Madrid vs Bilbao Basket — 13:30
 - ⏰ Valencia Basket vs Murcia — 18:00
-- 🔴 Joventut Badalona vs Barcelona — 20:00
+- ⏰ Joventut Badalona vs Barcelona — 20:00
 
 ### İspanya La Liga
 - ⏰ Osasuna vs Racing Santander — 15:00
