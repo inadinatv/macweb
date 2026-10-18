@@ -278,6 +278,7 @@ test("günün maçları gerçek programdan geliyor", async () => {
 });
 
 test("bugünün Günün Maçı tam genişlikte gösterilir ve diğer maçların önüne sabitlenir", async () => {
+  const fixedNow = Date.UTC(2026, 9, 18, 8, 0, 0);
   const feed = `<!doctype html>
     <a href="channel?id=normal"><div class="match-detail"><div class="date">Futbol</div>
       <div class="event">12:00 | Test Ligi</div><div class="teams"><div class="home">Normal Ev</div>
@@ -290,7 +291,17 @@ test("bugünün Günün Maçı tam genişlikte gösterilir ve diğer maçların 
     if (String(url).startsWith("https://data-reality.com/matches2.php")) return { ok: true, status: 200, text: async () => "" };
     return { ok: true, status: 200, json: async () => TODAY };
   };
-  const { window, dom } = await loadPage({ fetchImpl });
+  const { window, dom } = await loadPage({
+    fetchImpl,
+    beforeParse: (w) => {
+      const NativeDate = w.Date;
+      w.Date = class FixedDate extends NativeDate {
+        constructor(...args) { if (!args.length) super(fixedNow); else super(...args); }
+        static now() { return fixedNow; }
+      };
+      Object.defineProperty(w.document, "hidden", { configurable: true, get: () => true });
+    },
+  });
   assert.equal(await window.inadina.refreshMatches(true), true);
   assert.equal(window.inadina.state.activeTab, "channelsTab", "uygulama ilk açılışta ana sekmede kalmalı");
   const homeFeatured = window.document.querySelector("#homeFeaturedSection .home-featured-match");
@@ -1512,6 +1523,51 @@ test("Günün Maçı basketboldan önce bugünün futbol fikstürünü seçer ve
   card = window.document.querySelector("#homeFeaturedSection .home-featured-match");
   assert.equal(card.dataset.score, "1-0");
   assert.equal(card.dataset.clock, "12′");
+  dom.window.close();
+});
+
+test("Türkiye Süper Lig ve 1. Lig günün maçında yabancı liglerden önce gelir", async () => {
+  const fixedNow = Date.UTC(2026, 9, 18, 9, 0, 0);
+  const row = (id, home, away, league, startAt, extra = {}) => {
+    const start = new Date(startAt);
+    const time = new Intl.DateTimeFormat("en-GB", { timeZone: "Europe/Istanbul", hour: "2-digit", minute: "2-digit", hourCycle: "h23" }).format(start);
+    return featuredLiveRow(0, {
+      event_id: id, match_id: id, home, away, league, sport: "Futbol", starts_at: start.toISOString(),
+      date: "2026-10-18", time, status: "upcoming", status_source: "schedule", raw_status: "",
+      status_clock: "", score_home: null, score_away: null, score_source: "", score_updated_at: "",
+      is_match_of_day: false, ...extra,
+    });
+  };
+  const foreignOfficial = row("foreign-official", "Everton", "Chelsea", "İngiltere Premier Lig", "2026-10-18T09:45:00Z", {
+    is_match_of_day: true,
+  });
+  const foreignLive = row("foreign-live", "Espanyol", "Atletico Madrid", "İspanya La Liga", "2026-10-18T08:00:00Z", {
+    status: "live", status_source: "espn", raw_status: "STATUS_FIRST_HALF", status_clock: "60′",
+    score_home: 0, score_away: 0, score_source: "espn", score_updated_at: new Date(fixedNow - 60000).toISOString(),
+  });
+  const superLig = row("tur-super", "Kasımpaşa", "Samsunspor", "Trendyol Süper Lig", "2026-10-18T10:30:00Z");
+  const firstLeague = row("tur-first", "Sivasspor", "Sarıyer", "Trendyol 1. Lig", "2026-10-18T13:00:00Z");
+  const { window, dom } = await loadPage({
+    html: withMatches([foreignOfficial, foreignLive, firstLeague, superLig]),
+    fetchImpl: async () => ({ ok: false, status: 503, json: async () => ({}) }),
+    beforeParse: (w) => {
+      const NativeDate = w.Date;
+      w.Date = class FixedDate extends NativeDate {
+        constructor(...args) { if (!args.length) super(fixedNow); else super(...args); }
+        static now() { return fixedNow; }
+      };
+      Object.defineProperty(w.document, "hidden", { configurable: true, get: () => true });
+    },
+  });
+  const selected = window.inadina.selectHomeFeatured(new window.Date(fixedNow));
+  assert.equal(selected.match.home, "Kasımpaşa", "Türkiye Süper Lig maçı yabancı resmî ve canlı maçlardan önce seçilmeli");
+  const sorted = window.inadina.sortMatches(window.inadina.decoratedMatches(new window.Date(fixedNow)));
+  assert.deepEqual(Array.from(sorted.slice(0, 2), (m) => m.home), ["Kasımpaşa", "Sivasspor"],
+    "Süper Lig ve 1. Lig maçları günlük maç listesinde önce sıralanmalı");
+  assert.equal(window.inadina.isPriorityTurkishLeague({ sport: "Futbol", league: "TFF 1. Lig" }), true);
+  assert.equal(window.inadina.isPriorityTurkishLeague({ sport: "Basketbol", league: "Trendyol Süper Lig" }), false);
+  assert.equal(window.inadina.isPriorityTurkishLeague({ league: "Trendyol Süper Lig" }), false);
+  assert.equal(window.inadina.isPriorityTurkishLeague({ sport: "Futbol", league: "İngiltere Premier Lig" }), false);
   dom.window.close();
 });
 
