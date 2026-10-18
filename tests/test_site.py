@@ -199,9 +199,12 @@ def test_league_standings_button_and_modal():
     assert tpl.index('id="liveClock"') < tpl.index('id="leagueBtn"'), "buton saatten sonra gelmeli"
     assert 'id="fixtureBtn"' in tpl and 'href="go:fixtor"' in tpl and "VIP FIXTURE" in tpl
     assert 'id="fixtureMatchCount"' in tpl and "CANLI · BUGÜN · BİTEN" in tpl
-    assert 'id="badgeKodaman"' in tpl, "TV KANALLARI 2 kanal sayacı olmalı"
+    assert 'id="badgeKodaman"' in tpl, "öncelikli Kodaman sekmesinde kanal sayacı olmalı"
     assert tpl.index('id="leagueBtn"') < tpl.index('id="fixtureBtn"'), "fikstür butonu lig butonundan sonra gelmeli"
     assert tpl.count('class="tab-btn') == 4, "TV KANALLARI 2 dahil dört sekme olmalı"
+    assert tpl.index('data-tab="kodamanTab"') < tpl.index('data-tab="channelsTab"'), "Kodaman TV ilk sırada olmalı"
+    assert 'data-tab="kodamanTab">📡 TV KANALLARI 1' in tpl
+    assert 'data-tab="channelsTab">📺 TV KANALLARI 2' in tpl
     # modal: karartma, neon pembe kenar, kapatma butonu, başlık
     assert 'id="leagueModal"' in tpl and 'id="leagueModalClose"' in tpl
     assert "backdrop-filter: blur" in tpl
