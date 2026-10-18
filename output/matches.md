@@ -1,28 +1,19 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-10-18 16:53  
-> **Toplam maç:** 32  |  **Canlı:** 9  |  **Yaklaşan:** 7
+> **Güncellenme:** 2026-10-18 18:59  
+> **Toplam maç:** 32  |  **Canlı:** 5  |  **Yaklaşan:** 2
 
 ## 🔴 CANLI
 
-- 🔴 **Eczacıbaşı vs Vakıfbank** — CANLI · `18:00` | TVF Sultanlar Ligi <https://fixbettv84.com/channel.html?id=trtspor2>
-- 🔴 **Valencia Basket vs Murcia** — CANLI · `18:00` | İspanya Basketbol Ligi <https://fixbettv84.com/channel.html?id=smarts>
-- 🔴 **Lorient 1 - 0 Monaco** — CANLI · `18:15` | Fransa Ligue 1 <https://fixbettv84.com/channel.html?id=b4>
-- 🔴 **Paris FC 2 - 1 Rennes** — CANLI · `18:15` | Fransa Ligue 1 <https://fixbettv84.com/channel.html?id=bm1>
-- 🔴 **Nottingham Forest 0 - 0 Arsenal** — CANLI · `18:30` | İngiltere Premier Lig <https://fixbettv84.com/channel.html?id=b3>
-- 🔴 **Milan 2 - 0 Atalanta** — DEVRE · `19:00` | İtalya Serie A <https://fixbettv84.com/channel.html?id=ss2>
-- 🔴 **İstanbul Başakşehir 1 - 0 Gaziantep FK** — DEVRE · `19:00` | Trendyol Süper Lig <https://fixbettv84.com/channel.html?id=zirve>
-- 🔴 **İstanbulspor 0 - 1 Antalyaspor** — DEVRE · `19:00` | Trendyol 1. Lig <https://fixbettv84.com/channel.html?id=trtspor>
-- 🔴 **Malaga 0 - 1 Real Sociedad** — CANLI · `19:30` | İspanya La Liga <https://fixbettv84.com/channel.html?id=ss>
+- 🔴 **Joventut Badalona vs Barcelona** — CANLI · `20:00` | İspanya Basketbol Ligi <https://fixbettv84.com/channel.html?id=sms2>
+- 🔴 **Beşiktaş vs Galatasaray MCT** — CANLI · `20:30` | Basketbol Süper Ligi <https://fixbettv84.com/channel.html?id=b5>
+- 🔴 **Racing Club 1 - 0 Independiente** — CANLI · `21:00` | Arjantin Primera Division <https://fixbettv84.com/channel.html?id=smarts>
+- 🔴 **Lyon 0 - 0 Nice** — CANLI · `21:45` | Fransa Ligue 1 <https://fixbettv84.com/channel.html?id=b4>
+- 🔴 **Juventus 0 - 0 Lazio** — CANLI · `21:45` | İtalya Serie A <https://fixbettv84.com/channel.html?id=ss2>
 
 ## ⏰ YAKLAŞAN
 
-- ⏰ **Joventut Badalona vs Barcelona** — YAKLAŞAN · `20:00` | İspanya Basketbol Ligi <https://fixbettv84.com/channel.html?id=sms2>
-- ⏰ **Beşiktaş vs Galatasaray MCT** — YAKLAŞAN · `20:30` | Basketbol Süper Ligi <https://fixbettv84.com/channel.html?id=b5>
-- ⏰ **Racing Club vs Independiente** — YAKLAŞAN · `21:00` | Arjantin Primera Division <https://fixbettv84.com/channel.html?id=smarts>
-- ⏰ **Lyon vs Nice** — YAKLAŞAN · `21:45` | Fransa Ligue 1 <https://fixbettv84.com/channel.html?id=b4>
-- ⏰ **Juventus vs Lazio** — YAKLAŞAN · `21:45` | İtalya Serie A <https://fixbettv84.com/channel.html?id=ss2>
 - ⏰ **Real Madrid vs Sevilla** — YAKLAŞAN · `22:00` | İspanya La Liga <https://fixbettv84.com/channel.html?id=ss>
 - ⏰ **Fluminense vs Santos** — YAKLAŞAN · `22:00` | Brezilya Serie A <https://fixbettv84.com/channel.html?id=sms2>
 
@@ -44,29 +35,38 @@
 - ✅ **Kayserispor 2 - 2 Batman Petrol** — MS · `16:00` | Trendyol 1. Lig <https://fixbettv84.com/channel.html?id=trtspor>
 - ✅ **Vanspor 0 - 2 Ümraniyespor** — MS · `16:00` | Trendyol 1. Lig <https://fixbettv84.com/channel.html?id=bm1>
 - ✅ **Celta Vigo 2 - 1 Alaves** — MS · `17:15` | İspanya La Liga <https://fixbettv84.com/channel.html?id=ss>
+- ✅ **Eczacıbaşı vs Vakıfbank** — MS · `18:00` | TVF Sultanlar Ligi <https://fixbettv84.com/channel.html?id=trtspor2>
+- ✅ **Valencia Basket vs Murcia** — MS · `18:00` | İspanya Basketbol Ligi <https://fixbettv84.com/channel.html?id=smarts>
+- ✅ **Lorient 1 - 0 Monaco** — MS · `18:15` | Fransa Ligue 1 <https://fixbettv84.com/channel.html?id=b4>
+- ✅ **Paris FC 4 - 3 Rennes** — MS · `18:15` | Fransa Ligue 1 <https://fixbettv84.com/channel.html?id=bm1>
+- ✅ **Nottingham Forest 0 - 1 Arsenal** — MS · `18:30` | İngiltere Premier Lig <https://fixbettv84.com/channel.html?id=b3>
+- ✅ **Milan 3 - 2 Atalanta** — MS · `19:00` | İtalya Serie A <https://fixbettv84.com/channel.html?id=ss2>
+- ✅ **İstanbul Başakşehir 2 - 1 Gaziantep FK** — MS · `19:00` | Trendyol Süper Lig <https://fixbettv84.com/channel.html?id=zirve>
+- ✅ **İstanbulspor 0 - 2 Antalyaspor** — MS · `19:00` | Trendyol 1. Lig <https://fixbettv84.com/channel.html?id=trtspor>
+- ✅ **Malaga 2 - 5 Real Sociedad** — MS · `19:30` | İspanya La Liga <https://fixbettv84.com/channel.html?id=ss>
 
 ---
 ## 🏆 Lig Bazlı
 
 ### Arjantin Primera Division
-- ⏰ Racing Club vs Independiente — 21:00
+- 🔴 Racing Club vs Independiente — 21:00
 
 ### Basketbol Süper Ligi
 - ⏰ Denizli Basket vs Trabzonspor — 13:00
 - ⏰ Fenerbahçe Tarfin vs Petkimspor — 15:30
-- ⏰ Beşiktaş vs Galatasaray MCT — 20:30
+- 🔴 Beşiktaş vs Galatasaray MCT — 20:30
 
 ### Brezilya Serie A
 - ⏰ Fluminense vs Santos — 22:00
 
 ### Fransa Ligue 1
-- 🔴 Lorient vs Monaco — 18:15
-- 🔴 Paris FC vs Rennes — 18:15
-- ⏰ Lyon vs Nice — 21:45
+- ⏰ Lorient vs Monaco — 18:15
+- ⏰ Paris FC vs Rennes — 18:15
+- 🔴 Lyon vs Nice — 21:45
 
 ### TVF Sultanlar Ligi
 - ⏰ Zeren Spor vs Fenerbahçe Medicana — 15:00
-- 🔴 Eczacıbaşı vs Vakıfbank — 18:00
+- ⏰ Eczacıbaşı vs Vakıfbank — 18:00
 
 ### Trendyol 1. Lig
 - ⏰ Iğdırspor vs Boluspor — 13:30
@@ -83,24 +83,24 @@
 - ⏰ Bournemouth vs Sunderland — 16:00
 - ⏰ Brighton vs Crystal Palace — 16:00
 - ⏰ Leeds United vs Manchester Utd — 16:00
-- 🔴 Nottingham Forest vs Arsenal — 18:30
+- ⏰ Nottingham Forest vs Arsenal — 18:30
 
 ### İspanya Basketbol Ligi
 - ⏰ Real Madrid vs Bilbao Basket — 13:30
-- 🔴 Valencia Basket vs Murcia — 18:00
-- ⏰ Joventut Badalona vs Barcelona — 20:00
+- ⏰ Valencia Basket vs Murcia — 18:00
+- 🔴 Joventut Badalona vs Barcelona — 20:00
 
 ### İspanya La Liga
 - ⏰ Osasuna vs Racing Santander — 15:00
 - ⏰ Celta Vigo vs Alaves — 17:15
-- 🔴 Malaga vs Real Sociedad — 19:30
+- ⏰ Malaga vs Real Sociedad — 19:30
 - ⏰ Real Madrid vs Sevilla — 22:00
 
 ### İtalya Serie A
 - ⏰ Udinese vs Lecce — 13:30
 - ⏰ Fiorentina vs Como — 16:00
 - ⏰ Milan vs Atalanta — 19:00
-- ⏰ Juventus vs Lazio — 21:45
+- 🔴 Juventus vs Lazio — 21:45
 
 ---
 ## 📺 7/24 KANALLAR (31)
