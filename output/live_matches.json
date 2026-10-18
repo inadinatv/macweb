@@ -59,16 +59,16 @@
       "started": true,
       "raw_event": "15:00 | İspanya La Liga",
       "url": "https://fixbettv84.com/channel.html?id=ss",
-      "fetched_at": "2026-10-18T16:18:44+03:00",
+      "fetched_at": "2026-10-18T16:35:56+03:00",
       "status_source": "espn",
       "raw_status": "STATUS_SECOND_HALF",
       "score_home": 1,
       "score_away": 0,
       "score_source": "espn",
-      "score_updated_at": "2026-10-18T16:18:44+03:00",
+      "score_updated_at": "2026-10-18T16:35:56+03:00",
       "event_id": "401882840",
       "starts_at": "2026-10-18T12:00:00+00:00",
-      "status_clock": "59'"
+      "status_clock": "76'"
     },
     {
       "match_id": "b5",
@@ -111,16 +111,16 @@
       "started": true,
       "raw_event": "16:00 | İngiltere Premier Lig",
       "url": "https://fixbettv84.com/channel.html?id=bm2",
-      "fetched_at": "2026-10-18T16:18:44+03:00",
+      "fetched_at": "2026-10-18T16:35:56+03:00",
       "status_source": "espn",
       "raw_status": "STATUS_FIRST_HALF",
       "score_home": 1,
       "score_away": 0,
       "score_source": "espn",
-      "score_updated_at": "2026-10-18T16:18:44+03:00",
+      "score_updated_at": "2026-10-18T16:35:56+03:00",
       "event_id": "401879263",
       "starts_at": "2026-10-18T13:00:00+00:00",
-      "status_clock": "19'"
+      "status_clock": "36'"
     },
     {
       "match_id": "b4",
@@ -137,16 +137,16 @@
       "started": true,
       "raw_event": "16:00 | İngiltere Premier Lig",
       "url": "https://fixbettv84.com/channel.html?id=b4",
-      "fetched_at": "2026-10-18T16:18:44+03:00",
+      "fetched_at": "2026-10-18T16:35:56+03:00",
       "status_source": "espn",
       "raw_status": "STATUS_FIRST_HALF",
       "score_home": 3,
       "score_away": 0,
       "score_source": "espn",
-      "score_updated_at": "2026-10-18T16:18:44+03:00",
+      "score_updated_at": "2026-10-18T16:35:56+03:00",
       "event_id": "401879261",
       "starts_at": "2026-10-18T13:00:00+00:00",
-      "status_clock": "19'"
+      "status_clock": "35'"
     },
     {
       "match_id": "b3",
@@ -163,16 +163,16 @@
       "started": true,
       "raw_event": "16:00 | İngiltere Premier Lig",
       "url": "https://fixbettv84.com/channel.html?id=b3",
-      "fetched_at": "2026-10-18T16:18:44+03:00",
+      "fetched_at": "2026-10-18T16:35:56+03:00",
       "status_source": "espn",
       "raw_status": "STATUS_FIRST_HALF",
       "score_home": 0,
       "score_away": 0,
       "score_source": "espn",
-      "score_updated_at": "2026-10-18T16:18:44+03:00",
+      "score_updated_at": "2026-10-18T16:35:56+03:00",
       "event_id": "401879260",
       "starts_at": "2026-10-18T13:00:00+00:00",
-      "status_clock": "19'"
+      "status_clock": "35'"
     },
     {
       "match_id": "ss2",
@@ -189,16 +189,16 @@
       "started": true,
       "raw_event": "16:00 | İtalya Serie A",
       "url": "https://fixbettv84.com/channel.html?id=ss2",
-      "fetched_at": "2026-10-18T16:18:44+03:00",
+      "fetched_at": "2026-10-18T16:35:56+03:00",
       "status_source": "espn",
       "raw_status": "STATUS_FIRST_HALF",
       "score_home": 0,
-      "score_away": 0,
+      "score_away": 1,
       "score_source": "espn",
-      "score_updated_at": "2026-10-18T16:18:44+03:00",
+      "score_updated_at": "2026-10-18T16:35:56+03:00",
       "event_id": "401874774",
       "starts_at": "2026-10-18T13:00:00+00:00",
-      "status_clock": "17'"
+      "status_clock": "34'"
     },
     {
       "match_id": "zirve",
@@ -215,16 +215,16 @@
       "started": true,
       "raw_event": "16:00 | Trendyol Süper Lig",
       "url": "https://fixbettv84.com/channel.html?id=zirve",
-      "fetched_at": "2026-10-18T16:18:44+03:00",
+      "fetched_at": "2026-10-18T16:35:56+03:00",
       "status_source": "espn",
       "raw_status": "STATUS_FIRST_HALF",
       "score_home": 0,
-      "score_away": 0,
+      "score_away": 1,
       "score_source": "espn",
-      "score_updated_at": "2026-10-18T16:18:44+03:00",
+      "score_updated_at": "2026-10-18T16:35:56+03:00",
       "event_id": "401888272",
       "starts_at": "2026-10-18T13:00:00+00:00",
-      "status_clock": "18'"
+      "status_clock": "34'"
     },
     {
       "match_id": "trtspor",
@@ -241,16 +241,16 @@
       "started": true,
       "raw_event": "16:00 | Trendyol 1. Lig",
       "url": "https://fixbettv84.com/channel.html?id=trtspor",
-      "fetched_at": "2026-10-18T16:18:44+03:00",
+      "fetched_at": "2026-10-18T16:35:56+03:00",
       "status_source": "mackolik",
       "raw_status": "none",
       "score_home": 0,
       "score_away": 1,
       "score_source": "mackolik",
-      "score_updated_at": "2026-10-18T16:18:44+03:00",
+      "score_updated_at": "2026-10-18T16:35:56+03:00",
       "event_id": "cwqof3qdsme8ciy74e45h77dg",
       "starts_at": "2026-10-18T13:00:00+00:00",
-      "status_clock": "19'"
+      "status_clock": "35'"
     },
     {
       "match_id": "bm1",
@@ -267,16 +267,16 @@
       "started": true,
       "raw_event": "16:00 | Trendyol 1. Lig",
       "url": "https://fixbettv84.com/channel.html?id=bm1",
-      "fetched_at": "2026-10-18T16:18:44+03:00",
+      "fetched_at": "2026-10-18T16:35:56+03:00",
       "status_source": "mackolik",
       "raw_status": "none",
       "score_home": 0,
       "score_away": 0,
       "score_source": "mackolik",
-      "score_updated_at": "2026-10-18T16:18:44+03:00",
+      "score_updated_at": "2026-10-18T16:35:56+03:00",
       "event_id": "cy2twdp3n7q0f861k5mlonbis",
       "starts_at": "2026-10-18T13:00:00+00:00",
-      "status_clock": "20'"
+      "status_clock": "37'"
     }
   ]
 }

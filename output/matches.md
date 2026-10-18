@@ -1,7 +1,7 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-10-18 13:19  
+> **Güncellenme:** 2026-10-18 13:35  
 > **Toplam maç:** 32  |  **Canlı:** 10  |  **Yaklaşan:** 17
 
 ## 🔴 CANLI
@@ -12,8 +12,8 @@
 - 🔴 **Bournemouth 1 - 0 Sunderland** — CANLI · `16:00` | İngiltere Premier Lig <https://fixbettv84.com/channel.html?id=bm2>
 - 🔴 **Brighton 3 - 0 Crystal Palace** — CANLI · `16:00` | İngiltere Premier Lig <https://fixbettv84.com/channel.html?id=b4>
 - 🔴 **Leeds United 0 - 0 Manchester Utd** — CANLI · `16:00` | İngiltere Premier Lig <https://fixbettv84.com/channel.html?id=b3>
-- 🔴 **Fiorentina 0 - 0 Como** — CANLI · `16:00` | İtalya Serie A <https://fixbettv84.com/channel.html?id=ss2>
-- 🔴 **Kocaelispor 0 - 0 Göztepe** — CANLI · `16:00` | Trendyol Süper Lig <https://fixbettv84.com/channel.html?id=zirve>
+- 🔴 **Fiorentina 0 - 1 Como** — CANLI · `16:00` | İtalya Serie A <https://fixbettv84.com/channel.html?id=ss2>
+- 🔴 **Kocaelispor 0 - 1 Göztepe** — CANLI · `16:00` | Trendyol Süper Lig <https://fixbettv84.com/channel.html?id=zirve>
 - 🔴 **Kayserispor 0 - 1 Batman Petrol** — CANLI · `16:00` | Trendyol 1. Lig <https://fixbettv84.com/channel.html?id=trtspor>
 - 🔴 **Vanspor 0 - 0 Ümraniyespor** — CANLI · `16:00` | Trendyol 1. Lig <https://fixbettv84.com/channel.html?id=bm1>
 
