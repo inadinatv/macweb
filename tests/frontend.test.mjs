@@ -119,7 +119,9 @@ test("sayfada sunucu/adres yazısı ve uydurma maç verisi yok", () => {
   // sekmeler: ana kanallar + Kodaman kanalları + günün maçları + extra
   assert.equal((HTML.match(/class="tab-btn/g) || []).length, 4, "dört sekme olmalı");
   assert.ok(!/CANLI MAÇLAR/.test(HTML), "sahte canlı maç sekmesi duruyor");
-  assert.ok(HTML.includes('data-tab="kodamanTab"'), "TV KANALLARI 2 sekmesi yok");
+  assert.ok(HTML.indexOf('data-tab="kodamanTab"') < HTML.indexOf('data-tab="channelsTab"'), "Kodaman ilk TV sekmesi olmalı");
+  assert.match(HTML, /data-tab="kodamanTab">[^<]*TV KANALLARI 1/, "TV KANALLARI 1 Kodaman olmalı");
+  assert.match(HTML, /data-tab="channelsTab">[^<]*TV KANALLARI 2/, "Fixbet kaynaklı kanal listesi ikinci sırada olmalı");
   assert.ok(HTML.includes('data-tab="extraTab"'), "EXTRA sekmesi yok");
 });
 
@@ -150,19 +152,19 @@ test("kanal kartına tıklayınca yayın açılıyor ve player'e kayıyor", asyn
   dom.window.close();
 });
 
-test("TV KANALLARI 1 mobilde dokununca kartları ekrana getirir; açılış konumu korunur", async () => {
+test("öncelikli TV KANALLARI 1 mobilde dokununca Kodaman kartlarını ekrana getirir", async () => {
   const { window, dom } = await loadPage({ innerWidth: 390 });
   assert.deepEqual(window.scrollCalls, [], "uygulama açılışında otomatik kaydırma olmamalı");
-  const grid = window.document.getElementById("channelGrid");
+  const grid = window.document.getElementById("kodamanGrid");
   grid.getBoundingClientRect = () => ({ top: 420 });
-  window.document.querySelector('.tab-btn[data-tab="channelsTab"]').click();
-  await tick(50);
-  assert.equal(window.inadina.state.activeTab, "channelsTab");
+  window.document.querySelector('.tab-btn[data-tab="kodamanTab"]').click();
+  await tick(100);
+  assert.equal(window.inadina.state.activeTab, "kodamanTab");
   assert.deepEqual(window.scrollCalls, [[0, 408]], "mobilde kart ızgarasına anında kaydırılmalı ve üstte boşluk kalmalı");
   dom.window.close();
 });
 
-test("TV KANALLARI 2 31 public kanalı iframe’de açar; kaynak yazısı, dış link ve popup izni yoktur", async () => {
+test("öncelikli Kodaman sekmesi varsayılan açılır ve 31 public kanalı iframe’de açar", async () => {
   const feed = {
     base_url: KODAMAN.base_url,
     updated_at: "2026-10-16T19:00:00Z",
@@ -180,14 +182,16 @@ test("TV KANALLARI 2 31 public kanalı iframe’de açar; kaynak yazısı, dış
   const { window, dom } = await loadPage({ fetchImpl });
   await tick(30);
   const button = window.document.querySelector('.tab-btn[data-tab="kodamanTab"]');
-  assert.ok(button, "TV KANALLARI 2 düğmesi yok");
+  assert.ok(button, "TV KANALLARI 1 düğmesi yok");
+  assert.equal(window.inadina.state.activeTab, "kodamanTab", "uygulama Kodaman TV sekmesinde açılmalı");
+  assert.ok(button.classList.contains("active"), "ilk Kodaman TV sekmesi aktif olmalı");
   button.click();
   assert.equal(window.inadina.state.activeTab, "kodamanTab");
   assert.ok(window.document.getElementById("kodamanTab").classList.contains("active"));
   assert.equal(KODAMAN.channels.length, 31, "canlı manifestte 31 public kanal olmalı");
   assert.equal(window.inadina.state.kodamanChannels.length, 31, "geçersiz ID filtrelenirken 31 kanal kalmalı");
   assert.equal(window.document.querySelectorAll("#kodamanGrid .ch-card").length, 31, "31 kanal kartı çizilmeli");
-  assert.equal(window.document.getElementById("badgeKodaman").textContent, "31", "TV KANALLARI 2 sekmesinde kanal sayısı görünmeli");
+  assert.equal(window.document.getElementById("badgeKodaman").textContent, "31", "öncelikli TV KANALLARI 1 sayacı görünmeli");
   assert.equal(window.document.getElementById("kodamanExternal"), null, "Kodaman dış site linki olmamalı");
   assert.equal(window.document.getElementById("kodamanMeta"), null, "kaynak/uyarı yazısı olmamalı");
   assert.equal(window.document.getElementById("kodamanTab").querySelectorAll("a[href^='http']").length, 0,
@@ -212,8 +216,10 @@ test("TV KANALLARI 2 31 public kanalı iframe’de açar; kaynak yazısı, dış
   assert.equal(iframe.hasAttribute("sandbox"), false, "normal TV iframe’inin sandbox davranışı değişmemeli");
   assert.equal(window.document.getElementById("openExternalBtn").hidden, false,
     "normal TV kanalında dış açma kontrolü geri gelmeli");
+  window.document.dispatchEvent(new window.KeyboardEvent("keydown", { key: "1", bubbles: true }));
+  assert.equal(window.inadina.state.activeTab, "kodamanTab", "1 kısayolu ilk Kodaman sekmesini açmalı");
   window.document.dispatchEvent(new window.KeyboardEvent("keydown", { key: "2", bubbles: true }));
-  assert.equal(window.inadina.state.activeTab, "kodamanTab", "2 kısayolu ikinci sekmeyi açmalı");
+  assert.equal(window.inadina.state.activeTab, "channelsTab", "2 kısayolu ikinci Fixbet sekmesini açmalı");
   dom.window.close();
 });
 
@@ -244,10 +250,13 @@ test("canlı skor polling aralığı Fixtoor gibi canlı/yakın/boşta/hata duru
 test("ızgara / yatay liste görünümü değiştirilebiliyor", async () => {
   const { window, dom } = await loadPage();
   const grid = window.document.getElementById("channelGrid");
+  const kodamanGrid = window.document.getElementById("kodamanGrid");
   assert.equal(grid.classList.contains("view-list"), false);
+  assert.equal(kodamanGrid.classList.contains("view-list"), false);
 
   window.inadina.setView("list");
   assert.equal(grid.classList.contains("view-list"), true, "liste görünümü uygulanmadı");
+  assert.equal(kodamanGrid.classList.contains("view-list"), true, "liste görünümü Kodaman TV’de uygulanmadı");
   assert.equal(window.localStorage.getItem("inadinatv.view"), "list", "görünüm kaydedilmedi");
   const activeBtn = window.document.querySelector('.view-btn[data-view="list"]');
   assert.ok(activeBtn.classList.contains("active"), "liste butonu aktif olmadı");
@@ -258,6 +267,7 @@ test("ızgara / yatay liste görünümü değiştirilebiliyor", async () => {
 
   window.inadina.setView("grid");
   assert.equal(grid.classList.contains("view-list"), false, "ızgaraya geri dönülemedi");
+  assert.equal(kodamanGrid.classList.contains("view-list"), false, "Kodaman TV ızgaraya geri dönmedi");
   dom.window.close();
 });
 
@@ -303,7 +313,7 @@ test("bugünün Günün Maçı tam genişlikte gösterilir ve diğer maçların 
     },
   });
   assert.equal(await window.inadina.refreshMatches(true), true);
-  assert.equal(window.inadina.state.activeTab, "channelsTab", "uygulama ilk açılışta ana sekmede kalmalı");
+  assert.equal(window.inadina.state.activeTab, "kodamanTab", "uygulama ilk açılışta Kodaman TV sekmesini seçmeli");
   const homeFeatured = window.document.querySelector("#homeFeaturedSection .home-featured-match");
   assert.ok(homeFeatured, "maç sekmesine girmeden ana spotlight görünmeli");
   assert.equal(homeFeatured.getAttribute("data-selection"), "official", "kaynağın bugünkü Günün Maçı seçimi ana ekranda öne alınmalı");
@@ -392,7 +402,7 @@ test("Günün Maçı ana ekranda açılışta görünür; kaynak seçimi yoksa b
     FixedDate.UTC = NativeDate.UTC;
     w.Date = FixedDate;
   } });
-  assert.equal(window.inadina.state.activeTab, "channelsTab");
+  assert.equal(window.inadina.state.activeTab, "kodamanTab");
   await window.inadina.refreshMatches(true);
 
   const home = window.document.getElementById("homeFeaturedSection");
