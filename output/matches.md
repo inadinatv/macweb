@@ -1,7 +1,7 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-10-18 16:44  
+> **Güncellenme:** 2026-10-18 16:53  
 > **Toplam maç:** 32  |  **Canlı:** 9  |  **Yaklaşan:** 7
 
 ## 🔴 CANLI
@@ -11,9 +11,9 @@
 - 🔴 **Lorient 1 - 0 Monaco** — CANLI · `18:15` | Fransa Ligue 1 <https://fixbettv84.com/channel.html?id=b4>
 - 🔴 **Paris FC 2 - 1 Rennes** — CANLI · `18:15` | Fransa Ligue 1 <https://fixbettv84.com/channel.html?id=bm1>
 - 🔴 **Nottingham Forest 0 - 0 Arsenal** — CANLI · `18:30` | İngiltere Premier Lig <https://fixbettv84.com/channel.html?id=b3>
-- 🔴 **Milan 1 - 0 Atalanta** — CANLI · `19:00` | İtalya Serie A <https://fixbettv84.com/channel.html?id=ss2>
-- 🔴 **İstanbul Başakşehir 1 - 0 Gaziantep FK** — CANLI · `19:00` | Trendyol Süper Lig <https://fixbettv84.com/channel.html?id=zirve>
-- 🔴 **İstanbulspor 0 - 1 Antalyaspor** — CANLI · `19:00` | Trendyol 1. Lig <https://fixbettv84.com/channel.html?id=trtspor>
+- 🔴 **Milan 2 - 0 Atalanta** — DEVRE · `19:00` | İtalya Serie A <https://fixbettv84.com/channel.html?id=ss2>
+- 🔴 **İstanbul Başakşehir 1 - 0 Gaziantep FK** — DEVRE · `19:00` | Trendyol Süper Lig <https://fixbettv84.com/channel.html?id=zirve>
+- 🔴 **İstanbulspor 0 - 1 Antalyaspor** — DEVRE · `19:00` | Trendyol 1. Lig <https://fixbettv84.com/channel.html?id=trtspor>
 - 🔴 **Malaga 0 - 1 Real Sociedad** — CANLI · `19:30` | İspanya La Liga <https://fixbettv84.com/channel.html?id=ss>
 
 ## ⏰ YAKLAŞAN
@@ -72,12 +72,12 @@
 - ⏰ Iğdırspor vs Boluspor — 13:30
 - ⏰ Kayserispor vs Batman Petrol — 16:00
 - ⏰ Vanspor vs Ümraniyespor — 16:00
-- 🔴 İstanbulspor vs Antalyaspor — 19:00
+- ⏰ İstanbulspor vs Antalyaspor — 19:00
 
 ### Trendyol Süper Lig
 - ⏰ Kasımpaşa vs Samsunspor — 13:30
 - ⏰ Kocaelispor vs Göztepe — 16:00
-- 🔴 İstanbul Başakşehir vs Gaziantep FK — 19:00
+- ⏰ İstanbul Başakşehir vs Gaziantep FK — 19:00
 
 ### İngiltere Premier Lig
 - ⏰ Bournemouth vs Sunderland — 16:00
@@ -99,7 +99,7 @@
 ### İtalya Serie A
 - ⏰ Udinese vs Lecce — 13:30
 - ⏰ Fiorentina vs Como — 16:00
-- 🔴 Milan vs Atalanta — 19:00
+- ⏰ Milan vs Atalanta — 19:00
 - ⏰ Juventus vs Lazio — 21:45
 
 ---
