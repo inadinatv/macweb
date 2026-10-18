@@ -1141,6 +1141,14 @@
                 .replace(/[^a-z0-9]+/g, " ").trim();
             const normalizeStatus = (s) => matchStatusConfig.aliases[foldStatus(s)] || null;
             const isActiveMatch = (status) => status === "live" || status === "halftime";
+            function isPriorityTurkishLeague(match) {
+                const sport = norm(match && match.sport);
+                if (sport !== "futbol" && sport !== "soccer") return false;
+                const league = foldStatus(match && match.league);
+                return league === "trendyol super lig" || league === "super lig" || league === "turkiye super lig"
+                    || league === "turkiye super ligi" || league === "turkish super league" || league === "turkey super league"
+                    || /^(?:(?:trendyol|tff|turkiye|turkish|turkey) )?1 lig$/.test(league);
+            }
             function scoreNumber(value) {
                 if (value == null || typeof value === "boolean") return null;
                 if (typeof value === "object") {
@@ -1277,6 +1285,8 @@
             function sortMatches(list) {
                 const rank = { live: 0, halftime: 0, upcoming: 1, finished: 2, postponed: 3, suspended: 3, cancelled: 4, abandoned: 4 };
                 return list.slice().sort((a, b) => {
+                    const domestic = Number(isPriorityTurkishLeague(b)) - Number(isPriorityTurkishLeague(a));
+                    if (domestic) return domestic;
                     const diff = (rank[a._status] ?? 9) - (rank[b._status] ?? 9);
                     if (diff) return diff;
                     if (a._status === "finished") {
@@ -2177,15 +2187,16 @@
                     const day = start ? localDateKey(start) : String(m.date || "");
                     return day === todayKey;
                 });
-                // Günün maçlarında resmi seçim yoksa futbol, basketbol gibi diğer
-                // sporların daha erken saatli fikstüründen önce gelir. Böylece
-                // Çorum FK–Ç.Rizespor gibi futbol maçları basketbol fallback'ine yenilmez.
+                // Bugün Trendyol Süper Lig veya 1. Lig maçı varsa yabancı maçlar ve
+                // diğer sporlar yerine Türkiye fikstürü Günün Maçı için seçilir.
+                const turkishTopDivision = today.filter(isPriorityTurkishLeague);
                 const scheduledFootball = today.filter((m) => {
                     const sport = norm(m.sport);
                     return (sport === "futbol" || sport === "soccer")
                         && (isActiveMatch(m._status) || m._status === "upcoming");
                 });
-                const candidates = scheduledFootball.length ? scheduledFootball : today;
+                const candidates = turkishTopDivision.length ? turkishTopDivision
+                    : scheduledFootball.length ? scheduledFootball : today;
                 const activeSort = (list) => list.slice().sort((a, b) => {
                     const liveRank = (m) => m._status === "live" ? 0 : 1;
                     return liveRank(a) - liveRank(b) || String(a.time || "99:99").localeCompare(String(b.time || "99:99"));
@@ -3574,6 +3585,7 @@
                 renderChannels: renderChannels,
                 renderMatches: renderMatches,
                 sortMatches: sortMatches,
+                isPriorityTurkishLeague: isPriorityTurkishLeague,
                 selectHomeFeatured: selectHomeFeatured,
                 renderExtra: renderExtra,
                 setView: setView,
