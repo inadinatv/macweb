@@ -13,9 +13,36 @@
       "fixbettv12.com",
       "fixbettv11.com"
     ],
-    "last_checked": "2026-10-18T21:20:22+00:00",
+    "last_checked": "2026-10-18T23:32:46+00:00",
     "note": "OK",
     "probed": 200
   },
-  "live": []
+  "live": [
+    {
+      "match_id": "smarts",
+      "home": "Belgrano",
+      "away": "Argentinos Jrs.",
+      "league": "Arjantin Primera Division",
+      "time": "02:15",
+      "sport": "Futbol",
+      "is_match_of_day": false,
+      "channel_id": "smarts",
+      "logo_home": "https://img.sporekrani.com/teams/43BpPLhojCypF1N5jRWtBvbn2kYrhmbRMzhSwTTR.png",
+      "logo_away": "https://img.sporekrani.com/teams/ol4WPu6NiyFFz97wJh8uB8OqqtzhdiIZRp8nT5q6.png",
+      "status": "live",
+      "started": true,
+      "raw_event": "02:15 | Arjantin Primera Division",
+      "url": "https://fixbettv84.com/channel.html?id=smarts",
+      "fetched_at": "",
+      "status_source": "schedule",
+      "raw_status": "",
+      "score_home": null,
+      "score_away": null,
+      "score_source": "",
+      "score_updated_at": "",
+      "event_id": "",
+      "starts_at": "2026-10-19T02:15:00+03:00",
+      "status_clock": ""
+    }
+  ]
 }
