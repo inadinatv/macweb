@@ -1,13 +1,16 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-10-19 06:55  
-> **Toplam maç:** 12  |  **Canlı:** 0  |  **Yaklaşan:** 11
+> **Güncellenme:** 2026-10-19 14:21  
+> **Toplam maç:** 12  |  **Canlı:** 2  |  **Yaklaşan:** 9
+
+## 🔴 CANLI
+
+- 🔴 **Manisa FK 0 - 2 Muğlaspor** — CANLI · `17:00` | Trendyol 1. Lig <https://fixbettv84.com/channel.html?id=trtspor>
+- 🔴 **Karagümrük vs Keçiörengücü** — CANLI · `17:00` | Trendyol 1. Lig <https://fixbettv84.com/channel.html?id=b2>
 
 ## ⏰ YAKLAŞAN
 
-- ⏰ **Manisa FK vs Muğlaspor** — YAKLAŞAN · `17:00` | Trendyol 1. Lig <https://fixbettv84.com/channel.html?id=trtspor>
-- ⏰ **Karagümrük vs Keçiörengücü** — YAKLAŞAN · `17:00` | Trendyol 1. Lig <https://fixbettv84.com/channel.html?id=b2>
 - ⏰ **Esenler Erokspor vs Anadolu Efes** — YAKLAŞAN · `19:00` | Basketbol Süper Ligi <https://fixbettv84.com/channel.html?id=b5>
 - ⏰ **Monza vs Cagliari** — YAKLAŞAN · `19:30` | İtalya Serie A <https://fixbettv84.com/channel.html?id=ss2>
 - ⏰ **Trabzonspor vs Beşiktaş** — YAKLAŞAN · `20:00` | Trendyol Süper Lig ★ **Günün Maçı** <https://fixbettv84.com/channel.html?id=zirve>
@@ -39,8 +42,8 @@
 - ⏰ Rodez vs Montpellier — 21:45
 
 ### Trendyol 1. Lig
-- ⏰ Manisa FK vs Muğlaspor — 17:00
-- ⏰ Karagümrük vs Keçiörengücü — 17:00
+- 🔴 Manisa FK vs Muğlaspor — 17:00
+- 🔴 Karagümrük vs Keçiörengücü — 17:00
 - ⏰ Bursaspor vs Pendikspor — 20:00
 - ⏰ Esenler Erokspor vs Mardin 1969 — 20:00
 
