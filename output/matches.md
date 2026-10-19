@@ -1,12 +1,8 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-10-19 00:36  
-> **Toplam maç:** 12  |  **Canlı:** 1  |  **Yaklaşan:** 11
-
-## 🔴 CANLI
-
-- 🔴 **Belgrano vs Argentinos Jrs.** — CANLI · `02:15` | Arjantin Primera Division <https://fixbettv84.com/channel.html?id=smarts>
+> **Güncellenme:** 2026-10-19 01:41  
+> **Toplam maç:** 12  |  **Canlı:** 0  |  **Yaklaşan:** 11
 
 ## ⏰ YAKLAŞAN
 
@@ -22,6 +18,10 @@
 - ⏰ **Tottenham vs Coventry** — YAKLAŞAN · `22:00` | İngiltere Premier Lig <https://fixbettv84.com/channel.html?id=b3>
 - ⏰ **Getafe vs Rayo Vallecano** — YAKLAŞAN · `22:00` | İspanya La Liga <https://fixbettv84.com/channel.html?id=ss>
 
+## ✅ BİTTİ
+
+- ✅ **Belgrano vs Argentinos Jrs.** — MS · `02:15` | Arjantin Primera Division <https://fixbettv84.com/channel.html?id=smarts>
+
 ## ⭐ GÜNÜN MAÇI
 
 - ⏰ **Trabzonspor vs Beşiktaş** — YAKLAŞAN · `20:00` | Trendyol Süper Lig ★ **Günün Maçı** <https://fixbettv84.com/channel.html?id=zirve>
@@ -30,7 +30,7 @@
 ## 🏆 Lig Bazlı
 
 ### Arjantin Primera Division
-- 🔴 Belgrano vs Argentinos Jrs. — 02:15
+- ⏰ Belgrano vs Argentinos Jrs. — 02:15
 
 ### Basketbol Süper Ligi
 - ⏰ Esenler Erokspor vs Anadolu Efes — 19:00
