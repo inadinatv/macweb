@@ -1,7 +1,7 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-10-19 20:01  
+> **Güncellenme:** 2026-10-19 20:07  
 > **Toplam maç:** 12  |  **Canlı:** 4  |  **Yaklaşan:** 0
 
 ## 🔴 CANLI
@@ -9,7 +9,7 @@
 - 🔴 **Parma 0 - 2 Torino** — CANLI · `21:45` | İtalya Serie A <https://fixbettv84.com/channel.html?id=ss2>
 - 🔴 **Rodez vs Montpellier** — CANLI · `21:45` | Fransa Ligue 2 <https://fixbettv84.com/channel.html?id=b4>
 - 🔴 **Tottenham vs Coventry** — CANLI · `22:00` | İngiltere Premier Lig <https://fixbettv84.com/channel.html?id=b3>
-- 🔴 **Getafe 0 - 1 Rayo Vallecano** — DEVRE · `22:00` | İspanya La Liga <https://fixbettv84.com/channel.html?id=ss>
+- 🔴 **Getafe 0 - 1 Rayo Vallecano** — CANLI · `22:00` | İspanya La Liga <https://fixbettv84.com/channel.html?id=ss>
 
 ## ✅ BİTTİ
 
@@ -51,7 +51,7 @@
 - 🔴 Tottenham vs Coventry — 22:00
 
 ### İspanya La Liga
-- ⏰ Getafe vs Rayo Vallecano — 22:00
+- 🔴 Getafe vs Rayo Vallecano — 22:00
 
 ### İtalya Serie A
 - ⏰ Monza vs Cagliari — 19:30
@@ -113,7 +113,7 @@
 ## ⚡ EKSTRA PANELLER — m3u8 (109)
 
 ### ⚛️ ATOM SPOR ✅ `https://www.atomsportv519.top`
-- 🟢 **BEIN SPORTS 1** <https://ladyboy.ardatvgs.cfd//beintv/tracks-v1a1/mono.m3u8>
+- 🟡 **BEIN SPORTS 1** <https://ladyboy.ardatvgs.cfd//beintv/tracks-v1a1/mono.m3u8>
 - 🟢 **BEIN SPORTS 2** <https://ladyboy.ardatvgs.cfd//bein2/tracks-v1a1/mono.m3u8>
 - 🟢 **BEIN SPORTS 3** <https://ladyboy.ardatvgs.cfd//bein3/tracks-v1a1/mono.m3u8>
 - 🟢 **BEIN SPORTS 4** <https://ladyboy.ardatvgs.cfd//bein4/tracks-v1a1/mono.m3u8>
