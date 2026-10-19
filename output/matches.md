@@ -1,8 +1,8 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-10-18 23:36  
-> **Toplam maç:** 12  |  **Canlı:** 1  |  **Yaklaşan:** 9
+> **Güncellenme:** 2026-10-19 00:36  
+> **Toplam maç:** 12  |  **Canlı:** 1  |  **Yaklaşan:** 11
 
 ## 🔴 CANLI
 
@@ -18,12 +18,9 @@
 - ⏰ **Bursaspor vs Pendikspor** — YAKLAŞAN · `20:00` | Trendyol 1. Lig <https://fixbettv84.com/channel.html?id=trtspor>
 - ⏰ **Esenler Erokspor vs Mardin 1969** — YAKLAŞAN · `20:00` | Trendyol 1. Lig <https://fixbettv84.com/channel.html?id=bm1>
 - ⏰ **Parma vs Torino** — YAKLAŞAN · `21:45` | İtalya Serie A <https://fixbettv84.com/channel.html?id=ss2>
+- ⏰ **Rodez vs Montpellier** — YAKLAŞAN · `21:45` | Fransa Ligue 2 <https://fixbettv84.com/channel.html?id=b4>
+- ⏰ **Tottenham vs Coventry** — YAKLAŞAN · `22:00` | İngiltere Premier Lig <https://fixbettv84.com/channel.html?id=b3>
 - ⏰ **Getafe vs Rayo Vallecano** — YAKLAŞAN · `22:00` | İspanya La Liga <https://fixbettv84.com/channel.html?id=ss>
-
-## ✅ BİTTİ
-
-- ✅ **Rodez vs Montpellier** — MS · `21:45` | Fransa Ligue 2 <https://fixbettv84.com/channel.html?id=b4>
-- ✅ **Tottenham vs Coventry** — MS · `22:00` | İngiltere Premier Lig <https://fixbettv84.com/channel.html?id=b3>
 
 ## ⭐ GÜNÜN MAÇI
 
