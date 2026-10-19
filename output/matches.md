@@ -1,13 +1,8 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-10-19 14:25  
-> **Toplam maç:** 12  |  **Canlı:** 2  |  **Yaklaşan:** 9
-
-## 🔴 CANLI
-
-- 🔴 **Manisa FK 0 - 2 Muğlaspor** — CANLI · `17:00` | Trendyol 1. Lig <https://fixbettv84.com/channel.html?id=trtspor>
-- 🔴 **Karagümrük vs Keçiörengücü** — CANLI · `17:00` | Trendyol 1. Lig <https://fixbettv84.com/channel.html?id=b2>
+> **Güncellenme:** 2026-10-19 15:59  
+> **Toplam maç:** 12  |  **Canlı:** 0  |  **Yaklaşan:** 9
 
 ## ⏰ YAKLAŞAN
 
@@ -24,6 +19,8 @@
 ## ✅ BİTTİ
 
 - ✅ **Belgrano vs Argentinos Jrs.** — MS · `02:15` | Arjantin Primera Division <https://fixbettv84.com/channel.html?id=smarts>
+- ✅ **Manisa FK 3 - 4 Muğlaspor** — MS · `17:00` | Trendyol 1. Lig <https://fixbettv84.com/channel.html?id=trtspor>
+- ✅ **Karagümrük vs Keçiörengücü** — MS · `17:00` | Trendyol 1. Lig <https://fixbettv84.com/channel.html?id=b2>
 
 ## ⭐ GÜNÜN MAÇI
 
@@ -42,8 +39,8 @@
 - ⏰ Rodez vs Montpellier — 21:45
 
 ### Trendyol 1. Lig
-- 🔴 Manisa FK vs Muğlaspor — 17:00
-- 🔴 Karagümrük vs Keçiörengücü — 17:00
+- ⏰ Manisa FK vs Muğlaspor — 17:00
+- ⏰ Karagümrük vs Keçiörengücü — 17:00
 - ⏰ Bursaspor vs Pendikspor — 20:00
 - ⏰ Esenler Erokspor vs Mardin 1969 — 20:00
 
@@ -188,7 +185,7 @@
 - 🟢 **IDMAN TV** <https://andro.evrenesoglu157.click/checklist/androstreamliveidm.m3u8>
 - 🟢 **CBC SPORT** <https://andro.evrenesoglu157.click/checklist/androstreamlivecbcs.m3u8>
 
-### 📺 TARAFTARIUM24 ✅ `https://taraftarium24spor.click`
+### 📺 TARAFTARIUM24 ✅ `https://taraftariumtv35.com`
 - ⚪ **BEIN SPORTS 1**
 - ⚪ **BEIN SPORTS 2**
 - ⚪ **BEIN SPORTS 3**
