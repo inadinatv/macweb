@@ -1,7 +1,7 @@
 {
   "channel1": {
-    "name": "Bein1",
-    "iframeUrl": "https://matchora.to/embed/channel/913460"
+    "name": "Bein 1",
+    "iframeUrl": "https://hlsplayer.net/embed?type=m3u8&src=https://calm-union-ce81.livebestfishyez.workers.dev/watch/chunk/yyb1.m3u8"
   },
-  "updatedAt": "2026-10-20T10:59:44Z"
+  "updatedAt": "2026-10-20T11:14:44Z"
 }
