@@ -15,5 +15,9 @@
     "name": "Bein 1",
     "iframeUrl": "https://sportsbite.org/watch/channel/bein-sports-1-turkey"
   },
-  "updatedAt": "2026-10-20T11:31:24Z"
+  "channel5": {
+    "name": "Bein 1",
+    "iframeUrl": "https://hlsplayer.net/embed?type=m3u8&src=https://calm-union-ce81.livebestfishyez.workers.dev/watch/chunk/yyb1.m3u8"
+  },
+  "updatedAt": "2026-10-20T11:31:44Z"
 }
