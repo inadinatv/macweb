@@ -1,8 +1,7 @@
 {
-  "updatedAt": "",
-  "channel1": null,
-  "channel2": null,
-  "channel3": null,
-  "channel4": null,
-  "channel5": null
+  "channel1": {
+    "name": "Bein1",
+    "iframeUrl": "https://matchora.to/embed/channel/913460"
+  },
+  "updatedAt": "2026-10-20T10:59:44Z"
 }
