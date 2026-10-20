@@ -1,7 +1,7 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-10-20 02:03  
+> **Güncellenme:** 2026-10-20 02:08  
 > **Toplam maç:** 12  |  **Canlı:** 0  |  **Yaklaşan:** 12
 
 ## ⏰ YAKLAŞAN
@@ -201,7 +201,7 @@
 - 🟢 **S SPORT 2** <https://sultanbettv101.live/mono.m3u8>
 - 🟢 **BEIN SPORTS MAX 1** <https://sultanbettv101.live/mono.m3u8>
 - 🟢 **TABII SPOR 5** <https://sultanbettv101.live/mono.m3u8>
-- 🟢 **TRT SPOR YILDIZ** <https://sultanbettv101.live/mono.m3u8>
+- 🟡 **TRT SPOR YILDIZ** <https://sultanbettv101.live/mono.m3u8>
 - 🟢 **TRT SPOR** <https://sultanbettv101.live/mono.m3u8>
 - 🟢 **TABII SPOR 1** <https://sultanbettv101.live/mono.m3u8>
 - 🟢 **EUROSPORT 2** <https://sultanbettv101.live/mono.m3u8>
