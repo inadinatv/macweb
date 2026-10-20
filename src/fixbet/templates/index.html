@@ -1786,7 +1786,10 @@
                     els.iframe.removeAttribute("sandbox");
                 }
                 const token = playToken;
-                setLoading(true);
+                // Iframe içindeki video oynuyor mu diye cross-origin sayfalarda güvenilir
+                // biçimde bakamayız. Bu yüzden iframe açılırken player'ı karartan spinner'ı
+                // göstermeyip yayın sayfasını doğrudan görünür bırakıyoruz.
+                setLoading(false);
                 els.iframe.onload = () => {
                     if (token !== playToken) return;
                     clearPlaybackTimers();
@@ -1798,14 +1801,6 @@
                     // Cross-origin iframe'lerde error olayı oynatma durumunu güvenilir biçimde göstermez.
                     setLoading(false);
                 };
-                hlsFailTimer = setTimeout(() => {
-                    if (token === playToken) {
-                        // Iframe içindeki gerçek playback'e erişemeyiz. Yanıt/load olayı gelmemesi,
-                        // özellikle yayın sürerken, tek başına oynatma hatası kanıtı değildir.
-                        hlsFailTimer = null;
-                        setLoading(false);
-                    }
-                }, 15000);
                 els.iframe.src = url;
             }
 
