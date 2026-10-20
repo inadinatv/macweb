@@ -1,17 +1,17 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-10-20 21:21  
+> **Güncellenme:** 2026-10-20 23:40  
 > **Toplam maç:** 7  |  **Canlı:** 0  |  **Yaklaşan:** 0
 
 ## ✅ BİTTİ
 
-- ✅ **Detroit Pistons vs Boston Celtics** — MS · `22:00` | NBA <https://fixbettv84.com/channel.html?id=ss>
-- ✅ **Stuttgart vs Atletico Madrid** — MS · `22:00` | UEFA Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=ex3>
-- ✅ **PSG vs Barcelona** — MS · `22:00` | UEFA Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=ex7>
-- ✅ **Napoli vs Bodo Glimt** — MS · `22:00` | UEFA Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=ex5>
+- ✅ **Detroit Pistons 121 - 113 Boston Celtics** — MS · `22:00` | NBA <https://fixbettv84.com/channel.html?id=ss>
+- ✅ **Stuttgart 1 - 1 Atletico Madrid** — MS · `22:00` | UEFA Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=ex3>
+- ✅ **PSG 4 - 2 Barcelona** — MS · `22:00` | UEFA Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=ex7>
+- ✅ **Napoli 4 - 3 Bodo Glimt** — MS · `22:00` | UEFA Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=ex5>
 - ✅ **Manchester City vs AEK** — MS · `22:00` | UEFA Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=ex1>
-- ✅ **Liverpool vs Villarreal** — MS · `22:00` | UEFA Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=ex2>
+- ✅ **Liverpool 4 - 3 Villarreal** — MS · `22:00` | UEFA Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=ex2>
 - ✅ **Porto vs PSV** — MS · `22:00` | UEFA Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=ex4>
 
 ---
