@@ -1088,11 +1088,10 @@
                 <button type="button" class="modal-close" id="customChannelsAdminClose" aria-label="Kapat">✕</button>
             </div>
             <div class="modal-body">
-                <p class="custom-admin-intro">Yönetici hesabıyla giriş yapın. Her kanala bir isim ve HTTPS adresi ya da tek bir <code>&lt;iframe src="…"&gt;</code> kodu ekleyebilirsiniz. Ham HTML çalıştırılmaz; yalnızca iframe adresi alınır.</p>
-                <form class="custom-admin-login" id="customChannelsLoginForm" autocomplete="on">
-                    <label for="customAdminEmail">Yönetici e-postası<input id="customAdminEmail" type="email" autocomplete="username" maxlength="254" required></label>
-                    <label for="customAdminPassword">Parola<input id="customAdminPassword" type="password" autocomplete="current-password" maxlength="256" required></label>
-                    <button type="submit" class="ctrl-btn primary" id="customAdminLoginBtn">🔐 Yönetici olarak giriş yap</button>
+                <p class="custom-admin-intro">Yalnızca yönetici parolasıyla giriş yapın. Her kanala bir isim ve HTTPS adresi ya da tek bir <code>&lt;iframe src="…"&gt;</code> kodu ekleyebilirsiniz. Ham HTML çalıştırılmaz; yalnızca iframe adresi alınır.</p>
+                <form class="custom-admin-login" id="customChannelsLoginForm" autocomplete="off">
+                    <label for="customAdminPassword">Yönetici parolası<input id="customAdminPassword" type="password" autocomplete="current-password" minlength="16" maxlength="512" required></label>
+                    <button type="submit" class="ctrl-btn primary" id="customAdminLoginBtn">🔐 Parola ile giriş yap</button>
                 </form>
                 <section id="customChannelsEditor" hidden>
                     <p class="custom-admin-note" id="customAdminUserState">Oturum açık.</p>
@@ -1104,7 +1103,7 @@
                         <button type="button" class="ctrl-btn primary" id="customAdminSaveBtn">💾 5 kanalı kaydet</button>
                     </div>
                 </section>
-                <p class="custom-admin-note">Güvenlik için yönetici yetkisi Firebase Security Rules ile belirlenir; uygulamaya yönetici parolası yazılmaz. İlk kullanımda Firebase Auth ve veritabanı kuralı yapılandırılmalıdır.</p>
+                <p class="custom-admin-note">Parola sayfa kodunda veya veritabanında tutulmaz. Yönetici erişimi Firebase custom token ve Security Rules ile sınırlandırılır.</p>
             </div>
         </div>
     </div>
@@ -1183,7 +1182,9 @@
             let kodamanRefreshPromise = null;
             let customChannelConfig = null, customChannelRef = null, customChannelAuth = null;
             let customChannelApp = null, customChannelAuthObserver = null, customChannelStorePromise = null;
+            let customChannelAuthPersistencePromise = null;
             let customFirebaseScripts = new Set(), customFirebaseScriptPromises = new Map();
+            let customAppCheckPromise = null;
 
             const els = {
                 iframe: $("liveIframe"),
@@ -1200,7 +1201,6 @@
                 customChannelAdminModal: $("customChannelsAdminModal"),
                 customChannelAdminClose: $("customChannelsAdminClose"),
                 customChannelLoginForm: $("customChannelsLoginForm"),
-                customAdminEmail: $("customAdminEmail"),
                 customAdminPassword: $("customAdminPassword"),
                 customChannelsEditor: $("customChannelsEditor"),
                 customChannelSlots: $("customChannelSlots"),
@@ -1918,9 +1918,13 @@
 
             function customFirebaseError(error, fallback) {
                 const code = String(error && error.code || "");
-                if (/auth\/(?:invalid-credential|wrong-password|user-not-found|invalid-email)/.test(code)) return "E-posta veya parola doğrulanamadı.";
-                if (/auth\/too-many-requests/.test(code)) return "Çok fazla deneme yapıldı. Bir süre sonra yeniden deneyin.";
-                if (/permission_denied|PERMISSION_DENIED/i.test(code)) return "Firebase erişimi reddetti. Realtime Database kurallarında bu yöneticiye izin verin.";
+                const message = String(error && error.message || "");
+                if (code === "app_check_not_configured" || message === "app_check_not_configured") return "Güvenli giriş için Firebase App Check site key kurulmalı.";
+                if (/functions\/unauthenticated/.test(code)) return "Yönetici parolası doğrulanamadı.";
+                if (/functions\/resource-exhausted/.test(code)) return "Çok fazla hatalı deneme yapıldı. 15 dakika sonra tekrar deneyin.";
+                if (/functions\/(?:failed-precondition|permission-denied)/.test(code)) return "App Check doğrulaması başarısız. Firebase App Check kurulumunu kontrol edin.";
+                if (/functions\/(?:unavailable|deadline-exceeded)/.test(code)) return "Güvenli giriş servisi geçici olarak kullanılamıyor.";
+                if (/permission_denied|PERMISSION_DENIED/i.test(code)) return "Firebase erişimi reddetti. Custom token ve Security Rules kurulumunu kontrol edin.";
                 return fallback;
             }
 
@@ -1932,12 +1936,14 @@
                 const json = await response.json();
                 const cfg = json && json.firebase;
                 const path = String(json && json.databasePath || "");
+                const appCheckSiteKey = String(json && json.appCheckSiteKey || "").trim();
+                const functionsRegion = String(json && json.functionsRegion || "us-central1").trim();
                 let databaseUrlIsHttps = false;
                 try { databaseUrlIsHttps = new URL(cfg && cfg.databaseURL).protocol === "https:"; } catch (e) { /* config geçersiz */ }
-                if (!cfg || !cfg.apiKey || !cfg.authDomain || !databaseUrlIsHttps || !cfg.projectId || !/^[A-Za-z0-9_/-]+$/.test(path) || path.startsWith("/")) {
+                if (!cfg || !cfg.apiKey || !cfg.authDomain || !databaseUrlIsHttps || !cfg.projectId || !/^[A-Za-z0-9_/-]+$/.test(path) || path.startsWith("/") || (appCheckSiteKey && !/^[A-Za-z0-9_-]{10,256}$/.test(appCheckSiteKey)) || !/^[a-z0-9-]{1,64}$/.test(functionsRegion)) {
                     throw new Error("config_invalid");
                 }
-                customChannelConfig = { firebase: cfg, databasePath: path };
+                customChannelConfig = { firebase: cfg, databasePath: path, appCheckSiteKey: appCheckSiteKey, functionsRegion: functionsRegion };
                 return customChannelConfig;
             }
 
@@ -1956,24 +1962,48 @@
                 return pending.finally(() => customFirebaseScriptPromises.delete(url));
             }
 
-            async function ensureCustomFirebaseSdk(withAuth) {
-                if (window.firebase && window.firebase.initializeApp && window.firebase.database && (!withAuth || window.firebase.auth)) return;
-                await loadFirebaseScript(FIREBASE_SDK_BASE + "firebase-app-compat.js");
-                await loadFirebaseScript(FIREBASE_SDK_BASE + "firebase-database-compat.js");
-                if (withAuth) await loadFirebaseScript(FIREBASE_SDK_BASE + "firebase-auth-compat.js");
-                if (!window.firebase || !window.firebase.initializeApp || !window.firebase.database || (withAuth && !window.firebase.auth)) {
+            async function ensureCustomFirebaseSdk(withAuth, withFunctions, withAppCheck) {
+                if (!window.firebase || !window.firebase.initializeApp) await loadFirebaseScript(FIREBASE_SDK_BASE + "firebase-app-compat.js");
+                if (!window.firebase || !window.firebase.database) await loadFirebaseScript(FIREBASE_SDK_BASE + "firebase-database-compat.js");
+                if (withAuth && (!window.firebase || !window.firebase.auth)) await loadFirebaseScript(FIREBASE_SDK_BASE + "firebase-auth-compat.js");
+                if (withFunctions && (!window.firebase || !window.firebase.functions)) await loadFirebaseScript(FIREBASE_SDK_BASE + "firebase-functions-compat.js");
+                if (withAppCheck && (!window.firebase || !window.firebase.appCheck)) await loadFirebaseScript(FIREBASE_SDK_BASE + "firebase-app-check-compat.js");
+                if (!window.firebase || !window.firebase.initializeApp || !window.firebase.database || (withAuth && !window.firebase.auth) || (withFunctions && !window.firebase.functions) || (withAppCheck && !window.firebase.appCheck)) {
                     throw new Error("firebase_sdk_unavailable");
                 }
             }
 
-            async function ensureCustomFirebaseApp(withAuth) {
+            async function ensureCustomFirebaseApp(withAuth, withFunctions) {
                 const config = await loadCustomFirebaseConfig();
-                await ensureCustomFirebaseSdk(!!withAuth);
+                if (withFunctions && !config.appCheckSiteKey) throw new Error("app_check_not_configured");
+                await ensureCustomFirebaseSdk(!!withAuth, !!withFunctions, !!config.appCheckSiteKey);
                 if (!customChannelApp) {
                     customChannelApp = (window.firebase.apps || []).find((app) => app.name === FIREBASE_CHANNEL_APP_NAME) ||
                         window.firebase.initializeApp(config.firebase, FIREBASE_CHANNEL_APP_NAME);
                 }
+                if (config.appCheckSiteKey) {
+                    if (!customAppCheckPromise) {
+                        customAppCheckPromise = Promise.resolve().then(() => {
+                            return window.firebase.appCheck(customChannelApp).activate(config.appCheckSiteKey, true);
+                        }).catch((error) => {
+                            customAppCheckPromise = null;
+                            throw error;
+                        });
+                    }
+                    await customAppCheckPromise;
+                }
                 return customChannelApp;
+            }
+
+            async function requestCustomAdminToken(password) {
+                const config = await loadCustomFirebaseConfig();
+                if (!config.appCheckSiteKey) throw new Error("app_check_not_configured");
+                const app = await ensureCustomFirebaseApp(true, true);
+                const callable = app.functions(config.functionsRegion).httpsCallable("macwebAdminLogin");
+                const result = await callable({ password: password });
+                const token = result && result.data && result.data.token;
+                if (typeof token !== "string" || token.length < 20) throw new Error("custom_token_missing");
+                return token;
             }
 
             function renderCustomChannels() {
@@ -2077,7 +2107,7 @@
                 if (els.customChannelLoginForm) els.customChannelLoginForm.hidden = signedIn;
                 if (els.customChannelsEditor) els.customChannelsEditor.hidden = !signedIn;
                 if (els.customAdminUserState && signedIn) {
-                    els.customAdminUserState.textContent = "Oturum açık: " + String(state.customAdminUser.email || "Firebase hesabı");
+                    els.customAdminUserState.textContent = "Oturum açık: Yönetici";
                 }
                 if (signedIn && state.customChannelsReady && !state.customAdminEditorInitialized) renderCustomAdminSlots();
                 if (!signedIn) state.customAdminEditorInitialized = false;
@@ -2117,7 +2147,23 @@
 
             async function initializeCustomChannelAuth() {
                 const app = await ensureCustomFirebaseApp(true);
-                if (!customChannelAuth) customChannelAuth = app.auth();
+                if (!customChannelAuth) {
+                    customChannelAuth = app.auth();
+                    const persistence = window.firebase.auth && window.firebase.auth.Auth && window.firebase.auth.Auth.Persistence;
+                    if (!persistence || !persistence.SESSION || typeof customChannelAuth.setPersistence !== "function") {
+                        customChannelAuth = null;
+                        throw new Error("session_persistence_unavailable");
+                    }
+                    customChannelAuthPersistencePromise = customChannelAuth.setPersistence(persistence.SESSION);
+                }
+                if (customChannelAuthPersistencePromise) {
+                    try { await customChannelAuthPersistencePromise; }
+                    catch (error) {
+                        customChannelAuth = null;
+                        customChannelAuthPersistencePromise = null;
+                        throw error;
+                    }
+                }
                 if (!customChannelAuthObserver) {
                     customChannelAuthObserver = new Promise((resolve, reject) => {
                         customChannelAuth.onAuthStateChanged((user) => {
@@ -2140,12 +2186,19 @@
                 if (els.customChannelAdminClose) els.customChannelAdminClose.focus();
                 setCustomAdminStatus("Firebase yönetici oturumu hazırlanıyor…", false);
                 initializeCustomChannelStore().then(() => initializeCustomChannelAuth()).then(() => {
-                    if (!state.customAdminUser) setCustomAdminStatus("Yönetici e-postası ve parolasıyla giriş yapın.", false);
+                    if (!state.customAdminUser) setCustomAdminStatus("Yönetici parolasıyla giriş yapın.", false);
                 }).catch((error) => setCustomAdminStatus(customFirebaseError(error, "Firebase bağlantısı kurulamadı. Kurulum yönergelerini kontrol edin."), true));
             }
 
-            function closeCustomChannelAdmin() {
+            async function closeCustomChannelAdmin() {
                 if (!els.customChannelAdminModal || !els.customChannelAdminModal.classList.contains("open")) return;
+                if (state.customAdminUser && customChannelAuth) {
+                    try { await customChannelAuth.signOut(); }
+                    catch (error) {
+                        setCustomAdminStatus(customFirebaseError(error, "Yönetici oturumu kapatılamadı; bağlantıyı kontrol edin."), true);
+                        return;
+                    }
+                }
                 els.customChannelAdminModal.classList.remove("open");
                 els.customChannelAdminModal.setAttribute("aria-hidden", "true");
                 if (els.customChannelAdminBtn) els.customChannelAdminBtn.setAttribute("aria-expanded", "false");
@@ -2156,15 +2209,21 @@
             async function submitCustomAdminLogin(event) {
                 event.preventDefault();
                 setCustomAdminStatus("Giriş denetleniyor…", false);
-                const email = String(els.customAdminEmail && els.customAdminEmail.value || "").trim();
                 const password = String(els.customAdminPassword && els.customAdminPassword.value || "");
+                if (password.length < 16) {
+                    if (els.customAdminPassword) els.customAdminPassword.value = "";
+                    setCustomAdminStatus("Parola en az 16 karakter olmalı.", true);
+                    return;
+                }
                 try {
                     await initializeCustomChannelAuth();
-                    await customChannelAuth.signInWithEmailAndPassword(email, password);
-                    if (els.customAdminPassword) els.customAdminPassword.value = "";
+                    const token = await requestCustomAdminToken(password);
+                    await customChannelAuth.signInWithCustomToken(token);
                     setCustomAdminStatus("Giriş başarılı.", false);
                 } catch (error) {
-                    setCustomAdminStatus(customFirebaseError(error, "Giriş başarısız. Firebase Authentication ayarlarını kontrol edin."), true);
+                    setCustomAdminStatus(customFirebaseError(error, "Giriş başarısız. Cloud Function, App Check ve parola secret kurulumunu kontrol edin."), true);
+                } finally {
+                    if (els.customAdminPassword) els.customAdminPassword.value = "";
                 }
             }
 

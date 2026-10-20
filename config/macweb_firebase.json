@@ -8,5 +8,7 @@
     "messagingSenderId": "229841892818",
     "appId": "1:229841892818:web:a91dd3792919140a5d440b"
   },
-  "databasePath": "macweb/customChannels"
+  "databasePath": "macweb/customChannels",
+  "appCheckSiteKey": "",
+  "functionsRegion": "us-central1"
 }
