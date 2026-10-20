@@ -1,12 +1,8 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-10-20 07:26  
-> **Toplam maç:** 12  |  **Canlı:** 1  |  **Yaklaşan:** 11
-
-## 🔴 CANLI
-
-- 🔴 **M.Joint vs Zeynep Sönmez** — CANLI · `07:30` | WTA Osaka <https://fixbettv84.com/channel.html?id=bm1>
+> **Güncellenme:** 2026-10-20 07:36  
+> **Toplam maç:** 12  |  **Canlı:** 0  |  **Yaklaşan:** 11
 
 ## ⏰ YAKLAŞAN
 
@@ -21,6 +17,10 @@
 - ⏰ **Manchester City vs AEK** — YAKLAŞAN · `22:00` | UEFA Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=ex1>
 - ⏰ **Liverpool vs Villarreal** — YAKLAŞAN · `22:00` | UEFA Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=ex2>
 - ⏰ **Porto vs PSV** — YAKLAŞAN · `22:00` | UEFA Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=ex4>
+
+## ✅ BİTTİ
+
+- ✅ **M.Joint vs Zeynep Sönmez** — MS · `07:30` | WTA Osaka <https://fixbettv84.com/channel.html?id=bm1>
 
 ## ⭐ GÜNÜN MAÇI
 
@@ -49,7 +49,7 @@
 - ⏰ Porto vs PSV — 22:00
 
 ### WTA Osaka
-- 🔴 M.Joint vs Zeynep Sönmez — 07:30
+- ⏰ M.Joint vs Zeynep Sönmez — 07:30
 
 ---
 ## 📺 7/24 KANALLAR (31)
@@ -204,7 +204,7 @@
 - 🟢 **S SPORT 2** <https://sultanbettv101.live/mono.m3u8>
 - 🟢 **BEIN SPORTS MAX 1** <https://sultanbettv101.live/mono.m3u8>
 - 🟢 **TABII SPOR 5** <https://sultanbettv101.live/mono.m3u8>
-- 🟡 **TRT SPOR YILDIZ** <https://sultanbettv101.live/mono.m3u8>
+- 🟢 **TRT SPOR YILDIZ** <https://sultanbettv101.live/mono.m3u8>
 - 🟢 **TRT SPOR** <https://sultanbettv101.live/mono.m3u8>
 - 🟢 **TABII SPOR 1** <https://sultanbettv101.live/mono.m3u8>
 - 🟢 **EUROSPORT 2** <https://sultanbettv101.live/mono.m3u8>
