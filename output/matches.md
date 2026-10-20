@@ -1,15 +1,18 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-10-20 13:57  
-> **Toplam maç:** 12  |  **Canlı:** 0  |  **Yaklaşan:** 11
+> **Güncellenme:** 2026-10-20 17:46  
+> **Toplam maç:** 12  |  **Canlı:** 4  |  **Yaklaşan:** 7
+
+## 🔴 CANLI
+
+- 🔴 **Türk Telekom vs BC Siauliai** — CANLI · `19:30` | Eurocup <https://fixbettv84.com/channel.html?id=trtspor>
+- 🔴 **Fenerbahçe vs Slavia Prag** — CANLI · `19:45` | UEFA Şampiyonlar Ligi ★ **Günün Maçı** <https://fixbettv84.com/channel.html?id=trt1>
+- 🔴 **Sabah Bakü vs Borussia Dortmund** — CANLI · `19:45` | UEFA Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=ex7>
+- 🔴 **Galatasaray MCT vs Strasbourg** — CANLI · `20:00` | FIBA Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=trtspor2>
 
 ## ⏰ YAKLAŞAN
 
-- ⏰ **Türk Telekom vs BC Siauliai** — YAKLAŞAN · `19:30` | Eurocup <https://fixbettv84.com/channel.html?id=trtspor>
-- ⏰ **Fenerbahçe vs Slavia Prag** — YAKLAŞAN · `19:45` | UEFA Şampiyonlar Ligi ★ **Günün Maçı** <https://fixbettv84.com/channel.html?id=trt1>
-- ⏰ **Sabah Bakü vs Borussia Dortmund** — YAKLAŞAN · `19:45` | UEFA Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=ex7>
-- ⏰ **Galatasaray MCT vs Strasbourg** — YAKLAŞAN · `20:00` | FIBA Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=trtspor2>
 - ⏰ **Detroit Pistons vs Boston Celtics** — YAKLAŞAN · `22:00` | NBA <https://fixbettv84.com/channel.html?id=ss>
 - ⏰ **Stuttgart vs Atletico Madrid** — YAKLAŞAN · `22:00` | UEFA Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=ex3>
 - ⏰ **PSG vs Barcelona** — YAKLAŞAN · `22:00` | UEFA Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=ex7>
@@ -24,23 +27,23 @@
 
 ## ⭐ GÜNÜN MAÇI
 
-- ⏰ **Fenerbahçe vs Slavia Prag** — YAKLAŞAN · `19:45` | UEFA Şampiyonlar Ligi ★ **Günün Maçı** <https://fixbettv84.com/channel.html?id=trt1>
+- 🔴 **Fenerbahçe vs Slavia Prag** — CANLI · `19:45` | UEFA Şampiyonlar Ligi ★ **Günün Maçı** <https://fixbettv84.com/channel.html?id=trt1>
 
 ---
 ## 🏆 Lig Bazlı
 
 ### Eurocup
-- ⏰ Türk Telekom vs BC Siauliai — 19:30
+- 🔴 Türk Telekom vs BC Siauliai — 19:30
 
 ### FIBA Şampiyonlar Ligi
-- ⏰ Galatasaray MCT vs Strasbourg — 20:00
+- 🔴 Galatasaray MCT vs Strasbourg — 20:00
 
 ### NBA
 - ⏰ Detroit Pistons vs Boston Celtics — 22:00
 
 ### UEFA Şampiyonlar Ligi
-- ⏰ Fenerbahçe vs Slavia Prag — 19:45
-- ⏰ Sabah Bakü vs Borussia Dortmund — 19:45
+- 🔴 Fenerbahçe vs Slavia Prag — 19:45
+- 🔴 Sabah Bakü vs Borussia Dortmund — 19:45
 - ⏰ Stuttgart vs Atletico Madrid — 22:00
 - ⏰ PSG vs Barcelona — 22:00
 - ⏰ Napoli vs Bodo Glimt — 22:00
