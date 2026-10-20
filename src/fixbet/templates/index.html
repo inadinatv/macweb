@@ -210,6 +210,40 @@
         .src-chip.embed { border-style: dashed; }
         .player-actions .ctrl-btn[hidden] { display: none; }
 
+        /* Oynatıcı altı: Firebase üzerinden yönetilen yatay kanal seçici */
+        .custom-channel-switcher { margin-top: 10px; padding: 11px 12px; border: 1px solid rgba(0,234,255,.2); border-radius: 16px; background: linear-gradient(110deg, rgba(0,234,255,.055), rgba(155,77,255,.07)); }
+        .custom-channel-head { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-bottom: 8px; }
+        .custom-channel-heading { display: flex; align-items: baseline; flex-wrap: wrap; gap: 8px; min-width: 0; }
+        .custom-channel-heading strong { color: var(--neon-cyan); font: 800 .78rem 'Barlow Condensed', sans-serif; letter-spacing: 1.3px; }
+        .custom-channel-state { color: var(--text-muted); font-size: .68rem; }
+        .custom-channel-scroll { display: grid; grid-template-columns: 30px minmax(0,1fr) 30px; align-items: center; gap: 6px; }
+        .custom-channel-scroll-btn { width: 30px; height: 34px; border: 1px solid rgba(0,234,255,.25); border-radius: 9px; color: #c8f9ff; background: rgba(0,234,255,.08); cursor: pointer; }
+        .custom-channel-list { display: flex; align-items: stretch; gap: 8px; min-width: 0; overflow-x: auto; padding: 3px 2px 7px; scroll-snap-type: x mandatory; scrollbar-width: thin; scrollbar-color: rgba(0,234,255,.35) transparent; }
+        .custom-channel-list::-webkit-scrollbar { height: 4px; }
+        .custom-channel-list::-webkit-scrollbar-thumb { background: rgba(0,234,255,.35); border-radius: 8px; }
+        .custom-channel-btn { flex: 0 0 auto; min-width: 118px; max-width: 220px; min-height: 40px; padding: 7px 13px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; border: 1px solid rgba(0,234,255,.25); border-radius: 12px; background: rgba(8,16,27,.88); color: #dffbff; font: 800 .83rem 'Barlow Condensed', sans-serif; cursor: pointer; scroll-snap-align: start; transition: .18s ease; }
+        .custom-channel-btn:hover, .custom-channel-btn.active { border-color: var(--neon-cyan); background: linear-gradient(135deg, rgba(0,234,255,.2), rgba(155,77,255,.2)); color: #fff; box-shadow: 0 0 13px rgba(0,234,255,.16); }
+        .custom-channel-empty { flex: 0 0 auto; align-self: center; color: var(--text-muted); font-size: .74rem; padding: 7px 2px; }
+        .custom-admin-overlay { z-index: 910; background: rgba(4,7,14,.88); }
+        .custom-admin-panel { width: min(760px, 100%); border-color: rgba(0,234,255,.65); background: rgba(6,9,18,.995); box-shadow: 0 0 26px rgba(0,234,255,.16), 0 24px 60px rgba(0,0,0,.6); }
+        .modal-panel.custom-admin-panel { background: #080d17; }
+        .custom-admin-panel .modal-head { border-color: rgba(0,234,255,.25); background: linear-gradient(180deg, rgba(0,234,255,.09), transparent); }
+        .custom-admin-panel .modal-title { color: var(--neon-cyan); text-shadow: 0 0 12px rgba(0,234,255,.38); }
+        .custom-admin-panel .modal-close { border-color: rgba(0,234,255,.4); background: rgba(0,234,255,.09); color: #dffbff; }
+        .custom-admin-intro, .custom-admin-note { color: var(--text-muted); font-size: .78rem; line-height: 1.55; }
+        .custom-admin-login { display: grid; gap: 12px; max-width: 480px; margin: 14px auto 6px; }
+        .custom-admin-login[hidden], #customChannelsEditor[hidden] { display: none !important; }
+        .custom-admin-login label, .custom-admin-slot-fields label { display: grid; gap: 5px; color: #d9d2e8; font-size: .72rem; font-weight: 700; }
+        .custom-admin-login input, .custom-admin-slot-fields input, .custom-admin-slot-fields textarea { width: 100%; min-width: 0; border: 1px solid rgba(255,255,255,.16); border-radius: 10px; padding: 9px 10px; background: rgba(255,255,255,.055); color: #fff; font: 500 .8rem 'Barlow', sans-serif; }
+        .custom-admin-slot-fields textarea { min-height: 64px; resize: vertical; overflow-wrap: anywhere; }
+        .custom-admin-slots { display: grid; gap: 9px; margin: 12px 0; }
+        .custom-admin-slot { display: grid; grid-template-columns: 34px minmax(0,1fr); gap: 8px; align-items: start; padding: 10px; border: 1px solid rgba(255,255,255,.09); border-radius: 13px; background: rgba(255,255,255,.025); }
+        .custom-admin-slot-number { display: grid; place-items: center; width: 30px; height: 30px; border-radius: 9px; color: var(--neon-cyan); background: rgba(0,234,255,.1); font-weight: 900; }
+        .custom-admin-slot-fields { display: grid; grid-template-columns: minmax(150px,.65fr) minmax(0,1.35fr); gap: 8px; }
+        .custom-admin-actions { display: flex; align-items: center; justify-content: flex-end; gap: 8px; flex-wrap: wrap; }
+        .custom-admin-status { min-height: 1.3em; color: #a7ffd2; font-size: .75rem; }
+        .custom-admin-status.is-error { color: #ff9ab9; }
+
         /* ---------- Side panel ---------- */
         .side-panel { display: flex; flex-direction: column; gap: 14px; }
         .now-playing-card {
@@ -739,6 +773,17 @@
             padding: 10px 18px; border-top: 1px solid rgba(255,45,122,0.22); background: rgba(255,45,122,0.05);
             color: var(--text-muted); font-size: 0.7rem; }
 
+        @media (max-width: 640px) {
+            .custom-channel-switcher { padding: 9px; border-radius: 13px; }
+            .custom-channel-head { align-items: flex-start; }
+            .custom-channel-head .ctrl-btn { white-space: nowrap; padding: 6px 9px; font-size: .68rem; }
+            .custom-channel-btn { min-width: 108px; max-width: 170px; min-height: 38px; padding: 6px 10px; }
+            .custom-admin-slot-fields { grid-template-columns: 1fr; }
+            .custom-admin-slot { padding: 8px; }
+            .custom-admin-actions { display: grid; grid-template-columns: 1fr 1fr; }
+            .custom-admin-actions .primary { grid-column: 1 / -1; }
+        }
+
         /* ---------- Footer ---------- */
         .site-footer {
             margin-top: 18px; padding: 14px 18px; border-radius: 16px;
@@ -889,6 +934,17 @@
                     <video id="hlsVideo" controls playsinline autoplay preload="none" title="m3u8 yayın oynatıcı"></video>
                     <iframe id="liveIframe" src="" title="Canlı yayın oynatıcı" allowfullscreen allow="autoplay; encrypted-media; picture-in-picture" loading="eager"></iframe>
                 </div>
+                <section class="custom-channel-switcher" id="customChannelSwitcher" aria-label="Özel yayın kanalları">
+                    <div class="custom-channel-head">
+                        <div class="custom-channel-heading"><strong>EK YAYIN KANALLARI</strong><span class="custom-channel-state" id="customChannelState" role="status" aria-live="polite">Kanallar yükleniyor…</span></div>
+                        <button type="button" class="ctrl-btn" id="customChannelAdminBtn" aria-haspopup="dialog" aria-expanded="false">⚙ Yönetici</button>
+                    </div>
+                    <div class="custom-channel-scroll">
+                        <button type="button" class="custom-channel-scroll-btn" id="customChannelScrollPrev" aria-label="Özel kanalları sola kaydır">‹</button>
+                        <div class="custom-channel-list" id="customChannelList" role="group" aria-label="Yönetici tarafından eklenen yayınlar"><span class="custom-channel-empty">Yayınlar yükleniyor…</span></div>
+                        <button type="button" class="custom-channel-scroll-btn" id="customChannelScrollNext" aria-label="Özel kanalları sağa kaydır">›</button>
+                    </div>
+                </section>
             </div>
 
             <div class="side-panel">
@@ -1022,6 +1078,36 @@
         </div>
     </div>
 
+    <div class="modal-overlay custom-admin-overlay" id="customChannelsAdminModal" role="dialog" aria-modal="true" aria-labelledby="customChannelsAdminTitle" aria-hidden="true">
+        <div class="modal-panel custom-admin-panel" role="document">
+            <div class="modal-head">
+                <div>
+                    <h2 class="modal-title" id="customChannelsAdminTitle">YAYIN YÖNETİMİ</h2>
+                    <div class="modal-sub">Firebase ile eşitlenen en fazla 5 özel iframe kanalı</div>
+                </div>
+                <button type="button" class="modal-close" id="customChannelsAdminClose" aria-label="Kapat">✕</button>
+            </div>
+            <div class="modal-body">
+                <p class="custom-admin-intro">Yalnızca yönetici parolasıyla giriş yapın. Her kanala bir isim ve HTTPS adresi ya da tek bir <code>&lt;iframe src="…"&gt;</code> kodu ekleyebilirsiniz. Ham HTML çalıştırılmaz; yalnızca iframe adresi alınır.</p>
+                <form class="custom-admin-login" id="customChannelsLoginForm" autocomplete="off">
+                    <label for="customAdminPassword">Yönetici parolası<input id="customAdminPassword" type="password" autocomplete="current-password" minlength="16" maxlength="512" required></label>
+                    <button type="submit" class="ctrl-btn primary" id="customAdminLoginBtn">🔐 Parola ile giriş yap</button>
+                </form>
+                <section id="customChannelsEditor" hidden>
+                    <p class="custom-admin-note" id="customAdminUserState">Oturum açık.</p>
+                    <div class="custom-admin-slots" id="customChannelSlots"></div>
+                    <div class="custom-admin-status" id="customAdminStatus" role="status" aria-live="polite"></div>
+                    <div class="custom-admin-actions">
+                        <button type="button" class="mini-btn" id="customAdminSignOutBtn">Oturumu kapat</button>
+                        <button type="button" class="mini-btn" id="customAdminCancelBtn">Kapat</button>
+                        <button type="button" class="ctrl-btn primary" id="customAdminSaveBtn">💾 5 kanalı kaydet</button>
+                    </div>
+                </section>
+                <p class="custom-admin-note">Parola sayfa kodunda veya veritabanında tutulmaz. Yönetici erişimi Firebase custom token ve Security Rules ile sınırlandırılır.</p>
+            </div>
+        </div>
+    </div>
+
     <script>
         /*BOT_START*/
         const updatedAt = "{{UPDATED_AT}}";
@@ -1084,10 +1170,21 @@
                 kodamanUpdatedAt: "",
                 kodamanLoading: true,
                 kodamanLoadError: false,
+                customChannels: [],
+                customChannelsReady: false,
+                customChannelsError: false,
+                currentCustomChannelId: null,
+                customAdminUser: null,
+                customAdminEditorInitialized: false,
                 currentSourceIndex: 0,
                 currentSources: []
             };
             let kodamanRefreshPromise = null;
+            let customChannelConfig = null, customChannelRef = null, customChannelAuth = null;
+            let customChannelApp = null, customChannelAuthObserver = null, customChannelStorePromise = null;
+            let customChannelAuthPersistencePromise = null;
+            let customFirebaseScripts = new Set(), customFirebaseScriptPromises = new Map();
+            let customAppCheckPromise = null;
 
             const els = {
                 iframe: $("liveIframe"),
@@ -1098,6 +1195,20 @@
                 playerLoading: $("playerLoading"),
                 playerError: $("playerError"),
                 playerErrorMsg: $("playerErrorMsg"),
+                customChannelList: $("customChannelList"),
+                customChannelState: $("customChannelState"),
+                customChannelAdminBtn: $("customChannelAdminBtn"),
+                customChannelAdminModal: $("customChannelsAdminModal"),
+                customChannelAdminClose: $("customChannelsAdminClose"),
+                customChannelLoginForm: $("customChannelsLoginForm"),
+                customAdminPassword: $("customAdminPassword"),
+                customChannelsEditor: $("customChannelsEditor"),
+                customChannelSlots: $("customChannelSlots"),
+                customAdminStatus: $("customAdminStatus"),
+                customAdminUserState: $("customAdminUserState"),
+                customAdminSaveBtn: $("customAdminSaveBtn"),
+                customAdminSignOutBtn: $("customAdminSignOutBtn"),
+                customAdminCancelBtn: $("customAdminCancelBtn"),
                 playerTitle: $("playerTitle"),
                 playerIcon: $("playerIcon"),
                 sourceRow: $("sourceRow"),
@@ -1523,12 +1634,14 @@
                 if (!channel || !base) return false;
                 state.currentIndex = -1;
                 state.currentKodamanId = channel.id;
+                state.currentCustomChannelId = null;
                 setExternalNavigationEnabled(false);
                 loadStream(base + "/channel?id=" + encodeURIComponent(channel.id), channel.name, "📡",
                     "7/24 YAYIN", scroll !== false);
                 markActiveCard();
                 markActiveExtraCard();
                 markActiveKodamanCard();
+                markActiveCustomChannel();
                 return true;
             }
 
@@ -1598,11 +1711,13 @@
                 if (index < 0 || index >= streamLinks.length) return;
                 state.currentIndex = index;
                 state.currentKodamanId = null;
+                state.currentCustomChannelId = null;
                 setExternalNavigationEnabled(true);
                 loadStream(streamLinks[index], channelNames[index], channelIcons[index],
                     (channelStatuses[index] || "7/24") + " YAYIN", scroll !== false);
                 markActiveCard();
                 markActiveExtraCard();
+                markActiveCustomChannel();
                 if (history && history.replaceState) {
                     history.replaceState(null, "", "#kanal=" + encodeURIComponent(channelNames[index]));
                 }
@@ -1727,14 +1842,17 @@
                 els.playerError.classList.remove("active");
             }
 
-            function loadFrame(url) {
+            function loadFrame(url, policy) {
                 try {
                     const u = new URL(url, location.href);
                     if (!/^https?:$/.test(u.protocol)) throw new Error("scheme");
                     url = u.href;
                 } catch (e) { showError("Yayın sayfasının adresi geçersiz."); return; }
-                if (/^kodamantv\d+\.com$/i.test(new URL(url).hostname)) {
+                if (policy && policy.restrict) {
                     // Suppress provider alert dialogs, popup windows and top-level navigation.
+                    els.iframe.setAttribute("sandbox", "allow-scripts allow-same-origin allow-forms allow-presentation");
+                } else if (/^kodamantv\d+\.com$/i.test(new URL(url).hostname)) {
+                    // Preserve the established Kodaman player permissions.
                     els.iframe.setAttribute("sandbox", "allow-scripts allow-same-origin allow-forms allow-presentation");
                 } else {
                     els.iframe.removeAttribute("sandbox");
@@ -1755,6 +1873,394 @@
                     if (token === playToken) showError("Yayın sayfası zamanında yanıt vermedi. Sayfa gömülmeye izin vermiyor olabilir; yeni sekmede deneyin.");
                 }, 15000);
                 els.iframe.src = url;
+            }
+
+            const FIREBASE_SDK_BASE = "https://www.gstatic.com/firebasejs/9.23.0/";
+            const FIREBASE_CONFIG_PATH = "config/macweb_firebase.json";
+            const FIREBASE_CHANNEL_APP_NAME = "macweb-custom-channels";
+
+            function parseCustomIframeUrl(value) {
+                const input = String(value || "").trim();
+                if (!input || input.length > 6000) return "";
+                let source = input;
+                if (!/^https:\/\//i.test(input)) {
+                    const parsed = new DOMParser().parseFromString(input, "text/html");
+                    const frames = parsed.querySelectorAll("iframe");
+                    if (frames.length !== 1 || parsed.querySelector("script, object, embed")) return "";
+                    source = frames[0].getAttribute("src") || "";
+                }
+                try {
+                    const url = new URL(source, location.href);
+                    if (url.protocol !== "https:" || url.username || url.password || url.origin === location.origin || url.href.length > 2048) return "";
+                    if (/^(localhost|127\.0\.0\.1|0\.0\.0\.0|\[::1\])$/i.test(url.hostname)) return "";
+                    return url.href;
+                } catch (e) { return ""; }
+            }
+
+            function normalizeCustomChannels(value) {
+                const data = value && typeof value === "object" ? value : {};
+                const channels = [];
+                for (let i = 1; i <= 5; i++) {
+                    const row = data["channel" + i];
+                    if (!row || typeof row !== "object") continue;
+                    const name = String(row.name || "").trim().slice(0, 48);
+                    const url = parseCustomIframeUrl(row.iframeUrl || row.embedCode || "");
+                    if (name && url) channels.push({ id: "channel" + i, slot: i, name: name, url: url });
+                }
+                return channels;
+            }
+
+            function setCustomAdminStatus(message, isError) {
+                if (!els.customAdminStatus) return;
+                els.customAdminStatus.textContent = message || "";
+                els.customAdminStatus.classList.toggle("is-error", !!isError);
+            }
+
+            function customFirebaseError(error, fallback) {
+                const code = String(error && error.code || "");
+                const message = String(error && error.message || "");
+                if (code === "app_check_not_configured" || message === "app_check_not_configured") return "Güvenli giriş için Firebase App Check site key kurulmalı.";
+                if (/functions\/unauthenticated/.test(code)) return "Yönetici parolası doğrulanamadı.";
+                if (/functions\/resource-exhausted/.test(code)) return "Çok fazla hatalı deneme yapıldı. 15 dakika sonra tekrar deneyin.";
+                if (/functions\/(?:failed-precondition|permission-denied)/.test(code)) return "App Check doğrulaması başarısız. Firebase App Check kurulumunu kontrol edin.";
+                if (/functions\/(?:unavailable|deadline-exceeded)/.test(code)) return "Güvenli giriş servisi geçici olarak kullanılamıyor.";
+                if (/permission_denied|PERMISSION_DENIED/i.test(code)) return "Firebase erişimi reddetti. Custom token ve Security Rules kurulumunu kontrol edin.";
+                return fallback;
+            }
+
+            async function loadCustomFirebaseConfig() {
+                if (customChannelConfig) return customChannelConfig;
+                if (typeof fetch !== "function") throw new Error("fetch_unavailable");
+                const response = await fetch(FIREBASE_CONFIG_PATH, { cache: "no-store" });
+                if (!response || !response.ok) throw new Error("config_unavailable");
+                const json = await response.json();
+                const cfg = json && json.firebase;
+                const path = String(json && json.databasePath || "");
+                const appCheckSiteKey = String(json && json.appCheckSiteKey || "").trim();
+                const functionsRegion = String(json && json.functionsRegion || "us-central1").trim();
+                let databaseUrlIsHttps = false;
+                try { databaseUrlIsHttps = new URL(cfg && cfg.databaseURL).protocol === "https:"; } catch (e) { /* config geçersiz */ }
+                if (!cfg || !cfg.apiKey || !cfg.authDomain || !databaseUrlIsHttps || !cfg.projectId || !/^[A-Za-z0-9_/-]+$/.test(path) || path.startsWith("/") || (appCheckSiteKey && !/^[A-Za-z0-9_-]{10,256}$/.test(appCheckSiteKey)) || !/^[a-z0-9-]{1,64}$/.test(functionsRegion)) {
+                    throw new Error("config_invalid");
+                }
+                customChannelConfig = { firebase: cfg, databasePath: path, appCheckSiteKey: appCheckSiteKey, functionsRegion: functionsRegion };
+                return customChannelConfig;
+            }
+
+            function loadFirebaseScript(url) {
+                if (customFirebaseScripts.has(url)) return Promise.resolve();
+                if (customFirebaseScriptPromises.has(url)) return customFirebaseScriptPromises.get(url);
+                const pending = new Promise((resolve, reject) => {
+                    const script = document.createElement("script");
+                    script.src = url;
+                    script.async = true;
+                    script.onload = () => { customFirebaseScripts.add(url); resolve(); };
+                    script.onerror = () => reject(new Error("firebase_sdk_load_failed"));
+                    document.head.appendChild(script);
+                });
+                customFirebaseScriptPromises.set(url, pending);
+                return pending.finally(() => customFirebaseScriptPromises.delete(url));
+            }
+
+            async function ensureCustomFirebaseSdk(withAuth, withFunctions, withAppCheck) {
+                if (!window.firebase || !window.firebase.initializeApp) await loadFirebaseScript(FIREBASE_SDK_BASE + "firebase-app-compat.js");
+                if (!window.firebase || !window.firebase.database) await loadFirebaseScript(FIREBASE_SDK_BASE + "firebase-database-compat.js");
+                if (withAuth && (!window.firebase || !window.firebase.auth)) await loadFirebaseScript(FIREBASE_SDK_BASE + "firebase-auth-compat.js");
+                if (withFunctions && (!window.firebase || !window.firebase.functions)) await loadFirebaseScript(FIREBASE_SDK_BASE + "firebase-functions-compat.js");
+                if (withAppCheck && (!window.firebase || !window.firebase.appCheck)) await loadFirebaseScript(FIREBASE_SDK_BASE + "firebase-app-check-compat.js");
+                if (!window.firebase || !window.firebase.initializeApp || !window.firebase.database || (withAuth && !window.firebase.auth) || (withFunctions && !window.firebase.functions) || (withAppCheck && !window.firebase.appCheck)) {
+                    throw new Error("firebase_sdk_unavailable");
+                }
+            }
+
+            async function ensureCustomFirebaseApp(withAuth, withFunctions) {
+                const config = await loadCustomFirebaseConfig();
+                if (withFunctions && !config.appCheckSiteKey) throw new Error("app_check_not_configured");
+                await ensureCustomFirebaseSdk(!!withAuth, !!withFunctions, !!config.appCheckSiteKey);
+                if (!customChannelApp) {
+                    customChannelApp = (window.firebase.apps || []).find((app) => app.name === FIREBASE_CHANNEL_APP_NAME) ||
+                        window.firebase.initializeApp(config.firebase, FIREBASE_CHANNEL_APP_NAME);
+                }
+                if (config.appCheckSiteKey) {
+                    if (!customAppCheckPromise) {
+                        customAppCheckPromise = Promise.resolve().then(() => {
+                            return window.firebase.appCheck(customChannelApp).activate(config.appCheckSiteKey, true);
+                        }).catch((error) => {
+                            customAppCheckPromise = null;
+                            throw error;
+                        });
+                    }
+                    await customAppCheckPromise;
+                }
+                return customChannelApp;
+            }
+
+            async function requestCustomAdminToken(password) {
+                const config = await loadCustomFirebaseConfig();
+                if (!config.appCheckSiteKey) throw new Error("app_check_not_configured");
+                const app = await ensureCustomFirebaseApp(true, true);
+                const callable = app.functions(config.functionsRegion).httpsCallable("macwebAdminLogin");
+                const result = await callable({ password: password });
+                const token = result && result.data && result.data.token;
+                if (typeof token !== "string" || token.length < 20) throw new Error("custom_token_missing");
+                return token;
+            }
+
+            function renderCustomChannels() {
+                if (!els.customChannelList) return;
+                els.customChannelList.innerHTML = "";
+                if (els.customChannelState) {
+                    els.customChannelState.textContent = state.customChannelsError ? "Kanal bağlantısı şu an kullanılamıyor" :
+                        (!state.customChannelsReady ? "Kanallar yükleniyor…" : (state.customChannels.length ? state.customChannels.length + " yayın hazır" : "Henüz yayın eklenmedi"));
+                }
+                if (!state.customChannels.length) {
+                    const empty = document.createElement("span");
+                    empty.className = "custom-channel-empty";
+                    empty.textContent = state.customChannelsError ? "Yayın listesi yüklenemedi." : (state.customChannelsReady ? "Yönetici panelinden yayın eklenebilir." : "Yayınlar yükleniyor…");
+                    els.customChannelList.appendChild(empty);
+                    return;
+                }
+                state.customChannels.forEach((channel) => {
+                    const button = document.createElement("button");
+                    button.type = "button";
+                    button.className = "custom-channel-btn" + (state.currentCustomChannelId === channel.id ? " active" : "");
+                    button.dataset.customChannelId = channel.id;
+                    button.textContent = channel.name;
+                    button.title = channel.name;
+                    button.setAttribute("aria-pressed", state.currentCustomChannelId === channel.id ? "true" : "false");
+                    button.onclick = () => playCustomChannel(channel.id, true);
+                    els.customChannelList.appendChild(button);
+                });
+            }
+
+            function markActiveCustomChannel() {
+                document.querySelectorAll(".custom-channel-btn").forEach((button) => {
+                    const active = button.dataset.customChannelId === state.currentCustomChannelId;
+                    button.classList.toggle("active", active);
+                    button.setAttribute("aria-pressed", active ? "true" : "false");
+                });
+            }
+
+            function playCustomChannel(id, scroll) {
+                const channel = (state.customChannels || []).find((item) => item.id === id);
+                if (!channel || !parseCustomIframeUrl(channel.url)) return false;
+                state.currentIndex = -1;
+                state.currentKodamanId = null;
+                state.currentExtraId = null;
+                state.currentCustomChannelId = channel.id;
+                state.currentSources = [];
+                setPlayerMode("iframe");
+                setExternalNavigationEnabled(false);
+                loadFrame(channel.url, { restrict: true });
+                setPlayerHeader(channel.name, "📺", "ÖZEL YAYIN");
+                markActiveCard();
+                markActiveExtraCard();
+                markActiveKodamanCard();
+                markActiveCustomChannel();
+                if (scroll !== false) scrollToPlayer();
+                return true;
+            }
+
+            function stepCustomChannel(delta) {
+                const channels = state.customChannels || [];
+                if (!channels.length) return;
+                const index = channels.findIndex((item) => item.id === state.currentCustomChannelId);
+                const next = (index + delta + channels.length) % channels.length;
+                playCustomChannel(channels[next].id, false);
+            }
+
+            function renderCustomAdminSlots() {
+                if (!els.customChannelSlots) return;
+                const current = Object.fromEntries((state.customChannels || []).map((channel) => [channel.slot, channel]));
+                els.customChannelSlots.replaceChildren();
+                for (let i = 1; i <= 5; i++) {
+                    const section = document.createElement("div");
+                    section.className = "custom-admin-slot";
+                    const number = document.createElement("span");
+                    number.className = "custom-admin-slot-number";
+                    number.textContent = String(i);
+                    const fields = document.createElement("div");
+                    fields.className = "custom-admin-slot-fields";
+                    const nameLabel = document.createElement("label");
+                    nameLabel.textContent = "Kanal adı";
+                    const name = document.createElement("input");
+                    name.type = "text"; name.maxLength = 48; name.className = "custom-channel-name";
+                    name.placeholder = "Örn. beIN Sports Ana"; name.value = current[i] ? current[i].name : "";
+                    nameLabel.appendChild(name);
+                    const embedLabel = document.createElement("label");
+                    embedLabel.textContent = "HTTPS iframe adresi veya iframe kodu";
+                    const embed = document.createElement("textarea");
+                    embed.maxLength = 6000; embed.className = "custom-channel-embed";
+                    embed.placeholder = 'https://... veya <iframe src="https://..."></iframe>';
+                    embed.value = current[i] ? current[i].url : "";
+                    embedLabel.appendChild(embed);
+                    fields.append(nameLabel, embedLabel);
+                    section.dataset.slot = String(i);
+                    section.append(number, fields);
+                    els.customChannelSlots.appendChild(section);
+                }
+                state.customAdminEditorInitialized = true;
+            }
+
+            function renderCustomAdminState() {
+                const signedIn = !!state.customAdminUser;
+                if (els.customChannelLoginForm) els.customChannelLoginForm.hidden = signedIn;
+                if (els.customChannelsEditor) els.customChannelsEditor.hidden = !signedIn;
+                if (els.customAdminUserState && signedIn) {
+                    els.customAdminUserState.textContent = "Oturum açık: Yönetici";
+                }
+                if (signedIn && state.customChannelsReady && !state.customAdminEditorInitialized) renderCustomAdminSlots();
+                if (!signedIn) state.customAdminEditorInitialized = false;
+            }
+
+            async function initializeCustomChannelStore() {
+                if (customChannelRef) return true;
+                if (customChannelStorePromise) return customChannelStorePromise;
+                customChannelStorePromise = (async () => {
+                    try {
+                        const app = await ensureCustomFirebaseApp(false);
+                        customChannelRef = app.database().ref(customChannelConfig.databasePath);
+                        customChannelRef.on("value", (snapshot) => {
+                            state.customChannels = normalizeCustomChannels(snapshot && snapshot.val());
+                            state.customChannelsReady = true;
+                            state.customChannelsError = false;
+                            renderCustomChannels();
+                            renderCustomAdminState();
+                        }, () => {
+                            state.customChannelsReady = true;
+                            state.customChannelsError = true;
+                            renderCustomChannels();
+                            renderCustomAdminState();
+                        });
+                        return true;
+                    } catch (error) {
+                        customChannelRef = null;
+                        customChannelStorePromise = null;
+                        state.customChannelsReady = true;
+                        state.customChannelsError = true;
+                        renderCustomChannels();
+                        return false;
+                    }
+                })();
+                return customChannelStorePromise;
+            }
+
+            async function initializeCustomChannelAuth() {
+                const app = await ensureCustomFirebaseApp(true);
+                if (!customChannelAuth) {
+                    customChannelAuth = app.auth();
+                    const persistence = window.firebase.auth && window.firebase.auth.Auth && window.firebase.auth.Auth.Persistence;
+                    if (!persistence || !persistence.SESSION || typeof customChannelAuth.setPersistence !== "function") {
+                        customChannelAuth = null;
+                        throw new Error("session_persistence_unavailable");
+                    }
+                    customChannelAuthPersistencePromise = customChannelAuth.setPersistence(persistence.SESSION);
+                }
+                if (customChannelAuthPersistencePromise) {
+                    try { await customChannelAuthPersistencePromise; }
+                    catch (error) {
+                        customChannelAuth = null;
+                        customChannelAuthPersistencePromise = null;
+                        throw error;
+                    }
+                }
+                if (!customChannelAuthObserver) {
+                    customChannelAuthObserver = new Promise((resolve, reject) => {
+                        customChannelAuth.onAuthStateChanged((user) => {
+                            state.customAdminUser = user || null;
+                            state.customAdminEditorInitialized = false;
+                            renderCustomAdminState();
+                            resolve(user || null);
+                        }, reject);
+                    });
+                }
+                return customChannelAuthObserver;
+            }
+
+            function openCustomChannelAdmin() {
+                if (!els.customChannelAdminModal) return;
+                els.customChannelAdminModal.classList.add("open");
+                els.customChannelAdminModal.setAttribute("aria-hidden", "false");
+                if (els.customChannelAdminBtn) els.customChannelAdminBtn.setAttribute("aria-expanded", "true");
+                document.body.style.overflow = "hidden";
+                if (els.customChannelAdminClose) els.customChannelAdminClose.focus();
+                setCustomAdminStatus("Firebase yönetici oturumu hazırlanıyor…", false);
+                initializeCustomChannelStore().then(() => initializeCustomChannelAuth()).then(() => {
+                    if (!state.customAdminUser) setCustomAdminStatus("Yönetici parolasıyla giriş yapın.", false);
+                }).catch((error) => setCustomAdminStatus(customFirebaseError(error, "Firebase bağlantısı kurulamadı. Kurulum yönergelerini kontrol edin."), true));
+            }
+
+            async function closeCustomChannelAdmin() {
+                if (!els.customChannelAdminModal || !els.customChannelAdminModal.classList.contains("open")) return;
+                if (state.customAdminUser && customChannelAuth) {
+                    try { await customChannelAuth.signOut(); }
+                    catch (error) {
+                        setCustomAdminStatus(customFirebaseError(error, "Yönetici oturumu kapatılamadı; bağlantıyı kontrol edin."), true);
+                        return;
+                    }
+                }
+                els.customChannelAdminModal.classList.remove("open");
+                els.customChannelAdminModal.setAttribute("aria-hidden", "true");
+                if (els.customChannelAdminBtn) els.customChannelAdminBtn.setAttribute("aria-expanded", "false");
+                if (!document.querySelector(".modal-overlay.open")) document.body.style.overflow = "";
+                if (els.customChannelAdminBtn) els.customChannelAdminBtn.focus();
+            }
+
+            async function submitCustomAdminLogin(event) {
+                event.preventDefault();
+                setCustomAdminStatus("Giriş denetleniyor…", false);
+                const password = String(els.customAdminPassword && els.customAdminPassword.value || "");
+                if (password.length < 16) {
+                    if (els.customAdminPassword) els.customAdminPassword.value = "";
+                    setCustomAdminStatus("Parola en az 16 karakter olmalı.", true);
+                    return;
+                }
+                try {
+                    await initializeCustomChannelAuth();
+                    const token = await requestCustomAdminToken(password);
+                    await customChannelAuth.signInWithCustomToken(token);
+                    setCustomAdminStatus("Giriş başarılı.", false);
+                } catch (error) {
+                    setCustomAdminStatus(customFirebaseError(error, "Giriş başarısız. Cloud Function, App Check ve parola secret kurulumunu kontrol edin."), true);
+                } finally {
+                    if (els.customAdminPassword) els.customAdminPassword.value = "";
+                }
+            }
+
+            async function saveCustomChannels() {
+                if (!state.customAdminUser || !customChannelRef) {
+                    setCustomAdminStatus("Önce yetkili yönetici hesabıyla giriş yapın.", true);
+                    return false;
+                }
+                const next = {};
+                for (let i = 1; i <= 5; i++) {
+                    const row = els.customChannelSlots.querySelector('[data-slot="' + i + '"]');
+                    const name = String(row && row.querySelector(".custom-channel-name").value || "").trim();
+                    const input = String(row && row.querySelector(".custom-channel-embed").value || "").trim();
+                    if (!name && !input) continue;
+                    if (!name || !input) {
+                        setCustomAdminStatus("Kanal " + i + " için hem isim hem iframe adresi/kodu girin.", true);
+                        return false;
+                    }
+                    const url = parseCustomIframeUrl(input);
+                    if (!url) {
+                        setCustomAdminStatus("Kanal " + i + " geçersiz. Tek bir HTTPS iframe adresi girin; script/HTTP adresi kabul edilmez.", true);
+                        return false;
+                    }
+                    next["channel" + i] = { name: name.slice(0, 48), iframeUrl: url };
+                }
+                if (els.customAdminSaveBtn) els.customAdminSaveBtn.disabled = true;
+                setCustomAdminStatus("Beş kanal yuvası Firebase’e kaydediliyor…", false);
+                try {
+                    await customChannelRef.set(Object.keys(next).length ? next : null);
+                    setCustomAdminStatus("Kanallar kaydedildi ve tüm cihazlarda güncelleniyor.", false);
+                    return true;
+                } catch (error) {
+                    setCustomAdminStatus(customFirebaseError(error, "Kayıt başarısız. Firebase Security Rules yönetici UID’sini kabul etmiyor olabilir."), true);
+                    return false;
+                } finally {
+                    if (els.customAdminSaveBtn) els.customAdminSaveBtn.disabled = false;
+                }
             }
 
             function renderSourceChips() {
@@ -2022,6 +2528,10 @@
             }
 
             function retryCurrentSource() {
+                if (state.currentCustomChannelId) {
+                    playCustomChannel(state.currentCustomChannelId, false);
+                    return;
+                }
                 if (!state.currentExtraId) {
                     const url = els.iframe.src;
                     stopHls(); hideError();
@@ -2048,6 +2558,7 @@
                 if (!ch || !(ch.sources || []).length) return;
                 state.currentIndex = -1;
                 state.currentKodamanId = null;
+                state.currentCustomChannelId = null;
                 setExternalNavigationEnabled(true);
                 state.currentExtraId = id;
                 state.currentSources = ch.sources.slice();
@@ -2057,6 +2568,7 @@
                 setPlayerHeader(ch.name, ch.icon || "⚡", (ch.panel_name || "EXTRA") + (hasHls ? " · M3U8" : " · PLAYER"));
                 markActiveCard();
                 markActiveExtraCard();
+                markActiveCustomChannel();
                 if (history && history.replaceState) {
                     history.replaceState(null, "", "#extra=" + encodeURIComponent(id));
                 }
@@ -3478,12 +3990,14 @@
 
                 // ◀ ▶ : EXTRA yayın açıkken EXTRA kanallar arasında, değilse site kanalları arasında gezer
                 $("navPrev").onclick = () => {
+                    if (state.currentCustomChannelId) { stepCustomChannel(-1); return; }
                     if (state.currentExtraId) { stepExtra(-1); return; }
                     if (state.currentKodamanId) { stepKodaman(-1); return; }
                     if (!streamLinks.length) return;
                     playChannel((state.currentIndex - 1 + streamLinks.length) % streamLinks.length, false);
                 };
                 $("navNext").onclick = () => {
+                    if (state.currentCustomChannelId) { stepCustomChannel(1); return; }
                     if (state.currentExtraId) { stepExtra(1); return; }
                     if (state.currentKodamanId) { stepKodaman(1); return; }
                     if (!streamLinks.length) return;
@@ -3526,10 +4040,34 @@
                 }
                 if ($("standingsRefreshBtn")) $("standingsRefreshBtn").onclick = () => { refreshStandings(false); };
 
+                if (els.customChannelAdminBtn) els.customChannelAdminBtn.onclick = openCustomChannelAdmin;
+                if (els.customChannelAdminClose) els.customChannelAdminClose.onclick = closeCustomChannelAdmin;
+                if (els.customAdminCancelBtn) els.customAdminCancelBtn.onclick = closeCustomChannelAdmin;
+                if (els.customChannelAdminModal) {
+                    els.customChannelAdminModal.onclick = (e) => { if (e.target === els.customChannelAdminModal) closeCustomChannelAdmin(); };
+                }
+                if (els.customChannelLoginForm) els.customChannelLoginForm.onsubmit = submitCustomAdminLogin;
+                if (els.customAdminSaveBtn) els.customAdminSaveBtn.onclick = saveCustomChannels;
+                if (els.customAdminSignOutBtn) els.customAdminSignOutBtn.onclick = async () => {
+                    try { if (customChannelAuth) await customChannelAuth.signOut(); }
+                    catch (error) { setCustomAdminStatus(customFirebaseError(error, "Oturum kapatılamadı."), true); }
+                };
+                $("customChannelScrollPrev").onclick = () => {
+                    if (els.customChannelList && typeof els.customChannelList.scrollBy === "function") els.customChannelList.scrollBy({ left: -220, behavior: "smooth" });
+                };
+                $("customChannelScrollNext").onclick = () => {
+                    if (els.customChannelList && typeof els.customChannelList.scrollBy === "function") els.customChannelList.scrollBy({ left: 220, behavior: "smooth" });
+                };
+
                 document.addEventListener("keydown", (e) => {
                     // Modal açıkken: Esc kapatır, kanal kısayolları çalışmaz.
-                    if (isLeagueModalOpen()) {
-                        if (e.key === "Escape") { e.preventDefault(); closeLeagueModal(); }
+                    const customAdminOpen = !!(els.customChannelAdminModal && els.customChannelAdminModal.classList.contains("open"));
+                    if (isLeagueModalOpen() || customAdminOpen) {
+                        if (e.key === "Escape") {
+                            e.preventDefault();
+                            if (customAdminOpen) closeCustomChannelAdmin();
+                            else closeLeagueModal();
+                        }
                         return;
                     }
                     const tag = document.activeElement ? document.activeElement.tagName.toLowerCase() : "";
@@ -3596,6 +4134,7 @@
                 renderPanelChips();
                 renderChannels();
                 renderKodamanChannels();
+                renderCustomChannels();
                 renderMatches();
                 restoreLiveSyncCache();
                 renderExtra();
@@ -3604,6 +4143,7 @@
                 bindEvents();
                 createParticles();
                 applyDeepLink();
+                initializeCustomChannelStore();
                 refreshKodamanChannels();
                 setInterval(tickClock, 15000);
                 refreshMatches(true);
@@ -3625,6 +4165,14 @@
             // Testler ve konsol kullanımı için
             window.inadina = {
                 state: state,
+                parseCustomIframeUrl: parseCustomIframeUrl,
+                normalizeCustomChannels: normalizeCustomChannels,
+                renderCustomChannels: renderCustomChannels,
+                playCustomChannel: playCustomChannel,
+                initializeCustomChannelStore: initializeCustomChannelStore,
+                openCustomChannelAdmin: openCustomChannelAdmin,
+                closeCustomChannelAdmin: closeCustomChannelAdmin,
+                saveCustomChannels: saveCustomChannels,
                 playChannel: playChannel,
                 playKodamanChannel: playKodamanChannel,
                 refreshKodamanChannels: refreshKodamanChannels,
