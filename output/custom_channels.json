@@ -1,8 +1,4 @@
 {
-  "channel1": {
-    "name": "Bein 1",
-    "iframeUrl": "https://hlsplayer.net/embed?type=m3u8&src=https://calm-union-ce81.livebestfishyez.workers.dev/watch/chunk/yyb1.m3u8"
-  },
   "channel2": {
     "name": "Bein 1",
     "iframeUrl": "https://daddylive1.cx/my/stream-62.php"
@@ -15,5 +11,5 @@
     "name": "Bein 1",
     "iframeUrl": "https://hlsplayer.net/embed?type=m3u8&src=https://calm-union-ce81.livebestfishyez.workers.dev/watch/chunk/yyb1.m3u8"
   },
-  "updatedAt": "2026-10-20T11:45:08Z"
+  "updatedAt": "2026-10-20T20:22:36Z"
 }
