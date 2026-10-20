@@ -1,52 +1,49 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-10-20 17:56  
-> **Toplam maç:** 12  |  **Canlı:** 4  |  **Yaklaşan:** 7
+> **Güncellenme:** 2026-10-20 20:55  
+> **Toplam maç:** 12  |  **Canlı:** 3  |  **Yaklaşan:** 0
 
 ## 🔴 CANLI
 
-- 🔴 **Türk Telekom vs BC Siauliai** — CANLI · `19:30` | Eurocup <https://fixbettv84.com/channel.html?id=trtspor>
-- 🔴 **Fenerbahçe vs Slavia Prag** — CANLI · `19:45` | UEFA Şampiyonlar Ligi ★ **Günün Maçı** <https://fixbettv84.com/channel.html?id=trt1>
-- 🔴 **Sabah Bakü vs Borussia Dortmund** — CANLI · `19:45` | UEFA Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=ex7>
-- 🔴 **Galatasaray MCT vs Strasbourg** — CANLI · `20:00` | FIBA Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=trtspor2>
-
-## ⏰ YAKLAŞAN
-
-- ⏰ **Detroit Pistons vs Boston Celtics** — YAKLAŞAN · `22:00` | NBA <https://fixbettv84.com/channel.html?id=ss>
-- ⏰ **Stuttgart vs Atletico Madrid** — YAKLAŞAN · `22:00` | UEFA Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=ex3>
-- ⏰ **PSG vs Barcelona** — YAKLAŞAN · `22:00` | UEFA Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=ex7>
-- ⏰ **Napoli vs Bodo Glimt** — YAKLAŞAN · `22:00` | UEFA Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=ex5>
-- ⏰ **Manchester City vs AEK** — YAKLAŞAN · `22:00` | UEFA Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=ex1>
-- ⏰ **Liverpool vs Villarreal** — YAKLAŞAN · `22:00` | UEFA Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=ex2>
-- ⏰ **Porto vs PSV** — YAKLAŞAN · `22:00` | UEFA Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=ex4>
+- 🔴 **Detroit Pistons 82 - 88 Boston Celtics** — CANLI · `22:00` | NBA <https://fixbettv84.com/channel.html?id=ss>
+- 🔴 **PSG 4 - 2 Barcelona** — CANLI · `22:00` | UEFA Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=ex7>
+- 🔴 **Napoli 4 - 3 Bodo Glimt** — CANLI · `22:00` | UEFA Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=ex5>
 
 ## ✅ BİTTİ
 
 - ✅ **M.Joint vs Zeynep Sönmez** — MS · `07:30` | WTA Osaka <https://fixbettv84.com/channel.html?id=bm1>
+- ✅ **Türk Telekom vs BC Siauliai** — MS · `19:30` | Eurocup <https://fixbettv84.com/channel.html?id=trtspor>
+- ✅ **Fenerbahçe vs Slavia Prag** — MS · `19:45` | UEFA Şampiyonlar Ligi ★ **Günün Maçı** <https://fixbettv84.com/channel.html?id=trt1>
+- ✅ **Sabah Bakü vs Borussia Dortmund** — MS · `19:45` | UEFA Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=ex7>
+- ✅ **Galatasaray MCT vs Strasbourg** — MS · `20:00` | FIBA Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=trtspor2>
+- ✅ **Stuttgart 1 - 1 Atletico Madrid** — MS · `22:00` | UEFA Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=ex3>
+- ✅ **Manchester City vs AEK** — MS · `22:00` | UEFA Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=ex1>
+- ✅ **Liverpool 4 - 3 Villarreal** — MS · `22:00` | UEFA Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=ex2>
+- ✅ **Porto vs PSV** — MS · `22:00` | UEFA Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=ex4>
 
 ## ⭐ GÜNÜN MAÇI
 
-- 🔴 **Fenerbahçe vs Slavia Prag** — CANLI · `19:45` | UEFA Şampiyonlar Ligi ★ **Günün Maçı** <https://fixbettv84.com/channel.html?id=trt1>
+- ✅ **Fenerbahçe vs Slavia Prag** — MS · `19:45` | UEFA Şampiyonlar Ligi ★ **Günün Maçı** <https://fixbettv84.com/channel.html?id=trt1>
 
 ---
 ## 🏆 Lig Bazlı
 
 ### Eurocup
-- 🔴 Türk Telekom vs BC Siauliai — 19:30
+- ⏰ Türk Telekom vs BC Siauliai — 19:30
 
 ### FIBA Şampiyonlar Ligi
-- 🔴 Galatasaray MCT vs Strasbourg — 20:00
+- ⏰ Galatasaray MCT vs Strasbourg — 20:00
 
 ### NBA
-- ⏰ Detroit Pistons vs Boston Celtics — 22:00
+- 🔴 Detroit Pistons vs Boston Celtics — 22:00
 
 ### UEFA Şampiyonlar Ligi
-- 🔴 Fenerbahçe vs Slavia Prag — 19:45
-- 🔴 Sabah Bakü vs Borussia Dortmund — 19:45
+- ⏰ Fenerbahçe vs Slavia Prag — 19:45
+- ⏰ Sabah Bakü vs Borussia Dortmund — 19:45
 - ⏰ Stuttgart vs Atletico Madrid — 22:00
-- ⏰ PSG vs Barcelona — 22:00
-- ⏰ Napoli vs Bodo Glimt — 22:00
+- 🔴 PSG vs Barcelona — 22:00
+- 🔴 Napoli vs Bodo Glimt — 22:00
 - ⏰ Manchester City vs AEK — 22:00
 - ⏰ Liverpool vs Villarreal — 22:00
 - ⏰ Porto vs PSV — 22:00
