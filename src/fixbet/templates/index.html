@@ -1795,10 +1795,16 @@
                 els.iframe.onerror = () => {
                     if (token !== playToken) return;
                     clearPlaybackTimers();
-                    showError("Yayın sayfası yüklenemedi. Yeniden deneyin veya yeni sekmede açın.");
+                    // Cross-origin iframe'lerde error olayı oynatma durumunu güvenilir biçimde göstermez.
+                    setLoading(false);
                 };
                 hlsFailTimer = setTimeout(() => {
-                    if (token === playToken) showError("Yayın sayfası zamanında yanıt vermedi. Sayfa gömülmeye izin vermiyor olabilir; yeni sekmede deneyin.");
+                    if (token === playToken) {
+                        // Iframe içindeki gerçek playback'e erişemeyiz. Yanıt/load olayı gelmemesi,
+                        // özellikle yayın sürerken, tek başına oynatma hatası kanıtı değildir.
+                        hlsFailTimer = null;
+                        setLoading(false);
+                    }
                 }, 15000);
                 els.iframe.src = url;
             }
