@@ -13,36 +13,9 @@
       "fixbettv12.com",
       "fixbettv11.com"
     ],
-    "last_checked": "2026-10-20T20:59:19+00:00",
+    "last_checked": "2026-10-20T21:21:13+00:00",
     "note": "OK",
     "probed": 200
   },
-  "live": [
-    {
-      "match_id": "ss",
-      "home": "Detroit Pistons",
-      "away": "Boston Celtics",
-      "league": "NBA",
-      "time": "22:00",
-      "sport": "Basketbol",
-      "is_match_of_day": false,
-      "channel_id": "ss",
-      "logo_home": "https://img.sporekrani.com/teams/4LEFLyGC0NOqtfrTEHcY0avwhfTEZ5DDo33iqtQP.png",
-      "logo_away": "https://img.sporekrani.com/teams/OLhYZJMRx1fzz96ICyqXPRnq0mOQpT1KOIajJMJ6.png",
-      "status": "live",
-      "started": true,
-      "raw_event": "22:00 | NBA",
-      "url": "https://fixbettv84.com/channel.html?id=ss",
-      "fetched_at": "2026-10-20T23:58:49+03:00",
-      "status_source": "espn",
-      "raw_status": "STATUS_IN_PROGRESS",
-      "score_home": 84,
-      "score_away": 90,
-      "score_source": "espn",
-      "score_updated_at": "2026-10-20T23:58:49+03:00",
-      "event_id": "401909088",
-      "starts_at": "2026-10-20T19:00:00+00:00",
-      "status_clock": "11:13"
-    }
-  ]
+  "live": []
 }
