@@ -1043,16 +1043,14 @@ function captureDeadlines(window) {
   };
 }
 
-test("iframe yayınında belirsiz 15 saniyelik timeout playback hatası göstermez",async()=>{
-  const {window}=await loadPage({beforeParse:captureDeadlines});
+test("iframe yayını açılırken spinner player görüntüsünü kapatmaz",async()=>{
+  const {window}=await loadPage();
   window.inadina.playChannel(2,false);
   const iframe=window.document.getElementById('liveIframe');
   assert.ok(iframe.src.includes('id=b3'));
-  assert.ok(window.document.getElementById('playerLoading').classList.contains('active'));
-  window.fireDeadline(15000);await tick();
-  assert.ok(!window.document.getElementById('playerLoading').classList.contains('active'), 'spinner kapanmalı');
+  assert.ok(!window.document.getElementById('playerLoading').classList.contains('active'), 'iframe açılırken karartan spinner hiç görünmemeli');
   assert.ok(!window.document.getElementById('playerError').classList.contains('active'), 'cross-origin iframe playback’i doğrulanamadı diye hata kaplaması açılmamalı');
-  assert.ok(iframe.src.includes('id=b3'), 'iframe yayını yüklemede bırakılmalı');
+  assert.ok(iframe.src.includes('id=b3'), 'yayın iframe içinde açılmalı');
   iframe.dispatchEvent(new window.Event('error'));
   assert.ok(!window.document.getElementById('playerError').classList.contains('active'), 'iframe error olayı tek başına playback başarısızlığını kanıtlamaz');
 });
