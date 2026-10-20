@@ -1,7 +1,7 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-10-20 17:46  
+> **Güncellenme:** 2026-10-20 17:56  
 > **Toplam maç:** 12  |  **Canlı:** 4  |  **Yaklaşan:** 7
 
 ## 🔴 CANLI
@@ -110,13 +110,13 @@
 ## ⚡ EKSTRA PANELLER — m3u8 (109)
 
 ### ⚛️ ATOM SPOR ✅ `https://www.atomsportv519.top`
-- 🟢 **BEIN SPORTS 1** <https://ladyboy.ardatvgs.cfd//beintv/tracks-v1a1/mono.m3u8>
-- 🟢 **BEIN SPORTS 2** <https://ladyboy.ardatvgs.cfd//bein2/tracks-v1a1/mono.m3u8>
-- 🟢 **BEIN SPORTS 3** <https://ladyboy.ardatvgs.cfd//bein3/tracks-v1a1/mono.m3u8>
-- 🟢 **BEIN SPORTS 4** <https://ladyboy.ardatvgs.cfd//bein4/tracks-v1a1/mono.m3u8>
-- 🟢 **BEIN SPORTS 5** <https://ladyboy.ardatvgs.cfd//bein5/tracks-v1a1/mono.m3u8>
-- 🟢 **S SPORT** <https://ladyboy.ardatvgs.cfd//s-sport/tracks-v1a1/mono.m3u8>
-- 🟢 **S SPORT 2** <https://ladyboy.ardatvgs.cfd//s-sport2/tracks-v1a1/mono.m3u8>
+- 🟢 **BEIN SPORTS 1** <https://ladyboys.ardatvgs.cfd//beintv/tracks-v1a1/mono.m3u8>
+- 🟢 **BEIN SPORTS 2** <https://ladyboys.ardatvgs.cfd//bein2/tracks-v1a1/mono.m3u8>
+- 🟢 **BEIN SPORTS 3** <https://ladyboys.ardatvgs.cfd//bein3/tracks-v1a1/mono.m3u8>
+- 🟢 **BEIN SPORTS 4** <https://ladyboys.ardatvgs.cfd//bein4/tracks-v1a1/mono.m3u8>
+- 🟢 **BEIN SPORTS 5** <https://ladyboys.ardatvgs.cfd//bein5/tracks-v1a1/mono.m3u8>
+- 🟢 **S SPORT** <https://ladyboys.ardatvgs.cfd//s-sport/tracks-v1a1/mono.m3u8>
+- 🟢 **S SPORT 2** <https://ladyboys.ardatvgs.cfd//s-sport2/tracks-v1a1/mono.m3u8>
 - ⚪ **S SPORT PLUS** <https://tv.atomspor.workers.dev/?ID=ssport-plus>
 - ⚪ **TIVIBU SPOR 1** <https://tv.atomspor.workers.dev/?ID=tivibu-spor-1>
 - ⚪ **TIVIBU SPOR 2** <https://tv.atomspor.workers.dev/?ID=tivibu-spor-2>
@@ -217,15 +217,15 @@
 - 🟢 **TIVIBU SPOR 1** <https://sultanbettv101.live/mono.m3u8>
 
 ### 📡 JUSTIN TV ✅ `https://www.justintv111.top`
-- 🟢 **BEIN SPORTS 1** <https://ladyboy.ardatvgs.cfd//beintv/tracks-v1a1/mono.m3u8>
-- 🟢 **BEIN SPORTS 2** <https://ladyboy.ardatvgs.cfd//bein2/tracks-v1a1/mono.m3u8>
-- 🟢 **BEIN SPORTS 3** <https://ladyboy.ardatvgs.cfd//bein3/tracks-v1a1/mono.m3u8>
-- 🟢 **BEIN SPORTS 4** <https://ladyboy.ardatvgs.cfd//bein4/tracks-v1a1/mono.m3u8>
-- 🟢 **BEIN SPORTS 5** <https://ladyboy.ardatvgs.cfd//bein5/tracks-v1a1/mono.m3u8>
-- 🟢 **BEIN SPORTS MAX 1** <https://ladyboy.ardatvgs.cfd//beinmax1/tracks-v1a1/mono.m3u8>
-- 🟢 **BEIN SPORTS MAX 2** <https://ladyboy.ardatvgs.cfd//beinmax2/tracks-v1a1/mono.m3u8>
-- 🟢 **S SPORT** <https://ladyboy.ardatvgs.cfd//s-sport/tracks-v1a1/mono.m3u8>
-- 🟢 **S SPORT 2** <https://ladyboy.ardatvgs.cfd//s-sport2/tracks-v1a1/mono.m3u8>
-- 🟢 **TRT SPOR** <https://ladyboy.ardatvgs.cfd//trt-spor/tracks-v1a1/mono.m3u8>
-- 🟢 **TRT 1** <https://ladyboy.ardatvgs.cfd//trt1/tracks-v1a1/mono.m3u8>
-- 🟢 **A SPOR** <https://ladyboy.ardatvgs.cfd//aspor/tracks-v1a1/mono.m3u8>
+- 🟢 **BEIN SPORTS 1** <https://ladyboys.ardatvgs.cfd//beintv/tracks-v1a1/mono.m3u8>
+- 🟢 **BEIN SPORTS 2** <https://ladyboys.ardatvgs.cfd//bein2/tracks-v1a1/mono.m3u8>
+- 🟢 **BEIN SPORTS 3** <https://ladyboys.ardatvgs.cfd//bein3/tracks-v1a1/mono.m3u8>
+- 🟢 **BEIN SPORTS 4** <https://ladyboys.ardatvgs.cfd//bein4/tracks-v1a1/mono.m3u8>
+- 🟢 **BEIN SPORTS 5** <https://ladyboys.ardatvgs.cfd//bein5/tracks-v1a1/mono.m3u8>
+- 🟢 **BEIN SPORTS MAX 1** <https://ladyboys.ardatvgs.cfd//beinmax1/tracks-v1a1/mono.m3u8>
+- 🟢 **BEIN SPORTS MAX 2** <https://ladyboys.ardatvgs.cfd//beinmax2/tracks-v1a1/mono.m3u8>
+- 🟢 **S SPORT** <https://ladyboys.ardatvgs.cfd//s-sport/tracks-v1a1/mono.m3u8>
+- 🟢 **S SPORT 2** <https://ladyboys.ardatvgs.cfd//s-sport2/tracks-v1a1/mono.m3u8>
+- 🟢 **TRT SPOR** <https://ladyboys.ardatvgs.cfd//trt-spor/tracks-v1a1/mono.m3u8>
+- 🟢 **TRT 1** <https://ladyboys.ardatvgs.cfd//beintv/tracks-v1a1/mono.m3u8>
+- 🟢 **A SPOR** <https://ladyboys.ardatvgs.cfd//aspor/tracks-v1a1/mono.m3u8>
