@@ -110,71 +110,6 @@ const extraCards = (window) => window.document.querySelectorAll("#extraGrid .ch-
 const matchCards = (window) => window.document.querySelectorAll(".match-card");
 const tick = (ms = 30) => new Promise((r) => setTimeout(r, ms));
 
-function makeFirebaseDouble(initialValue = {}) {
-  let value = structuredClone(initialValue);
-  let user = null;
-  const valueListeners = [];
-  const authListeners = [];
-  const writes = [];
-  const paths = [];
-  const callableCalls = [];
-  const appCheckActivations = [];
-  const signedInTokens = [];
-  const persistenceModes = [];
-  let signedOutCount = 0;
-  const ref = {
-    on(event, callback) {
-      if (event === "value") {
-        valueListeners.push(callback);
-        callback({ val: () => structuredClone(value) });
-      }
-      return this;
-    },
-    async set(next) {
-      value = next;
-      writes.push(structuredClone(next));
-      valueListeners.forEach((callback) => callback({ val: () => structuredClone(value) }));
-    },
-  };
-  const auth = {
-    onAuthStateChanged(callback) { authListeners.push(callback); callback(user); return () => {}; },
-    async setPersistence(mode) { persistenceModes.push(mode); },
-    async signInWithCustomToken(token) {
-      signedInTokens.push(token);
-      user = { uid: "macweb-admin" };
-      authListeners.forEach((callback) => callback(user));
-      return { user };
-    },
-    async signOut() {
-      signedOutCount++;
-      user = null;
-      authListeners.forEach((callback) => callback(null));
-    },
-  };
-  const firebase = {
-    apps: [],
-    initializeApp(config, name) {
-      const app = {
-        name,
-        auth: () => auth,
-        database: () => ({ ref(path) { paths.push(path); return ref; } }),
-        functions: (region) => ({ httpsCallable: (functionName) => async (data) => {
-          callableCalls.push({ region, functionName, data: structuredClone(data) });
-          return { data: { token: "mock-firebase-custom-token" } };
-        } }),
-      };
-      this.apps.push(app);
-      return app;
-    },
-    appCheck: () => ({ activate(siteKey, autoRefresh) { appCheckActivations.push({ siteKey, autoRefresh }); } }),
-    auth() {},
-    database() {},
-    functions() {},
-  };
-  firebase.auth.Auth = { Persistence: { SESSION: "session" } };
-  return { firebase, writes, paths, callableCalls, appCheckActivations, signedInTokens, persistenceModes, get signedOutCount() { return signedOutCount; } };
-}
-
 test("sayfada sunucu/adres yazısı ve uydurma maç verisi yok", () => {
   assert.ok(!/Sunucu/i.test(HTML), "'Sunucu' yazısı hâlâ duruyor");
   assert.ok(!HTML.includes("Galatasaray - Fenerbahçe"), "uydurma canlı maç duruyor");
@@ -288,24 +223,39 @@ test("öncelikli Kodaman sekmesi varsayılan açılır ve 31 public kanalı ifra
   dom.window.close();
 });
 
-test("Firebase özel kanallarını player altında listeler ve yalnızca güvenli iframe adreslerini oynatır", async () => {
-  const firebase = makeFirebaseDouble({
-    channel1: { name: "beIN Sport Ana", iframeUrl: "https://embed.example/one?autoplay=1" },
-    channel2: { name: "Kanal İki", iframeUrl: "https://embed.example/two" },
-    channel6: { name: "Yedek", iframeUrl: "https://embed.example/six" },
-  });
-  const config = { firebase: { apiKey: "unit-test", authDomain: "unit.test", databaseURL: "https://unit.test", projectId: "unit-test" }, databasePath: "macweb/customChannels" };
-  const fetchImpl = async (url) => String(url).includes("macweb_firebase.json")
-    ? { ok: true, status: 200, json: async () => config }
-    : { ok: false, status: 404, json: async () => ({}), text: async () => "" };
-  const { window, dom } = await loadPage({ fetchImpl, beforeParse: (w) => { w.firebase = firebase.firebase; } });
-  await tick(30);
+test("GitHub statik manifestindeki özel kanalları güvenli biçimde player altında listeler", async () => {
+  const manifests = [
+    {
+      updatedAt: "2026-10-20T10:00:00Z",
+      channel1: { name: "beIN Sport Ana", iframeUrl: "https://embed.example/one?autoplay=1" },
+      channel2: { name: "HTTP reddedilmeli", iframeUrl: "http://embed.example/two" },
+      channel3: { name: "Kanal Üç", iframeUrl: "https://embed.example/three" },
+      channel6: { name: "Beş yuvanın dışı", iframeUrl: "https://embed.example/six" },
+    },
+    { channel2: { name: "Güncel Kanal", iframeUrl: "https://embed.example/latest" } },
+  ];
+  const requested = [];
+  const fetchImpl = async (url, options = {}) => {
+    requested.push({ url: String(url), cache: options.cache });
+    if (String(url).includes("output/custom_channels.json")) {
+      const manifest = manifests[Math.min(requested.filter((item) => item.url.includes("output/custom_channels.json")).length - 1, manifests.length - 1)];
+      return { ok: true, status: 200, json: async () => manifest };
+    }
+    return { ok: false, status: 404, json: async () => ({}), text: async () => "" };
+  };
+  const { window, dom } = await loadPage({ fetchImpl });
+  for (let i = 0; i < 40 && !window.inadina.state.customChannelsReady; i++) await tick(5);
   const strip = window.document.getElementById("customChannelList");
   const buttons = strip.querySelectorAll(".custom-channel-btn");
-  assert.equal(firebase.paths[0], "macweb/customChannels", "yalnızca uygulamaya ayrılmış RTDB yolu okunmalı");
-  assert.equal(buttons.length, 2, "beş yuvalı listede yalnızca iki geçerli kayıt görünmeli");
+  assert.ok(requested.some((item) => item.url.includes("/output/custom_channels.json")), "GitHub Pages manifest dosyası istenmeli");
+  assert.ok(requested.filter((item) => item.url.includes("output/custom_channels.json")).every((item) => item.cache === "no-store"), "manifest HTTP önbelleği kullanılmamalı");
+  assert.equal(buttons.length, 2, "yalnızca ilk beş yuvadaki güvenli kanallar görünmeli");
   assert.equal(buttons[0].textContent, "beIN Sport Ana");
   assert.equal(window.document.getElementById("customChannelState").textContent, "2 yayın hazır");
+  assert.equal(window.document.getElementById("customChannelAdminBtn"), null, "web admin düğmesi kaldırılmış olmalı");
+  assert.equal(window.document.getElementById("customChannelsAdminModal"), null, "web admin modalı kaldırılmış olmalı");
+  assert.doesNotMatch(HTML, /firebase|customChannelsLoginForm|customAdminPassword/i, "frontend Firebase/Auth/parola arayüzü taşımamalı");
+
   buttons[0].click();
   const iframe = window.document.getElementById("liveIframe");
   assert.equal(iframe.getAttribute("src"), "https://embed.example/one?autoplay=1");
@@ -318,76 +268,10 @@ test("Firebase özel kanallarını player altında listeler ve yalnızca güvenl
   assert.equal(window.inadina.parseCustomIframeUrl("http://embed.example/insecure"), "");
   assert.equal(window.inadina.parseCustomIframeUrl('<iframe src="https://embed.example/a"></iframe><iframe src="https://embed.example/b"></iframe>'), "");
   assert.equal(window.inadina.parseCustomIframeUrl('<script>alert(1)</script>'), "");
-  dom.window.close();
-});
 
-test("Firebase yönetici paneli yalnızca parolayla App Check callable üzerinden giriş yapar ve beş yuva kaydeder", async () => {
-  const firebase = makeFirebaseDouble({ channel1: { name: "Eski Ad", iframeUrl: "https://embed.example/old" } });
-  const config = { firebase: { apiKey: "unit-test", authDomain: "unit.test", databaseURL: "https://unit.test", projectId: "unit-test" }, databasePath: "macweb/customChannels", appCheckSiteKey: "test-recaptcha-site-key", functionsRegion: "us-central1" };
-  const fetchImpl = async (url) => String(url).includes("macweb_firebase.json")
-    ? { ok: true, status: 200, json: async () => config }
-    : { ok: false, status: 404, json: async () => ({}), text: async () => "" };
-  const { window, dom } = await loadPage({ fetchImpl, beforeParse: (w) => { w.firebase = firebase.firebase; } });
-  await tick(20);
-  window.document.getElementById("customChannelAdminBtn").click();
-  await tick(20);
-  const modal = window.document.getElementById("customChannelsAdminModal");
-  assert.ok(modal.classList.contains("open"), "yönetici modalı açılmalı");
-  assert.equal(window.document.getElementById("customChannelsEditor").hidden, true, "yetki doğrulanmadan düzenleme formu kapalı olmalı");
-  assert.equal(window.document.getElementById("customAdminEmail"), null, "e-posta alanı bulunmamalı");
-  assert.equal(window.document.querySelectorAll("#customChannelsLoginForm input").length, 1, "tek parola alanı bulunmalı");
-  window.document.getElementById("customAdminPassword").value = "too-short";
-  window.document.getElementById("customChannelsLoginForm").dispatchEvent(new window.Event("submit", { bubbles: true, cancelable: true }));
-  await tick(20);
-  assert.equal(firebase.callableCalls.length, 0, "kısa parola sunucuya gönderilmemeli");
-  assert.match(window.document.getElementById("customAdminStatus").textContent, /en az 16 karakter/);
-  window.document.getElementById("customAdminPassword").value = "test-only-password-longer-than-16";
-  window.document.getElementById("customChannelsLoginForm").dispatchEvent(new window.Event("submit", { bubbles: true, cancelable: true }));
-  await tick(25);
-  assert.equal(window.document.getElementById("customChannelsEditor").hidden, false, "yalnızca custom token kabul edildiğinde editor açılmalı");
-  assert.equal(window.getComputedStyle(window.document.getElementById("customChannelsLoginForm")).display, "none", "oturum sonrası giriş formu görsel olarak gizlenmeli");
-  assert.deepEqual(firebase.callableCalls, [{ region: "us-central1", functionName: "macwebAdminLogin", data: { password: "test-only-password-longer-than-16" } }], "parola yalnızca App Check korumalı login function’a gönderilmeli");
-  assert.deepEqual(firebase.signedInTokens, ["mock-firebase-custom-token"], "Function custom token’ı Firebase Auth’a vermeli");
-  assert.deepEqual(firebase.appCheckActivations, [{ siteKey: "test-recaptcha-site-key", autoRefresh: true }], "App Check site key otomatik yenilemeyle başlatılmalı");
-  assert.deepEqual(firebase.persistenceModes, ["session"], "yönetici kimliği kalıcı local storage’da tutulmamalı");
-  assert.equal(window.document.querySelectorAll("#customChannelSlots [data-slot]").length, 5, "tam beş kanal yuvası olmalı");
-  const slot1 = window.document.querySelector('#customChannelSlots [data-slot="1"]');
-  slot1.querySelector(".custom-channel-name").value = "beIN Sports Ana";
-  slot1.querySelector(".custom-channel-embed").value = '<iframe src="https://embed.example/one"></iframe>';
-  const slot2 = window.document.querySelector('#customChannelSlots [data-slot="2"]');
-  slot2.querySelector(".custom-channel-name").value = "Kanal İki";
-  slot2.querySelector(".custom-channel-embed").value = "https://embed.example/two";
-  window.document.getElementById("customAdminSaveBtn").click();
-  await tick(25);
-  assert.deepEqual(firebase.paths, ["macweb/customChannels"], "Firebase işlemleri botun diğer veri yollarına erişmemeli");
-  assert.deepEqual(firebase.writes[0], {
-    channel1: { name: "beIN Sports Ana", iframeUrl: "https://embed.example/one" },
-    channel2: { name: "Kanal İki", iframeUrl: "https://embed.example/two" },
-  }, "yalnızca normalize edilmiş URL’ler kaydedilmeli, ham iframe HTML saklanmamalı");
-  assert.equal(window.document.getElementById("customAdminPassword").value, "", "giriş sonrası parola alanı temizlenmeli");
-  window.document.dispatchEvent(new window.KeyboardEvent("keydown", { key: "Escape", bubbles: true }));
-  await tick(20);
-  assert.equal(modal.classList.contains("open"), false, "Escape yönetici modalını kapatmalı");
-  assert.equal(firebase.signedOutCount, 1, "modal kapatılınca Auth oturumu da sonlandırılmalı");
-  dom.window.close();
-});
-
-test("Firebase App Check site key eksikse parola girişi güvenli biçimde reddedilir", async () => {
-  const firebase = makeFirebaseDouble();
-  const config = { firebase: { apiKey: "unit-test", authDomain: "unit.test", databaseURL: "https://unit.test", projectId: "unit-test" }, databasePath: "macweb/customChannels" };
-  const fetchImpl = async (url) => String(url).includes("macweb_firebase.json")
-    ? { ok: true, status: 200, json: async () => config }
-    : { ok: false, status: 404, json: async () => ({}), text: async () => "" };
-  const { window, dom } = await loadPage({ fetchImpl, beforeParse: (w) => { w.firebase = firebase.firebase; } });
-  await tick(20);
-  window.document.getElementById("customChannelAdminBtn").click();
-  await tick(20);
-  window.document.getElementById("customAdminPassword").value = "test-only-password-longer-than-16";
-  window.document.getElementById("customChannelsLoginForm").dispatchEvent(new window.Event("submit", { bubbles: true, cancelable: true }));
-  await tick(20);
-  assert.equal(firebase.callableCalls.length, 0, "App Check olmadan callable login çağrılmamalı");
-  assert.equal(window.document.getElementById("customChannelsEditor").hidden, true, "App Check olmadan editör kapalı kalmalı");
-  assert.match(window.document.getElementById("customAdminStatus").textContent, /App Check site key/);
+  await window.inadina.initializeCustomChannelStore();
+  assert.equal(strip.querySelectorAll(".custom-channel-btn").length, 1, "manifest yenilendiğinde kanal şeridi değişmeli");
+  assert.equal(strip.querySelector(".custom-channel-btn").textContent, "Güncel Kanal");
   dom.window.close();
 });
 

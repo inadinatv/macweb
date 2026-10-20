@@ -5,7 +5,7 @@
   "description": "Macweb arayüz (jsdom) ve gerçek Chromium/HLS regresyon testleri",
   "type": "module",
   "scripts": {
-    "test": "node --test tests/frontend.test.mjs functions/test/*.test.cjs",
+    "test": "node --test tests/frontend.test.mjs",
     "test:browser": "node --test tests/player.browser.test.mjs"
   },
   "devDependencies": {
