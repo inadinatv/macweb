@@ -110,6 +110,52 @@ const extraCards = (window) => window.document.querySelectorAll("#extraGrid .ch-
 const matchCards = (window) => window.document.querySelectorAll(".match-card");
 const tick = (ms = 30) => new Promise((r) => setTimeout(r, ms));
 
+function makeFirebaseDouble(initialValue = {}) {
+  let value = structuredClone(initialValue);
+  let user = null;
+  const valueListeners = [];
+  const authListeners = [];
+  const writes = [];
+  const paths = [];
+  const ref = {
+    on(event, callback) {
+      if (event === "value") {
+        valueListeners.push(callback);
+        callback({ val: () => structuredClone(value) });
+      }
+      return this;
+    },
+    async set(next) {
+      value = next;
+      writes.push(structuredClone(next));
+      valueListeners.forEach((callback) => callback({ val: () => structuredClone(value) }));
+    },
+  };
+  const auth = {
+    onAuthStateChanged(callback) { authListeners.push(callback); callback(user); return () => {}; },
+    async signInWithEmailAndPassword(email) {
+      user = { email, uid: "test-admin-uid" };
+      authListeners.forEach((callback) => callback(user));
+      return { user };
+    },
+    async signOut() {
+      user = null;
+      authListeners.forEach((callback) => callback(null));
+    },
+  };
+  const firebase = {
+    apps: [],
+    initializeApp(config, name) {
+      const app = { name, auth: () => auth, database: () => ({ ref(path) { paths.push(path); return ref; } }) };
+      this.apps.push(app);
+      return app;
+    },
+    auth() {},
+    database() {},
+  };
+  return { firebase, writes, paths };
+}
+
 test("sayfada sunucu/adres yazısı ve uydurma maç verisi yok", () => {
   assert.ok(!/Sunucu/i.test(HTML), "'Sunucu' yazısı hâlâ duruyor");
   assert.ok(!HTML.includes("Galatasaray - Fenerbahçe"), "uydurma canlı maç duruyor");
@@ -220,6 +266,78 @@ test("öncelikli Kodaman sekmesi varsayılan açılır ve 31 public kanalı ifra
   assert.equal(window.inadina.state.activeTab, "kodamanTab", "1 kısayolu ilk Kodaman sekmesini açmalı");
   window.document.dispatchEvent(new window.KeyboardEvent("keydown", { key: "2", bubbles: true }));
   assert.equal(window.inadina.state.activeTab, "channelsTab", "2 kısayolu ikinci Fixbet sekmesini açmalı");
+  dom.window.close();
+});
+
+test("Firebase özel kanallarını player altında listeler ve yalnızca güvenli iframe adreslerini oynatır", async () => {
+  const firebase = makeFirebaseDouble({
+    channel1: { name: "beIN Sport Ana", iframeUrl: "https://embed.example/one?autoplay=1" },
+    channel2: { name: "Kanal İki", iframeUrl: "https://embed.example/two" },
+    channel6: { name: "Yedek", iframeUrl: "https://embed.example/six" },
+  });
+  const config = { firebase: { apiKey: "unit-test", authDomain: "unit.test", databaseURL: "https://unit.test", projectId: "unit-test" }, databasePath: "macweb/customChannels" };
+  const fetchImpl = async (url) => String(url).includes("macweb_firebase.json")
+    ? { ok: true, status: 200, json: async () => config }
+    : { ok: false, status: 404, json: async () => ({}), text: async () => "" };
+  const { window, dom } = await loadPage({ fetchImpl, beforeParse: (w) => { w.firebase = firebase.firebase; } });
+  await tick(30);
+  const strip = window.document.getElementById("customChannelList");
+  const buttons = strip.querySelectorAll(".custom-channel-btn");
+  assert.equal(firebase.paths[0], "macweb/customChannels", "yalnızca uygulamaya ayrılmış RTDB yolu okunmalı");
+  assert.equal(buttons.length, 2, "beş yuvalı listede yalnızca iki geçerli kayıt görünmeli");
+  assert.equal(buttons[0].textContent, "beIN Sport Ana");
+  assert.equal(window.document.getElementById("customChannelState").textContent, "2 yayın hazır");
+  buttons[0].click();
+  const iframe = window.document.getElementById("liveIframe");
+  assert.equal(iframe.getAttribute("src"), "https://embed.example/one?autoplay=1");
+  assert.match(iframe.getAttribute("sandbox"), /allow-scripts/);
+  assert.match(iframe.getAttribute("sandbox"), /allow-forms/);
+  assert.doesNotMatch(iframe.getAttribute("sandbox"), /allow-popups|allow-modals|allow-top-navigation/);
+  assert.equal(window.document.getElementById("playerTitle").textContent, "beIN Sport Ana");
+  assert.equal(window.document.getElementById("customChannelList").querySelector(".active").dataset.customChannelId, "channel1");
+  assert.equal(window.inadina.parseCustomIframeUrl('<iframe src="https://embed.example/new"></iframe>'), "https://embed.example/new");
+  assert.equal(window.inadina.parseCustomIframeUrl("http://embed.example/insecure"), "");
+  assert.equal(window.inadina.parseCustomIframeUrl('<iframe src="https://embed.example/a"></iframe><iframe src="https://embed.example/b"></iframe>'), "");
+  assert.equal(window.inadina.parseCustomIframeUrl('<script>alert(1)</script>'), "");
+  dom.window.close();
+});
+
+test("Firebase yönetici paneli Auth ister ve beş iframe yuvasını yalnızca kendi veritabanı yoluna kaydeder", async () => {
+  const firebase = makeFirebaseDouble({ channel1: { name: "Eski Ad", iframeUrl: "https://embed.example/old" } });
+  const config = { firebase: { apiKey: "unit-test", authDomain: "unit.test", databaseURL: "https://unit.test", projectId: "unit-test" }, databasePath: "macweb/customChannels" };
+  const fetchImpl = async (url) => String(url).includes("macweb_firebase.json")
+    ? { ok: true, status: 200, json: async () => config }
+    : { ok: false, status: 404, json: async () => ({}), text: async () => "" };
+  const { window, dom } = await loadPage({ fetchImpl, beforeParse: (w) => { w.firebase = firebase.firebase; } });
+  await tick(20);
+  window.document.getElementById("customChannelAdminBtn").click();
+  await tick(20);
+  const modal = window.document.getElementById("customChannelsAdminModal");
+  assert.ok(modal.classList.contains("open"), "yönetici modalı açılmalı");
+  assert.equal(window.document.getElementById("customChannelsEditor").hidden, true, "Auth öncesinde düzenleme formu kapalı olmalı");
+  window.document.getElementById("customAdminEmail").value = "admin@example.test";
+  window.document.getElementById("customAdminPassword").value = "test-only-password";
+  window.document.getElementById("customChannelsLoginForm").dispatchEvent(new window.Event("submit", { bubbles: true, cancelable: true }));
+  await tick(25);
+  assert.equal(window.document.getElementById("customChannelsEditor").hidden, false, "yalnızca Auth başarılı olduğunda editor açılmalı");
+  assert.equal(window.getComputedStyle(window.document.getElementById("customChannelsLoginForm")).display, "none", "oturum sonrası giriş formu görsel olarak gizlenmeli");
+  assert.equal(window.document.querySelectorAll("#customChannelSlots [data-slot]").length, 5, "tam beş kanal yuvası olmalı");
+  const slot1 = window.document.querySelector('#customChannelSlots [data-slot="1"]');
+  slot1.querySelector(".custom-channel-name").value = "beIN Sports Ana";
+  slot1.querySelector(".custom-channel-embed").value = '<iframe src="https://embed.example/one"></iframe>';
+  const slot2 = window.document.querySelector('#customChannelSlots [data-slot="2"]');
+  slot2.querySelector(".custom-channel-name").value = "Kanal İki";
+  slot2.querySelector(".custom-channel-embed").value = "https://embed.example/two";
+  window.document.getElementById("customAdminSaveBtn").click();
+  await tick(25);
+  assert.deepEqual(firebase.paths, ["macweb/customChannels"], "Firebase işlemleri botun diğer veri yollarına erişmemeli");
+  assert.deepEqual(firebase.writes[0], {
+    channel1: { name: "beIN Sports Ana", iframeUrl: "https://embed.example/one" },
+    channel2: { name: "Kanal İki", iframeUrl: "https://embed.example/two" },
+  }, "yalnızca normalize edilmiş URL’ler kaydedilmeli, ham iframe HTML saklanmamalı");
+  assert.equal(window.document.getElementById("customAdminPassword").value, "", "giriş sonrası parola alanı temizlenmeli");
+  window.document.dispatchEvent(new window.KeyboardEvent("keydown", { key: "Escape", bubbles: true }));
+  assert.equal(modal.classList.contains("open"), false, "Escape yönetici modalını kapatmalı");
   dom.window.close();
 });
 

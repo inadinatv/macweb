@@ -1,0 +1,21 @@
+{
+  "macweb": {
+    "customChannels": {
+      ".read": true,
+      ".write": "auth != null && auth.uid == 'REPLACE_WITH_ADMIN_UID'",
+      ".validate": "newData.numChildren() <= 5",
+      "$slot": {
+        ".validate": "$slot.matches(/^channel[1-5]$/) && newData.hasChildren(['name', 'iframeUrl']) && newData.numChildren() == 2",
+        "name": {
+          ".validate": "newData.isString() && newData.val().length <= 48"
+        },
+        "iframeUrl": {
+          ".validate": "newData.isString() && newData.val().length <= 2048 && newData.val().beginsWith('https://')"
+        },
+        "$other": {
+          ".validate": false
+        }
+      }
+    }
+  }
+}
