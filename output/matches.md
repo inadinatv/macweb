@@ -1,12 +1,15 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-10-20 02:08  
-> **Toplam maç:** 12  |  **Canlı:** 0  |  **Yaklaşan:** 12
+> **Güncellenme:** 2026-10-20 07:26  
+> **Toplam maç:** 12  |  **Canlı:** 1  |  **Yaklaşan:** 11
+
+## 🔴 CANLI
+
+- 🔴 **M.Joint vs Zeynep Sönmez** — CANLI · `07:30` | WTA Osaka <https://fixbettv84.com/channel.html?id=bm1>
 
 ## ⏰ YAKLAŞAN
 
-- ⏰ **M.Joint vs Zeynep Sönmez** — YAKLAŞAN · `07:30` | WTA Osaka <https://fixbettv84.com/channel.html?id=bm1>
 - ⏰ **Türk Telekom vs BC Siauliai** — YAKLAŞAN · `19:30` | Eurocup <https://fixbettv84.com/channel.html?id=trtspor>
 - ⏰ **Fenerbahçe vs Slavia Prag** — YAKLAŞAN · `19:45` | UEFA Şampiyonlar Ligi ★ **Günün Maçı** <https://fixbettv84.com/channel.html?id=trt1>
 - ⏰ **Sabah Bakü vs Borussia Dortmund** — YAKLAŞAN · `19:45` | UEFA Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=ex7>
@@ -46,7 +49,7 @@
 - ⏰ Porto vs PSV — 22:00
 
 ### WTA Osaka
-- ⏰ M.Joint vs Zeynep Sönmez — 07:30
+- 🔴 M.Joint vs Zeynep Sönmez — 07:30
 
 ---
 ## 📺 7/24 KANALLAR (31)

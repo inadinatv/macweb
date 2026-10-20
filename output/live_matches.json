@@ -17,5 +17,32 @@
     "note": "OK",
     "probed": 200
   },
-  "live": []
+  "live": [
+    {
+      "match_id": "bm1",
+      "home": "M.Joint",
+      "away": "Zeynep Sönmez",
+      "league": "WTA Osaka",
+      "time": "07:30",
+      "sport": "Tenis",
+      "is_match_of_day": false,
+      "channel_id": "bm1",
+      "logo_home": "https://static.flashscore.com/res/image/data/86Gi9wFG-dM17vvbm.png",
+      "logo_away": "https://static.flashscore.com/res/image/data/veGMmQeM-MBgfwjOH.png",
+      "status": "live",
+      "started": true,
+      "raw_event": "07:30 | WTA Osaka",
+      "url": "https://fixbettv84.com/channel.html?id=bm1",
+      "fetched_at": "",
+      "status_source": "schedule",
+      "raw_status": "",
+      "score_home": null,
+      "score_away": null,
+      "score_source": "",
+      "score_updated_at": "",
+      "event_id": "",
+      "starts_at": "2026-10-20T07:30:00+03:00",
+      "status_clock": ""
+    }
+  ]
 }
