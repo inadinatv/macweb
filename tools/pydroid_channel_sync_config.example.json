@@ -1,0 +1,5 @@
+{
+  "telegram_bot_token": "BURAYA_BOTFATHER_TOKEN",
+  "github_token": "BURAYA_FINE_GRAINED_GITHUB_TOKEN",
+  "admin_telegram_user_id": "BURAYA_SAYISAL_TELEGRAM_ID"
+}

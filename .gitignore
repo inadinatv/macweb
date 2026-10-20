@@ -11,13 +11,9 @@ venv/
 # arayüz testleri (npm install ile kurulur)
 node_modules/
 package-lock.json
-!functions/package-lock.json
-functions/node_modules/
-functions/.env
-functions/.env.*
-functions/.secret.local
 *service-account*.json
 serviceAccountKey.json
+tools/pydroid_channel_sync_config.json
 
 # Yerel tanılama / test çıktıları
 .cache/
