@@ -1,12 +1,12 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-10-21 00:03  
+> **Güncellenme:** 2026-10-21 01:06  
 > **Toplam maç:** 15  |  **Canlı:** 1  |  **Yaklaşan:** 14
 
 ## 🔴 CANLI
 
-- 🔴 **New York Knicks 38 - 28 Philadelphia 76ers** — CANLI · `02:00` | NBA <https://fixbettv84.com/channel.html?id=ss>
+- 🔴 **New York Knicks 68 - 66 Philadelphia 76ers** — CANLI · `02:00` | NBA <https://fixbettv84.com/channel.html?id=ss>
 
 ## ⏰ YAKLAŞAN
 
