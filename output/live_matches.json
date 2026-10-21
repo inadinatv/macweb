@@ -13,9 +13,36 @@
       "fixbettv12.com",
       "fixbettv11.com"
     ],
-    "last_checked": "2026-10-20T21:21:13+00:00",
+    "last_checked": "2026-10-21T00:02:40+00:00",
     "note": "OK",
     "probed": 200
   },
-  "live": []
+  "live": [
+    {
+      "match_id": "ss",
+      "home": "New York Knicks",
+      "away": "Philadelphia 76ers",
+      "league": "NBA",
+      "time": "02:00",
+      "sport": "Basketbol",
+      "is_match_of_day": false,
+      "channel_id": "ss",
+      "logo_home": "https://img.sporekrani.com/teams/BuurBhHIieuS0CpNcYbsQN2vI2EKIJ7FeUoo7EqR.png",
+      "logo_away": "https://img.sporekrani.com/teams/qHLl6gKmAwaDZh16jP58ONVy65epCk5efAdl8m9J.png",
+      "status": "live",
+      "started": true,
+      "raw_event": "02:00 | NBA",
+      "url": "https://fixbettv84.com/channel.html?id=ss",
+      "fetched_at": "2026-10-21T03:02:05+03:00",
+      "status_source": "espn",
+      "raw_status": "STATUS_IN_PROGRESS",
+      "score_home": 38,
+      "score_away": 28,
+      "score_source": "espn",
+      "score_updated_at": "2026-10-21T03:02:05+03:00",
+      "event_id": "401909089",
+      "starts_at": "2026-10-20T23:00:00+00:00",
+      "status_clock": "8:09"
+    }
+  ]
 }

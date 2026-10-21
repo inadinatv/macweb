@@ -1,32 +1,63 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-10-20 23:40  
-> **Toplam maç:** 7  |  **Canlı:** 0  |  **Yaklaşan:** 0
+> **Güncellenme:** 2026-10-21 00:03  
+> **Toplam maç:** 15  |  **Canlı:** 1  |  **Yaklaşan:** 14
 
-## ✅ BİTTİ
+## 🔴 CANLI
 
-- ✅ **Detroit Pistons 121 - 113 Boston Celtics** — MS · `22:00` | NBA <https://fixbettv84.com/channel.html?id=ss>
-- ✅ **Stuttgart 1 - 1 Atletico Madrid** — MS · `22:00` | UEFA Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=ex3>
-- ✅ **PSG 4 - 2 Barcelona** — MS · `22:00` | UEFA Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=ex7>
-- ✅ **Napoli 4 - 3 Bodo Glimt** — MS · `22:00` | UEFA Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=ex5>
-- ✅ **Manchester City vs AEK** — MS · `22:00` | UEFA Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=ex1>
-- ✅ **Liverpool 4 - 3 Villarreal** — MS · `22:00` | UEFA Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=ex2>
-- ✅ **Porto vs PSV** — MS · `22:00` | UEFA Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=ex4>
+- 🔴 **New York Knicks 38 - 28 Philadelphia 76ers** — CANLI · `02:00` | NBA <https://fixbettv84.com/channel.html?id=ss>
+
+## ⏰ YAKLAŞAN
+
+- ⏰ **SA Spurs vs OKC Thunder** — YAKLAŞAN · `04:30` | NBA <https://fixbettv84.com/channel.html?id=ss>
+- ⏰ **Hapoel Tel Aviv vs Virtus Bologna** — YAKLAŞAN · `19:00` | Euroleague <https://fixbettv84.com/channel.html?id=ss2>
+- ⏰ **Esenler Erokspor vs SCMU Craiova** — YAKLAŞAN · `19:00` | FIBA Europe Cup <https://fixbettv84.com/channel.html?id=trtspor2>
+- ⏰ **Lille vs Galatasaray** — YAKLAŞAN · `19:45` | UEFA Şampiyonlar Ligi ★ **Günün Maçı** <https://fixbettv84.com/channel.html?id=trt1>
+- ⏰ **Como vs Manchester Utd** — YAKLAŞAN · `19:45` | UEFA Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=ex7>
+- ⏰ **Levante vs Athletic Bilbao** — YAKLAŞAN · `21:00` | İspanya La Liga <https://fixbettv84.com/channel.html?id=ss>
+- ⏰ **Basket Napoli vs Tofaş** — YAKLAŞAN · `21:00` | Eurocup <https://fixbettv84.com/channel.html?id=trtspor2>
+- ⏰ **Aston Villa vs Viking** — YAKLAŞAN · `22:00` | UEFA Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=ex3>
+- ⏰ **Bayern Münih vs Arsenal** — YAKLAŞAN · `22:00` | UEFA Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=ex7>
+- ⏰ **Real Betis vs Feyenoord** — YAKLAŞAN · `22:00` | UEFA Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=ex4>
+- ⏰ **Club Brugge vs Lens** — YAKLAŞAN · `22:00` | UEFA Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=ex6>
+- ⏰ **Inter vs Shakhtar Donetsk** — YAKLAŞAN · `22:00` | UEFA Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=ex2>
+- ⏰ **Real Madrid vs Leipzig** — YAKLAŞAN · `22:00` | UEFA Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=ex1>
+- ⏰ **Sporting Lisbon vs LASK Linz** — YAKLAŞAN · `22:00` | UEFA Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=ex5>
+
+## ⭐ GÜNÜN MAÇI
+
+- ⏰ **Lille vs Galatasaray** — YAKLAŞAN · `19:45` | UEFA Şampiyonlar Ligi ★ **Günün Maçı** <https://fixbettv84.com/channel.html?id=trt1>
 
 ---
 ## 🏆 Lig Bazlı
 
+### Eurocup
+- ⏰ Basket Napoli vs Tofaş — 21:00
+
+### Euroleague
+- ⏰ Hapoel Tel Aviv vs Virtus Bologna — 19:00
+
+### FIBA Europe Cup
+- ⏰ Esenler Erokspor vs SCMU Craiova — 19:00
+
 ### NBA
-- ⏰ Detroit Pistons vs Boston Celtics — 22:00
+- 🔴 New York Knicks vs Philadelphia 76ers — 02:00
+- ⏰ SA Spurs vs OKC Thunder — 04:30
 
 ### UEFA Şampiyonlar Ligi
-- ⏰ Stuttgart vs Atletico Madrid — 22:00
-- ⏰ PSG vs Barcelona — 22:00
-- ⏰ Napoli vs Bodo Glimt — 22:00
-- ⏰ Manchester City vs AEK — 22:00
-- ⏰ Liverpool vs Villarreal — 22:00
-- ⏰ Porto vs PSV — 22:00
+- ⏰ Lille vs Galatasaray — 19:45
+- ⏰ Como vs Manchester Utd — 19:45
+- ⏰ Aston Villa vs Viking — 22:00
+- ⏰ Bayern Münih vs Arsenal — 22:00
+- ⏰ Real Betis vs Feyenoord — 22:00
+- ⏰ Club Brugge vs Lens — 22:00
+- ⏰ Inter vs Shakhtar Donetsk — 22:00
+- ⏰ Real Madrid vs Leipzig — 22:00
+- ⏰ Sporting Lisbon vs LASK Linz — 22:00
+
+### İspanya La Liga
+- ⏰ Levante vs Athletic Bilbao — 21:00
 
 ---
 ## 📺 7/24 KANALLAR (31)
