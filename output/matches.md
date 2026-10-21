@@ -1,16 +1,15 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-10-21 01:06  
-> **Toplam maç:** 15  |  **Canlı:** 1  |  **Yaklaşan:** 14
+> **Güncellenme:** 2026-10-21 02:03  
+> **Toplam maç:** 15  |  **Canlı:** 1  |  **Yaklaşan:** 13
 
 ## 🔴 CANLI
 
-- 🔴 **New York Knicks 68 - 66 Philadelphia 76ers** — CANLI · `02:00` | NBA <https://fixbettv84.com/channel.html?id=ss>
+- 🔴 **SA Spurs vs OKC Thunder** — CANLI · `04:30` | NBA <https://fixbettv84.com/channel.html?id=ss>
 
 ## ⏰ YAKLAŞAN
 
-- ⏰ **SA Spurs vs OKC Thunder** — YAKLAŞAN · `04:30` | NBA <https://fixbettv84.com/channel.html?id=ss>
 - ⏰ **Hapoel Tel Aviv vs Virtus Bologna** — YAKLAŞAN · `19:00` | Euroleague <https://fixbettv84.com/channel.html?id=ss2>
 - ⏰ **Esenler Erokspor vs SCMU Craiova** — YAKLAŞAN · `19:00` | FIBA Europe Cup <https://fixbettv84.com/channel.html?id=trtspor2>
 - ⏰ **Lille vs Galatasaray** — YAKLAŞAN · `19:45` | UEFA Şampiyonlar Ligi ★ **Günün Maçı** <https://fixbettv84.com/channel.html?id=trt1>
@@ -24,6 +23,10 @@
 - ⏰ **Inter vs Shakhtar Donetsk** — YAKLAŞAN · `22:00` | UEFA Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=ex2>
 - ⏰ **Real Madrid vs Leipzig** — YAKLAŞAN · `22:00` | UEFA Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=ex1>
 - ⏰ **Sporting Lisbon vs LASK Linz** — YAKLAŞAN · `22:00` | UEFA Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=ex5>
+
+## ✅ BİTTİ
+
+- ✅ **New York Knicks 100 - 106 Philadelphia 76ers** — MS · `02:00` | NBA <https://fixbettv84.com/channel.html?id=ss>
 
 ## ⭐ GÜNÜN MAÇI
 
@@ -42,8 +45,8 @@
 - ⏰ Esenler Erokspor vs SCMU Craiova — 19:00
 
 ### NBA
-- 🔴 New York Knicks vs Philadelphia 76ers — 02:00
-- ⏰ SA Spurs vs OKC Thunder — 04:30
+- ⏰ New York Knicks vs Philadelphia 76ers — 02:00
+- 🔴 SA Spurs vs OKC Thunder — 04:30
 
 ### UEFA Şampiyonlar Ligi
 - ⏰ Lille vs Galatasaray — 19:45
