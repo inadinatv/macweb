@@ -1,23 +1,8 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-10-21 18:58  
-> **Toplam maç:** 14  |  **Canlı:** 2  |  **Yaklaşan:** 7
-
-## 🔴 CANLI
-
-- 🔴 **Levante vs Athletic Bilbao** — CANLI · `21:00` | İspanya La Liga <https://fixbettv84.com/channel.html?id=ss>
-- 🔴 **Basket Napoli vs Tofaş** — CANLI · `21:00` | Eurocup <https://fixbettv84.com/channel.html?id=trtspor2>
-
-## ⏰ YAKLAŞAN
-
-- ⏰ **Aston Villa vs Viking** — YAKLAŞAN · `22:00` | UEFA Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=ex3>
-- ⏰ **Bayern Münih vs Arsenal** — YAKLAŞAN · `22:00` | UEFA Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=ex7>
-- ⏰ **Real Betis vs Feyenoord** — YAKLAŞAN · `22:00` | UEFA Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=ex4>
-- ⏰ **Club Brugge vs Lens** — YAKLAŞAN · `22:00` | UEFA Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=ex6>
-- ⏰ **Inter vs Shakhtar Donetsk** — YAKLAŞAN · `22:00` | UEFA Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=ex2>
-- ⏰ **Real Madrid vs Leipzig** — YAKLAŞAN · `22:00` | UEFA Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=ex1>
-- ⏰ **Sporting Lisbon vs LASK Linz** — YAKLAŞAN · `22:00` | UEFA Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=ex5>
+> **Güncellenme:** 2026-10-21 21:01  
+> **Toplam maç:** 14  |  **Canlı:** 0  |  **Yaklaşan:** 0
 
 ## ✅ BİTTİ
 
@@ -26,6 +11,15 @@
 - ✅ **Esenler Erokspor vs SCMU Craiova** — MS · `19:00` | FIBA Europe Cup <https://fixbettv84.com/channel.html?id=trtspor2>
 - ✅ **Lille 2 - 4 Galatasaray** — MS · `19:45` | UEFA Şampiyonlar Ligi ★ **Günün Maçı** <https://fixbettv84.com/channel.html?id=trt1>
 - ✅ **Como vs Manchester Utd** — MS · `19:45` | UEFA Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=ex7>
+- ✅ **Levante vs Athletic Bilbao** — MS · `21:00` | İspanya La Liga <https://fixbettv84.com/channel.html?id=ss>
+- ✅ **Basket Napoli vs Tofaş** — MS · `21:00` | Eurocup <https://fixbettv84.com/channel.html?id=trtspor2>
+- ✅ **Aston Villa 3 - 1 Viking** — MS · `22:00` | UEFA Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=ex3>
+- ✅ **Bayern Münih vs Arsenal** — MS · `22:00` | UEFA Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=ex7>
+- ✅ **Real Betis 1 - 0 Feyenoord** — MS · `22:00` | UEFA Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=ex4>
+- ✅ **Club Brugge 3 - 0 Lens** — MS · `22:00` | UEFA Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=ex6>
+- ✅ **Inter vs Shakhtar Donetsk** — MS · `22:00` | UEFA Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=ex2>
+- ✅ **Real Madrid vs Leipzig** — MS · `22:00` | UEFA Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=ex1>
+- ✅ **Sporting Lisbon vs LASK Linz** — MS · `22:00` | UEFA Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=ex5>
 
 ## ⭐ GÜNÜN MAÇI
 
@@ -35,7 +29,7 @@
 ## 🏆 Lig Bazlı
 
 ### Eurocup
-- 🔴 Basket Napoli vs Tofaş — 21:00
+- ⏰ Basket Napoli vs Tofaş — 21:00
 
 ### Euroleague
 - ⏰ Hapoel Tel Aviv vs Virtus Bologna — 19:00
@@ -58,7 +52,7 @@
 - ⏰ Sporting Lisbon vs LASK Linz — 22:00
 
 ### İspanya La Liga
-- 🔴 Levante vs Athletic Bilbao — 21:00
+- ⏰ Levante vs Athletic Bilbao — 21:00
 
 ---
 ## 📺 7/24 KANALLAR (31)
