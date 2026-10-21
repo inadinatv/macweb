@@ -1,15 +1,11 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-10-21 18:03  
-> **Toplam maç:** 14  |  **Canlı:** 6  |  **Yaklaşan:** 7
+> **Güncellenme:** 2026-10-21 18:58  
+> **Toplam maç:** 14  |  **Canlı:** 2  |  **Yaklaşan:** 7
 
 ## 🔴 CANLI
 
-- 🔴 **Hapoel Tel Aviv vs Virtus Bologna** — CANLI · `19:00` | Euroleague <https://fixbettv84.com/channel.html?id=ss2>
-- 🔴 **Esenler Erokspor vs SCMU Craiova** — CANLI · `19:00` | FIBA Europe Cup <https://fixbettv84.com/channel.html?id=trtspor2>
-- 🔴 **Lille 2 - 3 Galatasaray** — CANLI · `19:45` | UEFA Şampiyonlar Ligi ★ **Günün Maçı** <https://fixbettv84.com/channel.html?id=trt1>
-- 🔴 **Como vs Manchester Utd** — CANLI · `19:45` | UEFA Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=ex7>
 - 🔴 **Levante vs Athletic Bilbao** — CANLI · `21:00` | İspanya La Liga <https://fixbettv84.com/channel.html?id=ss>
 - 🔴 **Basket Napoli vs Tofaş** — CANLI · `21:00` | Eurocup <https://fixbettv84.com/channel.html?id=trtspor2>
 
@@ -26,10 +22,14 @@
 ## ✅ BİTTİ
 
 - ✅ **SA Spurs vs OKC Thunder** — MS · `04:30` | NBA <https://fixbettv84.com/channel.html?id=ss>
+- ✅ **Hapoel Tel Aviv vs Virtus Bologna** — MS · `19:00` | Euroleague <https://fixbettv84.com/channel.html?id=ss2>
+- ✅ **Esenler Erokspor vs SCMU Craiova** — MS · `19:00` | FIBA Europe Cup <https://fixbettv84.com/channel.html?id=trtspor2>
+- ✅ **Lille 2 - 4 Galatasaray** — MS · `19:45` | UEFA Şampiyonlar Ligi ★ **Günün Maçı** <https://fixbettv84.com/channel.html?id=trt1>
+- ✅ **Como vs Manchester Utd** — MS · `19:45` | UEFA Şampiyonlar Ligi <https://fixbettv84.com/channel.html?id=ex7>
 
 ## ⭐ GÜNÜN MAÇI
 
-- 🔴 **Lille 2 - 3 Galatasaray** — CANLI · `19:45` | UEFA Şampiyonlar Ligi ★ **Günün Maçı** <https://fixbettv84.com/channel.html?id=trt1>
+- ✅ **Lille 2 - 4 Galatasaray** — MS · `19:45` | UEFA Şampiyonlar Ligi ★ **Günün Maçı** <https://fixbettv84.com/channel.html?id=trt1>
 
 ---
 ## 🏆 Lig Bazlı
@@ -38,17 +38,17 @@
 - 🔴 Basket Napoli vs Tofaş — 21:00
 
 ### Euroleague
-- 🔴 Hapoel Tel Aviv vs Virtus Bologna — 19:00
+- ⏰ Hapoel Tel Aviv vs Virtus Bologna — 19:00
 
 ### FIBA Europe Cup
-- 🔴 Esenler Erokspor vs SCMU Craiova — 19:00
+- ⏰ Esenler Erokspor vs SCMU Craiova — 19:00
 
 ### NBA
 - ⏰ SA Spurs vs OKC Thunder — 04:30
 
 ### UEFA Şampiyonlar Ligi
-- 🔴 Lille vs Galatasaray — 19:45
-- 🔴 Como vs Manchester Utd — 19:45
+- ⏰ Lille vs Galatasaray — 19:45
+- ⏰ Como vs Manchester Utd — 19:45
 - ⏰ Aston Villa vs Viking — 22:00
 - ⏰ Bayern Münih vs Arsenal — 22:00
 - ⏰ Real Betis vs Feyenoord — 22:00
