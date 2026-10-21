@@ -13,36 +13,9 @@
       "fixbettv12.com",
       "fixbettv11.com"
     ],
-    "last_checked": "2026-10-21T01:06:10+00:00",
+    "last_checked": "2026-10-21T04:31:55+00:00",
     "note": "OK",
     "probed": 200
   },
-  "live": [
-    {
-      "match_id": "ss",
-      "home": "SA Spurs",
-      "away": "OKC Thunder",
-      "league": "NBA",
-      "time": "04:30",
-      "sport": "Basketbol",
-      "is_match_of_day": false,
-      "channel_id": "ss",
-      "logo_home": "https://img.sporekrani.com/teams/v9Z5ZLjeD85iJSIzZOU3m9uZJ8OYy80f6chF2lob.png",
-      "logo_away": "https://img.sporekrani.com/teams/TML6kzXhmWx5hkSKkXfo18AEcHQD1y69Ea7AETNm.png",
-      "status": "live",
-      "started": true,
-      "raw_event": "04:30 | NBA",
-      "url": "https://fixbettv84.com/channel.html?id=ss",
-      "fetched_at": "",
-      "status_source": "schedule",
-      "raw_status": "",
-      "score_home": null,
-      "score_away": null,
-      "score_source": "",
-      "score_updated_at": "",
-      "event_id": "",
-      "starts_at": "2026-10-21T04:30:00+03:00",
-      "status_clock": ""
-    }
-  ]
+  "live": []
 }

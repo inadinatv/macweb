@@ -1,12 +1,8 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-10-21 02:03  
-> **Toplam maç:** 15  |  **Canlı:** 1  |  **Yaklaşan:** 13
-
-## 🔴 CANLI
-
-- 🔴 **SA Spurs vs OKC Thunder** — CANLI · `04:30` | NBA <https://fixbettv84.com/channel.html?id=ss>
+> **Güncellenme:** 2026-10-21 04:32  
+> **Toplam maç:** 14  |  **Canlı:** 0  |  **Yaklaşan:** 13
 
 ## ⏰ YAKLAŞAN
 
@@ -26,7 +22,7 @@
 
 ## ✅ BİTTİ
 
-- ✅ **New York Knicks 100 - 106 Philadelphia 76ers** — MS · `02:00` | NBA <https://fixbettv84.com/channel.html?id=ss>
+- ✅ **SA Spurs vs OKC Thunder** — MS · `04:30` | NBA <https://fixbettv84.com/channel.html?id=ss>
 
 ## ⭐ GÜNÜN MAÇI
 
@@ -45,8 +41,7 @@
 - ⏰ Esenler Erokspor vs SCMU Craiova — 19:00
 
 ### NBA
-- ⏰ New York Knicks vs Philadelphia 76ers — 02:00
-- 🔴 SA Spurs vs OKC Thunder — 04:30
+- ⏰ SA Spurs vs OKC Thunder — 04:30
 
 ### UEFA Şampiyonlar Ligi
 - ⏰ Lille vs Galatasaray — 19:45
