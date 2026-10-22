@@ -17,5 +17,32 @@
     "note": "OK",
     "probed": 200
   },
-  "live": []
+  "live": [
+    {
+      "match_id": "ss",
+      "home": "Miami Heat",
+      "away": "Minnesota TW",
+      "league": "NBA",
+      "time": "02:30",
+      "sport": "Basketbol",
+      "is_match_of_day": false,
+      "channel_id": "ss",
+      "logo_home": "https://img.sporekrani.com/teams/ZB57ACOYvrckaEkGbsDuNKeVbhnbjzsyD6aH9y18.png",
+      "logo_away": "https://img.sporekrani.com/teams/POe62Ip06lRTAWJYlIutu8CM3z6XYDZbUA62Gf1w.png",
+      "status": "live",
+      "started": true,
+      "raw_event": "02:30 | NBA",
+      "url": "https://fixbettv84.com/channel.html?id=ss",
+      "fetched_at": "",
+      "status_source": "schedule",
+      "raw_status": "",
+      "score_home": null,
+      "score_away": null,
+      "score_source": "",
+      "score_updated_at": "",
+      "event_id": "",
+      "starts_at": "2026-10-22T02:30:00+03:00",
+      "status_clock": ""
+    }
+  ]
 }

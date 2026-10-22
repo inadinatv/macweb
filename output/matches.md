@@ -1,12 +1,15 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-10-21 22:10  
-> **Toplam maç:** 26  |  **Canlı:** 0  |  **Yaklaşan:** 23
+> **Güncellenme:** 2026-10-22 00:11  
+> **Toplam maç:** 26  |  **Canlı:** 1  |  **Yaklaşan:** 22
+
+## 🔴 CANLI
+
+- 🔴 **Miami Heat vs Minnesota TW** — CANLI · `02:30` | NBA <https://fixbettv84.com/channel.html?id=ss>
 
 ## ⏰ YAKLAŞAN
 
-- ⏰ **Miami Heat vs Minnesota TW** — YAKLAŞAN · `02:30` | NBA <https://fixbettv84.com/channel.html?id=ss>
 - ⏰ **LA Lakers vs GS Warriors** — YAKLAŞAN · `05:00` | NBA <https://fixbettv84.com/channel.html?id=ss>
 - ⏰ **A.Li vs Zeynep Sönmez** — YAKLAŞAN · `05:30` | WTA Osaka <https://fixbettv84.com/channel.html?id=bm1>
 - ⏰ **M.Stoiana vs M.Uchijima** — YAKLAŞAN · `07:30` | WTA Osaka <https://fixbettv84.com/channel.html?id=bm1>
@@ -49,7 +52,7 @@
 - ⏰ Partizan vs Kızılyıldız — 21:45
 
 ### NBA
-- ⏰ Miami Heat vs Minnesota TW — 02:30
+- 🔴 Miami Heat vs Minnesota TW — 02:30
 - ⏰ LA Lakers vs GS Warriors — 05:00
 
 ### UEFA Avrupa Konferans Ligi
