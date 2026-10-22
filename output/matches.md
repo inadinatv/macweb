@@ -1,8 +1,8 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-10-22 00:11  
-> **Toplam maç:** 26  |  **Canlı:** 1  |  **Yaklaşan:** 22
+> **Güncellenme:** 2026-10-22 00:42  
+> **Toplam maç:** 26  |  **Canlı:** 1  |  **Yaklaşan:** 25
 
 ## 🔴 CANLI
 
@@ -25,19 +25,16 @@
 - ⏰ **Lech Poznan vs Sunderland** — YAKLAŞAN · `19:45` | UEFA Avrupa Ligi <https://fixbettv84.com/channel.html?id=ex2>
 - ⏰ **OFI Crete vs Bayer Leverkusen** — YAKLAŞAN · `19:45` | UEFA Avrupa Ligi <https://fixbettv84.com/channel.html?id=ex1>
 - ⏰ **Sturm Graz vs Marsilya** — YAKLAŞAN · `19:45` | UEFA Avrupa Ligi <https://fixbettv84.com/channel.html?id=ex4>
+- ⏰ **Anadolu Efes vs Beşiktaş** — YAKLAŞAN · `20:30` | Euroleague <https://fixbettv84.com/channel.html?id=ss>
+- ⏰ **Partizan vs Kızılyıldız** — YAKLAŞAN · `21:45` | Euroleague <https://fixbettv84.com/channel.html?id=ss>
 - ⏰ **Beşiktaş vs Crystal Palace** — YAKLAŞAN · `22:00` | UEFA Avrupa Ligi ★ **Günün Maçı** <https://fixbettv84.com/channel.html?id=trt1>
 - ⏰ **Bournemouth vs Milan** — YAKLAŞAN · `22:00` | UEFA Avrupa Ligi <https://fixbettv84.com/channel.html?id=ex7>
 - ⏰ **Celtic vs Celta Vigo** — YAKLAŞAN · `22:00` | UEFA Avrupa Ligi <https://fixbettv84.com/channel.html?id=ex3>
 - ⏰ **Hoffenheim vs Lyon** — YAKLAŞAN · `22:00` | UEFA Avrupa Ligi <https://fixbettv84.com/channel.html?id=ex1>
 - ⏰ **Lilleström vs Real Sociedad** — YAKLAŞAN · `22:00` | UEFA Avrupa Ligi <https://fixbettv84.com/channel.html?id=ex5>
+- ⏰ **Olympiakos vs Sparta Prag** — YAKLAŞAN · `22:00` | UEFA Avrupa Ligi <https://fixbettv84.com/channel.html?id=ex4>
 - ⏰ **Omonia vs Benfica** — YAKLAŞAN · `22:00` | UEFA Avrupa Ligi <https://fixbettv84.com/channel.html?id=ex2>
 - ⏰ **Ajax vs Atalanta** — YAKLAŞAN · `22:00` | UEFA Avrupa Konferans Ligi <https://fixbettv84.com/channel.html?id=ex6>
-
-## ✅ BİTTİ
-
-- ✅ **Anadolu Efes vs Beşiktaş** — MS · `20:30` | Euroleague <https://fixbettv84.com/channel.html?id=ss>
-- ✅ **Partizan vs Kızılyıldız** — MS · `21:45` | Euroleague <https://fixbettv84.com/channel.html?id=ss>
-- ✅ **Olympiakos vs Sparta Prag** — MS · `22:00` | UEFA Avrupa Ligi <https://fixbettv84.com/channel.html?id=ex4>
 
 ## ⭐ GÜNÜN MAÇI
 
@@ -244,7 +241,7 @@
 - 🟢 **EUROSPORT 2** <https://sultanbettv101.live/mono.m3u8>
 - 🟢 **TIVIBU SPOR 2** <https://sultanbettv101.live/mono.m3u8>
 - 🟢 **TV 8** <https://sultanbettv101.live/mono.m3u8>
-- 🟡 **BEIN SPORTS MAX 2** <https://sultanbettv101.live/mono.m3u8>
+- 🟢 **BEIN SPORTS MAX 2** <https://sultanbettv101.live/mono.m3u8>
 - 🟢 **TIVIBU SPOR 1** <https://sultanbettv101.live/mono.m3u8>
 
 ### 📡 JUSTIN TV ✅ `https://www.justintv111.top`
