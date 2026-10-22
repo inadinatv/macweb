@@ -1,24 +1,21 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-10-22 18:53  
-> **Toplam maç:** 26  |  **Canlı:** 2  |  **Yaklaşan:** 8
+> **Güncellenme:** 2026-10-22 19:23  
+> **Toplam maç:** 26  |  **Canlı:** 10  |  **Yaklaşan:** 0
 
 ## 🔴 CANLI
 
 - 🔴 **Anadolu Efes vs Beşiktaş** — CANLI · `20:30` | Euroleague <https://fixbettv84.com/channel.html?id=ss>
 - 🔴 **Partizan vs Kızılyıldız** — CANLI · `21:45` | Euroleague <https://fixbettv84.com/channel.html?id=ss>
-
-## ⏰ YAKLAŞAN
-
-- ⏰ **Beşiktaş vs Crystal Palace** — YAKLAŞAN · `22:00` | UEFA Avrupa Ligi ★ **Günün Maçı** <https://fixbettv84.com/channel.html?id=trt1>
-- ⏰ **Bournemouth vs Milan** — YAKLAŞAN · `22:00` | UEFA Avrupa Ligi <https://fixbettv84.com/channel.html?id=ex7>
-- ⏰ **Celtic vs Celta Vigo** — YAKLAŞAN · `22:00` | UEFA Avrupa Ligi <https://fixbettv84.com/channel.html?id=ex3>
-- ⏰ **Hoffenheim vs Lyon** — YAKLAŞAN · `22:00` | UEFA Avrupa Ligi <https://fixbettv84.com/channel.html?id=ex1>
-- ⏰ **Lilleström vs Real Sociedad** — YAKLAŞAN · `22:00` | UEFA Avrupa Ligi <https://fixbettv84.com/channel.html?id=ex5>
-- ⏰ **Olympiakos vs Sparta Prag** — YAKLAŞAN · `22:00` | UEFA Avrupa Ligi <https://fixbettv84.com/channel.html?id=ex4>
-- ⏰ **Omonia vs Benfica** — YAKLAŞAN · `22:00` | UEFA Avrupa Ligi <https://fixbettv84.com/channel.html?id=ex2>
-- ⏰ **Ajax vs Atalanta** — YAKLAŞAN · `22:00` | UEFA Avrupa Konferans Ligi <https://fixbettv84.com/channel.html?id=ex6>
+- 🔴 **Beşiktaş 0 - 0 Crystal Palace** — CANLI · `22:00` | UEFA Avrupa Ligi ★ **Günün Maçı** <https://fixbettv84.com/channel.html?id=trt1>
+- 🔴 **Bournemouth 1 - 0 Milan** — CANLI · `22:00` | UEFA Avrupa Ligi <https://fixbettv84.com/channel.html?id=ex7>
+- 🔴 **Celtic 0 - 0 Celta Vigo** — CANLI · `22:00` | UEFA Avrupa Ligi <https://fixbettv84.com/channel.html?id=ex3>
+- 🔴 **Hoffenheim 0 - 0 Lyon** — CANLI · `22:00` | UEFA Avrupa Ligi <https://fixbettv84.com/channel.html?id=ex1>
+- 🔴 **Lilleström 0 - 0 Real Sociedad** — CANLI · `22:00` | UEFA Avrupa Ligi <https://fixbettv84.com/channel.html?id=ex5>
+- 🔴 **Olympiakos vs Sparta Prag** — CANLI · `22:00` | UEFA Avrupa Ligi <https://fixbettv84.com/channel.html?id=ex4>
+- 🔴 **Omonia 0 - 1 Benfica** — CANLI · `22:00` | UEFA Avrupa Ligi <https://fixbettv84.com/channel.html?id=ex2>
+- 🔴 **Ajax 0 - 0 Atalanta** — CANLI · `22:00` | UEFA Avrupa Konferans Ligi <https://fixbettv84.com/channel.html?id=ex6>
 
 ## ✅ BİTTİ
 
@@ -42,7 +39,7 @@
 ## ⭐ GÜNÜN MAÇI
 
 - ✅ **Trabzonspor 2 - 0 Hearts** — MS · `19:45` | UEFA Avrupa Konferans Ligi ★ **Günün Maçı** <https://fixbettv84.com/channel.html?id=trt1>
-- ⏰ **Beşiktaş vs Crystal Palace** — YAKLAŞAN · `22:00` | UEFA Avrupa Ligi ★ **Günün Maçı** <https://fixbettv84.com/channel.html?id=trt1>
+- 🔴 **Beşiktaş 0 - 0 Crystal Palace** — CANLI · `22:00` | UEFA Avrupa Ligi ★ **Günün Maçı** <https://fixbettv84.com/channel.html?id=trt1>
 
 ---
 ## 🏆 Lig Bazlı
@@ -57,7 +54,7 @@
 
 ### UEFA Avrupa Konferans Ligi
 - ⏰ Trabzonspor vs Hearts — 19:45
-- ⏰ Ajax vs Atalanta — 22:00
+- 🔴 Ajax vs Atalanta — 22:00
 
 ### UEFA Avrupa Ligi
 - ⏰ Ararat vs AZ Alkmaar — 19:45
@@ -67,13 +64,13 @@
 - ⏰ Lech Poznan vs Sunderland — 19:45
 - ⏰ OFI Crete vs Bayer Leverkusen — 19:45
 - ⏰ Sturm Graz vs Marsilya — 19:45
-- ⏰ Beşiktaş vs Crystal Palace — 22:00
-- ⏰ Bournemouth vs Milan — 22:00
-- ⏰ Celtic vs Celta Vigo — 22:00
-- ⏰ Hoffenheim vs Lyon — 22:00
-- ⏰ Lilleström vs Real Sociedad — 22:00
-- ⏰ Olympiakos vs Sparta Prag — 22:00
-- ⏰ Omonia vs Benfica — 22:00
+- 🔴 Beşiktaş vs Crystal Palace — 22:00
+- 🔴 Bournemouth vs Milan — 22:00
+- 🔴 Celtic vs Celta Vigo — 22:00
+- 🔴 Hoffenheim vs Lyon — 22:00
+- 🔴 Lilleström vs Real Sociedad — 22:00
+- 🔴 Olympiakos vs Sparta Prag — 22:00
+- 🔴 Omonia vs Benfica — 22:00
 
 ### WTA Ningbo
 - ⏰ I.Jovic vs J.Paolini — 08:00
@@ -141,13 +138,13 @@
 ## ⚡ EKSTRA PANELLER — m3u8 (109)
 
 ### ⚛️ ATOM SPOR ✅ `https://www.atomsportv519.top`
-- 🟡 **BEIN SPORTS 1** <https://ladyboy.ardatvgs.cfd//beintv/tracks-v1a1/mono.m3u8>
-- 🟡 **BEIN SPORTS 2** <https://ladyboy.ardatvgs.cfd//bein2/tracks-v1a1/mono.m3u8>
-- 🟡 **BEIN SPORTS 3** <https://ladyboy.ardatvgs.cfd//bein3/tracks-v1a1/mono.m3u8>
-- 🟡 **BEIN SPORTS 4** <https://ladyboy.ardatvgs.cfd//bein4/tracks-v1a1/mono.m3u8>
-- 🟡 **BEIN SPORTS 5** <https://ladyboy.ardatvgs.cfd//bein5/tracks-v1a1/mono.m3u8>
-- 🟡 **S SPORT** <https://ladyboy.ardatvgs.cfd//s-sport/tracks-v1a1/mono.m3u8>
-- 🟡 **S SPORT 2** <https://ladyboy.ardatvgs.cfd//s-sport2/tracks-v1a1/mono.m3u8>
+- ⚪ **BEIN SPORTS 1** <https://tv.atomspor.workers.dev/?ID=bein-sports-1>
+- ⚪ **BEIN SPORTS 2** <https://tv.atomspor.workers.dev/?ID=bein-sports-2>
+- ⚪ **BEIN SPORTS 3** <https://tv.atomspor.workers.dev/?ID=bein-sports-3>
+- ⚪ **BEIN SPORTS 4** <https://tv.atomspor.workers.dev/?ID=bein-sports-4>
+- ⚪ **BEIN SPORTS 5** <https://tv.atomspor.workers.dev/?ID=bein-sports-5>
+- ⚪ **S SPORT** <https://tv.atomspor.workers.dev/?ID=s-sport>
+- ⚪ **S SPORT 2** <https://tv.atomspor.workers.dev/?ID=s-sport-2>
 - ⚪ **S SPORT PLUS** <https://tv.atomspor.workers.dev/?ID=ssport-plus>
 - ⚪ **TIVIBU SPOR 1** <https://tv.atomspor.workers.dev/?ID=tivibu-spor-1>
 - ⚪ **TIVIBU SPOR 2** <https://tv.atomspor.workers.dev/?ID=tivibu-spor-2>
