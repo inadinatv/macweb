@@ -1,12 +1,8 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-10-22 10:28  
-> **Toplam maç:** 26  |  **Canlı:** 1  |  **Yaklaşan:** 18
-
-## 🔴 CANLI
-
-- 🔴 **A.Eala vs D.Shnaider** — CANLI · `12:00` | WTA Ningbo <https://fixbettv84.com/channel.html?id=bm2>
+> **Güncellenme:** 2026-10-22 14:12  
+> **Toplam maç:** 26  |  **Canlı:** 0  |  **Yaklaşan:** 18
 
 ## ⏰ YAKLAŞAN
 
@@ -38,6 +34,7 @@
 - ✅ **I.Jovic vs J.Paolini** — MS · `08:00` | WTA Ningbo <https://fixbettv84.com/channel.html?id=bm2>
 - ✅ **M.Linette vs K.Siniakova** — MS · `09:30` | WTA Osaka <https://fixbettv84.com/channel.html?id=bm1>
 - ✅ **K.Kawa vs B.Bencic** — MS · `10:00` | WTA Ningbo <https://fixbettv84.com/channel.html?id=bm2>
+- ✅ **A.Eala vs D.Shnaider** — MS · `12:00` | WTA Ningbo <https://fixbettv84.com/channel.html?id=bm2>
 
 ## ⭐ GÜNÜN MAÇI
 
@@ -78,7 +75,7 @@
 ### WTA Ningbo
 - ⏰ I.Jovic vs J.Paolini — 08:00
 - ⏰ K.Kawa vs B.Bencic — 10:00
-- 🔴 A.Eala vs D.Shnaider — 12:00
+- ⏰ A.Eala vs D.Shnaider — 12:00
 
 ### WTA Osaka
 - ⏰ A.Li vs Zeynep Sönmez — 05:30
@@ -141,13 +138,13 @@
 ## ⚡ EKSTRA PANELLER — m3u8 (109)
 
 ### ⚛️ ATOM SPOR ✅ `https://www.atomsportv519.top`
-- 🟢 **BEIN SPORTS 1** <https://ladyboy.ardatvgs.cfd//beintv/tracks-v1a1/mono.m3u8>
-- 🟢 **BEIN SPORTS 2** <https://ladyboy.ardatvgs.cfd//bein2/tracks-v1a1/mono.m3u8>
-- 🟢 **BEIN SPORTS 3** <https://ladyboy.ardatvgs.cfd//bein3/tracks-v1a1/mono.m3u8>
-- 🟢 **BEIN SPORTS 4** <https://ladyboy.ardatvgs.cfd//bein4/tracks-v1a1/mono.m3u8>
-- 🟢 **BEIN SPORTS 5** <https://ladyboy.ardatvgs.cfd//bein5/tracks-v1a1/mono.m3u8>
-- 🟢 **S SPORT** <https://ladyboy.ardatvgs.cfd//s-sport/tracks-v1a1/mono.m3u8>
-- 🟢 **S SPORT 2** <https://ladyboy.ardatvgs.cfd//s-sport2/tracks-v1a1/mono.m3u8>
+- 🟡 **BEIN SPORTS 1** <https://ladyboy.ardatvgs.cfd//beintv/tracks-v1a1/mono.m3u8>
+- 🟡 **BEIN SPORTS 2** <https://ladyboy.ardatvgs.cfd//bein2/tracks-v1a1/mono.m3u8>
+- 🟡 **BEIN SPORTS 3** <https://ladyboy.ardatvgs.cfd//bein3/tracks-v1a1/mono.m3u8>
+- 🟡 **BEIN SPORTS 4** <https://ladyboy.ardatvgs.cfd//bein4/tracks-v1a1/mono.m3u8>
+- 🟡 **BEIN SPORTS 5** <https://ladyboy.ardatvgs.cfd//bein5/tracks-v1a1/mono.m3u8>
+- 🟡 **S SPORT** <https://ladyboy.ardatvgs.cfd//s-sport/tracks-v1a1/mono.m3u8>
+- 🟡 **S SPORT 2** <https://ladyboy.ardatvgs.cfd//s-sport2/tracks-v1a1/mono.m3u8>
 - ⚪ **S SPORT PLUS** <https://tv.atomspor.workers.dev/?ID=ssport-plus>
 - ⚪ **TIVIBU SPOR 1** <https://tv.atomspor.workers.dev/?ID=tivibu-spor-1>
 - ⚪ **TIVIBU SPOR 2** <https://tv.atomspor.workers.dev/?ID=tivibu-spor-2>

@@ -13,36 +13,9 @@
       "fixbettv12.com",
       "fixbettv11.com"
     ],
-    "last_checked": "2026-10-22T10:28:00+00:00",
+    "last_checked": "2026-10-22T14:11:54+00:00",
     "note": "OK",
     "probed": 200
   },
-  "live": [
-    {
-      "match_id": "bm2",
-      "home": "A.Eala",
-      "away": "D.Shnaider",
-      "league": "WTA Ningbo",
-      "time": "12:00",
-      "sport": "Tenis",
-      "is_match_of_day": false,
-      "channel_id": "bm2",
-      "logo_home": "https://static.flashscore.com/res/image/data/Me9Rt2Yg-44Oegl12.png",
-      "logo_away": "https://static.flashscore.com/res/image/data/jFFbLhZg-8jUzGsE1.png",
-      "status": "live",
-      "started": true,
-      "raw_event": "12:00 | WTA Ningbo",
-      "url": "https://fixbettv84.com/channel.html?id=bm2",
-      "fetched_at": "",
-      "status_source": "schedule",
-      "raw_status": "",
-      "score_home": null,
-      "score_away": null,
-      "score_source": "",
-      "score_updated_at": "",
-      "event_id": "",
-      "starts_at": "2026-10-22T12:00:00+03:00",
-      "status_clock": ""
-    }
-  ]
+  "live": []
 }
