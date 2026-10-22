@@ -1,21 +1,12 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-10-22 19:23  
-> **Toplam maç:** 26  |  **Canlı:** 10  |  **Yaklaşan:** 0
+> **Güncellenme:** 2026-10-22 20:58  
+> **Toplam maç:** 26  |  **Canlı:** 1  |  **Yaklaşan:** 0
 
 ## 🔴 CANLI
 
-- 🔴 **Anadolu Efes vs Beşiktaş** — CANLI · `20:30` | Euroleague <https://fixbettv84.com/channel.html?id=ss>
 - 🔴 **Partizan vs Kızılyıldız** — CANLI · `21:45` | Euroleague <https://fixbettv84.com/channel.html?id=ss>
-- 🔴 **Beşiktaş 0 - 0 Crystal Palace** — CANLI · `22:00` | UEFA Avrupa Ligi ★ **Günün Maçı** <https://fixbettv84.com/channel.html?id=trt1>
-- 🔴 **Bournemouth 1 - 0 Milan** — CANLI · `22:00` | UEFA Avrupa Ligi <https://fixbettv84.com/channel.html?id=ex7>
-- 🔴 **Celtic 0 - 0 Celta Vigo** — CANLI · `22:00` | UEFA Avrupa Ligi <https://fixbettv84.com/channel.html?id=ex3>
-- 🔴 **Hoffenheim 0 - 0 Lyon** — CANLI · `22:00` | UEFA Avrupa Ligi <https://fixbettv84.com/channel.html?id=ex1>
-- 🔴 **Lilleström 0 - 0 Real Sociedad** — CANLI · `22:00` | UEFA Avrupa Ligi <https://fixbettv84.com/channel.html?id=ex5>
-- 🔴 **Olympiakos vs Sparta Prag** — CANLI · `22:00` | UEFA Avrupa Ligi <https://fixbettv84.com/channel.html?id=ex4>
-- 🔴 **Omonia 0 - 1 Benfica** — CANLI · `22:00` | UEFA Avrupa Ligi <https://fixbettv84.com/channel.html?id=ex2>
-- 🔴 **Ajax 0 - 0 Atalanta** — CANLI · `22:00` | UEFA Avrupa Konferans Ligi <https://fixbettv84.com/channel.html?id=ex6>
 
 ## ✅ BİTTİ
 
@@ -35,17 +26,26 @@
 - ✅ **Lech Poznan 1 - 1 Sunderland** — MS · `19:45` | UEFA Avrupa Ligi <https://fixbettv84.com/channel.html?id=ex2>
 - ✅ **OFI Crete 0 - 2 Bayer Leverkusen** — MS · `19:45` | UEFA Avrupa Ligi <https://fixbettv84.com/channel.html?id=ex1>
 - ✅ **Sturm Graz vs Marsilya** — MS · `19:45` | UEFA Avrupa Ligi <https://fixbettv84.com/channel.html?id=ex4>
+- ✅ **Anadolu Efes vs Beşiktaş** — MS · `20:30` | Euroleague <https://fixbettv84.com/channel.html?id=ss>
+- ✅ **Beşiktaş 2 - 2 Crystal Palace** — MS · `22:00` | UEFA Avrupa Ligi ★ **Günün Maçı** <https://fixbettv84.com/channel.html?id=trt1>
+- ✅ **Bournemouth 3 - 0 Milan** — MS · `22:00` | UEFA Avrupa Ligi <https://fixbettv84.com/channel.html?id=ex7>
+- ✅ **Celtic 1 - 2 Celta Vigo** — MS · `22:00` | UEFA Avrupa Ligi <https://fixbettv84.com/channel.html?id=ex3>
+- ✅ **Hoffenheim 3 - 0 Lyon** — MS · `22:00` | UEFA Avrupa Ligi <https://fixbettv84.com/channel.html?id=ex1>
+- ✅ **Lilleström 0 - 6 Real Sociedad** — MS · `22:00` | UEFA Avrupa Ligi <https://fixbettv84.com/channel.html?id=ex5>
+- ✅ **Olympiakos vs Sparta Prag** — MS · `22:00` | UEFA Avrupa Ligi <https://fixbettv84.com/channel.html?id=ex4>
+- ✅ **Omonia 1 - 4 Benfica** — MS · `22:00` | UEFA Avrupa Ligi <https://fixbettv84.com/channel.html?id=ex2>
+- ✅ **Ajax 2 - 0 Atalanta** — MS · `22:00` | UEFA Avrupa Konferans Ligi <https://fixbettv84.com/channel.html?id=ex6>
 
 ## ⭐ GÜNÜN MAÇI
 
 - ✅ **Trabzonspor 2 - 0 Hearts** — MS · `19:45` | UEFA Avrupa Konferans Ligi ★ **Günün Maçı** <https://fixbettv84.com/channel.html?id=trt1>
-- 🔴 **Beşiktaş 0 - 0 Crystal Palace** — CANLI · `22:00` | UEFA Avrupa Ligi ★ **Günün Maçı** <https://fixbettv84.com/channel.html?id=trt1>
+- ✅ **Beşiktaş 2 - 2 Crystal Palace** — MS · `22:00` | UEFA Avrupa Ligi ★ **Günün Maçı** <https://fixbettv84.com/channel.html?id=trt1>
 
 ---
 ## 🏆 Lig Bazlı
 
 ### Euroleague
-- 🔴 Anadolu Efes vs Beşiktaş — 20:30
+- ⏰ Anadolu Efes vs Beşiktaş — 20:30
 - 🔴 Partizan vs Kızılyıldız — 21:45
 
 ### NBA
@@ -54,7 +54,7 @@
 
 ### UEFA Avrupa Konferans Ligi
 - ⏰ Trabzonspor vs Hearts — 19:45
-- 🔴 Ajax vs Atalanta — 22:00
+- ⏰ Ajax vs Atalanta — 22:00
 
 ### UEFA Avrupa Ligi
 - ⏰ Ararat vs AZ Alkmaar — 19:45
@@ -64,13 +64,13 @@
 - ⏰ Lech Poznan vs Sunderland — 19:45
 - ⏰ OFI Crete vs Bayer Leverkusen — 19:45
 - ⏰ Sturm Graz vs Marsilya — 19:45
-- 🔴 Beşiktaş vs Crystal Palace — 22:00
-- 🔴 Bournemouth vs Milan — 22:00
-- 🔴 Celtic vs Celta Vigo — 22:00
-- 🔴 Hoffenheim vs Lyon — 22:00
-- 🔴 Lilleström vs Real Sociedad — 22:00
-- 🔴 Olympiakos vs Sparta Prag — 22:00
-- 🔴 Omonia vs Benfica — 22:00
+- ⏰ Beşiktaş vs Crystal Palace — 22:00
+- ⏰ Bournemouth vs Milan — 22:00
+- ⏰ Celtic vs Celta Vigo — 22:00
+- ⏰ Hoffenheim vs Lyon — 22:00
+- ⏰ Lilleström vs Real Sociedad — 22:00
+- ⏰ Olympiakos vs Sparta Prag — 22:00
+- ⏰ Omonia vs Benfica — 22:00
 
 ### WTA Ningbo
 - ⏰ I.Jovic vs J.Paolini — 08:00
