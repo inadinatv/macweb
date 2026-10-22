@@ -13,7 +13,7 @@
       "fixbettv12.com",
       "fixbettv11.com"
     ],
-    "last_checked": "2026-10-22T01:04:45+00:00",
+    "last_checked": "2026-10-22T05:24:42+00:00",
     "note": "OK",
     "probed": 200
   },
@@ -68,6 +68,32 @@
       "score_updated_at": "",
       "event_id": "",
       "starts_at": "2026-10-22T07:30:00+03:00",
+      "status_clock": ""
+    },
+    {
+      "match_id": "bm2",
+      "home": "I.Jovic",
+      "away": "J.Paolini",
+      "league": "WTA Ningbo",
+      "time": "08:00",
+      "sport": "Tenis",
+      "is_match_of_day": false,
+      "channel_id": "bm2",
+      "logo_home": "https://static.flashscore.com/res/image/data/zDQTpgGG-tjoxv74H.png",
+      "logo_away": "https://static.flashscore.com/res/image/data/h0kH5vDr-0fhNJLOt.png",
+      "status": "live",
+      "started": true,
+      "raw_event": "08:00 | WTA Ningbo",
+      "url": "https://fixbettv84.com/channel.html?id=bm2",
+      "fetched_at": "",
+      "status_source": "schedule",
+      "raw_status": "",
+      "score_home": null,
+      "score_away": null,
+      "score_source": "",
+      "score_updated_at": "",
+      "event_id": "",
+      "starts_at": "2026-10-22T08:00:00+03:00",
       "status_clock": ""
     }
   ]

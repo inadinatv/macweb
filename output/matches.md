@@ -1,17 +1,17 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-10-22 04:54  
-> **Toplam maç:** 26  |  **Canlı:** 2  |  **Yaklaşan:** 22
+> **Güncellenme:** 2026-10-22 05:25  
+> **Toplam maç:** 26  |  **Canlı:** 3  |  **Yaklaşan:** 21
 
 ## 🔴 CANLI
 
 - 🔴 **A.Li vs Zeynep Sönmez** — CANLI · `05:30` | WTA Osaka <https://fixbettv84.com/channel.html?id=bm1>
 - 🔴 **M.Stoiana vs M.Uchijima** — CANLI · `07:30` | WTA Osaka <https://fixbettv84.com/channel.html?id=bm1>
+- 🔴 **I.Jovic vs J.Paolini** — CANLI · `08:00` | WTA Ningbo <https://fixbettv84.com/channel.html?id=bm2>
 
 ## ⏰ YAKLAŞAN
 
-- ⏰ **I.Jovic vs J.Paolini** — YAKLAŞAN · `08:00` | WTA Ningbo <https://fixbettv84.com/channel.html?id=bm2>
 - ⏰ **M.Linette vs K.Siniakova** — YAKLAŞAN · `09:30` | WTA Osaka <https://fixbettv84.com/channel.html?id=bm1>
 - ⏰ **K.Kawa vs B.Bencic** — YAKLAŞAN · `10:00` | WTA Ningbo <https://fixbettv84.com/channel.html?id=bm2>
 - ⏰ **A.Eala vs D.Shnaider** — YAKLAŞAN · `12:00` | WTA Ningbo <https://fixbettv84.com/channel.html?id=bm2>
@@ -76,7 +76,7 @@
 - ⏰ Omonia vs Benfica — 22:00
 
 ### WTA Ningbo
-- ⏰ I.Jovic vs J.Paolini — 08:00
+- 🔴 I.Jovic vs J.Paolini — 08:00
 - ⏰ K.Kawa vs B.Bencic — 10:00
 - ⏰ A.Eala vs D.Shnaider — 12:00
 
