@@ -1,20 +1,16 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-10-22 05:25  
-> **Toplam maç:** 26  |  **Canlı:** 3  |  **Yaklaşan:** 21
+> **Güncellenme:** 2026-10-22 09:50  
+> **Toplam maç:** 26  |  **Canlı:** 2  |  **Yaklaşan:** 18
 
 ## 🔴 CANLI
 
-- 🔴 **A.Li vs Zeynep Sönmez** — CANLI · `05:30` | WTA Osaka <https://fixbettv84.com/channel.html?id=bm1>
-- 🔴 **M.Stoiana vs M.Uchijima** — CANLI · `07:30` | WTA Osaka <https://fixbettv84.com/channel.html?id=bm1>
-- 🔴 **I.Jovic vs J.Paolini** — CANLI · `08:00` | WTA Ningbo <https://fixbettv84.com/channel.html?id=bm2>
+- 🔴 **K.Kawa vs B.Bencic** — CANLI · `10:00` | WTA Ningbo <https://fixbettv84.com/channel.html?id=bm2>
+- 🔴 **A.Eala vs D.Shnaider** — CANLI · `12:00` | WTA Ningbo <https://fixbettv84.com/channel.html?id=bm2>
 
 ## ⏰ YAKLAŞAN
 
-- ⏰ **M.Linette vs K.Siniakova** — YAKLAŞAN · `09:30` | WTA Osaka <https://fixbettv84.com/channel.html?id=bm1>
-- ⏰ **K.Kawa vs B.Bencic** — YAKLAŞAN · `10:00` | WTA Ningbo <https://fixbettv84.com/channel.html?id=bm2>
-- ⏰ **A.Eala vs D.Shnaider** — YAKLAŞAN · `12:00` | WTA Ningbo <https://fixbettv84.com/channel.html?id=bm2>
 - ⏰ **Trabzonspor vs Hearts** — YAKLAŞAN · `19:45` | UEFA Avrupa Konferans Ligi ★ **Günün Maçı** <https://fixbettv84.com/channel.html?id=trt1>
 - ⏰ **Ararat vs AZ Alkmaar** — YAKLAŞAN · `19:45` | UEFA Avrupa Ligi <https://fixbettv84.com/channel.html?id=ex6>
 - ⏰ **Dinamo Zagreb vs NEC Nijmegen** — YAKLAŞAN · `19:45` | UEFA Avrupa Ligi <https://fixbettv84.com/channel.html?id=ex5>
@@ -38,6 +34,10 @@
 
 - ✅ **Miami Heat vs Minnesota TW** — MS · `02:30` | NBA <https://fixbettv84.com/channel.html?id=ss>
 - ✅ **LA Lakers vs GS Warriors** — MS · `05:00` | NBA <https://fixbettv84.com/channel.html?id=ss>
+- ✅ **A.Li vs Zeynep Sönmez** — MS · `05:30` | WTA Osaka <https://fixbettv84.com/channel.html?id=bm1>
+- ✅ **M.Stoiana vs M.Uchijima** — MS · `07:30` | WTA Osaka <https://fixbettv84.com/channel.html?id=bm1>
+- ✅ **I.Jovic vs J.Paolini** — MS · `08:00` | WTA Ningbo <https://fixbettv84.com/channel.html?id=bm2>
+- ✅ **M.Linette vs K.Siniakova** — MS · `09:30` | WTA Osaka <https://fixbettv84.com/channel.html?id=bm1>
 
 ## ⭐ GÜNÜN MAÇI
 
@@ -76,13 +76,13 @@
 - ⏰ Omonia vs Benfica — 22:00
 
 ### WTA Ningbo
-- 🔴 I.Jovic vs J.Paolini — 08:00
-- ⏰ K.Kawa vs B.Bencic — 10:00
-- ⏰ A.Eala vs D.Shnaider — 12:00
+- ⏰ I.Jovic vs J.Paolini — 08:00
+- 🔴 K.Kawa vs B.Bencic — 10:00
+- 🔴 A.Eala vs D.Shnaider — 12:00
 
 ### WTA Osaka
-- 🔴 A.Li vs Zeynep Sönmez — 05:30
-- 🔴 M.Stoiana vs M.Uchijima — 07:30
+- ⏰ A.Li vs Zeynep Sönmez — 05:30
+- ⏰ M.Stoiana vs M.Uchijima — 07:30
 - ⏰ M.Linette vs K.Siniakova — 09:30
 
 ---
