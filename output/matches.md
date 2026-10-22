@@ -1,12 +1,11 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-10-22 09:50  
-> **Toplam maç:** 26  |  **Canlı:** 2  |  **Yaklaşan:** 18
+> **Güncellenme:** 2026-10-22 10:28  
+> **Toplam maç:** 26  |  **Canlı:** 1  |  **Yaklaşan:** 18
 
 ## 🔴 CANLI
 
-- 🔴 **K.Kawa vs B.Bencic** — CANLI · `10:00` | WTA Ningbo <https://fixbettv84.com/channel.html?id=bm2>
 - 🔴 **A.Eala vs D.Shnaider** — CANLI · `12:00` | WTA Ningbo <https://fixbettv84.com/channel.html?id=bm2>
 
 ## ⏰ YAKLAŞAN
@@ -38,6 +37,7 @@
 - ✅ **M.Stoiana vs M.Uchijima** — MS · `07:30` | WTA Osaka <https://fixbettv84.com/channel.html?id=bm1>
 - ✅ **I.Jovic vs J.Paolini** — MS · `08:00` | WTA Ningbo <https://fixbettv84.com/channel.html?id=bm2>
 - ✅ **M.Linette vs K.Siniakova** — MS · `09:30` | WTA Osaka <https://fixbettv84.com/channel.html?id=bm1>
+- ✅ **K.Kawa vs B.Bencic** — MS · `10:00` | WTA Ningbo <https://fixbettv84.com/channel.html?id=bm2>
 
 ## ⭐ GÜNÜN MAÇI
 
@@ -77,7 +77,7 @@
 
 ### WTA Ningbo
 - ⏰ I.Jovic vs J.Paolini — 08:00
-- 🔴 K.Kawa vs B.Bencic — 10:00
+- ⏰ K.Kawa vs B.Bencic — 10:00
 - 🔴 A.Eala vs D.Shnaider — 12:00
 
 ### WTA Osaka
