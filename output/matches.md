@@ -1,86 +1,53 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-10-22 20:58  
-> **Toplam maç:** 26  |  **Canlı:** 1  |  **Yaklaşan:** 0
+> **Güncellenme:** 2026-10-22 22:03  
+> **Toplam maç:** 10  |  **Canlı:** 0  |  **Yaklaşan:** 9
 
-## 🔴 CANLI
+## ⏰ YAKLAŞAN
 
-- 🔴 **Partizan vs Kızılyıldız** — CANLI · `21:45` | Euroleague <https://fixbettv84.com/channel.html?id=ss>
+- ⏰ **Philadelphia 76ers vs Cleveland Cavaliers** — YAKLAŞAN · `02:00` | NBA <https://fixbettv84.com/channel.html?id=ss>
+- ⏰ **OKC Thunder vs Denver Nuggets** — YAKLAŞAN · `04:30` | NBA <https://fixbettv84.com/channel.html?id=ss>
+- ⏰ **Çayırova Bld. vs Bursaspor** — YAKLAŞAN · `19:00` | Basketbol Süper Ligi <https://fixbettv84.com/channel.html?id=b5>
+- ⏰ **Alanyaspor vs Kocaelispor** — YAKLAŞAN · `20:00` | Trendyol Süper Lig <https://fixbettv84.com/channel.html?id=zirve>
+- ⏰ **Boluspor vs Vanspor** — YAKLAŞAN · `20:00` | Trendyol 1. Lig <https://fixbettv84.com/channel.html?id=trtspor>
+- ⏰ **Zalgiris Kaunas vs Asvel Villeurbanne** — YAKLAŞAN · `20:00` | Euroleague <https://fixbettv84.com/channel.html?id=ss2>
+- ⏰ **Brest vs Nice** — YAKLAŞAN · `21:45` | Fransa Ligue 1 <https://fixbettv84.com/channel.html?id=b5>
+- ⏰ **Ipswich Town vs Nottingham Forest** — YAKLAŞAN · `22:00` | İngiltere Premier Lig <https://fixbettv84.com/channel.html?id=b3>
+- ⏰ **Alaves vs Malaga** — YAKLAŞAN · `22:00` | İspanya La Liga <https://fixbettv84.com/channel.html?id=ss>
 
 ## ✅ BİTTİ
 
-- ✅ **Miami Heat vs Minnesota TW** — MS · `02:30` | NBA <https://fixbettv84.com/channel.html?id=ss>
-- ✅ **LA Lakers vs GS Warriors** — MS · `05:00` | NBA <https://fixbettv84.com/channel.html?id=ss>
-- ✅ **A.Li vs Zeynep Sönmez** — MS · `05:30` | WTA Osaka <https://fixbettv84.com/channel.html?id=bm1>
-- ✅ **M.Stoiana vs M.Uchijima** — MS · `07:30` | WTA Osaka <https://fixbettv84.com/channel.html?id=bm1>
-- ✅ **I.Jovic vs J.Paolini** — MS · `08:00` | WTA Ningbo <https://fixbettv84.com/channel.html?id=bm2>
-- ✅ **M.Linette vs K.Siniakova** — MS · `09:30` | WTA Osaka <https://fixbettv84.com/channel.html?id=bm1>
-- ✅ **K.Kawa vs B.Bencic** — MS · `10:00` | WTA Ningbo <https://fixbettv84.com/channel.html?id=bm2>
-- ✅ **A.Eala vs D.Shnaider** — MS · `12:00` | WTA Ningbo <https://fixbettv84.com/channel.html?id=bm2>
-- ✅ **Trabzonspor 2 - 0 Hearts** — MS · `19:45` | UEFA Avrupa Konferans Ligi ★ **Günün Maçı** <https://fixbettv84.com/channel.html?id=trt1>
-- ✅ **Ararat vs AZ Alkmaar** — MS · `19:45` | UEFA Avrupa Ligi <https://fixbettv84.com/channel.html?id=ex6>
-- ✅ **Dinamo Zagreb 2 - 4 NEC Nijmegen** — MS · `19:45` | UEFA Avrupa Ligi <https://fixbettv84.com/channel.html?id=ex5>
-- ✅ **Ferencvaros 4 - 1 Torreense** — MS · `19:45` | UEFA Avrupa Ligi <https://fixbettv84.com/channel.html?id=ex3>
-- ✅ **Juventus 2 - 2 Rennes** — MS · `19:45` | UEFA Avrupa Ligi <https://fixbettv84.com/channel.html?id=ex7>
-- ✅ **Lech Poznan 1 - 1 Sunderland** — MS · `19:45` | UEFA Avrupa Ligi <https://fixbettv84.com/channel.html?id=ex2>
-- ✅ **OFI Crete 0 - 2 Bayer Leverkusen** — MS · `19:45` | UEFA Avrupa Ligi <https://fixbettv84.com/channel.html?id=ex1>
-- ✅ **Sturm Graz vs Marsilya** — MS · `19:45` | UEFA Avrupa Ligi <https://fixbettv84.com/channel.html?id=ex4>
-- ✅ **Anadolu Efes vs Beşiktaş** — MS · `20:30` | Euroleague <https://fixbettv84.com/channel.html?id=ss>
-- ✅ **Beşiktaş 2 - 2 Crystal Palace** — MS · `22:00` | UEFA Avrupa Ligi ★ **Günün Maçı** <https://fixbettv84.com/channel.html?id=trt1>
-- ✅ **Bournemouth 3 - 0 Milan** — MS · `22:00` | UEFA Avrupa Ligi <https://fixbettv84.com/channel.html?id=ex7>
-- ✅ **Celtic 1 - 2 Celta Vigo** — MS · `22:00` | UEFA Avrupa Ligi <https://fixbettv84.com/channel.html?id=ex3>
-- ✅ **Hoffenheim 3 - 0 Lyon** — MS · `22:00` | UEFA Avrupa Ligi <https://fixbettv84.com/channel.html?id=ex1>
-- ✅ **Lilleström 0 - 6 Real Sociedad** — MS · `22:00` | UEFA Avrupa Ligi <https://fixbettv84.com/channel.html?id=ex5>
-- ✅ **Olympiakos vs Sparta Prag** — MS · `22:00` | UEFA Avrupa Ligi <https://fixbettv84.com/channel.html?id=ex4>
-- ✅ **Omonia 1 - 4 Benfica** — MS · `22:00` | UEFA Avrupa Ligi <https://fixbettv84.com/channel.html?id=ex2>
-- ✅ **Ajax 2 - 0 Atalanta** — MS · `22:00` | UEFA Avrupa Konferans Ligi <https://fixbettv84.com/channel.html?id=ex6>
-
-## ⭐ GÜNÜN MAÇI
-
-- ✅ **Trabzonspor 2 - 0 Hearts** — MS · `19:45` | UEFA Avrupa Konferans Ligi ★ **Günün Maçı** <https://fixbettv84.com/channel.html?id=trt1>
-- ✅ **Beşiktaş 2 - 2 Crystal Palace** — MS · `22:00` | UEFA Avrupa Ligi ★ **Günün Maçı** <https://fixbettv84.com/channel.html?id=trt1>
+- ✅ **Olympiakos vs Fenerbahçe Tarfin** — MS · `21:15` | Euroleague <https://fixbettv84.com/channel.html?id=ss>
 
 ---
 ## 🏆 Lig Bazlı
 
+### Basketbol Süper Ligi
+- ⏰ Çayırova Bld. vs Bursaspor — 19:00
+
 ### Euroleague
-- ⏰ Anadolu Efes vs Beşiktaş — 20:30
-- 🔴 Partizan vs Kızılyıldız — 21:45
+- ⏰ Zalgiris Kaunas vs Asvel Villeurbanne — 20:00
+- ⏰ Olympiakos vs Fenerbahçe Tarfin — 21:15
+
+### Fransa Ligue 1
+- ⏰ Brest vs Nice — 21:45
 
 ### NBA
-- ⏰ Miami Heat vs Minnesota TW — 02:30
-- ⏰ LA Lakers vs GS Warriors — 05:00
+- ⏰ Philadelphia 76ers vs Cleveland Cavaliers — 02:00
+- ⏰ OKC Thunder vs Denver Nuggets — 04:30
 
-### UEFA Avrupa Konferans Ligi
-- ⏰ Trabzonspor vs Hearts — 19:45
-- ⏰ Ajax vs Atalanta — 22:00
+### Trendyol 1. Lig
+- ⏰ Boluspor vs Vanspor — 20:00
 
-### UEFA Avrupa Ligi
-- ⏰ Ararat vs AZ Alkmaar — 19:45
-- ⏰ Dinamo Zagreb vs NEC Nijmegen — 19:45
-- ⏰ Ferencvaros vs Torreense — 19:45
-- ⏰ Juventus vs Rennes — 19:45
-- ⏰ Lech Poznan vs Sunderland — 19:45
-- ⏰ OFI Crete vs Bayer Leverkusen — 19:45
-- ⏰ Sturm Graz vs Marsilya — 19:45
-- ⏰ Beşiktaş vs Crystal Palace — 22:00
-- ⏰ Bournemouth vs Milan — 22:00
-- ⏰ Celtic vs Celta Vigo — 22:00
-- ⏰ Hoffenheim vs Lyon — 22:00
-- ⏰ Lilleström vs Real Sociedad — 22:00
-- ⏰ Olympiakos vs Sparta Prag — 22:00
-- ⏰ Omonia vs Benfica — 22:00
+### Trendyol Süper Lig
+- ⏰ Alanyaspor vs Kocaelispor — 20:00
 
-### WTA Ningbo
-- ⏰ I.Jovic vs J.Paolini — 08:00
-- ⏰ K.Kawa vs B.Bencic — 10:00
-- ⏰ A.Eala vs D.Shnaider — 12:00
+### İngiltere Premier Lig
+- ⏰ Ipswich Town vs Nottingham Forest — 22:00
 
-### WTA Osaka
-- ⏰ A.Li vs Zeynep Sönmez — 05:30
-- ⏰ M.Stoiana vs M.Uchijima — 07:30
-- ⏰ M.Linette vs K.Siniakova — 09:30
+### İspanya La Liga
+- ⏰ Alaves vs Malaga — 22:00
 
 ---
 ## 📺 7/24 KANALLAR (31)
