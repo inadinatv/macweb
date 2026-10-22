@@ -1,18 +1,16 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-10-22 01:05  
-> **Toplam maç:** 26  |  **Canlı:** 1  |  **Yaklaşan:** 25
+> **Güncellenme:** 2026-10-22 04:54  
+> **Toplam maç:** 26  |  **Canlı:** 2  |  **Yaklaşan:** 22
 
 ## 🔴 CANLI
 
-- 🔴 **Miami Heat vs Minnesota TW** — CANLI · `02:30` | NBA <https://fixbettv84.com/channel.html?id=ss>
+- 🔴 **A.Li vs Zeynep Sönmez** — CANLI · `05:30` | WTA Osaka <https://fixbettv84.com/channel.html?id=bm1>
+- 🔴 **M.Stoiana vs M.Uchijima** — CANLI · `07:30` | WTA Osaka <https://fixbettv84.com/channel.html?id=bm1>
 
 ## ⏰ YAKLAŞAN
 
-- ⏰ **LA Lakers vs GS Warriors** — YAKLAŞAN · `05:00` | NBA <https://fixbettv84.com/channel.html?id=ss>
-- ⏰ **A.Li vs Zeynep Sönmez** — YAKLAŞAN · `05:30` | WTA Osaka <https://fixbettv84.com/channel.html?id=bm1>
-- ⏰ **M.Stoiana vs M.Uchijima** — YAKLAŞAN · `07:30` | WTA Osaka <https://fixbettv84.com/channel.html?id=bm1>
 - ⏰ **I.Jovic vs J.Paolini** — YAKLAŞAN · `08:00` | WTA Ningbo <https://fixbettv84.com/channel.html?id=bm2>
 - ⏰ **M.Linette vs K.Siniakova** — YAKLAŞAN · `09:30` | WTA Osaka <https://fixbettv84.com/channel.html?id=bm1>
 - ⏰ **K.Kawa vs B.Bencic** — YAKLAŞAN · `10:00` | WTA Ningbo <https://fixbettv84.com/channel.html?id=bm2>
@@ -36,6 +34,11 @@
 - ⏰ **Omonia vs Benfica** — YAKLAŞAN · `22:00` | UEFA Avrupa Ligi <https://fixbettv84.com/channel.html?id=ex2>
 - ⏰ **Ajax vs Atalanta** — YAKLAŞAN · `22:00` | UEFA Avrupa Konferans Ligi <https://fixbettv84.com/channel.html?id=ex6>
 
+## ✅ BİTTİ
+
+- ✅ **Miami Heat vs Minnesota TW** — MS · `02:30` | NBA <https://fixbettv84.com/channel.html?id=ss>
+- ✅ **LA Lakers vs GS Warriors** — MS · `05:00` | NBA <https://fixbettv84.com/channel.html?id=ss>
+
 ## ⭐ GÜNÜN MAÇI
 
 - ⏰ **Trabzonspor vs Hearts** — YAKLAŞAN · `19:45` | UEFA Avrupa Konferans Ligi ★ **Günün Maçı** <https://fixbettv84.com/channel.html?id=trt1>
@@ -49,7 +52,7 @@
 - ⏰ Partizan vs Kızılyıldız — 21:45
 
 ### NBA
-- 🔴 Miami Heat vs Minnesota TW — 02:30
+- ⏰ Miami Heat vs Minnesota TW — 02:30
 - ⏰ LA Lakers vs GS Warriors — 05:00
 
 ### UEFA Avrupa Konferans Ligi
@@ -78,8 +81,8 @@
 - ⏰ A.Eala vs D.Shnaider — 12:00
 
 ### WTA Osaka
-- ⏰ A.Li vs Zeynep Sönmez — 05:30
-- ⏰ M.Stoiana vs M.Uchijima — 07:30
+- 🔴 A.Li vs Zeynep Sönmez — 05:30
+- 🔴 M.Stoiana vs M.Uchijima — 07:30
 - ⏰ M.Linette vs K.Siniakova — 09:30
 
 ---
