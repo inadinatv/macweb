@@ -1,13 +1,13 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-10-23 19:19  
+> **Güncellenme:** 2026-10-23 19:34  
 > **Toplam maç:** 10  |  **Canlı:** 4  |  **Yaklaşan:** 0
 
 ## 🔴 CANLI
 
 - 🔴 **Olympiakos vs Fenerbahçe Tarfin** — CANLI · `21:15` | Euroleague <https://fixbettv84.com/channel.html?id=ss>
-- 🔴 **Brest 1 - 0 Nice** — CANLI · `21:45` | Fransa Ligue 1 <https://fixbettv84.com/channel.html?id=b5>
+- 🔴 **Brest 1 - 0 Nice** — DEVRE · `21:45` | Fransa Ligue 1 <https://fixbettv84.com/channel.html?id=b5>
 - 🔴 **Ipswich Town 0 - 1 Nottingham Forest** — CANLI · `22:00` | İngiltere Premier Lig <https://fixbettv84.com/channel.html?id=b3>
 - 🔴 **Alaves 0 - 0 Malaga** — CANLI · `22:00` | İspanya La Liga <https://fixbettv84.com/channel.html?id=ss>
 
@@ -31,7 +31,7 @@
 - 🔴 Olympiakos vs Fenerbahçe Tarfin — 21:15
 
 ### Fransa Ligue 1
-- 🔴 Brest vs Nice — 21:45
+- ⏰ Brest vs Nice — 21:45
 
 ### NBA
 - ⏰ Philadelphia 76ers vs Cleveland Cavaliers — 02:00

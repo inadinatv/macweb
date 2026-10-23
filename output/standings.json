@@ -1,13 +1,13 @@
 {
  "source": "mackolik",
- "generated_at": "2026-10-23T18:45:06+03:00",
+ "generated_at": "2026-10-23T22:33:30+03:00",
  "leagues": [
   {
    "id": "soccer/tur.1",
    "name": "Trendyol Süper Lig",
    "sport": "Futbol",
    "season": "2026-27 Turkish Super Lig",
-   "updated_at": "2026-10-23T18:45:06+03:00",
+   "updated_at": "2026-10-23T22:33:30+03:00",
    "teams": 18,
    "rows": [
     {
@@ -102,6 +102,24 @@
     },
     {
      "rank": 6,
+     "team": "Kocaelispor",
+     "sourceTeam": "Kocaelispor",
+     "abbr": "",
+     "logo": "https://file.mackolikfeeds.com/teams/b703zecenioz21dnj3p63v3f7",
+     "played": 9,
+     "wins": 5,
+     "draws": 0,
+     "losses": 4,
+     "goalsFor": 11,
+     "goalsAgainst": 9,
+     "diff": 2,
+     "points": 15,
+     "note": "",
+     "zone": "",
+     "zoneLabel": ""
+    },
+    {
+     "rank": 7,
      "team": "Çorum FK",
      "sourceTeam": "Çorum FK",
      "abbr": "",
@@ -119,7 +137,7 @@
      "zoneLabel": ""
     },
     {
-     "rank": 7,
+     "rank": 8,
      "team": "Kasımpaşa",
      "sourceTeam": "Kasımpaşa",
      "abbr": "",
@@ -137,36 +155,18 @@
      "zoneLabel": ""
     },
     {
-     "rank": 8,
-     "team": "Kocaelispor",
-     "sourceTeam": "Kocaelispor",
-     "abbr": "",
-     "logo": "https://file.mackolikfeeds.com/teams/b703zecenioz21dnj3p63v3f7",
-     "played": 8,
-     "wins": 4,
-     "draws": 0,
-     "losses": 4,
-     "goalsFor": 9,
-     "goalsAgainst": 8,
-     "diff": 1,
-     "points": 12,
-     "note": "",
-     "zone": "",
-     "zoneLabel": ""
-    },
-    {
      "rank": 9,
      "team": "Alanyaspor",
      "sourceTeam": "Alanyaspor",
      "abbr": "",
      "logo": "https://file.mackolikfeeds.com/teams/84fpe0iynjdghwysyo5tizdkk",
-     "played": 8,
+     "played": 9,
      "wins": 3,
      "draws": 3,
-     "losses": 2,
-     "goalsFor": 8,
-     "goalsAgainst": 9,
-     "diff": -1,
+     "losses": 3,
+     "goalsFor": 9,
+     "goalsAgainst": 11,
+     "diff": -2,
      "points": 12,
      "note": "",
      "zone": "",
