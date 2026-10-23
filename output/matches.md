@@ -1,12 +1,12 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-10-23 00:36  
-> **Toplam maç:** 10  |  **Canlı:** 1  |  **Yaklaşan:** 8
+> **Güncellenme:** 2026-10-23 00:59  
+> **Toplam maç:** 10  |  **Canlı:** 1  |  **Yaklaşan:** 9
 
 ## 🔴 CANLI
 
-- 🔴 **Philadelphia 76ers 53 - 69 Cleveland Cavaliers** — CANLI · `02:00` | NBA <https://fixbettv84.com/channel.html?id=ss>
+- 🔴 **Philadelphia 76ers 75 - 80 Cleveland Cavaliers** — CANLI · `02:00` | NBA <https://fixbettv84.com/channel.html?id=ss>
 
 ## ⏰ YAKLAŞAN
 
@@ -15,13 +15,10 @@
 - ⏰ **Alanyaspor vs Kocaelispor** — YAKLAŞAN · `20:00` | Trendyol Süper Lig <https://fixbettv84.com/channel.html?id=zirve>
 - ⏰ **Boluspor vs Vanspor** — YAKLAŞAN · `20:00` | Trendyol 1. Lig <https://fixbettv84.com/channel.html?id=trtspor>
 - ⏰ **Zalgiris Kaunas vs Asvel Villeurbanne** — YAKLAŞAN · `20:00` | Euroleague <https://fixbettv84.com/channel.html?id=ss2>
+- ⏰ **Olympiakos vs Fenerbahçe Tarfin** — YAKLAŞAN · `21:15` | Euroleague <https://fixbettv84.com/channel.html?id=ss>
 - ⏰ **Brest vs Nice** — YAKLAŞAN · `21:45` | Fransa Ligue 1 <https://fixbettv84.com/channel.html?id=b5>
 - ⏰ **Ipswich Town vs Nottingham Forest** — YAKLAŞAN · `22:00` | İngiltere Premier Lig <https://fixbettv84.com/channel.html?id=b3>
 - ⏰ **Alaves vs Malaga** — YAKLAŞAN · `22:00` | İspanya La Liga <https://fixbettv84.com/channel.html?id=ss>
-
-## ✅ BİTTİ
-
-- ✅ **Olympiakos vs Fenerbahçe Tarfin** — MS · `21:15` | Euroleague <https://fixbettv84.com/channel.html?id=ss>
 
 ---
 ## 🏆 Lig Bazlı
