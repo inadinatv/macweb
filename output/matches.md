@@ -1,12 +1,12 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-10-23 00:59  
+> **Güncellenme:** 2026-10-23 01:05  
 > **Toplam maç:** 10  |  **Canlı:** 1  |  **Yaklaşan:** 9
 
 ## 🔴 CANLI
 
-- 🔴 **Philadelphia 76ers 75 - 80 Cleveland Cavaliers** — CANLI · `02:00` | NBA <https://fixbettv84.com/channel.html?id=ss>
+- 🔴 **Philadelphia 76ers 78 - 84 Cleveland Cavaliers** — CANLI · `02:00` | NBA <https://fixbettv84.com/channel.html?id=ss>
 
 ## ⏰ YAKLAŞAN
 

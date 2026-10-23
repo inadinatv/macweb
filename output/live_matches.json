@@ -13,7 +13,7 @@
       "fixbettv12.com",
       "fixbettv11.com"
     ],
-    "last_checked": "2026-10-23T00:58:55+00:00",
+    "last_checked": "2026-10-23T01:05:11+00:00",
     "note": "OK",
     "probed": 200
   },
@@ -33,16 +33,16 @@
       "started": true,
       "raw_event": "02:00 | NBA",
       "url": "https://fixbettv84.com/channel.html?id=ss",
-      "fetched_at": "2026-10-23T03:58:21+03:00",
+      "fetched_at": "2026-10-23T04:04:37+03:00",
       "status_source": "espn",
       "raw_status": "STATUS_IN_PROGRESS",
-      "score_home": 75,
-      "score_away": 80,
+      "score_home": 78,
+      "score_away": 84,
       "score_source": "espn",
-      "score_updated_at": "2026-10-23T03:58:21+03:00",
+      "score_updated_at": "2026-10-23T04:04:37+03:00",
       "event_id": "401909093",
       "starts_at": "2026-10-22T23:00:00+00:00",
-      "status_clock": "4:00"
+      "status_clock": "3:00"
     }
   ]
 }
