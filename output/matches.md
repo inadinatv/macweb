@@ -1,7 +1,7 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-10-23 15:13  
+> **Güncellenme:** 2026-10-23 15:46  
 > **Toplam maç:** 10  |  **Canlı:** 0  |  **Yaklaşan:** 8
 
 ## ⏰ YAKLAŞAN
@@ -177,7 +177,7 @@
 - 🟢 **IDMAN TV** <https://andro.evrenesoglu157.click/checklist/androstreamliveidm.m3u8>
 - 🟢 **CBC SPORT** <https://andro.evrenesoglu157.click/checklist/androstreamlivecbcs.m3u8>
 
-### 📺 TARAFTARIUM24 ✅ `https://taraftariumtv35.com`
+### 📺 TARAFTARIUM24 ✅ `https://taraftariumtv36.com`
 - ⚪ **BEIN SPORTS 1**
 - ⚪ **BEIN SPORTS 2**
 - ⚪ **BEIN SPORTS 3**
