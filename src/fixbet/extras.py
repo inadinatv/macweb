@@ -730,6 +730,15 @@ def resolve_channel(panel: dict[str, Any], ctx: dict[str, Any], ch: dict[str, An
                 if (panel.get("playback") or {}).get("require_proxy"):
                     sources[-1]["requires_proxy"] = True
 
+    official_url = str(ch.get("official_url") or "").strip()
+    if official_url:
+        try:
+            official = urllib.parse.urlsplit(official_url)
+            if official.scheme == "https" and official.hostname and not official.username and not official.password:
+                add(official_url, "official")
+        except ValueError:
+            pass
+
     add(static, "hls")
     add(resolved, "hls")
     add(fallback, "hls")
@@ -739,8 +748,10 @@ def resolve_channel(panel: dict[str, Any], ctx: dict[str, Any], ch: dict[str, An
         if s["type"] == "hls":
             n += 1
             s["label"] = f"Kaynak {n}"
-        else:
+        elif s["type"] == "embed":
             s["label"] = "Iframe"
+        else:
+            s["label"] = "Resmî platform"
 
     return {
         "id": f"{panel_id}:{slug}",

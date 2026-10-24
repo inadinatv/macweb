@@ -128,6 +128,27 @@ def test_resolve_panel_online_and_sources_order():
     print("OK: resolve_panel_online_and_sources_order")
 
 
+def test_resolve_channel_places_safe_official_url_first():
+    now = datetime(2026, 9, 5, 12, 0, tzinfo=timezone.utc)
+    panel = _panel()
+    ctx = {"base_url": BASE, "healthy": False, "home_html": ""}
+    channel = {"slug": "bein-sports-1", "name": "BEIN SPORTS 1",
+               "official_url": "https://www.beinconnect.com.tr/canli-tv"}
+    resolved = extras.resolve_channel(panel, ctx, channel, None, None,
+                                     extras.DEFAULT_HEADERS, 5, now, None)
+    assert resolved["sources"][0] == {
+        "type": "official", "url": "https://www.beinconnect.com.tr/canli-tv",
+        "label": "Resmî platform",
+    }
+    assert any(source["type"] == "embed" for source in resolved["sources"])
+
+    channel["official_url"] = "javascript:alert(1)"
+    rejected = extras.resolve_channel(panel, ctx, channel, None, None,
+                                     extras.DEFAULT_HEADERS, 5, now, None)
+    assert all(source["type"] != "official" for source in rejected["sources"])
+    print("OK: resolve_channel_places_safe_official_url_first")
+
+
 def test_mirror_scan_when_address_changes():
     now = datetime(2026, 9, 5, 12, 0, tzinfo=timezone.utc)
     new_base = "https://atomsportv503.top"

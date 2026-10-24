@@ -2012,6 +2012,11 @@
           "referrer": "https://taraftariumtv38.com/",
           "sources": [
             {
+              "type": "official",
+              "url": "https://www.beinconnect.com.tr/canli-tv",
+              "label": "Resmî platform"
+            },
+            {
               "type": "embed",
               "url": "https://taraftariumtv38.com/channel/watch/bein-sports-1",
               "label": "Iframe"
@@ -2034,6 +2039,11 @@
           "page_url": "https://taraftariumtv38.com/channel/watch/bein-sports-2",
           "referrer": "https://taraftariumtv38.com/",
           "sources": [
+            {
+              "type": "official",
+              "url": "https://www.beinconnect.com.tr/canli-tv",
+              "label": "Resmî platform"
+            },
             {
               "type": "embed",
               "url": "https://taraftariumtv38.com/channel/watch/bein-sports-2",
@@ -2058,6 +2068,11 @@
           "referrer": "https://taraftariumtv38.com/",
           "sources": [
             {
+              "type": "official",
+              "url": "https://www.beinconnect.com.tr/canli-tv",
+              "label": "Resmî platform"
+            },
+            {
               "type": "embed",
               "url": "https://taraftariumtv38.com/channel/watch/bein-sports-3",
               "label": "Iframe"
@@ -2080,6 +2095,11 @@
           "page_url": "https://taraftariumtv38.com/channel/watch/bein-sports-4",
           "referrer": "https://taraftariumtv38.com/",
           "sources": [
+            {
+              "type": "official",
+              "url": "https://www.beinconnect.com.tr/canli-tv",
+              "label": "Resmî platform"
+            },
             {
               "type": "embed",
               "url": "https://taraftariumtv38.com/channel/watch/bein-sports-4",
@@ -2104,6 +2124,11 @@
           "referrer": "https://taraftariumtv38.com/",
           "sources": [
             {
+              "type": "official",
+              "url": "https://www.beinconnect.com.tr/canli-tv",
+              "label": "Resmî platform"
+            },
+            {
               "type": "embed",
               "url": "https://taraftariumtv38.com/channel/watch/bein-sports-5",
               "label": "Iframe"
@@ -2126,6 +2151,11 @@
           "page_url": "https://taraftariumtv38.com/channel/watch/bein-sports-max-1",
           "referrer": "https://taraftariumtv38.com/",
           "sources": [
+            {
+              "type": "official",
+              "url": "https://www.beinconnect.com.tr/canli-tv",
+              "label": "Resmî platform"
+            },
             {
               "type": "embed",
               "url": "https://taraftariumtv38.com/channel/watch/bein-sports-max-1",
@@ -2150,6 +2180,11 @@
           "referrer": "https://taraftariumtv38.com/",
           "sources": [
             {
+              "type": "official",
+              "url": "https://www.beinconnect.com.tr/canli-tv",
+              "label": "Resmî platform"
+            },
+            {
               "type": "embed",
               "url": "https://taraftariumtv38.com/channel/watch/bein-sports-max-2",
               "label": "Iframe"
@@ -2172,6 +2207,11 @@
           "page_url": "https://taraftariumtv38.com/channel/watch/s-sport",
           "referrer": "https://taraftariumtv38.com/",
           "sources": [
+            {
+              "type": "official",
+              "url": "https://www.ssportplus.com/canli-tv/s-sport-tv-canli-izle/",
+              "label": "Resmî platform"
+            },
             {
               "type": "embed",
               "url": "https://taraftariumtv38.com/channel/watch/s-sport",
@@ -2196,6 +2236,11 @@
           "referrer": "https://taraftariumtv38.com/",
           "sources": [
             {
+              "type": "official",
+              "url": "https://www.ssportplus.com/canli-tv/s-sport-2-canli-izle/",
+              "label": "Resmî platform"
+            },
+            {
               "type": "embed",
               "url": "https://taraftariumtv38.com/channel/watch/s-sport-2",
               "label": "Iframe"
@@ -2218,6 +2263,11 @@
           "page_url": "https://taraftariumtv38.com/channel/watch/trt-spor",
           "referrer": "https://taraftariumtv38.com/",
           "sources": [
+            {
+              "type": "official",
+              "url": "https://www.trtspor.com.tr/canli-yayin-izle/trt-spor",
+              "label": "Resmî platform"
+            },
             {
               "type": "embed",
               "url": "https://taraftariumtv38.com/channel/watch/trt-spor",
@@ -2242,6 +2292,11 @@
           "referrer": "https://taraftariumtv38.com/",
           "sources": [
             {
+              "type": "official",
+              "url": "https://www.tabii.com/tr/watch/live/trt1?trackId=150002",
+              "label": "Resmî platform"
+            },
+            {
               "type": "embed",
               "url": "https://taraftariumtv38.com/channel/watch/trt-1",
               "label": "Iframe"
@@ -2264,6 +2319,11 @@
           "page_url": "https://taraftariumtv38.com/channel/watch/a-spor",
           "referrer": "https://taraftariumtv38.com/",
           "sources": [
+            {
+              "type": "official",
+              "url": "https://www.aspor.com.tr/webtv/canli-yayin",
+              "label": "Resmî platform"
+            },
             {
               "type": "embed",
               "url": "https://taraftariumtv38.com/channel/watch/a-spor",
