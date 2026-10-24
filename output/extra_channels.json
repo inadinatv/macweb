@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-24T12:59:13+00:00",
+  "updated_at": "2026-10-24T14:05:09+00:00",
   "source": "output/extra_channels.json",
   "total": 109,
   "panels": [
@@ -448,7 +448,7 @@
           "sources": [
             {
               "type": "hls",
-              "url": "https://dga1op10s1u3lea.82250d06d39d38.click/live/selcukbeinsports1/playlist.m3u8",
+              "url": "https://dga1op10s1u3lea.8056e20759ac3f.click/live/selcukbeinsports1/playlist.m3u8",
               "label": "Kaynak 1",
               "mime_type": "application/vnd.apple.mpegurl"
             },
@@ -460,8 +460,8 @@
           ],
           "resolved": true,
           "fresh": true,
-          "resolved_url": "https://dga1op10s1u3lea.82250d06d39d38.click/live/selcukbeinsports1/playlist.m3u8",
-          "resolved_at": "2026-10-24T12:59:13+00:00",
+          "resolved_url": "https://dga1op10s1u3lea.8056e20759ac3f.click/live/selcukbeinsports1/playlist.m3u8",
+          "resolved_at": "2026-10-24T14:05:09+00:00",
           "stale": false
         },
         {
@@ -477,7 +477,7 @@
           "sources": [
             {
               "type": "hls",
-              "url": "https://dga1op10s1u3lea.82250d06d39d38.click/live/selcukbeinsports2/playlist.m3u8",
+              "url": "https://dga1op10s1u3lea.8056e20759ac3f.click/live/selcukbeinsports2/playlist.m3u8",
               "label": "Kaynak 1",
               "mime_type": "application/vnd.apple.mpegurl"
             },
@@ -489,8 +489,8 @@
           ],
           "resolved": true,
           "fresh": true,
-          "resolved_url": "https://dga1op10s1u3lea.82250d06d39d38.click/live/selcukbeinsports2/playlist.m3u8",
-          "resolved_at": "2026-10-24T12:59:13+00:00",
+          "resolved_url": "https://dga1op10s1u3lea.8056e20759ac3f.click/live/selcukbeinsports2/playlist.m3u8",
+          "resolved_at": "2026-10-24T14:05:09+00:00",
           "stale": false
         },
         {
@@ -506,7 +506,7 @@
           "sources": [
             {
               "type": "hls",
-              "url": "https://dga1op10s1u3lea.82250d06d39d38.click/live/selcukbeinsports3/playlist.m3u8",
+              "url": "https://dga1op10s1u3lea.8056e20759ac3f.click/live/selcukbeinsports3/playlist.m3u8",
               "label": "Kaynak 1",
               "mime_type": "application/vnd.apple.mpegurl"
             },
@@ -518,8 +518,8 @@
           ],
           "resolved": true,
           "fresh": true,
-          "resolved_url": "https://dga1op10s1u3lea.82250d06d39d38.click/live/selcukbeinsports3/playlist.m3u8",
-          "resolved_at": "2026-10-24T12:59:13+00:00",
+          "resolved_url": "https://dga1op10s1u3lea.8056e20759ac3f.click/live/selcukbeinsports3/playlist.m3u8",
+          "resolved_at": "2026-10-24T14:05:09+00:00",
           "stale": false
         },
         {
@@ -535,7 +535,7 @@
           "sources": [
             {
               "type": "hls",
-              "url": "https://dga1op10s1u3lea.82250d06d39d38.click/live/selcukbeinsports4/playlist.m3u8",
+              "url": "https://dga1op10s1u3lea.8056e20759ac3f.click/live/selcukbeinsports4/playlist.m3u8",
               "label": "Kaynak 1",
               "mime_type": "application/vnd.apple.mpegurl"
             },
@@ -547,8 +547,8 @@
           ],
           "resolved": true,
           "fresh": true,
-          "resolved_url": "https://dga1op10s1u3lea.82250d06d39d38.click/live/selcukbeinsports4/playlist.m3u8",
-          "resolved_at": "2026-10-24T12:59:13+00:00",
+          "resolved_url": "https://dga1op10s1u3lea.8056e20759ac3f.click/live/selcukbeinsports4/playlist.m3u8",
+          "resolved_at": "2026-10-24T14:05:09+00:00",
           "stale": false
         },
         {
@@ -564,7 +564,7 @@
           "sources": [
             {
               "type": "hls",
-              "url": "https://dga1op10s1u3lea.82250d06d39d38.click/live/selcukbeinsports5/playlist.m3u8",
+              "url": "https://dga1op10s1u3lea.8056e20759ac3f.click/live/selcukbeinsports5/playlist.m3u8",
               "label": "Kaynak 1",
               "mime_type": "application/vnd.apple.mpegurl"
             },
@@ -576,8 +576,8 @@
           ],
           "resolved": true,
           "fresh": true,
-          "resolved_url": "https://dga1op10s1u3lea.82250d06d39d38.click/live/selcukbeinsports5/playlist.m3u8",
-          "resolved_at": "2026-10-24T12:59:13+00:00",
+          "resolved_url": "https://dga1op10s1u3lea.8056e20759ac3f.click/live/selcukbeinsports5/playlist.m3u8",
+          "resolved_at": "2026-10-24T14:05:09+00:00",
           "stale": false
         },
         {
@@ -593,7 +593,7 @@
           "sources": [
             {
               "type": "hls",
-              "url": "https://dga1op10s1u3lea.82250d06d39d38.click/live/selcukbeinsportsmax1/playlist.m3u8",
+              "url": "https://dga1op10s1u3lea.8056e20759ac3f.click/live/selcukbeinsportsmax1/playlist.m3u8",
               "label": "Kaynak 1",
               "mime_type": "application/vnd.apple.mpegurl"
             },
@@ -605,8 +605,8 @@
           ],
           "resolved": true,
           "fresh": true,
-          "resolved_url": "https://dga1op10s1u3lea.82250d06d39d38.click/live/selcukbeinsportsmax1/playlist.m3u8",
-          "resolved_at": "2026-10-24T12:59:13+00:00",
+          "resolved_url": "https://dga1op10s1u3lea.8056e20759ac3f.click/live/selcukbeinsportsmax1/playlist.m3u8",
+          "resolved_at": "2026-10-24T14:05:09+00:00",
           "stale": false
         },
         {
@@ -622,7 +622,7 @@
           "sources": [
             {
               "type": "hls",
-              "url": "https://dga1op10s1u3lea.82250d06d39d38.click/live/selcukbeinsportsmax2/playlist.m3u8",
+              "url": "https://dga1op10s1u3lea.8056e20759ac3f.click/live/selcukbeinsportsmax2/playlist.m3u8",
               "label": "Kaynak 1",
               "mime_type": "application/vnd.apple.mpegurl"
             },
@@ -634,8 +634,8 @@
           ],
           "resolved": true,
           "fresh": true,
-          "resolved_url": "https://dga1op10s1u3lea.82250d06d39d38.click/live/selcukbeinsportsmax2/playlist.m3u8",
-          "resolved_at": "2026-10-24T12:59:13+00:00",
+          "resolved_url": "https://dga1op10s1u3lea.8056e20759ac3f.click/live/selcukbeinsportsmax2/playlist.m3u8",
+          "resolved_at": "2026-10-24T14:05:09+00:00",
           "stale": false
         },
         {
@@ -651,7 +651,7 @@
           "sources": [
             {
               "type": "hls",
-              "url": "https://dga1op10s1u3lea.82250d06d39d38.click/live/selcukssport/playlist.m3u8",
+              "url": "https://dga1op10s1u3lea.8056e20759ac3f.click/live/selcukssport/playlist.m3u8",
               "label": "Kaynak 1",
               "mime_type": "application/vnd.apple.mpegurl"
             },
@@ -663,8 +663,8 @@
           ],
           "resolved": true,
           "fresh": true,
-          "resolved_url": "https://dga1op10s1u3lea.82250d06d39d38.click/live/selcukssport/playlist.m3u8",
-          "resolved_at": "2026-10-24T12:59:13+00:00",
+          "resolved_url": "https://dga1op10s1u3lea.8056e20759ac3f.click/live/selcukssport/playlist.m3u8",
+          "resolved_at": "2026-10-24T14:05:09+00:00",
           "stale": false
         },
         {
@@ -680,7 +680,7 @@
           "sources": [
             {
               "type": "hls",
-              "url": "https://dga1op10s1u3lea.82250d06d39d38.click/live/selcukssport2/playlist.m3u8",
+              "url": "https://dga1op10s1u3lea.8056e20759ac3f.click/live/selcukssport2/playlist.m3u8",
               "label": "Kaynak 1",
               "mime_type": "application/vnd.apple.mpegurl"
             },
@@ -692,8 +692,8 @@
           ],
           "resolved": true,
           "fresh": true,
-          "resolved_url": "https://dga1op10s1u3lea.82250d06d39d38.click/live/selcukssport2/playlist.m3u8",
-          "resolved_at": "2026-10-24T12:59:13+00:00",
+          "resolved_url": "https://dga1op10s1u3lea.8056e20759ac3f.click/live/selcukssport2/playlist.m3u8",
+          "resolved_at": "2026-10-24T14:05:09+00:00",
           "stale": false
         },
         {
@@ -709,7 +709,7 @@
           "sources": [
             {
               "type": "hls",
-              "url": "https://dga1op10s1u3lea.82250d06d39d38.click/live/selcuktivibuspor1/playlist.m3u8",
+              "url": "https://dga1op10s1u3lea.8056e20759ac3f.click/live/selcuktivibuspor1/playlist.m3u8",
               "label": "Kaynak 1",
               "mime_type": "application/vnd.apple.mpegurl"
             },
@@ -721,8 +721,8 @@
           ],
           "resolved": true,
           "fresh": true,
-          "resolved_url": "https://dga1op10s1u3lea.82250d06d39d38.click/live/selcuktivibuspor1/playlist.m3u8",
-          "resolved_at": "2026-10-24T12:59:13+00:00",
+          "resolved_url": "https://dga1op10s1u3lea.8056e20759ac3f.click/live/selcuktivibuspor1/playlist.m3u8",
+          "resolved_at": "2026-10-24T14:05:09+00:00",
           "stale": false
         },
         {
@@ -738,7 +738,7 @@
           "sources": [
             {
               "type": "hls",
-              "url": "https://dga1op10s1u3lea.82250d06d39d38.click/live/selcuktivibuspor2/playlist.m3u8",
+              "url": "https://dga1op10s1u3lea.8056e20759ac3f.click/live/selcuktivibuspor2/playlist.m3u8",
               "label": "Kaynak 1",
               "mime_type": "application/vnd.apple.mpegurl"
             },
@@ -750,8 +750,8 @@
           ],
           "resolved": true,
           "fresh": true,
-          "resolved_url": "https://dga1op10s1u3lea.82250d06d39d38.click/live/selcuktivibuspor2/playlist.m3u8",
-          "resolved_at": "2026-10-24T12:59:13+00:00",
+          "resolved_url": "https://dga1op10s1u3lea.8056e20759ac3f.click/live/selcuktivibuspor2/playlist.m3u8",
+          "resolved_at": "2026-10-24T14:05:09+00:00",
           "stale": false
         },
         {
@@ -767,7 +767,7 @@
           "sources": [
             {
               "type": "hls",
-              "url": "https://dga1op10s1u3lea.82250d06d39d38.click/live/selcuksmartspor/playlist.m3u8",
+              "url": "https://dga1op10s1u3lea.8056e20759ac3f.click/live/selcuksmartspor/playlist.m3u8",
               "label": "Kaynak 1",
               "mime_type": "application/vnd.apple.mpegurl"
             },
@@ -779,8 +779,8 @@
           ],
           "resolved": true,
           "fresh": true,
-          "resolved_url": "https://dga1op10s1u3lea.82250d06d39d38.click/live/selcuksmartspor/playlist.m3u8",
-          "resolved_at": "2026-10-24T12:59:13+00:00",
+          "resolved_url": "https://dga1op10s1u3lea.8056e20759ac3f.click/live/selcuksmartspor/playlist.m3u8",
+          "resolved_at": "2026-10-24T14:05:09+00:00",
           "stale": false
         },
         {
@@ -796,7 +796,7 @@
           "sources": [
             {
               "type": "hls",
-              "url": "https://dga1op10s1u3lea.82250d06d39d38.click/live/selcukaspor/playlist.m3u8",
+              "url": "https://dga1op10s1u3lea.8056e20759ac3f.click/live/selcukaspor/playlist.m3u8",
               "label": "Kaynak 1",
               "mime_type": "application/vnd.apple.mpegurl"
             },
@@ -808,8 +808,8 @@
           ],
           "resolved": true,
           "fresh": true,
-          "resolved_url": "https://dga1op10s1u3lea.82250d06d39d38.click/live/selcukaspor/playlist.m3u8",
-          "resolved_at": "2026-10-24T12:59:13+00:00",
+          "resolved_url": "https://dga1op10s1u3lea.8056e20759ac3f.click/live/selcukaspor/playlist.m3u8",
+          "resolved_at": "2026-10-24T14:05:09+00:00",
           "stale": false
         },
         {
@@ -825,7 +825,7 @@
           "sources": [
             {
               "type": "hls",
-              "url": "https://dga1op10s1u3lea.82250d06d39d38.click/live/selcukeurosport1/playlist.m3u8",
+              "url": "https://dga1op10s1u3lea.8056e20759ac3f.click/live/selcukeurosport1/playlist.m3u8",
               "label": "Kaynak 1",
               "mime_type": "application/vnd.apple.mpegurl"
             },
@@ -837,8 +837,8 @@
           ],
           "resolved": true,
           "fresh": true,
-          "resolved_url": "https://dga1op10s1u3lea.82250d06d39d38.click/live/selcukeurosport1/playlist.m3u8",
-          "resolved_at": "2026-10-24T12:59:13+00:00",
+          "resolved_url": "https://dga1op10s1u3lea.8056e20759ac3f.click/live/selcukeurosport1/playlist.m3u8",
+          "resolved_at": "2026-10-24T14:05:09+00:00",
           "stale": false
         }
       ]
@@ -849,7 +849,7 @@
       "icon": "🌴",
       "base_url": "https://mahsunsports.xyz",
       "player_base": "",
-      "stream_base": "https://andro.evrenesoglu177.click/checklist",
+      "stream_base": "https://andro.evrenesoglu185.click/checklist",
       "healthy": true,
       "resolved": 39,
       "fresh": 39,
@@ -868,7 +868,7 @@
           "sources": [
             {
               "type": "hls",
-              "url": "https://andro.evrenesoglu177.click/checklist/androstreamlivebs1.m3u8",
+              "url": "https://andro.evrenesoglu185.click/checklist/androstreamlivebs1.m3u8",
               "label": "Kaynak 1",
               "mime_type": "application/vnd.apple.mpegurl"
             },
@@ -880,8 +880,8 @@
           ],
           "resolved": true,
           "fresh": true,
-          "resolved_url": "https://andro.evrenesoglu177.click/checklist/androstreamlivebs1.m3u8",
-          "resolved_at": "2026-10-24T12:59:13+00:00",
+          "resolved_url": "https://andro.evrenesoglu185.click/checklist/androstreamlivebs1.m3u8",
+          "resolved_at": "2026-10-24T14:05:09+00:00",
           "stale": false
         },
         {
@@ -897,7 +897,7 @@
           "sources": [
             {
               "type": "hls",
-              "url": "https://andro.evrenesoglu177.click/checklist/androstreamlivebs2.m3u8",
+              "url": "https://andro.evrenesoglu185.click/checklist/androstreamlivebs2.m3u8",
               "label": "Kaynak 1",
               "mime_type": "application/vnd.apple.mpegurl"
             },
@@ -909,8 +909,8 @@
           ],
           "resolved": true,
           "fresh": true,
-          "resolved_url": "https://andro.evrenesoglu177.click/checklist/androstreamlivebs2.m3u8",
-          "resolved_at": "2026-10-24T12:59:13+00:00",
+          "resolved_url": "https://andro.evrenesoglu185.click/checklist/androstreamlivebs2.m3u8",
+          "resolved_at": "2026-10-24T14:05:09+00:00",
           "stale": false
         },
         {
@@ -926,7 +926,7 @@
           "sources": [
             {
               "type": "hls",
-              "url": "https://andro.evrenesoglu177.click/checklist/androstreamlivebs3.m3u8",
+              "url": "https://andro.evrenesoglu185.click/checklist/androstreamlivebs3.m3u8",
               "label": "Kaynak 1",
               "mime_type": "application/vnd.apple.mpegurl"
             },
@@ -938,8 +938,8 @@
           ],
           "resolved": true,
           "fresh": true,
-          "resolved_url": "https://andro.evrenesoglu177.click/checklist/androstreamlivebs3.m3u8",
-          "resolved_at": "2026-10-24T12:59:13+00:00",
+          "resolved_url": "https://andro.evrenesoglu185.click/checklist/androstreamlivebs3.m3u8",
+          "resolved_at": "2026-10-24T14:05:09+00:00",
           "stale": false
         },
         {
@@ -955,7 +955,7 @@
           "sources": [
             {
               "type": "hls",
-              "url": "https://andro.evrenesoglu177.click/checklist/androstreamlivebs4.m3u8",
+              "url": "https://andro.evrenesoglu185.click/checklist/androstreamlivebs4.m3u8",
               "label": "Kaynak 1",
               "mime_type": "application/vnd.apple.mpegurl"
             },
@@ -967,8 +967,8 @@
           ],
           "resolved": true,
           "fresh": true,
-          "resolved_url": "https://andro.evrenesoglu177.click/checklist/androstreamlivebs4.m3u8",
-          "resolved_at": "2026-10-24T12:59:13+00:00",
+          "resolved_url": "https://andro.evrenesoglu185.click/checklist/androstreamlivebs4.m3u8",
+          "resolved_at": "2026-10-24T14:05:09+00:00",
           "stale": false
         },
         {
@@ -984,7 +984,7 @@
           "sources": [
             {
               "type": "hls",
-              "url": "https://andro.evrenesoglu177.click/checklist/androstreamlivebs5.m3u8",
+              "url": "https://andro.evrenesoglu185.click/checklist/androstreamlivebs5.m3u8",
               "label": "Kaynak 1",
               "mime_type": "application/vnd.apple.mpegurl"
             },
@@ -996,8 +996,8 @@
           ],
           "resolved": true,
           "fresh": true,
-          "resolved_url": "https://andro.evrenesoglu177.click/checklist/androstreamlivebs5.m3u8",
-          "resolved_at": "2026-10-24T12:59:13+00:00",
+          "resolved_url": "https://andro.evrenesoglu185.click/checklist/androstreamlivebs5.m3u8",
+          "resolved_at": "2026-10-24T14:05:09+00:00",
           "stale": false
         },
         {
@@ -1013,7 +1013,7 @@
           "sources": [
             {
               "type": "hls",
-              "url": "https://andro.evrenesoglu177.click/checklist/androstreamlivebsm1.m3u8",
+              "url": "https://andro.evrenesoglu185.click/checklist/androstreamlivebsm1.m3u8",
               "label": "Kaynak 1",
               "mime_type": "application/vnd.apple.mpegurl"
             },
@@ -1025,8 +1025,8 @@
           ],
           "resolved": true,
           "fresh": true,
-          "resolved_url": "https://andro.evrenesoglu177.click/checklist/androstreamlivebsm1.m3u8",
-          "resolved_at": "2026-10-24T12:59:13+00:00",
+          "resolved_url": "https://andro.evrenesoglu185.click/checklist/androstreamlivebsm1.m3u8",
+          "resolved_at": "2026-10-24T14:05:09+00:00",
           "stale": false
         },
         {
@@ -1042,7 +1042,7 @@
           "sources": [
             {
               "type": "hls",
-              "url": "https://andro.evrenesoglu177.click/checklist/androstreamlivebsm2.m3u8",
+              "url": "https://andro.evrenesoglu185.click/checklist/androstreamlivebsm2.m3u8",
               "label": "Kaynak 1",
               "mime_type": "application/vnd.apple.mpegurl"
             },
@@ -1054,8 +1054,8 @@
           ],
           "resolved": true,
           "fresh": true,
-          "resolved_url": "https://andro.evrenesoglu177.click/checklist/androstreamlivebsm2.m3u8",
-          "resolved_at": "2026-10-24T12:59:13+00:00",
+          "resolved_url": "https://andro.evrenesoglu185.click/checklist/androstreamlivebsm2.m3u8",
+          "resolved_at": "2026-10-24T14:05:09+00:00",
           "stale": false
         },
         {
@@ -1071,7 +1071,7 @@
           "sources": [
             {
               "type": "hls",
-              "url": "https://andro.evrenesoglu177.click/checklist/androstreamlivess1.m3u8",
+              "url": "https://andro.evrenesoglu185.click/checklist/androstreamlivess1.m3u8",
               "label": "Kaynak 1",
               "mime_type": "application/vnd.apple.mpegurl"
             },
@@ -1083,8 +1083,8 @@
           ],
           "resolved": true,
           "fresh": true,
-          "resolved_url": "https://andro.evrenesoglu177.click/checklist/androstreamlivess1.m3u8",
-          "resolved_at": "2026-10-24T12:59:13+00:00",
+          "resolved_url": "https://andro.evrenesoglu185.click/checklist/androstreamlivess1.m3u8",
+          "resolved_at": "2026-10-24T14:05:09+00:00",
           "stale": false
         },
         {
@@ -1100,7 +1100,7 @@
           "sources": [
             {
               "type": "hls",
-              "url": "https://andro.evrenesoglu177.click/checklist/androstreamlivess2.m3u8",
+              "url": "https://andro.evrenesoglu185.click/checklist/androstreamlivess2.m3u8",
               "label": "Kaynak 1",
               "mime_type": "application/vnd.apple.mpegurl"
             },
@@ -1112,8 +1112,8 @@
           ],
           "resolved": true,
           "fresh": true,
-          "resolved_url": "https://andro.evrenesoglu177.click/checklist/androstreamlivess2.m3u8",
-          "resolved_at": "2026-10-24T12:59:13+00:00",
+          "resolved_url": "https://andro.evrenesoglu185.click/checklist/androstreamlivess2.m3u8",
+          "resolved_at": "2026-10-24T14:05:09+00:00",
           "stale": false
         },
         {
@@ -1129,7 +1129,7 @@
           "sources": [
             {
               "type": "hls",
-              "url": "https://andro.evrenesoglu177.click/checklist/androstreamlivessplus1.m3u8",
+              "url": "https://andro.evrenesoglu185.click/checklist/androstreamlivessplus1.m3u8",
               "label": "Kaynak 1",
               "mime_type": "application/vnd.apple.mpegurl"
             },
@@ -1141,8 +1141,8 @@
           ],
           "resolved": true,
           "fresh": true,
-          "resolved_url": "https://andro.evrenesoglu177.click/checklist/androstreamlivessplus1.m3u8",
-          "resolved_at": "2026-10-24T12:59:13+00:00",
+          "resolved_url": "https://andro.evrenesoglu185.click/checklist/androstreamlivessplus1.m3u8",
+          "resolved_at": "2026-10-24T14:05:09+00:00",
           "stale": false
         },
         {
@@ -1158,7 +1158,7 @@
           "sources": [
             {
               "type": "hls",
-              "url": "https://andro.evrenesoglu177.click/checklist/androstreamlivets.m3u8",
+              "url": "https://andro.evrenesoglu185.click/checklist/androstreamlivets.m3u8",
               "label": "Kaynak 1",
               "mime_type": "application/vnd.apple.mpegurl"
             },
@@ -1170,8 +1170,8 @@
           ],
           "resolved": true,
           "fresh": true,
-          "resolved_url": "https://andro.evrenesoglu177.click/checklist/androstreamlivets.m3u8",
-          "resolved_at": "2026-10-24T12:59:13+00:00",
+          "resolved_url": "https://andro.evrenesoglu185.click/checklist/androstreamlivets.m3u8",
+          "resolved_at": "2026-10-24T14:05:09+00:00",
           "stale": false
         },
         {
@@ -1187,7 +1187,7 @@
           "sources": [
             {
               "type": "hls",
-              "url": "https://andro.evrenesoglu177.click/checklist/androstreamlivets1.m3u8",
+              "url": "https://andro.evrenesoglu185.click/checklist/androstreamlivets1.m3u8",
               "label": "Kaynak 1",
               "mime_type": "application/vnd.apple.mpegurl"
             },
@@ -1199,8 +1199,8 @@
           ],
           "resolved": true,
           "fresh": true,
-          "resolved_url": "https://andro.evrenesoglu177.click/checklist/androstreamlivets1.m3u8",
-          "resolved_at": "2026-10-24T12:59:13+00:00",
+          "resolved_url": "https://andro.evrenesoglu185.click/checklist/androstreamlivets1.m3u8",
+          "resolved_at": "2026-10-24T14:05:09+00:00",
           "stale": false
         },
         {
@@ -1216,7 +1216,7 @@
           "sources": [
             {
               "type": "hls",
-              "url": "https://andro.evrenesoglu177.click/checklist/androstreamlivets2.m3u8",
+              "url": "https://andro.evrenesoglu185.click/checklist/androstreamlivets2.m3u8",
               "label": "Kaynak 1",
               "mime_type": "application/vnd.apple.mpegurl"
             },
@@ -1228,8 +1228,8 @@
           ],
           "resolved": true,
           "fresh": true,
-          "resolved_url": "https://andro.evrenesoglu177.click/checklist/androstreamlivets2.m3u8",
-          "resolved_at": "2026-10-24T12:59:13+00:00",
+          "resolved_url": "https://andro.evrenesoglu185.click/checklist/androstreamlivets2.m3u8",
+          "resolved_at": "2026-10-24T14:05:09+00:00",
           "stale": false
         },
         {
@@ -1245,7 +1245,7 @@
           "sources": [
             {
               "type": "hls",
-              "url": "https://andro.evrenesoglu177.click/checklist/androstreamlivets3.m3u8",
+              "url": "https://andro.evrenesoglu185.click/checklist/androstreamlivets3.m3u8",
               "label": "Kaynak 1",
               "mime_type": "application/vnd.apple.mpegurl"
             },
@@ -1257,8 +1257,8 @@
           ],
           "resolved": true,
           "fresh": true,
-          "resolved_url": "https://andro.evrenesoglu177.click/checklist/androstreamlivets3.m3u8",
-          "resolved_at": "2026-10-24T12:59:13+00:00",
+          "resolved_url": "https://andro.evrenesoglu185.click/checklist/androstreamlivets3.m3u8",
+          "resolved_at": "2026-10-24T14:05:09+00:00",
           "stale": false
         },
         {
@@ -1274,7 +1274,7 @@
           "sources": [
             {
               "type": "hls",
-              "url": "https://andro.evrenesoglu177.click/checklist/androstreamlivets4.m3u8",
+              "url": "https://andro.evrenesoglu185.click/checklist/androstreamlivets4.m3u8",
               "label": "Kaynak 1",
               "mime_type": "application/vnd.apple.mpegurl"
             },
@@ -1286,8 +1286,8 @@
           ],
           "resolved": true,
           "fresh": true,
-          "resolved_url": "https://andro.evrenesoglu177.click/checklist/androstreamlivets4.m3u8",
-          "resolved_at": "2026-10-24T12:59:13+00:00",
+          "resolved_url": "https://andro.evrenesoglu185.click/checklist/androstreamlivets4.m3u8",
+          "resolved_at": "2026-10-24T14:05:09+00:00",
           "stale": false
         },
         {
@@ -1303,7 +1303,7 @@
           "sources": [
             {
               "type": "hls",
-              "url": "https://andro.evrenesoglu177.click/checklist/androstreamlivesm1.m3u8",
+              "url": "https://andro.evrenesoglu185.click/checklist/androstreamlivesm1.m3u8",
               "label": "Kaynak 1",
               "mime_type": "application/vnd.apple.mpegurl"
             },
@@ -1315,8 +1315,8 @@
           ],
           "resolved": true,
           "fresh": true,
-          "resolved_url": "https://andro.evrenesoglu177.click/checklist/androstreamlivesm1.m3u8",
-          "resolved_at": "2026-10-24T12:59:13+00:00",
+          "resolved_url": "https://andro.evrenesoglu185.click/checklist/androstreamlivesm1.m3u8",
+          "resolved_at": "2026-10-24T14:05:09+00:00",
           "stale": false
         },
         {
@@ -1332,7 +1332,7 @@
           "sources": [
             {
               "type": "hls",
-              "url": "https://andro.evrenesoglu177.click/checklist/androstreamlivesm2.m3u8",
+              "url": "https://andro.evrenesoglu185.click/checklist/androstreamlivesm2.m3u8",
               "label": "Kaynak 1",
               "mime_type": "application/vnd.apple.mpegurl"
             },
@@ -1344,8 +1344,8 @@
           ],
           "resolved": true,
           "fresh": true,
-          "resolved_url": "https://andro.evrenesoglu177.click/checklist/androstreamlivesm2.m3u8",
-          "resolved_at": "2026-10-24T12:59:13+00:00",
+          "resolved_url": "https://andro.evrenesoglu185.click/checklist/androstreamlivesm2.m3u8",
+          "resolved_at": "2026-10-24T14:05:09+00:00",
           "stale": false
         },
         {
@@ -1361,7 +1361,7 @@
           "sources": [
             {
               "type": "hls",
-              "url": "https://andro.evrenesoglu177.click/checklist/androstreamlivees1.m3u8",
+              "url": "https://andro.evrenesoglu185.click/checklist/androstreamlivees1.m3u8",
               "label": "Kaynak 1",
               "mime_type": "application/vnd.apple.mpegurl"
             },
@@ -1373,8 +1373,8 @@
           ],
           "resolved": true,
           "fresh": true,
-          "resolved_url": "https://andro.evrenesoglu177.click/checklist/androstreamlivees1.m3u8",
-          "resolved_at": "2026-10-24T12:59:13+00:00",
+          "resolved_url": "https://andro.evrenesoglu185.click/checklist/androstreamlivees1.m3u8",
+          "resolved_at": "2026-10-24T14:05:09+00:00",
           "stale": false
         },
         {
@@ -1390,7 +1390,7 @@
           "sources": [
             {
               "type": "hls",
-              "url": "https://andro.evrenesoglu177.click/checklist/androstreamlivees2.m3u8",
+              "url": "https://andro.evrenesoglu185.click/checklist/androstreamlivees2.m3u8",
               "label": "Kaynak 1",
               "mime_type": "application/vnd.apple.mpegurl"
             },
@@ -1402,8 +1402,8 @@
           ],
           "resolved": true,
           "fresh": true,
-          "resolved_url": "https://andro.evrenesoglu177.click/checklist/androstreamlivees2.m3u8",
-          "resolved_at": "2026-10-24T12:59:13+00:00",
+          "resolved_url": "https://andro.evrenesoglu185.click/checklist/androstreamlivees2.m3u8",
+          "resolved_at": "2026-10-24T14:05:09+00:00",
           "stale": false
         },
         {
@@ -1419,7 +1419,7 @@
           "sources": [
             {
               "type": "hls",
-              "url": "https://andro.evrenesoglu177.click/checklist/androstreamlivetb.m3u8",
+              "url": "https://andro.evrenesoglu185.click/checklist/androstreamlivetb.m3u8",
               "label": "Kaynak 1",
               "mime_type": "application/vnd.apple.mpegurl"
             },
@@ -1431,8 +1431,8 @@
           ],
           "resolved": true,
           "fresh": true,
-          "resolved_url": "https://andro.evrenesoglu177.click/checklist/androstreamlivetb.m3u8",
-          "resolved_at": "2026-10-24T12:59:13+00:00",
+          "resolved_url": "https://andro.evrenesoglu185.click/checklist/androstreamlivetb.m3u8",
+          "resolved_at": "2026-10-24T14:05:09+00:00",
           "stale": false
         },
         {
@@ -1448,7 +1448,7 @@
           "sources": [
             {
               "type": "hls",
-              "url": "https://andro.evrenesoglu177.click/checklist/androstreamlivetb1.m3u8",
+              "url": "https://andro.evrenesoglu185.click/checklist/androstreamlivetb1.m3u8",
               "label": "Kaynak 1",
               "mime_type": "application/vnd.apple.mpegurl"
             },
@@ -1460,8 +1460,8 @@
           ],
           "resolved": true,
           "fresh": true,
-          "resolved_url": "https://andro.evrenesoglu177.click/checklist/androstreamlivetb1.m3u8",
-          "resolved_at": "2026-10-24T12:59:13+00:00",
+          "resolved_url": "https://andro.evrenesoglu185.click/checklist/androstreamlivetb1.m3u8",
+          "resolved_at": "2026-10-24T14:05:09+00:00",
           "stale": false
         },
         {
@@ -1477,7 +1477,7 @@
           "sources": [
             {
               "type": "hls",
-              "url": "https://andro.evrenesoglu177.click/checklist/androstreamlivetb2.m3u8",
+              "url": "https://andro.evrenesoglu185.click/checklist/androstreamlivetb2.m3u8",
               "label": "Kaynak 1",
               "mime_type": "application/vnd.apple.mpegurl"
             },
@@ -1489,8 +1489,8 @@
           ],
           "resolved": true,
           "fresh": true,
-          "resolved_url": "https://andro.evrenesoglu177.click/checklist/androstreamlivetb2.m3u8",
-          "resolved_at": "2026-10-24T12:59:13+00:00",
+          "resolved_url": "https://andro.evrenesoglu185.click/checklist/androstreamlivetb2.m3u8",
+          "resolved_at": "2026-10-24T14:05:09+00:00",
           "stale": false
         },
         {
@@ -1506,7 +1506,7 @@
           "sources": [
             {
               "type": "hls",
-              "url": "https://andro.evrenesoglu177.click/checklist/androstreamlivetb3.m3u8",
+              "url": "https://andro.evrenesoglu185.click/checklist/androstreamlivetb3.m3u8",
               "label": "Kaynak 1",
               "mime_type": "application/vnd.apple.mpegurl"
             },
@@ -1518,8 +1518,8 @@
           ],
           "resolved": true,
           "fresh": true,
-          "resolved_url": "https://andro.evrenesoglu177.click/checklist/androstreamlivetb3.m3u8",
-          "resolved_at": "2026-10-24T12:59:13+00:00",
+          "resolved_url": "https://andro.evrenesoglu185.click/checklist/androstreamlivetb3.m3u8",
+          "resolved_at": "2026-10-24T14:05:09+00:00",
           "stale": false
         },
         {
@@ -1535,7 +1535,7 @@
           "sources": [
             {
               "type": "hls",
-              "url": "https://andro.evrenesoglu177.click/checklist/androstreamlivetb4.m3u8",
+              "url": "https://andro.evrenesoglu185.click/checklist/androstreamlivetb4.m3u8",
               "label": "Kaynak 1",
               "mime_type": "application/vnd.apple.mpegurl"
             },
@@ -1547,8 +1547,8 @@
           ],
           "resolved": true,
           "fresh": true,
-          "resolved_url": "https://andro.evrenesoglu177.click/checklist/androstreamlivetb4.m3u8",
-          "resolved_at": "2026-10-24T12:59:13+00:00",
+          "resolved_url": "https://andro.evrenesoglu185.click/checklist/androstreamlivetb4.m3u8",
+          "resolved_at": "2026-10-24T14:05:09+00:00",
           "stale": false
         },
         {
@@ -1564,7 +1564,7 @@
           "sources": [
             {
               "type": "hls",
-              "url": "https://andro.evrenesoglu177.click/checklist/androstreamlivetb5.m3u8",
+              "url": "https://andro.evrenesoglu185.click/checklist/androstreamlivetb5.m3u8",
               "label": "Kaynak 1",
               "mime_type": "application/vnd.apple.mpegurl"
             },
@@ -1576,8 +1576,8 @@
           ],
           "resolved": true,
           "fresh": true,
-          "resolved_url": "https://andro.evrenesoglu177.click/checklist/androstreamlivetb5.m3u8",
-          "resolved_at": "2026-10-24T12:59:13+00:00",
+          "resolved_url": "https://andro.evrenesoglu185.click/checklist/androstreamlivetb5.m3u8",
+          "resolved_at": "2026-10-24T14:05:09+00:00",
           "stale": false
         },
         {
@@ -1593,7 +1593,7 @@
           "sources": [
             {
               "type": "hls",
-              "url": "https://andro.evrenesoglu177.click/checklist/androstreamlivetb6.m3u8",
+              "url": "https://andro.evrenesoglu185.click/checklist/androstreamlivetb6.m3u8",
               "label": "Kaynak 1",
               "mime_type": "application/vnd.apple.mpegurl"
             },
@@ -1605,8 +1605,8 @@
           ],
           "resolved": true,
           "fresh": true,
-          "resolved_url": "https://andro.evrenesoglu177.click/checklist/androstreamlivetb6.m3u8",
-          "resolved_at": "2026-10-24T12:59:13+00:00",
+          "resolved_url": "https://andro.evrenesoglu185.click/checklist/androstreamlivetb6.m3u8",
+          "resolved_at": "2026-10-24T14:05:09+00:00",
           "stale": false
         },
         {
@@ -1622,7 +1622,7 @@
           "sources": [
             {
               "type": "hls",
-              "url": "https://andro.evrenesoglu177.click/checklist/androstreamlivetb7.m3u8",
+              "url": "https://andro.evrenesoglu185.click/checklist/androstreamlivetb7.m3u8",
               "label": "Kaynak 1",
               "mime_type": "application/vnd.apple.mpegurl"
             },
@@ -1634,8 +1634,8 @@
           ],
           "resolved": true,
           "fresh": true,
-          "resolved_url": "https://andro.evrenesoglu177.click/checklist/androstreamlivetb7.m3u8",
-          "resolved_at": "2026-10-24T12:59:13+00:00",
+          "resolved_url": "https://andro.evrenesoglu185.click/checklist/androstreamlivetb7.m3u8",
+          "resolved_at": "2026-10-24T14:05:09+00:00",
           "stale": false
         },
         {
@@ -1651,7 +1651,7 @@
           "sources": [
             {
               "type": "hls",
-              "url": "https://andro.evrenesoglu177.click/checklist/androstreamlivetb8.m3u8",
+              "url": "https://andro.evrenesoglu185.click/checklist/androstreamlivetb8.m3u8",
               "label": "Kaynak 1",
               "mime_type": "application/vnd.apple.mpegurl"
             },
@@ -1663,8 +1663,8 @@
           ],
           "resolved": true,
           "fresh": true,
-          "resolved_url": "https://andro.evrenesoglu177.click/checklist/androstreamlivetb8.m3u8",
-          "resolved_at": "2026-10-24T12:59:13+00:00",
+          "resolved_url": "https://andro.evrenesoglu185.click/checklist/androstreamlivetb8.m3u8",
+          "resolved_at": "2026-10-24T14:05:09+00:00",
           "stale": false
         },
         {
@@ -1680,7 +1680,7 @@
           "sources": [
             {
               "type": "hls",
-              "url": "https://andro.evrenesoglu177.click/checklist/androstreamliveexn.m3u8",
+              "url": "https://andro.evrenesoglu185.click/checklist/androstreamliveexn.m3u8",
               "label": "Kaynak 1",
               "mime_type": "application/vnd.apple.mpegurl"
             },
@@ -1692,8 +1692,8 @@
           ],
           "resolved": true,
           "fresh": true,
-          "resolved_url": "https://andro.evrenesoglu177.click/checklist/androstreamliveexn.m3u8",
-          "resolved_at": "2026-10-24T12:59:13+00:00",
+          "resolved_url": "https://andro.evrenesoglu185.click/checklist/androstreamliveexn.m3u8",
+          "resolved_at": "2026-10-24T14:05:09+00:00",
           "stale": false
         },
         {
@@ -1709,7 +1709,7 @@
           "sources": [
             {
               "type": "hls",
-              "url": "https://andro.evrenesoglu177.click/checklist/androstreamliveexn1.m3u8",
+              "url": "https://andro.evrenesoglu185.click/checklist/androstreamliveexn1.m3u8",
               "label": "Kaynak 1",
               "mime_type": "application/vnd.apple.mpegurl"
             },
@@ -1721,8 +1721,8 @@
           ],
           "resolved": true,
           "fresh": true,
-          "resolved_url": "https://andro.evrenesoglu177.click/checklist/androstreamliveexn1.m3u8",
-          "resolved_at": "2026-10-24T12:59:13+00:00",
+          "resolved_url": "https://andro.evrenesoglu185.click/checklist/androstreamliveexn1.m3u8",
+          "resolved_at": "2026-10-24T14:05:09+00:00",
           "stale": false
         },
         {
@@ -1738,7 +1738,7 @@
           "sources": [
             {
               "type": "hls",
-              "url": "https://andro.evrenesoglu177.click/checklist/androstreamliveexn2.m3u8",
+              "url": "https://andro.evrenesoglu185.click/checklist/androstreamliveexn2.m3u8",
               "label": "Kaynak 1",
               "mime_type": "application/vnd.apple.mpegurl"
             },
@@ -1750,8 +1750,8 @@
           ],
           "resolved": true,
           "fresh": true,
-          "resolved_url": "https://andro.evrenesoglu177.click/checklist/androstreamliveexn2.m3u8",
-          "resolved_at": "2026-10-24T12:59:13+00:00",
+          "resolved_url": "https://andro.evrenesoglu185.click/checklist/androstreamliveexn2.m3u8",
+          "resolved_at": "2026-10-24T14:05:09+00:00",
           "stale": false
         },
         {
@@ -1767,7 +1767,7 @@
           "sources": [
             {
               "type": "hls",
-              "url": "https://andro.evrenesoglu177.click/checklist/androstreamliveexn3.m3u8",
+              "url": "https://andro.evrenesoglu185.click/checklist/androstreamliveexn3.m3u8",
               "label": "Kaynak 1",
               "mime_type": "application/vnd.apple.mpegurl"
             },
@@ -1779,8 +1779,8 @@
           ],
           "resolved": true,
           "fresh": true,
-          "resolved_url": "https://andro.evrenesoglu177.click/checklist/androstreamliveexn3.m3u8",
-          "resolved_at": "2026-10-24T12:59:13+00:00",
+          "resolved_url": "https://andro.evrenesoglu185.click/checklist/androstreamliveexn3.m3u8",
+          "resolved_at": "2026-10-24T14:05:09+00:00",
           "stale": false
         },
         {
@@ -1796,7 +1796,7 @@
           "sources": [
             {
               "type": "hls",
-              "url": "https://andro.evrenesoglu177.click/checklist/androstreamliveexn4.m3u8",
+              "url": "https://andro.evrenesoglu185.click/checklist/androstreamliveexn4.m3u8",
               "label": "Kaynak 1",
               "mime_type": "application/vnd.apple.mpegurl"
             },
@@ -1808,8 +1808,8 @@
           ],
           "resolved": true,
           "fresh": true,
-          "resolved_url": "https://andro.evrenesoglu177.click/checklist/androstreamliveexn4.m3u8",
-          "resolved_at": "2026-10-24T12:59:13+00:00",
+          "resolved_url": "https://andro.evrenesoglu185.click/checklist/androstreamliveexn4.m3u8",
+          "resolved_at": "2026-10-24T14:05:09+00:00",
           "stale": false
         },
         {
@@ -1825,7 +1825,7 @@
           "sources": [
             {
               "type": "hls",
-              "url": "https://andro.evrenesoglu177.click/checklist/androstreamliveexn5.m3u8",
+              "url": "https://andro.evrenesoglu185.click/checklist/androstreamliveexn5.m3u8",
               "label": "Kaynak 1",
               "mime_type": "application/vnd.apple.mpegurl"
             },
@@ -1837,8 +1837,8 @@
           ],
           "resolved": true,
           "fresh": true,
-          "resolved_url": "https://andro.evrenesoglu177.click/checklist/androstreamliveexn5.m3u8",
-          "resolved_at": "2026-10-24T12:59:13+00:00",
+          "resolved_url": "https://andro.evrenesoglu185.click/checklist/androstreamliveexn5.m3u8",
+          "resolved_at": "2026-10-24T14:05:09+00:00",
           "stale": false
         },
         {
@@ -1854,7 +1854,7 @@
           "sources": [
             {
               "type": "hls",
-              "url": "https://andro.evrenesoglu177.click/checklist/androstreamliveexn6.m3u8",
+              "url": "https://andro.evrenesoglu185.click/checklist/androstreamliveexn6.m3u8",
               "label": "Kaynak 1",
               "mime_type": "application/vnd.apple.mpegurl"
             },
@@ -1866,8 +1866,8 @@
           ],
           "resolved": true,
           "fresh": true,
-          "resolved_url": "https://andro.evrenesoglu177.click/checklist/androstreamliveexn6.m3u8",
-          "resolved_at": "2026-10-24T12:59:13+00:00",
+          "resolved_url": "https://andro.evrenesoglu185.click/checklist/androstreamliveexn6.m3u8",
+          "resolved_at": "2026-10-24T14:05:09+00:00",
           "stale": false
         },
         {
@@ -1883,7 +1883,7 @@
           "sources": [
             {
               "type": "hls",
-              "url": "https://andro.evrenesoglu177.click/checklist/androstreamliveexn7.m3u8",
+              "url": "https://andro.evrenesoglu185.click/checklist/androstreamliveexn7.m3u8",
               "label": "Kaynak 1",
               "mime_type": "application/vnd.apple.mpegurl"
             },
@@ -1895,8 +1895,8 @@
           ],
           "resolved": true,
           "fresh": true,
-          "resolved_url": "https://andro.evrenesoglu177.click/checklist/androstreamliveexn7.m3u8",
-          "resolved_at": "2026-10-24T12:59:13+00:00",
+          "resolved_url": "https://andro.evrenesoglu185.click/checklist/androstreamliveexn7.m3u8",
+          "resolved_at": "2026-10-24T14:05:09+00:00",
           "stale": false
         },
         {
@@ -1912,7 +1912,7 @@
           "sources": [
             {
               "type": "hls",
-              "url": "https://andro.evrenesoglu177.click/checklist/androstreamliveexn8.m3u8",
+              "url": "https://andro.evrenesoglu185.click/checklist/androstreamliveexn8.m3u8",
               "label": "Kaynak 1",
               "mime_type": "application/vnd.apple.mpegurl"
             },
@@ -1924,8 +1924,8 @@
           ],
           "resolved": true,
           "fresh": true,
-          "resolved_url": "https://andro.evrenesoglu177.click/checklist/androstreamliveexn8.m3u8",
-          "resolved_at": "2026-10-24T12:59:13+00:00",
+          "resolved_url": "https://andro.evrenesoglu185.click/checklist/androstreamliveexn8.m3u8",
+          "resolved_at": "2026-10-24T14:05:09+00:00",
           "stale": false
         },
         {
@@ -1941,7 +1941,7 @@
           "sources": [
             {
               "type": "hls",
-              "url": "https://andro.evrenesoglu177.click/checklist/androstreamliveidm.m3u8",
+              "url": "https://andro.evrenesoglu185.click/checklist/androstreamliveidm.m3u8",
               "label": "Kaynak 1",
               "mime_type": "application/vnd.apple.mpegurl"
             },
@@ -1953,8 +1953,8 @@
           ],
           "resolved": true,
           "fresh": true,
-          "resolved_url": "https://andro.evrenesoglu177.click/checklist/androstreamliveidm.m3u8",
-          "resolved_at": "2026-10-24T12:59:13+00:00",
+          "resolved_url": "https://andro.evrenesoglu185.click/checklist/androstreamliveidm.m3u8",
+          "resolved_at": "2026-10-24T14:05:09+00:00",
           "stale": false
         },
         {
@@ -1970,7 +1970,7 @@
           "sources": [
             {
               "type": "hls",
-              "url": "https://andro.evrenesoglu177.click/checklist/androstreamlivecbcs.m3u8",
+              "url": "https://andro.evrenesoglu185.click/checklist/androstreamlivecbcs.m3u8",
               "label": "Kaynak 1",
               "mime_type": "application/vnd.apple.mpegurl"
             },
@@ -1982,8 +1982,8 @@
           ],
           "resolved": true,
           "fresh": true,
-          "resolved_url": "https://andro.evrenesoglu177.click/checklist/androstreamlivecbcs.m3u8",
-          "resolved_at": "2026-10-24T12:59:13+00:00",
+          "resolved_url": "https://andro.evrenesoglu185.click/checklist/androstreamlivecbcs.m3u8",
+          "resolved_at": "2026-10-24T14:05:09+00:00",
           "stale": false
         }
       ]
@@ -1992,10 +1992,10 @@
       "id": "taraftarium",
       "name": "TARAFTARIUM24",
       "icon": "📺",
-      "base_url": "https://taraftariumtv38.com",
+      "base_url": "https://24taraftarium1.tv",
       "player_base": "",
       "stream_base": "",
-      "healthy": false,
+      "healthy": true,
       "resolved": 0,
       "fresh": 0,
       "total": 12,
@@ -2007,13 +2007,13 @@
           "panel": "taraftarium",
           "panel_name": "TARAFTARIUM24",
           "icon": "⚽",
-          "logo": "https://taraftariumtv38.com/assets/img/football_tv1.png",
-          "page_url": "https://taraftariumtv38.com/channel/watch/bein-sports-1",
-          "referrer": "https://taraftariumtv38.com/",
+          "logo": "https://24taraftarium1.tv/assets/img/football_tv1.png",
+          "page_url": "https://24taraftarium1.tv/channel/watch/bein-sports-1",
+          "referrer": "https://24taraftarium1.tv/",
           "sources": [
             {
               "type": "embed",
-              "url": "https://taraftariumtv38.com/channel/watch/bein-sports-1",
+              "url": "https://24taraftarium1.tv/channel/watch/bein-sports-1",
               "label": "Iframe"
             }
           ],
@@ -2030,13 +2030,13 @@
           "panel": "taraftarium",
           "panel_name": "TARAFTARIUM24",
           "icon": "⚽",
-          "logo": "https://taraftariumtv38.com/assets/img/football_tv1.png",
-          "page_url": "https://taraftariumtv38.com/channel/watch/bein-sports-2",
-          "referrer": "https://taraftariumtv38.com/",
+          "logo": "https://24taraftarium1.tv/assets/img/football_tv1.png",
+          "page_url": "https://24taraftarium1.tv/channel/watch/bein-sports-2",
+          "referrer": "https://24taraftarium1.tv/",
           "sources": [
             {
               "type": "embed",
-              "url": "https://taraftariumtv38.com/channel/watch/bein-sports-2",
+              "url": "https://24taraftarium1.tv/channel/watch/bein-sports-2",
               "label": "Iframe"
             }
           ],
@@ -2053,13 +2053,13 @@
           "panel": "taraftarium",
           "panel_name": "TARAFTARIUM24",
           "icon": "⚽",
-          "logo": "https://taraftariumtv38.com/assets/img/football_tv1.png",
-          "page_url": "https://taraftariumtv38.com/channel/watch/bein-sports-3",
-          "referrer": "https://taraftariumtv38.com/",
+          "logo": "https://24taraftarium1.tv/assets/img/football_tv1.png",
+          "page_url": "https://24taraftarium1.tv/channel/watch/bein-sports-3",
+          "referrer": "https://24taraftarium1.tv/",
           "sources": [
             {
               "type": "embed",
-              "url": "https://taraftariumtv38.com/channel/watch/bein-sports-3",
+              "url": "https://24taraftarium1.tv/channel/watch/bein-sports-3",
               "label": "Iframe"
             }
           ],
@@ -2076,13 +2076,13 @@
           "panel": "taraftarium",
           "panel_name": "TARAFTARIUM24",
           "icon": "⚽",
-          "logo": "https://taraftariumtv38.com/assets/img/football_tv1.png",
-          "page_url": "https://taraftariumtv38.com/channel/watch/bein-sports-4",
-          "referrer": "https://taraftariumtv38.com/",
+          "logo": "https://24taraftarium1.tv/assets/img/football_tv1.png",
+          "page_url": "https://24taraftarium1.tv/channel/watch/bein-sports-4",
+          "referrer": "https://24taraftarium1.tv/",
           "sources": [
             {
               "type": "embed",
-              "url": "https://taraftariumtv38.com/channel/watch/bein-sports-4",
+              "url": "https://24taraftarium1.tv/channel/watch/bein-sports-4",
               "label": "Iframe"
             }
           ],
@@ -2099,13 +2099,13 @@
           "panel": "taraftarium",
           "panel_name": "TARAFTARIUM24",
           "icon": "⚽",
-          "logo": "https://taraftariumtv38.com/assets/img/football_tv1.png",
-          "page_url": "https://taraftariumtv38.com/channel/watch/bein-sports-5",
-          "referrer": "https://taraftariumtv38.com/",
+          "logo": "https://24taraftarium1.tv/assets/img/football_tv1.png",
+          "page_url": "https://24taraftarium1.tv/channel/watch/bein-sports-5",
+          "referrer": "https://24taraftarium1.tv/",
           "sources": [
             {
               "type": "embed",
-              "url": "https://taraftariumtv38.com/channel/watch/bein-sports-5",
+              "url": "https://24taraftarium1.tv/channel/watch/bein-sports-5",
               "label": "Iframe"
             }
           ],
@@ -2122,13 +2122,13 @@
           "panel": "taraftarium",
           "panel_name": "TARAFTARIUM24",
           "icon": "⚽",
-          "logo": "https://taraftariumtv38.com/assets/img/football_tv1.png",
-          "page_url": "https://taraftariumtv38.com/channel/watch/bein-sports-max-1",
-          "referrer": "https://taraftariumtv38.com/",
+          "logo": "https://24taraftarium1.tv/assets/img/football_tv1.png",
+          "page_url": "https://24taraftarium1.tv/channel/watch/bein-sports-max-1",
+          "referrer": "https://24taraftarium1.tv/",
           "sources": [
             {
               "type": "embed",
-              "url": "https://taraftariumtv38.com/channel/watch/bein-sports-max-1",
+              "url": "https://24taraftarium1.tv/channel/watch/bein-sports-max-1",
               "label": "Iframe"
             }
           ],
@@ -2145,13 +2145,13 @@
           "panel": "taraftarium",
           "panel_name": "TARAFTARIUM24",
           "icon": "⚽",
-          "logo": "https://taraftariumtv38.com/assets/img/football_tv1.png",
-          "page_url": "https://taraftariumtv38.com/channel/watch/bein-sports-max-2",
-          "referrer": "https://taraftariumtv38.com/",
+          "logo": "https://24taraftarium1.tv/assets/img/football_tv1.png",
+          "page_url": "https://24taraftarium1.tv/channel/watch/bein-sports-max-2",
+          "referrer": "https://24taraftarium1.tv/",
           "sources": [
             {
               "type": "embed",
-              "url": "https://taraftariumtv38.com/channel/watch/bein-sports-max-2",
+              "url": "https://24taraftarium1.tv/channel/watch/bein-sports-max-2",
               "label": "Iframe"
             }
           ],
@@ -2168,13 +2168,13 @@
           "panel": "taraftarium",
           "panel_name": "TARAFTARIUM24",
           "icon": "🏀",
-          "logo": "https://taraftariumtv38.com/assets/img/football_tv1.png",
-          "page_url": "https://taraftariumtv38.com/channel/watch/s-sport",
-          "referrer": "https://taraftariumtv38.com/",
+          "logo": "https://24taraftarium1.tv/assets/img/football_tv1.png",
+          "page_url": "https://24taraftarium1.tv/channel/watch/s-sport",
+          "referrer": "https://24taraftarium1.tv/",
           "sources": [
             {
               "type": "embed",
-              "url": "https://taraftariumtv38.com/channel/watch/s-sport",
+              "url": "https://24taraftarium1.tv/channel/watch/s-sport",
               "label": "Iframe"
             }
           ],
@@ -2191,13 +2191,13 @@
           "panel": "taraftarium",
           "panel_name": "TARAFTARIUM24",
           "icon": "🏀",
-          "logo": "https://taraftariumtv38.com/assets/img/football_tv1.png",
-          "page_url": "https://taraftariumtv38.com/channel/watch/s-sport-2",
-          "referrer": "https://taraftariumtv38.com/",
+          "logo": "https://24taraftarium1.tv/assets/img/football_tv1.png",
+          "page_url": "https://24taraftarium1.tv/channel/watch/s-sport-2",
+          "referrer": "https://24taraftarium1.tv/",
           "sources": [
             {
               "type": "embed",
-              "url": "https://taraftariumtv38.com/channel/watch/s-sport-2",
+              "url": "https://24taraftarium1.tv/channel/watch/s-sport-2",
               "label": "Iframe"
             }
           ],
@@ -2214,13 +2214,13 @@
           "panel": "taraftarium",
           "panel_name": "TARAFTARIUM24",
           "icon": "🇹🇷",
-          "logo": "https://taraftariumtv38.com/assets/img/football_tv1.png",
-          "page_url": "https://taraftariumtv38.com/channel/watch/trt-spor",
-          "referrer": "https://taraftariumtv38.com/",
+          "logo": "https://24taraftarium1.tv/assets/img/football_tv1.png",
+          "page_url": "https://24taraftarium1.tv/channel/watch/trt-spor",
+          "referrer": "https://24taraftarium1.tv/",
           "sources": [
             {
               "type": "embed",
-              "url": "https://taraftariumtv38.com/channel/watch/trt-spor",
+              "url": "https://24taraftarium1.tv/channel/watch/trt-spor",
               "label": "Iframe"
             }
           ],
@@ -2237,13 +2237,13 @@
           "panel": "taraftarium",
           "panel_name": "TARAFTARIUM24",
           "icon": "🇹🇷",
-          "logo": "https://taraftariumtv38.com/assets/img/football_tv1.png",
-          "page_url": "https://taraftariumtv38.com/channel/watch/trt-1",
-          "referrer": "https://taraftariumtv38.com/",
+          "logo": "https://24taraftarium1.tv/assets/img/football_tv1.png",
+          "page_url": "https://24taraftarium1.tv/channel/watch/trt-1",
+          "referrer": "https://24taraftarium1.tv/",
           "sources": [
             {
               "type": "embed",
-              "url": "https://taraftariumtv38.com/channel/watch/trt-1",
+              "url": "https://24taraftarium1.tv/channel/watch/trt-1",
               "label": "Iframe"
             }
           ],
@@ -2260,13 +2260,13 @@
           "panel": "taraftarium",
           "panel_name": "TARAFTARIUM24",
           "icon": "⚽",
-          "logo": "https://taraftariumtv38.com/assets/img/football_tv1.png",
-          "page_url": "https://taraftariumtv38.com/channel/watch/a-spor",
-          "referrer": "https://taraftariumtv38.com/",
+          "logo": "https://24taraftarium1.tv/assets/img/football_tv1.png",
+          "page_url": "https://24taraftarium1.tv/channel/watch/a-spor",
+          "referrer": "https://24taraftarium1.tv/",
           "sources": [
             {
               "type": "embed",
-              "url": "https://taraftariumtv38.com/channel/watch/a-spor",
+              "url": "https://24taraftarium1.tv/channel/watch/a-spor",
               "label": "Iframe"
             }
           ],
@@ -2316,7 +2316,7 @@
           "resolved": true,
           "fresh": true,
           "resolved_url": "https://sultanbettv101.live/mono.m3u8",
-          "resolved_at": "2026-10-24T12:59:13+00:00",
+          "resolved_at": "2026-10-24T14:05:09+00:00",
           "stale": false
         },
         {
@@ -2345,7 +2345,7 @@
           "resolved": true,
           "fresh": true,
           "resolved_url": "https://sultanbettv101.live/mono.m3u8",
-          "resolved_at": "2026-10-24T12:59:13+00:00",
+          "resolved_at": "2026-10-24T14:05:09+00:00",
           "stale": false
         },
         {
@@ -2374,7 +2374,7 @@
           "resolved": true,
           "fresh": true,
           "resolved_url": "https://sultanbettv101.live/mono.m3u8",
-          "resolved_at": "2026-10-24T12:59:13+00:00",
+          "resolved_at": "2026-10-24T14:05:09+00:00",
           "stale": false
         },
         {
@@ -2403,7 +2403,7 @@
           "resolved": true,
           "fresh": true,
           "resolved_url": "https://sultanbettv101.live/mono.m3u8",
-          "resolved_at": "2026-10-24T12:59:13+00:00",
+          "resolved_at": "2026-10-24T14:05:09+00:00",
           "stale": false
         },
         {
@@ -2432,7 +2432,7 @@
           "resolved": true,
           "fresh": true,
           "resolved_url": "https://sultanbettv101.live/mono.m3u8",
-          "resolved_at": "2026-10-24T12:59:13+00:00",
+          "resolved_at": "2026-10-24T14:05:09+00:00",
           "stale": false
         },
         {
@@ -2461,7 +2461,7 @@
           "resolved": true,
           "fresh": true,
           "resolved_url": "https://sultanbettv101.live/mono.m3u8",
-          "resolved_at": "2026-10-24T12:59:13+00:00",
+          "resolved_at": "2026-10-24T14:05:09+00:00",
           "stale": false
         },
         {
@@ -2490,7 +2490,7 @@
           "resolved": true,
           "fresh": true,
           "resolved_url": "https://sultanbettv101.live/mono.m3u8",
-          "resolved_at": "2026-10-24T12:59:13+00:00",
+          "resolved_at": "2026-10-24T14:05:09+00:00",
           "stale": false
         },
         {
@@ -2519,7 +2519,7 @@
           "resolved": true,
           "fresh": true,
           "resolved_url": "https://sultanbettv101.live/mono.m3u8",
-          "resolved_at": "2026-10-24T12:59:13+00:00",
+          "resolved_at": "2026-10-24T14:05:09+00:00",
           "stale": false
         },
         {
@@ -2548,7 +2548,7 @@
           "resolved": true,
           "fresh": true,
           "resolved_url": "https://sultanbettv101.live/mono.m3u8",
-          "resolved_at": "2026-10-24T12:59:13+00:00",
+          "resolved_at": "2026-10-24T14:05:09+00:00",
           "stale": false
         },
         {
@@ -2577,7 +2577,7 @@
           "resolved": true,
           "fresh": true,
           "resolved_url": "https://sultanbettv101.live/mono.m3u8",
-          "resolved_at": "2026-10-24T12:59:13+00:00",
+          "resolved_at": "2026-10-24T14:05:09+00:00",
           "stale": false
         },
         {
@@ -2606,7 +2606,7 @@
           "resolved": true,
           "fresh": true,
           "resolved_url": "https://sultanbettv101.live/mono.m3u8",
-          "resolved_at": "2026-10-24T12:59:13+00:00",
+          "resolved_at": "2026-10-24T14:05:09+00:00",
           "stale": false
         },
         {
@@ -2635,7 +2635,7 @@
           "resolved": true,
           "fresh": true,
           "resolved_url": "https://sultanbettv101.live/mono.m3u8",
-          "resolved_at": "2026-10-24T12:59:13+00:00",
+          "resolved_at": "2026-10-24T14:05:09+00:00",
           "stale": false
         },
         {
@@ -2664,7 +2664,7 @@
           "resolved": true,
           "fresh": true,
           "resolved_url": "https://sultanbettv101.live/mono.m3u8",
-          "resolved_at": "2026-10-24T12:59:13+00:00",
+          "resolved_at": "2026-10-24T14:05:09+00:00",
           "stale": false
         },
         {
@@ -2693,7 +2693,7 @@
           "resolved": true,
           "fresh": true,
           "resolved_url": "https://sultanbettv101.live/mono.m3u8",
-          "resolved_at": "2026-10-24T12:59:13+00:00",
+          "resolved_at": "2026-10-24T14:05:09+00:00",
           "stale": false
         },
         {
@@ -2722,7 +2722,7 @@
           "resolved": true,
           "fresh": true,
           "resolved_url": "https://sultanbettv101.live/mono.m3u8",
-          "resolved_at": "2026-10-24T12:59:13+00:00",
+          "resolved_at": "2026-10-24T14:05:09+00:00",
           "stale": false
         },
         {
@@ -2751,7 +2751,7 @@
           "resolved": true,
           "fresh": true,
           "resolved_url": "https://sultanbettv101.live/mono.m3u8",
-          "resolved_at": "2026-10-24T12:59:13+00:00",
+          "resolved_at": "2026-10-24T14:05:09+00:00",
           "stale": false
         },
         {
@@ -2780,7 +2780,7 @@
           "resolved": true,
           "fresh": true,
           "resolved_url": "https://sultanbettv101.live/mono.m3u8",
-          "resolved_at": "2026-10-24T12:59:13+00:00",
+          "resolved_at": "2026-10-24T14:05:09+00:00",
           "stale": false
         },
         {
@@ -2809,7 +2809,7 @@
           "resolved": true,
           "fresh": true,
           "resolved_url": "https://sultanbettv101.live/mono.m3u8",
-          "resolved_at": "2026-10-24T12:59:13+00:00",
+          "resolved_at": "2026-10-24T14:05:09+00:00",
           "stale": false
         }
       ]
@@ -2839,7 +2839,7 @@
           "sources": [
             {
               "type": "hls",
-              "url": "https://ladyboy.ardatvgs.cfd//beintv/tracks-v1a1/mono.m3u8",
+              "url": "https://ardaspor.ardatvgo.help//beintv/tracks-v1a1/mono.m3u8",
               "label": "Kaynak 1",
               "mime_type": "application/vnd.apple.mpegurl"
             },
@@ -2851,8 +2851,8 @@
           ],
           "resolved": true,
           "fresh": true,
-          "resolved_url": "https://ladyboy.ardatvgs.cfd//beintv/tracks-v1a1/mono.m3u8",
-          "resolved_at": "2026-10-24T12:59:13+00:00",
+          "resolved_url": "https://ardaspor.ardatvgo.help//beintv/tracks-v1a1/mono.m3u8",
+          "resolved_at": "2026-10-24T14:05:09+00:00",
           "stale": false
         },
         {
@@ -2868,7 +2868,7 @@
           "sources": [
             {
               "type": "hls",
-              "url": "https://ladyboy.ardatvgs.cfd//bein2/tracks-v1a1/mono.m3u8",
+              "url": "https://ardaspor.ardatvgo.help//bein2/tracks-v1a1/mono.m3u8",
               "label": "Kaynak 1",
               "mime_type": "application/vnd.apple.mpegurl"
             },
@@ -2880,8 +2880,8 @@
           ],
           "resolved": true,
           "fresh": true,
-          "resolved_url": "https://ladyboy.ardatvgs.cfd//bein2/tracks-v1a1/mono.m3u8",
-          "resolved_at": "2026-10-24T12:59:13+00:00",
+          "resolved_url": "https://ardaspor.ardatvgo.help//bein2/tracks-v1a1/mono.m3u8",
+          "resolved_at": "2026-10-24T14:05:09+00:00",
           "stale": false
         },
         {
@@ -2897,7 +2897,7 @@
           "sources": [
             {
               "type": "hls",
-              "url": "https://ladyboy.ardatvgs.cfd//bein3/tracks-v1a1/mono.m3u8",
+              "url": "https://ardaspor.ardatvgo.help//bein3/tracks-v1a1/mono.m3u8",
               "label": "Kaynak 1",
               "mime_type": "application/vnd.apple.mpegurl"
             },
@@ -2909,8 +2909,8 @@
           ],
           "resolved": true,
           "fresh": true,
-          "resolved_url": "https://ladyboy.ardatvgs.cfd//bein3/tracks-v1a1/mono.m3u8",
-          "resolved_at": "2026-10-24T12:59:13+00:00",
+          "resolved_url": "https://ardaspor.ardatvgo.help//bein3/tracks-v1a1/mono.m3u8",
+          "resolved_at": "2026-10-24T14:05:09+00:00",
           "stale": false
         },
         {
@@ -2926,7 +2926,7 @@
           "sources": [
             {
               "type": "hls",
-              "url": "https://ladyboy.ardatvgs.cfd//bein4/tracks-v1a1/mono.m3u8",
+              "url": "https://ardaspor.ardatvgo.help//bein4/tracks-v1a1/mono.m3u8",
               "label": "Kaynak 1",
               "mime_type": "application/vnd.apple.mpegurl"
             },
@@ -2938,8 +2938,8 @@
           ],
           "resolved": true,
           "fresh": true,
-          "resolved_url": "https://ladyboy.ardatvgs.cfd//bein4/tracks-v1a1/mono.m3u8",
-          "resolved_at": "2026-10-24T12:59:13+00:00",
+          "resolved_url": "https://ardaspor.ardatvgo.help//bein4/tracks-v1a1/mono.m3u8",
+          "resolved_at": "2026-10-24T14:05:09+00:00",
           "stale": false
         },
         {
@@ -2955,7 +2955,7 @@
           "sources": [
             {
               "type": "hls",
-              "url": "https://ladyboy.ardatvgs.cfd//bein5/tracks-v1a1/mono.m3u8",
+              "url": "https://ardaspor.ardatvgo.help//bein5/tracks-v1a1/mono.m3u8",
               "label": "Kaynak 1",
               "mime_type": "application/vnd.apple.mpegurl"
             },
@@ -2967,8 +2967,8 @@
           ],
           "resolved": true,
           "fresh": true,
-          "resolved_url": "https://ladyboy.ardatvgs.cfd//bein5/tracks-v1a1/mono.m3u8",
-          "resolved_at": "2026-10-24T12:59:13+00:00",
+          "resolved_url": "https://ardaspor.ardatvgo.help//bein5/tracks-v1a1/mono.m3u8",
+          "resolved_at": "2026-10-24T14:05:09+00:00",
           "stale": false
         },
         {
@@ -2984,7 +2984,7 @@
           "sources": [
             {
               "type": "hls",
-              "url": "https://ladyboy.ardatvgs.cfd//beinmax1/tracks-v1a1/mono.m3u8",
+              "url": "https://ardaspor.ardatvgo.help//beinmax1/tracks-v1a1/mono.m3u8",
               "label": "Kaynak 1",
               "mime_type": "application/vnd.apple.mpegurl"
             },
@@ -2996,8 +2996,8 @@
           ],
           "resolved": true,
           "fresh": true,
-          "resolved_url": "https://ladyboy.ardatvgs.cfd//beinmax1/tracks-v1a1/mono.m3u8",
-          "resolved_at": "2026-10-24T12:59:13+00:00",
+          "resolved_url": "https://ardaspor.ardatvgo.help//beinmax1/tracks-v1a1/mono.m3u8",
+          "resolved_at": "2026-10-24T14:05:09+00:00",
           "stale": false
         },
         {
@@ -3013,7 +3013,7 @@
           "sources": [
             {
               "type": "hls",
-              "url": "https://ladyboy.ardatvgs.cfd//beinmax2/tracks-v1a1/mono.m3u8",
+              "url": "https://ardaspor.ardatvgo.help//beinmax2/tracks-v1a1/mono.m3u8",
               "label": "Kaynak 1",
               "mime_type": "application/vnd.apple.mpegurl"
             },
@@ -3025,8 +3025,8 @@
           ],
           "resolved": true,
           "fresh": true,
-          "resolved_url": "https://ladyboy.ardatvgs.cfd//beinmax2/tracks-v1a1/mono.m3u8",
-          "resolved_at": "2026-10-24T12:59:13+00:00",
+          "resolved_url": "https://ardaspor.ardatvgo.help//beinmax2/tracks-v1a1/mono.m3u8",
+          "resolved_at": "2026-10-24T14:05:09+00:00",
           "stale": false
         },
         {
@@ -3042,7 +3042,7 @@
           "sources": [
             {
               "type": "hls",
-              "url": "https://ladyboy.ardatvgs.cfd//s-sport/tracks-v1a1/mono.m3u8",
+              "url": "https://ardaspor.ardatvgo.help//s-sport/tracks-v1a1/mono.m3u8",
               "label": "Kaynak 1",
               "mime_type": "application/vnd.apple.mpegurl"
             },
@@ -3054,8 +3054,8 @@
           ],
           "resolved": true,
           "fresh": true,
-          "resolved_url": "https://ladyboy.ardatvgs.cfd//s-sport/tracks-v1a1/mono.m3u8",
-          "resolved_at": "2026-10-24T12:59:13+00:00",
+          "resolved_url": "https://ardaspor.ardatvgo.help//s-sport/tracks-v1a1/mono.m3u8",
+          "resolved_at": "2026-10-24T14:05:09+00:00",
           "stale": false
         },
         {
@@ -3071,7 +3071,7 @@
           "sources": [
             {
               "type": "hls",
-              "url": "https://ladyboy.ardatvgs.cfd//s-sport2/tracks-v1a1/mono.m3u8",
+              "url": "https://ardaspor.ardatvgo.help//s-sport2/tracks-v1a1/mono.m3u8",
               "label": "Kaynak 1",
               "mime_type": "application/vnd.apple.mpegurl"
             },
@@ -3083,8 +3083,8 @@
           ],
           "resolved": true,
           "fresh": true,
-          "resolved_url": "https://ladyboy.ardatvgs.cfd//s-sport2/tracks-v1a1/mono.m3u8",
-          "resolved_at": "2026-10-24T12:59:13+00:00",
+          "resolved_url": "https://ardaspor.ardatvgo.help//s-sport2/tracks-v1a1/mono.m3u8",
+          "resolved_at": "2026-10-24T14:05:09+00:00",
           "stale": false
         },
         {
@@ -3100,7 +3100,7 @@
           "sources": [
             {
               "type": "hls",
-              "url": "https://ladyboy.ardatvgs.cfd//trt-spor/tracks-v1a1/mono.m3u8",
+              "url": "https://ardaspor.ardatvgo.help//trt-spor/tracks-v1a1/mono.m3u8",
               "label": "Kaynak 1",
               "mime_type": "application/vnd.apple.mpegurl"
             },
@@ -3112,8 +3112,8 @@
           ],
           "resolved": true,
           "fresh": true,
-          "resolved_url": "https://ladyboy.ardatvgs.cfd//trt-spor/tracks-v1a1/mono.m3u8",
-          "resolved_at": "2026-10-24T12:59:13+00:00",
+          "resolved_url": "https://ardaspor.ardatvgo.help//trt-spor/tracks-v1a1/mono.m3u8",
+          "resolved_at": "2026-10-24T14:05:09+00:00",
           "stale": false
         },
         {
@@ -3129,7 +3129,7 @@
           "sources": [
             {
               "type": "hls",
-              "url": "https://ladyboy.ardatvgs.cfd//beintv/tracks-v1a1/mono.m3u8",
+              "url": "https://ardaspor.ardatvgo.help//beintv/tracks-v1a1/mono.m3u8",
               "label": "Kaynak 1",
               "mime_type": "application/vnd.apple.mpegurl"
             },
@@ -3141,8 +3141,8 @@
           ],
           "resolved": true,
           "fresh": true,
-          "resolved_url": "https://ladyboy.ardatvgs.cfd//beintv/tracks-v1a1/mono.m3u8",
-          "resolved_at": "2026-10-24T12:59:13+00:00",
+          "resolved_url": "https://ardaspor.ardatvgo.help//beintv/tracks-v1a1/mono.m3u8",
+          "resolved_at": "2026-10-24T14:05:09+00:00",
           "stale": false
         },
         {
@@ -3158,7 +3158,7 @@
           "sources": [
             {
               "type": "hls",
-              "url": "https://ladyboy.ardatvgs.cfd//aspor/tracks-v1a1/mono.m3u8",
+              "url": "https://ardaspor.ardatvgo.help//aspor/tracks-v1a1/mono.m3u8",
               "label": "Kaynak 1",
               "mime_type": "application/vnd.apple.mpegurl"
             },
@@ -3170,8 +3170,8 @@
           ],
           "resolved": true,
           "fresh": true,
-          "resolved_url": "https://ladyboy.ardatvgs.cfd//aspor/tracks-v1a1/mono.m3u8",
-          "resolved_at": "2026-10-24T12:59:13+00:00",
+          "resolved_url": "https://ardaspor.ardatvgo.help//aspor/tracks-v1a1/mono.m3u8",
+          "resolved_at": "2026-10-24T14:05:09+00:00",
           "stale": false
         }
       ]
