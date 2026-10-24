@@ -905,6 +905,48 @@ function singleExtra(source) {
   return { panels: [{ id: "test", name: "Test", channels: [{ id: "test:one", name: "Test", sources: [source] }] }] };
 }
 
+test("resmî kaynak player içinde açıkça gösterilir ve yalnızca güvenli yeni sekme bağlantısı sunar", async () => {
+  const officialUrl = "https://www.tabii.com/tr/watch/live/trt1?trackId=150002";
+  const data = { panels: [{ id: "test", name: "Test", channels: [{ id: "test:one", name: "TRT 1", sources: [
+    { type: "official", url: officialUrl, label: "Resmî platform" },
+    { type: "embed", url: "https://embed.test/channel" },
+  ] }] }] };
+  const { window } = await loadPage({ html: withExtra(data) });
+  window.inadina.playExtra("test:one", false);
+  await tick();
+
+  const panel = window.document.getElementById("officialSourcePanel");
+  const link = window.document.getElementById("officialSourceLink");
+  assert.ok(panel.classList.contains("active"));
+  assert.equal(link.href, officialUrl);
+  assert.equal(link.target, "_blank");
+  assert.match(link.rel, /noopener/);
+  assert.equal(window.document.getElementById("liveIframe").src, "about:blank");
+  assert.ok(!window.document.getElementById("playerLoading").classList.contains("active"));
+  assert.deepEqual([...window.document.querySelectorAll("#sourceRow button")].map((b) => b.textContent), ["↗ Resmî", "🌐 Iframe"]);
+
+  window.document.querySelectorAll("#sourceRow button")[1].click();
+  await tick();
+  assert.ok(!panel.classList.contains("active"));
+  assert.equal(window.document.getElementById("liveIframe").src, "https://embed.test/channel");
+});
+
+test("TARAFTARIUM24 manifestinde resmî alternatifler 12 kanalda varsayılan olarak görünür", async () => {
+  const { window } = await loadPage();
+  const channels = window.inadina.extraChannels().filter((channel) => String(channel.id || "").startsWith("taraftarium:"));
+  assert.equal(channels.length, 12);
+  assert.ok(channels.every((channel) => channel.sources[0]?.type === "official"));
+
+  const aSpor = channels.find((channel) => channel.slug === "a-spor");
+  assert.ok(aSpor);
+  const card = window.document.querySelector('#extraGrid [data-extra-id="taraftarium:a-spor"]');
+  assert.equal(card.querySelector(".ch-status").textContent, "RESMÎ");
+  window.inadina.playExtra(aSpor.id, false);
+  await tick();
+  assert.ok(window.document.getElementById("officialSourcePanel").classList.contains("active"));
+  assert.equal(window.document.getElementById("officialSourceLink").href, aSpor.sources[0].url);
+});
+
 test("final, canlı, devre skorları doğru takımlarla; diğer durumlarda skor gizli", async () => {
   const rows = [remoteRow("ft", "FT"), remoteRow("live", "CANLI", [0, 0]), remoteRow("ht", "HT", [1, 3]),
     remoteRow("pre", "NS", [0, 0]), remoteRow("ppd", "PST"), remoteRow("cancel", "CANC"),

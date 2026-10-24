@@ -184,6 +184,21 @@
             gap: 10px; text-align: center; padding: 20px;
         }
         .player-error.active { display: flex; }
+        .player-official-source {
+            position: absolute; inset: 0; z-index: 6; display: none; align-items: center; justify-content: center;
+            padding: 18px; background: radial-gradient(circle at 50% 30%, rgba(32,22,58,.96), rgba(5,4,12,.98));
+        }
+        .player-official-source.active { display: flex; }
+        .official-source-card {
+            width: min(560px, 100%); padding: 20px; border: 1px solid rgba(0,234,255,.3); border-radius: 18px;
+            background: linear-gradient(145deg, rgba(22,18,42,.98), rgba(10,8,24,.98)); text-align: center;
+            box-shadow: 0 0 28px rgba(0,234,255,.12), 0 16px 36px rgba(0,0,0,.38);
+        }
+        .official-source-badge { color: var(--neon-cyan); font-size: .68rem; font-weight: 900; letter-spacing: 1.8px; }
+        .official-source-title { margin: 7px 0; color: #fff; font: 800 1.25rem 'Barlow Condensed', sans-serif; }
+        .official-source-note { margin: 0 auto 14px; max-width: 430px; color: var(--text-muted); font-size: .82rem; line-height: 1.5; }
+        .official-source-link { display: inline-flex; align-items: center; justify-content: center; text-decoration: none; padding: 9px 16px; }
+        .official-source-footnote { display: block; margin-top: 10px; color: rgba(255,255,255,.5); font-size: .64rem; }
         .player-start { display: none; position: absolute; inset: 0; z-index: 5; background: rgba(5,4,12,.65); align-items: center; justify-content: center; flex-direction: column; gap: 10px; color: var(--text-muted); font-size: .8rem; }
         .player-start.active { display: flex; }
         @media (max-width: 480px) {
@@ -208,6 +223,7 @@
         .src-chip:hover { background: rgba(0,234,255,0.18); }
         .src-chip.active { background: linear-gradient(135deg, var(--neon-cyan), var(--neon-purple)); color: #fff; border-color: transparent; box-shadow: 0 0 12px rgba(0,234,255,0.4); }
         .src-chip.embed { border-style: dashed; }
+        .src-chip.official { border-color: rgba(0,255,136,.42); color: #8fffc3; }
         .player-actions .ctrl-btn[hidden] { display: none; }
 
         /* Oynatıcı altı: GitHub manifestinden beslenen yatay kanal seçici */
@@ -895,6 +911,15 @@
                         <div class="spinner"></div>
                         <div style="font-weight:700; color:var(--neon-pink);">Yayın yükleniyor...</div>
                     </div>
+                    <div class="player-official-source" id="officialSourcePanel" aria-live="polite">
+                        <div class="official-source-card">
+                            <div class="official-source-badge">YAYINCI PLATFORMU</div>
+                            <div class="official-source-title" id="officialSourceTitle">Resmî yayın sayfası</div>
+                            <p class="official-source-note" id="officialSourceNote">Bu yayın, yayıncının kendi sitesinde açılır. Oturum, abonelik veya bölgesel erişim koşulu olabilir.</p>
+                            <a class="ctrl-btn primary official-source-link" id="officialSourceLink" href="#" target="_blank" rel="noopener noreferrer">↗ Resmî platformda aç</a>
+                            <small class="official-source-footnote">Yayın Macweb oynatıcısına gömülmez; erişim yayıncının koşullarına bağlıdır.</small>
+                        </div>
+                    </div>
                     <div class="player-error" id="playerError" role="alert">
                         <div class="err-title">⚠️ Yayın açılamadı</div>
                         <div class="err-msg" id="playerErrorMsg">Kaynak yanıt vermedi.</div>
@@ -1135,6 +1160,10 @@
                 playerLoading: $("playerLoading"),
                 playerError: $("playerError"),
                 playerErrorMsg: $("playerErrorMsg"),
+                officialSourcePanel: $("officialSourcePanel"),
+                officialSourceTitle: $("officialSourceTitle"),
+                officialSourceNote: $("officialSourceNote"),
+                officialSourceLink: $("officialSourceLink"),
                 customChannelList: $("customChannelList"),
                 customChannelState: $("customChannelState"),
                 playerTitle: $("playerTitle"),
@@ -1612,7 +1641,40 @@
                 if (!enabled) els.openExternal.href = "#";
             }
 
+            function hideOfficialSourceNotice() {
+                if (els.officialSourcePanel) els.officialSourcePanel.classList.remove("active");
+                if (els.officialSourceLink) els.officialSourceLink.href = "#";
+            }
+
+            function showOfficialSourceNotice(source) {
+                let url;
+                try {
+                    const parsed = new URL(source.url);
+                    if (parsed.protocol !== "https:" || parsed.username || parsed.password) throw new Error("unsafe URL");
+                    url = parsed.href;
+                } catch (e) {
+                    showError("Resmî yayın bağlantısı geçersiz veya güvenli HTTPS bağlantısı değil.");
+                    setExternalNavigationEnabled(false);
+                    return;
+                }
+                const channel = extraById(state.currentExtraId);
+                state.playerMode = "official";
+                els.playerWrap.classList.remove("mode-hls");
+                if (els.pipBtn) els.pipBtn.hidden = true;
+                els.iframe.src = "about:blank";
+                setLoading(false);
+                $("playerStart").classList.remove("active");
+                els.playerError.classList.remove("active");
+                setPlayerHeader(channel ? channel.name : (source.label || "Resmî yayın"), channel && channel.icon || "📺",
+                    (channel && channel.panel_name || "YAYIN") + " · RESMÎ PLATFORM");
+                els.officialSourceTitle.textContent = channel ? channel.name : (source.label || "Resmî yayın sayfası");
+                els.officialSourceNote.textContent = source.note || "Yayıncı sayfası yeni sekmede açılır. Oturum, abonelik veya bölgesel erişim koşulu olabilir.";
+                els.officialSourceLink.href = url;
+                els.officialSourcePanel.classList.add("active");
+            }
+
             function setPlayerMode(mode) {
+                hideOfficialSourceNotice();
                 state.playerMode = mode === "hls" ? "hls" : "iframe";
                 els.playerWrap.classList.toggle("mode-hls", state.playerMode === "hls");
                 if (els.pipBtn) els.pipBtn.hidden = state.playerMode !== "hls" || !("pictureInPictureEnabled" in document);
@@ -1771,6 +1833,7 @@
             }
 
             function loadFrame(url, policy) {
+                hideOfficialSourceNotice();
                 try {
                     const u = new URL(url, location.href);
                     if (!/^https?:$/.test(u.protocol)) throw new Error("scheme");
@@ -1929,7 +1992,7 @@
             function renderSourceChips() {
                 els.sourceRow.innerHTML = "";
                 const list = state.currentSources || [];
-                if (state.playerMode !== "hls" || list.length < 2) { els.sourceRow.classList.remove("active"); return; }
+                if (!state.currentExtraId || list.length < 2) { els.sourceRow.classList.remove("active"); return; }
                 const lbl = document.createElement("span");
                 lbl.className = "src-label";
                 lbl.textContent = "Kaynak";
@@ -1937,9 +2000,12 @@
                 list.forEach((s, i) => {
                     const b = document.createElement("button");
                     b.type = "button";
-                    b.className = "src-chip" + (i === state.currentSourceIndex ? " active" : "") + (s.type === "embed" ? " embed" : "");
-                    b.textContent = s.type === "embed" ? "🌐 Iframe" : ("▶ " + (s.label || ("Kaynak " + (i + 1))));
-                    b.title = s.type === "embed" ? "Iframe kaynağını seç" : safeStreamUrl(s.url);
+                    b.className = "src-chip" + (i === state.currentSourceIndex ? " active" : "") +
+                        (s.type === "embed" ? " embed" : "") + (s.type === "official" ? " official" : "");
+                    b.textContent = s.type === "embed" ? "🌐 Iframe" :
+                        (s.type === "official" ? "↗ Resmî" : ("▶ " + (s.label || ("Kaynak " + (i + 1)))));
+                    b.title = s.type === "embed" ? "Iframe kaynağını seç" :
+                        (s.type === "official" ? "Yayıncının resmî sayfasını aç" : safeStreamUrl(s.url));
                     b.onclick = () => playSource(i, true);
                     els.sourceRow.appendChild(b);
                 });
@@ -1987,19 +2053,27 @@
                 const token = playToken;
                 state.currentSourceIndex = sourceIndex;
                 const src = list[sourceIndex];
+                hideOfficialSourceNotice();
                 hideError();
                 renderSourceChips();
                 if (state.currentIndex === -1 && state.currentExtraId) {
                     const ch = extraById(state.currentExtraId);
                     if (ch) setPlayerHeader(ch.name, ch.icon || "⚡",
-                        (ch.panel_name || "EXTRA") + " · " + (src.type === "embed" ? "IFRAME" : "M3U8"));
+                        (ch.panel_name || "EXTRA") + " · " +
+                        (src.type === "embed" ? "IFRAME" : (src.type === "official" ? "RESMÎ PLATFORM" : "M3U8")));
                 }
                 if (src.type === "embed") {
+                    state.playerMode = "iframe";
                     els.playerWrap.classList.remove("mode-hls");
                     if (els.pipBtn) els.pipBtn.hidden = true;
                     loadFrame(src.url);
                     return;
                 }
+                if (src.type === "official") {
+                    showOfficialSourceNotice(src);
+                    return;
+                }
+                state.playerMode = "hls";
                 els.playerWrap.classList.add("mode-hls");
                 if (els.pipBtn) els.pipBtn.hidden = !("pictureInPictureEnabled" in document);
                 els.iframe.src = "about:blank";
@@ -2215,7 +2289,7 @@
                 });
             }
 
-            /** EXTRA kanal kartı -> m3u8 yayını sayfanın HLS oynatıcısında aç */
+            /** EXTRA kanal kartı -> HLS/iframe player veya yayıncının resmî sayfası */
             function playExtra(id, scroll) {
                 const ch = extraById(id);
                 if (!ch || !(ch.sources || []).length) return;
@@ -2228,7 +2302,10 @@
                 state.currentSourceIndex = 0;
                 setPlayerMode("hls");
                 const hasHls = ch.sources.some((s) => s.type === "hls");
-                setPlayerHeader(ch.name, ch.icon || "⚡", (ch.panel_name || "EXTRA") + (hasHls ? " · M3U8" : " · PLAYER"));
+                const firstType = (ch.sources[0] || {}).type;
+                const sourceMode = firstType === "official" ? " · RESMÎ PLATFORM" :
+                    (hasHls ? " · M3U8" : (firstType === "embed" ? " · IFRAME" : " · PLAYER"));
+                setPlayerHeader(ch.name, ch.icon || "⚡", (ch.panel_name || "EXTRA") + sourceMode);
                 markActiveCard();
                 markActiveExtraCard();
                 markActiveCustomChannel();
@@ -2278,19 +2355,23 @@
                         card.setAttribute("data-extra-id", ch.id);
                         card.setAttribute("role", "button");
                         card.setAttribute("tabindex", "0");
-                        const primaryIsEmbed = (ch.sources || [])[0]?.type === "embed";
-                        card.setAttribute("title", ch.name + " — " + (primaryIsEmbed ? "iframe" : "m3u8") + " yayını oynatıcıda aç" +
+                        const primaryType = (ch.sources || [])[0]?.type;
+                        const primaryIsEmbed = primaryType === "embed";
+                        const primaryIsOfficial = primaryType === "official";
+                        card.setAttribute("title", ch.name + " — " + (primaryIsOfficial ? "resmî yayıncı sayfasını" :
+                            (primaryIsEmbed ? "iframe yayını" : "m3u8 yayını")) + (primaryIsOfficial ? " yeni sekmede aç" : " oynatıcıda aç") +
                             (ch.resolved ? "" : " (yedek kaynak)"));
                         card.style.animationDelay = Math.min(visible * 18, 320) + "ms";
                         const hasHls = (ch.sources || []).some((s) => s.type === "hls");
                         card.innerHTML =
-                            '<span class="ch-status">' + (primaryIsEmbed ? "IFRAME" : (hasHls ? "M3U8" : "PLAYER")) + "</span>" +
+                            '<span class="ch-status">' + (primaryIsOfficial ? "RESMÎ" :
+                                (primaryIsEmbed ? "IFRAME" : (hasHls ? "M3U8" : "PLAYER"))) + "</span>" +
                             '<span class="ch-number">' + pad(n) + "</span>" +
                             '<span class="ch-live-dot" title="' + (ch.resolved ? "yayın adresi güncel" : "yedek kaynak") + '"></span>' +
                             '<span class="ch-icon-wrap">' + (ch.icon || "⚡") + "</span>" +
                             '<span class="ch-name">' + esc(ch.name) + "</span>" +
                             '<span class="ch-brand">' + esc(p.name || p.id) + "</span>" +
-                            '<span class="ch-play-hint">▶ İZLE</span>';
+                            '<span class="ch-play-hint">' + (primaryIsOfficial ? "↗ RESMÎ SAYFADA AÇ" : "▶ İZLE") + "</span>";
                         card.onclick = () => playExtra(ch.id, true);
                         card.onkeydown = (e) => {
                             if (e.key === "Enter" || e.key === " ") { e.preventDefault(); playExtra(ch.id, true); }

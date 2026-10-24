@@ -266,18 +266,18 @@ panels:
     referrer: "{base_url}/"
     logo: "{base_url}/assets/img/football_tv1.png"
     channels:
-      - { slug: "bein-sports-1",     name: "BEIN SPORTS 1" }
-      - { slug: "bein-sports-2",     name: "BEIN SPORTS 2" }
-      - { slug: "bein-sports-3",     name: "BEIN SPORTS 3" }
-      - { slug: "bein-sports-4",     name: "BEIN SPORTS 4" }
-      - { slug: "bein-sports-5",     name: "BEIN SPORTS 5" }
-      - { slug: "bein-sports-max-1", name: "BEIN SPORTS MAX 1" }
-      - { slug: "bein-sports-max-2", name: "BEIN SPORTS MAX 2" }
-      - { slug: "s-sport",           name: "S SPORT" }
-      - { slug: "s-sport-2",         name: "S SPORT 2" }
-      - { slug: "trt-spor",          name: "TRT SPOR" }
-      - { slug: "trt-1",             name: "TRT 1" }
-      - { slug: "a-spor",             name: "A SPOR" }
+      - { slug: "bein-sports-1",     name: "BEIN SPORTS 1",     official_url: "https://www.beinconnect.com.tr/canli-tv" }
+      - { slug: "bein-sports-2",     name: "BEIN SPORTS 2",     official_url: "https://www.beinconnect.com.tr/canli-tv" }
+      - { slug: "bein-sports-3",     name: "BEIN SPORTS 3",     official_url: "https://www.beinconnect.com.tr/canli-tv" }
+      - { slug: "bein-sports-4",     name: "BEIN SPORTS 4",     official_url: "https://www.beinconnect.com.tr/canli-tv" }
+      - { slug: "bein-sports-5",     name: "BEIN SPORTS 5",     official_url: "https://www.beinconnect.com.tr/canli-tv" }
+      - { slug: "bein-sports-max-1", name: "BEIN SPORTS MAX 1", official_url: "https://www.beinconnect.com.tr/canli-tv" }
+      - { slug: "bein-sports-max-2", name: "BEIN SPORTS MAX 2", official_url: "https://www.beinconnect.com.tr/canli-tv" }
+      - { slug: "s-sport",           name: "S SPORT",           official_url: "https://www.ssportplus.com/canli-tv/s-sport-tv-canli-izle/" }
+      - { slug: "s-sport-2",         name: "S SPORT 2",         official_url: "https://www.ssportplus.com/canli-tv/s-sport-2-canli-izle/" }
+      - { slug: "trt-spor",          name: "TRT SPOR",          official_url: "https://www.trtspor.com.tr/canli-yayin-izle/trt-spor" }
+      - { slug: "trt-1",             name: "TRT 1",             official_url: "https://www.tabii.com/tr/watch/live/trt1?trackId=150002" }
+      - { slug: "a-spor",            name: "A SPOR",            official_url: "https://www.aspor.com.tr/webtv/canli-yayin" }
 
   # --------------------------------------------------------------------------
   #  SULTANBET TV — dinamik yayın kökü kullanan kanal paneli
