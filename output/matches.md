@@ -1,18 +1,17 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-10-24 09:45  
-> **Toplam maç:** 32  |  **Canlı:** 2  |  **Yaklaşan:** 30
+> **Güncellenme:** 2026-10-24 10:28  
+> **Toplam maç:** 32  |  **Canlı:** 3  |  **Yaklaşan:** 28
 
 ## 🔴 CANLI
 
-- 🔴 **L.Fernandez vs M.Bouzkova** — CANLI · `10:00` | WTA Ningbo <https://fixbettv84.com/channel.html?id=bm2>
 - 🔴 **E.Rybakina vs D.Shnaider** — CANLI · `12:30` | WTA Ningbo <https://fixbettv84.com/channel.html?id=bm2>
+- 🔴 **Trabzonspor vs Esenler Erokspor** — CANLI · `13:00` | Basketbol Süper Ligi <https://fixbettv84.com/channel.html?id=b5>
+- 🔴 **Galatasaray vs Onikişubat Belediyespor** — CANLI · `13:00` | TVF Efeler Ligi <https://fixbettv84.com/channel.html?id=trtspor2>
 
 ## ⏰ YAKLAŞAN
 
-- ⏰ **Trabzonspor vs Esenler Erokspor** — YAKLAŞAN · `13:00` | Basketbol Süper Ligi <https://fixbettv84.com/channel.html?id=b5>
-- ⏰ **Galatasaray vs Onikişubat Belediyespor** — YAKLAŞAN · `13:00` | TVF Efeler Ligi <https://fixbettv84.com/channel.html?id=trtspor2>
 - ⏰ **Eyüpspor vs Kasımpaşa** — YAKLAŞAN · `13:30` | Trendyol Süper Lig <https://fixbettv84.com/channel.html?id=zirve>
 - ⏰ **Bandırmaspor vs Iğdırspor** — YAKLAŞAN · `13:30` | Trendyol 1. Lig <https://fixbettv84.com/channel.html?id=trtspor>
 - ⏰ **Ümraniyespor vs Sivasspor** — YAKLAŞAN · `13:30` | Trendyol 1. Lig <https://fixbettv84.com/channel.html?id=b2>
@@ -42,6 +41,10 @@
 - ⏰ **Gil Vicente vs Porto** — YAKLAŞAN · `22:30` | Portekiz Liga NOS <https://fixbettv84.com/channel.html?id=b2>
 - ⏰ **A.Volkanovski vs M.Evloev** — YAKLAŞAN · `23:00` | UFC Dövüş Serisi <https://fixbettv84.com/channel.html?id=ss>
 
+## ✅ BİTTİ
+
+- ✅ **L.Fernandez vs M.Bouzkova** — MS · `10:00` | WTA Ningbo <https://fixbettv84.com/channel.html?id=bm2>
+
 ---
 ## 🏆 Lig Bazlı
 
@@ -49,7 +52,7 @@
 - ⏰ Borussia Dortmund vs Eintracht Frankfurt — 19:30
 
 ### Basketbol Süper Ligi
-- ⏰ Trabzonspor vs Esenler Erokspor — 13:00
+- 🔴 Trabzonspor vs Esenler Erokspor — 13:00
 - ⏰ Türk Telekom vs Denizli Basket — 15:30
 - ⏰ Bahçeşehir Klj vs Beşiktaş — 20:30
 
@@ -63,7 +66,7 @@
 - ⏰ Gil Vicente vs Porto — 22:30
 
 ### TVF Efeler Ligi
-- ⏰ Galatasaray vs Onikişubat Belediyespor — 13:00
+- 🔴 Galatasaray vs Onikişubat Belediyespor — 13:00
 
 ### Trendyol 1. Lig
 - ⏰ Bandırmaspor vs Iğdırspor — 13:30
@@ -83,7 +86,7 @@
 - ⏰ Shakhtar Donetsk vs Zorya — 18:00
 
 ### WTA Ningbo
-- 🔴 L.Fernandez vs M.Bouzkova — 10:00
+- ⏰ L.Fernandez vs M.Bouzkova — 10:00
 - 🔴 E.Rybakina vs D.Shnaider — 12:30
 
 ### İngiltere Premier Lig
