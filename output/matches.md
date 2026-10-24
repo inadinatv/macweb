@@ -1,13 +1,16 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-10-24 05:55  
-> **Toplam maç:** 32  |  **Canlı:** 0  |  **Yaklaşan:** 32
+> **Güncellenme:** 2026-10-24 09:45  
+> **Toplam maç:** 32  |  **Canlı:** 2  |  **Yaklaşan:** 30
+
+## 🔴 CANLI
+
+- 🔴 **L.Fernandez vs M.Bouzkova** — CANLI · `10:00` | WTA Ningbo <https://fixbettv84.com/channel.html?id=bm2>
+- 🔴 **E.Rybakina vs D.Shnaider** — CANLI · `12:30` | WTA Ningbo <https://fixbettv84.com/channel.html?id=bm2>
 
 ## ⏰ YAKLAŞAN
 
-- ⏰ **L.Fernandez vs M.Bouzkova** — YAKLAŞAN · `10:00` | WTA Ningbo <https://fixbettv84.com/channel.html?id=bm2>
-- ⏰ **E.Rybakina vs D.Shnaider** — YAKLAŞAN · `12:30` | WTA Ningbo <https://fixbettv84.com/channel.html?id=bm2>
 - ⏰ **Trabzonspor vs Esenler Erokspor** — YAKLAŞAN · `13:00` | Basketbol Süper Ligi <https://fixbettv84.com/channel.html?id=b5>
 - ⏰ **Galatasaray vs Onikişubat Belediyespor** — YAKLAŞAN · `13:00` | TVF Efeler Ligi <https://fixbettv84.com/channel.html?id=trtspor2>
 - ⏰ **Eyüpspor vs Kasımpaşa** — YAKLAŞAN · `13:30` | Trendyol Süper Lig <https://fixbettv84.com/channel.html?id=zirve>
@@ -80,8 +83,8 @@
 - ⏰ Shakhtar Donetsk vs Zorya — 18:00
 
 ### WTA Ningbo
-- ⏰ L.Fernandez vs M.Bouzkova — 10:00
-- ⏰ E.Rybakina vs D.Shnaider — 12:30
+- 🔴 L.Fernandez vs M.Bouzkova — 10:00
+- 🔴 E.Rybakina vs D.Shnaider — 12:30
 
 ### İngiltere Premier Lig
 - ⏰ Aston Villa vs Manchester City — 14:30
