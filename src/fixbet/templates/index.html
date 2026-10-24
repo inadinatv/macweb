@@ -2020,7 +2020,7 @@
                     }
                     if (!current()) return;
                     const nextIdx = sourceIndex + 1;
-                    if (!manual && nextIdx < list.length && list[nextIdx].type !== "embed") {
+                    if (!manual && nextIdx < list.length) {
                         playSource(nextIdx, false);
                         return;
                     }

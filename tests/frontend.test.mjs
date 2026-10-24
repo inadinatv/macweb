@@ -714,41 +714,29 @@ test("EXTRA karta tıklayınca m3u8 yayını hls.js ile <video> içinde açılı
   dom.window.close();
 });
 
-test("m3u8 kaynağı açılmazsa sıradaki kaynak otomatik deneniyor, hepsi düşerse hata gösteriliyor", async () => {
-  const failing = new Set();
-  const { window, dom } = await loadPage({ behavior: (url) => (failing.has(url) ? "fail" : "ok") });
-  const ch = window.inadina.extraChannels().find((c) => c.sources.filter((s) => s.type === "hls").length >= 2)
-    || window.inadina.extraChannels()[0];
-  const hlsSources = ch.sources.filter((s) => s.type === "hls");
-  hlsSources.forEach((s) => failing.add(s.url));
+test("HLS kaynakları başarısızsa iframe yedeğine otomatik geçer ve HLS yeniden denenebilir", async () => {
+  const data = { panels: [{ id: "test", name: "Test", channels: [{ id: "test:one", name: "Test", sources: [
+    { type: "hls", url: "https://cdn.test/one.m3u8" },
+    { type: "hls", url: "https://cdn.test/two.m3u8" },
+    { type: "embed", url: "https://player.test/embed" },
+  ] }] }] };
+  const failing = new Set(["https://cdn.test/one.m3u8", "https://cdn.test/two.m3u8"]);
+  const { window, dom } = await loadPage({ html: withExtra(data), behavior: (url) => (failing.has(url) ? "fail" : "ok") });
 
-  window.inadina.playExtra(ch.id, false);
+  window.inadina.playExtra("test:one", false);
   await tick(80);
-  const err = window.document.getElementById("playerError");
-  if (hlsSources.length >= 2) {
-    // her hls kaynağı sırayla denendi
-    const loads = window.hlsLog.filter((l) => l.startsWith("load:"));
-    assert.deepEqual(Array.from(loads), Array.from(hlsSources.map((s) => "load:" + s.url)), "kaynaklar sırayla denenmedi");
-  }
-  assert.ok(err.classList.contains("active"), "hata katmanı gösterilmedi");
-  assert.ok(window.document.getElementById("playerErrorMsg").textContent.length > 10);
-  assert.ok(window.document.getElementById("openExternalBtn").getAttribute("href").length > 5, "yeni sekme bağlantısı yok");
+  assert.deepEqual(window.hlsLog.filter((row) => row.startsWith("load:")), [
+    "load:https://cdn.test/one.m3u8", "load:https://cdn.test/two.m3u8",
+  ], "HLS kaynakları sırayla denenmeli");
+  assert.equal(window.document.getElementById("liveIframe").src, "https://player.test/embed", "HLS kaynakları başarısız olunca iframe yedeği otomatik açılmalı");
+  assert.ok(!window.document.getElementById("playerError").classList.contains("active"), "çalışan iframe yedeği açıldığında hata gösterilmemeli");
+  assert.ok(!window.document.getElementById("playerWrap").classList.contains("mode-hls"), "iframe'e geçince video modu kapanmalı");
 
-  // ⏭ Diğer kaynak -> site (embed) yedeği iframe'de açılır
-  const embed = ch.sources.find((s) => s.type === "embed");
-  if (embed) {
-    window.document.getElementById("nextSourceBtn").click();
-    await tick();
-    assert.ok(!err.classList.contains("active"), "hata katmanı kapanmadı");
-    assert.equal(window.document.getElementById("liveIframe").src, embed.url, "site yedeği iframe'de açılmadı");
-    assert.ok(!window.document.getElementById("playerWrap").classList.contains("mode-hls"));
-  }
-  // 🔄 Tekrar dene ilk kaynağa değil, seçili kaynağa yeniden gider
   failing.clear();
   window.inadina.playSource(0, true);
   await tick(60);
-  assert.ok(!err.classList.contains("active"), "yeniden deneme başarısız");
-  assert.ok(window.document.getElementById("playerWrap").classList.contains("mode-hls"));
+  assert.ok(!window.document.getElementById("playerError").classList.contains("active"), "HLS kaynağı yeniden denenebilmeli");
+  assert.ok(window.document.getElementById("playerWrap").classList.contains("mode-hls"), "HLS yeniden denemesinde video modu açılmalı");
   dom.window.close();
 });
 
@@ -1056,8 +1044,9 @@ test("iframe yayını açılırken spinner player görüntüsünü kapatmaz",asy
 });
 
 test("playlist parse edilmesi loading'i kapatmaz, segment gelmezse süreli hata oluşur",async()=>{
-  const {window}=await loadPage({behavior:()=> 'manifest-only',beforeParse:captureDeadlines});
-  window.inadina.playExtra(window.inadina.extraChannels()[0].id,false);
+  const html=withExtra(singleExtra({type:'hls',url:'https://cdn.test/manifest-only.m3u8'}));
+  const {window}=await loadPage({html,behavior:()=> 'manifest-only',beforeParse:captureDeadlines});
+  window.inadina.playExtra('test:one',false);
   await tick();
   assert.ok(window.document.getElementById('playerLoading').classList.contains('active'));
   for (let i = 0; i < 3 && !window.document.getElementById('playerError').classList.contains('active'); i++) {
