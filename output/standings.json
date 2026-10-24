@@ -1,13 +1,13 @@
 {
  "source": "mackolik",
- "generated_at": "2026-10-24T13:27:18+03:00",
+ "generated_at": "2026-10-24T15:59:13+03:00",
  "leagues": [
   {
    "id": "soccer/tur.1",
    "name": "Trendyol Süper Lig",
    "sport": "Futbol",
    "season": "2026-27 Turkish Super Lig",
-   "updated_at": "2026-10-24T13:27:18+03:00",
+   "updated_at": "2026-10-24T15:59:13+03:00",
    "teams": 18,
    "rows": [
     {
@@ -84,6 +84,24 @@
     },
     {
      "rank": 5,
+     "team": "Kasımpaşa",
+     "sourceTeam": "Kasımpaşa",
+     "abbr": "",
+     "logo": "https://file.mackolikfeeds.com/teams/4idg23egrrvtrbgrg7p5x7bwf",
+     "played": 9,
+     "wins": 4,
+     "draws": 4,
+     "losses": 1,
+     "goalsFor": 13,
+     "goalsAgainst": 9,
+     "diff": 4,
+     "points": 16,
+     "note": "",
+     "zone": "",
+     "zoneLabel": ""
+    },
+    {
+     "rank": 6,
      "team": "Beşiktaş",
      "sourceTeam": "Beşiktaş",
      "abbr": "",
@@ -101,7 +119,7 @@
      "zoneLabel": ""
     },
     {
-     "rank": 6,
+     "rank": 7,
      "team": "Kocaelispor",
      "sourceTeam": "Kocaelispor",
      "abbr": "",
@@ -119,7 +137,7 @@
      "zoneLabel": ""
     },
     {
-     "rank": 7,
+     "rank": 8,
      "team": "Çorum FK",
      "sourceTeam": "Çorum FK",
      "abbr": "",
@@ -131,24 +149,6 @@
      "goalsFor": 18,
      "goalsAgainst": 13,
      "diff": 5,
-     "points": 13,
-     "note": "",
-     "zone": "",
-     "zoneLabel": ""
-    },
-    {
-     "rank": 8,
-     "team": "Kasımpaşa",
-     "sourceTeam": "Kasımpaşa",
-     "abbr": "",
-     "logo": "https://file.mackolikfeeds.com/teams/4idg23egrrvtrbgrg7p5x7bwf",
-     "played": 8,
-     "wins": 3,
-     "draws": 4,
-     "losses": 1,
-     "goalsFor": 12,
-     "goalsAgainst": 9,
-     "diff": 3,
      "points": 13,
      "note": "",
      "zone": "",
@@ -322,13 +322,13 @@
      "sourceTeam": "Eyüpspor",
      "abbr": "",
      "logo": "https://file.mackolikfeeds.com/teams/bmgtxgipsznlb1j20zwjti3xh",
-     "played": 8,
+     "played": 9,
      "wins": 1,
      "draws": 0,
-     "losses": 7,
+     "losses": 8,
      "goalsFor": 2,
-     "goalsAgainst": 22,
-     "diff": -20,
+     "goalsAgainst": 23,
+     "diff": -21,
      "points": 3,
      "note": "",
      "zone": "relegation",
