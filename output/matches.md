@@ -1,20 +1,19 @@
 # ⚽ Fixbet TV — Günün Maçları
 
 > **Güncel adres:** https://fixbettv84.com/  
-> **Güncellenme:** 2026-10-24 13:00  
-> **Toplam maç:** 32  |  **Canlı:** 3  |  **Yaklaşan:** 22
+> **Güncellenme:** 2026-10-24 13:39  
+> **Toplam maç:** 32  |  **Canlı:** 5  |  **Yaklaşan:** 19
 
 ## 🔴 CANLI
 
-- 🔴 **Aston Villa 2 - 1 Manchester City** — CANLI · `14:30` | İngiltere Premier Lig <https://fixbettv84.com/channel.html?id=b3>
-- 🔴 **Rayo Vallecano 0 - 2 Elche** — DEVRE · `15:00` | İspanya La Liga <https://fixbettv84.com/channel.html?id=ss>
+- 🔴 **Rayo Vallecano 0 - 3 Elche** — CANLI · `15:00` | İspanya La Liga <https://fixbettv84.com/channel.html?id=ss>
 - 🔴 **Türk Telekom vs Denizli Basket** — CANLI · `15:30` | Basketbol Süper Ligi <https://fixbettv84.com/channel.html?id=b5>
+- 🔴 **Como 0 - 0 Sassuolo** — CANLI · `16:00` | İtalya Serie A <https://fixbettv84.com/channel.html?id=ss>
+- 🔴 **Gaziantep FK 0 - 0 Erzurumspor** — CANLI · `16:00` | Trendyol Süper Lig <https://fixbettv84.com/channel.html?id=zirve>
+- 🔴 **Muğlaspor 1 - 0 İstanbulspor** — CANLI · `16:00` | Trendyol 1. Lig <https://fixbettv84.com/channel.html?id=trtspor>
 
 ## ⏰ YAKLAŞAN
 
-- ⏰ **Como vs Sassuolo** — YAKLAŞAN · `16:00` | İtalya Serie A <https://fixbettv84.com/channel.html?id=ss>
-- ⏰ **Gaziantep FK vs Erzurumspor** — YAKLAŞAN · `16:00` | Trendyol Süper Lig <https://fixbettv84.com/channel.html?id=zirve>
-- ⏰ **Muğlaspor vs İstanbulspor** — YAKLAŞAN · `16:00` | Trendyol 1. Lig <https://fixbettv84.com/channel.html?id=trtspor>
 - ⏰ **Arsenal vs Everton** — YAKLAŞAN · `17:00` | İngiltere Premier Lig <https://fixbettv84.com/channel.html?id=b3>
 - ⏰ **Coventry vs Fulham** — YAKLAŞAN · `17:00` | İngiltere Premier Lig <https://fixbettv84.com/channel.html?id=b4>
 - ⏰ **Racing Santander vs Espanyol** — YAKLAŞAN · `17:15` | İspanya La Liga <https://fixbettv84.com/channel.html?id=ss>
@@ -44,6 +43,7 @@
 - ✅ **Eyüpspor 0 - 1 Kasımpaşa** — MS · `13:30` | Trendyol Süper Lig <https://fixbettv84.com/channel.html?id=zirve>
 - ✅ **Bandırmaspor 1 - 2 Iğdırspor** — MS · `13:30` | Trendyol 1. Lig <https://fixbettv84.com/channel.html?id=trtspor>
 - ✅ **Ümraniyespor 4 - 0 Sivasspor** — MS · `13:30` | Trendyol 1. Lig <https://fixbettv84.com/channel.html?id=b2>
+- ✅ **Aston Villa 2 - 1 Manchester City** — MS · `14:30` | İngiltere Premier Lig <https://fixbettv84.com/channel.html?id=b3>
 
 ---
 ## 🏆 Lig Bazlı
@@ -71,12 +71,12 @@
 ### Trendyol 1. Lig
 - ⏰ Bandırmaspor vs Iğdırspor — 13:30
 - ⏰ Ümraniyespor vs Sivasspor — 13:30
-- ⏰ Muğlaspor vs İstanbulspor — 16:00
+- 🔴 Muğlaspor vs İstanbulspor — 16:00
 - ⏰ Sarıyer vs Karagümrük — 19:00
 
 ### Trendyol Süper Lig
 - ⏰ Eyüpspor vs Kasımpaşa — 13:30
-- ⏰ Gaziantep FK vs Erzurumspor — 16:00
+- 🔴 Gaziantep FK vs Erzurumspor — 16:00
 - ⏰ Samsunspor vs Amedspor — 19:00
 
 ### UFC Dövüş Serisi
@@ -90,7 +90,7 @@
 - ⏰ E.Rybakina vs D.Shnaider — 12:30
 
 ### İngiltere Premier Lig
-- 🔴 Aston Villa vs Manchester City — 14:30
+- ⏰ Aston Villa vs Manchester City — 14:30
 - ⏰ Arsenal vs Everton — 17:00
 - ⏰ Coventry vs Fulham — 17:00
 - ⏰ Chelsea vs Tottenham — 19:30
@@ -100,13 +100,13 @@
 - ⏰ Barcelona vs Zaragoza — 22:00
 
 ### İspanya La Liga
-- ⏰ Rayo Vallecano vs Elche — 15:00
+- 🔴 Rayo Vallecano vs Elche — 15:00
 - ⏰ Racing Santander vs Espanyol — 17:15
 - ⏰ Valencia vs Villarreal — 19:30
 - ⏰ Atletico Madrid vs Deportivo — 22:00
 
 ### İtalya Serie A
-- ⏰ Como vs Sassuolo — 16:00
+- 🔴 Como vs Sassuolo — 16:00
 - ⏰ Napoli vs Roma — 19:00
 - ⏰ Lazio vs Parma — 21:45
 
